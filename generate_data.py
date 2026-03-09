@@ -36,7 +36,9 @@ ATC_SP        = INPUT_DIR / "2026_ATC_SP_Projections.csv"
 OOPSY_SP      = INPUT_DIR / "2026_OOPSY_SP_Projections.csv"
 ATC_RP        = INPUT_DIR / "2026_ATC_RP_Projections.csv"
 OOPSY_RP      = INPUT_DIR / "2026_OOPSY_RP_Projections.csv"
-POS_FILE      = INPUT_DIR / "player_positions.csv"  # optional
+CBS_BAT_ELIG  = Path(__file__).parent / "data" / "CBS_batter_elig.csv"
+CBS_SP_ELIG   = Path(__file__).parent / "data" / "CBS_SP_elig.csv"
+CBS_RP_ELIG   = Path(__file__).parent / "data" / "CBS_RP_elig.csv"
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 MIN_PA  = 200
@@ -88,14 +90,22 @@ def calc_aSB(row):
     sb, cs = fv(row,"SB"), fv(row,"CS")
     return sb * (sb/(sb+cs)) if (sb+cs) > 0 else 0.0
 
-def calc_vijay(row):
+def calc_vijay_season(row):
+    """Season-total VIJAY — used for valuation engine (cumulative matters for H2H)."""
     inn, gs = fv(row,"IP"), fv(row,"GS")
     sv, hd  = fv(row,"SV"), fv(row,"HLD")
     bs, l   = fv(row,"BS"), fv(row,"L")
     inndgs  = (inn/gs) if gs > 0 else 0
     return ((inn - (inndgs*gs) + sv*3 + hd*3) / 4) - ((bs+l)*2)
 
-def calc_mgs(row):
+def calc_vijay_per_g(row):
+    """VIJAY per game appearance — used for display."""
+    g = fv(row,"G")
+    if g == 0: return 0.0
+    return calc_vijay_season(row) / g
+
+def calc_mgs_season(row):
+    """Season-total MGS — used for valuation engine."""
     gs = fv(row,"GS")
     if gs == 0: return 0.0
     inn = fv(row,"IP") / gs
@@ -105,6 +115,12 @@ def calc_mgs(row):
     bbi = fv(row,"BB") / gs
     mgs = (3*inn) + (2*(inn-4)) + k - (2*ha) - (4*er) - bbi
     return mgs * gs
+
+def calc_mgs_per_gs(row):
+    """MGS per start — used for display."""
+    gs = fv(row,"GS")
+    if gs == 0: return 0.0
+    return calc_mgs_season(row) / gs
 
 def is_unavailable(proj_name, unavail_set):
     n = norm(proj_name)
@@ -222,31 +238,112 @@ def parse_rfa(path):
                 rfa[norm(player)] = team
     return rfa
 
-# ── POSITIONS ──────────────────────────────────────────────────────────────────
-def parse_positions(path):
-    """Returns {norm_name: [list_of_positions]}"""
-    pos_map = {}
-    if not path.exists():
-        return pos_map
-    with open(path, encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            name = row.get("Name","").strip()
-            positions = [p.strip() for p in row.get("Positions","").split(",") if p.strip()]
-            if name and positions:
-                pos_map[norm(name)] = positions
-    return pos_map
+# ── POSITIONS (CBS eligibility files) ─────────────────────────────────────────
+# CBS Player column format: "Name POS1,POS2 | TEAM"  (pipe separates name+pos from team)
+# Known position tokens — anything else in that slot is part of the name
+KNOWN_POS = {"C","1B","2B","3B","SS","OF","CF","RF","LF","DH","INF","U","SP","RP","P"}
 
-def get_positions(proj_name, pos_map):
+def _parse_cbs_player_col(raw):
+    """Parse a CBS 'Player' cell like 'Aaron Judge RF,OF | NYY'.
+    Returns (clean_name, [positions], mlb_team).
+    """
+    raw = raw.strip().strip('"')
+    if "|" not in raw:
+        return raw.strip(), [], ""
+    left, right = raw.split("|", 1)
+    left = left.strip()
+    mlb_team = right.strip()
+    # Last space-separated token before pipe holds the position codes
+    parts = left.rsplit(" ", 1)
+    if len(parts) == 2:
+        pos_str = parts[1].strip()
+        pos_candidates = [p.strip() for p in pos_str.split(",")]
+        if all(p in KNOWN_POS for p in pos_candidates if p):
+            return parts[0].strip(), pos_candidates, mlb_team
+    return left, [], mlb_team
+
+def parse_positions_cbs(bat_path, sp_path, rp_path):
+    """Parse all three CBS eligibility files and return a unified {norm_name: [positions]} map.
+    Uses (norm_name, mlb_team) keying internally to resolve same-name collisions,
+    then falls back to norm_name-only for the final lookup map.
+    """
+    # Primary: keyed by (norm_name, mlb_team) — most specific
+    pos_by_name_team = {}
+    # Secondary: norm_name -> list of (positions, mlb_team) tuples seen
+    pos_by_name = {}
+
+    def ingest(path, skip_rows=2):
+        if not path.exists():
+            print(f"  WARNING: {path.name} not found — skipping")
+            return
+        with open(path, encoding="utf-8-sig") as f:
+            lines = f.readlines()
+        reader = csv.reader(lines[skip_rows:])
+        for row in reader:
+            if len(row) < 2:
+                continue
+            player_cell = row[1]
+            if not player_cell or "|" not in player_cell:
+                continue
+            name, positions, mlb_team = _parse_cbs_player_col(player_cell)
+            if not name or not positions:
+                continue
+            key_full = (norm(name), mlb_team.strip().upper())
+            existing_full = pos_by_name_team.get(key_full, [])
+            merged_full = existing_full + [p for p in positions if p not in existing_full]
+            pos_by_name_team[key_full] = merged_full
+
+            key_name = norm(name)
+            entries = pos_by_name.get(key_name, [])
+            # Merge positions across same name — keep union (two-way players, multi-pos)
+            existing_pos = [p for e in entries for p in e[0]]
+            new_pos = existing_full[:]
+            entries_new = entries + [(positions, mlb_team.strip().upper())]
+            pos_by_name[key_name] = entries_new
+
+    ingest(bat_path)
+    ingest(sp_path)
+    ingest(rp_path)
+
+    # Build final map: for each norm_name, if only one MLB team seen → simple merge
+    # If multiple MLB teams seen → keep only positions shared across all entries (avoid SS/RP collision)
+    pos_map = {}
+    for norm_name, entries in pos_by_name.items():
+        teams_seen = set(e[1] for e in entries)
+        if len(teams_seen) == 1:
+            # Same player, possibly multiple files → union all positions
+            all_pos = []
+            for pos_list, _ in entries:
+                for p in pos_list:
+                    if p not in all_pos:
+                        all_pos.append(p)
+            pos_map[norm_name] = all_pos
+        else:
+            # Multiple different MLB teams with same norm name — name collision
+            # Keep only the entry with the most specific/populous MLB team data
+            # Use longest position list as tiebreak (more data = more likely correct)
+            best = max(entries, key=lambda e: len(e[0]))
+            pos_map[norm_name] = best[0]
+
+    return pos_map, pos_by_name_team
+
+def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
+    """Look up positions for a player. Uses (name, team) key first if available to resolve collisions."""
     n = norm(proj_name)
-    if n in pos_map: return pos_map[n]
+    # Try precise (name, team) lookup first to avoid same-name collisions
+    if pos_by_name_team and mlb_team:
+        key = (n, mlb_team.strip().upper())
+        if key in pos_by_name_team:
+            return pos_by_name_team[key]
+    if n in pos_map:
+        return pos_map[n]
     for pn, pos in pos_map.items():
         if SequenceMatcher(None, n, pn).ratio() > 0.88:
             return pos
     return []
 
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
-def build_batters(proj_path, unavail, rfa_norm, pos_map, budget, system_name):
+def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     eligible = [r for r in rows if fv(r,"PA") >= MIN_PA and not is_unavailable(r["Name"], unavail)]
@@ -277,18 +374,18 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, budget, system_name):
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
-            "positions": get_positions(p["Name"], pos_map),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
 
 # ── SP RANKINGS ────────────────────────────────────────────────────────────────
-def build_sp(proj_path, unavail, rfa_norm, budget, system_name):
+def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     eligible = [r for r in rows if fv(r,"GS") >= MIN_GS and not is_unavailable(r["Name"], unavail)]
     for r in eligible:
-        r["_raw_MGS"]   = calc_mgs(r)
+        r["_raw_MGS"]   = calc_mgs_season(r)
         r["_raw_K"]     = fv(r,"SO")
         r["_raw_ERA"]   = fv(r,"ERA")
         r["_raw_HRA"]   = fv(r,"HR")
@@ -308,21 +405,22 @@ def build_sp(proj_path, unavail, rfa_norm, budget, system_name):
             "gs": round(fv(p,"GS"),1), "ip": round(fv(p,"IP"),1),
             "k": round(fv(p,"SO"),1), "era": round(fv(p,"ERA"),3),
             "whip": round(fv(p,"WHIP"),3), "hra": round(fv(p,"HR"),1),
-            "mgs": round(p["_raw_MGS"],1), "fip": round(fv(p,"FIP"),3),
+            "mgs": round(calc_mgs_per_gs(p), 2), "fip": round(fv(p,"FIP"),3),
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
 
 # ── RP RANKINGS ────────────────────────────────────────────────────────────────
-def build_rp(proj_path, unavail, rfa_norm, budget, system_name):
+def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     eligible = [r for r in rows if fv(r,"IP") >= MIN_IP and not is_unavailable(r["Name"], unavail)]
     for r in eligible:
-        r["_raw_VIJAY"] = calc_vijay(r)
+        r["_raw_VIJAY"] = calc_vijay_season(r)
         r["_raw_K"]     = fv(r,"SO")
         r["_raw_ERA"]   = fv(r,"ERA")
         r["_raw_HRA"]   = fv(r,"HR")
@@ -343,10 +441,11 @@ def build_rp(proj_path, unavail, rfa_norm, budget, system_name):
             "sv": round(fv(p,"SV"),1), "hld": round(fv(p,"HLD"),1),
             "bs": round(fv(p,"BS"),1), "k": round(fv(p,"SO"),1),
             "era": round(fv(p,"ERA"),3), "whip": round(fv(p,"WHIP"),3),
-            "hra": round(fv(p,"HR"),1), "vijay": round(p["_raw_VIJAY"],2),
+            "hra": round(fv(p,"HR"),1), "vijay": round(calc_vijay_per_g(p), 3),
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
@@ -390,17 +489,6 @@ def merge_rankings(primary_list, secondary_list):
         merged.append(entry)
     return merged
 
-# ── POSITION PLACEHOLDER ───────────────────────────────────────────────────────
-POSITION_PLACEHOLDER_CSV = """Name,Positions
-Aaron Judge,RF,OF
-Shohei Ohtani,OF,DH
-Juan Soto,RF,OF
-Bobby Witt Jr.,SS
-Mookie Betts,OF,RF,SS
-# Add your players here — columns: Name, then comma-separated positions
-# Valid positions: C, 1B, 2B, 3B, SS, OF, CF, RF, DH, SP, RP
-"""
-
 # ── MAIN ───────────────────────────────────────────────────────────────────────
 def main():
     print("=" * 60)
@@ -420,9 +508,9 @@ def main():
     fry_rfa = [p for p, t in rfa_norm.items() if t == FRY_TEAM]
     print(f"  RFA entries: {len(rfa_norm)}  |  FRY ROFR: {fry_rfa}")
 
-    print("\n[3/6] Parsing positions (if available)...")
-    pos_map = parse_positions(POS_FILE)
-    print(f"  Position entries: {len(pos_map)} {'(placeholder only)' if not pos_map else ''}")
+    print("\n[3/6] Parsing CBS positional eligibility...")
+    pos_map, pos_by_name_team = parse_positions_cbs(CBS_BAT_ELIG, CBS_SP_ELIG, CBS_RP_ELIG)
+    print(f"  Players with eligibility: {len(pos_map)}")
 
     hit_budget = total_budget * HIT_SPLIT
     sp_budget  = total_budget * SP_SPLIT
@@ -430,16 +518,16 @@ def main():
     print(f"\n[4/6] Budget splits: Hit=${hit_budget:.0f}M  SP=${sp_budget:.0f}M  RP=${rp_budget:.0f}M")
 
     print("\n[5/6] Building rankings (ATC/BATX + OOPSY)...")
-    batx_batters  = build_batters(BATX_BATTERS,  unavail, rfa_norm, pos_map, hit_budget, "batx")
-    oopsy_batters = build_batters(OOPSY_BATTERS, unavail, rfa_norm, pos_map, hit_budget, "oopsy")
+    batx_batters  = build_batters(BATX_BATTERS,  unavail, rfa_norm, pos_map, pos_by_name_team, hit_budget, "batx")
+    oopsy_batters = build_batters(OOPSY_BATTERS, unavail, rfa_norm, pos_map, pos_by_name_team, hit_budget, "oopsy")
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
-    atc_sp   = build_sp(ATC_SP,   unavail, rfa_norm, sp_budget, "atc")
-    oopsy_sp = build_sp(OOPSY_SP, unavail, rfa_norm, sp_budget, "oopsy")
+    atc_sp   = build_sp(ATC_SP,   unavail, rfa_norm, pos_map, pos_by_name_team, sp_budget, "atc")
+    oopsy_sp = build_sp(OOPSY_SP, unavail, rfa_norm, pos_map, pos_by_name_team, sp_budget, "oopsy")
     print(f"  SP:      {len(atc_sp)} ATC / {len(oopsy_sp)} OOPSY")
 
-    atc_rp   = build_rp(ATC_RP,   unavail, rfa_norm, rp_budget, "atc")
-    oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, rp_budget, "oopsy")
+    atc_rp   = build_rp(ATC_RP,   unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "atc")
+    oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy")
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/6] Merging + writing ldb_data.js...")
@@ -473,7 +561,6 @@ def main():
         "batters": batters,
         "sp": sp,
         "rp": rp,
-        "position_placeholder_csv": POSITION_PLACEHOLDER_CSV,
         "fry_keepers": FRY_KEEPERS,
     }
 

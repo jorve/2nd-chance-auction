@@ -1,58 +1,80 @@
-import { useAuctionStore } from './store/auctionStore.jsx'
+import { useState } from 'react'
 import Header from './components/Header.jsx'
-import RankingsView from './components/RankingsView.jsx'
-import AuctionView from './components/AuctionView.jsx'
+import PlayerList from './components/PlayerList.jsx'
+import AuctionPanel from './components/AuctionPanel.jsx'
+import FryTargets from './components/FryTargets.jsx'
 import LeagueView from './components/LeagueView.jsx'
 
-const tabs = [
-  { id: 'rankings',  label: '📊 Rankings'      },
-  { id: 'auction',   label: '🔨 Live Auction'   },
-  { id: 'league',    label: '🏟 League Board'   },
-]
-
 export default function App() {
-  const { activeTab, setActiveTab, auctionLog } = useAuctionStore()
+  const [showLeague, setShowLeague] = useState(false)
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Header />
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <Header onLeagueClick={() => setShowLeague(true)} />
 
-      {/* Nav */}
-      <nav style={{
-        display: 'flex', gap: 2, padding: '0 24px',
-        background: 'var(--surface)', borderBottom: '1px solid var(--border)',
-        position: 'sticky', top: 0, zIndex: 100,
+      {/* Two-pane layout */}
+      <div style={{
+        flex: 1, display: 'grid',
+        gridTemplateColumns: '1fr 440px',
+        minHeight: 0, overflow: 'hidden',
       }}>
-        {tabs.map(t => (
-          <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            padding: '14px 20px 12px',
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: 17, letterSpacing: 2,
-            color: activeTab === t.id ? 'var(--accent)' : 'var(--text-dim)',
-            borderBottom: activeTab === t.id ? '2px solid var(--accent)' : '2px solid transparent',
-            transition: 'all .15s',
-            position: 'relative',
-          }}>
-            {t.label}
-            {t.id === 'auction' && auctionLog.length > 0 && (
-              <span style={{
-                marginLeft: 8, background: 'var(--orange)',
-                color: '#000', borderRadius: 10, fontSize: 10,
-                fontFamily: "'DM Mono', monospace",
-                padding: '1px 6px', verticalAlign: 'middle',
-              }}>{auctionLog.length}</span>
-            )}
-          </button>
-        ))}
-      </nav>
+        {/* LEFT — full player pool */}
+        <div style={{ borderRight: '1px solid var(--border)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+          <PlayerList />
+        </div>
 
-      {/* Content */}
-      <main style={{ flex: 1 }}>
-        {activeTab === 'rankings' && <RankingsView />}
-        {activeTab === 'auction'  && <AuctionView />}
-        {activeTab === 'league'   && <LeagueView />}
-      </main>
+        {/* RIGHT — auction (top) + FRY targets (bottom) */}
+        <div style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--bg)' }}>
+          <div style={{ overflowY: 'auto', maxHeight: '62vh', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+            <AuctionPanel />
+          </div>
+          <div style={{ flex: 1, overflowY: 'auto', minHeight: 0 }}>
+            <FryTargets />
+          </div>
+        </div>
+      </div>
+
+      {/* League Board modal */}
+      {showLeague && (
+        <div
+          onClick={e => e.target === e.currentTarget && setShowLeague(false)}
+          style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,.82)',
+            zIndex: 300, display: 'flex', alignItems: 'flex-start',
+            justifyContent: 'center', paddingTop: 48,
+          }}
+        >
+          <div style={{
+            background: 'var(--bg)', width: '95vw', maxWidth: 1440,
+            maxHeight: '86vh', border: '1px solid var(--border2)',
+            borderRadius: 12, overflow: 'hidden',
+            display: 'flex', flexDirection: 'column',
+            boxShadow: '0 32px 80px rgba(0,0,0,.7)',
+          }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '14px 24px', background: 'var(--surface)',
+              borderBottom: '1px solid var(--border)', flexShrink: 0,
+            }}>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3, color: 'var(--text)' }}>
+                LEAGUE BOARD
+              </span>
+              <button
+                onClick={() => setShowLeague(false)}
+                style={{
+                  background: 'none', border: '1px solid var(--border2)',
+                  borderRadius: 4, padding: '5px 14px',
+                  color: 'var(--text-dim)', fontFamily: "'DM Mono', monospace",
+                  fontSize: 11, cursor: 'pointer',
+                }}
+              >CLOSE ✕</button>
+            </div>
+            <div style={{ overflowY: 'auto', flex: 1 }}>
+              <LeagueView />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

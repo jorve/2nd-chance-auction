@@ -3,9 +3,16 @@ import { LDB_DATA } from '../data/ldb_data.js'
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcValues(players, teams, soldMap) {
+  // If nothing has been sold yet, just return players with adj_value = est_value.
+  // This avoids float-point drift between Python round() and JS Math.round()
+  // that would show spurious non-zero deltas at auction start.
+  const anySold = Object.keys(soldMap).length > 0
+  if (!anySold) {
+    return players.map(p => ({ ...p, adj_value: p.est_value }))
+  }
+
   // Total remaining budget across all teams
   const totalRemaining = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
-  const totalSlots = Object.values(teams).reduce((s, t) => s + t.slots_current, 0)
 
   // Unsold players
   const unsold = players.filter(p => !soldMap[p.name])
@@ -14,7 +21,6 @@ function recalcValues(players, teams, soldMap) {
   // Split by type for budget allocation
   const isBatter = p => p.pa !== undefined
   const isSP     = p => p.gs !== undefined
-  const isRP     = p => !isBatter(p) && !isSP(p)
 
   const hitBudget = totalRemaining * 0.50
   const spBudget  = totalRemaining * 0.30
@@ -33,7 +39,7 @@ function recalcValues(players, teams, soldMap) {
 
   const unsoldBatters = unsold.filter(isBatter)
   const unsoldSP      = unsold.filter(isSP)
-  const unsoldRP      = unsold.filter(isRP)
+  const unsoldRP      = unsold.filter(p => !isBatter(p) && !isSP(p))
 
   const adjBatters = allocGroup(unsoldBatters, hitBudget)
   const adjSP      = allocGroup(unsoldSP, spBudget)
