@@ -1,0 +1,42 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #07090e;
+  --surface: #0d1018;
+  --surface2: #111520;
+  --border: #1a1f2e;
+  --border2: #242a3a;
+  --accent: #c8f135;
+  --accent-dim: #9ab828;
+  --blue: #38bdf8;
+  --orange: #fb923c;
+  --purple: #a78bfa;
+  --red: #f87171;
+  --green: #4ade80;
+  --muted: #3a4255;
+  --text: #d4daea;
+  --text-dim: #6b7891;
+  --text-faint: #3a4255;
+  --fry: #c8f135;
+  --t1: #c8f135;
+  --t2: #38bdf8;
+  --t3: #a78bfa;
+  --t4: #94a3b8;
+  --t5: #3a4255;
+  font-size: 13px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+input, button, select { font-family: inherit; }
+button { cursor: pointer; }
