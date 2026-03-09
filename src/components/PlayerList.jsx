@@ -91,6 +91,25 @@ export default function PlayerList() {
   // Reset sort to adj_value desc whenever tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(-1) }, [rankingsTab])
 
+  // Position filter — empty Set means "show all"
+  const [posFilter, setPosFilter] = useState(new Set())
+  useEffect(() => { setPosFilter(new Set()) }, [rankingsTab])
+
+  const POS_OPTS = {
+    batters: ['C','1B','2B','3B','SS','CF','RF'],
+    sp:      ['SP','RP'],
+    rp:      ['SP','RP'],
+  }
+
+  function togglePos(pos) {
+    setPosFilter(prev => {
+      const next = new Set(prev)
+      if (next.has(pos)) next.delete(pos)
+      else next.add(pos)
+      return next
+    })
+  }
+
   const allForTab = rankingsTab === 'batters' ? batters : rankingsTab === 'sp' ? sp : rp
   const statCols  = STAT_COLS[rankingsTab]
   const fry       = teams['FRY'] || {}
@@ -110,6 +129,11 @@ export default function PlayerList() {
 
   const filtered = unsold.filter(p => {
     if (!tierFilter.has(p.tier)) return false
+    // Position filter: if any positions selected, player must have at least one (OR logic)
+    if (posFilter.size > 0) {
+      const playerPos = p.positions ?? []
+      if (!playerPos.some(pos => posFilter.has(pos))) return false
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       return p.name.toLowerCase().includes(q) || (p.team || '').toLowerCase().includes(q)
@@ -129,11 +153,11 @@ export default function PlayerList() {
     else { setSortCol(col); setSortDir(-1) }
   }
 
-  const TH = ({ label, col, left }) => (
+  const TH = ({ label, col, left, w }) => (
     <th
       onClick={() => handleSort(col)}
       style={{
-        padding: '8px 8px', cursor: 'pointer', whiteSpace: 'nowrap',
+        padding: '8px 10px', cursor: 'pointer', whiteSpace: 'nowrap',
         textAlign: left ? 'left' : 'right',
         fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1,
         textTransform: 'uppercase',
@@ -141,6 +165,7 @@ export default function PlayerList() {
         borderBottom: '1px solid var(--border)',
         background: 'var(--surface)',
         userSelect: 'none',
+        minWidth: w ?? 60,
       }}
     >
       {label}{sortCol === col ? (sortDir === -1 ? ' ↓' : ' ↑') : ''}
@@ -184,6 +209,31 @@ export default function PlayerList() {
           }}>{label}</button>
         ))}
 
+        <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
+
+        {/* Position filters — empty = show all */}
+        {POS_OPTS[rankingsTab].map(pos => {
+          const active = posFilter.has(pos)
+          return (
+            <button key={pos} onClick={() => togglePos(pos)} style={{
+              background: active ? 'rgba(56,189,248,.18)' : 'transparent',
+              border: `1px solid ${active ? 'var(--blue)' : 'var(--border)'}`,
+              borderRadius: 4, padding: '3px 9px',
+              fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 0.5,
+              color: active ? 'var(--blue)' : 'var(--text-dim)',
+              cursor: 'pointer', transition: 'all .12s',
+              fontWeight: active ? 600 : 400,
+            }}>{pos}</button>
+          )
+        })}
+        {posFilter.size > 0 && (
+          <button onClick={() => setPosFilter(new Set())} style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            fontFamily: "'DM Mono', monospace", fontSize: 9,
+            color: 'var(--text-faint)', padding: '3px 4px',
+          }} title="Clear position filter">✕</button>
+        )}
+
         <div style={{ flex: 1 }} />
 
         {/* Tier filters */}
@@ -217,25 +267,25 @@ export default function PlayerList() {
 
       {/* ── Table ── */}
       <div style={{ flex: 1, overflow: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 900 }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             <tr>
-              <TH label="#"     col="rank"      left />
-              <TH label="Player" col="name"     left />
-              <TH label="TM"    col="team"      left />
+              <TH label="#"      col="rank"             left  w={36} />
+              <TH label="Player" col="name"             left  w={150} />
+              <TH label="TM"     col="team"             left  w={36} />
               {showBoth ? (
                 <>
-                  <TH label="ADJ$"  col="adj_value" />
-                  <TH label="BATX"  col="est_value" />
-                  <TH label="OPSY"  col="oopsy_est_value" />
+                  <TH label="ADJ$"  col="adj_value"        w={72} />
+                  <TH label="BATX"  col="est_value"        w={60} />
+                  <TH label="OPSY"  col="oopsy_est_value"  w={60} />
                 </>
               ) : (
-                <TH label="ADJ$" col="adj_value" />
+                <TH label="ADJ$" col="adj_value" w={72} />
               )}
-              {statCols.map(c => <TH key={c.key} label={c.label} col={c.key} />)}
-              <TH label="ROFR" col="rfa_team" />
-              {fryLens && <TH label="FRY" col="adj_value" />}
-              <th style={{ ...thBase, width: 52, background: 'var(--surface)' }} />
+              {statCols.map(c => <TH key={c.key} label={c.label} col={c.key} w={68} />)}
+              <TH label="ROFR"   col="rfa_team"           w={44} />
+              {fryLens && <TH label="FRY" col="adj_value" w={90} />}
+              <th style={{ ...thBase, minWidth: 50, background: 'var(--surface)' }} />
             </tr>
           </thead>
           <tbody>
@@ -438,5 +488,5 @@ const thBase = {
   color: 'var(--text-dim)', borderBottom: '1px solid var(--border)',
   whiteSpace: 'nowrap', userSelect: 'none',
 }
-const tdBase = { padding: '7px 8px', fontSize: 12, color: 'var(--text-dim)' }
-const tdNum  = { padding: '7px 8px', textAlign: 'right', fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }
+const tdBase = { padding: '7px 10px', fontSize: 12, color: 'var(--text-dim)' }
+const tdNum  = { padding: '7px 10px', textAlign: 'right', fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }
