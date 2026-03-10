@@ -28,12 +28,12 @@ function recalcValues(players, teams, soldMap) {
 
   function allocGroup(group, budget) {
     const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
-    if (!positiveTotal) return group.map(p => ({ ...p, adj_value: 1 }))
+    if (!positiveTotal) return group.map(p => ({ ...p, adj_value: 0.5 }))
     return group.map(p => ({
       ...p,
       adj_value: p.ldb_score > 0
-        ? Math.max(1, Math.round((p.ldb_score / positiveTotal) * budget))
-        : 1
+        ? Math.max(0.5, Math.round((p.ldb_score / positiveTotal) * budget * 2) / 2)
+        : 0.5
     }))
   }
 

@@ -47,13 +47,16 @@ function fmt(v, dec = 0) {
 }
 
 // ── Z-SCORE ABOVE REPLACEMENT ─────────────────────────────────────────────────
-// Replacement level = average of Tier 5 (floor) unsold players for each stat.
+// Replacement level = average of $0.5M floor unsold players for each stat.
+// Falls back to Tier 5 if no floor players are present yet.
 // z = (player_stat − repl_avg) / stddev(all unsold)
 // For inverse stats (ERA, WHIP, HRA): z = (repl_avg − player_stat) / stddev
 function computeZScores(unsoldPlayers, statCols) {
   if (!unsoldPlayers.length) return {}
 
-  const repl = unsoldPlayers.filter(p => p.tier === 5)
+  const repl = unsoldPlayers.filter(p => p.est_value === 0.5).length
+    ? unsoldPlayers.filter(p => p.est_value === 0.5)
+    : unsoldPlayers.filter(p => p.tier === 5)
   const scores = {}
 
   for (const col of statCols.filter(c => !c.noZ)) {

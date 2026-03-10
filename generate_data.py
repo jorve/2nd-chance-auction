@@ -163,9 +163,10 @@ def compute_values(players, cat_weights, budget):
     pos_total = sum(p["LDB_Score"] for p in players if p["LDB_Score"] > 0)
     for p in players:
         if p["LDB_Score"] > 0 and pos_total > 0:
-            p["Est_Value"] = max(1, round((p["LDB_Score"]/pos_total)*budget))
+            raw = (p["LDB_Score"] / pos_total) * budget
+            p["Est_Value"] = max(0.5, round(raw * 2) / 2)
         else:
-            p["Est_Value"] = 1
+            p["Est_Value"] = 0.5
     return players
 
 # ── DRAFT BOARD ────────────────────────────────────────────────────────────────
