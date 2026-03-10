@@ -143,7 +143,9 @@ def get_rfa_team(proj_name, rfa_norm):
         if SequenceMatcher(None, n, rn).ratio() > 0.85: return t
     return ""
 
-def compute_values(players, cat_weights, budget):
+def compute_ldb_scores(players, cat_weights):
+    """Compute z-scores and LDB_Score for a list of players. Sorts by LDB_Score descending.
+    Expects _raw_* keys to already be set on each player dict."""
     for key, (higher, weight) in cat_weights.items():
         raw_key = f"_raw_{key}"
         if raw_key not in players[0]:
@@ -160,6 +162,11 @@ def compute_values(players, cat_weights, budget):
     for p in players:
         p["LDB_Score"] = sum(p[f"_z_{key}"] for key in cat_weights)
     players.sort(key=lambda x: x["LDB_Score"], reverse=True)
+    return players
+
+def assign_est_values(players, budget):
+    """Assign Est_Value to each player proportionally from budget by LDB_Score.
+    Players must already have LDB_Score set. Modifies in place, returns players."""
     pos_total = sum(p["LDB_Score"] for p in players if p["LDB_Score"] > 0)
     for p in players:
         if p["LDB_Score"] > 0 and pos_total > 0:
@@ -167,6 +174,12 @@ def compute_values(players, cat_weights, budget):
             p["Est_Value"] = max(0.5, round(raw * 2) / 2)
         else:
             p["Est_Value"] = 0.5
+    return players
+
+def compute_values(players, cat_weights, budget):
+    """Convenience: compute z-scores + assign Est_Value in one call."""
+    players = compute_ldb_scores(players, cat_weights)
+    players = assign_est_values(players, budget)
     return players
 
 # ── DRAFT BOARD ────────────────────────────────────────────────────────────────
@@ -352,24 +365,32 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
 def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
-    eligible = [r for r in rows if fv(r,"PA") >= MIN_PA and not is_unavailable(r["Name"], unavail)]
-    for r in eligible:
+    cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
+                   "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
+
+    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    all_qualified = [r for r in rows if fv(r,"PA") >= MIN_PA]
+    for r in all_qualified:
         r["_raw_aSB"]  = calc_aSB(r)
         r["_raw_HR"]   = fv(r,"HR")
         r["_raw_R"]    = fv(r,"R")
         r["_raw_OBP"]  = fv(r,"OBP")
         r["_raw_OPS"]  = fv(r,"OPS")
         r["_raw_aRBI"] = fv(r,"RBI")
-    cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
-                   "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
-    eligible = compute_values(eligible, cat_weights, budget)
+    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
+
+    # ── Auction pool: filter to available, assign Est_Value ───────────────────
+    eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
+    eligible = assign_est_values(eligible, budget)
+
     results = []
     for i, p in enumerate(eligible):
         tier = 1 if i<10 else 2 if i<30 else 3 if i<70 else 4 if i<140 else 5
         results.append({
             "id": f"{system_name}_b_{i}",
             "system": system_name,
-            "rank": i+1, "tier": tier,
+            "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
             "name": p["Name"], "team": p.get("Team",""),
             "g": round(fv(p,"G"),1), "pa": round(fv(p,"PA"),1),
@@ -389,23 +410,31 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
 def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
-    eligible = [r for r in rows if fv(r,"GS") >= MIN_GS and not is_unavailable(r["Name"], unavail)]
-    for r in eligible:
+    cat_weights = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
+                   "HRA":(False,1.5),"aWHIP":(False,1.5)}
+
+    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    all_qualified = [r for r in rows if fv(r,"GS") >= MIN_GS]
+    for r in all_qualified:
         r["_raw_MGS"]   = calc_mgs_season(r)
         r["_raw_K"]     = fv(r,"SO")
         r["_raw_ERA"]   = fv(r,"ERA")
         r["_raw_HRA"]   = fv(r,"HR")
         r["_raw_aWHIP"] = fv(r,"WHIP")
-    cat_weights = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
-                   "HRA":(False,1.5),"aWHIP":(False,1.5)}
-    eligible = compute_values(eligible, cat_weights, budget)
+    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
+
+    # ── Auction pool: filter to available, assign Est_Value ───────────────────
+    eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
+    eligible = assign_est_values(eligible, budget)
+
     results = []
     for i, p in enumerate(eligible):
         tier = 1 if i<8 else 2 if i<20 else 3 if i<50 else 4 if i<100 else 5
         results.append({
             "id": f"{system_name}_sp_{i}",
             "system": system_name,
-            "rank": i+1, "tier": tier,
+            "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
             "name": p["Name"], "team": p.get("Team",""),
             "gs": round(fv(p,"GS"),1), "ip": round(fv(p,"IP"),1),
@@ -424,23 +453,31 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
-    eligible = [r for r in rows if fv(r,"IP") >= MIN_IP and not is_unavailable(r["Name"], unavail)]
-    for r in eligible:
+    cat_weights = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
+                   "HRA":(False,1.0),"aWHIP":(False,1.0)}
+
+    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    all_qualified = [r for r in rows if fv(r,"IP") >= MIN_IP]
+    for r in all_qualified:
         r["_raw_VIJAY"] = calc_vijay_season(r)
         r["_raw_K"]     = fv(r,"SO")
         r["_raw_ERA"]   = fv(r,"ERA")
         r["_raw_HRA"]   = fv(r,"HR")
         r["_raw_aWHIP"] = fv(r,"WHIP")
-    cat_weights = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
-                   "HRA":(False,1.0),"aWHIP":(False,1.0)}
-    eligible = compute_values(eligible, cat_weights, budget)
+    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
+
+    # ── Auction pool: filter to available, assign Est_Value ───────────────────
+    eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
+    eligible = assign_est_values(eligible, budget)
+
     results = []
     for i, p in enumerate(eligible):
         tier = 1 if i<8 else 2 if i<20 else 3 if i<50 else 4 if i<100 else 5
         results.append({
             "id": f"{system_name}_rp_{i}",
             "system": system_name,
-            "rank": i+1, "tier": tier,
+            "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
             "name": p["Name"], "team": p.get("Team",""),
             "g": round(fv(p,"G"),1), "ip": round(fv(p,"IP"),1),

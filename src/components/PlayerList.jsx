@@ -94,13 +94,13 @@ export default function PlayerList() {
   } = useAuctionStore()
 
   const [sortCol, setSortCol]               = useState('adj_value')
-  const [sortDir, setSortDir]               = useState(-1)
+  const [sortDir, setSortDir]               = useState(1)
   const [selectedPlayer, setSelectedPlayer] = useState(null)
   const [tagFilter, setTagFilter]           = useState(new Set())
   const [showTagPicker, setShowTagPicker]   = useState(false)
 
   // Reset sort + filters when tab changes
-  useEffect(() => { setSortCol('adj_value'); setSortDir(-1) }, [rankingsTab])
+  useEffect(() => { setSortCol('adj_value'); setSortDir(1) }, [rankingsTab])
   useEffect(() => { setTagFilter(new Set()); setShowTagPicker(false) }, [rankingsTab])
 
   // Close tag picker on outside click
@@ -192,7 +192,7 @@ export default function PlayerList() {
 
   function handleSort(col) {
     if (sortCol === col) setSortDir(d => d * -1)
-    else { setSortCol(col); setSortDir(-1) }
+    else { setSortCol(col); setSortDir(1) }
   }
 
   const TH = ({ label, col, left, w }) => (

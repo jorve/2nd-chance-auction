@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useAuctionStore, FRY_NEEDS } from '../store/auctionStore.jsx'
+import PlayerCard from './PlayerCard.jsx'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 
@@ -52,6 +54,7 @@ function getSignalLabel(player, fry, type) {
 export default function FryTargets() {
   const { batters, sp, rp, sold, teams, setNominatedPlayer } = useAuctionStore()
   const fry = teams['FRY'] || {}
+  const [selectedPlayer, setSelectedPlayer] = useState(null)
 
   const allAvailable = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
 
@@ -60,9 +63,21 @@ export default function FryTargets() {
     return { ...p, _fryScore: fryScore(p, fry, type), _type: type }
   })
 
-  const top10 = scored
-    .sort((a, b) => b._fryScore - a._fryScore)
-    .slice(0, 10)
+  // Cap RPs at 2 so the list isn't dominated by relievers
+  const MAX_RP = 2
+  const top10 = (() => {
+    const result = []
+    let rpCount = 0
+    for (const p of scored.sort((a, b) => b._fryScore - a._fryScore)) {
+      if (p._type === 'RP') {
+        if (rpCount >= MAX_RP) continue
+        rpCount++
+      }
+      result.push(p)
+      if (result.length >= 10) break
+    }
+    return result
+  })()
 
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
 
@@ -109,7 +124,7 @@ export default function FryTargets() {
               }}
               onMouseEnter={e => e.currentTarget.style.background = '#13161e'}
               onMouseLeave={e => e.currentTarget.style.background = ''}
-              onClick={() => setNominatedPlayer(p)}
+              onClick={() => setSelectedPlayer(p)}
             >
               {/* Rank number */}
               <div style={{
@@ -165,8 +180,13 @@ export default function FryTargets() {
         fontFamily: "'DM Mono', monospace", fontSize: 8,
         color: 'var(--text-faint)', flexShrink: 0,
       }}>
-        Click any player to nominate · Scored for FRY needs
+        Click any player to view card · Scored for FRY needs
       </div>
+
+      {/* Player card overlay */}
+      {selectedPlayer && (
+        <PlayerCard player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
+      )}
     </div>
   )
 }
