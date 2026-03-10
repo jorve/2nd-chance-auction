@@ -185,7 +185,12 @@ export default function FryTargets() {
 
       {/* Player card overlay */}
       {selectedPlayer && (
-        <PlayerCard player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
+        <PlayerCard
+          player={selectedPlayer}
+          teams={teams}
+          onClose={() => setSelectedPlayer(null)}
+          onNominate={p => { setNominatedPlayer(p); setSelectedPlayer(null) }}
+        />
       )}
     </div>
   )
