@@ -15,13 +15,17 @@ const BATTER_COLS = [
   { key: 'war',      label: 'WAR',  fmt: 1 },
 ]
 const SP_COLS = [
-  { key: 'ip',   label: 'IP',   fmt: 0 },
-  { key: 'k',    label: 'K',    fmt: 0 },
-  { key: 'era',  label: 'ERA',  fmt: 2, inv: true },
-  { key: 'whip', label: 'WHIP', fmt: 3, inv: true },
-  { key: 'hra',  label: 'HRA',  fmt: 0, inv: true },
-  { key: 'mgs',  label: 'MGS/GS', fmt: 2 },
-  { key: 'war',  label: 'WAR',  fmt: 1 },
+  { key: 'ip',           label: 'IP',     fmt: 0 },
+  { key: 'k',            label: 'K',      fmt: 0 },
+  { key: 'era',          label: 'ERA',    fmt: 2, inv: true },
+  { key: 'whip',         label: 'WHIP',   fmt: 3, inv: true },
+  { key: 'hra',          label: 'HRA',    fmt: 0, inv: true },
+  { key: 'mgs',          label: 'MGS/GS', fmt: 2 },
+  { key: 'war',          label: 'WAR',    fmt: 1 },
+  { key: 'stuff_plus',   label: 'STF+',   fmt: 0, noZ: true },
+  { key: 'pitching_plus',label: 'PTH+',   fmt: 0, noZ: true },
+  { key: 'pp_era',       label: 'ppERA',  fmt: 2, inv: true, noZ: true },
+  { key: 'athl_health',  label: 'H%',     fmt: 0, noZ: true },
 ]
 const RP_COLS = [
   { key: 'ip',    label: 'IP',   fmt: 0 },
@@ -51,7 +55,7 @@ function computeZScores(unsoldPlayers, statCols) {
   const repl = unsoldPlayers.filter(p => p.tier === 5)
   const scores = {}
 
-  for (const col of statCols) {
+  for (const col of statCols.filter(c => !c.noZ)) {
     const key = col.key
     const allVals  = unsoldPlayers.map(p => p[key] ?? 0).filter(v => isFinite(v))
     const replVals = repl.length ? repl.map(p => p[key] ?? 0).filter(v => isFinite(v)) : allVals
@@ -321,14 +325,19 @@ export default function PlayerList() {
                       {p.rank}
                     </td>
 
-                    {/* Name + tags */}
-                    <td style={{ ...tdBase, textAlign: 'left', maxWidth: 180, minWidth: 140 }}>
+                    {/* Name + positions + tags */}
+                    <td style={{ ...tdBase, textAlign: 'left', maxWidth: 200, minWidth: 160 }}>
                       <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                         {p.name}
                       </div>
+                      {p.positions?.length > 0 && (
+                        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)', marginTop: 1, letterSpacing: 0.3 }}>
+                          {p.positions.join(' · ')}
+                        </div>
+                      )}
                       {p.tags?.length > 0 && (
                         <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap', marginTop: 2 }}>
-                          {p.tags.slice(0, 4).map(tag => <MiniTag key={tag} tag={tag} />)}
+                          {p.tags.map(tag => <MiniTag key={tag} tag={tag} />)}
                         </div>
                       )}
                     </td>
@@ -361,6 +370,14 @@ export default function PlayerList() {
                         ? p[`oopsy_${c.key}`]
                         : p[c.key]
                       const z = pz[c.key]
+                      if (c.noZ) {
+                        // Athletic / display-only columns — no z-score, just colored value
+                        return (
+                          <td key={c.key} style={{ ...tdNum, verticalAlign: 'middle' }}>
+                            <AthlStat val={rawVal} colKey={c.key} fmt={c.fmt} />
+                          </td>
+                        )
+                      }
                       return (
                         <td key={c.key} style={{ ...tdNum, verticalAlign: 'top' }}>
                           {/* Z-score */}
@@ -485,6 +502,101 @@ function getFrySignal(player, fry) {
   if (player.tier === 2) return { label: 'TARGET',  color: 'var(--t2)',         icon: '◎' }
   if (pct < 0.03)        return { label: 'ENDGAME', color: 'var(--text-dim)',   icon: '$1' }
   return                        { label: 'WATCH',   color: 'var(--text-faint)', icon: '·' }
+}
+
+// ── MINI TAG ──────────────────────────────────────────────────────────────────
+const TAG_CONFIG = {
+  ELITE:        { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'ELITE' },
+  POWER_OBP:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'PWR+OBP' },
+  HR_THREAT:    { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'HR' },
+  SB_THREAT:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'SB' },
+  OBP_ONLY:     { bg: 'rgba(56,189,248,.08)',  color: 'var(--blue)',    text: 'OBP' },
+  WORKHORSE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'WRKHRS' },
+  K_MACHINE:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'K MACH' },
+  RATIOS_ACE:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RATIOS' },
+  GB_PITCHER:   { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'GB' },
+  MGS_ELITE:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'MGS+' },
+  INNINGS_EAT:  { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'INN' },
+  CLOSER:       { bg: 'rgba(251,146,60,.15)',  color: 'var(--orange)',  text: 'CLOSER' },
+  HOLDS_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'HOLDS' },
+  SAVES_SAFE:   { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'SV ✓' },
+  CLOSER_RISK:  { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'SV RISK' },
+  ELITE_ERA:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ERA+' },
+  VIJAY_ELITE:  { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'VIJAY+' },
+  SLEEPER:      { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'SLP' },
+  BREAKOUT:     { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'BRKOUT' },
+  BOUNCE_BACK:  { bg: 'rgba(200,241,53,.10)',  color: 'var(--t1)',      text: 'BNCE' },
+  BUST:         { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'BUST' },
+  INJURED:      { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'INJ' },
+  IL:           { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'IL' },
+  IL_START:     { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'IL-ST' },
+  DTD:          { bg: 'rgba(251,146,60,.15)',  color: 'var(--orange)',  text: 'DTD' },
+  DELAYED:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'DLY' },
+  INJURY_RISK:  { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'INJ?' },
+  ROLE_UNCLEAR: { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'ROLE?' },
+  STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
+  PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSP' },
+  DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP' },
+  ADP_VALUE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'VALUE' },
+  ADP_AVOID:    { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'AVOID' },
+}
+
+function MiniTag({ tag }) {
+  const cfg = TAG_CONFIG[tag] || { bg: 'rgba(148,163,184,.10)', color: 'var(--muted)', text: tag }
+  return (
+    <span style={{
+      display: 'inline-block',
+      background: cfg.bg, color: cfg.color,
+      border: `1px solid ${cfg.color}44`,
+      borderRadius: 2, padding: '1px 4px',
+      fontFamily: "'DM Mono', monospace", fontSize: 7,
+      letterSpacing: 0.4, lineHeight: 1.5, fontWeight: 600,
+      textTransform: 'uppercase',
+    }}>
+      {cfg.text}
+    </span>
+  )
+}
+
+// ── ATHLETIC STAT CELL ────────────────────────────────────────────────────────
+// Color-codes Stuff+/PTH+ above/below 100, ppERA like ERA, H% as health signal
+function AthlStat({ val, colKey, fmt: fmtDec }) {
+  if (val == null) return <span style={{ fontSize: 10, color: 'var(--muted)' }}>—</span>
+
+  let color = 'var(--text-dim)'
+  const n = parseFloat(val)
+
+  if (colKey === 'stuff_plus' || colKey === 'pitching_plus' || colKey === 'location_plus') {
+    if (n >= 115)      color = '#4ade80'
+    else if (n >= 105) color = '#86efac'
+    else if (n >= 95)  color = 'var(--text-dim)'
+    else if (n >= 85)  color = '#fca5a5'
+    else               color = '#f87171'
+  } else if (colKey === 'pp_era') {
+    if (n <= 3.00)      color = '#4ade80'
+    else if (n <= 3.50) color = '#86efac'
+    else if (n <= 4.00) color = 'var(--text-dim)'
+    else if (n <= 4.50) color = '#fca5a5'
+    else                color = '#f87171'
+  } else if (colKey === 'athl_health') {
+    if (n >= 90)       color = '#4ade80'
+    else if (n >= 80)  color = '#86efac'
+    else if (n >= 70)  color = 'var(--orange)'
+    else               color = '#f87171'
+  }
+
+  const display = fmtDec ? n.toFixed(fmtDec) : Math.round(n)
+  const suffix  = colKey === 'athl_health' ? '%' : ''
+
+  return (
+    <span style={{
+      fontFamily: "'DM Mono', monospace",
+      fontSize: 11, color,
+      fontWeight: n >= 110 || (colKey === 'athl_health' && n < 75) ? 600 : 400,
+    }}>
+      {display}{suffix}
+    </span>
+  )
 }
 
 // ── SHARED STYLES ─────────────────────────────────────────────────────────────

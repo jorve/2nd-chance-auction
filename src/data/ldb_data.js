@@ -5,7 +5,7 @@ export const LDB_DATA = {
   "generated_at": "2026-03-09",
   "meta": {
     "total_budget": 2451.57,
-    "hit_budget": 1225.78,
+    "hit_budget": 1225.79,
     "sp_budget": 735.47,
     "rp_budget": 490.31,
     "min_pa": 200,
@@ -1083,257 +1083,257 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "O. Peraza",
-    "P. Burdick",
-    "J. Gonzalez",
-    "K. Campbell",
-    "J. Bukauskas",
-    "M. Arroyo",
-    "N. Marte",
-    "K. Mcgonigle",
-    "N. Pearson",
-    "J. Triantos",
-    "N. Schultz",
-    "G. Lavigne",
-    "C. Spangenberg",
-    "N. Meyer",
-    "H. Davis",
-    "K. Allard",
-    "E. Green",
-    "R. Herrera",
-    "T. Szapucki",
-    "C. Bonemer",
-    "S. Stewart",
-    "A. Gracia",
-    "A. Painter",
-    "C. Collier",
-    "L. Matos",
-    "C. Winn",
-    "C. Benge",
-    "K. Robinson",
-    "A. Jackson",
-    "C. Cavalli",
-    "A. Hansen",
-    "J. Lebron",
-    "T. Bremner",
-    "Ad. Sanchez",
-    "D. Curley",
-    "S. Sanchez",
-    "B. Davis",
-    "C. Mayo",
-    "C. Keith",
-    "A. Bracho",
-    "Z. Hope",
-    "D. Cartaya",
-    "E. Hancock",
-    "J. LaViolette",
-    "J. Perdomo",
-    "A. Gose",
-    "C. Hernandez",
-    "F. Alvarez",
-    "C. Pache",
-    "C. Emerson",
-    "W. Jenkins",
-    "D.J. Peterson",
-    "B. Goodwin",
-    "J. Turner",
-    "D. Whitney",
-    "F. Kilome",
-    "R. Ryan",
-    "F. Barreto",
-    "M. Harrison",
-    "T. Beede",
-    "F. Wall",
-    "B. Eldridge",
-    "A. Genao",
-    "T. Bradley",
-    "Q. Mathews",
-    "R. Contreras",
-    "J. Groshans",
-    "M. Abel",
-    "A. Meyer",
-    "D. Burress",
-    "R. Tiedemann",
-    "B. McKay",
-    "R. Hassell",
-    "E. Florentino",
-    "J. Farmelo",
-    "T. Black",
-    "M. Clark",
-    "O. Caissie",
-    "J. Bleday",
-    "J. De Paula",
-    "A. Martin",
-    "Z. Matthews",
-    "T. Bazzana",
-    "D. Waters",
-    "S. Strosnider",
-    "H. Bishop",
-    "B. Shipley",
-    "J. Biddle",
-    "M. Baez",
-    "L. Patino",
-    "C. Dollander",
-    "M. Winn",
-    "L. Doyle",
-    "C. Condon",
-    "B. Thompson",
-    "L. Pena (MIL)",
-    "J. Rodriguez",
-    "T. Troy",
-    "A.J. Reed",
-    "F. Arias",
-    "L. Montes",
-    "J. De Leon",
-    "A. Nimmala",
-    "P. Messick",
-    "J. Parker",
-    "E. Carter",
-    "E. Conrad",
-    "H. Waldrep",
-    "C. Moore",
-    "R. Vilade",
-    "J. Guerra",
-    "J. Briceno",
-    "J. Misiorowski",
-    "J. Dunn",
-    "B. Montgomery",
-    "S. Zavala",
-    "J. Balazovic",
-    "C. Fuller",
-    "C. Frazier",
-    "B. Rocchio",
-    "R. Pint",
     "J. Luis",
-    "B. Wilken",
-    "H. Alvarez",
-    "J. Caglianone",
-    "T. White",
-    "K. Alcantara",
-    "J. Groome",
-    "O. Colas",
-    "R. Waldschmidt",
-    "J. Adams",
-    "T. Yamada",
-    "J. Crawford",
-    "P. Eeles",
-    "C. DeLauter",
-    "R. Sloan",
-    "S. Jones",
-    "W. Javier",
-    "J. P. Martinez",
-    "L. Hernandez",
-    "G. Canning",
-    "S. Basallo",
-    "Y. Curet",
-    "A. Arquette",
-    "R. Arias",
-    "E. Perez",
-    "A. Medina",
-    "T. Casas",
-    "T. Thomas",
-    "J. Bart",
-    "D. Garcia",
-    "Q. Priester",
-    "X. Neyens",
-    "D. Lesko",
-    "C. Young",
-    "J. Walker",
-    "C. Burns",
-    "R. Snelling",
-    "J. De Jesus Gonzalez",
-    "A. Baddoo",
-    "S. Torkelson",
-    "H. Smith",
-    "E. Rodriguez",
-    "A. Faedo",
-    "X. Isaac",
-    "T. Sykora",
-    "R. Calaz",
-    "C. Cowser",
-    "D. Cameron",
-    "M. Ballesteros",
-    "C. Kieboom",
-    "J. Williams",
-    "M. Banuelos",
-    "G. Taylor",
-    "L. De Vries",
-    "C. Williams",
-    "M. Mayer",
-    "C. Montgomery",
-    "R. Velazquez",
-    "S. Yamashita",
-    "B. Rainer",
-    "O. Martinez",
-    "B. Chandler",
-    "C. Lagrange",
-    "B. House",
-    "L. Allen",
-    "P. Tolle",
-    "K. Anderson",
-    "K. Griffin",
-    "D. Espino",
-    "C. Fulmer",
-    "C. Abrams",
-    "K. Harrison",
-    "A. Freeland",
-    "M. Sirota",
-    "K. Watson",
-    "M. Manning",
-    "C. Vaquero",
     "F. Celesten",
-    "R. Mauricio",
-    "C. Dana",
-    "L. Armenteros",
-    "E. Florial",
-    "C. Martin",
-    "N. Carlos Vera",
-    "J. Lawlar",
-    "A. Tejeda",
-    "E. Morales",
-    "G. Lombard Jr.",
-    "A. Duno",
-    "T. Widener",
-    "J. Jobe",
-    "S. Beer",
-    "L. Brinson",
-    "R. Lewis",
-    "Rain. Rodriguez",
-    "S. Howard",
-    "T. Lutz",
-    "T. Hence",
-    "C. Early",
-    "T. Yesavage",
-    "J. Arnold",
+    "W. Jenkins",
+    "K. Harrison",
     "T. Gillen",
+    "T. Yesavage",
+    "B. Montgomery",
+    "R. Snelling",
+    "F. Alvarez",
+    "C. Cavalli",
+    "A. Gracia",
+    "S. Basallo",
+    "L. Montes",
+    "T. Troy",
+    "J. Bleday",
     "K. Rocker",
-    "A. Miller",
+    "J. Crawford",
+    "P. Burdick",
+    "Q. Mathews",
+    "B. Goodwin",
+    "C. Williams",
     "N. Gonzales",
-    "DL Hall",
-    "G. Valera",
-    "Z. Veen",
-    "E. Holliday",
-    "G. Rodriguez",
-    "A. Page",
-    "E. Hankins",
-    "S. Walcott",
-    "C. Smith",
-    "M. Liberatore",
-    "Jai. Chourio",
-    "V. Brujan",
-    "J. Barrero",
-    "T. Johnson",
-    "T. Trammell",
-    "C. Jensen",
-    "Ja. Jung",
-    "M. Luciano",
-    "C. Norby",
-    "D. Jones",
-    "Jah. Jones",
-    "F. Whitley",
-    "H. Takahashi",
+    "H. Alvarez",
+    "A. Miller",
+    "B. McKay",
+    "T. Bremner",
     "H. Kjerstad",
-    "D. Crews"
+    "Jai. Chourio",
+    "C. Burns",
+    "C. Jensen",
+    "V. Brujan",
+    "J. Jobe",
+    "T. Beede",
+    "C. Emerson",
+    "M. Luciano",
+    "C. Frazier",
+    "A. Martin",
+    "T. Thomas",
+    "A. Gose",
+    "M. Arroyo",
+    "K. Watson",
+    "J. Farmelo",
+    "A. Painter",
+    "B. Davis",
+    "A. Meyer",
+    "J. Briceno",
+    "J. Williams",
+    "J. Bukauskas",
+    "N. Marte",
+    "S. Stewart",
+    "T. Johnson",
+    "E. Florentino",
+    "R. Vilade",
+    "L. Matos",
+    "K. Anderson",
+    "J. LaViolette",
+    "L. Hernandez",
+    "G. Rodriguez",
+    "J. Walker",
+    "R. Pint",
+    "K. Alcantara",
+    "K. Griffin",
+    "J. Groome",
+    "J. Lebron",
+    "N. Meyer",
+    "M. Mayer",
+    "S. Sanchez",
+    "Ja. Jung",
+    "R. Hassell",
+    "R. Mauricio",
+    "T. Lutz",
+    "A. Baddoo",
+    "T. Bazzana",
+    "D. Cameron",
+    "J. Balazovic",
+    "L. Armenteros",
+    "C. Smith",
+    "C. Abrams",
+    "J. Perdomo",
+    "B. House",
+    "M. Harrison",
+    "C. DeLauter",
+    "D. Garcia",
+    "A. Faedo",
+    "A. Page",
+    "J. Barrero",
+    "G. Lombard Jr.",
+    "S. Torkelson",
+    "J. Rodriguez",
+    "C. Keith",
+    "N. Carlos Vera",
+    "D. Lesko",
+    "H. Waldrep",
+    "G. Canning",
+    "L. Pena (MIL)",
+    "L. Brinson",
+    "F. Barreto",
+    "T. Szapucki",
+    "P. Eeles",
+    "R. Arias",
+    "A. Freeland",
+    "B. Rocchio",
+    "J. Parker",
+    "A. Hansen",
+    "C. Cowser",
+    "O. Colas",
+    "C. Early",
+    "J. Bart",
+    "C. Hernandez",
+    "DL Hall",
+    "C. Pache",
+    "D.J. Peterson",
+    "C. Montgomery",
+    "M. Ballesteros",
+    "J. Dunn",
+    "E. Holliday",
+    "H. Bishop",
+    "S. Zavala",
+    "T. Black",
+    "J. De Jesus Gonzalez",
+    "B. Rainer",
+    "E. Perez",
+    "T. Trammell",
+    "K. Campbell",
+    "F. Whitley",
+    "Z. Matthews",
+    "A. Duno",
+    "E. Conrad",
+    "R. Calaz",
+    "Y. Curet",
+    "C. Condon",
+    "E. Green",
+    "Ad. Sanchez",
+    "D. Espino",
+    "D. Curley",
+    "W. Javier",
+    "M. Banuelos",
+    "T. Yamada",
+    "J. Groshans",
+    "C. Martin",
+    "C. Collier",
+    "C. Mayo",
+    "R. Contreras",
+    "C. Moore",
+    "H. Smith",
+    "D. Cartaya",
+    "H. Takahashi",
+    "A. Arquette",
+    "T. Casas",
+    "E. Carter",
+    "D. Jones",
+    "B. Chandler",
+    "D. Waters",
+    "E. Hancock",
+    "K. Allard",
+    "O. Martinez",
+    "J. P. Martinez",
+    "T. Widener",
+    "J. Triantos",
+    "L. Doyle",
+    "A.J. Reed",
+    "N. Schultz",
+    "A. Jackson",
+    "M. Liberatore",
+    "J. Misiorowski",
+    "S. Strosnider",
+    "J. Arnold",
+    "G. Lavigne",
+    "J. Biddle",
+    "J. De Leon",
+    "C. Kieboom",
+    "A. Tejeda",
+    "B. Wilken",
+    "A. Nimmala",
+    "C. Lagrange",
+    "M. Abel",
+    "S. Jones",
+    "J. Lawlar",
+    "X. Isaac",
+    "R. Herrera",
+    "G. Taylor",
+    "C. Fuller",
+    "A. Genao",
+    "C. Young",
+    "R. Ryan",
+    "J. Guerra",
+    "C. Spangenberg",
+    "T. White",
+    "J. Adams",
+    "C. Vaquero",
+    "H. Davis",
+    "T. Bradley",
+    "Jah. Jones",
+    "R. Lewis",
+    "E. Hankins",
+    "R. Waldschmidt",
+    "L. Allen",
+    "G. Valera",
+    "B. Shipley",
+    "M. Baez",
+    "M. Manning",
+    "F. Wall",
+    "F. Kilome",
+    "J. De Paula",
+    "A. Bracho",
+    "L. De Vries",
+    "S. Walcott",
+    "S. Howard",
+    "C. Winn",
+    "J. Caglianone",
+    "J. Turner",
+    "C. Dollander",
+    "Q. Priester",
+    "D. Whitney",
+    "O. Peraza",
+    "P. Messick",
+    "R. Tiedemann",
+    "R. Sloan",
+    "K. Mcgonigle",
+    "D. Burress",
+    "P. Tolle",
+    "K. Robinson",
+    "M. Clark",
+    "M. Sirota",
+    "C. Benge",
+    "O. Caissie",
+    "C. Bonemer",
+    "C. Norby",
+    "S. Beer",
+    "R. Velazquez",
+    "L. Patino",
+    "C. Fulmer",
+    "A. Medina",
+    "B. Eldridge",
+    "T. Hence",
+    "X. Neyens",
+    "E. Rodriguez",
+    "E. Florial",
+    "Z. Hope",
+    "M. Winn",
+    "T. Sykora",
+    "F. Arias",
+    "J. Gonzalez",
+    "B. Thompson",
+    "C. Dana",
+    "D. Crews",
+    "E. Morales",
+    "Rain. Rodriguez",
+    "N. Pearson",
+    "S. Yamashita",
+    "Z. Veen"
   ],
   "batters": [
     {
@@ -1819,8 +1819,8 @@ export const LDB_DATA = {
       "oopsy_war": 3.45,
       "oopsy_g": 126.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -1970,8 +1970,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.89,
       "oopsy_g": 143.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -2424,8 +2424,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -2475,8 +2475,8 @@ export const LDB_DATA = {
       "oopsy_war": 3.67,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -2775,8 +2775,8 @@ export const LDB_DATA = {
       "oopsy_war": 3.9,
       "oopsy_g": 157.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -3124,8 +3124,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.56,
       "oopsy_g": 126.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -3511,8 +3511,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4374,8 +4374,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.53,
       "oopsy_g": 134.0,
       "tags": [
-        "PLATOON",
         "DEEP_LEAGUE",
+        "PLATOON",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4477,9 +4477,9 @@ export const LDB_DATA = {
       "oopsy_war": 2.82,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
         "STREAKY",
-        "SLEEPER"
+        "SLEEPER",
+        "INJURY_RISK"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
       "health_pct": 72,
@@ -4633,8 +4633,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.08,
       "oopsy_g": 112.0,
       "tags": [
-        "PLATOON",
         "DEEP_LEAGUE",
+        "PLATOON",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4790,8 +4790,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 130.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -4892,8 +4892,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.61,
       "oopsy_g": 96.0,
       "tags": [
-        "ROFR_TARGET",
         "BUST",
+        "ROFR_TARGET",
         "INJURY_RISK"
       ],
       "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
@@ -5045,8 +5045,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5501,8 +5501,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -6011,8 +6011,8 @@ export const LDB_DATA = {
       "oopsy_war": 3.17,
       "oopsy_g": 141.0,
       "tags": [
-        "SLEEPER",
-        "BUST"
+        "BUST",
+        "SLEEPER"
       ],
       "note": "[PL #79] Elite first-half: 14 HR / 13 SB / .271. Second half: 2 HR, power fell off cliff vs fastballs. Key question: can he punish fastballs? If yes = top-75 hitter. If no = huge negative floor.",
       "health_pct": 88,
@@ -6513,8 +6513,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.14,
       "oopsy_g": 110.0,
       "tags": [
-        "ADP_VALUE",
-        "PLATOON"
+        "PLATOON",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -7078,8 +7078,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.73,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "BUST"
+        "BUST",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8492,8 +8492,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -9369,8 +9369,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.91,
       "oopsy_g": 97.0,
       "tags": [
-        "ADP_VALUE",
-        "PLATOON"
+        "PLATOON",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -10201,8 +10201,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.02,
       "oopsy_g": 92.0,
       "tags": [
-        "INJURY_RISK",
-        "BUST"
+        "BUST",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -11514,8 +11514,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_VALUE"
       ],
       "note": "",
@@ -12037,8 +12037,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.52,
       "oopsy_g": 63.0,
       "tags": [
-        "SLEEPER",
-        "PLATOON"
+        "PLATOON",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -12088,8 +12088,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.82,
       "oopsy_g": 92.0,
       "tags": [
-        "PLATOON",
         "DEEP_LEAGUE",
+        "PLATOON",
         "ADP_AVOID"
       ],
       "note": "",
@@ -13978,9 +13978,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 13.16,
       "oopsy_fip": 2.706,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "BREAKOUT",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
       "health_pct": 95,
@@ -13989,7 +13989,15 @@ export const LDB_DATA = {
       "pl_tier": 1,
       "pl_tier_name": "STUD",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 1,
+      "stuff_plus": 123,
+      "location_plus": 101,
+      "pitching_plus": 123,
+      "athl_health": 87.0,
+      "athl_ip": 189.0,
+      "pp_era": 2.55,
+      "pp_k_pct": 30.9
     },
     {
       "id": "atc_sp_1",
@@ -14029,9 +14037,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.32,
       "oopsy_fip": 3.155,
       "tags": [
-        "AGING",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "AGING",
         "INJURY_RISK",
         "ADP_AVOID"
       ],
@@ -14042,7 +14050,15 @@ export const LDB_DATA = {
       "pl_tier": 4,
       "pl_tier_name": "AGA Injury Risk",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 10,
+      "stuff_plus": 116,
+      "location_plus": 102,
+      "pitching_plus": 113,
+      "athl_health": 63.0,
+      "athl_ip": 159.0,
+      "pp_era": 3.02,
+      "pp_k_pct": 29.8
     },
     {
       "id": "atc_sp_2",
@@ -14081,8 +14097,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.38,
       "oopsy_fip": 3.298,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
       "health_pct": 93,
@@ -14091,7 +14107,15 @@ export const LDB_DATA = {
       "pl_tier": 2,
       "pl_tier_name": "AGA 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 8,
+      "stuff_plus": 104,
+      "location_plus": 102,
+      "pitching_plus": 108,
+      "athl_health": 88.0,
+      "athl_ip": 161.0,
+      "pp_era": 3.05,
+      "pp_k_pct": 27.7
     },
     {
       "id": "atc_sp_3",
@@ -14130,8 +14154,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.58,
       "oopsy_fip": 3.314,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "STASH",
         "INJURY_RISK",
         "ADP_AVOID"
@@ -14143,7 +14167,15 @@ export const LDB_DATA = {
       "pl_tier": 13,
       "pl_tier_name": "Injury Stash 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 39,
+      "stuff_plus": 110,
+      "location_plus": 108,
+      "pitching_plus": 120,
+      "athl_health": 67.0,
+      "athl_ip": 131.0,
+      "pp_era": 3.19,
+      "pp_k_pct": 29.1
     },
     {
       "id": "atc_sp_4",
@@ -14182,8 +14214,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.9,
       "oopsy_fip": 3.502,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Yankees SP1 — locked. Dominant NL arm, now in AL. Command-first profile suits LDB ratios well. Full season starter.",
       "health_pct": 90,
@@ -14192,7 +14224,15 @@ export const LDB_DATA = {
       "pl_tier": 2,
       "pl_tier_name": "AGA 1",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 7,
+      "stuff_plus": 109,
+      "location_plus": 103,
+      "pitching_plus": 113,
+      "athl_health": 87.0,
+      "athl_ip": 179.0,
+      "pp_era": 3.32,
+      "pp_k_pct": 23.4
     },
     {
       "id": "atc_sp_5",
@@ -14231,10 +14271,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "RATIOS_ACE",
-        "INJURED",
         "ROFR_TARGET",
-        "IL_START"
+        "IL_START",
+        "RATIOS_ACE",
+        "INJURED"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -14243,7 +14283,15 @@ export const LDB_DATA = {
       "pl_tier": 2,
       "pl_tier_name": "AGA 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 11,
+      "stuff_plus": 120,
+      "location_plus": 104,
+      "pitching_plus": 120,
+      "athl_health": 73.0,
+      "athl_ip": 169.0,
+      "pp_era": 3.24,
+      "pp_k_pct": 30.5
     },
     {
       "id": "atc_sp_6",
@@ -14282,8 +14330,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.598,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
@@ -14293,7 +14341,15 @@ export const LDB_DATA = {
       "pl_tier": 6,
       "pl_tier_name": "Cherry Bomb",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 33,
+      "stuff_plus": 106,
+      "location_plus": 108,
+      "pitching_plus": 112,
+      "athl_health": 78.0,
+      "athl_ip": 161.0,
+      "pp_era": 3.48,
+      "pp_k_pct": 27.1
     },
     {
       "id": "atc_sp_7",
@@ -14332,9 +14388,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
-        "AGING",
         "RATIOS_ACE",
         "ROLE_UNCLEAR",
+        "AGING",
         "ADP_AVOID"
       ],
       "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
@@ -14344,7 +14400,15 @@ export const LDB_DATA = {
       "pl_tier": 9,
       "pl_tier_name": "Cherry Bomb But Moreso",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 23,
+      "stuff_plus": 104,
+      "location_plus": 109,
+      "pitching_plus": 114,
+      "athl_health": 65.0,
+      "athl_ip": 135.0,
+      "pp_era": 3.33,
+      "pp_k_pct": 29.5
     },
     {
       "id": "atc_sp_8",
@@ -14383,9 +14447,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.75,
       "oopsy_fip": 3.738,
       "tags": [
-        "RATIOS_ACE",
         "BUST",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
       "health_pct": 90,
@@ -14394,7 +14458,15 @@ export const LDB_DATA = {
       "pl_tier": 6,
       "pl_tier_name": "Cherry Bomb",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 27,
+      "stuff_plus": 108,
+      "location_plus": 100,
+      "pitching_plus": 107,
+      "athl_health": 90.0,
+      "athl_ip": 181.0,
+      "pp_era": 3.55,
+      "pp_k_pct": 27.6
     },
     {
       "id": "atc_sp_9",
@@ -14434,8 +14506,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.352,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
       "health_pct": 92,
@@ -14444,7 +14516,15 @@ export const LDB_DATA = {
       "pl_tier": 2,
       "pl_tier_name": "AGA 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 22,
+      "stuff_plus": 114,
+      "location_plus": 101,
+      "pitching_plus": 116,
+      "athl_health": 66.0,
+      "athl_ip": 121.0,
+      "pp_era": 3.08,
+      "pp_k_pct": 29.8
     },
     {
       "id": "atc_sp_10",
@@ -14484,8 +14564,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.41,
       "oopsy_fip": 3.718,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
       "health_pct": 88,
@@ -14494,7 +14574,15 @@ export const LDB_DATA = {
       "pl_tier": 3,
       "pl_tier_name": "AGA 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 20,
+      "stuff_plus": 108,
+      "location_plus": 103,
+      "pitching_plus": 108,
+      "athl_health": 88.0,
+      "athl_ip": 170.0,
+      "pp_era": 3.62,
+      "pp_k_pct": 26.6
     },
     {
       "id": "atc_sp_11",
@@ -14543,7 +14631,15 @@ export const LDB_DATA = {
       "pl_tier": 4,
       "pl_tier_name": "AGA Injury Risk",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 24,
+      "stuff_plus": 101,
+      "location_plus": 89,
+      "pitching_plus": 97,
+      "athl_health": 61.0,
+      "athl_ip": 129.0,
+      "pp_era": 3.39,
+      "pp_k_pct": 28.2
     },
     {
       "id": "atc_sp_12",
@@ -14590,7 +14686,15 @@ export const LDB_DATA = {
       "pl_tier": 9,
       "pl_tier_name": "Cherry Bomb But Moreso",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 82,
+      "stuff_plus": 0,
+      "location_plus": 0,
+      "pitching_plus": 0,
+      "athl_health": null,
+      "athl_ip": 109.0,
+      "pp_era": 3.92,
+      "pp_k_pct": 23.2
     },
     {
       "id": "atc_sp_13",
@@ -14629,10 +14733,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.25,
       "oopsy_fip": 3.839,
       "tags": [
-        "RATIOS_ACE",
-        "INJURED",
         "SP_LOCKED",
         "BOUNCE_BACK",
+        "RATIOS_ACE",
+        "INJURED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -14642,7 +14746,15 @@ export const LDB_DATA = {
       "pl_tier": 15,
       "pl_tier_name": "HIPSTER 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 44,
+      "stuff_plus": 95,
+      "location_plus": 95,
+      "pitching_plus": 90,
+      "athl_health": 70.0,
+      "athl_ip": 165.0,
+      "pp_era": 3.8,
+      "pp_k_pct": 27.4
     },
     {
       "id": "atc_sp_14",
@@ -14681,10 +14793,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 4.15,
       "oopsy_fip": 3.889,
       "tags": [
-        "RATIOS_ACE",
-        "SLEEPER",
         "SP_LOCKED",
-        "PROSPECT"
+        "SLEEPER",
+        "PROSPECT",
+        "RATIOS_ACE"
       ],
       "note": "PL #34 Holly. NYM SP. Young power arm — 96+ mph heat and a bat-missing slider. NYM rotation spot secured. Full season could produce 160+ K. Late-auction value if overlooked.",
       "health_pct": 85,
@@ -14693,7 +14805,15 @@ export const LDB_DATA = {
       "pl_tier": 7,
       "pl_tier_name": "Holly",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 28,
+      "stuff_plus": 108,
+      "location_plus": 98,
+      "pitching_plus": 109,
+      "athl_health": 79.0,
+      "athl_ip": 165.0,
+      "pp_era": 3.69,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_15",
@@ -14741,7 +14861,15 @@ export const LDB_DATA = {
       "pl_tier": 6,
       "pl_tier_name": "Cherry Bomb",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 34,
+      "stuff_plus": 101,
+      "location_plus": 100,
+      "pitching_plus": 102,
+      "athl_health": 76.0,
+      "athl_ip": 159.0,
+      "pp_era": 3.71,
+      "pp_k_pct": 25.0
     },
     {
       "id": "atc_sp_16",
@@ -14790,7 +14918,15 @@ export const LDB_DATA = {
       "pl_tier": 20,
       "pl_tier_name": "Late Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 77,
+      "stuff_plus": 103,
+      "location_plus": 102,
+      "pitching_plus": 106,
+      "athl_health": 83.0,
+      "athl_ip": 151.0,
+      "pp_era": 3.59,
+      "pp_k_pct": 22.2
     },
     {
       "id": "atc_sp_17",
@@ -14839,7 +14975,15 @@ export const LDB_DATA = {
       "pl_tier": 14,
       "pl_tier_name": "Toby Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 47,
+      "stuff_plus": 98,
+      "location_plus": 106,
+      "pitching_plus": 102,
+      "athl_health": 88.0,
+      "athl_ip": 179.0,
+      "pp_era": 3.79,
+      "pp_k_pct": 22.5
     },
     {
       "id": "atc_sp_18",
@@ -14878,10 +15022,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
-        "RATIOS_ACE",
-        "INJURY_RISK",
         "SP_LOCKED",
         "BOUNCE_BACK",
+        "RATIOS_ACE",
+        "INJURY_RISK",
         "STASH",
         "ADP_AVOID"
       ],
@@ -14892,7 +15036,15 @@ export const LDB_DATA = {
       "pl_tier": 13,
       "pl_tier_name": "Injury Stash 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 17,
+      "stuff_plus": 107,
+      "location_plus": 109,
+      "pitching_plus": 116,
+      "athl_health": 79.0,
+      "athl_ip": 161.0,
+      "pp_era": 3.55,
+      "pp_k_pct": 24.0
     },
     {
       "id": "atc_sp_19",
@@ -14941,7 +15093,15 @@ export const LDB_DATA = {
       "pl_tier": 15,
       "pl_tier_name": "HIPSTER 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 58,
+      "stuff_plus": 102,
+      "location_plus": 101,
+      "pitching_plus": 103,
+      "athl_health": 86.0,
+      "athl_ip": 168.0,
+      "pp_era": 3.79,
+      "pp_k_pct": 25.4
     },
     {
       "id": "atc_sp_20",
@@ -14990,7 +15150,15 @@ export const LDB_DATA = {
       "pl_tier": 14,
       "pl_tier_name": "Toby Upside 2",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 66,
+      "stuff_plus": 99,
+      "location_plus": 106,
+      "pitching_plus": 101,
+      "athl_health": 72.0,
+      "athl_ip": 155.0,
+      "pp_era": 4.1,
+      "pp_k_pct": 21.7
     },
     {
       "id": "atc_sp_21",
@@ -15029,9 +15197,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 4.04,
       "oopsy_fip": 4.208,
       "tags": [
+        "DELAYED",
         "RATIOS_ACE",
         "INJURED",
-        "DELAYED",
         "STASH",
         "INJURY_RISK",
         "ADP_AVOID"
@@ -15043,7 +15211,15 @@ export const LDB_DATA = {
       "pl_tier": 13,
       "pl_tier_name": "Injury Stash 1",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 53,
+      "stuff_plus": 107,
+      "location_plus": 97,
+      "pitching_plus": 102,
+      "athl_health": 77.0,
+      "athl_ip": 135.0,
+      "pp_era": 3.9,
+      "pp_k_pct": 24.7
     },
     {
       "id": "atc_sp_22",
@@ -15083,9 +15259,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.57,
       "oopsy_fip": 4.011,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -15095,7 +15271,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 63,
+      "stuff_plus": 101,
+      "location_plus": 97,
+      "pitching_plus": 98,
+      "athl_health": 88.0,
+      "athl_ip": 143.0,
+      "pp_era": 3.88,
+      "pp_k_pct": 24.2
     },
     {
       "id": "atc_sp_23",
@@ -15146,7 +15330,15 @@ export const LDB_DATA = {
       "pl_tier": 23,
       "pl_tier_name": "Injury Stash 2",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 127,
+      "stuff_plus": 103,
+      "location_plus": 100,
+      "pitching_plus": 98,
+      "athl_health": 68.0,
+      "athl_ip": 91.0,
+      "pp_era": 3.7,
+      "pp_k_pct": 22.7
     },
     {
       "id": "atc_sp_24",
@@ -15193,7 +15385,15 @@ export const LDB_DATA = {
       "pl_tier": 12,
       "pl_tier_name": "Toby Upside 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 81,
+      "stuff_plus": 0,
+      "location_plus": 0,
+      "pitching_plus": 0,
+      "athl_health": null,
+      "athl_ip": 113.0,
+      "pp_era": 3.77,
+      "pp_k_pct": 22.7
     },
     {
       "id": "atc_sp_25",
@@ -15243,7 +15443,15 @@ export const LDB_DATA = {
       "pl_tier": 20,
       "pl_tier_name": "Late Upside 2",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 70,
+      "stuff_plus": 110,
+      "location_plus": 101,
+      "pitching_plus": 106,
+      "athl_health": 73.0,
+      "athl_ip": 129.0,
+      "pp_era": 3.82,
+      "pp_k_pct": 24.2
     },
     {
       "id": "atc_sp_26",
@@ -15280,9 +15488,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "RATIOS_ACE",
-        "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
+        "DEEP_LEAGUE",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -15292,7 +15500,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 89,
+      "stuff_plus": 0,
+      "location_plus": 0,
+      "pitching_plus": 0,
+      "athl_health": null,
+      "athl_ip": 162.0,
+      "pp_era": 4.07,
+      "pp_k_pct": 23.0
     },
     {
       "id": "atc_sp_27",
@@ -15343,7 +15559,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 108,
+      "stuff_plus": 95,
+      "location_plus": 99,
+      "pitching_plus": 95,
+      "athl_health": 83.0,
+      "athl_ip": 99.0,
+      "pp_era": 3.95,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_28",
@@ -15382,10 +15606,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.22,
       "oopsy_fip": 4.118,
       "tags": [
-        "RATIOS_ACE",
-        "SLEEPER",
         "BREAKOUT",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "SLEEPER",
+        "RATIOS_ACE"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
       "health_pct": 85,
@@ -15394,7 +15618,15 @@ export const LDB_DATA = {
       "pl_tier": 15,
       "pl_tier_name": "HIPSTER 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 79,
+      "stuff_plus": 102,
+      "location_plus": 109,
+      "pitching_plus": 107,
+      "athl_health": 76.0,
+      "athl_ip": 133.0,
+      "pp_era": 3.89,
+      "pp_k_pct": 24.8
     },
     {
       "id": "atc_sp_29",
@@ -15433,8 +15665,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.052,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
@@ -15444,7 +15676,15 @@ export const LDB_DATA = {
       "pl_tier": 10,
       "pl_tier_name": "Holly I Feel A Little Worse About",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 56,
+      "stuff_plus": 101,
+      "location_plus": 108,
+      "pitching_plus": 108,
+      "athl_health": 81.0,
+      "athl_ip": 171.0,
+      "pp_era": 4.06,
+      "pp_k_pct": 23.2
     },
     {
       "id": "atc_sp_30",
@@ -15493,7 +15733,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_31",
@@ -15542,7 +15790,15 @@ export const LDB_DATA = {
       "pl_tier": 14,
       "pl_tier_name": "Toby Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 93,
+      "stuff_plus": 92,
+      "location_plus": 103,
+      "pitching_plus": 98,
+      "athl_health": 79.0,
+      "athl_ip": 179.0,
+      "pp_era": 4.35,
+      "pp_k_pct": 20.7
     },
     {
       "id": "atc_sp_32",
@@ -15582,9 +15838,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.88,
       "oopsy_fip": 4.11,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "PL #37 Holly. CHC SP. Highly anticipated debut arm — mid-to-high 90s + three sharp secondary pitches. Full-season opportunity in CHC rotation. K upside + Wrigley day games = variance.",
       "health_pct": 85,
@@ -15593,7 +15849,15 @@ export const LDB_DATA = {
       "pl_tier": 7,
       "pl_tier_name": "Holly",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 51,
+      "stuff_plus": 98,
+      "location_plus": 100,
+      "pitching_plus": 98,
+      "athl_health": 83.0,
+      "athl_ip": 159.0,
+      "pp_era": 3.96,
+      "pp_k_pct": 22.4
     },
     {
       "id": "atc_sp_33",
@@ -15642,7 +15906,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 111,
+      "stuff_plus": 97,
+      "location_plus": 95,
+      "pitching_plus": 91,
+      "athl_health": 59.0,
+      "athl_ip": 99.0,
+      "pp_era": 3.96,
+      "pp_k_pct": 24.3
     },
     {
       "id": "atc_sp_34",
@@ -15691,7 +15963,15 @@ export const LDB_DATA = {
       "pl_tier": 12,
       "pl_tier_name": "Toby Upside 1",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 92,
+      "stuff_plus": 92,
+      "location_plus": 105,
+      "pitching_plus": 99,
+      "athl_health": 90.0,
+      "athl_ip": 191.0,
+      "pp_era": 4.21,
+      "pp_k_pct": 21.8
     },
     {
       "id": "atc_sp_35",
@@ -15740,7 +16020,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 136,
+      "stuff_plus": 95,
+      "location_plus": 96,
+      "pitching_plus": 89,
+      "athl_health": 62.0,
+      "athl_ip": 128.0,
+      "pp_era": 4.1,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_36",
@@ -15779,9 +16067,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.97,
       "oopsy_fip": 3.963,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "RATIOS_ACE"
       ],
       "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
       "health_pct": 72,
@@ -15790,7 +16078,15 @@ export const LDB_DATA = {
       "pl_tier": 5,
       "pl_tier_name": "AGA Holly",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 54,
+      "stuff_plus": 104,
+      "location_plus": 104,
+      "pitching_plus": 105,
+      "athl_health": 70.0,
+      "athl_ip": 185.0,
+      "pp_era": 4.05,
+      "pp_k_pct": 20.6
     },
     {
       "id": "atc_sp_37",
@@ -15827,10 +16123,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.35,
       "oopsy_fip": 3.695,
       "tags": [
-        "RATIOS_ACE",
-        "SLEEPER",
         "SP_LOCKED",
+        "SLEEPER",
         "BOUNCE_BACK",
+        "RATIOS_ACE",
         "ROLE_UNCLEAR"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
@@ -15840,7 +16136,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 110,
+      "stuff_plus": 0,
+      "location_plus": 0,
+      "pitching_plus": 0,
+      "athl_health": null,
+      "athl_ip": 101.0,
+      "pp_era": 3.94,
+      "pp_k_pct": 21.2
     },
     {
       "id": "atc_sp_38",
@@ -15891,7 +16195,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 95,
+      "stuff_plus": 100,
+      "location_plus": 100,
+      "pitching_plus": 102,
+      "athl_health": 82.0,
+      "athl_ip": 173.0,
+      "pp_era": 4.13,
+      "pp_k_pct": 18.8
     },
     {
       "id": "atc_sp_39",
@@ -15930,8 +16242,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
-        "RATIOS_ACE",
         "DTD",
+        "RATIOS_ACE",
         "IL_START"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
@@ -15941,7 +16253,15 @@ export const LDB_DATA = {
       "pl_tier": 10,
       "pl_tier_name": "Holly I Feel A Little Worse About",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 61,
+      "stuff_plus": 102,
+      "location_plus": 97,
+      "pitching_plus": 99,
+      "athl_health": 81.0,
+      "athl_ip": 151.0,
+      "pp_era": 3.82,
+      "pp_k_pct": 21.9
     },
     {
       "id": "atc_sp_40",
@@ -15978,9 +16298,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.23,
       "oopsy_fip": 4.387,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -15989,7 +16309,15 @@ export const LDB_DATA = {
       "pl_tier": 7,
       "pl_tier_name": "Holly",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 41,
+      "stuff_plus": 0,
+      "location_plus": 0,
+      "pitching_plus": 0,
+      "athl_health": null,
+      "athl_ip": 148.0,
+      "pp_era": 4.4,
+      "pp_k_pct": 22.5
     },
     {
       "id": "atc_sp_41",
@@ -16037,7 +16365,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_42",
@@ -16084,7 +16420,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 88,
+      "stuff_plus": 94,
+      "location_plus": 100,
+      "pitching_plus": 97,
+      "athl_health": 81.0,
+      "athl_ip": 161.0,
+      "pp_era": 4.05,
+      "pp_k_pct": 23.6
     },
     {
       "id": "atc_sp_43",
@@ -16134,7 +16478,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 91,
+      "stuff_plus": 94,
+      "location_plus": 107,
+      "pitching_plus": 102,
+      "athl_health": 77.0,
+      "athl_ip": 142.0,
+      "pp_era": 4.13,
+      "pp_k_pct": 20.7
     },
     {
       "id": "atc_sp_44",
@@ -16184,7 +16536,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 96,
+      "stuff_plus": 98,
+      "location_plus": 105,
+      "pitching_plus": 105,
+      "athl_health": 89.0,
+      "athl_ip": 175.0,
+      "pp_era": 4.09,
+      "pp_k_pct": 23.3
     },
     {
       "id": "atc_sp_45",
@@ -16233,7 +16593,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 121,
+      "stuff_plus": 92,
+      "location_plus": 111,
+      "pitching_plus": 102,
+      "athl_health": 57.0,
+      "athl_ip": 131.0,
+      "pp_era": 4.36,
+      "pp_k_pct": 19.2
     },
     {
       "id": "atc_sp_46",
@@ -16272,9 +16640,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.61,
       "oopsy_fip": 4.298,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "PL #92 Late Upside. TEX SP. Former #2 overall pick finally getting full rotation shot. Plus fastball + elite cutter combo. TEX park challenging but K upside real. Could be 2026 breakout arm.",
       "health_pct": 83,
@@ -16283,7 +16651,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 85,
+      "stuff_plus": 103,
+      "location_plus": 93,
+      "pitching_plus": 98,
+      "athl_health": 84.0,
+      "athl_ip": 165.0,
+      "pp_era": 4.08,
+      "pp_k_pct": 23.7
     },
     {
       "id": "atc_sp_47",
@@ -16333,7 +16709,15 @@ export const LDB_DATA = {
       "pl_tier": 32,
       "pl_tier_name": "Monitor 2026 Prospect",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 109,
+      "stuff_plus": 102,
+      "location_plus": 107,
+      "pitching_plus": 107,
+      "athl_health": null,
+      "athl_ip": 91.0,
+      "pp_era": 4.1,
+      "pp_k_pct": 21.8
     },
     {
       "id": "atc_sp_48",
@@ -16384,7 +16768,15 @@ export const LDB_DATA = {
       "pl_tier": 18,
       "pl_tier_name": "Possible Job Upside",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 105,
+      "stuff_plus": 105,
+      "location_plus": 102,
+      "pitching_plus": 107,
+      "athl_health": null,
+      "athl_ip": 119.0,
+      "pp_era": 4.13,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_49",
@@ -16423,8 +16815,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.73,
       "oopsy_fip": 4.697,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
@@ -16434,7 +16826,15 @@ export const LDB_DATA = {
       "pl_tier": 20,
       "pl_tier_name": "Late Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 97,
+      "stuff_plus": 97,
+      "location_plus": 95,
+      "pitching_plus": 95,
+      "athl_health": 72.0,
+      "athl_ip": 111.0,
+      "pp_era": 4.39,
+      "pp_k_pct": 22.6
     },
     {
       "id": "atc_sp_50",
@@ -16484,7 +16884,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 116,
+      "stuff_plus": 92,
+      "location_plus": 100,
+      "pitching_plus": 93,
+      "athl_health": 78.0,
+      "athl_ip": 111.0,
+      "pp_era": 4.05,
+      "pp_k_pct": 23.9
     },
     {
       "id": "atc_sp_51",
@@ -16534,7 +16942,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 113,
+      "stuff_plus": 94,
+      "location_plus": 100,
+      "pitching_plus": 93,
+      "athl_health": 93.0,
+      "athl_ip": 181.0,
+      "pp_era": 4.18,
+      "pp_k_pct": 20.7
     },
     {
       "id": "atc_sp_52",
@@ -16574,9 +16990,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.5,
       "oopsy_fip": 4.343,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -16586,7 +17002,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 134,
+      "stuff_plus": 98,
+      "location_plus": 101,
+      "pitching_plus": 99,
+      "athl_health": 83.0,
+      "athl_ip": 141.0,
+      "pp_era": 4.34,
+      "pp_k_pct": 24.3
     },
     {
       "id": "atc_sp_53",
@@ -16625,9 +17049,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.87,
       "oopsy_fip": 3.981,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -16636,7 +17060,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 112,
+      "stuff_plus": 97,
+      "location_plus": 105,
+      "pitching_plus": 102,
+      "athl_health": 81.0,
+      "athl_ip": 139.0,
+      "pp_era": 4.03,
+      "pp_k_pct": 22.1
     },
     {
       "id": "atc_sp_54",
@@ -16688,7 +17120,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 94,
+      "stuff_plus": 104,
+      "location_plus": 110,
+      "pitching_plus": 109,
+      "athl_health": null,
+      "athl_ip": 121.0,
+      "pp_era": 3.81,
+      "pp_k_pct": 21.3
     },
     {
       "id": "atc_sp_55",
@@ -16739,7 +17179,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 139,
+      "stuff_plus": 99,
+      "location_plus": 100,
+      "pitching_plus": 97,
+      "athl_health": 84.0,
+      "athl_ip": 169.0,
+      "pp_era": 4.3,
+      "pp_k_pct": 20.6
     },
     {
       "id": "atc_sp_56",
@@ -16788,7 +17236,15 @@ export const LDB_DATA = {
       "pl_tier": 20,
       "pl_tier_name": "Late Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 114,
+      "stuff_plus": 107,
+      "location_plus": 86,
+      "pitching_plus": 96,
+      "athl_health": 60.0,
+      "athl_ip": 101.0,
+      "pp_era": 4.26,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_57",
@@ -16837,7 +17293,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 78,
+      "stuff_plus": 103,
+      "location_plus": 97,
+      "pitching_plus": 102,
+      "athl_health": 89.0,
+      "athl_ip": 169.0,
+      "pp_era": 3.88,
+      "pp_k_pct": 23.1
     },
     {
       "id": "atc_sp_58",
@@ -16880,7 +17344,15 @@ export const LDB_DATA = {
       "pl_tier": 28,
       "pl_tier_name": "Kinda Cool But No Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_59",
@@ -16919,9 +17391,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.82,
       "oopsy_fip": 4.512,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -16930,7 +17402,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 137,
+      "stuff_plus": 96,
+      "location_plus": 100,
+      "pitching_plus": 98,
+      "athl_health": 93.0,
+      "athl_ip": 155.0,
+      "pp_era": 4.53,
+      "pp_k_pct": 20.6
     },
     {
       "id": "atc_sp_60",
@@ -16982,7 +17462,15 @@ export const LDB_DATA = {
       "pl_tier": 28,
       "pl_tier_name": "Kinda Cool But No Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 75,
+      "stuff_plus": 106,
+      "location_plus": 87,
+      "pitching_plus": 95,
+      "athl_health": 74.0,
+      "athl_ip": 129.0,
+      "pp_era": 3.6,
+      "pp_k_pct": 27.3
     },
     {
       "id": "atc_sp_61",
@@ -17021,8 +17509,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.23,
       "oopsy_fip": 4.279,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -17033,7 +17521,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 122,
+      "stuff_plus": 95,
+      "location_plus": 100,
+      "pitching_plus": 95,
+      "athl_health": 94.0,
+      "athl_ip": 182.0,
+      "pp_era": 4.32,
+      "pp_k_pct": 21.4
     },
     {
       "id": "atc_sp_62",
@@ -17072,9 +17568,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.46,
       "oopsy_fip": 4.387,
       "tags": [
-        "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER",
-        "SP_LOCKED"
+        "RATIOS_ACE"
       ],
       "note": "Spring: 3.0 IP, 2 ER, 3 H, 1 BB, 3 K. Sitting 92+ mph with less cut action than expected — slight concern. Cutter inside to RHB not as sharp. BUT 6/19 four-seamer whiffs keeping it upstairs is encouraging. Scout still in on him — ranked near Boyd/Eflin tier, past IL stashes. Royals SP5.",
       "health_pct": 82,
@@ -17083,7 +17579,15 @@ export const LDB_DATA = {
       "pl_tier": 12,
       "pl_tier_name": "Toby Upside 1",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 104,
+      "stuff_plus": 96,
+      "location_plus": 100,
+      "pitching_plus": 100,
+      "athl_health": 88.0,
+      "athl_ip": 155.0,
+      "pp_era": 4.66,
+      "pp_k_pct": 19.2
     },
     {
       "id": "atc_sp_63",
@@ -17134,7 +17638,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 141,
+      "stuff_plus": 88,
+      "location_plus": 111,
+      "pitching_plus": 101,
+      "athl_health": 87.0,
+      "athl_ip": 183.0,
+      "pp_era": 4.44,
+      "pp_k_pct": 16.4
     },
     {
       "id": "atc_sp_64",
@@ -17185,7 +17697,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_65",
@@ -17236,7 +17756,15 @@ export const LDB_DATA = {
       "pl_tier": 19,
       "pl_tier_name": "Dope But No Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 130,
+      "stuff_plus": 106,
+      "location_plus": 86,
+      "pitching_plus": 90,
+      "athl_health": 75.0,
+      "athl_ip": 59.0,
+      "pp_era": 4.01,
+      "pp_k_pct": 20.7
     },
     {
       "id": "atc_sp_66",
@@ -17288,7 +17816,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 99,
+      "stuff_plus": 105,
+      "location_plus": 99,
+      "pitching_plus": 102,
+      "athl_health": 83.0,
+      "athl_ip": 161.0,
+      "pp_era": 4.0,
+      "pp_k_pct": 23.0
     },
     {
       "id": "atc_sp_67",
@@ -17338,7 +17874,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 115,
+      "stuff_plus": 97,
+      "location_plus": 106,
+      "pitching_plus": 106,
+      "athl_health": 66.0,
+      "athl_ip": 133.0,
+      "pp_era": 4.13,
+      "pp_k_pct": 22.0
     },
     {
       "id": "atc_sp_68",
@@ -17378,9 +17922,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
-        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
@@ -17390,7 +17934,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_69",
@@ -17441,7 +17993,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_70",
@@ -17491,7 +18051,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 146,
+      "stuff_plus": 96,
+      "location_plus": 102,
+      "pitching_plus": 98,
+      "athl_health": 79.0,
+      "athl_ip": 161.0,
+      "pp_era": 4.81,
+      "pp_k_pct": 17.7
     },
     {
       "id": "atc_sp_71",
@@ -17540,7 +18108,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 140,
+      "stuff_plus": 92,
+      "location_plus": 110,
+      "pitching_plus": 103,
+      "athl_health": 58.0,
+      "athl_ip": 101.0,
+      "pp_era": 4.56,
+      "pp_k_pct": 22.3
     },
     {
       "id": "atc_sp_72",
@@ -17579,9 +18155,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.11,
       "oopsy_fip": 4.557,
       "tags": [
-        "RATIOS_ACE",
         "BUST",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
@@ -17591,7 +18167,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 135,
+      "stuff_plus": 96,
+      "location_plus": 107,
+      "pitching_plus": 100,
+      "athl_health": 74.0,
+      "athl_ip": 151.0,
+      "pp_era": 4.54,
+      "pp_k_pct": 18.8
     },
     {
       "id": "atc_sp_73",
@@ -17639,7 +18223,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_74",
@@ -17688,7 +18280,15 @@ export const LDB_DATA = {
       "pl_tier": 16,
       "pl_tier_name": "Toby Upside 3",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 123,
+      "stuff_plus": 93,
+      "location_plus": 96,
+      "pitching_plus": 90,
+      "athl_health": 82.0,
+      "athl_ip": 160.0,
+      "pp_era": 4.83,
+      "pp_k_pct": 18.6
     },
     {
       "id": "atc_sp_75",
@@ -17735,7 +18335,15 @@ export const LDB_DATA = {
       "pl_rank": null,
       "pl_tier": null,
       "pl_tier_name": "",
-      "pl_note": ""
+      "pl_note": "",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_76",
@@ -17785,7 +18393,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 138,
+      "stuff_plus": 103,
+      "location_plus": 99,
+      "pitching_plus": 100,
+      "athl_health": 63.0,
+      "athl_ip": 128.0,
+      "pp_era": 4.4,
+      "pp_k_pct": 19.9
     },
     {
       "id": "atc_sp_77",
@@ -17836,7 +18452,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_78",
@@ -17885,7 +18509,15 @@ export const LDB_DATA = {
       "pl_tier": 14,
       "pl_tier_name": "Toby Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 102,
+      "stuff_plus": 92,
+      "location_plus": 105,
+      "pitching_plus": 97,
+      "athl_health": 73.0,
+      "athl_ip": 129.0,
+      "pp_era": 4.53,
+      "pp_k_pct": 18.1
     },
     {
       "id": "atc_sp_79",
@@ -17936,7 +18568,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_80",
@@ -17985,7 +18625,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 120,
+      "stuff_plus": 102,
+      "location_plus": 93,
+      "pitching_plus": 96,
+      "athl_health": 78.0,
+      "athl_ip": 111.0,
+      "pp_era": 4.38,
+      "pp_k_pct": 22.5
     },
     {
       "id": "atc_sp_81",
@@ -18036,7 +18684,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_82",
@@ -18075,9 +18731,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.5,
       "oopsy_fip": 4.729,
       "tags": [
-        "RATIOS_ACE",
-        "DEEP_LEAGUE",
         "SP_LOCKED",
+        "DEEP_LEAGUE",
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "STASH",
         "ADP_AVOID"
@@ -18089,7 +18745,15 @@ export const LDB_DATA = {
       "pl_tier": 28,
       "pl_tier_name": "Kinda Cool But No Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_83",
@@ -18141,7 +18805,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_84",
@@ -18181,9 +18853,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.67,
       "oopsy_fip": 4.577,
       "tags": [
-        "RATIOS_ACE",
         "BUST",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 4 IP, 1 ER, 1 H, 0 BB, 5 K. Velocity still down at 92 mph — concerning. Splitter is excellent (steep release, used vs both sides) but slider was all over. 5 K came against poor lineup. Don't trust until velo climbs.",
@@ -18193,7 +18865,15 @@ export const LDB_DATA = {
       "pl_tier": 20,
       "pl_tier_name": "Late Upside 2",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_85",
@@ -18243,7 +18923,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 117,
+      "stuff_plus": 93,
+      "location_plus": 104,
+      "pitching_plus": 95,
+      "athl_health": 86.0,
+      "athl_ip": 173.0,
+      "pp_era": 4.29,
+      "pp_k_pct": 19.8
     },
     {
       "id": "atc_sp_86",
@@ -18293,7 +18981,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_87",
@@ -18344,7 +19040,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 149,
+      "stuff_plus": 102,
+      "location_plus": 104,
+      "pitching_plus": 105,
+      "athl_health": 72.0,
+      "athl_ip": 119.0,
+      "pp_era": 4.49,
+      "pp_k_pct": 18.2
     },
     {
       "id": "atc_sp_88",
@@ -18395,7 +19099,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": 150,
+      "stuff_plus": 94,
+      "location_plus": 100,
+      "pitching_plus": 94,
+      "athl_health": 73.0,
+      "athl_ip": 165.0,
+      "pp_era": 4.96,
+      "pp_k_pct": 19.0
     },
     {
       "id": "atc_sp_89",
@@ -18434,9 +19146,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.61,
       "oopsy_fip": 4.44,
       "tags": [
-        "RATIOS_ACE",
         "BUST",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
@@ -18446,7 +19158,15 @@ export const LDB_DATA = {
       "pl_tier": 22,
       "pl_tier_name": "Toby 15-Team",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 148,
+      "stuff_plus": 104,
+      "location_plus": 100,
+      "pitching_plus": 103,
+      "athl_health": 74.0,
+      "athl_ip": 175.0,
+      "pp_era": 4.51,
+      "pp_k_pct": 19.2
     },
     {
       "id": "atc_sp_90",
@@ -18495,7 +19215,15 @@ export const LDB_DATA = {
       "pl_tier": 17,
       "pl_tier_name": "Late Upside",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 124,
+      "stuff_plus": 95,
+      "location_plus": 96,
+      "pitching_plus": 92,
+      "athl_health": 64.0,
+      "athl_ip": 161.0,
+      "pp_era": 4.9,
+      "pp_k_pct": 20.3
     },
     {
       "id": "atc_sp_91",
@@ -18546,7 +19274,15 @@ export const LDB_DATA = {
       "pl_tier": 28,
       "pl_tier_name": "Kinda Cool But No Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_92",
@@ -18597,7 +19333,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_93",
@@ -18636,8 +19380,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.67,
       "oopsy_fip": 4.131,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -18648,7 +19392,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": 147,
+      "stuff_plus": 95,
+      "location_plus": 101,
+      "pitching_plus": 98,
+      "athl_health": 92.0,
+      "athl_ip": 179.0,
+      "pp_era": 4.39,
+      "pp_k_pct": 17.0
     },
     {
       "id": "atc_sp_94",
@@ -18691,7 +19443,15 @@ export const LDB_DATA = {
       "pl_tier": 38,
       "pl_tier_name": "Out For 2026 Just So You Know",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_95",
@@ -18731,10 +19491,10 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.71,
       "oopsy_fip": 4.721,
       "tags": [
-        "RATIOS_ACE",
         "ADP_AVOID",
         "BUST",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
@@ -18744,7 +19504,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_96",
@@ -18795,7 +19563,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_97",
@@ -18834,9 +19610,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.62,
       "oopsy_fip": 4.28,
       "tags": [
-        "RATIOS_ACE",
         "BUST",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
@@ -18846,7 +19622,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_98",
@@ -18888,7 +19672,15 @@ export const LDB_DATA = {
       "pl_tier": 37,
       "pl_tier_name": "Hammock Or Mound?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_99",
@@ -18939,7 +19731,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_100",
@@ -18990,7 +19790,15 @@ export const LDB_DATA = {
       "pl_tier": 26,
       "pl_tier_name": "Toby 15-Team Again",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_101",
@@ -19041,7 +19849,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_102",
@@ -19092,7 +19908,15 @@ export const LDB_DATA = {
       "pl_tier": 27,
       "pl_tier_name": "Toby 15-Team If Job",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_103",
@@ -19142,7 +19966,15 @@ export const LDB_DATA = {
       "pl_tier": 33,
       "pl_tier_name": "No Job And It’s Meh",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_104",
@@ -19193,7 +20025,15 @@ export const LDB_DATA = {
       "pl_tier": 33,
       "pl_tier_name": "No Job And It’s Meh",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_105",
@@ -19241,7 +20081,15 @@ export const LDB_DATA = {
       "pl_tier": 24,
       "pl_tier_name": "Potential Pickups If Things Go Right",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_106",
@@ -19291,7 +20139,15 @@ export const LDB_DATA = {
       "pl_tier": 37,
       "pl_tier_name": "Hammock Or Mound?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_107",
@@ -19342,7 +20198,15 @@ export const LDB_DATA = {
       "pl_tier": 37,
       "pl_tier_name": "Hammock Or Mound?",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_108",
@@ -19392,7 +20256,15 @@ export const LDB_DATA = {
       "pl_tier": 37,
       "pl_tier_name": "Hammock Or Mound?",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_109",
@@ -19443,7 +20315,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_110",
@@ -19493,7 +20373,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_111",
@@ -19544,7 +20432,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_112",
@@ -19584,8 +20480,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -1.75,
       "oopsy_fip": 5.163,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -19596,7 +20492,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_113",
@@ -19646,7 +20550,15 @@ export const LDB_DATA = {
       "pl_tier": 35,
       "pl_tier_name": "If Job Would Be For Rockies",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_114",
@@ -19694,7 +20606,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_115",
@@ -19744,7 +20664,15 @@ export const LDB_DATA = {
       "pl_tier": 31,
       "pl_tier_name": "Has Job But It’s The Rockies",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_116",
@@ -19793,7 +20721,15 @@ export const LDB_DATA = {
       "pl_tier": 31,
       "pl_tier_name": "Has Job But It’s The Rockies",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_117",
@@ -19842,7 +20778,15 @@ export const LDB_DATA = {
       "pl_tier": 31,
       "pl_tier_name": "Has Job But It’s The Rockies",
       "pl_note": "",
-      "handedness": "LHP"
+      "handedness": "LHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_118",
@@ -19892,7 +20836,15 @@ export const LDB_DATA = {
       "pl_tier": 30,
       "pl_tier_name": "Has Job But Do You Care?",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     },
     {
       "id": "atc_sp_119",
@@ -19941,7 +20893,15 @@ export const LDB_DATA = {
       "pl_tier": 31,
       "pl_tier_name": "Has Job But It’s The Rockies",
       "pl_note": "",
-      "handedness": "RHP"
+      "handedness": "RHP",
+      "athl_rank": null,
+      "stuff_plus": null,
+      "location_plus": null,
+      "pitching_plus": null,
+      "athl_health": null,
+      "athl_ip": null,
+      "pp_era": null,
+      "pp_k_pct": null
     }
   ],
   "rp": [

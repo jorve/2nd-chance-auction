@@ -25,8 +25,9 @@ from pathlib import Path
 from difflib import SequenceMatcher
 
 # ── PATHS ──────────────────────────────────────────────────────────────────────
-INPUT_DIR  = Path("/mnt/project")
-OUTPUT_JS  = Path("/home/claude/ldb-auction/src/data/ldb_data.js")
+_HERE      = Path(__file__).parent
+INPUT_DIR  = _HERE / "data"
+OUTPUT_JS  = _HERE / "src" / "data" / "ldb_data.js"
 
 DRAFT_BOARD   = INPUT_DIR / "2026_LDB_Draft_Board__2026_Board.csv"
 RFA_FILE      = INPUT_DIR / "2026_LDB_Draft_Board__RFA_Rights.csv"
@@ -36,12 +37,13 @@ ATC_SP        = INPUT_DIR / "2026_ATC_SP_Projections.csv"
 OOPSY_SP      = INPUT_DIR / "2026_OOPSY_SP_Projections.csv"
 ATC_RP        = INPUT_DIR / "2026_ATC_RP_Projections.csv"
 OOPSY_RP      = INPUT_DIR / "2026_OOPSY_RP_Projections.csv"
-CBS_BAT_ELIG  = Path(__file__).parent / "data" / "CBS_batter_elig.csv"
-CBS_SP_ELIG   = Path(__file__).parent / "data" / "CBS_SP_elig.csv"
-CBS_RP_ELIG   = Path(__file__).parent / "data" / "CBS_RP_elig.csv"
-PLAYER_NOTES = Path(__file__).parent / "data" / "player_notes.json"
-PL_BATTERS   = Path(__file__).parent / "data" / "2026_PL_Batter_Rankings.csv"
-PL_SP        = Path(__file__).parent / "data" / "2026_PL_SP_Rankings.csv"
+CBS_BAT_ELIG  = INPUT_DIR / "CBS_batter_elig.csv"
+CBS_SP_ELIG   = INPUT_DIR / "CBS_SP_elig.csv"
+CBS_RP_ELIG   = INPUT_DIR / "CBS_RP_elig.csv"
+PLAYER_NOTES  = INPUT_DIR / "player_notes.json"
+PL_BATTERS    = INPUT_DIR / "2026_PL_Batter_Rankings.csv"
+PL_SP         = INPUT_DIR / "2026_PL_SP_Rankings.csv"
+ATHLETIC_SP   = INPUT_DIR / "2026_Athletic_SP_Rankings.csv"
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 MIN_PA  = 200
@@ -778,6 +780,78 @@ def auto_tags_rp(p: dict) -> list:
 TAG_AUTO_FN = {"batters": auto_tags_batter, "sp": auto_tags_sp, "rp": auto_tags_rp}
 
 
+# ── ATHLETIC SP RANKINGS ───────────────────────────────────────────────────────
+
+def load_athletic_sp(path: Path) -> dict:
+    """Load Athletic SP rankings CSV → dict keyed by normalised name.
+    Columns: Rank, Name, Team, Stuff+, Location+, Pitching+, Health%, Proj_IP, ppERA, ppK%
+    """
+    if not path.exists():
+        print(f"  [Athletic] {path.name} not found — skipping")
+        return {}
+    index = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            try:
+                athl_rank = int(row["Rank"])
+            except (ValueError, KeyError):
+                continue
+            # Health% stored as "87%" — strip the percent sign
+            health_raw = row.get("Health%", "").replace("%", "").strip()
+            try:
+                health_val = float(health_raw)
+            except ValueError:
+                health_val = None
+            entry = {
+                "athl_rank":     athl_rank,
+                "stuff_plus":    round(float(row.get("Stuff+", 0) or 0)),
+                "location_plus": round(float(row.get("Location+", 0) or 0)),
+                "pitching_plus": round(float(row.get("Pitching+", 0) or 0)),
+                "athl_health":   health_val,
+                "athl_ip":       round(float(row.get("Proj_IP", 0) or 0), 1),
+                "pp_era":        round(float(row.get("ppERA", 0) or 0), 2),
+                "pp_k_pct":      round(float(row.get("ppK%", 0) or 0), 1),
+            }
+            key = norm(row.get("Name", ""))
+            index[key] = entry
+    print(f"  [Athletic] Loaded {len(index)} Athletic SP rankings")
+    return index
+
+
+def apply_athletic_sp(players: list, athl_index: dict) -> list:
+    """Inject Athletic SP fields into each SP record."""
+    matched = 0
+    for p in players:
+        key = norm(p["name"])
+        athl = athl_index.get(key)
+        if not athl:
+            for ak, av in athl_index.items():
+                if SequenceMatcher(None, key, ak).ratio() > 0.88:
+                    athl = av
+                    break
+        if athl:
+            p["athl_rank"]     = athl["athl_rank"]
+            p["stuff_plus"]    = athl["stuff_plus"]
+            p["location_plus"] = athl["location_plus"]
+            p["pitching_plus"] = athl["pitching_plus"]
+            p["athl_health"]   = athl["athl_health"]
+            p["athl_ip"]       = athl["athl_ip"]
+            p["pp_era"]        = athl["pp_era"]
+            p["pp_k_pct"]      = athl["pp_k_pct"]
+            matched += 1
+        else:
+            p["athl_rank"]     = None
+            p["stuff_plus"]    = None
+            p["location_plus"] = None
+            p["pitching_plus"] = None
+            p["athl_health"]   = None
+            p["athl_ip"]       = None
+            p["pp_era"]        = None
+            p["pp_k_pct"]      = None
+    print(f"  [Athletic] Matched {matched}/{len(players)} SP players")
+    return players
+
+
 def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
     """Merge manual notes + auto tags into each player record."""
     auto_fn = TAG_AUTO_FN.get(pool_type)
@@ -840,10 +914,11 @@ def main():
     oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy")
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
-    print("\n[6/7] Loading player notes + PL rankings + tags...")
-    notes_index = load_player_notes(PLAYER_NOTES)
-    pl_index    = load_pl_batters(PL_BATTERS)
-    pl_sp_index = load_pl_sp(PL_SP)
+    print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
+    notes_index  = load_player_notes(PLAYER_NOTES)
+    pl_index     = load_pl_batters(PL_BATTERS)
+    pl_sp_index  = load_pl_sp(PL_SP)
+    athl_sp_index = load_athletic_sp(ATHLETIC_SP)
 
     print("\n[7/7] Merging + writing ldb_data.js...")
     batters = merge_rankings(batx_batters, oopsy_batters)
@@ -857,6 +932,9 @@ def main():
     # PL enrichment
     batters = apply_pl_batters(batters, pl_index)
     sp      = apply_pl_sp(sp, pl_sp_index)
+
+    # Athletic SP enrichment
+    sp = apply_athletic_sp(sp, athl_sp_index)
 
     # Build owned roster per team (for league board)
     roster_by_team = {abbr: [] for abbr in teams}
