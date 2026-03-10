@@ -1,0 +1,4 @@
+{
+  "buildCommand": "chmod +x node_modules/.bin/vite node_modules/esbuild/bin/esbuild node_modules/@esbuild/linux-x64/bin/esbuild 2>/dev/null || true && npm run build",
+  "outputDirectory": "dist"
+}
