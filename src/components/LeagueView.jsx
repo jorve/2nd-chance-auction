@@ -15,22 +15,6 @@ export default function LeagueView() {
     return auctionLog.filter(e => e.team === abbr)
   }
 
-  // Position needs by team (from draft board initial + auction wins)
-  function getPositionCoverage(abbr) {
-    const initial = LDB_DATA.roster_by_team[abbr] || []
-    const wins = getTeamWins(abbr)
-    const posCounts = {}
-    initial.forEach(p => {
-      const pos = p.pos
-      posCounts[pos] = (posCounts[pos] || 0) + 1
-    })
-    wins.forEach(w => {
-      const pos = w.pos_type === 'batter' ? 'BAT' : w.pos_type === 'sp' ? 'SP' : 'RP'
-      posCounts[pos] = (posCounts[pos] || 0) + 1
-    })
-    return posCounts
-  }
-
   return (
     <div style={{ padding: 24 }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
@@ -66,17 +50,6 @@ export default function LeagueView() {
         ))}
       </div>
 
-      {/* Position placeholder note */}
-      <div style={{
-        marginTop: 24, padding: 16,
-        background: 'var(--surface)', border: '1px dashed var(--border2)',
-        borderRadius: 8, fontFamily: "'DM Mono', monospace",
-        fontSize: 11, color: 'var(--text-dim)',
-      }}>
-        📋 <strong style={{ color: 'var(--accent)' }}>Position file not loaded.</strong>
-        {' '}Add a <code style={{ color: 'var(--blue)' }}>player_positions.csv</code> to enable positional scarcity tracking.
-        Format: <code>Name,Positions</code> — e.g. <code>Aaron Judge,"RF,OF"</code>
-      </div>
     </div>
   )
 }

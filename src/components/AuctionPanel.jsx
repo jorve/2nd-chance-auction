@@ -565,6 +565,60 @@ function getFrySignal(player, fry, type) {
   return { label: 'WATCH', color: 'var(--text-faint)', icon: '·', note: 'Monitor — no urgent signal' }
 }
 
+// ── TAG PILL ──────────────────────────────────────────────────────────────────
+const TAG_CONFIG = {
+  ELITE:        { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'ELITE' },
+  POWER_OBP:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'PWR+OBP' },
+  HR_THREAT:    { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'HR THREAT' },
+  SB_THREAT:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'SB THREAT' },
+  OBP_ONLY:     { bg: 'rgba(56,189,248,.08)',  color: 'var(--blue)',    text: 'OBP ONLY' },
+  WORKHORSE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'WORKHORSE' },
+  K_MACHINE:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'K MACHINE' },
+  RATIOS_ACE:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RATIOS ACE' },
+  GB_PITCHER:   { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'GB PITCHER' },
+  MGS_ELITE:    { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'MGS ELITE' },
+  INNINGS_EAT:  { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'INN EATER' },
+  CLOSER:       { bg: 'rgba(251,146,60,.15)',  color: 'var(--orange)',  text: 'CLOSER' },
+  HOLDS_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'HOLDS VALUE' },
+  SAVES_SAFE:   { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'SAVES SAFE' },
+  CLOSER_RISK:  { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'CLOSER RISK' },
+  ELITE_ERA:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ELITE ERA' },
+  VIJAY_ELITE:  { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'VIJAY ELITE' },
+  SLEEPER:      { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'SLEEPER' },
+  BREAKOUT:     { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'BREAKOUT' },
+  BOUNCE_BACK:  { bg: 'rgba(200,241,53,.10)',  color: 'var(--t1)',      text: 'BOUNCE BACK' },
+  BUST:         { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'BUST' },
+  INJURED:      { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'INJURED' },
+  IL:           { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'IL' },
+  IL_START:     { bg: 'rgba(248,113,113,.15)', color: 'var(--red)',     text: 'IL START' },
+  DTD:          { bg: 'rgba(251,146,60,.15)',  color: 'var(--orange)',  text: 'DAY TO DAY' },
+  DELAYED:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'DELAYED' },
+  INJURY_RISK:  { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'INJ RISK' },
+  ROLE_UNCLEAR: { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'ROLE UNCLEAR' },
+  STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
+  PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSPECT' },
+  DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
+  ADP_VALUE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ADP VALUE' },
+  ADP_AVOID:    { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'ADP AVOID' },
+  SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
+}
+
+function TagPill({ tag }) {
+  const cfg = TAG_CONFIG[tag] || { bg: 'rgba(148,163,184,.10)', color: 'var(--muted)', text: tag }
+  return (
+    <span style={{
+      display: 'inline-block',
+      background: cfg.bg, color: cfg.color,
+      border: `1px solid ${cfg.color}55`,
+      borderRadius: 3, padding: '3px 8px',
+      fontFamily: "'DM Mono', monospace", fontSize: 9,
+      letterSpacing: 0.6, fontWeight: 600, textTransform: 'uppercase',
+    }}>
+      {cfg.text}
+    </span>
+  )
+}
+
 // ── TYPE BADGE ────────────────────────────────────────────────────────────────
 function TypeBadge({ type }) {
   const colors = { BAT: ['rgba(200,241,53,.12)', 'var(--t1)'], SP: ['rgba(56,189,248,.12)', 'var(--blue)'], RP: ['rgba(251,146,60,.12)', 'var(--orange)'] }

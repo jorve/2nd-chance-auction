@@ -164,14 +164,12 @@ export default function PlayerList() {
     })
   }
 
-  const filtered = unsold.filter(p => {
+  const filtered = useMemo(() => unsold.filter(p => {
     if (!tierFilter.has(p.tier)) return false
-    // Position filter: OR logic
     if (posFilter.size > 0) {
       const playerPos = p.positions ?? []
       if (!playerPos.some(pos => posFilter.has(pos))) return false
     }
-    // Tag filter: OR logic — player must have at least one selected tag
     if (tagFilter.size > 0) {
       const playerTags = new Set(p.tags ?? [])
       if (![...tagFilter].some(t => playerTags.has(t))) return false
@@ -181,14 +179,14 @@ export default function PlayerList() {
       return p.name.toLowerCase().includes(q) || (p.team || '').toLowerCase().includes(q)
     }
     return true
-  })
+  }), [unsold, tierFilter, posFilter, tagFilter, searchQuery])
 
-  const sorted = [...filtered].sort((a, b) => {
+  const sorted = useMemo(() => [...filtered].sort((a, b) => {
     const av = a[sortCol] ?? 0, bv = b[sortCol] ?? 0
     if (typeof bv === 'string' || typeof av === 'string')
       return sortDir * String(av || '').localeCompare(String(bv || ''))
     return sortDir * (bv - av)
-  })
+  }), [filtered, sortCol, sortDir])
 
   function handleSort(col) {
     if (sortCol === col) setSortDir(d => d * -1)
@@ -589,15 +587,16 @@ function ZScore({ z }) {
 // Shows how much adj_value has shifted from the static base est_value.
 // Zero at auction start (fixed). Appears in green/red once sales move the pool.
 function ValueDelta({ adj, base }) {
-  const delta = Math.round(adj - base)
+  const delta = Math.round((adj - base) * 10) / 10   // round to 1 decimal
   if (delta === 0) return null
+  const display = Number.isInteger(delta) ? delta : delta.toFixed(1)
   return (
     <span style={{
       display: 'block', fontSize: 9,
       color: delta > 0 ? 'var(--green)' : 'var(--red)',
       fontFamily: "'DM Mono', monospace", lineHeight: 1.2,
     }}>
-      {delta > 0 ? '+' : ''}{delta}
+      {delta > 0 ? '+' : ''}{display}
     </span>
   )
 }
