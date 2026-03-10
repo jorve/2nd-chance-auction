@@ -21,7 +21,8 @@ function flagAmbiguous(results) {
 }
 
 // ── AI INTEL ──────────────────────────────────────────────────────────────────
-async function fetchPlayerIntel(player, type) {
+async function fetchPlayerIntel(player, type, apiKey) {
+  if (!apiKey) throw new Error('No API key set — enter your Anthropic key in the panel')
   const posLabel = type === 'BAT' ? 'hitter' : type === 'SP' ? 'starting pitcher' : 'relief pitcher'
   const prompt = `Search for the latest 2026 MLB news on ${player.name} (${player.team || 'Free Agent'}, ${posLabel}).
 
@@ -41,7 +42,12 @@ Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
     body: JSON.stringify({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 1000,
@@ -50,10 +56,12 @@ Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
     }),
   })
 
-  if (!response.ok) throw new Error(`API error ${response.status}`)
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}))
+    throw new Error(err?.error?.message || `API error ${response.status}`)
+  }
   const data = await response.json()
 
-  // Extract text content from response (may include tool_use blocks)
   const textContent = data.content
     .filter(block => block.type === 'text')
     .map(block => block.text)
@@ -155,7 +163,7 @@ export default function AuctionPanel() {
     if (!player) { setIntel(null); return }
     const t = getType(player)
     setIntel({ loading: true, text: null, error: null, player: player.name })
-    fetchPlayerIntel(player, t)
+    fetchPlayerIntel(player, t, apiKey)
       .then(text => setIntel({ loading: false, text, error: null, player: player.name }))
       .catch(err => setIntel({ loading: false, text: null, error: err.message, player: player.name }))
   }, [player?.name])
@@ -195,6 +203,38 @@ export default function AuctionPanel() {
             RESET
           </button>
         </div>
+      </div>
+
+      {/* ── API Key input ── */}
+      <div style={{ marginBottom: 10 }}>
+        {!showKeyInput ? (
+          <button onClick={() => setShowKeyInput(true)} style={{
+            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+            fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1,
+            color: apiKey ? 'var(--green)' : 'var(--text-faint)',
+            display: 'flex', alignItems: 'center', gap: 4,
+          }}>
+            <span>{apiKey ? '◉' : '◌'}</span>
+            <span>{apiKey ? 'API KEY SET — click to change' : 'SET ANTHROPIC API KEY for AI Intel'}</span>
+          </button>
+        ) : (
+          <div style={{ display: 'flex', gap: 6 }}>
+            <input
+              autoFocus
+              type="password"
+              placeholder="sk-ant-..."
+              defaultValue={apiKey}
+              onBlur={e => { setApiKey(e.target.value.trim()); setShowKeyInput(false) }}
+              onKeyDown={e => { if (e.key === 'Enter') { setApiKey(e.target.value.trim()); setShowKeyInput(false) } if (e.key === 'Escape') setShowKeyInput(false) }}
+              style={{
+                flex: 1, background: 'var(--surface)', border: '1px solid var(--accent)',
+                borderRadius: 4, padding: '5px 10px', color: 'var(--text)',
+                fontFamily: "'DM Mono', monospace", fontSize: 11, outline: 'none',
+              }}
+            />
+            <button onClick={() => setShowKeyInput(false)} style={{ ...ghostBtn }}>✕</button>
+          </div>
+        )}
       </div>
 
       {/* ── Search ── */}
@@ -303,6 +343,25 @@ export default function AuctionPanel() {
               </div>
             ))}
           </div>
+
+          {/* Smart tags */}
+          {player.tags?.length > 0 && (
+            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 10 }}>
+              {player.tags.map(tag => <TagPill key={tag} tag={tag} />)}
+            </div>
+          )}
+
+          {/* Manual scouting note */}
+          {player.note && (
+            <div style={{
+              marginTop: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 11,
+              color: 'var(--text-dim)', lineHeight: 1.5,
+              background: 'rgba(255,255,255,.03)', borderLeft: '2px solid var(--border2)',
+              padding: '6px 10px', borderRadius: '0 4px 4px 0',
+            }}>
+              {player.note}
+            </div>
+          )}
         </div>
       )}
 

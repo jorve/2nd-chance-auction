@@ -39,6 +39,7 @@ OOPSY_RP      = INPUT_DIR / "2026_OOPSY_RP_Projections.csv"
 CBS_BAT_ELIG  = Path(__file__).parent / "data" / "CBS_batter_elig.csv"
 CBS_SP_ELIG   = Path(__file__).parent / "data" / "CBS_SP_elig.csv"
 CBS_RP_ELIG   = Path(__file__).parent / "data" / "CBS_RP_elig.csv"
+PLAYER_NOTES = Path(__file__).parent / "data" / "player_notes.json"
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 MIN_PA  = 200
@@ -490,6 +491,110 @@ def merge_rankings(primary_list, secondary_list):
     return merged
 
 # ── MAIN ───────────────────────────────────────────────────────────────────────
+
+# ── PLAYER NOTES & SMART TAGS ─────────────────────────────────────────────────
+
+def load_player_notes(path: Path) -> dict:
+    """Load player_notes.json → dict keyed by normalised name."""
+    if not path.exists():
+        print(f"  [notes] {path.name} not found — skipping qualitative data")
+        return {}
+    with open(path, encoding="utf-8") as f:
+        raw = json.load(f)
+    index = {}
+    for entry in raw.get("players", []):
+        key = norm(entry["name"])
+        index[key] = entry
+    print(f"  [notes] Loaded {len(index)} player notes from {path.name}")
+    return index
+
+
+def auto_tags_batter(p: dict) -> list:
+    """Generate stat-based tags for a batter."""
+    tags = []
+    asb = p.get("_raw_aSB", 0)
+    obp = fv(p, "OBP")
+    ops = fv(p, "OPS")
+    hr  = fv(p, "HR")
+    war = fv(p, "WAR")
+    pa  = fv(p, "PA")
+    if war >= 5.0:                          tags.append("ELITE")
+    if ops >= 0.900:                         tags.append("POWER_OBP")
+    if obp >= 0.370 and ops < 0.820:        tags.append("OBP_ONLY")
+    if hr >= 35:                             tags.append("HR_THREAT")
+    if asb >= 25:                            tags.append("SB_THREAT")
+    if war >= 3.5 and pa >= 550:            tags.append("WORKHORSE")
+    if war < 1.5 and pa >= 400:             tags.append("DEEP_LEAGUE")
+    return tags
+
+
+def auto_tags_sp(p: dict) -> list:
+    """Generate stat-based tags for a SP."""
+    tags = []
+    k    = fv(p, "SO")
+    era  = fv(p, "ERA")
+    whip = fv(p, "WHIP")
+    hr   = fv(p, "HR")
+    ip   = fv(p, "IP")
+    gs   = fv(p, "GS")
+    war  = fv(p, "WAR")
+    mgs  = p.get("_raw_MGS", 0) / gs if gs > 0 else 0
+    if war >= 5.0:                           tags.append("ELITE")
+    if k >= 220:                             tags.append("K_MACHINE")
+    if era <= 3.00 and whip <= 1.10:        tags.append("RATIOS_ACE")
+    if hr <= 12 and ip >= 160:              tags.append("GB_PITCHER")
+    if mgs >= 11:                            tags.append("MGS_ELITE")
+    if ip >= 185:                            tags.append("WORKHORSE")
+    if gs >= 28 and war >= 3.0:             tags.append("INNINGS_EAT")
+    if war < 1.5 and ip >= 120:             tags.append("DEEP_LEAGUE")
+    return tags
+
+
+def auto_tags_rp(p: dict) -> list:
+    """Generate stat-based tags for a RP."""
+    tags = []
+    sv   = fv(p, "SV")
+    hld  = fv(p, "HLD")
+    bs   = fv(p, "BS")
+    k9   = fv(p, "K/9") if "K/9" in p else 0
+    era  = fv(p, "ERA")
+    vijay = p.get("_raw_VIJAY", 0)
+    g    = fv(p, "G")
+    if sv >= 28:                             tags.append("CLOSER")
+    if hld >= 20:                            tags.append("HOLDS_VALUE")
+    if sv >= 20 and bs <= 3:                tags.append("SAVES_SAFE")
+    if bs >= 6:                              tags.append("CLOSER_RISK")
+    if era <= 2.50:                          tags.append("ELITE_ERA")
+    if vijay / g >= 0.45 if g > 0 else False: tags.append("VIJAY_ELITE")
+    if vijay / g < 0.15 if g > 0 else False:  tags.append("DEEP_LEAGUE")
+    return tags
+
+
+TAG_AUTO_FN = {"batters": auto_tags_batter, "sp": auto_tags_sp, "rp": auto_tags_rp}
+
+
+def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
+    """Merge manual notes + auto tags into each player record."""
+    auto_fn = TAG_AUTO_FN.get(pool_type)
+    for p in players:
+        key = norm(p["name"])
+        # Fuzzy fallback if exact norm doesn't match
+        note_entry = notes_index.get(key)
+        if note_entry is None:
+            for nk, ne in notes_index.items():
+                if SequenceMatcher(None, key, nk).ratio() > 0.88:
+                    note_entry = ne
+                    break
+        auto = auto_fn(p) if auto_fn else []
+        manual_tags = list(note_entry.get("tags", [])) if note_entry else []
+        # Merge: manual tags win; auto tags fill in what isn't already covered
+        all_tags = list(dict.fromkeys(manual_tags + [t for t in auto if t not in manual_tags]))
+        p["tags"]       = all_tags
+        p["note"]       = (note_entry or {}).get("note", "")
+        p["health_pct"] = (note_entry or {}).get("health_pct", 100)
+        p["role"]       = (note_entry or {}).get("role", "")
+    return players
+
 def main():
     print("=" * 60)
     print("LDB 2026 Data Generation")
@@ -530,10 +635,17 @@ def main():
     oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy")
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
-    print("\n[6/6] Merging + writing ldb_data.js...")
+    print("\n[6/7] Loading player notes + tags...")
+    notes_index = load_player_notes(PLAYER_NOTES)
+
+    print("\n[7/7] Merging + writing ldb_data.js...")
     batters = merge_rankings(batx_batters, oopsy_batters)
     sp      = merge_rankings(atc_sp,       oopsy_sp)
     rp      = merge_rankings(atc_rp,       oopsy_rp)
+
+    batters = apply_notes(batters, notes_index, "batters")
+    sp      = apply_notes(sp,      notes_index, "sp")
+    rp      = apply_notes(rp,      notes_index, "rp")
 
     # Build owned roster per team (for league board)
     roster_by_team = {abbr: [] for abbr in teams}

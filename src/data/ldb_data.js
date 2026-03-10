@@ -1083,257 +1083,257 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "K. Watson",
-    "A. Gose",
-    "D. Garcia",
-    "B. Wilken",
-    "C. Bonemer",
-    "R. Mauricio",
-    "G. Lombard Jr.",
-    "L. Brinson",
-    "R. Herrera",
-    "J. Bukauskas",
-    "A. Jackson",
-    "C. Vaquero",
-    "J. Lawlar",
-    "H. Davis",
-    "R. Velazquez",
-    "D.J. Peterson",
-    "N. Carlos Vera",
-    "B. Montgomery",
-    "N. Schultz",
-    "V. Brujan",
-    "L. Doyle",
-    "M. Liberatore",
-    "T. Lutz",
-    "W. Jenkins",
-    "G. Canning",
-    "G. Valera",
-    "C. Smith",
-    "J. Guerra",
-    "K. Alcantara",
-    "C. Winn",
-    "F. Kilome",
-    "J. Gonzalez",
-    "C. Condon",
-    "R. Pint",
-    "Rain. Rodriguez",
-    "O. Colas",
-    "B. House",
-    "R. Vilade",
-    "B. Davis",
-    "K. Griffin",
-    "C. Martin",
-    "J. LaViolette",
-    "Ad. Sanchez",
-    "D. Burress",
-    "Q. Mathews",
-    "S. Walcott",
-    "C. Dollander",
-    "C. Lagrange",
-    "J. De Paula",
-    "E. Florentino",
-    "C. Norby",
-    "C. Mayo",
-    "J. Turner",
-    "P. Eeles",
-    "D. Curley",
-    "M. Mayer",
-    "A. Gracia",
-    "T. Troy",
-    "O. Martinez",
-    "B. Thompson",
-    "L. Matos",
-    "L. Pena (MIL)",
-    "K. Harrison",
-    "G. Taylor",
-    "A. Duno",
-    "M. Winn",
-    "C. Cavalli",
-    "L. Montes",
-    "K. Campbell",
-    "H. Bishop",
-    "M. Baez",
-    "F. Whitley",
-    "C. Moore",
-    "C. Pache",
-    "T. Yamada",
-    "C. Early",
-    "Z. Veen",
-    "A. Freeland",
-    "S. Howard",
-    "N. Pearson",
-    "J. Misiorowski",
-    "T. Gillen",
-    "A. Meyer",
-    "J. Bleday",
-    "J. Perdomo",
-    "G. Lavigne",
-    "J. De Leon",
-    "B. Chandler",
+    "D. Jones",
     "X. Isaac",
-    "D. Espino",
-    "E. Carter",
-    "T. Bazzana",
-    "T. Trammell",
     "T. Yesavage",
-    "D. Cartaya",
-    "M. Arroyo",
-    "H. Alvarez",
-    "E. Holliday",
-    "C. Fulmer",
-    "J. Briceno",
-    "B. Rocchio",
-    "J. De Jesus Gonzalez",
-    "T. Johnson",
-    "K. Mcgonigle",
-    "Q. Priester",
-    "A. Martin",
-    "T. Thomas",
-    "R. Snelling",
-    "J. Jobe",
-    "E. Hancock",
-    "J. Triantos",
-    "J. Bart",
-    "P. Tolle",
-    "M. Manning",
-    "R. Contreras",
-    "A. Miller",
-    "T. Hence",
-    "H. Smith",
-    "A. Arquette",
-    "C. Jensen",
-    "X. Neyens",
-    "S. Stewart",
-    "W. Javier",
-    "J. Groome",
-    "E. Conrad",
+    "E. Perez",
+    "E. Rodriguez",
+    "A. Baddoo",
     "B. Shipley",
-    "K. Rocker",
-    "A. Tejeda",
-    "C. Benge",
-    "L. Allen",
-    "S. Yamashita",
-    "T. Beede",
-    "F. Barreto",
-    "T. Casas",
-    "K. Robinson",
-    "O. Peraza",
-    "R. Tiedemann",
-    "E. Green",
-    "P. Messick",
-    "J. Lebron",
-    "J. Barrero",
-    "J. Groshans",
-    "Z. Hope",
-    "F. Alvarez",
+    "C. Early",
+    "P. Tolle",
+    "B. McKay",
     "T. Widener",
-    "E. Morales",
-    "J. Arnold",
-    "N. Gonzales",
-    "F. Arias",
+    "S. Stewart",
+    "A. Hansen",
+    "M. Arroyo",
+    "N. Pearson",
+    "A. Page",
+    "S. Howard",
+    "O. Caissie",
+    "C. Cowser",
+    "T. White",
+    "E. Hancock",
     "F. Celesten",
-    "J. Williams",
-    "M. Ballesteros",
-    "R. Calaz",
-    "J. Balazovic",
-    "A. Nimmala",
-    "C. Burns",
-    "J. Crawford",
-    "C. Emerson",
-    "DL Hall",
-    "C. Keith",
+    "C. Lagrange",
+    "J. Groshans",
+    "C. Williams",
+    "R. Contreras",
+    "V. Brujan",
+    "T. Casas",
+    "J. Luis",
+    "C. Dana",
+    "J. Biddle",
+    "C. Montgomery",
+    "C. Moore",
     "A.J. Reed",
-    "N. Meyer",
+    "A. Nimmala",
+    "M. Mayer",
+    "T. Hence",
+    "J. P. Martinez",
+    "L. Brinson",
+    "J. Arnold",
+    "J. Triantos",
+    "J. Lebron",
+    "S. Strosnider",
+    "B. Goodwin",
+    "M. Clark",
+    "Z. Hope",
+    "C. Dollander",
+    "R. Mauricio",
+    "Y. Curet",
+    "S. Yamashita",
+    "A. Martin",
+    "K. Allard",
+    "L. Matos",
+    "A. Jackson",
+    "X. Neyens",
+    "F. Kilome",
+    "L. Armenteros",
+    "A. Tejeda",
+    "C. Frazier",
+    "O. Colas",
     "E. Hankins",
     "H. Takahashi",
-    "F. Wall",
-    "M. Clark",
-    "C. Young",
-    "A. Page",
-    "C. Hernandez",
-    "C. DeLauter",
-    "R. Hassell",
-    "S. Basallo",
-    "D. Jones",
-    "L. De Vries",
-    "J. Farmelo",
-    "R. Lewis",
-    "A. Baddoo",
-    "T. Sykora",
-    "C. Kieboom",
-    "S. Zavala",
-    "J. Rodriguez",
-    "R. Ryan",
-    "T. Bradley",
-    "L. Patino",
-    "C. Dana",
-    "R. Sloan",
-    "J. Adams",
-    "B. McKay",
-    "J. Parker",
-    "P. Burdick",
-    "M. Sirota",
-    "J. Luis",
-    "A. Painter",
-    "A. Faedo",
-    "H. Waldrep",
-    "T. White",
-    "B. Goodwin",
-    "R. Waldschmidt",
-    "C. Frazier",
-    "B. Eldridge",
-    "S. Jones",
-    "Jah. Jones",
-    "C. Montgomery",
-    "J. Walker",
-    "C. Fuller",
-    "J. Caglianone",
-    "Jai. Chourio",
-    "R. Arias",
-    "C. Spangenberg",
-    "G. Rodriguez",
-    "D. Crews",
-    "O. Caissie",
-    "A. Medina",
-    "M. Harrison",
-    "H. Kjerstad",
-    "A. Bracho",
-    "C. Abrams",
-    "L. Hernandez",
-    "T. Szapucki",
-    "M. Luciano",
-    "K. Allard",
-    "E. Rodriguez",
-    "T. Bremner",
-    "E. Perez",
-    "A. Genao",
-    "D. Lesko",
-    "A. Hansen",
-    "D. Whitney",
-    "N. Marte",
-    "M. Banuelos",
+    "L. Allen",
     "S. Sanchez",
-    "Y. Curet",
-    "J. P. Martinez",
-    "D. Waters",
-    "S. Beer",
-    "J. Biddle",
-    "K. Anderson",
-    "D. Cameron",
-    "M. Abel",
-    "E. Florial",
-    "T. Black",
-    "S. Torkelson",
-    "J. Dunn",
-    "C. Collier",
-    "L. Armenteros",
-    "C. Cowser",
-    "S. Strosnider",
-    "C. Williams",
-    "Ja. Jung",
+    "A. Gracia",
+    "R. Waldschmidt",
+    "C. Bonemer",
+    "A. Meyer",
+    "Q. Priester",
     "Z. Matthews",
-    "B. Rainer"
+    "K. Anderson",
+    "R. Vilade",
+    "M. Liberatore",
+    "G. Taylor",
+    "J. Adams",
+    "J. Barrero",
+    "R. Hassell",
+    "J. Balazovic",
+    "A. Painter",
+    "M. Ballesteros",
+    "J. Jobe",
+    "R. Velazquez",
+    "C. Norby",
+    "K. Harrison",
+    "D. Cartaya",
+    "R. Pint",
+    "K. Alcantara",
+    "B. Rocchio",
+    "J. Lawlar",
+    "B. Davis",
+    "E. Florial",
+    "J. Bleday",
+    "J. De Paula",
+    "S. Torkelson",
+    "J. Bukauskas",
+    "M. Sirota",
+    "Ad. Sanchez",
+    "H. Bishop",
+    "F. Arias",
+    "Z. Veen",
+    "E. Holliday",
+    "B. House",
+    "J. Caglianone",
+    "M. Luciano",
+    "T. Thomas",
+    "R. Tiedemann",
+    "Jah. Jones",
+    "L. Patino",
+    "W. Jenkins",
+    "R. Calaz",
+    "Jai. Chourio",
+    "G. Rodriguez",
+    "S. Beer",
+    "C. Hernandez",
+    "M. Baez",
+    "E. Carter",
+    "J. Crawford",
+    "J. Walker",
+    "J. Groome",
+    "D. Burress",
+    "J. Rodriguez",
+    "Rain. Rodriguez",
+    "T. Johnson",
+    "M. Banuelos",
+    "J. Gonzalez",
+    "T. Bradley",
+    "J. De Jesus Gonzalez",
+    "E. Conrad",
+    "K. Campbell",
+    "A. Gose",
+    "S. Walcott",
+    "H. Smith",
+    "J. Williams",
+    "C. Burns",
+    "R. Arias",
+    "D. Whitney",
+    "C. Smith",
+    "O. Martinez",
+    "J. Briceno",
+    "A. Duno",
+    "L. Pena (MIL)",
+    "C. Winn",
+    "A. Bracho",
+    "E. Morales",
+    "W. Javier",
+    "N. Gonzales",
+    "S. Zavala",
+    "G. Lavigne",
+    "H. Davis",
+    "C. Pache",
+    "K. Watson",
+    "D. Crews",
+    "K. Griffin",
+    "T. Bremner",
+    "M. Manning",
+    "T. Bazzana",
+    "J. Dunn",
+    "A. Freeland",
+    "N. Carlos Vera",
+    "D. Waters",
+    "C. Keith",
+    "L. De Vries",
+    "R. Herrera",
+    "C. Jensen",
+    "F. Wall",
+    "L. Doyle",
+    "K. Robinson",
+    "T. Lutz",
+    "C. DeLauter",
+    "A. Arquette",
+    "O. Peraza",
+    "J. De Leon",
+    "D. Garcia",
+    "J. Farmelo",
+    "G. Lombard Jr.",
+    "B. Montgomery",
+    "A. Miller",
+    "R. Snelling",
+    "G. Canning",
+    "H. Kjerstad",
+    "C. Emerson",
+    "J. Bart",
+    "A. Genao",
+    "T. Troy",
+    "C. Mayo",
+    "M. Abel",
+    "J. Parker",
+    "D. Lesko",
+    "S. Jones",
+    "P. Eeles",
+    "R. Lewis",
+    "B. Rainer",
+    "J. LaViolette",
+    "C. Collier",
+    "T. Szapucki",
+    "A. Faedo",
+    "J. Misiorowski",
+    "K. Rocker",
+    "B. Eldridge",
+    "R. Ryan",
+    "C. Condon",
+    "C. Kieboom",
+    "D. Espino",
+    "Ja. Jung",
+    "C. Fuller",
+    "E. Green",
+    "P. Burdick",
+    "L. Hernandez",
+    "C. Martin",
+    "DL Hall",
+    "D.J. Peterson",
+    "N. Meyer",
+    "R. Sloan",
+    "A. Medina",
+    "C. Young",
+    "C. Abrams",
+    "B. Wilken",
+    "E. Florentino",
+    "N. Schultz",
+    "S. Basallo",
+    "C. Spangenberg",
+    "K. Mcgonigle",
+    "J. Perdomo",
+    "T. Sykora",
+    "G. Valera",
+    "F. Whitley",
+    "C. Vaquero",
+    "F. Barreto",
+    "P. Messick",
+    "M. Harrison",
+    "T. Yamada",
+    "L. Montes",
+    "H. Alvarez",
+    "B. Chandler",
+    "F. Alvarez",
+    "J. Guerra",
+    "T. Beede",
+    "N. Marte",
+    "B. Thompson",
+    "H. Waldrep",
+    "Q. Mathews",
+    "J. Turner",
+    "M. Winn",
+    "D. Cameron",
+    "T. Black",
+    "T. Trammell",
+    "C. Benge",
+    "C. Fulmer",
+    "C. Cavalli",
+    "T. Gillen",
+    "D. Curley"
   ],
   "batters": [
     {
@@ -1375,7 +1375,11 @@ export const LDB_DATA = {
       "oopsy_asb": 19.5,
       "oopsy_wrc_plus": 171.5,
       "oopsy_war": 6.56,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "Batting only in 2026 (TJ recovery). No pitching value — pure elite bat. No SP/RP contribution.",
+      "health_pct": 98,
+      "role": "DH only (no pitching)"
     },
     {
       "id": "batx_b_1",
@@ -1415,7 +1419,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 165.2,
       "oopsy_war": 5.11,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_2",
@@ -1455,7 +1463,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.0,
       "oopsy_wrc_plus": 154.3,
       "oopsy_war": 5.13,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_3",
@@ -1496,7 +1508,11 @@ export const LDB_DATA = {
       "oopsy_asb": 21.1,
       "oopsy_wrc_plus": 136.2,
       "oopsy_war": 5.82,
-      "oopsy_g": 156.0
+      "oopsy_g": 156.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_4",
@@ -1536,7 +1552,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 135.3,
       "oopsy_war": 3.2,
-      "oopsy_g": 159.0
+      "oopsy_g": 159.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_5",
@@ -1576,7 +1596,11 @@ export const LDB_DATA = {
       "oopsy_asb": 31.4,
       "oopsy_wrc_plus": 118.5,
       "oopsy_war": 4.77,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_6",
@@ -1616,7 +1640,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.1,
       "oopsy_wrc_plus": 134.7,
       "oopsy_war": 3.98,
-      "oopsy_g": 154.0
+      "oopsy_g": 154.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_7",
@@ -1656,7 +1684,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 139.8,
       "oopsy_war": 5.26,
-      "oopsy_g": 131.0
+      "oopsy_g": 131.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_8",
@@ -1696,7 +1728,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 131.6,
       "oopsy_war": 3.22,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_9",
@@ -1736,7 +1772,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 124.4,
       "oopsy_war": 3.45,
-      "oopsy_g": 126.0
+      "oopsy_g": 126.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_10",
@@ -1776,7 +1816,11 @@ export const LDB_DATA = {
       "oopsy_asb": 32.3,
       "oopsy_wrc_plus": 119.8,
       "oopsy_war": 5.22,
-      "oopsy_g": 156.0
+      "oopsy_g": 156.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_11",
@@ -1816,7 +1860,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.1,
       "oopsy_wrc_plus": 122.6,
       "oopsy_war": 2.99,
-      "oopsy_g": 149.0
+      "oopsy_g": 149.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_12",
@@ -1857,7 +1905,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.3,
       "oopsy_wrc_plus": 123.3,
       "oopsy_war": 2.89,
-      "oopsy_g": 143.0
+      "oopsy_g": 143.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_13",
@@ -1897,7 +1949,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.4,
       "oopsy_wrc_plus": 126.9,
       "oopsy_war": 3.13,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_14",
@@ -1937,7 +1993,11 @@ export const LDB_DATA = {
       "oopsy_asb": 19.2,
       "oopsy_wrc_plus": 116.4,
       "oopsy_war": 4.48,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_15",
@@ -1977,7 +2037,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 116.9,
       "oopsy_war": 1.86,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_16",
@@ -2018,7 +2082,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.3,
       "oopsy_wrc_plus": 120.5,
       "oopsy_war": 3.57,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_17",
@@ -2058,7 +2126,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.0,
       "oopsy_wrc_plus": 121.6,
       "oopsy_war": 2.54,
-      "oopsy_g": 136.0
+      "oopsy_g": 136.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_18",
@@ -2099,7 +2171,11 @@ export const LDB_DATA = {
       "oopsy_asb": 19.9,
       "oopsy_wrc_plus": 113.0,
       "oopsy_war": 2.96,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_19",
@@ -2140,7 +2216,11 @@ export const LDB_DATA = {
       "oopsy_asb": 25.9,
       "oopsy_wrc_plus": 116.2,
       "oopsy_war": 3.99,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_20",
@@ -2181,7 +2261,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 126.7,
       "oopsy_war": 2.92,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_21",
@@ -2221,7 +2305,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 128.3,
       "oopsy_war": 4.52,
-      "oopsy_g": 156.0
+      "oopsy_g": 156.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_22",
@@ -2261,7 +2349,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.1,
       "oopsy_wrc_plus": 109.2,
       "oopsy_war": 3.67,
-      "oopsy_g": 156.0
+      "oopsy_g": 156.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_23",
@@ -2301,7 +2393,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.6,
       "oopsy_wrc_plus": 118.0,
       "oopsy_war": 4.16,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_24",
@@ -2341,7 +2437,11 @@ export const LDB_DATA = {
       "oopsy_asb": 18.4,
       "oopsy_wrc_plus": 115.1,
       "oopsy_war": 2.46,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_25",
@@ -2383,7 +2483,11 @@ export const LDB_DATA = {
       "oopsy_asb": 19.5,
       "oopsy_wrc_plus": 114.2,
       "oopsy_war": 3.46,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_26",
@@ -2423,7 +2527,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 113.8,
       "oopsy_war": 2.81,
-      "oopsy_g": 152.0
+      "oopsy_g": 152.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_27",
@@ -2463,7 +2571,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.6,
       "oopsy_wrc_plus": 118.9,
       "oopsy_war": 3.84,
-      "oopsy_g": 149.0
+      "oopsy_g": 149.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_28",
@@ -2503,7 +2615,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.9,
       "oopsy_wrc_plus": 108.6,
       "oopsy_war": 3.9,
-      "oopsy_g": 157.0
+      "oopsy_g": 157.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_29",
@@ -2543,7 +2659,11 @@ export const LDB_DATA = {
       "oopsy_asb": 16.7,
       "oopsy_wrc_plus": 111.4,
       "oopsy_war": 1.86,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_30",
@@ -2583,7 +2703,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 127.2,
       "oopsy_war": 3.43,
-      "oopsy_g": 159.0
+      "oopsy_g": 159.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_31",
@@ -2624,7 +2748,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 114.5,
       "oopsy_war": 3.69,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_32",
@@ -2664,7 +2792,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.8,
       "oopsy_wrc_plus": 112.8,
       "oopsy_war": 2.59,
-      "oopsy_g": 152.0
+      "oopsy_g": 152.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_33",
@@ -2704,7 +2836,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.7,
       "oopsy_wrc_plus": 110.1,
       "oopsy_war": 2.54,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_34",
@@ -2744,7 +2880,11 @@ export const LDB_DATA = {
       "oopsy_asb": 14.1,
       "oopsy_wrc_plus": 110.3,
       "oopsy_war": 3.77,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_35",
@@ -2785,7 +2925,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 113.3,
       "oopsy_war": 2.56,
-      "oopsy_g": 126.0
+      "oopsy_g": 126.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_36",
@@ -2826,7 +2970,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.3,
       "oopsy_wrc_plus": 113.7,
       "oopsy_war": 2.67,
-      "oopsy_g": 136.0
+      "oopsy_g": 136.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_37",
@@ -2866,7 +3014,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 107.9,
       "oopsy_war": 1.79,
-      "oopsy_g": 147.0
+      "oopsy_g": 147.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_38",
@@ -2906,7 +3058,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 106.3,
       "oopsy_war": 3.17,
-      "oopsy_g": 156.0
+      "oopsy_g": 156.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_39",
@@ -2946,7 +3102,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 119.0,
       "oopsy_war": 2.18,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_40",
@@ -2986,7 +3146,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 107.3,
       "oopsy_war": 1.39,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_41",
@@ -3028,7 +3192,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.6,
       "oopsy_wrc_plus": 118.0,
       "oopsy_war": 2.28,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_42",
@@ -3058,7 +3226,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_43",
@@ -3098,7 +3270,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 87.8,
       "oopsy_war": 0.56,
-      "oopsy_g": 73.0
+      "oopsy_g": 73.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_44",
@@ -3138,7 +3314,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.0,
       "oopsy_wrc_plus": 116.5,
       "oopsy_war": 2.02,
-      "oopsy_g": 147.0
+      "oopsy_g": 147.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_45",
@@ -3179,7 +3359,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.3,
       "oopsy_wrc_plus": 104.2,
       "oopsy_war": 2.15,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_46",
@@ -3219,7 +3403,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 112.9,
       "oopsy_war": 3.0,
-      "oopsy_g": 152.0
+      "oopsy_g": 152.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_47",
@@ -3259,7 +3447,11 @@ export const LDB_DATA = {
       "oopsy_asb": 23.4,
       "oopsy_wrc_plus": 100.4,
       "oopsy_war": 2.88,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_48",
@@ -3300,7 +3492,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 103.8,
       "oopsy_war": 2.41,
-      "oopsy_g": 144.0
+      "oopsy_g": 144.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_49",
@@ -3342,7 +3538,11 @@ export const LDB_DATA = {
       "oopsy_asb": 17.6,
       "oopsy_wrc_plus": 104.5,
       "oopsy_war": 2.34,
-      "oopsy_g": 136.0
+      "oopsy_g": 136.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_50",
@@ -3382,7 +3582,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.8,
       "oopsy_wrc_plus": 103.4,
       "oopsy_war": 3.24,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_51",
@@ -3423,7 +3627,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 104.9,
       "oopsy_war": 1.55,
-      "oopsy_g": 149.0
+      "oopsy_g": 149.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_52",
@@ -3465,7 +3673,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 96.5,
       "oopsy_war": 0.91,
-      "oopsy_g": 79.0
+      "oopsy_g": 79.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_53",
@@ -3506,7 +3718,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 109.7,
       "oopsy_war": 2.0,
-      "oopsy_g": 125.0
+      "oopsy_g": 125.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_54",
@@ -3546,7 +3762,11 @@ export const LDB_DATA = {
       "oopsy_asb": 14.7,
       "oopsy_wrc_plus": 112.9,
       "oopsy_war": 2.21,
-      "oopsy_g": 144.0
+      "oopsy_g": 144.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_55",
@@ -3588,7 +3808,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.6,
       "oopsy_wrc_plus": 105.2,
       "oopsy_war": 2.75,
-      "oopsy_g": 143.0
+      "oopsy_g": 143.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_56",
@@ -3629,7 +3853,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 114.3,
       "oopsy_war": 1.55,
-      "oopsy_g": 113.0
+      "oopsy_g": 113.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_57",
@@ -3671,7 +3899,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.1,
       "oopsy_wrc_plus": 106.9,
       "oopsy_war": 2.07,
-      "oopsy_g": 115.0
+      "oopsy_g": 115.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_58",
@@ -3711,7 +3943,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.3,
       "oopsy_wrc_plus": 104.5,
       "oopsy_war": 0.65,
-      "oopsy_g": 133.0
+      "oopsy_g": 133.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_59",
@@ -3753,7 +3989,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 110.2,
       "oopsy_war": 1.33,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_60",
@@ -3793,7 +4033,11 @@ export const LDB_DATA = {
       "oopsy_asb": 14.1,
       "oopsy_wrc_plus": 84.4,
       "oopsy_war": 0.53,
-      "oopsy_g": 134.0
+      "oopsy_g": 134.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_61",
@@ -3833,7 +4077,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.2,
       "oopsy_wrc_plus": 89.4,
       "oopsy_war": 2.72,
-      "oopsy_g": 151.0
+      "oopsy_g": 151.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_62",
@@ -3874,7 +4122,11 @@ export const LDB_DATA = {
       "oopsy_asb": 27.5,
       "oopsy_wrc_plus": 106.0,
       "oopsy_war": 2.82,
-      "oopsy_g": 131.0
+      "oopsy_g": 131.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_63",
@@ -3914,7 +4166,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 108.1,
       "oopsy_war": 0.76,
-      "oopsy_g": 122.0
+      "oopsy_g": 122.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_64",
@@ -3955,7 +4211,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.5,
       "oopsy_wrc_plus": 95.7,
       "oopsy_war": 2.62,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_65",
@@ -3997,7 +4257,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.1,
       "oopsy_wrc_plus": 102.4,
       "oopsy_war": 1.08,
-      "oopsy_g": 112.0
+      "oopsy_g": 112.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_66",
@@ -4040,7 +4304,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.7,
       "oopsy_wrc_plus": 95.1,
       "oopsy_war": 1.65,
-      "oopsy_g": 125.0
+      "oopsy_g": 125.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_67",
@@ -4081,7 +4349,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 122.7,
       "oopsy_war": 2.21,
-      "oopsy_g": 110.0
+      "oopsy_g": 110.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_68",
@@ -4121,7 +4393,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 108.9,
       "oopsy_war": 1.13,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_69",
@@ -4161,7 +4437,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 100.3,
       "oopsy_war": 1.38,
-      "oopsy_g": 138.0
+      "oopsy_g": 138.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_70",
@@ -4202,7 +4482,14 @@ export const LDB_DATA = {
       "oopsy_asb": 5.1,
       "oopsy_wrc_plus": 115.6,
       "oopsy_war": 1.61,
-      "oopsy_g": 96.0
+      "oopsy_g": 96.0,
+      "tags": [
+        "ROFR_TARGET",
+        "BUST"
+      ],
+      "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
+      "health_pct": 75,
+      "role": "Corner OF / DH"
     },
     {
       "id": "batx_b_71",
@@ -4242,7 +4529,11 @@ export const LDB_DATA = {
       "oopsy_asb": 15.7,
       "oopsy_wrc_plus": 95.6,
       "oopsy_war": 2.4,
-      "oopsy_g": 144.0
+      "oopsy_g": 144.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_72",
@@ -4282,7 +4573,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.6,
       "oopsy_wrc_plus": 95.4,
       "oopsy_war": 2.79,
-      "oopsy_g": 149.0
+      "oopsy_g": 149.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_73",
@@ -4323,7 +4618,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.1,
       "oopsy_wrc_plus": 111.5,
       "oopsy_war": 2.19,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_74",
@@ -4363,7 +4662,11 @@ export const LDB_DATA = {
       "oopsy_asb": 24.0,
       "oopsy_wrc_plus": 97.6,
       "oopsy_war": 3.36,
-      "oopsy_g": 154.0
+      "oopsy_g": 154.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_75",
@@ -4405,7 +4708,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 106.3,
       "oopsy_war": 1.65,
-      "oopsy_g": 126.0
+      "oopsy_g": 126.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_76",
@@ -4446,7 +4753,11 @@ export const LDB_DATA = {
       "oopsy_asb": 18.9,
       "oopsy_wrc_plus": 84.7,
       "oopsy_war": 0.77,
-      "oopsy_g": 110.0
+      "oopsy_g": 110.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_77",
@@ -4486,7 +4797,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.0,
       "oopsy_wrc_plus": 113.8,
       "oopsy_war": 2.27,
-      "oopsy_g": 104.0
+      "oopsy_g": 104.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_78",
@@ -4526,7 +4841,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 110.8,
       "oopsy_war": 1.92,
-      "oopsy_g": 125.0
+      "oopsy_g": 125.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_79",
@@ -4566,7 +4885,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 100.1,
       "oopsy_war": 2.49,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_80",
@@ -4606,7 +4929,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 113.3,
       "oopsy_war": 2.35,
-      "oopsy_g": 117.0
+      "oopsy_g": 117.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_81",
@@ -4647,7 +4974,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 105.5,
       "oopsy_war": 0.67,
-      "oopsy_g": 117.0
+      "oopsy_g": 117.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_82",
@@ -4688,7 +5019,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 112.8,
       "oopsy_war": 2.35,
-      "oopsy_g": 104.0
+      "oopsy_g": 104.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_83",
@@ -4728,7 +5063,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 109.8,
       "oopsy_war": 2.33,
-      "oopsy_g": 126.0
+      "oopsy_g": 126.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_84",
@@ -4768,7 +5107,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.4,
       "oopsy_wrc_plus": 97.4,
       "oopsy_war": 1.95,
-      "oopsy_g": 126.0
+      "oopsy_g": 126.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_85",
@@ -4808,7 +5151,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 113.7,
       "oopsy_war": 0.99,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_86",
@@ -4848,7 +5195,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 110.6,
       "oopsy_war": 1.59,
-      "oopsy_g": 138.0
+      "oopsy_g": 138.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_87",
@@ -4889,7 +5240,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 111.8,
       "oopsy_war": 3.12,
-      "oopsy_g": 131.0
+      "oopsy_g": 131.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_88",
@@ -4930,7 +5285,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 99.4,
       "oopsy_war": 1.71,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_89",
@@ -4970,7 +5329,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.1,
       "oopsy_wrc_plus": 107.8,
       "oopsy_war": 1.41,
-      "oopsy_g": 143.0
+      "oopsy_g": 143.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_90",
@@ -5011,7 +5374,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.1,
       "oopsy_wrc_plus": 115.2,
       "oopsy_war": 2.89,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_91",
@@ -5052,7 +5419,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.7,
       "oopsy_wrc_plus": 113.4,
       "oopsy_war": 1.96,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_92",
@@ -5094,7 +5465,11 @@ export const LDB_DATA = {
       "oopsy_asb": 17.6,
       "oopsy_wrc_plus": 95.3,
       "oopsy_war": 3.17,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_93",
@@ -5134,7 +5509,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.6,
       "oopsy_wrc_plus": 99.9,
       "oopsy_war": 1.93,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_94",
@@ -5175,7 +5554,11 @@ export const LDB_DATA = {
       "oopsy_asb": 21.4,
       "oopsy_wrc_plus": 96.2,
       "oopsy_war": 2.27,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_95",
@@ -5215,7 +5598,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.4,
       "oopsy_wrc_plus": 107.8,
       "oopsy_war": 2.08,
-      "oopsy_g": 115.0
+      "oopsy_g": 115.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_96",
@@ -5255,7 +5642,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 99.6,
       "oopsy_war": 0.44,
-      "oopsy_g": 121.0
+      "oopsy_g": 121.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_97",
@@ -5295,7 +5686,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 117.7,
       "oopsy_war": 3.48,
-      "oopsy_g": 139.0
+      "oopsy_g": 139.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_98",
@@ -5336,7 +5731,11 @@ export const LDB_DATA = {
       "oopsy_asb": 38.5,
       "oopsy_wrc_plus": 80.2,
       "oopsy_war": 0.58,
-      "oopsy_g": 105.0
+      "oopsy_g": 105.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_99",
@@ -5377,7 +5776,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.2,
       "oopsy_wrc_plus": 100.2,
       "oopsy_war": 0.75,
-      "oopsy_g": 133.0
+      "oopsy_g": 133.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_100",
@@ -5417,7 +5820,11 @@ export const LDB_DATA = {
       "oopsy_asb": 15.0,
       "oopsy_wrc_plus": 104.3,
       "oopsy_war": 3.19,
-      "oopsy_g": 154.0
+      "oopsy_g": 154.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_101",
@@ -5457,7 +5864,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 109.5,
       "oopsy_war": 3.09,
-      "oopsy_g": 128.0
+      "oopsy_g": 128.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_102",
@@ -5498,7 +5909,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 97.1,
       "oopsy_war": 1.14,
-      "oopsy_g": 110.0
+      "oopsy_g": 110.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_103",
@@ -5539,7 +5954,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.7,
       "oopsy_wrc_plus": 103.4,
       "oopsy_war": 0.79,
-      "oopsy_g": 99.0
+      "oopsy_g": 99.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_104",
@@ -5581,7 +6000,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 94.6,
       "oopsy_war": 1.08,
-      "oopsy_g": 134.0
+      "oopsy_g": 134.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_105",
@@ -5621,7 +6044,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 107.1,
       "oopsy_war": 2.47,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_106",
@@ -5661,7 +6088,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.1,
       "oopsy_wrc_plus": 103.0,
       "oopsy_war": 1.83,
-      "oopsy_g": 104.0
+      "oopsy_g": 104.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_107",
@@ -5701,7 +6132,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 108.6,
       "oopsy_war": 1.32,
-      "oopsy_g": 115.0
+      "oopsy_g": 115.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_108",
@@ -5742,7 +6177,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.6,
       "oopsy_wrc_plus": 107.4,
       "oopsy_war": 1.4,
-      "oopsy_g": 92.0
+      "oopsy_g": 92.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_109",
@@ -5784,7 +6223,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 108.6,
       "oopsy_war": 2.18,
-      "oopsy_g": 120.0
+      "oopsy_g": 120.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_110",
@@ -5825,7 +6268,11 @@ export const LDB_DATA = {
       "oopsy_asb": 11.6,
       "oopsy_wrc_plus": 91.3,
       "oopsy_war": 1.5,
-      "oopsy_g": 123.0
+      "oopsy_g": 123.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_111",
@@ -5866,7 +6313,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.6,
       "oopsy_wrc_plus": 94.9,
       "oopsy_war": 0.95,
-      "oopsy_g": 96.0
+      "oopsy_g": 96.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_112",
@@ -5906,7 +6357,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 85.4,
       "oopsy_war": 1.46,
-      "oopsy_g": 141.0
+      "oopsy_g": 141.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_113",
@@ -5946,7 +6401,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 100.7,
       "oopsy_war": 1.73,
-      "oopsy_g": 112.0
+      "oopsy_g": 112.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_114",
@@ -5986,7 +6445,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.3,
       "oopsy_wrc_plus": 107.4,
       "oopsy_war": 2.16,
-      "oopsy_g": 144.0
+      "oopsy_g": 144.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_115",
@@ -6028,7 +6491,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.5,
       "oopsy_wrc_plus": 89.4,
       "oopsy_war": 1.67,
-      "oopsy_g": 123.0
+      "oopsy_g": 123.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_116",
@@ -6069,7 +6536,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 96.0,
       "oopsy_war": 1.94,
-      "oopsy_g": 110.0
+      "oopsy_g": 110.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_117",
@@ -6110,7 +6581,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 95.7,
       "oopsy_war": 0.88,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_118",
@@ -6150,7 +6625,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.5,
       "oopsy_wrc_plus": 95.5,
       "oopsy_war": 0.99,
-      "oopsy_g": 81.0
+      "oopsy_g": 81.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_119",
@@ -6191,7 +6670,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 103.7,
       "oopsy_war": 0.8,
-      "oopsy_g": 55.0
+      "oopsy_g": 55.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_120",
@@ -6231,7 +6714,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.8,
       "oopsy_wrc_plus": 94.6,
       "oopsy_war": 1.57,
-      "oopsy_g": 96.0
+      "oopsy_g": 96.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_121",
@@ -6271,7 +6758,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.4,
       "oopsy_wrc_plus": 99.6,
       "oopsy_war": 0.66,
-      "oopsy_g": 89.0
+      "oopsy_g": 89.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_122",
@@ -6311,7 +6802,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 98.8,
       "oopsy_war": 0.95,
-      "oopsy_g": 109.0
+      "oopsy_g": 109.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_123",
@@ -6351,7 +6846,11 @@ export const LDB_DATA = {
       "oopsy_asb": 18.9,
       "oopsy_wrc_plus": 95.4,
       "oopsy_war": 3.07,
-      "oopsy_g": 138.0
+      "oopsy_g": 138.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_124",
@@ -6391,7 +6890,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 98.9,
       "oopsy_war": 0.28,
-      "oopsy_g": 105.0
+      "oopsy_g": 105.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_125",
@@ -6431,7 +6934,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 92.0,
       "oopsy_war": 1.76,
-      "oopsy_g": 113.0
+      "oopsy_g": 113.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_126",
@@ -6474,7 +6981,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.7,
       "oopsy_wrc_plus": 101.3,
       "oopsy_war": 2.08,
-      "oopsy_g": 115.0
+      "oopsy_g": 115.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_127",
@@ -6514,7 +7025,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 102.5,
       "oopsy_war": 0.7,
-      "oopsy_g": 100.0
+      "oopsy_g": 100.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_128",
@@ -6554,7 +7069,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 97.5,
       "oopsy_war": 0.55,
-      "oopsy_g": 113.0
+      "oopsy_g": 113.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_129",
@@ -6595,7 +7114,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 103.8,
       "oopsy_war": 1.29,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_130",
@@ -6635,7 +7158,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.0,
       "oopsy_wrc_plus": 95.5,
       "oopsy_war": 1.9,
-      "oopsy_g": 94.0
+      "oopsy_g": 94.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_131",
@@ -6677,7 +7204,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.3,
       "oopsy_wrc_plus": 85.0,
       "oopsy_war": 1.26,
-      "oopsy_g": 115.0
+      "oopsy_g": 115.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_132",
@@ -6721,7 +7252,11 @@ export const LDB_DATA = {
       "oopsy_asb": 26.6,
       "oopsy_wrc_plus": 88.8,
       "oopsy_war": 1.38,
-      "oopsy_g": 71.0
+      "oopsy_g": 71.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_133",
@@ -6762,7 +7297,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.0,
       "oopsy_wrc_plus": 98.7,
       "oopsy_war": 2.3,
-      "oopsy_g": 128.0
+      "oopsy_g": 128.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_134",
@@ -6804,7 +7343,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 96.0,
       "oopsy_war": 1.53,
-      "oopsy_g": 121.0
+      "oopsy_g": 121.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_135",
@@ -6844,7 +7387,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 106.1,
       "oopsy_war": 1.42,
-      "oopsy_g": 99.0
+      "oopsy_g": 99.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_136",
@@ -6885,7 +7432,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.5,
       "oopsy_wrc_plus": 109.0,
       "oopsy_war": 1.79,
-      "oopsy_g": 100.0
+      "oopsy_g": 100.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_137",
@@ -6915,7 +7466,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_138",
@@ -6955,7 +7510,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 108.5,
       "oopsy_war": 1.1,
-      "oopsy_g": 102.0
+      "oopsy_g": 102.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_139",
@@ -6996,7 +7555,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 106.2,
       "oopsy_war": 0.62,
-      "oopsy_g": 62.0
+      "oopsy_g": 62.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_140",
@@ -7039,7 +7602,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.6,
       "oopsy_wrc_plus": 92.1,
       "oopsy_war": 1.09,
-      "oopsy_g": 79.0
+      "oopsy_g": 79.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_141",
@@ -7079,7 +7646,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 105.9,
       "oopsy_war": 2.17,
-      "oopsy_g": 96.0
+      "oopsy_g": 96.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_142",
@@ -7119,7 +7690,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.0,
       "oopsy_wrc_plus": 102.2,
       "oopsy_war": 0.51,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_143",
@@ -7159,7 +7734,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 100.8,
       "oopsy_war": 0.29,
-      "oopsy_g": 53.0
+      "oopsy_g": 53.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_144",
@@ -7199,7 +7778,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 96.1,
       "oopsy_war": 1.59,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_145",
@@ -7239,7 +7822,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 103.7,
       "oopsy_war": 3.54,
-      "oopsy_g": 117.0
+      "oopsy_g": 117.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_146",
@@ -7279,7 +7866,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 97.7,
       "oopsy_war": 2.54,
-      "oopsy_g": 117.0
+      "oopsy_g": 117.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_147",
@@ -7309,7 +7900,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_148",
@@ -7349,7 +7944,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 98.6,
       "oopsy_war": 0.97,
-      "oopsy_g": 112.0
+      "oopsy_g": 112.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_149",
@@ -7389,7 +7988,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 103.1,
       "oopsy_war": 0.66,
-      "oopsy_g": 89.0
+      "oopsy_g": 89.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_150",
@@ -7429,7 +8032,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.6,
       "oopsy_wrc_plus": 107.7,
       "oopsy_war": 2.71,
-      "oopsy_g": 130.0
+      "oopsy_g": 130.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_151",
@@ -7469,7 +8076,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 96.8,
       "oopsy_war": 1.13,
-      "oopsy_g": 112.0
+      "oopsy_g": 112.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_152",
@@ -7499,7 +8110,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_153",
@@ -7539,7 +8154,11 @@ export const LDB_DATA = {
       "oopsy_asb": 11.2,
       "oopsy_wrc_plus": 93.3,
       "oopsy_war": 2.81,
-      "oopsy_g": 146.0
+      "oopsy_g": 146.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_154",
@@ -7580,7 +8199,11 @@ export const LDB_DATA = {
       "oopsy_asb": 11.5,
       "oopsy_wrc_plus": 95.0,
       "oopsy_war": 1.88,
-      "oopsy_g": 113.0
+      "oopsy_g": 113.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_155",
@@ -7620,7 +8243,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 81.5,
       "oopsy_war": 0.41,
-      "oopsy_g": 50.0
+      "oopsy_g": 50.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_156",
@@ -7661,7 +8288,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.5,
       "oopsy_wrc_plus": 98.1,
       "oopsy_war": 0.44,
-      "oopsy_g": 50.0
+      "oopsy_g": 50.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_157",
@@ -7703,7 +8334,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.7,
       "oopsy_wrc_plus": 89.0,
       "oopsy_war": 2.12,
-      "oopsy_g": 149.0
+      "oopsy_g": 149.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_158",
@@ -7744,7 +8379,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 87.6,
       "oopsy_war": 0.41,
-      "oopsy_g": 94.0
+      "oopsy_g": 94.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_159",
@@ -7785,7 +8424,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 106.9,
       "oopsy_war": 0.91,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_160",
@@ -7826,7 +8469,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 96.9,
       "oopsy_war": 0.08,
-      "oopsy_g": 86.0
+      "oopsy_g": 86.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_161",
@@ -7868,7 +8515,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 95.1,
       "oopsy_war": 0.53,
-      "oopsy_g": 53.0
+      "oopsy_g": 53.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_162",
@@ -7909,7 +8560,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.4,
       "oopsy_wrc_plus": 102.2,
       "oopsy_war": 0.71,
-      "oopsy_g": 73.0
+      "oopsy_g": 73.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_163",
@@ -7949,7 +8604,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.4,
       "oopsy_wrc_plus": 88.5,
       "oopsy_war": 0.11,
-      "oopsy_g": 63.0
+      "oopsy_g": 63.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_164",
@@ -7979,7 +8638,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_165",
@@ -8007,7 +8670,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_166",
@@ -8048,7 +8715,11 @@ export const LDB_DATA = {
       "oopsy_asb": 15.0,
       "oopsy_wrc_plus": 93.2,
       "oopsy_war": 0.77,
-      "oopsy_g": 76.0
+      "oopsy_g": 76.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_167",
@@ -8090,7 +8761,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 108.3,
       "oopsy_war": 1.13,
-      "oopsy_g": 73.0
+      "oopsy_g": 73.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_168",
@@ -8132,7 +8807,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.4,
       "oopsy_wrc_plus": 93.9,
       "oopsy_war": 1.11,
-      "oopsy_g": 92.0
+      "oopsy_g": 92.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_169",
@@ -8172,7 +8851,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 87.3,
       "oopsy_war": 2.25,
-      "oopsy_g": 107.0
+      "oopsy_g": 107.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_170",
@@ -8212,7 +8895,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 96.9,
       "oopsy_war": 0.57,
-      "oopsy_g": 78.0
+      "oopsy_g": 78.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_171",
@@ -8252,7 +8939,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 96.5,
       "oopsy_war": 2.74,
-      "oopsy_g": 109.0
+      "oopsy_g": 109.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_172",
@@ -8293,7 +8984,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.7,
       "oopsy_wrc_plus": 97.0,
       "oopsy_war": 0.41,
-      "oopsy_g": 55.0
+      "oopsy_g": 55.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_173",
@@ -8334,7 +9029,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 89.3,
       "oopsy_war": 0.54,
-      "oopsy_g": 89.0
+      "oopsy_g": 89.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_174",
@@ -8376,7 +9075,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 89.5,
       "oopsy_war": 0.43,
-      "oopsy_g": 47.0
+      "oopsy_g": 47.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_175",
@@ -8416,7 +9119,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.7,
       "oopsy_wrc_plus": 105.2,
       "oopsy_war": 0.98,
-      "oopsy_g": 58.0
+      "oopsy_g": 58.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_176",
@@ -8457,7 +9164,11 @@ export const LDB_DATA = {
       "oopsy_asb": 12.5,
       "oopsy_wrc_plus": 104.0,
       "oopsy_war": 2.02,
-      "oopsy_g": 92.0
+      "oopsy_g": 92.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_177",
@@ -8499,7 +9210,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 96.5,
       "oopsy_war": 0.9,
-      "oopsy_g": 68.0
+      "oopsy_g": 68.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_178",
@@ -8539,7 +9254,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.6,
       "oopsy_wrc_plus": 79.5,
       "oopsy_war": 1.68,
-      "oopsy_g": 123.0
+      "oopsy_g": 123.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_179",
@@ -8570,7 +9289,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_180",
@@ -8612,7 +9335,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.1,
       "oopsy_wrc_plus": 84.3,
       "oopsy_war": 0.39,
-      "oopsy_g": 47.0
+      "oopsy_g": 47.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_181",
@@ -8654,7 +9381,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.7,
       "oopsy_wrc_plus": 91.7,
       "oopsy_war": 1.55,
-      "oopsy_g": 138.0
+      "oopsy_g": 138.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_182",
@@ -8694,7 +9425,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 96.6,
       "oopsy_war": 0.85,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_183",
@@ -8736,7 +9471,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 100.2,
       "oopsy_war": 0.48,
-      "oopsy_g": 55.0
+      "oopsy_g": 55.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_184",
@@ -8776,7 +9515,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 98.1,
       "oopsy_war": 1.31,
-      "oopsy_g": 89.0
+      "oopsy_g": 89.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_185",
@@ -8816,7 +9559,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.3,
       "oopsy_wrc_plus": 83.9,
       "oopsy_war": 0.14,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_186",
@@ -8858,7 +9605,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 92.7,
       "oopsy_war": 0.7,
-      "oopsy_g": 55.0
+      "oopsy_g": 55.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_187",
@@ -8899,7 +9650,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 97.1,
       "oopsy_war": 0.8,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_188",
@@ -8940,7 +9695,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 92.2,
       "oopsy_war": 0.69,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_189",
@@ -8970,7 +9729,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_190",
@@ -9010,7 +9773,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.0,
       "oopsy_wrc_plus": 77.3,
       "oopsy_war": -0.25,
-      "oopsy_g": 83.0
+      "oopsy_g": 83.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_191",
@@ -9051,7 +9818,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 90.9,
       "oopsy_war": 0.7,
-      "oopsy_g": 94.0
+      "oopsy_g": 94.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_192",
@@ -9093,7 +9864,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.4,
       "oopsy_wrc_plus": 84.3,
       "oopsy_war": 0.33,
-      "oopsy_g": 53.0
+      "oopsy_g": 53.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_193",
@@ -9134,7 +9909,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 95.9,
       "oopsy_war": 0.24,
-      "oopsy_g": 84.0
+      "oopsy_g": 84.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_194",
@@ -9174,7 +9953,11 @@ export const LDB_DATA = {
       "oopsy_asb": 11.5,
       "oopsy_wrc_plus": 88.0,
       "oopsy_war": 0.39,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_195",
@@ -9215,7 +9998,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.1,
       "oopsy_wrc_plus": 90.3,
       "oopsy_war": 1.84,
-      "oopsy_g": 112.0
+      "oopsy_g": 112.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_196",
@@ -9245,7 +10032,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_197",
@@ -9285,7 +10076,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 96.7,
       "oopsy_war": 1.01,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_198",
@@ -9315,7 +10110,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_199",
@@ -9356,7 +10155,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.7,
       "oopsy_wrc_plus": 95.4,
       "oopsy_war": 0.55,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_200",
@@ -9397,7 +10200,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.5,
       "oopsy_wrc_plus": 93.9,
       "oopsy_war": 0.94,
-      "oopsy_g": 100.0
+      "oopsy_g": 100.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_201",
@@ -9437,7 +10244,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.1,
       "oopsy_wrc_plus": 88.9,
       "oopsy_war": 0.83,
-      "oopsy_g": 66.0
+      "oopsy_g": 66.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_202",
@@ -9477,7 +10288,11 @@ export const LDB_DATA = {
       "oopsy_asb": 28.5,
       "oopsy_wrc_plus": 73.4,
       "oopsy_war": 0.82,
-      "oopsy_g": 89.0
+      "oopsy_g": 89.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_203",
@@ -9518,7 +10333,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.8,
       "oopsy_wrc_plus": 87.8,
       "oopsy_war": 0.56,
-      "oopsy_g": 73.0
+      "oopsy_g": 73.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_204",
@@ -9558,7 +10377,11 @@ export const LDB_DATA = {
       "oopsy_asb": 10.9,
       "oopsy_wrc_plus": 75.2,
       "oopsy_war": 0.46,
-      "oopsy_g": 70.0
+      "oopsy_g": 70.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_205",
@@ -9599,7 +10422,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.2,
       "oopsy_wrc_plus": 92.7,
       "oopsy_war": 0.76,
-      "oopsy_g": 52.0
+      "oopsy_g": 52.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_206",
@@ -9641,7 +10468,11 @@ export const LDB_DATA = {
       "oopsy_asb": 11.2,
       "oopsy_wrc_plus": 81.1,
       "oopsy_war": 0.39,
-      "oopsy_g": 86.0
+      "oopsy_g": 86.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_207",
@@ -9682,7 +10513,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.5,
       "oopsy_wrc_plus": 91.6,
       "oopsy_war": 2.07,
-      "oopsy_g": 97.0
+      "oopsy_g": 97.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_208",
@@ -9722,7 +10557,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.9,
       "oopsy_wrc_plus": 92.8,
       "oopsy_war": 0.88,
-      "oopsy_g": 96.0
+      "oopsy_g": 96.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_209",
@@ -9753,7 +10592,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_210",
@@ -9793,7 +10636,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 87.6,
       "oopsy_war": 0.68,
-      "oopsy_g": 58.0
+      "oopsy_g": 58.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_211",
@@ -9833,7 +10680,11 @@ export const LDB_DATA = {
       "oopsy_asb": 19.2,
       "oopsy_wrc_plus": 80.1,
       "oopsy_war": 0.83,
-      "oopsy_g": 92.0
+      "oopsy_g": 92.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_212",
@@ -9874,7 +10725,11 @@ export const LDB_DATA = {
       "oopsy_asb": 8.3,
       "oopsy_wrc_plus": 91.1,
       "oopsy_war": 0.88,
-      "oopsy_g": 68.0
+      "oopsy_g": 68.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_213",
@@ -9904,7 +10759,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_214",
@@ -9944,7 +10803,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 86.5,
       "oopsy_war": 0.52,
-      "oopsy_g": 63.0
+      "oopsy_g": 63.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_215",
@@ -9984,7 +10847,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.4,
       "oopsy_wrc_plus": 93.6,
       "oopsy_war": 0.82,
-      "oopsy_g": 92.0
+      "oopsy_g": 92.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_216",
@@ -10025,7 +10892,11 @@ export const LDB_DATA = {
       "oopsy_asb": 7.1,
       "oopsy_wrc_plus": 83.3,
       "oopsy_war": 1.28,
-      "oopsy_g": 113.0
+      "oopsy_g": 113.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_217",
@@ -10058,7 +10929,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_218",
@@ -10088,7 +10963,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_219",
@@ -10128,7 +11007,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 93.1,
       "oopsy_war": 1.08,
-      "oopsy_g": 66.0
+      "oopsy_g": 66.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_220",
@@ -10161,7 +11044,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_221",
@@ -10201,7 +11088,11 @@ export const LDB_DATA = {
       "oopsy_asb": 4.9,
       "oopsy_wrc_plus": 88.2,
       "oopsy_war": 0.31,
-      "oopsy_g": 50.0
+      "oopsy_g": 50.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_222",
@@ -10242,7 +11133,11 @@ export const LDB_DATA = {
       "oopsy_asb": 13.8,
       "oopsy_wrc_plus": 77.7,
       "oopsy_war": 0.97,
-      "oopsy_g": 73.0
+      "oopsy_g": 73.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_223",
@@ -10286,7 +11181,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 83.3,
       "oopsy_war": 0.93,
-      "oopsy_g": 99.0
+      "oopsy_g": 99.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_224",
@@ -10327,7 +11226,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.4,
       "oopsy_wrc_plus": 85.6,
       "oopsy_war": 0.62,
-      "oopsy_g": 65.0
+      "oopsy_g": 65.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_225",
@@ -10368,7 +11271,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 96.6,
       "oopsy_war": 0.58,
-      "oopsy_g": 49.0
+      "oopsy_g": 49.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_226",
@@ -10408,7 +11315,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 99.7,
       "oopsy_war": 0.37,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_227",
@@ -10440,7 +11351,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_228",
@@ -10480,7 +11395,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 83.4,
       "oopsy_war": 0.51,
-      "oopsy_g": 58.0
+      "oopsy_g": 58.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_229",
@@ -10520,7 +11439,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.2,
       "oopsy_wrc_plus": 82.1,
       "oopsy_war": 0.42,
-      "oopsy_g": 53.0
+      "oopsy_g": 53.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_230",
@@ -10560,7 +11483,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 85.4,
       "oopsy_war": 1.96,
-      "oopsy_g": 122.0
+      "oopsy_g": 122.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_231",
@@ -10600,7 +11527,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 94.1,
       "oopsy_war": 1.2,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_232",
@@ -10640,7 +11571,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.2,
       "oopsy_wrc_plus": 86.5,
       "oopsy_war": 0.51,
-      "oopsy_g": 53.0
+      "oopsy_g": 53.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_233",
@@ -10680,7 +11615,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.0,
       "oopsy_wrc_plus": 99.5,
       "oopsy_war": 1.16,
-      "oopsy_g": 50.0
+      "oopsy_g": 50.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_234",
@@ -10720,7 +11659,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 90.2,
       "oopsy_war": 1.28,
-      "oopsy_g": 55.0
+      "oopsy_g": 55.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_235",
@@ -10762,7 +11705,11 @@ export const LDB_DATA = {
       "oopsy_asb": 2.7,
       "oopsy_wrc_plus": 84.0,
       "oopsy_war": 0.19,
-      "oopsy_g": 62.0
+      "oopsy_g": 62.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_236",
@@ -10802,7 +11749,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 80.0,
       "oopsy_war": 3.94,
-      "oopsy_g": 133.0
+      "oopsy_g": 133.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_237",
@@ -10845,7 +11796,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.1,
       "oopsy_wrc_plus": 75.4,
       "oopsy_war": 0.41,
-      "oopsy_g": 87.0
+      "oopsy_g": 87.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_238",
@@ -10885,7 +11840,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.5,
       "oopsy_wrc_plus": 97.9,
       "oopsy_war": 0.59,
-      "oopsy_g": 87.0
+      "oopsy_g": 87.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_239",
@@ -10926,7 +11885,11 @@ export const LDB_DATA = {
       "oopsy_asb": 3.6,
       "oopsy_wrc_plus": 90.3,
       "oopsy_war": 0.57,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_240",
@@ -10967,7 +11930,11 @@ export const LDB_DATA = {
       "oopsy_asb": 6.4,
       "oopsy_wrc_plus": 83.6,
       "oopsy_war": 0.52,
-      "oopsy_g": 50.0
+      "oopsy_g": 50.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_241",
@@ -10997,7 +11964,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_242",
@@ -11037,7 +12008,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.1,
       "oopsy_wrc_plus": 88.7,
       "oopsy_war": 0.85,
-      "oopsy_g": 70.0
+      "oopsy_g": 70.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_243",
@@ -11079,7 +12054,11 @@ export const LDB_DATA = {
       "oopsy_asb": 5.8,
       "oopsy_wrc_plus": 91.0,
       "oopsy_war": 0.78,
-      "oopsy_g": 60.0
+      "oopsy_g": 60.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_244",
@@ -11119,7 +12098,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 84.0,
       "oopsy_war": 0.93,
-      "oopsy_g": 75.0
+      "oopsy_g": 75.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_245",
@@ -11150,7 +12133,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_246",
@@ -11190,7 +12177,11 @@ export const LDB_DATA = {
       "oopsy_asb": 0.0,
       "oopsy_wrc_plus": 98.1,
       "oopsy_war": 0.62,
-      "oopsy_g": 63.0
+      "oopsy_g": 63.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_247",
@@ -11230,7 +12221,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 85.7,
       "oopsy_war": 0.82,
-      "oopsy_g": 70.0
+      "oopsy_g": 70.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_248",
@@ -11270,7 +12265,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 75.0,
       "oopsy_war": 0.76,
-      "oopsy_g": 71.0
+      "oopsy_g": 71.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_249",
@@ -11310,7 +12309,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 83.6,
       "oopsy_war": 1.29,
-      "oopsy_g": 91.0
+      "oopsy_g": 91.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_250",
@@ -11350,7 +12353,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.0,
       "oopsy_wrc_plus": 84.1,
       "oopsy_war": 0.65,
-      "oopsy_g": 66.0
+      "oopsy_g": 66.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_251",
@@ -11390,7 +12397,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 89.6,
       "oopsy_war": 0.5,
-      "oopsy_g": 81.0
+      "oopsy_g": 81.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_252",
@@ -11430,7 +12441,11 @@ export const LDB_DATA = {
       "oopsy_asb": 1.3,
       "oopsy_wrc_plus": 77.1,
       "oopsy_war": 1.0,
-      "oopsy_g": 79.0
+      "oopsy_g": 79.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_253",
@@ -11461,7 +12476,11 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "batx_b_254",
@@ -11502,7 +12521,11 @@ export const LDB_DATA = {
       "oopsy_asb": 9.9,
       "oopsy_wrc_plus": 62.5,
       "oopsy_war": 0.24,
-      "oopsy_g": 65.0
+      "oopsy_g": 65.0,
+      "tags": [],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     }
   ],
   "sp": [
@@ -11541,7 +12564,14 @@ export const LDB_DATA = {
       "oopsy_whip": 0.98,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 13.16,
-      "oopsy_fip": 2.706
+      "oopsy_fip": 2.706,
+      "tags": [
+        "BREAKOUT",
+        "RATIOS_ACE"
+      ],
+      "note": "Reigning AL Cy Young. Elite stuff, durable. Only risk is modest regression from historic 2024 ratios.",
+      "health_pct": 95,
+      "role": "Ace #1 starter"
     },
     {
       "id": "atc_sp_1",
@@ -11579,7 +12609,15 @@ export const LDB_DATA = {
       "oopsy_whip": 1.092,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 9.32,
-      "oopsy_fip": 3.155
+      "oopsy_fip": 3.155,
+      "tags": [
+        "AGING",
+        "IL",
+        "RATIOS_ACE"
+      ],
+      "note": "Won NL Cy Young at 35. History of TJ surgery and rib injuries. Monitor spring training workload.",
+      "health_pct": 75,
+      "role": "SP when healthy"
     },
     {
       "id": "atc_sp_2",
@@ -11616,7 +12654,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.049,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 8.38,
-      "oopsy_fip": 3.298
+      "oopsy_fip": 3.298,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_3",
@@ -11653,7 +12697,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.086,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 9.58,
-      "oopsy_fip": 3.314
+      "oopsy_fip": 3.314,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_4",
@@ -11690,7 +12740,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.173,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 6.9,
-      "oopsy_fip": 3.502
+      "oopsy_fip": 3.502,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_5",
@@ -11727,7 +12783,15 @@ export const LDB_DATA = {
       "oopsy_whip": 1.1,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 9.19,
-      "oopsy_fip": 3.528
+      "oopsy_fip": 3.528,
+      "tags": [
+        "BREAKOUT",
+        "ROFR_TARGET",
+        "RATIOS_ACE"
+      ],
+      "note": "FRY holds ROFR. Elite stuff+, top-5 SP upside. Must-protect or must-bid — do not let CORN grab cheap.",
+      "health_pct": 90,
+      "role": "Frontline SP"
     },
     {
       "id": "atc_sp_6",
@@ -11764,7 +12828,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.163,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 6.74,
-      "oopsy_fip": 3.598
+      "oopsy_fip": 3.598,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_7",
@@ -11801,7 +12871,15 @@ export const LDB_DATA = {
       "oopsy_whip": 1.22,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 7.58,
-      "oopsy_fip": 3.6
+      "oopsy_fip": 3.6,
+      "tags": [
+        "ROLE_UNCLEAR",
+        "AGING",
+        "RATIOS_ACE"
+      ],
+      "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
+      "health_pct": 70,
+      "role": "TBD / unsigned"
     },
     {
       "id": "atc_sp_8",
@@ -11838,7 +12916,14 @@ export const LDB_DATA = {
       "oopsy_whip": 1.208,
       "oopsy_hra": 23.0,
       "oopsy_mgs": 6.75,
-      "oopsy_fip": 3.738
+      "oopsy_fip": 3.738,
+      "tags": [
+        "BUST",
+        "RATIOS_ACE"
+      ],
+      "note": "High-K but HR/9 and walk rate make ratios volatile. Petco helps but not a set-it-forget-it arm.",
+      "health_pct": 90,
+      "role": "SP #3"
     },
     {
       "id": "atc_sp_9",
@@ -11876,7 +12961,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.102,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 6.74,
-      "oopsy_fip": 3.352
+      "oopsy_fip": 3.352,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "Batting only in 2026 (TJ recovery). No pitching value — pure elite bat. No SP/RP contribution.",
+      "health_pct": 98,
+      "role": "DH only (no pitching)"
     },
     {
       "id": "atc_sp_10",
@@ -11914,7 +13005,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.112,
       "oopsy_hra": 25.0,
       "oopsy_mgs": 6.41,
-      "oopsy_fip": 3.718
+      "oopsy_fip": 3.718,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_11",
@@ -11951,7 +13048,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.169,
       "oopsy_hra": 16.0,
       "oopsy_mgs": 7.13,
-      "oopsy_fip": 3.579
+      "oopsy_fip": 3.579,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_12",
@@ -11986,7 +13089,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.208,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 4.58,
-      "oopsy_fip": 4.024
+      "oopsy_fip": 4.024,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_13",
@@ -12023,7 +13132,15 @@ export const LDB_DATA = {
       "oopsy_whip": 1.213,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 5.25,
-      "oopsy_fip": 3.839
+      "oopsy_fip": 3.839,
+      "tags": [
+        "INJURED",
+        "BOUNCE_BACK",
+        "RATIOS_ACE"
+      ],
+      "note": "TJ surgery, missed 2024. If velocity returns, top-5 SP upside. High reward, non-trivial risk.",
+      "health_pct": 70,
+      "role": "SP — TJ return"
     },
     {
       "id": "atc_sp_14",
@@ -12060,7 +13177,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.307,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 4.15,
-      "oopsy_fip": 3.889
+      "oopsy_fip": 3.889,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_15",
@@ -12097,7 +13220,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.225,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 4.93,
-      "oopsy_fip": 3.916
+      "oopsy_fip": 3.916,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_16",
@@ -12134,7 +13263,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.366,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 3.1,
-      "oopsy_fip": 3.734
+      "oopsy_fip": 3.734,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_17",
@@ -12171,7 +13306,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.189,
       "oopsy_hra": 24.0,
       "oopsy_mgs": 4.48,
-      "oopsy_fip": 4.03
+      "oopsy_fip": 4.03,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_18",
@@ -12208,7 +13349,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.141,
       "oopsy_hra": 10.0,
       "oopsy_mgs": 5.8,
-      "oopsy_fip": 3.548
+      "oopsy_fip": 3.548,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_19",
@@ -12245,7 +13392,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.246,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 4.48,
-      "oopsy_fip": 3.847
+      "oopsy_fip": 3.847,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_20",
@@ -12282,7 +13435,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.223,
       "oopsy_hra": 24.0,
       "oopsy_mgs": 3.31,
-      "oopsy_fip": 4.224
+      "oopsy_fip": 4.224,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_21",
@@ -12319,7 +13478,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.231,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 4.04,
-      "oopsy_fip": 4.208
+      "oopsy_fip": 4.208,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_22",
@@ -12357,7 +13522,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.305,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 6.57,
-      "oopsy_fip": 4.011
+      "oopsy_fip": 4.011,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_23",
@@ -12394,7 +13565,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.187,
       "oopsy_hra": 10.0,
       "oopsy_mgs": 3.73,
-      "oopsy_fip": 3.761
+      "oopsy_fip": 3.761,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_24",
@@ -12429,7 +13606,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.191,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 3.96,
-      "oopsy_fip": 3.906
+      "oopsy_fip": 3.906,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_25",
@@ -12467,7 +13650,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.212,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 6.43,
-      "oopsy_fip": 4.054
+      "oopsy_fip": 4.054,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_26",
@@ -12502,7 +13691,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.242,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 7.14,
-      "oopsy_fip": 3.935
+      "oopsy_fip": 3.935,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_27",
@@ -12540,7 +13735,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.218,
       "oopsy_hra": 14.0,
       "oopsy_mgs": 10.27,
-      "oopsy_fip": 4.101
+      "oopsy_fip": 4.101,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_28",
@@ -12577,7 +13778,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.197,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 6.22,
-      "oopsy_fip": 4.118
+      "oopsy_fip": 4.118,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_29",
@@ -12614,7 +13821,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.215,
       "oopsy_hra": 26.0,
       "oopsy_mgs": 3.58,
-      "oopsy_fip": 4.052
+      "oopsy_fip": 4.052,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_30",
@@ -12651,7 +13864,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.302,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 2.76,
-      "oopsy_fip": 4.112
+      "oopsy_fip": 4.112,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_31",
@@ -12688,7 +13907,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.308,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 1.29,
-      "oopsy_fip": 4.173
+      "oopsy_fip": 4.173,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_32",
@@ -12726,7 +13951,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.251,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 2.88,
-      "oopsy_fip": 4.11
+      "oopsy_fip": 4.11,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_33",
@@ -12763,7 +13994,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.262,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 4.88,
-      "oopsy_fip": 3.997
+      "oopsy_fip": 3.997,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_34",
@@ -12800,7 +14037,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.299,
       "oopsy_hra": 23.0,
       "oopsy_mgs": 2.35,
-      "oopsy_fip": 4.053
+      "oopsy_fip": 4.053,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_35",
@@ -12835,7 +14078,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.295,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 9.36,
-      "oopsy_fip": 4.048
+      "oopsy_fip": 4.048,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_36",
@@ -12872,7 +14121,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.281,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 2.97,
-      "oopsy_fip": 3.963
+      "oopsy_fip": 3.963,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_37",
@@ -12907,7 +14162,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.244,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 2.35,
-      "oopsy_fip": 3.695
+      "oopsy_fip": 3.695,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_38",
@@ -12945,7 +14206,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.341,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 2.25,
-      "oopsy_fip": 3.902
+      "oopsy_fip": 3.902,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_39",
@@ -12982,7 +14249,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.188,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 3.58,
-      "oopsy_fip": 4.094
+      "oopsy_fip": 4.094,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_40",
@@ -13017,7 +14290,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.388,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 3.23,
-      "oopsy_fip": 4.387
+      "oopsy_fip": 4.387,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_41",
@@ -13052,7 +14331,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.273,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 5.21,
-      "oopsy_fip": 3.987
+      "oopsy_fip": 3.987,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_42",
@@ -13087,7 +14372,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.268,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 3.17,
-      "oopsy_fip": 4.128
+      "oopsy_fip": 4.128,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_43",
@@ -13124,7 +14415,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.269,
       "oopsy_hra": 19.0,
       "oopsy_mgs": 1.25,
-      "oopsy_fip": 4.084
+      "oopsy_fip": 4.084,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_44",
@@ -13161,7 +14458,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.285,
       "oopsy_hra": 24.0,
       "oopsy_mgs": 2.71,
-      "oopsy_fip": 4.197
+      "oopsy_fip": 4.197,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_45",
@@ -13198,7 +14501,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.316,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 0.31,
-      "oopsy_fip": 4.223
+      "oopsy_fip": 4.223,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_46",
@@ -13235,7 +14544,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.297,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 2.61,
-      "oopsy_fip": 4.298
+      "oopsy_fip": 4.298,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_47",
@@ -13272,7 +14587,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.373,
       "oopsy_hra": 10.0,
       "oopsy_mgs": 6.64,
-      "oopsy_fip": 4.165
+      "oopsy_fip": 4.165,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_48",
@@ -13310,7 +14631,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.355,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 11.82,
-      "oopsy_fip": 4.387
+      "oopsy_fip": 4.387,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_49",
@@ -13347,7 +14674,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.352,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 8.73,
-      "oopsy_fip": 4.697
+      "oopsy_fip": 4.697,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_50",
@@ -13385,7 +14718,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.318,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 5.89,
-      "oopsy_fip": 4.049
+      "oopsy_fip": 4.049,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_51",
@@ -13422,7 +14761,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.306,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 1.68,
-      "oopsy_fip": 4.043
+      "oopsy_fip": 4.043,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_52",
@@ -13460,7 +14805,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.312,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 2.5,
-      "oopsy_fip": 4.343
+      "oopsy_fip": 4.343,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_53",
@@ -13497,7 +14848,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.353,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 1.87,
-      "oopsy_fip": 3.981
+      "oopsy_fip": 3.981,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_54",
@@ -13535,7 +14892,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.266,
       "oopsy_hra": 18.0,
       "oopsy_mgs": 2.7,
-      "oopsy_fip": 4.107
+      "oopsy_fip": 4.107,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_55",
@@ -13573,7 +14936,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.324,
       "oopsy_hra": 25.0,
       "oopsy_mgs": 2.21,
-      "oopsy_fip": 4.293
+      "oopsy_fip": 4.293,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_56",
@@ -13610,7 +14979,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.345,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 4.2,
-      "oopsy_fip": 4.213
+      "oopsy_fip": 4.213,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_57",
@@ -13647,7 +15022,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.269,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 5.14,
-      "oopsy_fip": 4.09
+      "oopsy_fip": 4.09,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_58",
@@ -13676,7 +15057,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_59",
@@ -13713,7 +15100,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.227,
       "oopsy_hra": 26.0,
       "oopsy_mgs": 0.82,
-      "oopsy_fip": 4.512
+      "oopsy_fip": 4.512,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_60",
@@ -13751,7 +15144,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.358,
       "oopsy_hra": 7.0,
       "oopsy_mgs": 7.55,
-      "oopsy_fip": 3.913
+      "oopsy_fip": 3.913,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_61",
@@ -13788,7 +15187,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.31,
       "oopsy_hra": 24.0,
       "oopsy_mgs": 1.23,
-      "oopsy_fip": 4.279
+      "oopsy_fip": 4.279,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_62",
@@ -13825,7 +15230,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.355,
       "oopsy_hra": 19.0,
       "oopsy_mgs": -0.46,
-      "oopsy_fip": 4.387
+      "oopsy_fip": 4.387,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_63",
@@ -13863,7 +15274,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.299,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 0.17,
-      "oopsy_fip": 4.09
+      "oopsy_fip": 4.09,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_64",
@@ -13901,7 +15318,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.351,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 2.16,
-      "oopsy_fip": 4.559
+      "oopsy_fip": 4.559,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_65",
@@ -13938,7 +15361,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.315,
       "oopsy_hra": 8.0,
       "oopsy_mgs": 5.1,
-      "oopsy_fip": 4.21
+      "oopsy_fip": 4.21,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_66",
@@ -13976,7 +15405,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.231,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 3.27,
-      "oopsy_fip": 4.276
+      "oopsy_fip": 4.276,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_67",
@@ -14013,7 +15448,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.311,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 2.5,
-      "oopsy_fip": 3.999
+      "oopsy_fip": 3.999,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_68",
@@ -14051,7 +15492,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.312,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 1.81,
-      "oopsy_fip": 4.519
+      "oopsy_fip": 4.519,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_69",
@@ -14089,7 +15536,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.267,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 3.95,
-      "oopsy_fip": 4.288
+      "oopsy_fip": 4.288,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_70",
@@ -14126,7 +15579,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.347,
       "oopsy_hra": 24.0,
       "oopsy_mgs": -1.0,
-      "oopsy_fip": 4.598
+      "oopsy_fip": 4.598,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_71",
@@ -14163,7 +15622,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.248,
       "oopsy_hra": 12.0,
       "oopsy_mgs": 4.2,
-      "oopsy_fip": 4.586
+      "oopsy_fip": 4.586,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_72",
@@ -14200,7 +15665,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.251,
       "oopsy_hra": 24.0,
       "oopsy_mgs": 0.11,
-      "oopsy_fip": 4.557
+      "oopsy_fip": 4.557,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_73",
@@ -14235,7 +15706,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.358,
       "oopsy_hra": 14.0,
       "oopsy_mgs": 1.0,
-      "oopsy_fip": 4.454
+      "oopsy_fip": 4.454,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_74",
@@ -14272,7 +15749,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.375,
       "oopsy_hra": 23.0,
       "oopsy_mgs": -1.14,
-      "oopsy_fip": 4.546
+      "oopsy_fip": 4.546,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_75",
@@ -14309,7 +15792,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.462,
       "oopsy_hra": 10.0,
       "oopsy_mgs": -1.45,
-      "oopsy_fip": 4.727
+      "oopsy_fip": 4.727,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_76",
@@ -14346,7 +15835,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.306,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 0.5,
-      "oopsy_fip": 4.656
+      "oopsy_fip": 4.656,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_77",
@@ -14384,7 +15879,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.399,
       "oopsy_hra": 11.0,
       "oopsy_mgs": 0.46,
-      "oopsy_fip": 4.478
+      "oopsy_fip": 4.478,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_78",
@@ -14421,7 +15922,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.258,
       "oopsy_hra": 23.0,
       "oopsy_mgs": 1.17,
-      "oopsy_fip": 4.356
+      "oopsy_fip": 4.356,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_79",
@@ -14459,7 +15966,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.317,
       "oopsy_hra": 14.0,
       "oopsy_mgs": 7.0,
-      "oopsy_fip": 3.968
+      "oopsy_fip": 3.968,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_80",
@@ -14496,7 +16009,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.351,
       "oopsy_hra": 13.0,
       "oopsy_mgs": 3.62,
-      "oopsy_fip": 4.521
+      "oopsy_fip": 4.521,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_81",
@@ -14534,7 +16053,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.395,
       "oopsy_hra": 18.0,
       "oopsy_mgs": -0.0,
-      "oopsy_fip": 4.441
+      "oopsy_fip": 4.441,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_82",
@@ -14571,7 +16096,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.278,
       "oopsy_hra": 25.0,
       "oopsy_mgs": -0.5,
-      "oopsy_fip": 4.729
+      "oopsy_fip": 4.729,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_83",
@@ -14609,7 +16140,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.357,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 2.58,
-      "oopsy_fip": 4.463
+      "oopsy_fip": 4.463,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_84",
@@ -14647,7 +16184,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.343,
       "oopsy_hra": 20.0,
       "oopsy_mgs": 0.67,
-      "oopsy_fip": 4.577
+      "oopsy_fip": 4.577,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_85",
@@ -14684,7 +16227,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.249,
       "oopsy_hra": 22.0,
       "oopsy_mgs": 1.04,
-      "oopsy_fip": 4.265
+      "oopsy_fip": 4.265,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_86",
@@ -14721,7 +16270,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.383,
       "oopsy_hra": 16.0,
       "oopsy_mgs": 0.0,
-      "oopsy_fip": 4.199
+      "oopsy_fip": 4.199,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_87",
@@ -14759,7 +16314,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.341,
       "oopsy_hra": 17.0,
       "oopsy_mgs": 0.09,
-      "oopsy_fip": 4.392
+      "oopsy_fip": 4.392,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_88",
@@ -14797,7 +16358,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.338,
       "oopsy_hra": 28.0,
       "oopsy_mgs": -1.19,
-      "oopsy_fip": 4.797
+      "oopsy_fip": 4.797,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_89",
@@ -14834,7 +16401,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.342,
       "oopsy_hra": 25.0,
       "oopsy_mgs": 0.61,
-      "oopsy_fip": 4.44
+      "oopsy_fip": 4.44,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_90",
@@ -14871,7 +16444,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.369,
       "oopsy_hra": 24.0,
       "oopsy_mgs": -0.64,
-      "oopsy_fip": 5.03
+      "oopsy_fip": 5.03,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_91",
@@ -14908,7 +16487,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.472,
       "oopsy_hra": 12.0,
       "oopsy_mgs": 2.91,
-      "oopsy_fip": 4.701
+      "oopsy_fip": 4.701,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_92",
@@ -14945,7 +16530,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.41,
       "oopsy_hra": 17.0,
       "oopsy_mgs": -0.22,
-      "oopsy_fip": 4.459
+      "oopsy_fip": 4.459,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_93",
@@ -14982,7 +16573,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.442,
       "oopsy_hra": 12.0,
       "oopsy_mgs": -0.67,
-      "oopsy_fip": 4.131
+      "oopsy_fip": 4.131,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_94",
@@ -15011,7 +16608,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_95",
@@ -15049,7 +16652,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.344,
       "oopsy_hra": 21.0,
       "oopsy_mgs": -0.71,
-      "oopsy_fip": 4.721
+      "oopsy_fip": 4.721,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_96",
@@ -15087,7 +16696,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.432,
       "oopsy_hra": 15.0,
       "oopsy_mgs": 1.0,
-      "oopsy_fip": 4.611
+      "oopsy_fip": 4.611,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_97",
@@ -15124,7 +16739,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.364,
       "oopsy_hra": 16.0,
       "oopsy_mgs": 0.62,
-      "oopsy_fip": 4.28
+      "oopsy_fip": 4.28,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_98",
@@ -15153,7 +16774,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_99",
@@ -15191,7 +16818,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.378,
       "oopsy_hra": 20.0,
       "oopsy_mgs": -0.79,
-      "oopsy_fip": 4.519
+      "oopsy_fip": 4.519,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_100",
@@ -15229,7 +16862,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.336,
       "oopsy_hra": 21.0,
       "oopsy_mgs": -0.38,
-      "oopsy_fip": 4.611
+      "oopsy_fip": 4.611,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_101",
@@ -15267,7 +16906,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.39,
       "oopsy_hra": 21.0,
       "oopsy_mgs": 0.77,
-      "oopsy_fip": 4.624
+      "oopsy_fip": 4.624,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_102",
@@ -15304,7 +16949,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.384,
       "oopsy_hra": 13.0,
       "oopsy_mgs": -0.47,
-      "oopsy_fip": 4.691
+      "oopsy_fip": 4.691,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_103",
@@ -15341,7 +16992,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.394,
       "oopsy_hra": 15.0,
       "oopsy_mgs": -1.5,
-      "oopsy_fip": 4.821
+      "oopsy_fip": 4.821,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_104",
@@ -15379,7 +17036,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.399,
       "oopsy_hra": 16.0,
       "oopsy_mgs": 0.27,
-      "oopsy_fip": 4.821
+      "oopsy_fip": 4.821,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_105",
@@ -15414,7 +17077,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.479,
       "oopsy_hra": 15.0,
       "oopsy_mgs": -2.78,
-      "oopsy_fip": 5.12
+      "oopsy_fip": 5.12,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_106",
@@ -15451,7 +17120,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.436,
       "oopsy_hra": 7.0,
       "oopsy_mgs": -2.4,
-      "oopsy_fip": 4.817
+      "oopsy_fip": 4.817,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_107",
@@ -15489,7 +17164,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.39,
       "oopsy_hra": 13.0,
       "oopsy_mgs": -1.31,
-      "oopsy_fip": 4.71
+      "oopsy_fip": 4.71,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_108",
@@ -15526,7 +17207,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.424,
       "oopsy_hra": 18.0,
       "oopsy_mgs": -2.94,
-      "oopsy_fip": 5.387
+      "oopsy_fip": 5.387,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_109",
@@ -15564,7 +17251,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.381,
       "oopsy_hra": 20.0,
       "oopsy_mgs": -1.17,
-      "oopsy_fip": 4.861
+      "oopsy_fip": 4.861,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_110",
@@ -15601,7 +17294,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.343,
       "oopsy_hra": 23.0,
       "oopsy_mgs": -2.65,
-      "oopsy_fip": 4.803
+      "oopsy_fip": 4.803,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_111",
@@ -15639,7 +17338,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.449,
       "oopsy_hra": 16.0,
       "oopsy_mgs": -2.22,
-      "oopsy_fip": 4.994
+      "oopsy_fip": 4.994,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_112",
@@ -15677,7 +17382,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.453,
       "oopsy_hra": 20.0,
       "oopsy_mgs": -1.75,
-      "oopsy_fip": 5.163
+      "oopsy_fip": 5.163,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_113",
@@ -15714,7 +17425,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.546,
       "oopsy_hra": 15.0,
       "oopsy_mgs": -3.44,
-      "oopsy_fip": 4.907
+      "oopsy_fip": 4.907,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_114",
@@ -15749,7 +17466,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.464,
       "oopsy_hra": 18.0,
       "oopsy_mgs": -2.81,
-      "oopsy_fip": 5.07
+      "oopsy_fip": 5.07,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_115",
@@ -15787,7 +17510,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.483,
       "oopsy_hra": 22.0,
       "oopsy_mgs": -3.23,
-      "oopsy_fip": 4.841
+      "oopsy_fip": 4.841,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_116",
@@ -15824,7 +17553,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.56,
       "oopsy_hra": 23.0,
       "oopsy_mgs": -5.88,
-      "oopsy_fip": 5.173
+      "oopsy_fip": 5.173,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_117",
@@ -15861,7 +17596,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.441,
       "oopsy_hra": 27.0,
       "oopsy_mgs": -3.93,
-      "oopsy_fip": 4.851
+      "oopsy_fip": 4.851,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_118",
@@ -15898,7 +17639,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.404,
       "oopsy_hra": 21.0,
       "oopsy_mgs": -1.7,
-      "oopsy_fip": 4.958
+      "oopsy_fip": 4.958,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_sp_119",
@@ -15935,7 +17682,13 @@ export const LDB_DATA = {
       "oopsy_whip": 1.48,
       "oopsy_hra": 20.0,
       "oopsy_mgs": -5.71,
-      "oopsy_fip": 5.086
+      "oopsy_fip": 5.086,
+      "tags": [
+        "RATIOS_ACE"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     }
   ],
   "rp": [
@@ -15978,7 +17731,15 @@ export const LDB_DATA = {
       "oopsy_sv": 36.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.602
+      "oopsy_vijay": 0.602,
+      "tags": [
+        "INJURED",
+        "IL",
+        "ELITE_ERA"
+      ],
+      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
+      "health_pct": 80,
+      "role": "Locked closer"
     },
     {
       "id": "atc_rp_1",
@@ -16019,7 +17780,13 @@ export const LDB_DATA = {
       "oopsy_sv": 29.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.507
+      "oopsy_vijay": 0.507,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "Best non-closer RP in baseball. Splitter is a weapon. High-leverage lockdown, holds accumulator.",
+      "health_pct": 93,
+      "role": "Elite setup"
     },
     {
       "id": "atc_rp_2",
@@ -16060,7 +17827,13 @@ export const LDB_DATA = {
       "oopsy_sv": 28.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.52
+      "oopsy_vijay": 0.52,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "Mariners closer, elite K rate. Low BS history. One of the cleanest VIJAY profiles available.",
+      "health_pct": 91,
+      "role": "Locked closer"
     },
     {
       "id": "atc_rp_3",
@@ -16101,7 +17874,13 @@ export const LDB_DATA = {
       "oopsy_sv": 19.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.41
+      "oopsy_vijay": 0.41,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_4",
@@ -16142,7 +17921,13 @@ export const LDB_DATA = {
       "oopsy_sv": 32.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.566
+      "oopsy_vijay": 0.566,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_5",
@@ -16183,7 +17968,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.36
+      "oopsy_vijay": 0.36,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_6",
@@ -16224,7 +18015,13 @@ export const LDB_DATA = {
       "oopsy_sv": 31.0,
       "oopsy_hld": 2.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.552
+      "oopsy_vijay": 0.552,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_7",
@@ -16265,7 +18062,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.325
+      "oopsy_vijay": 0.325,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_8",
@@ -16306,7 +18109,13 @@ export const LDB_DATA = {
       "oopsy_sv": 29.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.55
+      "oopsy_vijay": 0.55,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_9",
@@ -16347,7 +18156,13 @@ export const LDB_DATA = {
       "oopsy_sv": 33.0,
       "oopsy_hld": 2.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.562
+      "oopsy_vijay": 0.562,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_10",
@@ -16388,7 +18203,13 @@ export const LDB_DATA = {
       "oopsy_sv": 12.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.419
+      "oopsy_vijay": 0.419,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_11",
@@ -16429,7 +18250,13 @@ export const LDB_DATA = {
       "oopsy_sv": 8.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.398
+      "oopsy_vijay": 0.398,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_12",
@@ -16470,7 +18297,13 @@ export const LDB_DATA = {
       "oopsy_sv": 30.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.541
+      "oopsy_vijay": 0.541,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_13",
@@ -16511,7 +18344,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_14",
@@ -16552,7 +18391,13 @@ export const LDB_DATA = {
       "oopsy_sv": 26.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.5
+      "oopsy_vijay": 0.5,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_15",
@@ -16593,7 +18438,13 @@ export const LDB_DATA = {
       "oopsy_sv": 14.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.426
+      "oopsy_vijay": 0.426,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_16",
@@ -16634,7 +18485,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 18.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.385
+      "oopsy_vijay": 0.385,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_17",
@@ -16675,7 +18532,13 @@ export const LDB_DATA = {
       "oopsy_sv": 11.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.386
+      "oopsy_vijay": 0.386,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_18",
@@ -16716,7 +18579,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_19",
@@ -16757,7 +18626,13 @@ export const LDB_DATA = {
       "oopsy_sv": 26.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.512
+      "oopsy_vijay": 0.512,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_20",
@@ -16798,7 +18673,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.394
+      "oopsy_vijay": 0.394,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_21",
@@ -16839,7 +18720,13 @@ export const LDB_DATA = {
       "oopsy_sv": 26.0,
       "oopsy_hld": 5.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.504
+      "oopsy_vijay": 0.504,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_22",
@@ -16880,7 +18767,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.35
+      "oopsy_vijay": 0.35,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_23",
@@ -16921,7 +18814,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.338
+      "oopsy_vijay": 0.338,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_24",
@@ -16962,7 +18861,13 @@ export const LDB_DATA = {
       "oopsy_sv": 27.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.528
+      "oopsy_vijay": 0.528,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_25",
@@ -17003,7 +18908,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.335
+      "oopsy_vijay": 0.335,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_26",
@@ -17044,7 +18955,13 @@ export const LDB_DATA = {
       "oopsy_sv": 26.0,
       "oopsy_hld": 3.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.496
+      "oopsy_vijay": 0.496,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_27",
@@ -17085,7 +19002,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.324
+      "oopsy_vijay": 0.324,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_28",
@@ -17126,7 +19049,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.341
+      "oopsy_vijay": 0.341,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_29",
@@ -17167,7 +19096,13 @@ export const LDB_DATA = {
       "oopsy_sv": 6.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.4
+      "oopsy_vijay": 0.4,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_30",
@@ -17208,7 +19143,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.354
+      "oopsy_vijay": 0.354,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_31",
@@ -17249,7 +19190,13 @@ export const LDB_DATA = {
       "oopsy_sv": 16.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.452
+      "oopsy_vijay": 0.452,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_32",
@@ -17290,7 +19237,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.373
+      "oopsy_vijay": 0.373,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_33",
@@ -17331,7 +19284,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_34",
@@ -17372,7 +19331,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.327
+      "oopsy_vijay": 0.327,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_35",
@@ -17413,7 +19378,13 @@ export const LDB_DATA = {
       "oopsy_sv": 20.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.461
+      "oopsy_vijay": 0.461,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_36",
@@ -17454,7 +19425,15 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.332
+      "oopsy_vijay": 0.332,
+      "tags": [
+        "CLOSER_RISK",
+        "ROFR_TARGET",
+        "ELITE_ERA"
+      ],
+      "note": "FRY ROFR. Elite stuff but walk rate and blown save history create real VIJAY variance.",
+      "health_pct": 85,
+      "role": "Closer / volatile"
     },
     {
       "id": "atc_rp_37",
@@ -17495,7 +19474,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.335
+      "oopsy_vijay": 0.335,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_38",
@@ -17536,7 +19521,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.333
+      "oopsy_vijay": 0.333,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_39",
@@ -17577,7 +19568,13 @@ export const LDB_DATA = {
       "oopsy_sv": 12.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.431
+      "oopsy_vijay": 0.431,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_40",
@@ -17618,7 +19615,14 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.381
+      "oopsy_vijay": 0.381,
+      "tags": [
+        "ROFR_TARGET",
+        "ELITE_ERA"
+      ],
+      "note": "FRY ROFR. Dodgers closer situation. Good K rate, reliable holds even if not locking saves.",
+      "health_pct": 90,
+      "role": "High-leverage RP"
     },
     {
       "id": "atc_rp_41",
@@ -17659,7 +19663,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.344
+      "oopsy_vijay": 0.344,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_42",
@@ -17700,7 +19710,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_43",
@@ -17741,7 +19757,13 @@ export const LDB_DATA = {
       "oopsy_sv": 23.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.487
+      "oopsy_vijay": 0.487,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_44",
@@ -17782,7 +19804,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.346
+      "oopsy_vijay": 0.346,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_45",
@@ -17824,7 +19852,13 @@ export const LDB_DATA = {
       "oopsy_sv": 12.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.404
+      "oopsy_vijay": 0.404,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_46",
@@ -17865,7 +19899,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.179
+      "oopsy_vijay": 0.179,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_47",
@@ -17906,7 +19946,13 @@ export const LDB_DATA = {
       "oopsy_sv": 17.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.464
+      "oopsy_vijay": 0.464,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_48",
@@ -17947,7 +19993,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.335
+      "oopsy_vijay": 0.335,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_49",
@@ -17988,7 +20040,13 @@ export const LDB_DATA = {
       "oopsy_sv": 31.0,
       "oopsy_hld": 2.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.538
+      "oopsy_vijay": 0.538,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_50",
@@ -18029,7 +20087,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.357
+      "oopsy_vijay": 0.357,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_51",
@@ -18070,7 +20134,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_52",
@@ -18111,7 +20181,13 @@ export const LDB_DATA = {
       "oopsy_sv": 20.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.464
+      "oopsy_vijay": 0.464,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_53",
@@ -18152,7 +20228,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.333
+      "oopsy_vijay": 0.333,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_54",
@@ -18193,7 +20275,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.278
+      "oopsy_vijay": 0.278,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_55",
@@ -18234,7 +20322,13 @@ export const LDB_DATA = {
       "oopsy_sv": 13.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.425
+      "oopsy_vijay": 0.425,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_56",
@@ -18275,7 +20369,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.311
+      "oopsy_vijay": 0.311,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_57",
@@ -18316,7 +20416,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.355
+      "oopsy_vijay": 0.355,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_58",
@@ -18357,7 +20463,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.332
+      "oopsy_vijay": 0.332,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_59",
@@ -18398,7 +20510,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_60",
@@ -18439,7 +20557,13 @@ export const LDB_DATA = {
       "oopsy_sv": 6.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.379
+      "oopsy_vijay": 0.379,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_61",
@@ -18480,7 +20604,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.325
+      "oopsy_vijay": 0.325,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_62",
@@ -18521,7 +20651,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.344
+      "oopsy_vijay": 0.344,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_63",
@@ -18562,7 +20698,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_64",
@@ -18601,7 +20743,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.176
+      "oopsy_vijay": 0.176,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_65",
@@ -18640,7 +20788,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 5.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.245
+      "oopsy_vijay": 0.245,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_66",
@@ -18681,7 +20835,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_67",
@@ -18722,7 +20882,13 @@ export const LDB_DATA = {
       "oopsy_sv": 10.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.323
+      "oopsy_vijay": 0.323,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_68",
@@ -18761,7 +20927,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_69",
@@ -18802,7 +20974,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.31
+      "oopsy_vijay": 0.31,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_70",
@@ -18843,7 +21021,13 @@ export const LDB_DATA = {
       "oopsy_sv": 24.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.512
+      "oopsy_vijay": 0.512,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_71",
@@ -18884,7 +21068,13 @@ export const LDB_DATA = {
       "oopsy_sv": 16.0,
       "oopsy_hld": 8.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.438
+      "oopsy_vijay": 0.438,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_72",
@@ -18925,7 +21115,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.338
+      "oopsy_vijay": 0.338,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_73",
@@ -18966,7 +21162,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 17.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.364
+      "oopsy_vijay": 0.364,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_74",
@@ -19007,7 +21209,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.361
+      "oopsy_vijay": 0.361,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_75",
@@ -19048,7 +21256,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.355
+      "oopsy_vijay": 0.355,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_76",
@@ -19089,7 +21303,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_77",
@@ -19130,7 +21350,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.352
+      "oopsy_vijay": 0.352,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_78",
@@ -19171,7 +21397,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.278
+      "oopsy_vijay": 0.278,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_79",
@@ -19212,7 +21444,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.29
+      "oopsy_vijay": 0.29,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_80",
@@ -19253,7 +21491,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_81",
@@ -19294,7 +21538,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.349
+      "oopsy_vijay": 0.349,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_82",
@@ -19335,7 +21585,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.315
+      "oopsy_vijay": 0.315,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_83",
@@ -19376,7 +21632,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.341
+      "oopsy_vijay": 0.341,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_84",
@@ -19417,7 +21679,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.348
+      "oopsy_vijay": 0.348,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_85",
@@ -19458,7 +21726,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.324
+      "oopsy_vijay": 0.324,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_86",
@@ -19499,7 +21773,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.325
+      "oopsy_vijay": 0.325,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_87",
@@ -19540,7 +21820,13 @@ export const LDB_DATA = {
       "oopsy_sv": 23.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.473
+      "oopsy_vijay": 0.473,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_88",
@@ -19581,7 +21867,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.332
+      "oopsy_vijay": 0.332,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_89",
@@ -19622,7 +21914,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.315
+      "oopsy_vijay": 0.315,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_90",
@@ -19663,7 +21961,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 17.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_91",
@@ -19704,7 +22008,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.342
+      "oopsy_vijay": 0.342,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_92",
@@ -19745,7 +22055,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 5.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.245
+      "oopsy_vijay": 0.245,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_93",
@@ -19786,7 +22102,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.33
+      "oopsy_vijay": 0.33,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_94",
@@ -19827,7 +22149,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.352
+      "oopsy_vijay": 0.352,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_95",
@@ -19868,7 +22196,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.264
+      "oopsy_vijay": 0.264,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_96",
@@ -19910,7 +22244,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.328
+      "oopsy_vijay": 0.328,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_97",
@@ -19951,7 +22291,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.311
+      "oopsy_vijay": 0.311,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_98",
@@ -19992,7 +22338,13 @@ export const LDB_DATA = {
       "oopsy_sv": 8.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.379
+      "oopsy_vijay": 0.379,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_99",
@@ -20033,7 +22385,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_100",
@@ -20075,7 +22433,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.371
+      "oopsy_vijay": 0.371,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_101",
@@ -20116,7 +22480,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_102",
@@ -20157,7 +22527,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.362
+      "oopsy_vijay": 0.362,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_103",
@@ -20198,7 +22574,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.176
+      "oopsy_vijay": 0.176,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_104",
@@ -20239,7 +22621,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.359
+      "oopsy_vijay": 0.359,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_105",
@@ -20280,7 +22668,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.333
+      "oopsy_vijay": 0.333,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_106",
@@ -20319,7 +22713,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_107",
@@ -20360,7 +22760,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.292
+      "oopsy_vijay": 0.292,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_108",
@@ -20401,7 +22807,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 5.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.245
+      "oopsy_vijay": 0.245,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_109",
@@ -20442,7 +22854,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_110",
@@ -20484,7 +22902,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.295
+      "oopsy_vijay": 0.295,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_111",
@@ -20525,7 +22949,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.178
+      "oopsy_vijay": 0.178,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_112",
@@ -20564,7 +22994,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.181
+      "oopsy_vijay": 0.181,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_113",
@@ -20605,7 +23041,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.321
+      "oopsy_vijay": 0.321,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_114",
@@ -20647,7 +23089,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.36
+      "oopsy_vijay": 0.36,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_115",
@@ -20688,7 +23136,13 @@ export const LDB_DATA = {
       "oopsy_sv": 7.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.298
+      "oopsy_vijay": 0.298,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_116",
@@ -20729,7 +23183,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_117",
@@ -20770,7 +23230,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_118",
@@ -20812,7 +23278,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_119",
@@ -20853,7 +23325,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_120",
@@ -20894,7 +23372,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.278
+      "oopsy_vijay": 0.278,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_121",
@@ -20935,7 +23419,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_122",
@@ -20976,7 +23466,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.176
+      "oopsy_vijay": 0.176,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_123",
@@ -21015,7 +23511,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_124",
@@ -21056,7 +23558,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 5.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.245
+      "oopsy_vijay": 0.245,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_125",
@@ -21098,7 +23606,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.328
+      "oopsy_vijay": 0.328,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_126",
@@ -21139,7 +23653,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_127",
@@ -21180,7 +23700,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_128",
@@ -21221,7 +23747,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_129",
@@ -21260,7 +23792,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_130",
@@ -21301,7 +23839,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_131",
@@ -21342,7 +23886,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_132",
@@ -21384,7 +23934,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.327
+      "oopsy_vijay": 0.327,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_133",
@@ -21425,7 +23981,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.228
+      "oopsy_vijay": 0.228,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_134",
@@ -21466,7 +24028,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_135",
@@ -21505,7 +24073,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_136",
@@ -21546,7 +24120,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.221
+      "oopsy_vijay": 0.221,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_137",
@@ -21587,7 +24167,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_138",
@@ -21628,7 +24214,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_139",
@@ -21669,7 +24261,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_140",
@@ -21711,7 +24309,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_141",
@@ -21752,7 +24356,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_142",
@@ -21793,7 +24403,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.325
+      "oopsy_vijay": 0.325,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_143",
@@ -21832,7 +24448,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_144",
@@ -21873,7 +24495,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.167
+      "oopsy_vijay": 0.167,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_145",
@@ -21914,7 +24542,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.132
+      "oopsy_vijay": 0.132,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_146",
@@ -21956,7 +24590,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.264
+      "oopsy_vijay": 0.264,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_147",
@@ -21998,7 +24638,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.159
+      "oopsy_vijay": 0.159,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_148",
@@ -22039,7 +24685,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 8.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.25
+      "oopsy_vijay": 0.25,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_149",
@@ -22080,7 +24732,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.164
+      "oopsy_vijay": 0.164,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_150",
@@ -22121,7 +24779,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_151",
@@ -22162,7 +24826,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_152",
@@ -22203,7 +24873,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.315
+      "oopsy_vijay": 0.315,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_153",
@@ -22245,7 +24921,13 @@ export const LDB_DATA = {
       "oopsy_sv": 6.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.357
+      "oopsy_vijay": 0.357,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_154",
@@ -22287,7 +24969,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.306
+      "oopsy_vijay": 0.306,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_155",
@@ -22328,7 +25016,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.352
+      "oopsy_vijay": 0.352,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_156",
@@ -22369,7 +25063,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.179
+      "oopsy_vijay": 0.179,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_157",
@@ -22410,7 +25110,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_158",
@@ -22451,7 +25157,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.164
+      "oopsy_vijay": 0.164,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_159",
@@ -22492,7 +25204,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_160",
@@ -22533,7 +25251,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.16
+      "oopsy_vijay": 0.16,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_161",
@@ -22574,7 +25298,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.196
+      "oopsy_vijay": 0.196,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_162",
@@ -22615,7 +25345,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_163",
@@ -22657,7 +25393,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_164",
@@ -22698,7 +25440,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_165",
@@ -22739,7 +25487,13 @@ export const LDB_DATA = {
       "oopsy_sv": 10.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.398
+      "oopsy_vijay": 0.398,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_166",
@@ -22778,7 +25532,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_167",
@@ -22819,7 +25579,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.2
+      "oopsy_vijay": 0.2,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_168",
@@ -22858,7 +25624,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_169",
@@ -22899,7 +25671,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_170",
@@ -22940,7 +25718,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.325
+      "oopsy_vijay": 0.325,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_171",
@@ -22981,7 +25765,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.227
+      "oopsy_vijay": 0.227,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_172",
@@ -23023,7 +25813,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.364
+      "oopsy_vijay": 0.364,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_173",
@@ -23064,7 +25860,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_174",
@@ -23106,7 +25908,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.32
+      "oopsy_vijay": 0.32,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_175",
@@ -23147,7 +25955,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.164
+      "oopsy_vijay": 0.164,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_176",
@@ -23188,7 +26002,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.344
+      "oopsy_vijay": 0.344,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_177",
@@ -23229,7 +26049,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.193
+      "oopsy_vijay": 0.193,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_178",
@@ -23268,7 +26094,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.179
+      "oopsy_vijay": 0.179,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_179",
@@ -23309,7 +26141,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 16.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_180",
@@ -23348,7 +26186,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.205
+      "oopsy_vijay": 0.205,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_181",
@@ -23387,7 +26231,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.048
+      "oopsy_vijay": -0.048,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_182",
@@ -23428,7 +26278,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_183",
@@ -23469,7 +26325,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.188
+      "oopsy_vijay": 0.188,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_184",
@@ -23508,7 +26370,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_185",
@@ -23550,7 +26418,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.077
+      "oopsy_vijay": -0.077,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_186",
@@ -23592,7 +26466,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.298
+      "oopsy_vijay": 0.298,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_187",
@@ -23633,7 +26513,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_188",
@@ -23672,7 +26558,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_189",
@@ -23711,7 +26603,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.027
+      "oopsy_vijay": -0.027,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_190",
@@ -23752,7 +26650,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.221
+      "oopsy_vijay": 0.221,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_191",
@@ -23793,7 +26697,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_192",
@@ -23832,7 +26742,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.164
+      "oopsy_vijay": 0.164,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_193",
@@ -23873,7 +26789,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.176
+      "oopsy_vijay": 0.176,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_194",
@@ -23912,7 +26834,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_195",
@@ -23953,7 +26881,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_196",
@@ -23994,7 +26928,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_197",
@@ -24035,7 +26975,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.152
+      "oopsy_vijay": 0.152,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_198",
@@ -24076,7 +27022,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_199",
@@ -24117,7 +27069,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_200",
@@ -24158,7 +27116,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.205
+      "oopsy_vijay": 0.205,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_201",
@@ -24199,7 +27163,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_202",
@@ -24241,7 +27211,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.26
+      "oopsy_vijay": 0.26,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_203",
@@ -24282,7 +27258,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.164
+      "oopsy_vijay": 0.164,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_204",
@@ -24324,7 +27306,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.048
+      "oopsy_vijay": 0.048,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_205",
@@ -24365,7 +27353,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_206",
@@ -24404,7 +27398,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.331
+      "oopsy_vijay": 0.331,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_207",
@@ -24445,7 +27445,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.145
+      "oopsy_vijay": 0.145,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_208",
@@ -24487,7 +27493,13 @@ export const LDB_DATA = {
       "oopsy_sv": 5.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.344
+      "oopsy_vijay": 0.344,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_209",
@@ -24526,7 +27538,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.152
+      "oopsy_vijay": 0.152,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_210",
@@ -24567,7 +27585,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_211",
@@ -24608,7 +27632,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_212",
@@ -24649,7 +27679,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_213",
@@ -24690,7 +27726,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.289
+      "oopsy_vijay": 0.289,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_214",
@@ -24729,7 +27771,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.039
+      "oopsy_vijay": -0.039,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_215",
@@ -24771,7 +27819,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_216",
@@ -24812,7 +27866,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.174
+      "oopsy_vijay": 0.174,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_217",
@@ -24853,7 +27913,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_218",
@@ -24895,7 +27961,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_219",
@@ -24936,7 +28008,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.314
+      "oopsy_vijay": 0.314,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_220",
@@ -24977,7 +28055,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.228
+      "oopsy_vijay": 0.228,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_221",
@@ -25016,7 +28100,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_222",
@@ -25058,7 +28148,13 @@ export const LDB_DATA = {
       "oopsy_sv": 8.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.365
+      "oopsy_vijay": 0.365,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_223",
@@ -25099,7 +28195,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.303
+      "oopsy_vijay": 0.303,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_224",
@@ -25140,7 +28242,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_225",
@@ -25181,7 +28289,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.332
+      "oopsy_vijay": 0.332,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_226",
@@ -25222,7 +28336,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_227",
@@ -25263,7 +28383,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_228",
@@ -25304,7 +28430,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_229",
@@ -25345,7 +28477,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_230",
@@ -25386,7 +28524,13 @@ export const LDB_DATA = {
       "oopsy_sv": 6.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.306
+      "oopsy_vijay": 0.306,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_231",
@@ -25427,7 +28571,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_232",
@@ -25469,7 +28619,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.05
+      "oopsy_vijay": -0.05,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_233",
@@ -25511,7 +28667,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.204
+      "oopsy_vijay": 0.204,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_234",
@@ -25552,7 +28714,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_235",
@@ -25593,7 +28761,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_236",
@@ -25635,7 +28809,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.176
+      "oopsy_vijay": 0.176,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_237",
@@ -25676,7 +28856,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.188
+      "oopsy_vijay": 0.188,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_238",
@@ -25718,7 +28904,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_239",
@@ -25759,7 +28951,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_240",
@@ -25801,7 +28999,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_241",
@@ -25842,7 +29046,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.152
+      "oopsy_vijay": 0.152,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_242",
@@ -25881,7 +29091,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_243",
@@ -25923,7 +29139,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_244",
@@ -25964,7 +29186,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.237
+      "oopsy_vijay": 0.237,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_245",
@@ -26005,7 +29233,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_246",
@@ -26044,7 +29278,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_247",
@@ -26085,7 +29325,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.129
+      "oopsy_vijay": 0.129,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_248",
@@ -26126,7 +29372,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_249",
@@ -26168,7 +29420,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.31
+      "oopsy_vijay": 0.31,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_250",
@@ -26207,7 +29465,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_251",
@@ -26248,7 +29512,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_252",
@@ -26278,7 +29548,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_253",
@@ -26320,7 +29596,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_254",
@@ -26362,7 +29644,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.205
+      "oopsy_vijay": 0.205,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_255",
@@ -26403,7 +29691,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_256",
@@ -26442,7 +29736,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.264
+      "oopsy_vijay": 0.264,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_257",
@@ -26484,7 +29784,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.323
+      "oopsy_vijay": 0.323,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_258",
@@ -26514,7 +29820,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_259",
@@ -26555,7 +29867,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.205
+      "oopsy_vijay": 0.205,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_260",
@@ -26596,7 +29914,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.276
+      "oopsy_vijay": 0.276,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_261",
@@ -26638,7 +29962,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.276
+      "oopsy_vijay": 0.276,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_262",
@@ -26680,7 +30010,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_263",
@@ -26722,7 +30058,13 @@ export const LDB_DATA = {
       "oopsy_sv": 3.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.36
+      "oopsy_vijay": 0.36,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_264",
@@ -26761,7 +30103,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_265",
@@ -26789,7 +30137,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_266",
@@ -26830,7 +30184,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_267",
@@ -26871,7 +30231,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.183
+      "oopsy_vijay": 0.183,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_268",
@@ -26913,7 +30279,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_269",
@@ -26952,7 +30324,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.228
+      "oopsy_vijay": 0.228,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_270",
@@ -26994,7 +30372,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.037
+      "oopsy_vijay": 0.037,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_271",
@@ -27035,7 +30419,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.057
+      "oopsy_vijay": -0.057,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_272",
@@ -27077,7 +30467,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.318
+      "oopsy_vijay": 0.318,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_273",
@@ -27116,7 +30512,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_274",
@@ -27157,7 +30559,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.142
+      "oopsy_vijay": 0.142,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_275",
@@ -27198,7 +30606,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.152
+      "oopsy_vijay": 0.152,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_276",
@@ -27240,7 +30654,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.292
+      "oopsy_vijay": 0.292,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_277",
@@ -27281,7 +30701,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.228
+      "oopsy_vijay": 0.228,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_278",
@@ -27322,7 +30748,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.178
+      "oopsy_vijay": 0.178,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_279",
@@ -27364,7 +30796,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.019
+      "oopsy_vijay": -0.019,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_280",
@@ -27406,7 +30844,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.314
+      "oopsy_vijay": 0.314,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_281",
@@ -27448,7 +30892,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 6.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.221
+      "oopsy_vijay": 0.221,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_282",
@@ -27490,7 +30940,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.023
+      "oopsy_vijay": 0.023,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_283",
@@ -27531,7 +30987,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.193
+      "oopsy_vijay": 0.193,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_284",
@@ -27559,7 +31021,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_285",
@@ -27600,7 +31068,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.139
+      "oopsy_vijay": 0.139,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_286",
@@ -27639,7 +31113,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_287",
@@ -27680,7 +31160,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.167
+      "oopsy_vijay": 0.167,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_288",
@@ -27721,7 +31207,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_289",
@@ -27762,7 +31254,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 13.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_290",
@@ -27804,7 +31302,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_291",
@@ -27834,7 +31338,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_292",
@@ -27875,7 +31385,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_293",
@@ -27916,7 +31432,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.204
+      "oopsy_vijay": 0.204,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_294",
@@ -27957,7 +31479,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_295",
@@ -27998,7 +31526,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 15.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.312
+      "oopsy_vijay": 0.312,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_296",
@@ -28039,7 +31573,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_297",
@@ -28081,7 +31621,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.069
+      "oopsy_vijay": -0.069,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_298",
@@ -28120,7 +31666,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.278
+      "oopsy_vijay": 0.278,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_299",
@@ -28161,7 +31713,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_300",
@@ -28192,7 +31750,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_301",
@@ -28233,7 +31797,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_302",
@@ -28274,7 +31844,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.155
+      "oopsy_vijay": 0.155,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_303",
@@ -28304,7 +31880,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_304",
@@ -28343,7 +31925,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.205
+      "oopsy_vijay": 0.205,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_305",
@@ -28385,7 +31973,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.276
+      "oopsy_vijay": 0.276,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_306",
@@ -28426,7 +32020,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_307",
@@ -28468,7 +32068,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_308",
@@ -28509,7 +32115,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_309",
@@ -28550,7 +32162,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.15
+      "oopsy_vijay": 0.15,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_310",
@@ -28591,7 +32209,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_311",
@@ -28632,7 +32256,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_312",
@@ -28674,7 +32304,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.15
+      "oopsy_vijay": 0.15,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_313",
@@ -28716,7 +32352,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.288
+      "oopsy_vijay": 0.288,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_314",
@@ -28757,7 +32399,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.193
+      "oopsy_vijay": 0.193,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_315",
@@ -28799,7 +32447,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.277
+      "oopsy_vijay": 0.277,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_316",
@@ -28841,7 +32495,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 9.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.264
+      "oopsy_vijay": 0.264,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_317",
@@ -28882,7 +32542,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.302
+      "oopsy_vijay": 0.302,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_318",
@@ -28923,7 +32589,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.048
+      "oopsy_vijay": -0.048,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_319",
@@ -28962,7 +32634,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_320",
@@ -29004,7 +32682,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_321",
@@ -29045,7 +32729,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.16
+      "oopsy_vijay": 0.16,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_322",
@@ -29087,7 +32777,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.3
+      "oopsy_vijay": 0.3,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_323",
@@ -29126,7 +32822,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.054
+      "oopsy_vijay": -0.054,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_324",
@@ -29157,7 +32859,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_325",
@@ -29198,7 +32906,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.062
+      "oopsy_vijay": -0.062,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_326",
@@ -29237,7 +32951,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_327",
@@ -29279,7 +32999,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.02
+      "oopsy_vijay": -0.02,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_328",
@@ -29321,7 +33047,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.051
+      "oopsy_vijay": 0.051,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_329",
@@ -29360,7 +33092,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.076
+      "oopsy_vijay": -0.076,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_330",
@@ -29402,7 +33140,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.023
+      "oopsy_vijay": 0.023,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_331",
@@ -29444,7 +33188,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.236
+      "oopsy_vijay": 0.236,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_332",
@@ -29485,7 +33235,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_333",
@@ -29527,7 +33283,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.229
+      "oopsy_vijay": 0.229,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_334",
@@ -29568,7 +33330,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_335",
@@ -29610,7 +33378,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.157
+      "oopsy_vijay": 0.157,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_336",
@@ -29651,7 +33425,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 7.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.013
+      "oopsy_vijay": -0.013,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_337",
@@ -29690,7 +33470,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_338",
@@ -29732,7 +33518,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.045
+      "oopsy_vijay": -0.045,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_339",
@@ -29773,7 +33565,13 @@ export const LDB_DATA = {
       "oopsy_sv": 2.0,
       "oopsy_hld": 12.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.326
+      "oopsy_vijay": 0.326,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_340",
@@ -29815,7 +33613,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_341",
@@ -29845,7 +33649,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_342",
@@ -29884,7 +33694,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_343",
@@ -29926,7 +33742,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.162
+      "oopsy_vijay": 0.162,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_344",
@@ -29968,7 +33790,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_345",
@@ -30009,7 +33837,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.169
+      "oopsy_vijay": 0.169,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_346",
@@ -30050,7 +33884,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.077
+      "oopsy_vijay": -0.077,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_347",
@@ -30091,7 +33931,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_348",
@@ -30133,7 +33979,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.2
+      "oopsy_vijay": 0.2,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_349",
@@ -30164,7 +34016,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_350",
@@ -30205,7 +34063,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.125
+      "oopsy_vijay": 0.125,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_351",
@@ -30247,7 +34111,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.188
+      "oopsy_vijay": 0.188,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_352",
@@ -30288,7 +34158,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.054
+      "oopsy_vijay": -0.054,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_353",
@@ -30329,7 +34205,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.054
+      "oopsy_vijay": -0.054,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_354",
@@ -30368,7 +34250,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.039
+      "oopsy_vijay": -0.039,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_355",
@@ -30410,7 +34298,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_356",
@@ -30451,7 +34345,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_357",
@@ -30490,7 +34390,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.096
+      "oopsy_vijay": -0.096,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_358",
@@ -30532,7 +34438,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.289
+      "oopsy_vijay": 0.289,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_359",
@@ -30563,7 +34475,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_360",
@@ -30604,7 +34522,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.148
+      "oopsy_vijay": 0.148,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_361",
@@ -30646,7 +34570,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.077
+      "oopsy_vijay": -0.077,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_362",
@@ -30687,7 +34617,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 10.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.278
+      "oopsy_vijay": 0.278,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_363",
@@ -30717,7 +34653,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_364",
@@ -30758,7 +34700,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.045
+      "oopsy_vijay": -0.045,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_365",
@@ -30788,7 +34736,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_366",
@@ -30819,7 +34773,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_367",
@@ -30861,7 +34821,13 @@ export const LDB_DATA = {
       "oopsy_sv": 1.0,
       "oopsy_hld": 14.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.043
+      "oopsy_vijay": 0.043,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_368",
@@ -30902,7 +34868,13 @@ export const LDB_DATA = {
       "oopsy_sv": 4.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.338
+      "oopsy_vijay": 0.338,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_369",
@@ -30941,7 +34913,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.173
+      "oopsy_vijay": 0.173,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_370",
@@ -30980,7 +34958,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.072
+      "oopsy_vijay": -0.072,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_371",
@@ -31022,7 +35006,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.23
+      "oopsy_vijay": 0.23,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_372",
@@ -31064,7 +35054,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 11.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.036
+      "oopsy_vijay": 0.036,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_373",
@@ -31103,7 +35099,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.048
+      "oopsy_vijay": -0.048,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_374",
@@ -31145,7 +35147,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.193
+      "oopsy_vijay": 0.193,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_375",
@@ -31187,7 +35195,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.076
+      "oopsy_vijay": -0.076,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_376",
@@ -31229,7 +35243,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.208
+      "oopsy_vijay": 0.208,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_377",
@@ -31270,7 +35290,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 0.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.167
+      "oopsy_vijay": 0.167,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_378",
@@ -31312,7 +35338,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.046
+      "oopsy_vijay": -0.046,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_379",
@@ -31353,7 +35385,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.039
+      "oopsy_vijay": -0.039,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_380",
@@ -31395,7 +35433,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 4.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.057
+      "oopsy_vijay": -0.057,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_381",
@@ -31436,7 +35480,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.196
+      "oopsy_vijay": 0.196,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_382",
@@ -31466,7 +35516,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_383",
@@ -31496,7 +35552,13 @@ export const LDB_DATA = {
       "oopsy_rank": null,
       "oopsy_tier": null,
       "oopsy_est_value": null,
-      "oopsy_ldb_score": null
+      "oopsy_ldb_score": null,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_384",
@@ -31535,7 +35597,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.135
+      "oopsy_vijay": -0.135,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_385",
@@ -31577,7 +35645,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.198
+      "oopsy_vijay": 0.198,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_386",
@@ -31619,7 +35693,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.202
+      "oopsy_vijay": 0.202,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_387",
@@ -31660,7 +35740,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": 0.154
+      "oopsy_vijay": 0.154,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     },
     {
       "id": "atc_rp_388",
@@ -31702,7 +35788,13 @@ export const LDB_DATA = {
       "oopsy_sv": 0.0,
       "oopsy_hld": 1.0,
       "oopsy_bs": 0.0,
-      "oopsy_vijay": -0.043
+      "oopsy_vijay": -0.043,
+      "tags": [
+        "ELITE_ERA"
+      ],
+      "note": "",
+      "health_pct": 100,
+      "role": ""
     }
   ],
   "fry_keepers": [

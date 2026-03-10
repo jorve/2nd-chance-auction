@@ -1,0 +1,149 @@
+{
+  "_readme": {
+    "description": "Qualitative player notes for LDB 2026 auction. Merged into ldb_data.js at build time.",
+    "fields": {
+      "tags": "Array of tag strings. Built-in recognized tags: INJURED, IL, DTD, SLEEPER, BREAKOUT, BUST, CLOSER_RISK, ROLE_UNCLEAR, HANDCUFF, PLATOON, PROSPECT, AGING, BOUNCE_BACK, STREAKY, DEEP_LEAGUE, ADP_VALUE, ADP_AVOID, ROFR_TARGET, LDB_NEED",
+      "note": "Free-text scouting note shown in player card tooltip / intel section",
+      "health_pct": "0-100 estimated availability. 100 = full season, 70 = ~112 games / 115 IP expected",
+      "role": "Short role description, e.g. 'Locked closer', 'Setup only', 'Platoon DH', 'TBD'"
+    },
+    "auto_tags_from_stats": "generate_data.py also auto-applies stat-based tags. Manual tags here take precedence / stack on top.",
+    "name_matching": "Use exact projection file names (e.g. 'Shohei Ohtani'). Fuzzy matching is applied as fallback."
+  },
+
+  "players": [
+    {
+      "name": "Tarik Skubal",
+      "tags": ["BREAKOUT"],
+      "note": "Reigning AL Cy Young. Elite stuff, durable. Only risk is modest regression from historic 2024 ratios.",
+      "health_pct": 95,
+      "role": "Ace #1 starter"
+    },
+    {
+      "name": "Chris Sale",
+      "tags": ["AGING", "IL"],
+      "note": "Won NL Cy Young at 35. History of TJ surgery and rib injuries. Monitor spring training workload.",
+      "health_pct": 75,
+      "role": "SP when healthy"
+    },
+    {
+      "name": "Edwin Díaz",
+      "tags": ["INJURED", "IL"],
+      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
+      "health_pct": 80,
+      "role": "Locked closer"
+    },
+    {
+      "name": "Hunter Greene",
+      "tags": ["BREAKOUT", "ROFR_TARGET"],
+      "note": "FRY holds ROFR. Elite stuff+, top-5 SP upside. Must-protect or must-bid — do not let CORN grab cheap.",
+      "health_pct": 90,
+      "role": "Frontline SP"
+    },
+    {
+      "name": "José Alvarado",
+      "tags": ["CLOSER_RISK", "ROFR_TARGET"],
+      "note": "FRY ROFR. Elite stuff but walk rate and blown save history create real VIJAY variance.",
+      "health_pct": 85,
+      "role": "Closer / volatile"
+    },
+    {
+      "name": "Tanner Scott",
+      "tags": ["ROFR_TARGET"],
+      "note": "FRY ROFR. Dodgers closer situation. Good K rate, reliable holds even if not locking saves.",
+      "health_pct": 90,
+      "role": "High-leverage RP"
+    },
+    {
+      "name": "Tyler O'Neill",
+      "tags": ["ROFR_TARGET", "BUST"],
+      "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
+      "health_pct": 75,
+      "role": "Corner OF / DH"
+    },
+    {
+      "name": "Corbin Carroll",
+      "tags": [],
+      "note": "FRY keeper (H3). Down year in 2024 but elite speed and OBP foundation. Bounce-back candidate.",
+      "health_pct": 92,
+      "role": "FRY keeper"
+    },
+    {
+      "name": "Ronald Acuña Jr.",
+      "tags": ["BOUNCE_BACK"],
+      "note": "FRY keeper (K2). Full ACL recovery expected. If healthy, top-3 overall player — OPS+OBP+aSB monster.",
+      "health_pct": 88,
+      "role": "FRY keeper"
+    },
+    {
+      "name": "Shohei Ohtani",
+      "tags": [],
+      "note": "Batting only in 2026 (TJ recovery). No pitching value — pure elite bat. No SP/RP contribution.",
+      "health_pct": 98,
+      "role": "DH only (no pitching)"
+    },
+    {
+      "name": "Paul Skenes",
+      "tags": ["BREAKOUT", "PROSPECT"],
+      "note": "Best stuff in baseball. Only question is whether Pirates stretch him to 180+ IP in year 2.",
+      "health_pct": 90,
+      "role": "Frontline SP"
+    },
+    {
+      "name": "Dylan Cease",
+      "tags": ["BUST"],
+      "note": "High-K but HR/9 and walk rate make ratios volatile. Petco helps but not a set-it-forget-it arm.",
+      "health_pct": 90,
+      "role": "SP #3"
+    },
+    {
+      "name": "Framber Valdez",
+      "tags": [],
+      "note": "Elite groundball rate suppresses HRA — ideal for LDB. Durable workhorse. MGS consistently strong.",
+      "health_pct": 92,
+      "role": "SP #2"
+    },
+    {
+      "name": "Jhoan Duran",
+      "tags": [],
+      "note": "Best non-closer RP in baseball. Splitter is a weapon. High-leverage lockdown, holds accumulator.",
+      "health_pct": 93,
+      "role": "Elite setup"
+    },
+    {
+      "name": "Andrés Muñoz",
+      "tags": [],
+      "note": "Mariners closer, elite K rate. Low BS history. One of the cleanest VIJAY profiles available.",
+      "health_pct": 91,
+      "role": "Locked closer"
+    },
+    {
+      "name": "Blake Snell",
+      "tags": ["ROLE_UNCLEAR", "AGING"],
+      "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
+      "health_pct": 70,
+      "role": "TBD / unsigned"
+    },
+    {
+      "name": "Gerrit Cole",
+      "tags": ["INJURED"],
+      "note": "TJ surgery in 2024. Full return timeline uncertain — may not pitch until mid-2026 at earliest.",
+      "health_pct": 50,
+      "role": "SP — TJ rehab"
+    },
+    {
+      "name": "Spencer Strider",
+      "tags": ["INJURED", "BOUNCE_BACK"],
+      "note": "TJ surgery, missed 2024. If velocity returns, top-5 SP upside. High reward, non-trivial risk.",
+      "health_pct": 70,
+      "role": "SP — TJ return"
+    },
+    {
+      "name": "Yoshinobu Yamamoto",
+      "tags": ["INJURED"],
+      "note": "TJ surgery mid-2024. Unlikely to contribute full season 2026. Monitor return date closely.",
+      "health_pct": 55,
+      "role": "SP — TJ rehab"
+    }
+  ]
+}

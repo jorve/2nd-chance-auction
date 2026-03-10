@@ -321,9 +321,16 @@ export default function PlayerList() {
                       {p.rank}
                     </td>
 
-                    {/* Name */}
-                    <td style={{ ...tdBase, textAlign: 'left', fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, maxWidth: 160, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {p.name}
+                    {/* Name + tags */}
+                    <td style={{ ...tdBase, textAlign: 'left', maxWidth: 180, minWidth: 140 }}>
+                      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {p.name}
+                      </div>
+                      {p.tags?.length > 0 && (
+                        <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap', marginTop: 2 }}>
+                          {p.tags.slice(0, 4).map(tag => <MiniTag key={tag} tag={tag} />)}
+                        </div>
+                      )}
                     </td>
 
                     {/* MLB team */}
