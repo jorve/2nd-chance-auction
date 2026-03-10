@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { useAuctionStore, exportAuctionJSON, importAuctionJSON, savedSessionMeta } from '../store/auctionStore.jsx'
 
 export default function Header({ onLeagueClick }) {
@@ -7,6 +8,10 @@ export default function Header({ onLeagueClick }) {
   const totalPot = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
   const soldCount = Object.keys(sold).length
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
+  const { apiKey, setApiKey } = useApiKeyStore()
+  const [editingKey, setEditingKey] = useState(false)
+  const [keyDraft, setKeyDraft] = useState('')
+  const keyInputRef = useRef()
   const importRef = useRef()
   const [importMsg, setImportMsg] = useState(null)
 
@@ -156,6 +161,58 @@ export default function Header({ onLeagueClick }) {
       }}>
         {fryLens ? '● FRY ON' : '○ FRY LENS'}
       </button>
+
+      <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
+
+      {/* ── API Key widget ── */}
+      {!editingKey ? (
+        <button
+          onClick={() => { setKeyDraft(apiKey); setEditingKey(true); setTimeout(() => keyInputRef.current?.focus(), 30) }}
+          title={apiKey ? 'Anthropic API key set — click to change' : 'Set your Anthropic API key to enable AI Intel'}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 6,
+            background: apiKey ? 'rgba(74,222,128,.08)' : 'rgba(239,68,68,.08)',
+            border: `1px solid ${apiKey ? 'rgba(74,222,128,.35)' : 'rgba(239,68,68,.45)'}`,
+            borderRadius: 5, padding: '5px 12px', cursor: 'pointer',
+            fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 0.5,
+            color: apiKey ? 'var(--green)' : '#f87171',
+            flexShrink: 0, transition: 'all .15s',
+          }}
+        >
+          <span style={{ fontSize: 11 }}>{apiKey ? '🔑' : '⚠'}</span>
+          <span>{apiKey ? 'API KEY SET' : 'SET API KEY'}</span>
+        </button>
+      ) : (
+        <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexShrink: 0 }}>
+          <input
+            ref={keyInputRef}
+            type="password"
+            value={keyDraft}
+            onChange={e => setKeyDraft(e.target.value)}
+            placeholder="sk-ant-api03-..."
+            onKeyDown={e => {
+              if (e.key === 'Enter') { setApiKey(keyDraft); setEditingKey(false) }
+              if (e.key === 'Escape') setEditingKey(false)
+            }}
+            style={{
+              width: 220, background: 'var(--surface)', color: 'var(--text)',
+              border: '1px solid var(--accent)', borderRadius: 4,
+              padding: '5px 10px', fontFamily: "'DM Mono', monospace",
+              fontSize: 11, outline: 'none',
+            }}
+          />
+          <button
+            onClick={() => { setApiKey(keyDraft); setEditingKey(false) }}
+            style={{
+              background: 'var(--accent)', border: 'none', borderRadius: 4,
+              padding: '5px 10px', cursor: 'pointer',
+              fontFamily: "'DM Mono', monospace", fontSize: 10,
+              color: '#000', fontWeight: 700,
+            }}
+          >SAVE</button>
+          <button onClick={() => setEditingKey(false)} style={{ ...iconBtn, padding: '5px 8px' }}>✕</button>
+        </div>
+      )}
     </header>
   )
 }

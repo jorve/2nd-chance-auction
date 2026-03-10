@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
 
 function getType(p) {
@@ -22,7 +23,7 @@ function flagAmbiguous(results) {
 
 // ── AI INTEL ──────────────────────────────────────────────────────────────────
 async function fetchPlayerIntel(player, type, apiKey) {
-  if (!apiKey) throw new Error('No API key set — enter your Anthropic key in the panel')
+  if (!apiKey) throw new Error('No API key set — click SET API KEY in the top bar')
   const posLabel = type === 'BAT' ? 'hitter' : type === 'SP' ? 'starting pitcher' : 'relief pitcher'
   const prompt = `Search for the latest 2026 MLB news on ${player.name} (${player.team || 'Free Agent'}, ${posLabel}).
 
@@ -203,38 +204,6 @@ export default function AuctionPanel() {
             RESET
           </button>
         </div>
-      </div>
-
-      {/* ── API Key input ── */}
-      <div style={{ marginBottom: 10 }}>
-        {!showKeyInput ? (
-          <button onClick={() => setShowKeyInput(true)} style={{
-            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-            fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1,
-            color: apiKey ? 'var(--green)' : 'var(--text-faint)',
-            display: 'flex', alignItems: 'center', gap: 4,
-          }}>
-            <span>{apiKey ? '◉' : '◌'}</span>
-            <span>{apiKey ? 'API KEY SET — click to change' : 'SET ANTHROPIC API KEY for AI Intel'}</span>
-          </button>
-        ) : (
-          <div style={{ display: 'flex', gap: 6 }}>
-            <input
-              autoFocus
-              type="password"
-              placeholder="sk-ant-..."
-              defaultValue={apiKey}
-              onBlur={e => { setApiKey(e.target.value.trim()); setShowKeyInput(false) }}
-              onKeyDown={e => { if (e.key === 'Enter') { setApiKey(e.target.value.trim()); setShowKeyInput(false) } if (e.key === 'Escape') setShowKeyInput(false) }}
-              style={{
-                flex: 1, background: 'var(--surface)', border: '1px solid var(--accent)',
-                borderRadius: 4, padding: '5px 10px', color: 'var(--text)',
-                fontFamily: "'DM Mono', monospace", fontSize: 11, outline: 'none',
-              }}
-            />
-            <button onClick={() => setShowKeyInput(false)} style={{ ...ghostBtn }}>✕</button>
-          </div>
-        )}
       </div>
 
       {/* ── Search ── */}
