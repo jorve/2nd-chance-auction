@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useAuctionStore, TEAM_COLORS, FRY_NEEDS } from '../store/auctionStore.jsx'
+import PlayerCard from './PlayerCard.jsx'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 const TIER_LABELS = { 1: 'TIER 1 · ELITE', 2: 'TIER 2 · PREMIUM', 3: 'TIER 3 · MID', 4: 'TIER 4 · VALUE', 5: 'TIER 5 · DEEP' }
@@ -89,8 +90,9 @@ export default function PlayerList() {
     teams,
   } = useAuctionStore()
 
-  const [sortCol, setSortCol] = useState('adj_value')
-  const [sortDir, setSortDir] = useState(-1)
+  const [sortCol, setSortCol]       = useState('adj_value')
+  const [sortDir, setSortDir]       = useState(-1)
+  const [selectedPlayer, setSelectedPlayer] = useState(null)
 
   // Reset sort to adj_value desc whenever tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(-1) }, [rankingsTab])
@@ -269,6 +271,16 @@ export default function PlayerList() {
         </span>
       </div>
 
+      {/* ── Player card overlay ── */}
+      {selectedPlayer && (
+        <PlayerCard
+          player={selectedPlayer}
+          teams={teams}
+          onClose={() => setSelectedPlayer(null)}
+          onNominate={p => { setNominatedPlayer(p); setSelectedPlayer(null) }}
+        />
+      )}
+
       {/* ── Table ── */}
       <div style={{ flex: 1, overflow: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 900 }}>
@@ -327,7 +339,12 @@ export default function PlayerList() {
 
                     {/* Name + positions + tags */}
                     <td style={{ ...tdBase, textAlign: 'left', maxWidth: 200, minWidth: 160 }}>
-                      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <div
+                        onClick={() => setSelectedPlayer(p)}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.2)', textUnderlineOffset: 3 }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'var(--text)'}
+                      >
                         {p.name}
                       </div>
                       {p.positions?.length > 0 && (
