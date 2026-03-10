@@ -12,7 +12,7 @@ export default function App() {
   const soldCount = Object.keys(useAuctionStore(s => s.sold)).length
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', padding: 6 }}>
       <Header onLeagueClick={() => setShowLeague(true)} />
 
       {/* ── Resume session banner ── */}
@@ -44,6 +44,7 @@ export default function App() {
         flex: 1, display: 'grid',
         gridTemplateColumns: '1fr 440px',
         minHeight: 0, overflow: 'hidden',
+        border: '1px solid var(--border)', borderRadius: 8,
       }}>
         {/* LEFT — full player pool */}
         <div style={{ borderRight: '1px solid var(--border)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>

@@ -90,12 +90,25 @@ export default function PlayerList() {
     teams,
   } = useAuctionStore()
 
-  const [sortCol, setSortCol]       = useState('adj_value')
-  const [sortDir, setSortDir]       = useState(-1)
+  const [sortCol, setSortCol]               = useState('adj_value')
+  const [sortDir, setSortDir]               = useState(-1)
   const [selectedPlayer, setSelectedPlayer] = useState(null)
+  const [tagFilter, setTagFilter]           = useState(new Set())
+  const [showTagPicker, setShowTagPicker]   = useState(false)
 
-  // Reset sort to adj_value desc whenever tab changes
+  // Reset sort + filters when tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(-1) }, [rankingsTab])
+  useEffect(() => { setTagFilter(new Set()); setShowTagPicker(false) }, [rankingsTab])
+
+  // Close tag picker on outside click
+  useEffect(() => {
+    if (!showTagPicker) return
+    const fn = e => {
+      if (!e.target.closest('[data-tag-picker]')) setShowTagPicker(false)
+    }
+    document.addEventListener('mousedown', fn)
+    return () => document.removeEventListener('mousedown', fn)
+  }, [showTagPicker])
 
   // Position filter — empty Set means "show all"
   const [posFilter, setPosFilter] = useState(new Set())
@@ -133,12 +146,32 @@ export default function PlayerList() {
     [unsold, statCols]
   )
 
+  // All distinct tags present in the current unsold pool, sorted
+  const availableTags = useMemo(() => {
+    const s = new Set()
+    unsold.forEach(p => p.tags?.forEach(t => s.add(t)))
+    return [...s].sort()
+  }, [unsold])
+
+  function toggleTag(tag) {
+    setTagFilter(prev => {
+      const next = new Set(prev)
+      next.has(tag) ? next.delete(tag) : next.add(tag)
+      return next
+    })
+  }
+
   const filtered = unsold.filter(p => {
     if (!tierFilter.has(p.tier)) return false
-    // Position filter: if any positions selected, player must have at least one (OR logic)
+    // Position filter: OR logic
     if (posFilter.size > 0) {
       const playerPos = p.positions ?? []
       if (!playerPos.some(pos => posFilter.has(pos))) return false
+    }
+    // Tag filter: OR logic — player must have at least one selected tag
+    if (tagFilter.size > 0) {
+      const playerTags = new Set(p.tags ?? [])
+      if (![...tagFilter].some(t => playerTags.has(t))) return false
     }
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
@@ -239,6 +272,77 @@ export default function PlayerList() {
             color: 'var(--text-faint)', padding: '3px 4px',
           }} title="Clear position filter">✕</button>
         )}
+
+        <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
+
+        {/* Tag filter */}
+        <div style={{ position: 'relative' }} data-tag-picker>
+          <button
+            onClick={() => setShowTagPicker(v => !v)}
+            style={{
+              background: tagFilter.size > 0 ? 'rgba(167,139,250,.18)' : 'transparent',
+              border: `1px solid ${tagFilter.size > 0 ? 'var(--purple)' : 'var(--border)'}`,
+              borderRadius: 4, padding: '3px 9px',
+              fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 0.5,
+              color: tagFilter.size > 0 ? 'var(--purple)' : 'var(--text-dim)',
+              cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 5,
+            }}
+          >
+            TAGS
+            {tagFilter.size > 0 && (
+              <span style={{
+                background: 'var(--purple)', color: '#0a0c10',
+                borderRadius: 10, padding: '0 5px', fontSize: 9, fontWeight: 700,
+              }}>{tagFilter.size}</span>
+            )}
+            <span style={{ fontSize: 8, opacity: 0.6 }}>{showTagPicker ? '▲' : '▼'}</span>
+          </button>
+
+          {showTagPicker && (
+            <div style={{
+              position: 'absolute', top: 'calc(100% + 4px)', left: 0, zIndex: 50,
+              background: 'var(--surface)', border: '1px solid var(--border2)',
+              borderRadius: 8, padding: 10, minWidth: 220, maxWidth: 320,
+              boxShadow: '0 12px 32px rgba(0,0,0,.6)',
+              display: 'flex', flexDirection: 'column', gap: 3,
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)', letterSpacing: 1 }}>
+                  FILTER BY TAG · OR LOGIC
+                </span>
+                {tagFilter.size > 0 && (
+                  <button onClick={() => setTagFilter(new Set())} style={{
+                    background: 'none', border: 'none', cursor: 'pointer',
+                    fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)',
+                  }}>CLEAR ✕</button>
+                )}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+                {availableTags.map(tag => {
+                  const active = tagFilter.has(tag)
+                  const cfg = TAG_CONFIG[tag] || { color: 'var(--muted)', bg: 'rgba(148,163,184,.10)' }
+                  return (
+                    <button
+                      key={tag}
+                      onClick={() => toggleTag(tag)}
+                      style={{
+                        background: active ? cfg.bg : 'transparent',
+                        border: `1px solid ${active ? cfg.color : 'var(--border2)'}`,
+                        borderRadius: 3, padding: '3px 8px', cursor: 'pointer',
+                        fontFamily: "'DM Mono', monospace", fontSize: 9,
+                        color: active ? cfg.color : 'var(--text-dim)',
+                        fontWeight: active ? 600 : 400,
+                        letterSpacing: 0.4,
+                      }}
+                    >
+                      {tag}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+        </div>
 
         <div style={{ flex: 1 }} />
 
