@@ -76,7 +76,7 @@ export default function FryTargets() {
       result.push(p)
       if (result.length >= 10) break
     }
-    return result
+    return result.sort((a, b) => (b.adj_value ?? 0) - (a.adj_value ?? 0))
   })()
 
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
