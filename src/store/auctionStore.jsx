@@ -74,6 +74,10 @@ const initialBatters = recalcValues(LDB_DATA.batters, initialTeams, {})
 const initialSP      = recalcValues(LDB_DATA.sp,      initialTeams, {})
 const initialRP      = recalcValues(LDB_DATA.rp,      initialTeams, {})
 
+// Load saved session if present
+const _saved = loadFromStorage()
+const _init  = _saved ? buildStateFromSnapshot(_saved) : null
+
 // ── BID INCREMENT HELPERS ─────────────────────────────────────────────────
 // $0.5M steps up to $10M, then $1M steps above $10M
 export function snapToValidIncrement(val) {
@@ -103,17 +107,108 @@ export function fmtPrice(val) {
   return n % 1 === 0 ? `$${n}M` : `$${n.toFixed(1)}M`
 }
 
+
+// ── PERSISTENCE ────────────────────────────────────────────────────────────
+const LS_KEY = 'ldb_auction_2026'
+
+function saveToStorage(sold, teams, auctionLog) {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      v: 1,
+      savedAt: Date.now(),
+      sold,
+      teams,
+      auctionLog,
+    }))
+  } catch (e) {
+    console.warn('LDB: localStorage save failed', e)
+  }
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(LS_KEY)
+    if (!raw) return null
+    const parsed = JSON.parse(raw)
+    if (parsed?.v !== 1 || !parsed.sold || !parsed.teams) return null
+    return parsed
+  } catch {
+    return null
+  }
+}
+
+export function clearStorage() {
+  localStorage.removeItem(LS_KEY)
+}
+
+export function exportAuctionJSON() {
+  const raw = localStorage.getItem(LS_KEY)
+  if (!raw) return
+  const blob = new Blob([raw], { type: 'application/json' })
+  const url  = URL.createObjectURL(blob)
+  const a    = document.createElement('a')
+  const ts   = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 16)
+  a.href     = url
+  a.download = `ldb_auction_${ts}.json`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+export async function importAuctionJSON(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = e => {
+      try {
+        const parsed = JSON.parse(e.target.result)
+        if (parsed?.v !== 1 || !parsed.sold || !parsed.teams) {
+          reject(new Error('Invalid auction file format'))
+          return
+        }
+        localStorage.setItem(LS_KEY, e.target.result)
+        resolve(parsed)
+      } catch {
+        reject(new Error('Could not parse auction file'))
+      }
+    }
+    reader.onerror = () => reject(new Error('File read failed'))
+    reader.readAsText(file)
+  })
+}
+
+export function hasSavedSession() {
+  const saved = loadFromStorage()
+  return saved && Object.keys(saved.sold || {}).length > 0
+}
+
+export function savedSessionMeta() {
+  const saved = loadFromStorage()
+  if (!saved) return null
+  return {
+    soldCount: Object.keys(saved.sold || {}).length,
+    savedAt: saved.savedAt,
+  }
+}
+
+// Rebuild state from a saved snapshot + fresh player data
+function buildStateFromSnapshot(snapshot) {
+  const { sold, teams, auctionLog } = snapshot
+  const batters = recalcValues(LDB_DATA.batters, teams, sold)
+  const sp      = recalcValues(LDB_DATA.sp,      teams, sold)
+  const rp      = recalcValues(LDB_DATA.rp,      teams, sold)
+  return { sold, teams, auctionLog, batters, sp, rp }
+}
+
 // ── STORE ──────────────────────────────────────────────────────────────────
 export const useAuctionStore = create((set, get) => ({
-  // Data
-  batters: initialBatters,
-  sp: initialSP,
-  rp: initialRP,
+  // Data — restored from localStorage if available
+  batters: _init?.batters ?? initialBatters,
+  sp:      _init?.sp      ?? initialSP,
+  rp:      _init?.rp      ?? initialRP,
 
   // Live auction state
-  teams: initialTeams,
-  sold: {},          // { playerName: { price, team, pos_type } }
-  auctionLog: [],    // [{ playerName, price, team, ts, rank, est_value }]
+  teams:      _init?.teams      ?? initialTeams,
+  sold:       _init?.sold       ?? {},    // { playerName: { price, team, pos_type } }
+  auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, ts, rank, est_value }]
   
   // UI state
   activeTab: 'rankings',
@@ -187,6 +282,7 @@ export const useAuctionStore = create((set, get) => ({
     const newSP      = recalcValues(get().sp,      newTeams, newSold)
     const newRP      = recalcValues(get().rp,      newTeams, newSold)
 
+    saveToStorage(newSold, newTeams, newLog)
     set({
       sold: newSold,
       teams: newTeams,
@@ -218,11 +314,13 @@ export const useAuctionStore = create((set, get) => ({
     const newBatters = recalcValues(get().batters, newTeams, newSold)
     const newSP      = recalcValues(get().sp,      newTeams, newSold)
     const newRP      = recalcValues(get().rp,      newTeams, newSold)
+    saveToStorage(newSold, newTeams, newLog)
     set({ sold: newSold, teams: newTeams, auctionLog: newLog, batters: newBatters, sp: newSP, rp: newRP })
   },
 
   resetAuction: () => {
     const t = buildInitialTeams()
+    clearStorage()
     set({
       teams: t,
       sold: {},
@@ -233,6 +331,13 @@ export const useAuctionStore = create((set, get) => ({
       nominatedPlayer: null,
       bidTeam: '', bidPrice: '',
     })
+  },
+
+  // Load a snapshot from an imported file and rebuild state
+  restoreFromSnapshot: (snapshot) => {
+    const state = buildStateFromSnapshot(snapshot)
+    saveToStorage(state.sold, state.teams, state.auctionLog)
+    set({ ...state, nominatedPlayer: null, bidTeam: '', bidPrice: '' })
   },
 
   // Derived helpers

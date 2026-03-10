@@ -1,16 +1,43 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header.jsx'
 import PlayerList from './components/PlayerList.jsx'
 import AuctionPanel from './components/AuctionPanel.jsx'
 import FryTargets from './components/FryTargets.jsx'
 import LeagueView from './components/LeagueView.jsx'
+import { savedSessionMeta, useAuctionStore } from './store/auctionStore.jsx'
 
 export default function App() {
   const [showLeague, setShowLeague] = useState(false)
+  const [resumeBanner, setResumeBanner] = useState(() => savedSessionMeta())
+  const soldCount = Object.keys(useAuctionStore(s => s.sold)).length
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <Header onLeagueClick={() => setShowLeague(true)} />
+
+      {/* ── Resume session banner ── */}
+      {resumeBanner && soldCount === 0 && (
+        <div style={{
+          background: 'rgba(200,241,53,.07)', borderBottom: '1px solid rgba(200,241,53,.25)',
+          padding: '8px 20px', display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0,
+        }}>
+          <span style={{ fontSize: 13 }}>💾</span>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--accent)' }}>
+            Saved session found — <strong>{resumeBanner.soldCount} sales</strong> from {new Date(resumeBanner.savedAt).toLocaleString()}
+          </span>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)' }}>
+            (automatically restored)
+          </span>
+          <button
+            onClick={() => setResumeBanner(null)}
+            style={{
+              marginLeft: 'auto', background: 'none', border: 'none',
+              cursor: 'pointer', fontFamily: "'DM Mono', monospace",
+              fontSize: 10, color: 'var(--text-faint)', padding: '2px 6px',
+            }}
+          >dismiss ✕</button>
+        </div>
+      )}
 
       {/* Two-pane layout */}
       <div style={{
