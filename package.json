@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node node_modules/vite/bin/vite.js",
-    "build": "node node_modules/vite/bin/vite.js build",
-    "preview": "node node_modules/vite/bin/vite.js preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "npm rebuild esbuild"
   },
   "dependencies": {
     "react": "^18.3.1",
