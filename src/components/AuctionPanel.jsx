@@ -138,6 +138,8 @@ export default function AuctionPanel() {
     teams, resetAuction,
   } = useAuctionStore()
 
+  const { apiKey } = useApiKeyStore()
+
   const [search, setSearch] = useState('')
   const [focused, setFocused] = useState(false)
   const [showReset, setShowReset] = useState(false)
