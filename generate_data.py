@@ -40,6 +40,8 @@ CBS_BAT_ELIG  = Path(__file__).parent / "data" / "CBS_batter_elig.csv"
 CBS_SP_ELIG   = Path(__file__).parent / "data" / "CBS_SP_elig.csv"
 CBS_RP_ELIG   = Path(__file__).parent / "data" / "CBS_RP_elig.csv"
 PLAYER_NOTES = Path(__file__).parent / "data" / "player_notes.json"
+PL_BATTERS   = Path(__file__).parent / "data" / "2026_PL_Batter_Rankings.csv"
+PL_SP        = Path(__file__).parent / "data" / "2026_PL_SP_Rankings.csv"
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 MIN_PA  = 200
@@ -492,6 +494,209 @@ def merge_rankings(primary_list, secondary_list):
 
 # ── MAIN ───────────────────────────────────────────────────────────────────────
 
+
+# ── PL BATTER RANKINGS ─────────────────────────────────────────────────────────
+
+def load_pl_batters(path):
+    """Load PL batter rankings CSV -> dict keyed by normalised name."""
+    if not path.exists():
+        print(f"  [PL] {path.name} not found — skipping")
+        return {}
+    index = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            try:
+                pl_rank = int(row["PL_Rank"])
+            except (ValueError, KeyError):
+                continue
+            tags_raw = row.get("Tags", "")
+            pl_tags  = [t.strip() for t in tags_raw.split(",") if t.strip()] if tags_raw else []
+            entry = {
+                "pl_rank":      pl_rank,
+                "pl_tier":      int(row.get("PL_Tier", 99)) if row.get("PL_Tier","").isdigit() else 99,
+                "pl_tier_name": row.get("PL_Tier_Name", ""),
+                "pl_tags":      pl_tags,
+                "pl_note":      row.get("PL_Note", ""),
+            }
+            key = norm(row.get("Player", ""))
+            index[key] = entry
+    print(f"  [PL] Loaded {len(index)} Pitcher List batter rankings")
+    return index
+
+
+# PL smart-tag pass — called after merge_rankings + apply_notes for batters
+_PL_QUALITATIVE_TAGS = {
+    "SLEEPER", "BREAKOUT", "BOUNCE_BACK", "BUST", "STASH",
+    "INJURED", "DTD", "IL_START", "DELAYED", "PLATOON",
+    "DEEP_LEAGUE", "ADP_VALUE", "ADP_AVOID", "INJURY_RISK",
+}
+
+def apply_pl_batters(players, pl_index):
+    """Inject pl_rank/tier/note + smart tags from PL into each batter record."""
+    for i, p in enumerate(players):
+        ldb_rank = i + 1
+        key = norm(p["name"])
+        pl  = pl_index.get(key)
+        if not pl:
+            for pk, pv in pl_index.items():
+                if SequenceMatcher(None, key, pk).ratio() > 0.88:
+                    pl = pv
+                    break
+
+        if pl:
+            p["pl_rank"]      = pl["pl_rank"]
+            p["pl_tier"]      = pl["pl_tier"]
+            p["pl_tier_name"] = pl["pl_tier_name"]
+            p["pl_note"]      = pl["pl_note"]
+
+            # Rank delta: +ve means PL values player MORE than LDB z-score
+            delta = ldb_rank - pl["pl_rank"]
+
+            existing = set(p.get("tags", []))
+            new_tags = []
+
+            # Propagate PL qualitative tags not already present
+            for t in _PL_QUALITATIVE_TAGS:
+                if t in pl["pl_tags"] and t not in existing:
+                    new_tags.append(t)
+
+            # Delta-based auto tags (only when no conflicting tag already set)
+            all_tags_so_far = existing | set(new_tags)
+            if delta >= 40 and not (all_tags_so_far & {"SLEEPER", "ADP_VALUE", "ADP_AVOID"}):
+                new_tags.append("ADP_VALUE")
+            if delta <= -40 and not (all_tags_so_far & {"BUST", "ADP_AVOID", "ADP_VALUE", "SLEEPER"}):
+                new_tags.append("ADP_AVOID")
+
+            p["tags"] = list(existing) + [t for t in new_tags if t not in existing]
+        else:
+            p["pl_rank"]      = None
+            p["pl_tier"]      = None
+            p["pl_tier_name"] = ""
+            p["pl_note"]      = ""
+
+    return players
+
+# ── PL SP INTEGRATION ─────────────────────────────────────────────────────────
+
+# Tier-to-tags mapping: derived from PL's SP tier names
+_PL_SP_TIER_TAGS = {
+    4:  ["INJURY_RISK"],
+    12: ["SLEEPER"],
+    13: ["STASH", "INJURY_RISK"],
+    14: ["SLEEPER"],
+    15: ["SLEEPER"],                        # HIPSTER 1 — contrarian upside plays
+    16: ["SLEEPER"],
+    17: ["SLEEPER"],
+    18: ["ROLE_UNCLEAR"],                   # Possible Job Upside
+    19: ["ROLE_UNCLEAR", "STASH"],          # Dope But No Job
+    20: ["SLEEPER"],
+    21: ["PROSPECT", "STASH"],              # Potential 2026 Stud Prospect
+    22: ["DEEP_LEAGUE"],                    # Toby 15-Team
+    23: ["STASH", "INJURY_RISK"],           # Injury Stash 2
+    24: ["ROLE_UNCLEAR"],                   # Potential Pickups If Things Go Right
+    25: ["PROSPECT", "STASH"],              # Spec Add 2026 Prospect
+    26: ["DEEP_LEAGUE"],
+    27: ["DEEP_LEAGUE", "ROLE_UNCLEAR"],    # Toby 15-Team If Job
+    28: ["ROLE_UNCLEAR", "STASH"],          # Kinda Cool But No Job
+    29: ["PROSPECT", "STASH"],              # Stud Likely 2027 Prospect
+    30: ["DEEP_LEAGUE"],
+    31: ["ADP_AVOID"],                      # Has Job But It's The Rockies (Coors)
+    32: ["PROSPECT"],
+    33: ["ROLE_UNCLEAR"],
+    34: ["PROSPECT", "STASH"],              # Stud Likely 2028 Prospect
+    35: ["ROLE_UNCLEAR", "ADP_AVOID"],      # If Job Would Be For Rockies
+    36: ["INJURED"],                        # Hurt But You Forgot
+    37: ["ROLE_UNCLEAR", "BUST"],           # Hammock Or Mound?
+    38: ["INJURED", "IL"],                  # Out For 2026 Just So You Know
+    39: ["DEEP_LEAGUE", "ROLE_UNCLEAR"],    # The Rest Who Could Find Random Starts
+    40: ["ROLE_UNCLEAR"],                   # He's In Japan, Jeez
+}
+
+_PL_SP_QUALITATIVE_TAGS = {
+    "SLEEPER", "BREAKOUT", "BOUNCE_BACK", "BUST", "STASH",
+    "INJURED", "IL", "DTD", "IL_START", "DELAYED", "ROLE_UNCLEAR",
+    "DEEP_LEAGUE", "ADP_VALUE", "ADP_AVOID", "INJURY_RISK", "PROSPECT",
+}
+
+
+def load_pl_sp(path: Path) -> dict:
+    """Load PL SP rankings CSV → dict keyed by normalised name.
+    Derives tags from tier numbers since the SP file has no Tags column.
+    """
+    if not path.exists():
+        print(f"  [PL-SP] {path.name} not found — skipping")
+        return {}
+    index = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            try:
+                pl_rank = int(row["Rank"])
+            except (ValueError, KeyError):
+                continue
+            tier_num = int(row.get("Tier", 99)) if str(row.get("Tier","")).isdigit() else 99
+            tier_tags = _PL_SP_TIER_TAGS.get(tier_num, [])
+            entry = {
+                "pl_rank":      pl_rank,
+                "pl_tier":      tier_num,
+                "pl_tier_name": row.get("Tier Name", ""),
+                "pl_tags":      tier_tags,
+                "pl_note":      "",           # no notes column in SP file
+                "handedness":   row.get("R/L", ""),
+            }
+            key = norm(row.get("Player", ""))
+            index[key] = entry
+    print(f"  [PL-SP] Loaded {len(index)} Pitcher List SP rankings")
+    return index
+
+
+def apply_pl_sp(players: list, pl_index: dict) -> list:
+    """Inject pl_rank/tier + smart tags from PL into each SP record."""
+    for i, p in enumerate(players):
+        ldb_rank = i + 1
+        key = norm(p["name"])
+        pl  = pl_index.get(key)
+        if not pl:
+            for pk, pv in pl_index.items():
+                if SequenceMatcher(None, key, pk).ratio() > 0.88:
+                    pl = pv
+                    break
+
+        if pl:
+            p["pl_rank"]      = pl["pl_rank"]
+            p["pl_tier"]      = pl["pl_tier"]
+            p["pl_tier_name"] = pl["pl_tier_name"]
+            p["pl_note"]      = pl["pl_note"]
+            if pl.get("handedness"):
+                p["handedness"] = pl["handedness"]
+
+            # Rank delta: +ve means PL values player MORE than LDB z-score
+            delta = ldb_rank - pl["pl_rank"]
+
+            existing = set(p.get("tags", []))
+            new_tags = []
+
+            # Inject tier-derived tags not already present
+            for t in pl["pl_tags"]:
+                if t in _PL_SP_QUALITATIVE_TAGS and t not in existing:
+                    new_tags.append(t)
+
+            # Delta-based auto tags — threshold 15 (SP pool is ~191 players)
+            all_tags_so_far = existing | set(new_tags)
+            if delta >= 15 and not (all_tags_so_far & {"SLEEPER", "ADP_VALUE", "ADP_AVOID"}):
+                new_tags.append("ADP_VALUE")
+            if delta <= -15 and not (all_tags_so_far & {"BUST", "ADP_AVOID", "ADP_VALUE", "SLEEPER"}):
+                new_tags.append("ADP_AVOID")
+
+            p["tags"] = list(existing) + [t for t in new_tags if t not in existing]
+        else:
+            p["pl_rank"]      = None
+            p["pl_tier"]      = None
+            p["pl_tier_name"] = ""
+            p["pl_note"]      = ""
+
+    return players
+
+
 # ── PLAYER NOTES & SMART TAGS ─────────────────────────────────────────────────
 
 def load_player_notes(path: Path) -> dict:
@@ -635,8 +840,10 @@ def main():
     oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy")
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
-    print("\n[6/7] Loading player notes + tags...")
+    print("\n[6/7] Loading player notes + PL rankings + tags...")
     notes_index = load_player_notes(PLAYER_NOTES)
+    pl_index    = load_pl_batters(PL_BATTERS)
+    pl_sp_index = load_pl_sp(PL_SP)
 
     print("\n[7/7] Merging + writing ldb_data.js...")
     batters = merge_rankings(batx_batters, oopsy_batters)
@@ -646,6 +853,10 @@ def main():
     batters = apply_notes(batters, notes_index, "batters")
     sp      = apply_notes(sp,      notes_index, "sp")
     rp      = apply_notes(rp,      notes_index, "rp")
+
+    # PL enrichment
+    batters = apply_pl_batters(batters, pl_index)
+    sp      = apply_pl_sp(sp, pl_sp_index)
 
     # Build owned roster per team (for league board)
     roster_by_team = {abbr: [] for abbr in teams}

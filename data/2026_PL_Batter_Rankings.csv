@@ -1,0 +1,301 @@
+PL_Rank,Player,Position,PL_Tier,PL_Tier_Name,Tags,PL_Note
+1,Shohei Ohtani,DH,1,Elite,POWER_OBP,50+ HR back-to-back; perennial MVP; pitching return adds dual-threat premium in 2026
+2,Aaron Judge,OF,1,Elite,POWER_OBP,148+ games in 4 of 5 seasons shedding injury label; interchangeable #1
+3,Juan Soto,OF,2,Premium,POWER_OBP,BA bounces 10-20 pts in 2026; 40 HR floor regardless of park; OBP over .400
+4,José Ramírez,3B,2,Premium,SPEED_VALUE,30 HR / 40 SB par for course; top 3B in game; lineup thin without protection
+5,Bobby Witt Jr.,SS,2,Premium,SPEED_VALUE,~25 HR elite ratios + 35-40 SB; Kauffman factors help; counting stats upside
+6,Julio Rodríguez,OF,2,Premium,"SPEED_VALUE,BOUNCE_BACK",Real J-Rod is 30 HR / 30 SB version; Naylor return thickens lineup
+7,Kyle Tucker,OF,2,Premium,"POWER_OBP,BOUNCE_BACK",Injury mulligan; Dodger lineup boost; 30-35 HR + 20 SB; health = top-3
+8,Fernando Tatis Jr.,OF,2,Premium,POWER_OBP,First 150-game season; power rebounded Sept; Tier 1 ceiling
+9,Junior Caminero,3B,3,Stud,POWER_OBP,45 HR debut; home/road split fluky (more road HRs); 30-35 HR + 100 RBI
+10,Corbin Carroll,OF,3,Stud,"SPEED_VALUE,BOUNCE_BACK",Hamate data shows no long-term power impact; 30-30 floor; counting stats concern
+11,Cal Raleigh,C,3,Stud,POWER_OBP,50 HR threat; out-earned C2+C3+C4 combined ($47.7 vs $46.0); play early
+12,Nick Kurtz,1B,3,Stud,POWER_OBP,Top-30 finish in 117 G; sophomore risk real but hot streaks burn bright
+13,Kyle Schwarber,OF,3,Stud,POWER_OBP,Hardest hit ever; .240+ BA; safest play in H2H categories formats
+14,Pete Alonso,1B,3,Stud,POWER_OBP,Camden Yards park: Statcast projects 45 HR if all games there; fresh start
+15,Francisco Lindor,SS,3,Stud,SPEED_VALUE,30 HR / 30 SB avg over 3 seasons; hamate minor concern; durable stalwart
+16,Gunnar Henderson,SS,3,Stud,BOUNCE_BACK,Shoulder injury explains 2025 dip; 30+ HR upside with improved lineup
+17,Elly De La Cruz,SS,3,Stud,SPEED_VALUE,Reds less aggressive limits SB ceiling; floor rising via lower K rate
+18,Vladimir Guerrero Jr.,1B,3,Stud,POWER_OBP,Highest floor in game; never missed 10+ games; chase ceiling > floor profile
+19,Ronald Acuña Jr.,OF,4,Solid,"SPEED_VALUE,INJURY_RISK",30-30 threat if healthy; .280-.290 BA; 3rd IL trip in 5 years is concern
+20,Yordan Alvarez,OF,4,Solid,"POWER_OBP,INJURY_RISK","Tier 2 talent, injury-risk only knock; 1.031 OPS on return; 135+ G in 3 seasons"
+21,Jackson Chourio,OF,4,Solid,SPEED_VALUE,Back-to-back 20-20; 25-25 full-season projection; hamstring history
+22,Jazz Chisholm Jr.,2B,4,Solid,"SPEED_VALUE,MULTI_POS",30-35 HR / 30-35 SB; 2B+3B eligible; volatile but wRC+ 100+ every month in 2025
+23,Zach Neto,SS,4,Solid,"SPEED_VALUE,BOUNCE_BACK",30-30 ceiling if healthy; across-the-board quality of contact improvements in 128 G
+24,Ketel Marte,2B,4,Solid,POWER_OBP,25+ HR; .280+ BA; rare elite 2B; projections very bullish for 2026
+25,Brent Rooker,OF,4,Solid,POWER_OBP,30 HR floor; K rate dropped 6.6 pts; second season in Sacramento = improvement
+26,Bryce Harper,1B,4,Solid,"POWER_OBP,INJURY_RISK",30 HR when healthy; likely misses 15-20 G; wrist injury treated as floor
+27,Josh Naylor,1B,4,Solid,SPEED_VALUE,30 SB from 1B just twice caught; 3-year 90+ RBI streak; safe contact floor
+28,Manny Machado,3B,4,Solid,POWER_OBP,27+ HR every non-COVID season since 2015; lineup thin in SD is concern
+29,Trea Turner,SS,4,Solid,SPEED_VALUE,30 SB / .300 BA returns; Phillies clock ticking; 15+ HR; 140 G in 4 of 5
+30,Matt Olson,1B,4,Solid,POWER_OBP,162 G four straight seasons; 28-30 HR reliable; durable anchor
+31,Pete Crow-Armstrong,OF,5,Value,"SPEED_VALUE,BUST",30-30 ceiling; 2H collapse concerning; gamble worth taking for upside
+32,James Wood,OF,5,Value,"POWER_OBP,BOUNCE_BACK",Top-10 ceiling; breaker passiveness fixable; top-10 upside per PL metrics
+33,Mookie Betts,SS,5,Value,"POWER_OBP,BOUNCE_BACK",Scorching .317/.376/.516 final 47 G; elite decisions multi-path to .265+ BA
+34,Brice Turang,2B,5,Value,SPEED_VALUE,Power breakout (18 HR) real; 15 HR + 25-30 SB + high BA; elite 2B
+35,Riley Greene,OF,5,Value,POWER_OBP,30+ HR; 100 RBI projection; adjustment ability proven; top-20 ceiling
+36,Rafael Devers,1B,5,Value,"POWER_OBP,BUST",35 HR / 109 RBI; zone contact at career-low 73.8%; .250 BA floor here to stay
+37,Freddie Freeman,1B,5,Value,POWER_OBP,Top-40 even with injury; 20+ HR; .295 BA; elite Dodgers lineup context
+38,Jackson Merrill,OF,5,Value,BOUNCE_BACK,7 HR September + postseason signals injury caused dip; true power TBD
+39,Wyatt Langford,OF,5,Value,"SLEEPER,ADP_VALUE",Plus power + speed age 24; two elite months; plate discipline improving; consistency coming
+40,Bo Bichette,SS,5,Value,"ADP_VALUE,MULTI_POS",3B eligibility via NYM = tier bump; .311 BA; 17-20 HR; big positional value
+41,Hunter Goodman,C,5,Value,POWER_OBP,18 road HR proves park-independent power; rare Rockies positive; 104 G at C
+42,Shea Langeliers,C,5,Value,"POWER_OBP,BOUNCE_BACK",K rate dropped 7.5 pts; 25-30 HR; 2H power explosion; decision-making improving
+43,Cody Bellinger,1B,6,Mid,BUST,25 HR; below-avg barrel/hard-hit; Bronx park compensates; 2 crappy months likely
+44,Eugenio Suárez,3B,6,Mid,POWER_OBP,49 HR; back in GABP; 40+ HR ceiling; high floor despite painful ratios
+45,Maikel Garcia,2B,6,Mid,"SPEED_VALUE,MULTI_POS",16 HR breakout; 20+ SB; 2B/3B/SS/OF eligible; .280 BA; power real
+46,Byron Buxton,OF,6,Mid,"INJURY_RISK,ADP_VALUE",Top-20 when healthy; 126 G first time since 2017; weak Twins lineup hurts
+47,Austin Riley,3B,6,Mid,"BOUNCE_BACK,INJURY_RISK",2-year injury funk; 33+ HR history; 29 yo; projections bullish; get one 3B here
+48,Vinnie Pasquantino,1B,6,Mid,POINTS_VALUE,25 HR safer projection; elite K avoidance = points league bump; injury risk
+49,Corey Seager,SS,6,Mid,"POWER_OBP,INJURY_RISK",30 HR 3 straight pre-2025; health only question; massive upside if managed risk
+50,Ben Rice,C,6,Mid,"ADP_VALUE,MULTI_POS",Top-5 xwOBA + hard-hit; 99th pct xSLG; C+1B eligible; 135-140 G ceiling
+51,William Contreras,C,6,Mid,BOUNCE_BACK,Hand injury explains 2025; top-5 C when healthy; rolling power improving
+52,Christian Yelich,OF,7,Useful,AGING,140+ G third time in 4 seasons; 20-25 HR + 15-20 SB; Brewers potent offense
+53,Trevor Story,SS,7,Useful,INJURY_RISK,35 HR / 31 SB first full season since 2021; projections confirm; age-33 concern
+54,Geraldo Perdomo,SS,7,Useful,"SPEED_VALUE,OBP_VALUE",25-30 SB; elite contact; 10-12 HR; 90 R / 60 RBI correction from 2025 pace
+55,Salvador Perez,C,7,Useful,MULTI_POS,25 HR / 100 RBI somehow; brutal slumps part of the deal; reliable anchor
+56,Willy Adames,SS,7,Useful,"BOUNCE_BACK,ADP_VALUE",July 1.096 OPS; 18 HR 2H; consistent top-50 finisher despite brutal starts
+57,Seiya Suzuki,OF,7,Useful,"BOUNCE_BACK,ADP_VALUE",32 HR career high; .245 BA below norm; process metrics stayed strong in 2H
+58,Michael Harris II,OF,7,Useful,"SLEEPER,BOUNCE_BACK",14 HR / .302 from July 11 on; 3rd-year corner turning? ADP is gift; young
+59,Alex Bregman,3B,7,Useful,POWER_OBP,18 HR in 114 G; walk rate back; Wrigley suits pull-heavy approach
+60,Jose Altuve,2B,7,Useful,"AGING,MULTI_POS",26 HR; 157 R+RBI; second straight 150+ G; turns 36 in May; OF eligible
+61,Roman Anthony,OF,8,Streamer,ADP_VALUE,22-25 HR ceiling; 100 R upside; tools confirmed; 85-90 R more likely floor
+62,George Springer,OF,8,Streamer,AGING,32 HR at 35 career-best Statcast; regression baked in; leadoff premium
+63,Taylor Ward,OF,8,Streamer,POWER_OBP,36 HR / 103 RBI; 30+ HR repeatable; Camden Yards new home; manage K spikes
+64,Jarren Duran,OF,8,Streamer,SPEED_VALUE,16 HR / 24 SB; top-60 finish; floor top-75; upside for more counting stats
+65,Will Smith,C,8,Streamer,"ADP_VALUE,BOUNCE_BACK",Best ratios of career 131 Process+; 64 R / 61 RBI suppressed by 110 G only
+66,Ivan Herrera,C,8,Streamer,"BOUNCE_BACK,INJURY_RISK",Above avg in Contact + Power + Decision Value; 25 HR if stays healthy
+67,Kyle Stowers,OF,8,Streamer,SLEEPER,30-35 HR ceiling if decisions hold; 10 July HRs in 24 G; .260-.270 BA path
+68,Jo Adell,OF,8,Streamer,POWER_OBP,37 HR / 98 RBI finally realized; 40 HR ceiling; avg drag; counting stat risk
+69,Tyler Soderstrom,1B,8,Streamer,"POWER_OBP,MULTI_POS",Spike producer; .276 BA; high GB limits HR ceiling; 1B+OF eligible
+70,Andy Pages,OF,8,Streamer,ADP_VALUE,27 HR / 14 SB debut; BA regresses to .250-.260; SB likely halved; Dodgers pop
+71,Jakob Marsee,OF,8,Streamer,"SLEEPER,SPEED_VALUE",189 wRC+ debut; elite contact; 40 SB ceiling; swing change added 3 mph exit velo
+72,CJ Abrams,SS,9,Depth,SPEED_VALUE,20 HR / 30 SB reliable; BABIP-dependent avg; 80-90 R; what you see is what you get
+73,Jeremy Peña,SS,9,Depth,"SPEED_VALUE,BOUNCE_BACK",20 HR / 25 SB pace when healthy; .304 BA career high; injury risk persists
+74,Nico Hoerner,2B,9,Depth,"SPEED_VALUE,OBP_VALUE",25+ SB / .280 BA floor; sub-10 HR; fits specific power-heavy roster needs
+75,Drake Baldwin,C,9,Depth,ADP_VALUE,19 HR / .274 BA / 80 RBI debut; 15.2% K rate; great outcome = repeat of 2025
+76,Randy Arozarena,OF,9,Depth,SPEED_VALUE,27 HR / 31 SB; streaky due to zone contact (77.9%); 20-20 reliable floor
+77,Brandon Nimmo,OF,9,Depth,POWER_OBP,23-25 HR / double-digit SB; full season; Texas move lowers R ceiling slightly
+78,Oneil Cruz,OF,9,Depth,"SPEED_VALUE,BUST",30-30 upside vs LHP weakness; 56% GB rate spike 2H; floor depressingly low
+79,Ceddanne Rafaela,2B,9,Depth,"SPEED_VALUE,MULTI_POS",14 HR / 13 SB 1H; power hinges on fastball punishment; 2B+OF eligible
+80,Ian Happ,OF,9,Depth,POWER_OBP,20+ HR / 85+ R / 79+ RBI three straight seasons; .340-.360 OBP; bankable
+81,Steven Kwan,OF,9,Depth,"POINTS_VALUE,OBP_VALUE",Elite contact; ~.300 BA / 20 SB / 80-90 R; points bump; OBP caution
+82,Yandy Díaz,1B,9,Depth,OBP_VALUE,~.290-.300 BA; 16-18 HR back at Trop (never 12+ HR there before); 150 R+RBI
+83,Brandon Lowe,2B,9,Depth,"POWER_OBP,INJURY_RISK",31 HR / 161 R+RBI; PIT less platoon risk; 50+ G missed in 3 of 4 seasons
+84,Matt Chapman,3B,9,Depth,"BOUNCE_BACK,INJURY_RISK",Last safe-ish 3B; hand injury explains 2025; 23-25 HR if fully healthy
+85,Jonathan Aranda,1B,10,Speculative,"ADP_VALUE,INJURY_RISK",Elite contact when healthy; 31.8% K concern; avg decision/contact by PLV
+86,Dansby Swanson,SS,10,Speculative,POINTS_VALUE,Set-and-forget floor; 20 HR / 80 R / 75 RBI / 15 SB / .240 BA reliable
+87,Luke Keaschall,2B,10,Speculative,"SPEED_VALUE,ADP_VALUE",20-25 SB; elite discipline; 10 HR ceiling; 49 G sample risk; MIN starter
+88,Teoscar Hernández,OF,10,Speculative,"POWER_OBP,ADP_VALUE",25 HR / 90-100 RBI via Dodgers; zone contact improving; BABIP overdue to rise
+89,Trent Grisham,OF,10,Speculative,"BOUNCE_BACK,ADP_VALUE",34 HR breakout; career-best walk+K rates; NYY leadoff locked; all kosher Statcast
+90,Luis Robert Jr.,OF,10,Speculative,"SPEED_VALUE,INJURY_RISK",20 HR / 50 SB pace in 110 G; floor awful; Mets may help consistency
+91,Bryan Reynolds,OF,10,Speculative,ADP_VALUE,Strong 2H; top-80 ceiling; PIT context limits floor; trade upside years away
+92,Michael Busch,1B,10,Speculative,POWER_OBP,34 HR / .261/.343/.523; projection drop pulled ranks down; postseason heater
+93,Alec Burleson,1B,10,Speculative,"POINTS_VALUE,OBP_VALUE",~.280 BA; 23-25 HR; low K; STL thin lineup hurts counting stats
+94,Christian Walker,1B,10,Speculative,"POWER_OBP,BUST",30 HR ceiling; strong 2H salvaged season; rising K + falling walk = floor risk
+95,Colson Montgomery,SS,10,Speculative,"SLEEPER,BUST",32 HR via pull approach; sophomore regression real risk; projections confirm power
+96,Ramón Laureano,OF,10,Speculative,"BOUNCE_BACK,INJURY_RISK",Career Statcast highs at 30; never played 105+ G since 2019; tall ask to repeat
+97,Lawrence Butler,OF,10,Speculative,"PLATOON,BUST",21 HR / 22 SB; vs LHP .570 OPS; road .633 OPS; experience should help
+98,Daulton Varsho,OF,10,Speculative,BOUNCE_BACK,20 HR in 71 G; 21.3% HR/FB won't fully repeat; some sticky improvement
+99,Munetaka Murakami,3B,11,Lottery,"SLEEPER,BUST",30 HR power; 30%+ K risk; Japan import; CHW poor development track record
+100,Luis Arraez,1B,11,Lottery,"OBP_VALUE,POINTS_VALUE",Lowest K rate 4 straight seasons; .292 worst BA; SF leadoff ideal fit
+101,Jacob Wilson,SS,11,Lottery,ADP_VALUE,~.290-.300 BA slap hitter; sub-30% hard-hit; ROY derailed by slump+injury
+102,Ezequiel Tovar,SS,11,Lottery,POWER_OBP,Cleaner K rate; 23-25 HR ceiling; 95 G only in 2025; Coors discount
+103,Agustín Ramírez,C,11,Lottery,"SPEED_VALUE,ADP_VALUE",21 HR / 16 SB debut; .231 BA; 136 G as rookie; 150 G path in 2026
+104,Heliot Ramos,OF,11,Lottery,BUST,25 HR / 160 R+RBI ceiling if consistent; mostly average after May/June
+105,Spencer Torkelson,1B,11,Lottery,POWER_OBP,30 HR again; K rate spikes concern; Tigers role secure; elevated walk rate helps
+106,Willson Contreras,1B,11,Lottery,"POWER_OBP,ADP_VALUE",Top-7 C production every healthy 100+ G season; 25 HR / BoSox lineup boost
+107,Jorge Polanco,2B,11,Lottery,"INJURY_RISK,MULTI_POS",Top-75 when healthy; 40+ G missed 3 straight years; 3B eligible in Yahoo
+108,Ozzie Albies,2B,11,Lottery,BOUNCE_BACK,Strong 2H; below-avg pop by PLV; 18 HR / 15 SB ceiling; 3rd-best 2B in 2H
+109,Alejandro Kirk,C,12,Bench,POINTS_VALUE,15 HR season-long; above-avg power at multiple points; elite contact floor
+110,Giancarlo Stanton,OF,12,Bench,"INJURY_RISK,POWER_OBP",24 HR / .273 in ~70 G; top-20 in 2H when healthy; certain IL time
+111,Xavier Edwards,2B,12,Bench,"SPEED_VALUE,MULTI_POS",30-35 SB / .280-.290 BA / near-zero HR; 2B+SS eligible; locked everyday role
+112,Kerry Carpenter,OF,12,Bench,"INJURY_RISK,POWER_OBP,PLATOON",30-35 HR pop; platoon + injury risk; power streamer + bench replacement combo
+113,Yainer Diaz,C,12,Bench,"BOUNCE_BACK,MULTI_POS",20 HR; BA likely BABIP-corrects upward; slow start explained; C/1B eligible
+114,Gleyber Torres,2B,12,Bench,POINTS_VALUE,15-16 HR / .255-.260 BA; elite counting stats in DET lineup; sports hernia
+115,Adley Rutschman,C,12,Bench,"BOUNCE_BACK,BUST",.209/.294/.332 since July 2024; bounce-back to top-5 C possible; path unclear
+116,Marcus Semien,2B,12,Bench,"AGING,ADP_VALUE",Back-to-back .240 slash; NYM move boosts counting stats; June 2025 was real
+117,Chandler Simpson,OF,12,Bench,SPEED_VALUE,44 SB in 104 G; zero barrels in 376 BIP; dead-last avg exit velo; speed only
+118,Sal Stewart,1B,12,Bench,"SLEEPER,MULTI_POS",PLV: .272 BA / 31 HR / 600 PA = 21st overall; immediate power in 18 MLB G; 1B+3B
+119,Dylan Crews,OF,12,Bench,"SPEED_VALUE,INJURY_RISK",15 HR / 35 SB ceiling; 52.7% GB rate concern; .211 BA; ceiling > floor play
+120,Xander Bogaerts,SS,12,Bench,AGING,15 SB / 10 HR / .260 BA; bankable floor for deep leagues; mileage adding up
+121,Wilyer Abreu,OF,12,Bench,"INJURY_RISK,PLATOON",11 HR first 42 G; .225 / 11 HR final 73 G; likely platoon limits ceiling
+122,Brenton Doyle,OF,12,Bench,"SPEED_VALUE,BUST",20 HR / 25 SB potential; Coors-dependent; road splits poison; streaky ratios
+123,Alec Bohm,1B,13,Deep,"MULTI_POS,ADP_VALUE",97 RBI back-to-back prior years; value tied to cleanup spot; PHI; 1B+3B
+124,Ryan O'Hearn,1B,13,Deep,POINTS_VALUE,15-17 HR; solid ratios; PIT everyday by default; high floor for late pick
+125,Gabriel Moreno,C,13,Deep,"BOUNCE_BACK,INJURY_RISK",9 HR in 83 G via improved fly ball; injury history every season; steal if healthy
+126,Mike Trout,OF,13,Deep,"INJURY_RISK,POWER_OBP",130 G first since 2019; 32% K rate new career-high concern; top-80 if 120+ G
+127,Otto Lopez,2B,13,Deep,MULTI_POS,~.260-.270 BA; neutral all categories; MIA SS starter; 2B eligible in fantasy
+128,Bryson Stott,2B,13,Deep,"SPEED_VALUE,MULTI_POS",63-game slump inevitable; top-80 to 120 range; 2B+SS eligible; speed+avg value
+129,Luis García Jr.,2B,13,Deep,POINTS_VALUE,16-18 HR / 10+ SB / low K; career .299 OBP hurts OBP leagues; platoon risk
+130,Caleb Durbin,2B,13,Deep,"POINTS_VALUE,MULTI_POS",10+ HR / 16-20 SB / slightly positive BA; low K; Green Monster may help; 2B+3B
+131,Kazuma Okamoto,3B,13,Deep,ADP_VALUE,20 HR / .260 BA safe floor; TOR 3B role; safer option than Murakami; adaptation risk
+132,Royce Lewis,3B,13,Deep,"SLEEPER,INJURY_RISK",33 HR / 46 SB pace in final 38 G; has never been healthy; 3B upside play
+133,Daylen Lile,OF,13,Deep,ADP_VALUE,Top-40 in 2H; .299 BA debut; doubles-heavy; 10+ HR + 10+ SB; OBP caution
+134,Noelvi Marte,3B,13,Deep,"BUST,MULTI_POS",Extreme hot-cold; 25 HR / 15 SB upside; PED history; .502 OPS final 23 G
+135,Austin Hays,OF,14,Speculative2,"PLATOON,INJURY_RISK",Struggles vs RHP last 2 seasons unusual; 20 HR ceiling if full-time CHW
+136,Brendan Donovan,2B,14,Speculative2,"OBP_VALUE,MULTI_POS,POINTS_VALUE",~.280 BA; 13-15 HR; elite contact; SEA; durability risk (2 of 3 years injured)
+137,Matt McLain,2B,14,Speculative2,"BUST,MULTI_POS",LD rate drop + K spike + HR/FB halved = .220 / sub-20 HR; one offseason to fix
+138,Jordan Beck,OF,14,Speculative2,"PLATOON,DEEP_LEAGUE",20 HR / 20 SB in Coors; road splits unusable; 31.9% K in 2H; Coors streamer
+139,Isaac Paredes,3B,14,Speculative2,"POWER_OBP,ADP_VALUE",30 HR ceiling; Astros PT uncertain vs Correa; extreme pull-fly approach works
+140,Willi Castro,2B,14,Speculative2,MULTI_POS,15 HR / .260 BA / 15 SB in Coors; 2B/3B/OF eligible; utility value
+141,Chase Meidroth,2B,14,Speculative2,"SPEED_VALUE,MULTI_POS",~15 SB / .270+ BA / double-digit HR; CWS leadoff; 2B+SS; floor play
+142,Samuel Basallo,C,14,Speculative2,"SLEEPER,POWER_OBP",94.2 mph exit velo in Triple-A; 30 HR upside; needs to chase less; BAL platoon
+143,Jake Burger,1B,14,Speculative2,POWER_OBP,25 HR / TEX middle-order; ratios hurt; could bottom out; boom-or-bust
+144,Konnor Griffin,OF,14,Speculative2,STASH,Best prospect in baseball; <100 G unlikely; power + speed + maturing hit tool
+145,Max Muncy,3B,14,Speculative2,"BOUNCE_BACK,INJURY_RISK",Glasses fix real (.264 from May 1); 40-50 G IL near-certain; LAD power boost
+146,Carlos Correa,3B,14,Speculative2,"MULTI_POS,BUST",27.1% LD rate HOU fluky (career norm 20.7%); lineup position valuable; 2 positions
+147,Andrew Vaughn,1B,14,Speculative2,"BOUNCE_BACK,ADP_VALUE",Plate discipline gains in MIL real; .250 / 20 HR mid-lineup; trust the new org
+148,Jac Caglianone,1B,14,Speculative2,"SLEEPER,POWER_OBP",Massive power upside; miserable 232 PA debut; closer to lineup now; KCR top-heavy
+149,Kyle Manzardo,1B,14,Speculative2,POWER_OBP,27 HR; 85 RBI projection; vs LHP contact issues; CLE needs him
+150,Jackson Holliday,2B,14,Speculative2,"SLEEPER,MULTI_POS",Decision-making/breaker improvement dramatic; 20-20 ceiling; 2B+SS eligible
+151,J.T. Realmuto,C,15,Reserve,AGING,12 HR in 134 G; declining power; backend only; volume value deep
+152,Francisco Alvarez,C,15,Reserve,"SLEEPER,INJURY_RISK",54.3% hard-hit rate; 27+ HR ceiling; injuries + contact + GB keep him back
+153,Lars Nootbaar,OF,15,Reserve,"OBP_VALUE,INJURY_RISK",Top-100 flashes; 140 wRC+ in April; faded badly; OBP+points value
+154,Spencer Horwitz,1B,15,Reserve,"OBP_VALUE,POINTS_VALUE",Strong 2H; loses 2B eligibility; 6th-best 2B in 2H; PIT; ratios boost
+155,Jung Hoo Lee,OF,15,Reserve,POINTS_VALUE,~.270-.280 BA; few HR or SB; points league value; hit tool leads
+156,Addison Barger,3B,15,Reserve,PLATOON,15 HR / 133 wRC+ over 76 G peak; platoon locks ceiling down
+157,Adolis García,OF,15,Reserve,POWER_OBP,PHI everyday role; 25 HR / 10 SB upside; strikeout rate hasn't collapsed yet
+158,Gavin Sheets,1B,15,Reserve,"STREAMER,PLATOON",Streaky power vs RHP; O'Hearn gone opens PT; streaming vs righties only
+159,Colt Keith,1B,15,Reserve,MULTI_POS,13 HR each of 2 seasons; 20-25 HR upside needs to emerge; utility value
+160,Nolan Schanuel,1B,15,Reserve,"POINTS_VALUE,OBP_VALUE",Elite contact + discipline; minimal power; points/OBP bump; LAA context hurts
+161,Jordan Westburg,2B,16,Reserve2,"INJURY_RISK,BOUNCE_BACK",23-25 HR / .265 BA when healthy; 2nd straight 50+ G IL; 2B+3B eligible
+162,J.P. Crawford,SS,16,Reserve2,DEEP_LEAGUE,Top-150 volume; solid ratios; floor play only; SEA starter
+163,Cedric Mullins,OF,16,Reserve2,"SPEED_VALUE,PLATOON",20 SB / 15-17 HR; TBR platoon likely; not getting faster; ratios hurt
+164,TJ Friedl,OF,16,Reserve2,SPEED_VALUE,GABP leadoff locked; Francona less aggressive limits SB ceiling vs 2024
+165,Mike Yastrzemski,OF,16,Reserve2,"PLATOON,ADP_VALUE",Profar suspended = de facto ATL starter; 20 HR / OBP value; left-only
+166,Colton Cowser,OF,16,Reserve2,"BOUNCE_BACK,INJURY_RISK",Fractured ribs explain 2H; 30-OF ceiling; K rate rising is concern
+167,Miguel Vargas,1B,16,Reserve2,"SLEEPER,MULTI_POS",97th pct solid contact; .261 BABIP very low; 108 Process+; 1B+3B eligible
+168,Jeff McNeil,2B,16,Reserve2,MULTI_POS,OAK park helps power; hits 5th behind four strong bats; 15 HR ceiling; 2B+OF
+169,Marcell Ozuna,DH,16,Reserve2,"AGING,BOUNCE_BACK",Core injury explains 2025; turns 35; PIT fit awkward; top-80 if healthy
+170,Sal Frelick,OF,16,Reserve2,BUST,Improved dramatically in 2025; leadoff role uncertain; 90th pct outcome in 2025
+171,Jake Mangum,OF,16,Reserve2,"SPEED_VALUE,POINTS_VALUE",35 SB / .280-.290 BA / switch hitter; zero power; points league depth
+172,Spencer Steer,1B,16,Reserve2,"MULTI_POS,BUST",20 HR with full-time role; Suárez signing threatens AB; 1B+OF eligible
+173,Masyn Winn,SS,16,Reserve2,DEEP_LEAGUE,10 HR / 10 SB; lost leadoff role; mediocre ratios; volume only
+174,Josh Jung,3B,17,Lottery2,"INJURY_RISK,BOUNCE_BACK",K rate below 30%; 30 HR history if healthy; significant missed time 3 of 4 years
+175,Ernie Clement,1B,17,Lottery2,"MULTI_POS,POINTS_VALUE",Top-100 in 2H; all 4 infield spots eligible; TOR starter; soft-hitting stabilizer
+176,Brandon Marsh,OF,17,Lottery2,PLATOON,38.4% K vs LHP; 15 HR / 10 SB; 130 G expected; PHI 5th hitter
+177,Matt Wallner,OF,17,Lottery2,"PLATOON,BUST",Big power vs RHP; huge contact issues; hot wire adds only; platoon ceiling
+178,Kevin McGonigle,2B,17,Lottery2,"SLEEPER,POINTS_VALUE",Walks more than Ks every MiLB level; 20+ HR upside; AFL revelation; path opening
+179,JJ Wetherholt,SS,17,Lottery2,"SLEEPER,ADP_VALUE",17-20 HR / 15-20 SB / high BA; STL starter; 2B eligible April; Nate loves him
+180,Brooks Lee,2B,17,Lottery2,MULTI_POS,15 HR / multi-position 2B/3B/SS; bad team; volume only; no speed
+181,José Caballero,2B,17,Lottery2,"SPEED_VALUE,MULTI_POS",Speed + versatility; Volpe return limits role; Rosario signing = NYY concern
+182,Kyle Teel,C,17,Lottery2,OBP_VALUE,16-18 HR potential; K spike end of season concern; OBP value; CHW depth
+183,Austin Wells,C,17,Lottery2,BUST,21 HR; 1H dominant then cratered .208/.259/.403 2H; NYY starting role
+184,Anthony Volpe,SS,17,Lottery2,"INJURY_RISK,BOUNCE_BACK",Return from injury May; 12-15 HR / 20 SB; erratic production; tools buried
+185,Nolan Gorman,2B,17,Lottery2,"BUST,MULTI_POS",Power + walks real; severe contact issues; STL one more chance; 2B+3B
+186,Josh Lowe,OF,17,Lottery2,"SPEED_VALUE,PLATOON",20 SB / little pop; LAA 130+ G chance; career .504 OPS vs LHP concern
+187,Chase DeLauter,OF,17,Lottery2,"SLEEPER,INJURY_RISK",51.9% hard-hit; 20 HR ceiling; elevated GBs watch; CLE middle-order path
+188,Joey Ortiz,SS,17,Lottery2,DEEP_LEAGUE,500+ PA guaranteed; 12-15 SB / .230 BA; MIL bottom of order; volume floor
+189,Dylan Beavers,OF,17,Lottery2,"OBP_VALUE,PLATOON",19% walk rate debut; 12 HR / 12 SB ceiling; BAL platoon; 0-1 count issue
+190,Jared Triolo,1B,17,Lottery2,MULTI_POS,3B secured PIT; 10 HR / 15 SB ceiling; 1B/2B/3B/SS eligible; volume
+191,Mark Vientos,1B,17,Lottery2,"BUST,MULTI_POS",2024 flash glimpsed briefly; Mets DH role insecure; spring dependent; 1B+3B
+192,Jesús Sánchez,OF,17,Lottery2,"PLATOON,BUST",15 HR / 15 SB ceiling; TOR already has 3 LH OFs; role very unclear
+193,Mickey Moniak,OF,17,Lottery2,"PLATOON,DEEP_LEAGUE",Best zone contact of career in Coors; road/LHP sits; Coors-only streamer
+194,Colt Emerson,SS,17,Lottery2,STASH,Well-rounded; Donovan trade complicates path; 20-yo growing into power
+195,Josh Bell,1B,17,Lottery2,"OBP_VALUE,AGING",18-20 HR / OBP value / 70 RBI; vs LHP declining; MIN 3rd on bad team
+196,Harrison Bader,OF,18,Speculative3,AGING,15 HR / 15 SB; .305 BABIP won't repeat; counting stats low; Giants bottom third
+197,Cam Smith,OF,18,Speculative3,SLEEPER,Sanchez trade opens role; 21-yo upside; double-digit HR path clearing
+198,Justin Crawford,OF,18,Speculative3,"SPEED_VALUE,STASH",30+ SB ceiling; .300 BA in minors; double-digit walk rate added; PHI center
+199,Ryan Jeffers,C,18,Speculative3,DEEP_LEAGUE,15 HR / .245 BA; volume; nothing special but reliable MIN catcher
+200,Rhys Hoskins,1B,18,Speculative3,"INJURY_RISK,PLATOON",12 HR in 90 G; CLE platoon; power streamer; .748 OPS when healthy
+201,Carlos Narváez,C,18,Speculative3,SLEEPER,~.231 BA; 15 HR possible; <10% barrel but decent exit velo; BoSox 6-hole
+202,Andrés Giménez,2B,18,Speculative3,BOUNCE_BACK,10 HR / 15-20 SB / .240-.250 BA; bounce-back from nightmare 2025 season
+203,Marcelo Mayer,3B,18,Speculative3,"INJURY_RISK,STASH",Hard contact in brief sample; whiff vs breakers; wrist injury concern; BOS 3B
+204,Evan Carter,OF,18,Speculative3,"INJURY_RISK,SPEED_VALUE",25-30 SB in 150 G pace; injury devastating career; speed-only ceiling
+205,Jorge Soler,OF,18,Speculative3,"AGING,INJURY_RISK",20 HR upside; LAA buried; injury risk; misses months; deep only
+206,Jordan Walker,OF,18,Speculative3,SLEEPER,Driveline work; elite bat speed (99th pct); too many grounders to fix yet
+207,Zach McKinstry,3B,18,Speculative3,MULTI_POS,10 HR / 15 SB / .250 BA; career-high everything 2025; 1H >> 2H; DET utility
+208,Brett Baty,2B,18,Speculative3,"MULTI_POS,ADP_VALUE",50%+ GB; peripherals excellent; 120 G ceiling needed; Nate likes the flier
+209,Isaac Collins,OF,18,Speculative3,SPEED_VALUE,122 wRC+ June-Aug; awful Apr/May/Sep; KCR role; 10 HR / 15 SB if starter
+210,Dillon Dingler,C,19,Deep2,BOUNCE_BACK,28.2% LD rate won't repeat; 10 HR / 50 RBI; K rate improvement real
+211,Edgar Quero,C,19,Deep2,POINTS_VALUE,More hit tool than power; Driveline launch angle work; CHW debut solid
+212,Tyler Stephenson,C,19,Deep2,"BUST,INJURY_RISK",33.8% K rate in 2025; 15 HR / 50 RBI if healthy; eroded contact ability
+213,Logan O'Hoppe,C,19,Deep2,BUST,14 HR in 43 G peak; 33.3% K / 4.3% BB sank him; 36 wRC+ post-May 23
+214,Connor Norby,3B,19,Deep2,"PLATOON,INJURY_RISK",15 HR / 10 SB in 88 G; vs LHP limits ceiling; improved plate discipline sticky
+215,Andrew Benintendi,OF,19,Deep2,INJURY_RISK,15-17 HR / .250 BA; injury likely; floor decent when healthy; CHW
+216,Bryce Eldridge,DH,19,Deep2,"SLEEPER,POWER_OBP",6'7 power; 30.8% K in Triple-A; SFG DH platoon; 20-25 HR if K manageable
+217,Jake Cronenworth,1B,19,Deep2,"OBP_VALUE,MULTI_POS,POINTS_VALUE",500+ PA every full season; low K; OBP value; bottom-order SDP; 1B/2B/SS
+218,Moisés Ballesteros,DH,19,Deep2,POINTS_VALUE,143 wRC+ debut; 15 HR ceiling; .260 BA; DH only; points league bump
+219,Tyler O'Neill,OF,19,Deep2,"INJURY_RISK,BUST",Plus power + speed; deep slumps + injury history; volatile lottery ticket BAL
+220,Nick Gonzales,2B,19,Deep2,INJURY_RISK,Better MLB K rate than expected; .265 ceiling; SS eligibility coming; 2 injuries
+221,Bo Naylor,C,19,Deep2,"POWER_OBP,BUST",14 HR career high; extreme fly-ball; .205 BA; volume if ratios tolerable
+222,Victor Scott II,OF,19,Deep2,"SPEED_VALUE,BUST",30+ SB pace; severe negative everywhere else; speed-only specialist STL
+223,Jonathan India,2B,19,Deep2,MULTI_POS,10-12 HR / 10 SB; fences moving in helps; 130+ G if healthy; 2B/3B/OF
+224,Trevor Larnach,OF,19,Deep2,PLATOON,~.250/.330/.420 vs RHP; 15 HR; MIN platoon; honest work floor
+225,Lane Thomas,OF,19,Deep2,INJURY_RISK,15-15 ceiling; K rate rising; IL stints 2 of last 3 seasons; KCR
+226,Owen Caissie,OF,19,Deep2,"SLEEPER,PLATOON",28-30% K projects to higher in MLB; 15+ HR if stays; MIA platoon start
+227,Wenceel Pérez,OF,19,Deep2,DEEP_LEAGUE,~.240 BA / some pop+speed; 30-40 G missed; DET moderate floor
+228,Ke'Bryan Hayes,3B,19,Deep2,DEEP_LEAGUE,Good defender + volume; 10-12 SB; low power via high GB; CIN
+229,Ryan McMahon,3B,19,Deep2,"PLATOON,BUST",5-year 150 G / 20 HR streak in jeopardy; NYY can't hit LHP; .210 BA path
+230,Parker Meadows,OF,19,Deep2,"INJURY_RISK,SPEED_VALUE",15 HR / 15 SB ceiling; injury + inconsistency DET; platoon limits upside
+231,Vaughn Grissom,2B,19,Deep2,DEEP_LEAGUE,10 HR / 8-10 SB / .250 BA; LAA competing with Moore; Moore likely wins job
+232,Dominic Canzone,OF,19,Deep2,"PLATOON,ADP_VALUE",.300/.358/.481 in 82 G; Refsnyder platoon limits to DH role; streaming
+233,Victor Robles,OF,19,Deep2,"SPEED_VALUE,PLATOON",~.300 BA / 30 SB when healthy; 32 G only in 2025; small side of platoon SEA
+234,Carson Kelly,C,19,Deep2,DEEP_LEAGUE,7 HR in 17 G peak; 12 HR / .240 BA season-long; .340 OBP; CHC 2C value
+235,Carter Jensen,C,19,Deep2,SLEEPER,166 wRC+ in Triple-A; 20 HR / 10 SB upside per Nate; 100 G behind Perez
+236,Victor Caratini,C,19,Deep2,DEEP_LEAGUE,~.260 BA / 10 HR / 90-110 G rotation with Jeffers; OBP value floor
+237,Luisangel Acuña,2B,20,Speculative4,SPEED_VALUE,20 SB / 5 HR / .260 BA if 100 G; CHW middle infield competition tough
+238,Coby Mayo,1B,20,Speculative4,"SLEEPER,INJURY_RISK",25 HR upside if breaker issues fix; Westburg IL opens 3B window April+
+239,Carson Williams,SS,20,Speculative4,BUST,20 HR / 30 SB ceiling; 41.5% K rate in debut; glove keeps him on roster
+240,Aidan Miller,SS,20,Speculative4,"STASH,SPEED_VALUE",30 SB / 10 HR; Turner blocks; monitor for opportunity; PHI top prospect
+241,Max Clark,OF,20,Speculative4,"STASH,SPEED_VALUE",Elite plate discipline; DET leadoff solution; late-season call expected; love the swagger
+242,Josh Smith,1B,20,Speculative4,MULTI_POS,~120 G / 10 HR / 10 SB / .250 BA; TEX utility; 1B/3B/SS eligible
+243,Nolan Arenado,3B,20,Speculative4,"AGING,DEEP_LEAGUE",Clear path to 140 G; 15-17 HR / 60-70 RBI; shell-of-himself concern in 2025
+244,Ha-Seong Kim,SS,20,Speculative4,"INJURY_RISK,SPEED_VALUE",Summer return; 20 SB / .240 BA pro-rated; ATL lineup context interesting
+245,Kristian Campbell,2B,20,Speculative4,STASH,Top-10 prospect pedigree; corner OF conversion; path to PT blocked; monitor
+246,Mauricio Dubón,2B,20,Speculative4,MULTI_POS,Kim placeholder ATL; ~.260 BA / low power; everyday until Kim return
+247,Lourdes Gurriel Jr.,OF,20,Speculative4,INJURED,ACL tear Sept; late summer return at earliest; watchlist only; 3 straight 18+ HR
+248,Walker Jenkins,OF,20,Speculative4,STASH,Hit tool strong; power developing; MN LH corner track record poor
+249,Travis Bazzana,2B,20,Speculative4,"SPEED_VALUE,OBP_VALUE",Elite plate discipline + speed; modest power; CLE needs offense
+250,Sean Murphy,C,20,Speculative4,"INJURY_RISK,BOUNCE_BACK",May return; .200 BA risk; primary role when healthy; ATL DH
+251,Triston Casas,1B,20,Speculative4,"BUST,INJURY_RISK",87.6 mph exit velo collapse; knee injury; BoSox depth challenge; barely 26
+252,Sung-Mun Song,3B,20,Speculative4,MULTI_POS,KBO import; ~15 HR equivalent; speed + hit tool; SDP part-time watch
+253,Lenyn Sosa,1B,20,Speculative4,DEEP_LEAGUE,~100 G / 10-12 HR / .250 BA; CHW utility role infield
+254,Jake McCarthy,OF,20,Speculative4,"SPEED_VALUE,PLATOON",Speed + hit tool; Rockies streaming when home; platoon risk COL
+255,Gavin Lux,2B,20,Speculative4,POINTS_VALUE,~.250-.260 / TBR leadoff possibility; 5 HR only in 140 G; low power/speed
+256,Denzel Clarke,OF,20,Speculative4,SPEED_VALUE,20-25 SB / 10-12 HR; ATH CF starter; K rate concern; bandbox helps
+257,Romy Gonzalez,1B,20,Speculative4,SLEEPER,.305 BA / .483 SLG in 96 G; 9 HR; BoSox role unclear; watchlist; Durbin blocks
+258,Nasim Nuñez,SS,20,Speculative4,"SPEED_VALUE,BUST",30 SB in 100-120 G; major negative everywhere else; WSN leadoff candidate
+259,Miguel Andujar,3B,20,Speculative4,"STREAMER,MULTI_POS",~100-110 G / .270 BA / 10-12 HR; 7 HR .970 OPS 2H; SDP platoon DH
+260,Tyler Freeman,OF,20,Speculative4,POINTS_VALUE,~.275-.280 BA / 15 SB / no power; COL; points only value
+261,Jordan Lawlar,3B,21,Reserve3,"INJURY_RISK,STASH",Ex top prospect; 0 HR / .165 in 108 MLB PA; ARI blocked; dart throw
+262,Carson Benge,OF,21,Reserve3,"OBP_VALUE,PLATOON",Solid discipline; 92.1 mph avg exit velo; 12-15 HR part-time; NYM corner
+263,Kody Clemens,1B,21,Reserve3,"PLATOON,MULTI_POS",19 HR vs RHP in 119 G; .213 BA; MIN platoon utility; all 19 HR vs RHP
+264,Blaze Alexander,2B,21,Reserve3,"DEEP_LEAGUE,MULTI_POS",Full-time until Holliday ready; BAL bridge; 2B+3B eligible; no upside
+265,Joc Pederson,DH,21,Reserve3,"AGING,PLATOON",~15 HR vs RHP; TEX DH; streamer vs soft righties; McCutchen doesn't change it
+266,Brayan Rocchio,2B,21,Reserve3,DEEP_LEAGUE,~.235 BA / 500+ PA / 10 HR; CLE volume up middle; poor OBP
+267,Brooks Baldwin,2B,21,Reserve3,"MULTI_POS,DEEP_LEAGUE",Switch hit utility; ~90-100 G CHW; eligible everywhere; Acuña competition
+268,Ryan Waldschmidt,OF,21,Reserve3,"SLEEPER,OBP_VALUE",142 wRC+ in 3 levels; .289/.419/.473; 18 HR / 29 SB; ARI path opening
+269,Hyeseong Kim,2B,21,Reserve3,"SPEED_VALUE,PLATOON",.280 / 13 SB in 71 G; 30.6% K climbed as season went; Edman injury helps LAD
+270,Jake Meyers,OF,21,Reserve3,"SPEED_VALUE,DEEP_LEAGUE",12-15 SB part-time; decent discipline; HOU; AL-only value
+271,Zach Cole,OF,21,Reserve3,"SLEEPER,BUST",MiLB .279/.377/.539; 35%+ K in MLB; 15 HR / 15 SB if sustained; HOU
+272,Gabriel Arias,2B,21,Reserve3,"DEEP_LEAGUE,MULTI_POS",100-110 G CLE; 10+ HR; 30%+ K; terrible ratios; utility eligible
+273,Jhostynxon Garcia,OF,21,Reserve3,"SLEEPER,PLATOON",20+ HR each of last 2 MiLB seasons; PIT platoon; zone contact issues
+274,Jake Fraley,OF,21,Reserve3,"PLATOON,OBP_VALUE",Career .776 OPS vs RHP; TBR platoon; streamable vs soft righties
+275,Tommy Edman,2B,21,Reserve3,"MULTI_POS,INJURY_RISK",13 HR in 97 G; LAD everyday when healthy; misses Opening Day; 2B/3B/OF
+276,Christian Moore,2B,21,Reserve3,"SPEED_VALUE,BUST",10 HR / 10 SB upside; 72.8% zone contact in MLB is scary; LAA
+277,Freddy Fermin,C,21,Reserve3,DEEP_LEAGUE,~.250 / 7-9 HR; volume at C; outperforms expected avg; SDP 2C value
+278,Joey Bart,C,21,Reserve3,DEEP_LEAGUE,8-9 HR / 80-90 G; 12% walk rate; 4 HR .340 SLG in 93 G disappointing
+279,Danny Jansen,C,21,Reserve3,DEEP_LEAGUE,~.210 BA / 13 HR / 90 G; TEX; career-high K rate concern; Higashioka threat
+280,Kyle Higashioka,C,21,Reserve3,DEEP_LEAGUE,5th straight 10+ HR; limited TEX role; 17 HR in 2024 shows ceiling
+281,Troy Johnston,1B,21,Reserve3,DEEP_LEAGUE,~.277 BA / 4 HR in 121 PA; COL move; Coors streaming upside if starter
+282,Anthony Santander,OF,21,Reserve3,"INJURY_RISK,BUST",3 strong Orioles seasons then huge dud; misses months; TOR; top-60 if healthy
+283,Casey Schmitt,1B,21,Reserve3,DEEP_LEAGUE,50 PA hot streak (4 HR .667 SLG); rest of season .376 SLG; SFG utility
+284,Joshua Baez,OF,21,Reserve3,"STASH,SPEED_VALUE",54 SB / 20 HR across HA-AA; .287 BA / double-digit walk rate; STL OF depth
+285,C.J. Kayfus,OF,21,Reserve3,DEEP_LEAGUE,15 HR / .235 BA in 90-120 G; CLE path blocked; unclear role vs LHB
+286,Jasson Domínguez,OF,21,Reserve3,"SLEEPER,INJURY_RISK",20 HR / 25 SB ceiling everyday; Grichuk addition + poor path likely starts MiLB
+287,Nathan Lukes,OF,21,Reserve3,"PLATOON,POINTS_VALUE",~.250-.260 / low K; TOR platoon vs RHP; stream vs bad righties only
+288,Jacob Melton,OF,21,Reserve3,SLEEPER,56.1% hard-hit Triple-A; TBR depth blocks; pull to unlock power in majors
+289,Edouard Julien,1B,21,Reserve3,"OBP_VALUE,MULTI_POS",Patient to fault; COL may help contact issues; 2B eligible; watchlist
+290,Brady House,3B,21,Reserve3,DEEP_LEAGUE,46.3% hard-hit but poor plate discipline; 15 HR / 60 RBI ceiling; WSN volume
+291,Keibert Ruiz,C,21,Reserve3,DEEP_LEAGUE,~.250-.260 BA / sub-10 HR; nearly never walks; WSN C volume
+292,Joey Loperfido,OF,21,Reserve3,"PLATOON,DEEP_LEAGUE",Platoon bat vs RHP; .210 BABIP won't repeat; HOU; watchlist only
+293,Garrett Mitchell,OF,21,Reserve3,"INJURY_RISK,BUST",10 HR / 15 SB ceiling; 3 straight seasons with significant IL time; MIL
+294,Jake Bauers,1B,21,Reserve3,"OBP_VALUE,MULTI_POS",Elite walk rate; 80-90 G MIL; OBP value in deep leagues; 1B+OF eligible
+295,Javier Báez,2B,21,Reserve3,"AGING,MULTI_POS",Best BA since 2021 (.257); 10 HR; 4-position eligible DET; not cooked yet
+296,Luis Rengifo,2B,21,Reserve3,"SPEED_VALUE,DEEP_LEAGUE",MIL starter finally; low walk + bad GBs; SB only value; likely loses job fast
+297,Dominic Smith,1B,21,Reserve3,DEEP_LEAGUE,Platoon DH vs RHP ATL; pop + patience + nothing else; watchlist
+298,Spencer Jones,OF,21,Reserve3,"STASH,POWER_OBP",6'7 power; 35.4% K in high minors; NYY depth blocks; Judge comp lazy
+299,George Valera,OF,21,Reserve3,"DEEP_LEAGUE,PLATOON",K risk; walks enough for platoon bat; CLE 2nd hitter possibility
+300,Nick Castellanos,OF,21,Reserve3,"AGING,DEEP_LEAGUE",SDP bench role; needs multiple injuries ahead of him; last 12-team ranking

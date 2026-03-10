@@ -2,106 +2,405 @@
   "_readme": {
     "description": "Qualitative player notes for LDB 2026 auction. Merged into ldb_data.js at build time.",
     "fields": {
-      "tags": "Array of tag strings. Built-in recognized tags: INJURED, IL, DTD, SLEEPER, BREAKOUT, BUST, CLOSER_RISK, ROLE_UNCLEAR, HANDCUFF, PLATOON, PROSPECT, AGING, BOUNCE_BACK, STREAKY, DEEP_LEAGUE, ADP_VALUE, ADP_AVOID, ROFR_TARGET, LDB_NEED",
+      "tags": "Array of tag strings. Built-in recognized tags: INJURED, IL, DTD, SLEEPER, BREAKOUT, BUST, CLOSER_RISK, ROLE_UNCLEAR, HANDCUFF, PLATOON, PROSPECT, AGING, BOUNCE_BACK, STREAKY, DEEP_LEAGUE, ADP_VALUE, ADP_AVOID, ROFR_TARGET, LDB_NEED, SP_LOCKED, IL_START, DELAYED",
       "note": "Free-text scouting note shown in player card tooltip / intel section",
       "health_pct": "0-100 estimated availability. 100 = full season, 70 = ~112 games / 115 IP expected",
-      "role": "Short role description, e.g. 'Locked closer', 'Setup only', 'Platoon DH', 'TBD'"
+      "role": "Short role description"
     },
+    "rotation_source": "Spring 2026 rotation projections — updated March 2026",
     "auto_tags_from_stats": "generate_data.py also auto-applies stat-based tags. Manual tags here take precedence / stack on top.",
-    "name_matching": "Use exact projection file names (e.g. 'Shohei Ohtani'). Fuzzy matching is applied as fallback."
+    "name_matching": "Use exact projection file names. Fuzzy matching is applied as fallback."
   },
-
   "players": [
     {
-      "name": "Tarik Skubal",
-      "tags": ["BREAKOUT"],
-      "note": "Reigning AL Cy Young. Elite stuff, durable. Only risk is modest regression from historic 2024 ratios.",
-      "health_pct": 95,
-      "role": "Ace #1 starter"
+      "_section": "FRY KEEPERS / ROFR",
+      "name": "Ronald Acuña Jr.",
+      "tags": [
+        "BOUNCE_BACK"
+      ],
+      "note": "FRY keeper (K2). Full ACL recovery expected. If healthy, top-3 overall — OPS+OBP+aSB monster.",
+      "health_pct": 88,
+      "role": "FRY keeper"
     },
     {
-      "name": "Chris Sale",
-      "tags": ["AGING", "IL"],
-      "note": "Won NL Cy Young at 35. History of TJ surgery and rib injuries. Monitor spring training workload.",
-      "health_pct": 75,
-      "role": "SP when healthy"
+      "name": "Corbin Carroll",
+      "tags": [
+        "DTD",
+        "BOUNCE_BACK"
+      ],
+      "note": "Hamate surgery — limited impact on power per data (PL dropped only 2 spots). H3 keeper. LDB need: still elite OBP+OPS+aSB profile if healthy. Monitor recovery.",
+      "health_pct": 82,
+      "role": "ARI OF — hamate surgery, return timeline TBD"
     },
     {
-      "name": "Edwin Díaz",
-      "tags": ["INJURED", "IL"],
-      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
-      "health_pct": 80,
-      "role": "Locked closer"
+      "name": "Drew Rasmussen",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "FRY keeper (K3/ROFR). Confirmed Rays SP2. Healthy spring — locked into rotation. ROFR activates at auction.",
+      "health_pct": 90,
+      "role": "Rays SP2 — confirmed"
+    },
+    {
+      "name": "Matthew Liberatore",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "FRY keeper (H2). Cardinals SP1 — confirmed rotation anchor. Improved command in 2024, poised for breakout.",
+      "health_pct": 92,
+      "role": "Cardinals SP1 — confirmed"
     },
     {
       "name": "Hunter Greene",
-      "tags": ["BREAKOUT", "ROFR_TARGET"],
-      "note": "FRY holds ROFR. Elite stuff+, top-5 SP upside. Must-protect or must-bid — do not let CORN grab cheap.",
-      "health_pct": 90,
-      "role": "Frontline SP"
+      "tags": [
+        "INJURED",
+        "IL_START",
+        "ROFR_TARGET"
+      ],
+      "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
+      "health_pct": 40,
+      "role": "IL to start — elbow"
     },
     {
       "name": "José Alvarado",
-      "tags": ["CLOSER_RISK", "ROFR_TARGET"],
+      "tags": [
+        "CLOSER_RISK",
+        "ROFR_TARGET"
+      ],
       "note": "FRY ROFR. Elite stuff but walk rate and blown save history create real VIJAY variance.",
       "health_pct": 85,
       "role": "Closer / volatile"
     },
     {
       "name": "Tanner Scott",
-      "tags": ["ROFR_TARGET"],
+      "tags": [
+        "ROFR_TARGET"
+      ],
       "note": "FRY ROFR. Dodgers closer situation. Good K rate, reliable holds even if not locking saves.",
       "health_pct": 90,
       "role": "High-leverage RP"
     },
     {
       "name": "Tyler O'Neill",
-      "tags": ["ROFR_TARGET", "BUST"],
+      "tags": [
+        "ROFR_TARGET",
+        "BUST"
+      ],
       "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
       "health_pct": 75,
       "role": "Corner OF / DH"
     },
     {
-      "name": "Corbin Carroll",
-      "tags": [],
-      "note": "FRY keeper (H3). Down year in 2024 but elite speed and OBP foundation. Bounce-back candidate.",
-      "health_pct": 92,
-      "role": "FRY keeper"
-    },
-    {
-      "name": "Ronald Acuña Jr.",
-      "tags": ["BOUNCE_BACK"],
-      "note": "FRY keeper (K2). Full ACL recovery expected. If healthy, top-3 overall player — OPS+OBP+aSB monster.",
-      "health_pct": 88,
-      "role": "FRY keeper"
-    },
-    {
+      "_section": "BATTERS",
       "name": "Shohei Ohtani",
-      "tags": [],
-      "note": "Batting only in 2026 (TJ recovery). No pitching value — pure elite bat. No SP/RP contribution.",
-      "health_pct": 98,
-      "role": "DH only (no pitching)"
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
+      "health_pct": 92,
+      "role": "DH + SP2 — Dodgers"
     },
     {
-      "name": "Paul Skenes",
-      "tags": ["BREAKOUT", "PROSPECT"],
-      "note": "Best stuff in baseball. Only question is whether Pirates stretch him to 180+ IP in year 2.",
-      "health_pct": 90,
-      "role": "Frontline SP"
+      "_section": "SP — IL / DELAYED / INJURED",
+      "name": "Gerrit Cole",
+      "tags": [
+        "INJURED",
+        "DELAYED"
+      ],
+      "note": "TJ surgery 2024. Yankees rotation note says out until May/June at earliest. Half-season value at best — discount heavily.",
+      "health_pct": 45,
+      "role": "SP — return May/June"
     },
     {
-      "name": "Dylan Cease",
-      "tags": ["BUST"],
-      "note": "High-K but HR/9 and walk rate make ratios volatile. Petco helps but not a set-it-forget-it arm.",
-      "health_pct": 90,
-      "role": "SP #3"
+      "name": "Carlos Rodón",
+      "tags": [
+        "INJURED",
+        "DELAYED"
+      ],
+      "note": "Yankees note confirms out until May/June alongside Cole. Back-half value only. Yankees rotation locked without him (Fried, Schlittler, Weathers, Warren, Gil).",
+      "health_pct": 45,
+      "role": "SP — return May/June"
+    },
+    {
+      "name": "Yoshinobu Yamamoto",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK"
+      ],
+      "note": "Listed as Dodgers SP1 — TJ return confirmed, opening day starter. If stuff is back, elite upside. Huge bounce-back candidate if velocity holds.",
+      "health_pct": 78,
+      "role": "Dodgers SP1 — TJ return"
+    },
+    {
+      "name": "Spencer Strider",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURED"
+      ],
+      "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
+      "health_pct": 72,
+      "role": "Braves SP2 — TJ return"
+    },
+    {
+      "name": "Bryce Miller",
+      "tags": [
+        "DTD",
+        "IL_START"
+      ],
+      "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
+      "health_pct": 65,
+      "role": "IL start likely — PRP injection"
+    },
+    {
+      "name": "Jordan Wicks",
+      "tags": [
+        "IL_START",
+        "INJURED"
+      ],
+      "note": "IL to open 2026 with left arm nerve issue. Was finally going to get his rotation shot — now delayed further. Cubs rotation: Imanaga, Boyd, Horton, Taillon, Cabrera locked.",
+      "health_pct": 60,
+      "role": "IL start — nerve issue"
+    },
+    {
+      "name": "Joey Wentz",
+      "tags": [
+        "INJURED",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Carted off field covering first base (right leg). Walked to clubhouse but severity unclear. Out of Braves rotation — Elder gets SP5. Spring line: 0.2 IP, 1 ER.",
+      "health_pct": 25,
+      "role": "Injured — out of ATL rotation"
+    },
+    {
+      "name": "Corbin Burnes",
+      "tags": [
+        "DELAYED"
+      ],
+      "note": "Diamondbacks note: not back until July/August. Half-season value. Back of rotation arms starting for ARI until return.",
+      "health_pct": 55,
+      "role": "SP — return July/August"
+    },
+    {
+      "_section": "SP — CONFIRMED ROTATIONS",
+      "name": "Tarik Skubal",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT"
+      ],
+      "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
+      "health_pct": 95,
+      "role": "Tigers SP1 — locked"
     },
     {
       "name": "Framber Valdez",
-      "tags": [],
-      "note": "Elite groundball rate suppresses HRA — ideal for LDB. Durable workhorse. MGS consistently strong.",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Tigers SP2 — confirmed. Elite groundball rate suppresses HRA — ideal for LDB. Durable workhorse. MGS consistently strong.",
       "health_pct": 92,
-      "role": "SP #2"
+      "role": "Tigers SP2 — locked"
+    },
+    {
+      "name": "Paul Skenes",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT",
+        "PROSPECT"
+      ],
+      "note": "Pirates SP1 — confirmed. Best stuff in baseball. Only question is IP ceiling in year 2. Premium target.",
+      "health_pct": 90,
+      "role": "Pirates SP1 — locked"
+    },
+    {
+      "name": "Chris Sale",
+      "tags": [
+        "SP_LOCKED",
+        "AGING"
+      ],
+      "note": "Braves SP1 — confirmed. Reigning NL Cy Young at 35. History of TJ/rib injuries. Monitor workload all season.",
+      "health_pct": 75,
+      "role": "Braves SP1 — locked"
+    },
+    {
+      "name": "Max Fried",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Yankees SP1 — locked. Dominant NL arm, now in AL. Command-first profile suits LDB ratios well. Full season starter.",
+      "health_pct": 90,
+      "role": "Yankees SP1 — locked"
+    },
+    {
+      "name": "Logan Gilbert",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
+      "health_pct": 93,
+      "role": "Mariners SP1 — locked"
+    },
+    {
+      "name": "Dylan Cease",
+      "tags": [
+        "SP_LOCKED",
+        "BUST"
+      ],
+      "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
+      "health_pct": 90,
+      "role": "Blue Jays SP2 — locked"
+    },
+    {
+      "name": "Zack Wheeler",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Phillies confirmed. Elite workhorse, consistent MGS producer. One of safest SP floor plays in the pool.",
+      "health_pct": 88,
+      "role": "Phillies SP — locked"
+    },
+    {
+      "name": "Tanner Bibee",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Guardians SP1 — confirmed. Breakout 2024, young and durable. Strong K rate with good ratios in pitcher-friendly Cleveland.",
+      "health_pct": 90,
+      "role": "Guardians SP1 — locked"
+    },
+    {
+      "name": "Joe Ryan",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
+      "health_pct": 88,
+      "role": "Twins SP1 — locked"
+    },
+    {
+      "name": "Kevin Gausman",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3.1 IP, 0 ER, 3 H, 0 BB, 3 K. Confirmed Blue Jays SP1. Velo 2-3 ticks down at 92+ mph but scout says normal spring fluctuation — don't worry. Splitter getting whiffs, keeping it down. All good.",
+      "health_pct": 88,
+      "role": "Blue Jays SP1 — confirmed"
+    },
+    {
+      "name": "Sandy Alcantara",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK"
+      ],
+      "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
+      "health_pct": 72,
+      "role": "Marlins SP1 — TJ return"
+    },
+    {
+      "name": "Jesús Luzardo",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
+      "health_pct": 82,
+      "role": "Phillies SP2 — locked"
+    },
+    {
+      "name": "Cristopher Sánchez",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Phillies SP1 — confirmed. Groundball machine in a great park. Deep outings, solid LDB ratios.",
+      "health_pct": 88,
+      "role": "Phillies SP1 — locked"
+    },
+    {
+      "name": "Aaron Nola",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
+      "health_pct": 90,
+      "role": "Phillies SP3 — locked"
+    },
+    {
+      "name": "Shota Imanaga",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Cubs SP1 — confirmed. Elite command, plus K rate. Wicks on IL only strengthens his team role. High-floor LDB value.",
+      "health_pct": 90,
+      "role": "Cubs SP1 — locked"
+    },
+    {
+      "name": "Hunter Brown",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT"
+      ],
+      "note": "Spring: 4 IP, 0 ER, 0 H, 2 BB, 9 K. Dominant. Sitting 97 mph, gaining +3.7\" movement on four-seamer and +1.5\" on sinker. Changeup thrown for strikes. True ace performance. Astros SP1 locked.",
+      "health_pct": 92,
+      "role": "Astros SP1 — confirmed ace"
+    },
+    {
+      "name": "Cole Ragans",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Royals SP1 — locked. Best stuff on a weak staff. Breakout candidate — K rate and control improving.",
+      "health_pct": 88,
+      "role": "Royals SP1 — locked"
+    },
+    {
+      "name": "Luis Gil",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
+      "health_pct": 85,
+      "role": "Yankees SP5 — locked (w/ Cole/Rodón out)"
+    },
+    {
+      "name": "Jacob deGrom",
+      "tags": [
+        "SP_LOCKED",
+        "INJURED"
+      ],
+      "note": "Rangers SP1 — confirmed. History of IL stints but listed as opening day starter. Elite stuff when healthy, massive upside with massive risk.",
+      "health_pct": 62,
+      "role": "Rangers SP1 — locked if healthy"
+    },
+    {
+      "name": "Shane Bieber",
+      "tags": [
+        "INJURED",
+        "BOUNCE_BACK",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "TJ return — not in confirmed Guardians rotation (Bibee, Williams, Cecconi, Cantillo, Allen listed). May return mid-season.",
+      "health_pct": 55,
+      "role": "TJ return — mid-season"
+    },
+    {
+      "name": "Zack Littell",
+      "tags": [
+        "SP_LOCKED",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Signed with Nationals SP5. Nationals love 90+ pitch outings — innings-eater upside in a weak rotation. Deep league value for MGS accumulation.",
+      "health_pct": 85,
+      "role": "Nationals SP5 — locked"
+    },
+    {
+      "_section": "RELIEVERS",
+      "name": "Edwin Díaz",
+      "tags": [
+        "INJURED",
+        "IL"
+      ],
+      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
+      "health_pct": 80,
+      "role": "Locked closer"
     },
     {
       "name": "Jhoan Duran",
@@ -113,37 +412,955 @@
     {
       "name": "Andrés Muñoz",
       "tags": [],
-      "note": "Mariners closer, elite K rate. Low BS history. One of the cleanest VIJAY profiles available.",
+      "note": "Mariners closer — elite K rate. Low BS history. One of the cleanest VIJAY profiles available.",
       "health_pct": 91,
       "role": "Locked closer"
     },
     {
+      "_section": "OTHER",
       "name": "Blake Snell",
-      "tags": ["ROLE_UNCLEAR", "AGING"],
+      "tags": [
+        "ROLE_UNCLEAR",
+        "AGING"
+      ],
       "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
       "health_pct": 70,
       "role": "TBD / unsigned"
     },
     {
-      "name": "Gerrit Cole",
-      "tags": ["INJURED"],
-      "note": "TJ surgery in 2024. Full return timeline uncertain — may not pitch until mid-2026 at earliest.",
-      "health_pct": 50,
-      "role": "SP — TJ rehab"
+      "name": "Bryce Elder",
+      "tags": [
+        "SP_LOCKED",
+        "BUST"
+      ],
+      "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
+      "health_pct": 88,
+      "role": "Braves SP5 — by default"
     },
     {
-      "name": "Spencer Strider",
-      "tags": ["INJURED", "BOUNCE_BACK"],
-      "note": "TJ surgery, missed 2024. If velocity returns, top-5 SP upside. High reward, non-trivial risk.",
+      "name": "Justin Wrobleski",
+      "tags": [
+        "SLEEPER",
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3 IP, 0 ER, 2 H, 0 BB, 3 K (43 pitches). Scout: 'How do you not let him start instead of Sasaki? He's clearly better.' SLEEPER ALERT — Dodgers SP5 is his to lose.",
+      "health_pct": 88,
+      "role": "Dodgers SP5 — SLEEPER, better than Sasaki"
+    },
+    {
+      "name": "Logan Gillaspie",
+      "tags": [
+        "SLEEPER",
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 4 IP, 0 ER, 2 H, 2 BB, 2 K. Scout: 'I think he might be Padres SP5 — sorry Márquez and Buehler.' Great changeup feel, death ball curve, sinker inside to RHB. Kolek comp. Needs slider/sweeper feel vs RHB but cutter to LHB is there. Sleeper with floor.",
+      "health_pct": 85,
+      "role": "Padres SP5 — likely locked, Kolek comp"
+    },
+    {
+      "name": "Landen Roupp",
+      "tags": [
+        "SLEEPER",
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
+      "health_pct": 85,
+      "role": "Giants SP5 — leading over Tidwell"
+    },
+    {
+      "name": "Blade Tidwell",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring: 1.2 IP, 4 ER, 5 H, 2 BB, 4 K (53 pitches — was in contention). Lost vert on four-seamer, can't find zone vs RHB. Looked better vs LHB. Clearly behind Roupp. 'Fun mid-season pickup.'",
+      "health_pct": 80,
+      "role": "Giants — behind Roupp for SP5, mid-season watch"
+    },
+    {
+      "name": "Jacob Misiorowski",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Spring: 3.1 IP, 1 ER, 2 H, 1 BB, 6 K. Called 'aces gonna ace.' Elite stuff but command is wonky — expect 5 innings standard, rarely 6+. High-K ceiling but walk rate will hurt ratios and MGS.",
+      "health_pct": 88,
+      "role": "Brewers SP1 — command-limited"
+    },
+    {
+      "name": "George Kirby",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT"
+      ],
+      "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. Testing cutters + more sinkers. Slider at 84-87 mph with -10/-10\" two-plane break described as 'stupid good.' When he locates it — game over. Mariners SP2 locked.",
+      "health_pct": 90,
+      "role": "Mariners SP2 — locked"
+    },
+    {
+      "name": "Nathan Eovaldi",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 5 IP, 2 ER, 5 H, 1 BB, 4 K. Healthy, sitting firm 95 mph (tick up from last year). Testing slider with some solid reps. Rangers SP2 confirmed. Moving up ranks per scouts.",
+      "health_pct": 85,
+      "role": "Rangers SP2 — healthy and locked"
+    },
+    {
+      "name": "Kyle Harrison",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "Spring: 3 IP, 1 ER, 2 H, 2 BB, 8 K. Sitting 95 mph at 60th pitch. Changeup has elite depth (3/11 whiffs to RHB). Added sweeper and curve. Command still developing but upside is real. Brewers SP2.",
+      "health_pct": 86,
+      "role": "Brewers SP2 — locked"
+    },
+    {
+      "name": "Joey Cantillo",
+      "tags": [
+        "SP_LOCKED",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
+      "health_pct": 82,
+      "role": "Guardians SP5 — locked (RHB-specialist)"
+    },
+    {
+      "name": "Simeon Woods Richardson",
+      "tags": [
+        "SP_LOCKED",
+        "BUST"
+      ],
+      "note": "Spring: 4 IP, 1 ER, 1 H, 0 BB, 5 K. Velocity still down at 92 mph — concerning. Splitter is excellent (steep release, used vs both sides) but slider was all over. 5 K came against poor lineup. Don't trust until velo climbs.",
+      "health_pct": 80,
+      "role": "Twins SP3 — velo concern"
+    },
+    {
+      "name": "Andre Pallante",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 4 IP, 1 ER, 2 H, 1 BB, 3 K. Sinker inside to RHB, cut-fastball to LHB. 44% slider usage to RHB — moved away from four-seamer. Cardinals going with him. Could be decent in a stealth way.",
+      "health_pct": 85,
+      "role": "Cardinals SP3 — likely locked"
+    },
+    {
+      "name": "Jameson Taillon",
+      "tags": [
+        "SP_LOCKED",
+        "BUST"
+      ],
+      "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
+      "health_pct": 82,
+      "role": "Cubs SP4 — locked, velo concern"
+    },
+    {
+      "name": "Ryan Weathers",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 2 IP, 5 ER, 7 H, 2 BB, 3 K (line ugly but context matters — relieved twice). Scout says don't change opinion — sinker wrinkles + changeup had less drop, but he's still great. Yankees SP3 locked.",
+      "health_pct": 86,
+      "role": "Yankees SP3 — locked"
+    },
+    {
+      "name": "Taijuan Walker",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3.1 IP, 0 ER, 0 H, 2 BB, 3 K. Finally using cutter (20% usage, 77% strikes) — his best pitch. In Phillies rotation if cutter keeps cooking. Some NL-only upside per scouts. Phillies SP4.",
+      "health_pct": 82,
+      "role": "Phillies SP4 — locked if cutter holds"
+    },
+    {
+      "name": "Dean Kremer",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
+      "health_pct": 82,
+      "role": "Orioles SP6 / deep league"
+    },
+    {
+      "name": "Luis Severino",
+      "tags": [
+        "SP_LOCKED",
+        "BUST"
+      ],
+      "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
+      "health_pct": 82,
+      "role": "Athletics SP1 — streaming value only"
+    },
+    {
+      "name": "Chase Burns",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3.2 IP, 4 ER, 4 H, 1 BB, 4 K. Threw 20% changeups to LHB — getting strikes but no whiffs yet. Would get whiffs with better down-and-away location. Reds SP3 locked. Developing arsenal.",
+      "health_pct": 85,
+      "role": "Reds SP3 — locked"
+    },
+    {
+      "name": "Aaron Civale",
+      "tags": [
+        "SP_LOCKED",
+        "BUST",
+        "ADP_AVOID"
+      ],
+      "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
+      "health_pct": 80,
+      "role": "Athletics SP4 — avoid"
+    },
+    {
+      "name": "Jacob Lopez",
+      "tags": [
+        "SP_LOCKED",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
+      "health_pct": 80,
+      "role": "Athletics SP3 — unresolved"
+    },
+    {
+      "name": "Tyler Wells",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "NOT in Orioles rotation — Bassitt signed. Moves to bullpen or depth role. Was competing for rotation spot but that door is closed.",
+      "health_pct": 82,
+      "role": "Orioles — out of rotation"
+    },
+    {
+      "name": "Jake Bennett",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "Spring: 1.2 IP, 2 ER, 2 H, 0 BB, 2 K. Intriguing lefty — 7.1 ft extension at 93/94 mph, cutter inside to RHB (more gyro slider at 85/86). Changeup can be good but needs more usage. Struggled getting -21\" iHB sinker inside to LHB. Developing but the raw tools are there.",
+      "health_pct": 80,
+      "role": "Red Sox — rotation depth"
+    },
+    {
+      "name": "Brady Singer",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Spring: 3.0 IP, 0 ER, 2 H, 2 BB, 3 K. Only faced RHB (sinker/slider day). Velo a tick down, less rise on four-seamer. Interesting new 81 mph cutter — possibly a bad sweeper, possibly a new weapon. Nothing alarming. Reds SP4 confirmed.",
+      "health_pct": 86,
+      "role": "Reds SP4 — confirmed"
+    },
+    {
+      "name": "Chase Petty",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "INJURED",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring: 2.0 IP, 0 ER, 2 H, 1 BB, 1 K — removed from spring squad after this. Up to 97/98 mph but Empty Velocity, some four-seamers acting as sinkers with poor movement. Can't find the zone. Splitter spotted in there. Monitor mid-season.",
+      "health_pct": 65,
+      "role": "Reds — removed from spring squad"
+    },
+    {
+      "name": "Sean Newcomb",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring: 3.0 IP, 2 ER, 3 H, 0 BB, 2 K. Doing his best to force a White Sox rotation spot — not going to happen per scouts. Likely bullpen.",
+      "health_pct": 80,
+      "role": "White Sox — unlikely to crack rotation"
+    },
+    {
+      "name": "Noah Cameron",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "Spring: 3.0 IP, 2 ER, 3 H, 1 BB, 3 K. Sitting 92+ mph with less cut action than expected — slight concern. Cutter inside to RHB not as sharp. BUT 6/19 four-seamer whiffs keeping it upstairs is encouraging. Scout still in on him — ranked near Boyd/Eflin tier, past IL stashes. Royals SP5.",
+      "health_pct": 82,
+      "role": "Royals SP5 — locked"
+    },
+    {
+      "name": "Jack Kochanowicz",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "BUST"
+      ],
+      "note": "Spring: 4.0 IP, 1 ER, 3 H, 0 BB, 2 K. Lost sink, can't get it inside to RHB — core problem. Slider improved with more drop (-03\" at 88 mph), but also can't locate it. Mixed signals. Not inspiring.",
+      "health_pct": 78,
+      "role": "Angels — rotation depth, command issues"
+    },
+    {
+      "name": "Braxton Garrett",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "BOUNCE_BACK"
+      ],
+      "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
+      "health_pct": 75,
+      "role": "Marlins SP2 — returning from injury"
+    },
+    {
+      "name": "Freddy Peralta",
+      "tags": [
+        "SP_LOCKED",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Spring: 3.0 IP, 2 ER, 3 H, 1 BB, 4 K. BIG change — far fewer sliders, leaning changeup/curve more vs RHB. Curve at 78 mph with mediocre movement (1-2\" less drop/sweep). Changeup improved (less velo, more movement). RED FLAG: extension dropped massively to 6.5 ft on four-seamer, 6.2 ft on changeup. Scout calls it spring intensity issue — must monitor. Mets SP2.",
+      "health_pct": 82,
+      "role": "Mets SP2 — monitor extension"
+    },
+    {
+      "name": "Alan Rangel",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "BUST"
+      ],
+      "note": "Spring: 3.0 IP, 3 ER, 6 H, 0 BB, 3 K. 94 mph, 40 pitches, shaky command, nothing stellar except high vert on four-seamer (angle-driven). Not beating Walker or Painter for PHI rotation spot. Scout says 'SIGN GIOLITO ALREADY.'",
+      "health_pct": 78,
+      "role": "Phillies — not cracking rotation"
+    },
+    {
+      "name": "Carmen Mlodzinski",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring: 3.0 IP, 1 ER, 5 H, 0 BB, 4 K. 58 pitches — filthy 83/84 mph curveball, splitter with 3/13 whiffs. Sinker down from 96 to 94/95 and sitting away to RHB — can't get it armside. Ideal profile is sinker/curve with splitter/four-seamer vs LHB, but command isn't there yet. Competing for Pirates SP5.",
+      "health_pct": 80,
+      "role": "Pirates — competing for SP5"
+    },
+    {
+      "name": "J.P. France",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "BUST"
+      ],
+      "note": "Spring (WBC): 1.1 IP, 3 ER, 3 H, 1 BB, 1 K. One phenomenal cutter, rest was meh. Not in Astros rotation plans.",
+      "health_pct": 78,
+      "role": "Astros — not in rotation"
+    },
+    {
+      "name": "Ryan Gusto",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "DEEP_LEAGUE"
+      ],
+      "note": "Spring: 3.0 IP, 0 ER, 1 H, 1 BB, 2 K. Lots of vert, can't elevate four-seamer. Kitchen-sink approach but command isn't there. Behind Garrett for Marlins rotation spot.",
+      "health_pct": 78,
+      "role": "Marlins — depth behind Garrett"
+    },
+    {
+      "name": "Cody Ponce",
+      "tags": [
+        "DEEP_LEAGUE",
+        "ROLE_UNCLEAR"
+      ],
+      "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
+      "health_pct": 80,
+      "role": "Blue Jays — rotation depth"
+    },
+    {
+      "name": "Francisco Lindor",
+      "tags": [
+        "DTD"
+      ],
+      "note": "Hamate surgery — PL dropped only a few spots, limited long-term power impact. 30 HR / 30 SB floor when healthy. Top SS in LDB OBP+OPS format.",
+      "health_pct": 82,
+      "role": "NYM SS — hamate surgery, monitor return"
+    },
+    {
+      "name": "Sal Stewart",
+      "tags": [
+        "SLEEPER",
+        "BREAKOUT"
+      ],
+      "note": "[PL #118 — Nate ALL IN] PLV 600 PA projection: .272 BA / 31 HR / 21st overall. Immediate power in 18 MLB games. 1B+3B eligible. Gavin Lux trade = full-time role. Strong hit tool. Best late-round power stash in draft.",
+      "health_pct": 92,
+      "role": "CIN 1B/3B — likely starter after Lux trade"
+    },
+    {
+      "name": "Konnor Griffin",
+      "tags": [
+        "STASH",
+        "PROSPECT"
+      ],
+      "note": "[PL #144] Best prospect in baseball. Power + speed + maturing hit tool. <100 MLB G likely in 2026. Dynasty gold — cheap in auction. PIT OF.",
+      "health_pct": 95,
+      "role": "PIT — top prospect, stash/prospect slot"
+    },
+    {
+      "name": "JJ Wetherholt",
+      "tags": [
+        "SLEEPER",
+        "ADP_VALUE"
+      ],
+      "note": "[PL #179 — Nate: high floor] STL starter, 17-20 HR / 15-20 SB / high BA. 2B eligible April. Per Nate: highest floor among 2026 prospects. Cheap in standard auctions.",
+      "health_pct": 90,
+      "role": "STL SS — likely starter"
+    },
+    {
+      "name": "Carter Jensen",
+      "tags": [
+        "SLEEPER"
+      ],
+      "note": "[PL #235 — Nate bullish] 166 wRC+ / 20 HR in Triple-A. 20 HR / 10 SB upside per Nate. ~100 G behind Perez. Excellent value late for C slot.",
+      "health_pct": 90,
+      "role": "KCR C — ~100 G behind Perez"
+    },
+    {
+      "name": "Jakob Marsee",
+      "tags": [
+        "SLEEPER",
+        "SPEED_VALUE"
+      ],
+      "note": "[PL #71 — Nate likes] 189 wRC+ in August debut. Swing change added ~3 mph exit velo. Bat-to-ball elite, 40 SB ceiling. Power skepticism (never slugged .428+ in minors). OBP league value. MIA leadoff.",
+      "health_pct": 92,
+      "role": "MIA OF — likely leadoff"
+    },
+    {
+      "name": "Sal Frelick",
+      "tags": [
+        "ADP_AVOID",
+        "BUST"
+      ],
+      "note": "[PL dropped 50 spots from Oct to #170] PL: 2025 was 90th percentile outcome. Likely returns to bottom-third of order, fewer PA. Not an LDB target — speed without OBP/power is low value in this format.",
+      "health_pct": 88,
+      "role": "MIL OF — platoon risk, order drop"
+    },
+    {
+      "name": "Michael Harris II",
+      "tags": [
+        "BOUNCE_BACK",
+        "STREAKY"
+      ],
+      "note": "[PL #58, jumped +13] 14 HR / .302 AVG from July 11 on. Back-to-back 3-month slumps BUT 3rd-youngest regular in NL. Profar loss means better lineup spot. True 20-20 upside when he's on, brutal holds when he's off.",
+      "health_pct": 88,
+      "role": "ATL OF — improved lineup position"
+    },
+    {
+      "name": "James Wood",
+      "tags": [
+        "BOUNCE_BACK",
+        "BREAKOUT"
+      ],
+      "note": "[PL #32, jumped +8] Top-10 ceiling per PL. Issue: passive against breakers in zone. Not an easy fix, but WSN OBP format + elite raw power = LDB value in OBP+OPS. Cheap if passive ST keeps price down.",
+      "health_pct": 90,
+      "role": "WSN OF"
+    },
+    {
+      "name": "Colson Montgomery",
+      "tags": [
+        "SLEEPER",
+        "BUST"
+      ],
+      "note": "[PL #95] 32 HR via extreme pull approach. Sophomore regression risk real — contact below average, decision value below average. Projections confirm power upside. All-or-nothing: 30 HR + poor ratios OR busted sophomore.",
+      "health_pct": 88,
+      "role": "CHW SS — starter"
+    },
+    {
+      "name": "Roman Anthony",
+      "tags": [
+        "BREAKOUT"
+      ],
+      "note": "[PL #61] 22-25 HR / 10-12 SB / 100 R ceiling in 2026. BOS leadoff. Growth in power legitimate per stats. Projections more conservative (18-19 HR, 85-90 R). Still a top OBP+OPS play at right price.",
+      "health_pct": 92,
+      "role": "BOS OF — leadoff"
+    },
+    {
+      "name": "Wyatt Langford",
+      "tags": [
+        "BREAKOUT",
+        "STREAKY"
+      ],
+      "note": "[PL #39] Top-3 prospect tools. 2 months wRC+160+, 2 months wRC+75 — extreme variance. Improved walk rate signals consistency coming. Plus power + speed (24yo). LDB: if price drops due to inconsistency, pounce.",
+      "health_pct": 90,
+      "role": "TEX OF"
+    },
+    {
+      "name": "Hunter Goodman",
+      "tags": [
+        "SLEEPER"
+      ],
+      "note": "[PL #41] 144 G in 2026 — rare Coors player who produced at home AND road (18 road HR). .300+ road BA. Catcher + DH eligible. Strong LDB value: power + OBP in Coors = HR + OPS category hitter.",
+      "health_pct": 92,
+      "role": "COL C/DH — everyday starter"
+    },
+    {
+      "name": "Agustín Ramírez",
+      "tags": [
+        "BREAKOUT"
+      ],
+      "note": "[PL #103] 21 HR / 16 SB / 136 G as rookie. Poor ratios (.231/.287) but volume + speed combo. LDB: aSB + HR value. 150 G upside in 2026. Youth (22yo) + MIA lineup spot.",
+      "health_pct": 90,
+      "role": "MIA C/DH — likely starter"
+    },
+    {
+      "name": "Drake Baldwin",
+      "tags": [
+        "BREAKOUT"
+      ],
+      "note": "[PL #75] 19 HR / 15.2% K / .274 BA as rookie. PL: repeat 2025 is a great outcome. Top-6 C if healthy. Ozuna departure = more PA. ATL lineup is strong context.",
+      "health_pct": 90,
+      "role": "ATL C — full-time with Ozuna gone"
+    },
+    {
+      "name": "Brice Turang",
+      "tags": [
+        "BREAKOUT"
+      ],
+      "note": "[PL #34] Power breakout: 7 HR in 2024 → 18 HR in 2025. 10 in August alone. 26yo — may stick. 15 HR / 25-30 SB / high BA / MIL 2B. LDB: speed + OBP + power emerging = strong 2B target.",
+      "health_pct": 92,
+      "role": "MIL 2B — starter"
+    },
+    {
+      "name": "Luis Robert Jr.",
+      "tags": [
+        "SLEEPER",
+        "INJURY_RISK",
+        "STREAKY"
+      ],
+      "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
+      "health_pct": 72,
+      "role": "NYM OF — new team, healthcare question"
+    },
+    {
+      "name": "Chandler Simpson",
+      "tags": [
+        "SPEED_VALUE",
+        "SLEEPER"
+      ],
+      "note": "[PL #117] Zero barrels in 376 batted-ball events. But 44 SB in 104 G — on pace for 70+ in full season. TBR platoon limits AB. LDB: aSB efficiency could be spectacular if usage rate holds. Pure speed play.",
+      "health_pct": 90,
+      "role": "TBR OF — platoon, speed specialist"
+    },
+    {
+      "name": "Shea Langeliers",
+      "tags": [
+        "SLEEPER",
+        "STREAKY"
+      ],
+      "note": "[PL #42] 17 HR in 36 games post-ASB (!). Full season: 25-30 HR. K rate improved 7.5 pts. Big second-half variance — PL cautions against assuming 36-game pace, but skills are real. Premium C target.",
+      "health_pct": 90,
+      "role": "ATH C/DH — starter"
+    },
+    {
+      "name": "Rafael Devers",
+      "tags": [
+        "BUST",
+        "ADP_AVOID"
+      ],
+      "note": "[PL #36, dropped 5] Zone-contact 73.8% — worst among 500+ PA qualifiers. Only player below 75% zone contact with 500+ PA. 'Poor man's Schwarber' comp. .250 BA floor is low end. LDB: OPS/OBP value but contact erosion is real risk.",
+      "health_pct": 90,
+      "role": "SFG 1B — concern over contact erosion"
+    },
+    {
+      "name": "Byron Buxton",
+      "tags": [
+        "INJURY_RISK"
+      ],
+      "note": "[PL #46, dropped 7] First 125+ G season since 2017. PL caveats: if you've taken other injury risks (Acuña, Alvarez, Seager) — don't add Buxton. Lineup also weak. Strong upside but high-risk stack.",
       "health_pct": 70,
-      "role": "SP — TJ return"
+      "role": "MIN OF — risk management flag"
     },
     {
-      "name": "Yoshinobu Yamamoto",
-      "tags": ["INJURED"],
-      "note": "TJ surgery mid-2024. Unlikely to contribute full season 2026. Monitor return date closely.",
-      "health_pct": 55,
-      "role": "SP — TJ rehab"
+      "name": "Manny Machado",
+      "tags": [
+        "ADP_AVOID"
+      ],
+      "note": "[PL #28, dropped 5] Lineup concern: SDP offense is thin beyond Machado. Laureano regression risk leaves 3-hitter deep lineup. PL: found himself talking out of Machado in actual drafts. Counting stat ceiling capped.",
+      "health_pct": 90,
+      "role": "SDP 3B — weak lineup context"
+    },
+    {
+      "name": "Nick Kurtz",
+      "tags": [
+        "BREAKOUT",
+        "STREAKY"
+      ],
+      "note": "[PL #12] Finished top-30 in just 117 G as rookie — 5th-best 1B. Strikeout rate spikes but hot streaks are elite. Sophomore slump risk. Minor league bandbox context. True breakout if K rate stabilizes.",
+      "health_pct": 90,
+      "role": "ATH 1B — Sacramento power"
+    },
+    {
+      "name": "Ketel Marte",
+      "tags": [
+        "BOUNCE_BACK"
+      ],
+      "note": "[PL #24, big jump from Oct] Multiple projection systems like Marte for big 2026. 25+ HR / .280+ BA / top 2B. ARI lineup concerns in second half. Injury risk (foot, hand in 2025) but floor is strong.",
+      "health_pct": 85,
+      "role": "ARI 2B — projection darling"
+    },
+    {
+      "name": "Ceddanne Rafaela",
+      "tags": [
+        "SLEEPER",
+        "BUST"
+      ],
+      "note": "[PL #79] Elite first-half: 14 HR / 13 SB / .271. Second half: 2 HR, power fell off cliff vs fastballs. Key question: can he punish fastballs? If yes = top-75 hitter. If no = huge negative floor.",
+      "health_pct": 88,
+      "role": "BOS 2B/OF"
+    },
+    {
+      "name": "Geraldo Perdomo",
+      "tags": [
+        "ADP_AVOID"
+      ],
+      "note": "[PL #54] PL: overcounted him in October. Counting stats come down hard: 90 R / 100 RBI not repeatable, more like 90 R / 60 RBI. Speed + OBP are real. LDB: OBP value but aRBI capped. ADP likely too high.",
+      "health_pct": 90,
+      "role": "ARI SS — counting stats correction"
+    },
+    {
+      "name": "Garrett Crochet",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT"
+      ],
+      "note": "PL's #1 overall SP. BOS SP1. Elite K rate (12+ K/9), now adding more pitch mix. Workload management concern — only 3rd full SP season. MGS ceiling is real if they let him throw 200 IP. Top target.",
+      "health_pct": 90,
+      "role": "sp"
+    },
+    {
+      "name": "Bryan Woo",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "PL #4 AGA1. SEA SP1. Elite stuff — 96 mph sinker + plus slider + developing change. IP ceiling the only knock — Mariners cautious. If he hits 160+ IP, elite MGS + K combo. Buy early.",
+      "health_pct": 88,
+      "role": "sp"
+    },
+    {
+      "name": "Eury Perez",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #21 AGA Holly. MIA SP. Young flamethrower returning from TJ. 6'8\" RHP with elite extension, mid-90s heat + filthy curve. Marlins will manage innings carefully. Elite ceiling if healthy.",
+      "health_pct": 65,
+      "role": "sp"
+    },
+    {
+      "name": "Kyle Bradish",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #20 AGA Holly. BAL SP. TJ surgery in 2024, full return for 2026. Strong command-based arsenal — plus slider, curveball, changeup. If fully healthy, elite ratios in Camden (good GB park).",
+      "health_pct": 72,
+      "role": "sp"
+    },
+    {
+      "name": "Ryan Pepiot",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #23 AGA Holly. TBR SP2. Low-90s heat elevated by exceptional extension and deception. Elite groundball profile. Park + defense suit him perfectly. K rate should stay north of 25%.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Cam Schlittler",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "PROSPECT"
+      ],
+      "note": "PL #25 AGA Holly. NYY SP. Young power arm in a loaded rotation — gets real innings with Cole/Rodón out until May/June. 96+ mph + elite breaking ball. Breakout candidate in late auction.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Ranger Suarez",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK"
+      ],
+      "note": "PL #55 Toby Upside 1. Now with BOS. Command-heavy LHP with elite WHIP profile. Low K rate but exceptional contact management — BABIP suppressor. BOS park fine for LHPs. Ratios specialist.",
+      "health_pct": 78,
+      "role": "sp"
+    },
+    {
+      "name": "Trevor Rogers",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "SLEEPER"
+      ],
+      "note": "PL #32 Holly. BAL SP. Traded from MIA. Camden Yards is a big upgrade over Marlins Park for a LHP. Plus fastball and slider combo, was an All-Star in 2021. Low-cost bounce-back target.",
+      "health_pct": 82,
+      "role": "sp"
+    },
+    {
+      "name": "Tatsuya Imai",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
+      "health_pct": 88,
+      "role": "sp"
+    },
+    {
+      "name": "Nolan McLean",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "PROSPECT"
+      ],
+      "note": "PL #34 Holly. NYM SP. Young power arm — 96+ mph heat and a bat-missing slider. NYM rotation spot secured. Full season could produce 160+ K. Late-auction value if overlooked.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Bubba Chandler",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "PROSPECT"
+      ],
+      "note": "PL #35 Holly. PIT SP. Former two-sport athlete (QB at Clemson) with elite raw stuff — mid-90s + hammer curve. 2025 was his development year; 2026 is breakout season. Buy cheap.",
+      "health_pct": 87,
+      "role": "sp"
+    },
+    {
+      "name": "Trey Yesavage",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #36 Holly. TOR SP. Advanced command for young age — four-pitch mix with two above-average off-speed. TOR got him in trade, slotted into rotation. Underrated in standard rankings.",
+      "health_pct": 87,
+      "role": "sp"
+    },
+    {
+      "name": "Cade Horton",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #37 Holly. CHC SP. Highly anticipated debut arm — mid-to-high 90s + three sharp secondary pitches. Full-season opportunity in CHC rotation. K upside + Wrigley day games = variance.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Robbie Ray",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #38 Cherry Bomb But Moreso. SFG SP. Two years of TJ recovery — fully healthy and re-signed. When right, elite K rate (12+ K/9) + solid walk rate. Oracle Park plays well. High upside at discount.",
+      "health_pct": 70,
+      "role": "sp"
+    },
+    {
+      "name": "Kris Bubic",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #43 Cherry Bomb But Moreso. KCR SP. LHP with above-average changeup and deceptive mechanics — induces weak contact at elite rate. Low-K but exceptional WHIP profile. Undervalued in ERA-heavy formats.",
+      "health_pct": 88,
+      "role": "sp"
+    },
+    {
+      "name": "Edward Cabrera",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "INJURY_RISK"
+      ],
+      "note": "PL #46 Holly I Feel A Little Worse About. CHC SP (via trade). Electric stuff — 99 mph + 87 mph splitter. Health history the concern; when right, elite K rate. CHC getting him in rotation.",
+      "health_pct": 70,
+      "role": "sp"
+    },
+    {
+      "name": "MacKenzie Gore",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #50 Frizzle. TEX SP. Recovering from elbow issues. When fully healthy, one of the better LHPs in the league — K rate north of 27%, elite slider. Innings cap likely but fantasy value real.",
+      "health_pct": 68,
+      "role": "sp"
+    },
+    {
+      "name": "Emmet Sheehan",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "INJURY_RISK"
+      ],
+      "note": "PL #51 Frizzle. LAD SP. Returning from TJ surgery — big fastball + elite breaking ball. LAD innings management means 100-130 IP ceiling, but K/9 should be elite. Buy cheap, stash.",
+      "health_pct": 68,
+      "role": "sp"
+    },
+    {
+      "name": "Nick Lodolo",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "BOUNCE_BACK"
+      ],
+      "note": "PL #53 Toby Upside 1. CIN SP. Tall LHP with premium extension and elite changeup. Health concerns in 2024-25 damped value — when right, 25%+ K rate + top-tier WHIP. CIN isn't a pitcher's park but ratios hold.",
+      "health_pct": 72,
+      "role": "sp"
+    },
+    {
+      "name": "Gavin Williams",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #57 Toby Upside 1. CLE SP. 97 mph sinker + cutter combo generates elite GB rate. CLE defense + park makes him a ratios monster. K rate tick-up in 2025 signals approach maturation.",
+      "health_pct": 83,
+      "role": "sp"
+    },
+    {
+      "name": "Shane Baz",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #58 Toby Upside 1. BAL SP (via trade). Electric 97 mph four-seamer + plus breaking ball. Multiple IL stints in 2024-25. When healthy, legit top-20 SP upside. Buy at injury discount.",
+      "health_pct": 68,
+      "role": "sp"
+    },
+    {
+      "name": "Spencer Schwellenbach",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #67 Injury Stash 1. ATL SP. TJ return, replacing Wentz in rotation. Big sinker + slider induces extreme groundball rates. ATL defense = ratios gold. Light workload initially but real value if it sticks.",
+      "health_pct": 65,
+      "role": "sp"
+    },
+    {
+      "name": "Jared Jones",
+      "tags": [
+        "SP_LOCKED",
+        "BREAKOUT",
+        "INJURY_RISK"
+      ],
+      "note": "PL #66 Injury Stash 1. PIT SP. Top-of-rotation stuff — mid-90s four-seamer + elite slider. Oblique strain cut 2025 short. When healthy, elite K rate + legit MGS ceiling. Stash at right price.",
+      "health_pct": 65,
+      "role": "sp"
+    },
+    {
+      "name": "Logan Henderson",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "BREAKOUT"
+      ],
+      "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Robby Snelling",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER",
+        "PROSPECT"
+      ],
+      "note": "PL #76 HIPSTER 1. MIA SP. LHP with above-average stuff for 21-year-old — low-90s but exceptional command + movement. Marlins building around him. Innings cap in play but buy cheap for the ceiling.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Braxton Ashcraft",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #77 HIPSTER 1. PIT SP. Tall RHP with 96 mph sinker generating extreme groundball rates (60%+). Elite contact-management profile. PIT defense is solid. K rate modest but ratios (ERA/WHIP) should shine.",
+      "health_pct": 87,
+      "role": "sp"
+    },
+    {
+      "name": "Kodai Senga",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK",
+        "INJURY_RISK"
+      ],
+      "note": "PL #80 Toby Upside 3. NYM SP. Ghost fork is one of the best pitches in baseball. Calf/shoulder issues wiped out 2025. Full-season return is huge — if healthy, elite K rate + Mets rotation anchor.",
+      "health_pct": 65,
+      "role": "sp"
+    },
+    {
+      "name": "Bailey Ober",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Jack Leiter",
+      "tags": [
+        "SP_LOCKED",
+        "SLEEPER"
+      ],
+      "note": "PL #92 Late Upside. TEX SP. Former #2 overall pick finally getting full rotation shot. Plus fastball + elite cutter combo. TEX park challenging but K upside real. Could be 2026 breakout arm.",
+      "health_pct": 83,
+      "role": "sp"
+    },
+    {
+      "name": "Grayson Rodriguez",
+      "tags": [
+        "SP_LOCKED",
+        "BOUNCE_BACK"
+      ],
+      "note": "PL #97 Late Upside. Now LAA SP. Former top BAL prospect — traded to Angels. 97 mph + excellent secondaries. 2025 inconsistency was approach-based, not stuff. Change of scenery could unlock.",
+      "health_pct": 80,
+      "role": "sp"
+    },
+    {
+      "name": "Roki Sasaki",
+      "tags": [
+        "ROLE_UNCLEAR",
+        "SLEEPER"
+      ],
+      "note": "PL #103 Possible Job Upside. LAD. Elite splitter is historically dominant. Still unclear if he's in LAD rotation vs bullpen bridge role. Wait for clarity — if SP role confirmed, instant top-40 arm.",
+      "health_pct": 85,
+      "role": "sp"
+    },
+    {
+      "name": "Jackson Jobe",
+      "tags": [
+        "STASH",
+        "PROSPECT",
+        "INJURY_RISK"
+      ],
+      "note": "PL #153 Injury Stash 2. DET SP. One of the best pitching prospects in baseball — mid-90s + elite slider + change. Health setback in 2025, returning in 2026. DET being careful. AA-eligible if available.",
+      "health_pct": 60,
+      "role": "sp"
+    },
+    {
+      "name": "Quinn Mathews",
+      "tags": [
+        "STASH",
+        "PROSPECT"
+      ],
+      "note": "PL #170 Spec Add 2026 Prospect. STL SP. LHP with above-average command and developing breaking ball. Cardinals love him as rotation depth. Could see meaningful innings in 2026. Spec add only.",
+      "health_pct": 82,
+      "role": "sp"
     }
   ]
 }
