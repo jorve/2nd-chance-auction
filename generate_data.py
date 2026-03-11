@@ -72,18 +72,42 @@ POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def norm(name):
-    return (name.lower().strip()
-        .replace("á","a").replace("é","e").replace("í","i")
-        .replace("ó","o").replace("ú","u").replace("ü","u").replace("ñ","n")
-        .replace(".","").replace("-"," ").replace("'","")
-        .replace(" jr","").replace(" iii","").replace(" ii","")
-        .replace("  "," ").strip())
+    """Normalize name for matching: lowercase, strip accents, remove suffixes, collapse whitespace."""
+    if not name or not isinstance(name, str):
+        return ""
+    s = name.lower().strip()
+    s = s.replace("á","a").replace("é","e").replace("í","i").replace("ó","o")
+    s = s.replace("ú","u").replace("ü","u").replace("ñ","n").replace("ö","o")
+    s = s.replace(".","").replace("-"," ").replace("'","").replace("`","")
+    # Remove common suffixes (order matters: longer first)
+    for suf in (" jr", " sr", " iii", " iv", " ii"):
+        if s.endswith(suf):
+            s = s[: -len(suf)]
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
-def abbrev_match(short, full):
-    s, f = norm(short).split(), norm(full).split()
-    if len(s) < 2 or len(f) < 2: return False
-    if s[-1] != f[-1]: return False
-    return f[0].startswith(s[0].replace(".",""))
+def strip_team_suffix(name):
+    """Remove trailing parenthetical team code e.g. ' (MIL)' or '(NYY)' from draft board names."""
+    if not name or not isinstance(name, str):
+        return name
+    return re.sub(r"\s*\([A-Za-z0-9]+\)\s*$", "", name).strip()
+
+def abbrev_match(name_a, name_b):
+    """
+    Check if two names refer to the same player, handling:
+    - Abbreviated first names (J. Rodriguez <-> Julio Rodriguez)
+    - Works bidirectionally (either name may be abbreviated)
+    """
+    s, f = norm(name_a).split(), norm(name_b).split()
+    if len(s) < 2 or len(f) < 2:
+        return False
+    if s[-1] != f[-1]:  # last name must match
+        return False
+    # First name: either one is abbreviation of the other
+    a0, b0 = s[0].replace(".", ""), f[0].replace(".", "")
+    if not a0 or not b0:
+        return False
+    return a0.startswith(b0) or b0.startswith(a0)
 
 def fuzzy(a, b, thresh=0.88):
     return SequenceMatcher(None, norm(a), norm(b)).ratio() >= thresh
@@ -128,13 +152,27 @@ def calc_mgs_per_gs(row):
     if gs == 0: return 0.0
     return calc_mgs_season(row) / gs
 
-def is_unavailable(proj_name, unavail_set):
+def names_match(proj_name, draft_name):
+    """
+    Core matching logic: projection CSV name vs draft board name.
+    Handles abbreviations, accents, suffixes, team codes in draft names.
+    """
+    draft_clean = strip_team_suffix(draft_name)
     n = norm(proj_name)
+    t = norm(draft_clean)
+    if n == t:
+        return True
+    if abbrev_match(proj_name, draft_clean):
+        return True
+    if SequenceMatcher(None, n, t).ratio() >= 0.87:
+        return True
+    return False
+
+def is_unavailable(proj_name, unavail_set):
+    """Check if projection player is owned or in AA on the draft board."""
     for taken in unavail_set:
-        t = norm(taken)
-        if n == t: return True
-        if abbrev_match(taken, proj_name): return True
-        if SequenceMatcher(None, n, t).ratio() > 0.90: return True
+        if names_match(proj_name, taken):
+            return True
     return False
 
 def get_rfa_team(proj_name, rfa_norm):
