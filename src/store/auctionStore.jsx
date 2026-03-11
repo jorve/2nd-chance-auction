@@ -37,9 +37,42 @@ function recalcValues(players, teams, soldMap) {
     return maxScarcity
   }
 
-  const hitBudget = totalRemaining * 0.50
-  const spBudget  = totalRemaining * 0.30
-  const rpBudget  = totalRemaining * 0.20
+  // Dynamic budget split: based on slots to fill vs players remaining (scarcity)
+  const BATTER_SLOTS_PER_TEAM = 11  // C+1B+2B+3B+SS+OF+CF+RF+UT
+  const SP_SLOTS_PER_TEAM = 6
+  const RP_SLOTS_PER_TEAM = 3
+  const totalBatterSlots = BATTER_SLOTS_PER_TEAM * numTeams
+  const totalSPSlots = SP_SLOTS_PER_TEAM * numTeams
+  const totalRPSlots = RP_SLOTS_PER_TEAM * numTeams
+
+  const soldBatters = Object.values(soldMap).filter(s => s.pos_type === 'batter').length
+  const soldSP = Object.values(soldMap).filter(s => s.pos_type === 'sp').length
+  const soldRP = Object.values(soldMap).filter(s => s.pos_type === 'rp').length
+
+  const unsoldBatters = unsold.filter(isBatter)
+  const unsoldSP      = unsold.filter(isSP)
+  const unsoldRP      = unsold.filter(p => !isBatter(p) && !isSP(p))
+
+  const batterSlotsToFill = Math.max(0, totalBatterSlots - soldBatters)
+  const spSlotsToFill = Math.max(0, totalSPSlots - soldSP)
+  const rpSlotsToFill = Math.max(0, totalRPSlots - soldRP)
+
+  const batterScarcity = unsoldBatters.length > 0 ? batterSlotsToFill / unsoldBatters.length : 0
+  const spScarcity = unsoldSP.length > 0 ? spSlotsToFill / unsoldSP.length : 0
+  const rpScarcity = unsoldRP.length > 0 ? rpSlotsToFill / unsoldRP.length : 0
+  const totalScarcity = batterScarcity + spScarcity + rpScarcity
+  // Blend dynamic scarcity with baseline (50/30/20); bench slots (11/team) absorb any type, so don't overcorrect
+  const BLEND = 0.5  // 50% dynamic, 50% baseline
+  const baseline = { hit: 0.50, sp: 0.30, rp: 0.20 }
+  const dyn = totalScarcity > 0
+    ? { hit: batterScarcity / totalScarcity, sp: spScarcity / totalScarcity, rp: rpScarcity / totalScarcity }
+    : baseline
+  const hitShare = BLEND * baseline.hit + (1 - BLEND) * dyn.hit
+  const spShare  = BLEND * baseline.sp  + (1 - BLEND) * dyn.sp
+  const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
+  const hitBudget = totalRemaining * hitShare
+  const spBudget  = totalRemaining * spShare
+  const rpBudget  = totalRemaining * rpShare
 
   function allocGroup(group, budget) {
     const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
@@ -52,10 +85,6 @@ function recalcValues(players, teams, soldMap) {
       return { ...p, adj_value: p.ldb_score > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5 }
     })
   }
-
-  const unsoldBatters = unsold.filter(isBatter)
-  const unsoldSP      = unsold.filter(isSP)
-  const unsoldRP      = unsold.filter(p => !isBatter(p) && !isSP(p))
 
   const adjBatters = allocGroup(unsoldBatters, hitBudget)
   const adjSP      = allocGroup(unsoldSP, spBudget)
