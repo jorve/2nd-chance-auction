@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { toast } from './Toast.jsx'
+import PlayerCard from './PlayerCard.jsx'
 import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
 
 function getType(p) {
@@ -149,6 +150,7 @@ export default function AuctionPanel() {
   const [search, setSearch] = useState('')
   const [focused, setFocused] = useState(false)
   const [showReset, setShowReset] = useState(false)
+  const [showPlayerCard, setShowPlayerCard] = useState(false)
   const [intel, setIntel] = useState(null)            // { text, loading, error, player }
   const searchRef = useRef()
   const resetModalRef = useRef(null)
@@ -317,11 +319,18 @@ export default function AuctionPanel() {
 
       {/* ── Player card ── */}
       {player && (
-        <div style={{
-          background: 'var(--surface)', border: `1px solid ${tColor}44`,
-          borderRadius: 8, padding: '12px 14px', marginBottom: 12,
-          boxShadow: `0 0 20px ${tColor}0d`,
-        }}>
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => setShowPlayerCard(true)}
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setShowPlayerCard(true) } }}
+          style={{
+            background: 'var(--surface)', border: `1px solid ${tColor}44`,
+            borderRadius: 8, padding: '12px 14px', marginBottom: 12,
+            boxShadow: `0 0 20px ${tColor}0d`, cursor: 'pointer',
+          }}
+          aria-label={`View full details for ${player.name}. Click to open.`}
+        >
           {/* Name + meta */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
             <div>
@@ -557,6 +566,16 @@ export default function AuctionPanel() {
             </div>
           )}
         </div>
+      )}
+
+      {/* Full player card overlay (from nomination panel) */}
+      {player && showPlayerCard && (
+        <PlayerCard
+          player={player}
+          teams={teams}
+          onClose={() => setShowPlayerCard(false)}
+          onNominate={p => { setNominatedPlayer(p); setShowPlayerCard(false) }}
+        />
       )}
 
       {/* Empty state */}

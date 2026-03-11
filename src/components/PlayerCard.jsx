@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { FRY_NEEDS, TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -211,6 +212,7 @@ function SectionLabel({ children }) {
 
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 export default function PlayerCard({ player, onClose, teams, onNominate }) {
+  if (!player) return null
   const type   = getType(player)
   const tColor = TIER_COLORS[player.tier] || 'var(--muted)'
   const fry    = teams['FRY'] || {}
@@ -282,7 +284,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
     ? (player.ldb_score - player.oopsy_ldb_score).toFixed(2)
     : null
 
-  return (
+  const modalContent = (
     <div
       role="dialog"
       aria-modal="true"
@@ -692,4 +694,5 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
       </div>
     </div>
   )
+  return createPortal(modalContent, document.body)
 }
