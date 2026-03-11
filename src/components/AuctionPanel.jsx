@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { toast } from './Toast.jsx'
+import PlayerCard from './PlayerCard.jsx'
 import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
 
 function getType(p) {
@@ -149,6 +150,7 @@ export default function AuctionPanel() {
   const [search, setSearch] = useState('')
   const [focused, setFocused] = useState(false)
   const [showReset, setShowReset] = useState(false)
+  const [showPlayerCard, setShowPlayerCard] = useState(false)
   const [intel, setIntel] = useState(null)            // { text, loading, error, player }
   const searchRef = useRef()
   const resetModalRef = useRef(null)
@@ -325,8 +327,15 @@ export default function AuctionPanel() {
           {/* Name + meta */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
             <div>
-              <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>
                 {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
+                </div>
+                <button
+                  type="button"
+                  onClick={e => { e.stopPropagation(); setShowPlayerCard(true) }}
+                  style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, padding: '2px 6px', background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 3, color: 'var(--text-dim)', cursor: 'pointer' }}
+                >VIEW CARD</button>
               </div>
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text)', fontWeight: 600 }}>{player.team || 'FA'}</span>
@@ -557,6 +566,16 @@ export default function AuctionPanel() {
             </div>
           )}
         </div>
+      )}
+
+      {/* Full player card overlay (explicit button only — avoids stray click from dropdown) */}
+      {player && showPlayerCard && (
+        <PlayerCard
+          player={player}
+          teams={teams}
+          onClose={() => setShowPlayerCard(false)}
+          onNominate={p => { setNominatedPlayer(p); setShowPlayerCard(false) }}
+        />
       )}
 
       {/* Empty state */}
