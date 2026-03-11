@@ -53,6 +53,7 @@ MIN_IP  = 20
 HIT_SPLIT = 0.50
 SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
+RP_VALUE_SCALE = 0.80  # Scale RP values down (fewer innings than SPs)
 
 FRY_TEAM = "FRY"
 FRY_KEEPERS = ["Ronald Acuña Jr.", "Rafael Devers", "Brent Rooker",
@@ -508,7 +509,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
-    eligible = assign_est_values(eligible, budget)
+    eligible = assign_est_values(eligible, budget * RP_VALUE_SCALE)
 
     results = []
     for i, p in enumerate(eligible):

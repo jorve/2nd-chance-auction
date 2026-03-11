@@ -72,7 +72,8 @@ function recalcValues(players, teams, soldMap) {
   const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
   const hitBudget = totalRemaining * hitShare
   const spBudget  = totalRemaining * spShare
-  const rpBudget  = totalRemaining * rpShare
+  const RP_VALUE_SCALE = 0.80  // Scale RP values down (fewer innings than SPs)
+  const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
 
   function allocGroup(group, budget) {
     const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
