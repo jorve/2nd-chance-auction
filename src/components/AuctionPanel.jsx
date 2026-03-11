@@ -140,7 +140,6 @@ export default function AuctionPanel() {
     nominatedBy, setNominatedBy,
     currentNominator,
     confirmSale,
-    TEAMS_LIST,
     teams, resetAuction,
     getNoteForPlayer,
   } = useAuctionStore()
