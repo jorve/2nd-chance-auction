@@ -137,6 +137,7 @@ export default function AuctionPanel() {
     bidPrice, setBidPrice,
     confirmSale,
     teams, resetAuction,
+    getNoteForPlayer,
   } = useAuctionStore()
 
   const { apiKey } = useApiKeyStore()
@@ -366,15 +367,15 @@ export default function AuctionPanel() {
             </div>
           )}
 
-          {/* Manual scouting note */}
-          {player.note && (
+          {/* Manual scouting note (includes UI-added notes) */}
+          {(getNoteForPlayer(player.name) ?? player.note) && (
             <div style={{
               marginTop: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 11,
               color: 'var(--text-dim)', lineHeight: 1.5,
               background: 'rgba(255,255,255,.03)', borderLeft: '2px solid var(--border2)',
               padding: '6px 10px', borderRadius: '0 4px 4px 0',
             }}>
-              {player.note}
+              {getNoteForPlayer(player.name) ?? player.note}
             </div>
           )}
         </div>

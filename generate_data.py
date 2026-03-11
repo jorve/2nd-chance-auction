@@ -778,19 +778,25 @@ def apply_pl_sp(players: list, pl_index: dict) -> list:
 
 # ── PLAYER NOTES & SMART TAGS ─────────────────────────────────────────────────
 
-def load_player_notes(path: Path) -> dict:
-    """Load player_notes.json → dict keyed by normalised name."""
+def load_player_notes(path: Path) -> tuple[dict, dict]:
+    """Load player_notes.json → (notes_index, manual_notes).
+    notes_index: dict keyed by normalised name from players array.
+    manual_notes: dict keyed by normalised name (UI-added notes, take precedence).
+    """
     if not path.exists():
         print(f"  [notes] {path.name} not found — skipping qualitative data")
-        return {}
+        return {}, {}
     with open(path, encoding="utf-8") as f:
         raw = json.load(f)
     index = {}
     for entry in raw.get("players", []):
         key = norm(entry["name"])
         index[key] = entry
-    print(f"  [notes] Loaded {len(index)} player notes from {path.name}")
-    return index
+    manual = raw.get("manual_notes") or {}
+    if not isinstance(manual, dict):
+        manual = {}
+    print(f"  [notes] Loaded {len(index)} player notes, {len(manual)} manual notes from {path.name}")
+    return index, manual
 
 
 def auto_tags_batter(p: dict) -> list:
@@ -929,8 +935,10 @@ def apply_athletic_sp(players: list, athl_index: dict) -> list:
     return players
 
 
-def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
-    """Merge manual notes + auto tags into each player record."""
+def apply_notes(players: list, notes_index: dict, manual_notes: dict, pool_type: str) -> list:
+    """Merge manual notes + auto tags into each player record.
+    manual_notes (UI-added) take precedence over note_entry.note.
+    """
     auto_fn = TAG_AUTO_FN.get(pool_type)
     for p in players:
         key = norm(p["name"])
@@ -943,10 +951,13 @@ def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
                     break
         auto = auto_fn(p) if auto_fn else []
         manual_tags = list(note_entry.get("tags", [])) if note_entry else []
-        # Merge: manual tags win; auto tags fill in what isn't already covered
         all_tags = list(dict.fromkeys(manual_tags + [t for t in auto if t not in manual_tags]))
         p["tags"]       = all_tags
-        p["note"]       = (note_entry or {}).get("note", "")
+        # Manual note (from UI) overrides note from players array
+        if key in manual_notes and manual_notes[key]:
+            p["note"] = manual_notes[key]
+        else:
+            p["note"] = (note_entry or {}).get("note", "")
         p["health_pct"] = (note_entry or {}).get("health_pct", 100)
         p["role"]       = (note_entry or {}).get("role", "")
     return players
@@ -992,7 +1003,7 @@ def main():
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
-    notes_index  = load_player_notes(PLAYER_NOTES)
+    notes_index, manual_notes = load_player_notes(PLAYER_NOTES)
     pl_index     = load_pl_batters(PL_BATTERS)
     pl_sp_index  = load_pl_sp(PL_SP)
     athl_sp_index = load_athletic_sp(ATHLETIC_SP)
@@ -1002,9 +1013,9 @@ def main():
     sp      = merge_rankings(atc_sp,       oopsy_sp)
     rp      = merge_rankings(atc_rp,       oopsy_rp)
 
-    batters = apply_notes(batters, notes_index, "batters")
-    sp      = apply_notes(sp,      notes_index, "sp")
-    rp      = apply_notes(rp,      notes_index, "rp")
+    batters = apply_notes(batters, notes_index, manual_notes, "batters")
+    sp      = apply_notes(sp,      notes_index, manual_notes, "sp")
+    rp      = apply_notes(rp,      notes_index, manual_notes, "rp")
 
     # PL enrichment
     batters = apply_pl_batters(batters, pl_index)

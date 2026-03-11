@@ -9,8 +9,10 @@
     },
     "rotation_source": "Spring 2026 rotation projections — updated March 2026",
     "auto_tags_from_stats": "generate_data.py also auto-applies stat-based tags. Manual tags here take precedence / stack on top.",
-    "name_matching": "Use exact projection file names. Fuzzy matching is applied as fallback."
+    "name_matching": "Use exact projection file names. Fuzzy matching is applied as fallback.",
+    "manual_notes": "UI-added notes (object, normalized-name keys). Overrides players[].note. Added/edited via Player Card."
   },
+  "manual_notes": {},
   "players": [
     {
       "_section": "FRY KEEPERS / ROFR",

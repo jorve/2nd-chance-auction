@@ -11,6 +11,9 @@ export default function App() {
   const [resumeBanner, setResumeBanner] = useState(() => savedSessionMeta())
   const soldCount = Object.keys(useAuctionStore(s => s.sold)).length
   const leagueModalRef = useRef(null)
+  const fetchManualNotes = useAuctionStore(s => s.fetchManualNotes)
+
+  useEffect(() => { fetchManualNotes() }, [fetchManualNotes])
 
   // League modal focus trap + ESC to close
   useEffect(() => {

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { FRY_NEEDS, TEAM_COLORS } from '../store/auctionStore.jsx'
+import { useEffect, useRef, useState } from 'react'
+import { FRY_NEEDS, TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
@@ -214,6 +214,30 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
   const type   = getType(player)
   const tColor = TIER_COLORS[player.tier] || 'var(--muted)'
   const fry    = teams['FRY'] || {}
+
+  const manualNote   = useAuctionStore(s => s.getNoteForPlayer(player.name))
+  const hasManual     = useAuctionStore(s => s.hasManualNote(player.name))
+  const setManualNote = useAuctionStore(s => s.setManualNote)
+  const deleteManual  = useAuctionStore(s => s.deleteManualNote)
+
+  const effectiveNote = manualNote ?? player.note ?? ''
+  const [noteDraft, setNoteDraft] = useState(effectiveNote)
+  const [noteSaving, setNoteSaving] = useState(false)
+
+  useEffect(() => { setNoteDraft(effectiveNote) }, [effectiveNote, player.name])
+
+  async function handleSaveNote() {
+    setNoteSaving(true)
+    const ok = await setManualNote(player.name, noteDraft.trim())
+    setNoteSaving(false)
+  }
+
+  async function handleDeleteNote() {
+    setNoteSaving(true)
+    const ok = await deleteManual(player.name)
+    if (ok) setNoteDraft(player.note ?? '')
+    setNoteSaving(false)
+  }
 
   const isSP  = type === 'SP'
   const isRP  = type === 'RP'
@@ -496,8 +520,59 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             </div>
           </>)}
 
-          {/* ── SCOUT / NOTES ── */}
-          {(player.note || player.pl_note || player.role || player.health_pct != null) && (<>
+          {/* ── MANUAL NOTE EDITOR ── */}
+          <SectionLabel>Manual Note</SectionLabel>
+          <div style={{
+            display: 'flex', flexDirection: 'column', gap: 8,
+            background: 'rgba(255,255,255,.02)', border: '1px solid var(--border)',
+            borderRadius: 6, padding: '10px 12px',
+          }}>
+            <textarea
+              value={noteDraft}
+              onChange={e => setNoteDraft(e.target.value)}
+              placeholder="Add a personal note for this player (saved to player_notes.json)"
+              rows={3}
+              style={{
+                width: '100%', resize: 'vertical', minHeight: 60,
+                background: 'var(--surface2)', border: '1px solid var(--border2)',
+                borderRadius: 4, padding: '8px 10px',
+                fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text)',
+                lineHeight: 1.5,
+              }}
+              aria-label="Manual note"
+            />
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <button
+                onClick={handleSaveNote}
+                disabled={noteSaving || noteDraft.trim() === (effectiveNote || '').trim()}
+                style={{
+                  padding: '6px 14px', borderRadius: 4, cursor: noteSaving ? 'wait' : 'pointer',
+                  background: 'var(--accent)', border: '1px solid var(--accent)',
+                  fontFamily: "'DM Mono', monospace", fontSize: 10, fontWeight: 600,
+                  color: '#0a0c10', letterSpacing: 1,
+                }}
+              >
+                {noteSaving ? 'Saving…' : 'Save'}
+              </button>
+              {hasManual && (
+                <button
+                  onClick={handleDeleteNote}
+                  disabled={noteSaving}
+                  style={{
+                    padding: '6px 14px', borderRadius: 4, cursor: noteSaving ? 'wait' : 'pointer',
+                    background: 'transparent', border: '1px solid var(--red)',
+                    fontFamily: "'DM Mono', monospace", fontSize: 10,
+                    color: 'var(--red)',
+                  }}
+                >
+                  Delete note
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* ── SCOUT INTEL ── */}
+          {(player.pl_note || player.role || player.health_pct != null) && (<>
             <SectionLabel>Scout Intel</SectionLabel>
 
             {/* Health + Role strip */}
@@ -528,19 +603,8 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
               </div>
             )}
 
-            {/* Manual scouting note */}
-            {player.note && (
-              <div style={{
-                background: 'rgba(255,255,255,.02)', borderLeft: `2px solid ${tColor}88`,
-                borderRadius: '0 5px 5px 0', padding: '8px 12px', marginBottom: 8,
-                fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)', lineHeight: 1.6,
-              }}>
-                {player.note}
-              </div>
-            )}
-
             {/* PL note */}
-            {player.pl_note && player.pl_note !== player.note && (
+            {player.pl_note && player.pl_note !== effectiveNote && (
               <div style={{
                 background: 'rgba(167,139,250,.04)', borderLeft: '2px solid rgba(167,139,250,.5)',
                 borderRadius: '0 5px 5px 0', padding: '8px 12px',

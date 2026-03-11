@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { LDB_DATA } from '../data/ldb_data.js'
+import { norm } from '../utils/norm.js'
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcValues(players, teams, soldMap) {
@@ -210,6 +211,9 @@ export const useAuctionStore = create((set, get) => ({
   sold:       _init?.sold       ?? {},    // { playerName: { price, team, pos_type } }
   auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, ts, rank, est_value }]
   
+  // Manual player notes (persisted to player_notes.json via API)
+  manualNotes: {},
+
   // UI state
   rankingsTab: 'batters',
   projSystem: 'batx',   // 'batx' | 'oopsy' | 'both'
@@ -221,6 +225,57 @@ export const useAuctionStore = create((set, get) => ({
   nominatedPlayer: null,
   bidTeam: '',
   bidPrice: '',
+
+  // ── MANUAL NOTES ──────────────────────────────────────────────────────────
+  fetchManualNotes: async () => {
+    try {
+      const r = await fetch('/api/player-notes')
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+    } catch {
+      set({ manualNotes: {} })
+    }
+  },
+  setManualNote: async (playerName, note) => {
+    try {
+      const r = await fetch('/api/player-notes', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: playerName, note: note || '' }),
+      })
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+      return true
+    } catch (e) {
+      console.warn('LDB: Failed to save manual note', e)
+      return false
+    }
+  },
+  deleteManualNote: async (playerName) => {
+    try {
+      const r = await fetch(`/api/player-notes?name=${encodeURIComponent(playerName)}`, {
+        method: 'DELETE',
+      })
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+      return true
+    } catch (e) {
+      console.warn('LDB: Failed to delete manual note', e)
+      return false
+    }
+  },
+  getNoteForPlayer: (playerName) => {
+    const { manualNotes } = get()
+    const key = norm(playerName)
+    return manualNotes[key] ?? null
+  },
+  hasManualNote: (playerName) => {
+    const { manualNotes } = get()
+    return norm(playerName) in manualNotes
+  },
 
   // ── ACTIONS ──────────────────────────────────────────────────────────────
   setRankingsTab: tab => set({ rankingsTab: tab, searchQuery: '' }),

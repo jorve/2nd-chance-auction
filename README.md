@@ -8,6 +8,7 @@ A live fantasy baseball auction tracker built for Lucid Dream Baseball.
 - **League Board** — All 16 team budgets, slots, wins, and threat level
 - **FRY Lens** — Toggle on FRY-specific signals: BUY / TARGET / RISKY / RISING
 - **Auto-recalc** — Every sale updates all player values based on remaining pool $
+- **Manual Notes** — Add per-player notes from the Player Card; persists to `data/player_notes.json`
 
 ---
 
@@ -30,6 +31,7 @@ To use different CSV paths, edit the `INPUT_DIR` variable at the top of `generat
 ```bash
 npm run dev
 ```
+This starts both the Vite dev server and the player notes API (port 3001). Manual notes are saved to `data/player_notes.json`. If the notes API is unavailable, the app runs normally without note persistence.
 
 ### 4. Deploy to Vercel
 ```bash
