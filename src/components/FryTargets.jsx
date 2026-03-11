@@ -149,7 +149,7 @@ export default function FryTargets() {
               {/* Name + meta */}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {p.name}
+                  {p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}
                 </div>
                 <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)', marginTop: 1 }}>
                   {p.team || 'FA'} · {p._type}

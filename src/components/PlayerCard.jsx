@@ -219,6 +219,8 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
   const hasManual     = useAuctionStore(s => s.hasManualNote(player.name))
   const setManualNote = useAuctionStore(s => s.setManualNote)
   const deleteManual  = useAuctionStore(s => s.deleteManualNote)
+  const targetAvoid   = useAuctionStore(s => s.getTargetAvoid(player.name))
+  const toggleTargetAvoid = useAuctionStore(s => s.toggleTargetAvoid)
 
   const effectiveNote = manualNote ?? player.note ?? ''
   const [noteDraft, setNoteDraft] = useState(effectiveNote)
@@ -326,7 +328,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
           <div style={{ marginRight: 36 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
               <span id="player-card-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
-                {player.name}
+                {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
               </span>
               {player.handedness && (
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)', letterSpacing: 1 }}>
@@ -355,13 +357,6 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1,
                 color: tColor, border: `1px solid ${tColor}55`, padding: '2px 7px', borderRadius: 3,
               }}>{TIER_NAMES[player.tier] || `T${player.tier}`}</span>
-
-              {/* Positions */}
-              {player.positions?.length > 0 && (
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)', letterSpacing: 0.5 }}>
-                  {player.positions.join(' · ')}
-                </span>
-              )}
 
               {/* ROFR */}
               {player.rfa_team && (
@@ -519,6 +514,33 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
               </div>
             </div>
           </>)}
+
+          {/* ── TARGET / AVOID ── */}
+          <SectionLabel>Target / Avoid</SectionLabel>
+          <div style={{ display: 'flex', gap: 8, marginBottom: 4 }}>
+            <button
+              onClick={() => toggleTargetAvoid(player.name, targetAvoid === 'target' ? null : 'target')}
+              style={{
+                background: targetAvoid === 'target' ? 'rgba(74,222,128,.2)' : 'var(--surface2)',
+                border: `1px solid ${targetAvoid === 'target' ? 'var(--green)' : 'var(--border)'}`,
+                borderRadius: 4, padding: '5px 12px',
+                fontFamily: "'DM Mono', monospace", fontSize: 10,
+                color: targetAvoid === 'target' ? 'var(--green)' : 'var(--text-dim)',
+                cursor: 'pointer',
+              }}
+            >★ Target</button>
+            <button
+              onClick={() => toggleTargetAvoid(player.name, targetAvoid === 'avoid' ? null : 'avoid')}
+              style={{
+                background: targetAvoid === 'avoid' ? 'rgba(248,113,113,.2)' : 'var(--surface2)',
+                border: `1px solid ${targetAvoid === 'avoid' ? 'var(--red)' : 'var(--border)'}`,
+                borderRadius: 4, padding: '5px 12px',
+                fontFamily: "'DM Mono', monospace", fontSize: 10,
+                color: targetAvoid === 'avoid' ? 'var(--red)' : 'var(--text-dim)',
+                cursor: 'pointer',
+              }}
+            >✕ Avoid</button>
+          </div>
 
           {/* ── MANUAL NOTE EDITOR ── */}
           <SectionLabel>Manual Note</SectionLabel>

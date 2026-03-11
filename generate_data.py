@@ -1034,6 +1034,8 @@ def main():
                 "contract": info["contract"], "pos": info["pos"]
             })
 
+    num_teams = len(teams)
+    pos_slots = {pos: slots * num_teams for pos, slots in POS_SLOTS_PER_TEAM.items()}
     data = {
         "generated_at": str(date.today()),
         "meta": {
@@ -1042,6 +1044,7 @@ def main():
             "sp_budget":    round(sp_budget, 2),
             "rp_budget":    round(rp_budget, 2),
             "min_pa": MIN_PA, "min_gs": MIN_GS, "min_ip": MIN_IP,
+            "pos_slots_total": pos_slots,
         },
         "teams": teams,
         "roster_by_team": roster_by_team,

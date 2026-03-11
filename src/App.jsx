@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { ToastProvider } from './components/Toast.jsx'
 import Header from './components/Header.jsx'
 import PlayerList from './components/PlayerList.jsx'
 import AuctionPanel from './components/AuctionPanel.jsx'
@@ -38,6 +39,7 @@ export default function App() {
   }, [showLeague])
 
   return (
+    <ToastProvider>
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', padding: 6 }}>
       <Header onLeagueClick={() => setShowLeague(true)} />
 
@@ -66,12 +68,15 @@ export default function App() {
       )}
 
       {/* Two-pane layout */}
-      <div style={{
-        flex: 1, display: 'grid',
-        gridTemplateColumns: '1fr 440px',
-        minHeight: 0, overflow: 'hidden',
-        border: '1px solid var(--border)', borderRadius: 8,
-      }}>
+      <div
+        className="ldb-main-grid"
+        style={{
+          flex: 1, display: 'grid',
+          gridTemplateColumns: '1fr 440px',
+          minHeight: 0, overflow: 'hidden',
+          border: '1px solid var(--border)', borderRadius: 8,
+        }}
+      >
         {/* LEFT — full player pool */}
         <div style={{ borderRight: '1px solid var(--border)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
           <PlayerList />
@@ -79,7 +84,7 @@ export default function App() {
 
         {/* RIGHT — auction (top) + FRY targets (bottom) */}
         <div style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--bg)' }}>
-          <div style={{ overflowY: 'auto', maxHeight: '62vh', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+          <div className="ldb-auction-panel" style={{ overflowY: 'auto', maxHeight: '62vh', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
             <AuctionPanel />
           </div>
           <div style={{ flex: 1, overflowY: 'auto', minHeight: 0 }}>
@@ -136,5 +141,6 @@ export default function App() {
         </div>
       )}
     </div>
+    </ToastProvider>
   )
 }

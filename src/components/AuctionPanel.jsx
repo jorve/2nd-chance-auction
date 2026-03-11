@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
+import { toast } from './Toast.jsx'
 import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
 
 function getType(p) {
@@ -135,7 +136,10 @@ export default function AuctionPanel() {
     nominatedPlayer, setNominatedPlayer,
     bidTeam, setBidTeam,
     bidPrice, setBidPrice,
+    nominatedBy, setNominatedBy,
+    currentNominator,
     confirmSale,
+    TEAMS_LIST,
     teams, resetAuction,
     getNoteForPlayer,
   } = useAuctionStore()
@@ -194,12 +198,13 @@ export default function AuctionPanel() {
     function onKey(e) {
       if (e.key === 'Enter' && canConfirm && !e.target.matches('input, textarea')) {
         e.preventDefault()
+        if (player) toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
         confirmSale()
       }
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [canConfirm, confirmSale])
+  }, [canConfirm, confirmSale, player, bidTeam, bidPrice])
 
   // Reset modal focus trap
   useEffect(() => {
@@ -294,7 +299,7 @@ export default function AuctionPanel() {
                     <span style={{ width: 6, height: 6, borderRadius: '50%', background: tc, display: 'inline-block', flexShrink: 0 }} />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
-                        <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 500 }}>{p.name}</span>
+                        <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 500 }}>{p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}</span>
                         {isAmb && <span style={{ fontSize: 8, background: 'rgba(251,146,60,.15)', color: 'var(--orange)', border: '1px solid var(--orange)', padding: '1px 4px', borderRadius: 2 }}>SIMILAR NAME</span>}
                         <span style={{ fontSize: 10, color: 'var(--text-dim)', fontFamily: "'DM Mono', monospace" }}>{p.team || 'FA'}</span>
                         <span style={{ fontSize: 9, color: pt === 'BAT' ? 'var(--t1)' : pt === 'SP' ? 'var(--blue)' : 'var(--orange)', fontFamily: "'DM Mono', monospace" }}>{pt}</span>
@@ -320,7 +325,9 @@ export default function AuctionPanel() {
           {/* Name + meta */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
             <div>
-              <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>{player.name}</div>
+              <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>
+                {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
+              </div>
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text)', fontWeight: 600 }}>{player.team || 'FA'}</span>
                 <TypeBadge type={type} />
@@ -328,11 +335,6 @@ export default function AuctionPanel() {
                 {player.rfa_team && (
                   <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: player.rfa_team === 'FRY' ? 'var(--fry)' : 'var(--orange)', border: '1px solid currentColor', padding: '1px 5px', borderRadius: 3 }}>
                     ROFR: {player.rfa_team}
-                  </span>
-                )}
-                {(player.positions?.length > 0) && (
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)' }}>
-                    {player.positions.join(' · ')}
                   </span>
                 )}
               </div>
@@ -405,6 +407,28 @@ export default function AuctionPanel() {
       {/* ── Bid controls ── */}
       {player && (
         <div style={{ marginBottom: 12 }}>
+          {/* Nominated by */}
+          <div style={{ marginBottom: 10 }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>
+              Nominated by <span style={{ color: 'var(--text-faint)', fontWeight: 400 }}>(next: {currentNominator || TEAMS_LIST[0]})</span>
+            </div>
+            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+              {TEAMS_LIST.map(t => {
+                const active = nominatedBy === t
+                const tc = TEAM_COLORS[t] || 'var(--text-dim)'
+                return (
+                  <button key={t} onClick={() => setNominatedBy(active ? '' : t)} style={{
+                    background: active ? `${tc}22` : 'var(--surface)',
+                    border: `1px solid ${active ? tc : 'var(--border)'}`,
+                    borderRadius: 4, padding: '3px 6px',
+                    fontFamily: "'DM Mono', monospace", fontSize: 9,
+                    color: active ? tc : 'var(--text-dim)', cursor: 'pointer',
+                  }}>{t}</button>
+                )
+              })}
+            </div>
+          </div>
+
           {/* Team selector */}
           <div style={{ marginBottom: 10 }}>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>Winning Team</div>
@@ -454,7 +478,12 @@ export default function AuctionPanel() {
 
           {/* Confirm button */}
           <button
-            onClick={() => canConfirm && confirmSale()}
+            onClick={() => {
+              if (canConfirm) {
+                confirmSale()
+                toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
+              }
+            }}
             disabled={!canConfirm}
             title={canConfirm ? 'Or press Enter' : undefined}
             style={{

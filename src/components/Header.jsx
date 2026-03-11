@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { useAuctionStore, exportAuctionJSON, importAuctionJSON } from '../store/auctionStore.jsx'
+import AuctionLogView from './AuctionLogView.jsx'
 
 export default function Header({ onLeagueClick }) {
+  const [showAuctionLog, setShowAuctionLog] = useState(false)
   const { teams, sold, fryLens, toggleFryLens, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
   const fry = teams['FRY'] || {}
   const totalPot = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
@@ -138,6 +140,21 @@ export default function Header({ onLeagueClick }) {
         </button>
       )}
 
+      {/* Auction log */}
+      <button
+        onClick={() => setShowAuctionLog(true)}
+        disabled={auctionLog.length === 0}
+        style={{
+          ...iconBtn,
+          opacity: auctionLog.length === 0 ? 0.4 : 1,
+        }}
+        title="View full auction log with bargains/overpays"
+        onMouseEnter={e => { if (auctionLog.length > 0) { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}}
+        onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
+      >
+        📋 LOG
+      </button>
+
       {/* League board */}
       <button onClick={onLeagueClick} style={{
         background: 'var(--surface2)', border: '1px solid var(--border2)',
@@ -212,6 +229,35 @@ export default function Header({ onLeagueClick }) {
             }}
           >SAVE</button>
           <button onClick={() => setEditingKey(false)} style={{ ...iconBtn, padding: '5px 8px' }}>✕</button>
+        </div>
+      )}
+
+      {/* Auction Log modal */}
+      {showAuctionLog && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="auction-log-title"
+          onClick={e => e.target === e.currentTarget && setShowAuctionLog(false)}
+          style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,.82)',
+            zIndex: 300, display: 'flex', alignItems: 'flex-start',
+            justifyContent: 'center', paddingTop: 48, overflowY: 'auto',
+          }}
+        >
+          <div
+            style={{
+              background: 'var(--bg)', width: '95vw', maxWidth: 800,
+              maxHeight: '86vh', border: '1px solid var(--border2)',
+              borderRadius: 12, overflow: 'hidden',
+              display: 'flex', flexDirection: 'column',
+              boxShadow: '0 32px 80px rgba(0,0,0,.7)',
+            }}
+          >
+            <div style={{ overflowY: 'auto', flex: 1 }}>
+              <AuctionLogView onClose={() => setShowAuctionLog(false)} />
+            </div>
+          </div>
         </div>
       )}
     </header>
