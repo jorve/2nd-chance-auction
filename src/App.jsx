@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Header from './components/Header.jsx'
 import PlayerList from './components/PlayerList.jsx'
 import AuctionPanel from './components/AuctionPanel.jsx'
@@ -10,6 +10,29 @@ export default function App() {
   const [showLeague, setShowLeague] = useState(false)
   const [resumeBanner, setResumeBanner] = useState(() => savedSessionMeta())
   const soldCount = Object.keys(useAuctionStore(s => s.sold)).length
+  const leagueModalRef = useRef(null)
+
+  // League modal focus trap + ESC to close
+  useEffect(() => {
+    if (!showLeague) return
+    const el = leagueModalRef.current
+    if (!el) return
+    const focusables = el.querySelectorAll('button, [href], input, select, [tabindex]:not([tabindex="-1"])')
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (first) first.focus()
+    function trap(e) {
+      if (e.key === 'Escape') { setShowLeague(false); return }
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus() }
+      }
+    }
+    document.addEventListener('keydown', trap)
+    return () => document.removeEventListener('keydown', trap)
+  }, [showLeague])
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', padding: 6 }}>
@@ -65,6 +88,9 @@ export default function App() {
       {/* League Board modal */}
       {showLeague && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="league-board-title"
           onClick={e => e.target === e.currentTarget && setShowLeague(false)}
           style={{
             position: 'fixed', inset: 0, background: 'rgba(0,0,0,.82)',
@@ -72,19 +98,22 @@ export default function App() {
             justifyContent: 'center', paddingTop: 48,
           }}
         >
-          <div style={{
-            background: 'var(--bg)', width: '95vw', maxWidth: 1440,
-            maxHeight: '86vh', border: '1px solid var(--border2)',
-            borderRadius: 12, overflow: 'hidden',
-            display: 'flex', flexDirection: 'column',
-            boxShadow: '0 32px 80px rgba(0,0,0,.7)',
-          }}>
+          <div
+            ref={leagueModalRef}
+            style={{
+              background: 'var(--bg)', width: '95vw', maxWidth: 1440,
+              maxHeight: '86vh', border: '1px solid var(--border2)',
+              borderRadius: 12, overflow: 'hidden',
+              display: 'flex', flexDirection: 'column',
+              boxShadow: '0 32px 80px rgba(0,0,0,.7)',
+            }}
+          >
             <div style={{
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               padding: '14px 24px', background: 'var(--surface)',
               borderBottom: '1px solid var(--border)', flexShrink: 0,
             }}>
-              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3, color: 'var(--text)' }}>
+              <span id="league-board-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3, color: 'var(--text)' }}>
                 LEAGUE BOARD
               </span>
               <button

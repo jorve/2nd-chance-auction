@@ -22,7 +22,7 @@ function flagAmbiguous(results) {
 }
 
 // ── AI INTEL ──────────────────────────────────────────────────────────────────
-async function fetchPlayerIntel(player, type, apiKey) {
+async function fetchPlayerIntel(player, type, apiKey, signal) {
   if (!apiKey) throw new Error('No API key set — click SET API KEY in the top bar')
   const posLabel = type === 'BAT' ? 'hitter' : type === 'SP' ? 'starting pitcher' : 'relief pitcher'
   const prompt = `Search for the latest 2026 MLB news on ${player.name} (${player.team || 'Free Agent'}, ${posLabel}).
@@ -42,6 +42,7 @@ Reply with exactly 4 bullet points using this format:
 Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
+    signal,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -145,6 +146,7 @@ export default function AuctionPanel() {
   const [showReset, setShowReset] = useState(false)
   const [intel, setIntel] = useState(null)            // { text, loading, error, player }
   const searchRef = useRef()
+  const resetModalRef = useRef(null)
 
   const player = nominatedPlayer
   const type = getType(player)
@@ -154,22 +156,30 @@ export default function AuctionPanel() {
   const canConfirm = player && bidTeam && isValidBidPrice(bidPrice) && price <= (bidTeamData?.budget_current ?? Infinity)
 
   const allPlayers = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
-  const searchResults = search.trim().length >= 2
+  const searchResults = search.trim().length >= 1
     ? allPlayers.filter(p => p.name.toLowerCase().includes(search.toLowerCase().trim()))
         .sort((a, b) => a.name.toLowerCase().indexOf(search.toLowerCase()) - b.name.toLowerCase().indexOf(search.toLowerCase()))
         .slice(0, 8)
     : []
   const ambiguous = flagAmbiguous(searchResults)
 
-  // Fetch AI intel when player changes
+  // Fetch AI intel when player or API key changes (cancel stale requests)
   useEffect(() => {
     if (!player) { setIntel(null); return }
+    const abort = new AbortController()
     const t = getType(player)
     setIntel({ loading: true, text: null, error: null, player: player.name })
-    fetchPlayerIntel(player, t, apiKey)
-      .then(text => setIntel({ loading: false, text, error: null, player: player.name }))
-      .catch(err => setIntel({ loading: false, text: null, error: err.message, player: player.name }))
-  }, [player?.name])
+    fetchPlayerIntel(player, t, apiKey, abort.signal)
+      .then(text => {
+        if (abort.signal.aborted) return
+        setIntel({ loading: false, text, error: null, player: player.name })
+      })
+      .catch(err => {
+        if (abort.signal.aborted || err?.name === 'AbortError') return
+        setIntel({ loading: false, text: null, error: err.message, player: player.name })
+      })
+    return () => abort.abort()
+  }, [player?.name, apiKey])
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -177,6 +187,40 @@ export default function AuctionPanel() {
     document.addEventListener('mousedown', handle)
     return () => document.removeEventListener('mousedown', handle)
   }, [])
+
+  // Enter to confirm sale when form is ready (single-user draft speed)
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Enter' && canConfirm && !e.target.matches('input, textarea')) {
+        e.preventDefault()
+        confirmSale()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [canConfirm, confirmSale])
+
+  // Reset modal focus trap
+  useEffect(() => {
+    if (!showReset) return
+    const el = resetModalRef.current
+    if (!el) return
+    const focusables = el.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])')
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (first) first.focus()
+    function trap(e) {
+      if (e.key === 'Escape') { setShowReset(false); return }
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus() }
+      }
+    }
+    document.addEventListener('keydown', trap)
+    return () => document.removeEventListener('keydown', trap)
+  }, [showReset])
 
   const tierColors = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
   const tColor = player ? (tierColors[player.tier] || 'var(--text-dim)') : 'var(--text-dim)'
@@ -411,6 +455,7 @@ export default function AuctionPanel() {
           <button
             onClick={() => canConfirm && confirmSale()}
             disabled={!canConfirm}
+            title={canConfirm ? 'Or press Enter' : undefined}
             style={{
               width: '100%', marginTop: 12, padding: '11px',
               background: canConfirm ? 'var(--accent)' : 'var(--surface2)',
@@ -421,7 +466,7 @@ export default function AuctionPanel() {
               transition: 'all .15s',
             }}
           >
-            {canConfirm ? `✓ CONFIRM — ${bidTeam} GETS ${player.name} @ $${fmtPrice(bidPrice)}M` : 'SELECT TEAM + PRICE TO CONFIRM'}
+            {canConfirm ? `✓ CONFIRM — ${bidTeam} GETS ${player.name} @ ${fmtPrice(bidPrice)}` : 'SELECT TEAM + PRICE TO CONFIRM'}
           </button>
         </div>
       )}
@@ -447,9 +492,23 @@ export default function AuctionPanel() {
             </div>
           )}
 
-          {intel?.error && (
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)', padding: '8px 0' }}>
-              ⚠ Could not fetch intel: {intel.error}
+          {intel?.error && !intel.loading && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0' }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)', flex: 1 }}>
+                ⚠ {intel.error}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setIntel({ loading: true, text: null, error: null, player: player.name })
+                  fetchPlayerIntel(player, type, apiKey, new AbortController().signal)
+                    .then(text => setIntel({ loading: false, text, error: null, player: player.name }))
+                    .catch(err => setIntel({ loading: false, text: null, error: err.message, player: player.name }))
+                }}
+                style={{ ...ghostBtn, padding: '4px 8px', fontSize: 9, borderColor: 'var(--blue)', color: 'var(--blue)' }}
+              >
+                RETRY
+              </button>
             </div>
           )}
 
@@ -485,9 +544,9 @@ export default function AuctionPanel() {
 
       {/* Reset modal */}
       {showReset && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
-          <div style={{ background: 'var(--surface)', border: '1px solid var(--border2)', borderRadius: 12, padding: 28, maxWidth: 320, textAlign: 'center' }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET AUCTION?</div>
+        <div role="dialog" aria-modal="true" aria-labelledby="reset-modal-title" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
+          <div ref={resetModalRef} style={{ background: 'var(--surface)', border: '1px solid var(--border2)', borderRadius: 12, padding: 28, maxWidth: 320, textAlign: 'center' }}>
+            <div id="reset-modal-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET AUCTION?</div>
             <div style={{ color: 'var(--text-dim)', fontSize: 12, marginBottom: 20 }}>Clears all sales and restores all budgets.</div>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
               <button onClick={() => setShowReset(false)} style={ghostBtn}>CANCEL</button>

@@ -22,6 +22,7 @@ Required source files (set INPUT_DIR below):
 
 import csv, json, statistics, re
 from pathlib import Path
+from datetime import date
 from difflib import SequenceMatcher
 
 # ── PATHS ──────────────────────────────────────────────────────────────────────
@@ -985,7 +986,7 @@ def main():
             })
 
     data = {
-        "generated_at": "2026-03-09",
+        "generated_at": str(date.today()),
         "meta": {
             "total_budget": round(total_budget, 2),
             "hit_budget":   round(hit_budget, 2),

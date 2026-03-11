@@ -444,14 +444,17 @@ export default function PlayerList() {
 
                     {/* Name + positions + tags */}
                     <td style={{ ...tdBase, textAlign: 'left', maxWidth: 200, minWidth: 160 }}>
-                      <div
+                      <button
+                        type="button"
                         onClick={() => setSelectedPlayer(p)}
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.2)', textUnderlineOffset: 3 }}
-                        onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
-                        onMouseLeave={e => e.currentTarget.style.color = 'var(--text)'}
+                        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedPlayer(p) } }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.2)', textUnderlineOffset: 3, background: 'none', border: 'none', padding: 0, textAlign: 'left', width: '100%', display: 'block' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--accent)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text)' }}
+                        aria-label={`View details for ${p.name}`}
                       >
                         {p.name}
-                      </div>
+                      </button>
                       {p.positions?.length > 0 && (
                         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)', marginTop: 1, letterSpacing: 0.3 }}>
                           {p.positions.join(' · ')}
@@ -535,7 +538,9 @@ export default function PlayerList() {
                     {/* Nominate */}
                     <td style={{ padding: '5px 8px', textAlign: 'center' }}>
                       <button
+                        type="button"
                         onClick={() => setNominatedPlayer(p)}
+                        aria-label={`Nominate ${p.name} for auction`}
                         style={{
                           background: 'var(--surface2)', border: '1px solid var(--border2)',
                           borderRadius: 3, padding: '3px 8px',

@@ -117,6 +117,8 @@ export default function FryTargets() {
           return (
             <div
               key={`${p.name}_${p.team}`}
+              role="button"
+              tabIndex={0}
               style={{
                 display: 'flex', alignItems: 'center', gap: 8,
                 padding: '9px 14px', borderBottom: '1px solid var(--border)',
@@ -125,6 +127,15 @@ export default function FryTargets() {
               onMouseEnter={e => e.currentTarget.style.background = '#13161e'}
               onMouseLeave={e => e.currentTarget.style.background = ''}
               onClick={() => setSelectedPlayer(p)}
+              onDoubleClick={() => { setNominatedPlayer(p); setSelectedPlayer(null) }}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setNominatedPlayer(p)
+                  setSelectedPlayer(null)
+                }
+              }}
+              aria-label={`${p.name}, ${p._type}, $${p.adj_value}M. Double-click to nominate.`}
             >
               {/* Rank number */}
               <div style={{
@@ -180,7 +191,7 @@ export default function FryTargets() {
         fontFamily: "'DM Mono', monospace", fontSize: 8,
         color: 'var(--text-faint)', flexShrink: 0,
       }}>
-        Click any player to view card · Scored for FRY needs
+        Click to view card · Double-click or Enter to nominate
       </div>
 
       {/* Player card overlay */}

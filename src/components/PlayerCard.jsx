@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { FRY_NEEDS, TEAM_COLORS } from '../store/auctionStore.jsx'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -222,12 +222,34 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
   const frySignal = getFrySignal(player, fry, type)
   const hasAthletic = isSP && player.athl_rank != null
 
+  const modalRef = useRef(null)
+
   // ESC to close
   useEffect(() => {
     const fn = e => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', fn)
     return () => document.removeEventListener('keydown', fn)
   }, [onClose])
+
+  // Focus trap + initial focus
+  useEffect(() => {
+    const el = modalRef.current
+    if (!el) return
+    const focusables = el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (first) first.focus()
+    function trap(e) {
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus() }
+      }
+    }
+    document.addEventListener('keydown', trap)
+    return () => document.removeEventListener('keydown', trap)
+  }, [])
 
   // Score delta display
   const scoreDelta = player.oopsy_ldb_score != null
@@ -236,6 +258,9 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="player-card-title"
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
       style={{
         position: 'fixed', inset: 0, zIndex: 300,
@@ -244,12 +269,15 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
         overflowY: 'auto', padding: '32px 16px 64px',
       }}
     >
-      <div style={{
-        background: 'var(--surface)', border: `1px solid ${tColor}44`,
-        borderRadius: 12, width: '100%', maxWidth: 620,
-        boxShadow: `0 24px 80px rgba(0,0,0,.7), 0 0 0 1px ${tColor}22`,
-        position: 'relative',
-      }}>
+      <div
+        ref={modalRef}
+        style={{
+          background: 'var(--surface)', border: `1px solid ${tColor}44`,
+          borderRadius: 12, width: '100%', maxWidth: 620,
+          boxShadow: `0 24px 80px rgba(0,0,0,.7), 0 0 0 1px ${tColor}22`,
+          position: 'relative',
+        }}
+      >
 
         {/* ── HEADER ── */}
         <div style={{
@@ -273,7 +301,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
           {/* Name + team + hand */}
           <div style={{ marginRight: 36 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
+              <span id="player-card-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
                 {player.name}
               </span>
               {player.handedness && (

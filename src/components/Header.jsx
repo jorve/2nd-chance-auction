@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
-import { useAuctionStore, exportAuctionJSON, importAuctionJSON, savedSessionMeta } from '../store/auctionStore.jsx'
+import { useAuctionStore, exportAuctionJSON, importAuctionJSON } from '../store/auctionStore.jsx'
 
 export default function Header({ onLeagueClick }) {
   const { teams, sold, fryLens, toggleFryLens, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
@@ -126,11 +126,12 @@ export default function Header({ onLeagueClick }) {
       {auctionLog.length > 0 && (
         <button
           onClick={undoLastSale}
+          title="Undo last sale"
           style={iconBtn}
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--orange)'; e.currentTarget.style.color = 'var(--orange)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
         >
-          ↩ UNDO
+          ↩ UNDO LAST
           <span style={{ background: 'var(--border2)', borderRadius: 8, padding: '1px 6px', fontSize: 9 }}>
             {auctionLog.length}
           </span>

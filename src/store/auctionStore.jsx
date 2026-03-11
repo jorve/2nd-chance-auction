@@ -211,7 +211,6 @@ export const useAuctionStore = create((set, get) => ({
   auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, ts, rank, est_value }]
   
   // UI state
-  activeTab: 'rankings',
   rankingsTab: 'batters',
   projSystem: 'batx',   // 'batx' | 'oopsy' | 'both'
   fryLens: false,
@@ -224,7 +223,6 @@ export const useAuctionStore = create((set, get) => ({
   bidPrice: '',
 
   // ── ACTIONS ──────────────────────────────────────────────────────────────
-  setActiveTab: tab => set({ activeTab: tab }),
   setRankingsTab: tab => set({ rankingsTab: tab, searchQuery: '' }),
   setProjSystem: sys => set({ projSystem: sys }),
   toggleFryLens: () => set(s => ({ fryLens: !s.fryLens })),

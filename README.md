@@ -22,9 +22,9 @@ npm install
 ```bash
 python generate_data.py
 ```
-This reads all projection CSVs from `/mnt/project` and writes `src/data/ldb_data.js`.
+This reads projection CSVs from the `data/` folder and writes `src/data/ldb_data.js`.
 
-To use your own CSV paths, edit the `INPUT_DIR` variable at the top of `generate_data.py`.
+To use different CSV paths, edit the `INPUT_DIR` variable at the top of `generate_data.py`.
 
 ### 3. Run locally
 ```bash
@@ -59,12 +59,11 @@ Then re-run `python generate_data.py`.
 
 ## Workflow During Auction
 
-1. Open **Rankings** tab — browse by Batters / SP / RP
+1. Browse the **player list** (Batters / SP / RP tabs)
 2. Enable **FRY Lens** for bid signals
-3. Click **NOM →** next to any player to pre-fill the auction form
-4. Switch to **Live Auction** tab, select winning team + enter final price
-5. Click **CONFIRM SALE** — values update instantly across all tabs
-6. **League Board** shows real-time budget/slot tracking for all 16 teams
+3. Click **NOM** or double-click a FRY target to pre-fill the auction form
+4. Select winning team + enter final price, then **CONFIRM** (or press Enter)
+5. Values update instantly; **League Board** shows real-time budget/slot tracking
 
 ---
 
@@ -82,12 +81,15 @@ Then re-run `python generate_data.py`.
 ```
 ldb-auction/
 ├── generate_data.py          ← Run this to bake data
+├── data/                     ← Drop CSVs here
 ├── src/
 │   ├── data/ldb_data.js      ← Generated (do not edit manually)
 │   ├── store/auctionStore.jsx ← Zustand state + valuation engine
 │   └── components/
-│       ├── Header.jsx
-│       ├── RankingsView.jsx  ← Dual projection rankings table
-│       ├── AuctionView.jsx   ← Live sale entry + log
-│       └── LeagueView.jsx    ← 16-team league board
+│       ├── Header.jsx        ← Budget, undo, export/import, FRY lens
+│       ├── PlayerList.jsx    ← Rankings table + filters + NOM
+│       ├── AuctionPanel.jsx  ← Live sale entry + team/price + AI intel
+│       ├── FryTargets.jsx    ← Top 10 FRY targets (double-click to nom)
+│       ├── LeagueView.jsx   ← 16-team league board
+│       └── PlayerCard.jsx    ← Player detail modal
 ```
