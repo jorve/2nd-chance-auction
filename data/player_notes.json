@@ -25,12 +25,12 @@
     {
       "name": "Corbin Carroll",
       "tags": [
-        "DTD",
+        "IL_START",
         "BOUNCE_BACK"
       ],
-      "note": "Hamate surgery — limited impact on power per data (PL dropped only 2 spots). H3 keeper. LDB need: still elite OBP+OPS+aSB profile if healthy. Monitor recovery.",
-      "health_pct": 82,
-      "role": "ARI OF — hamate surgery, return timeline TBD"
+      "note": "Hamate surgery (right hand, mid-Feb). PL dropped only ~2 spots — minimal long-term power impact per data. Avg 26 HR / 40 SB / 114 R over 3 full seasons. Brief IL start expected but Diamondbacks not rushing. Top-10 upside when healthy.",
+      "health_pct": 80,
+      "role": "ARI OF — hamate surgery, brief IL start, ETA April"
     },
     {
       "name": "Drew Rasmussen",
@@ -104,12 +104,11 @@
       "_section": "SP — IL / DELAYED / INJURED",
       "name": "Gerrit Cole",
       "tags": [
-        "INJURED",
-        "DELAYED"
+        "INJURED"
       ],
-      "note": "TJ surgery 2024. Yankees rotation note says out until May/June at earliest. Half-season value at best — discount heavily.",
-      "health_pct": 45,
-      "role": "SP — return May/June"
+      "note": "Out for entire 2026 season. Missed all of 2025 after TJ surgery. DO NOT DRAFT.",
+      "health_pct": 0,
+      "role": "SP — out full 2026 season"
     },
     {
       "name": "Carlos Rodón",
@@ -395,12 +394,11 @@
       "_section": "RELIEVERS",
       "name": "Edwin Díaz",
       "tags": [
-        "INJURED",
-        "IL"
+        "SP_LOCKED"
       ],
-      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
-      "health_pct": 80,
-      "role": "Locked closer"
+      "note": "Signed 3-year $69M deal with the Dodgers. Now LAD closer — elite stuff, locked role. Removes the Mets save situation uncertainty.",
+      "health_pct": 90,
+      "role": "LAD — locked closer (signed 3yr/$69M)"
     },
     {
       "name": "Jhoan Duran",
@@ -420,12 +418,12 @@
       "_section": "OTHER",
       "name": "Blake Snell",
       "tags": [
-        "ROLE_UNCLEAR",
-        "AGING"
+        "INJURY_RISK",
+        "ROLE_UNCLEAR"
       ],
-      "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
-      "health_pct": 70,
-      "role": "TBD / unsigned"
+      "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
+      "health_pct": 65,
+      "role": "SP — durability risk, monitor spring"
     },
     {
       "name": "Bryce Elder",
@@ -768,11 +766,12 @@
     {
       "name": "Francisco Lindor",
       "tags": [
-        "DTD"
+        "DTD",
+        "BOUNCE_BACK"
       ],
-      "note": "Hamate surgery — PL dropped only a few spots, limited long-term power impact. 30 HR / 30 SB floor when healthy. Top SS in LDB OBP+OPS format.",
-      "health_pct": 82,
-      "role": "NYM SS — hamate surgery, monitor return"
+      "note": "Hamate surgery + elbow cleanup this offseason. Back in Cactus League. Hard-hit rate key metric to watch — may suppress power early. 30/30 floor when right. Top SS in OBP+OPS formats.",
+      "health_pct": 85,
+      "role": "NYM SS — back in spring lineup, monitor hard-hit rate"
     },
     {
       "name": "Sal Stewart",
@@ -955,9 +954,9 @@
         "BUST",
         "ADP_AVOID"
       ],
-      "note": "[PL #36, dropped 5] Zone-contact 73.8% — worst among 500+ PA qualifiers. Only player below 75% zone contact with 500+ PA. 'Poor man's Schwarber' comp. .250 BA floor is low end. LDB: OPS/OBP value but contact erosion is real risk.",
+      "note": "Back in Cactus League after brief hamstring tightness — should be fine for Opening Day. Zone-contact concerns remain (73.8% — worst among 500+ PA qualifiers). LDB: OPS/OBP value real but contact erosion is ongoing risk.",
       "health_pct": 90,
-      "role": "SFG 1B — concern over contact erosion"
+      "role": "SFG 1B — healthy for Opening Day"
     },
     {
       "name": "Byron Buxton",
@@ -1239,13 +1238,13 @@
     {
       "name": "Spencer Schwellenbach",
       "tags": [
-        "SP_LOCKED",
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "IL_START",
+        "INJURY_RISK",
+        "STASH"
       ],
-      "note": "PL #67 Injury Stash 1. ATL SP. TJ return, replacing Wentz in rotation. Big sinker + slider induces extreme groundball rates. ATL defense = ratios gold. Light workload initially but real value if it sticks.",
-      "health_pct": 65,
-      "role": "sp"
+      "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
+      "health_pct": 55,
+      "role": "ATL SP — bone spur surgery, ETA June 2026"
     },
     {
       "name": "Jared Jones",
@@ -1361,6 +1360,77 @@
       "note": "PL #170 Spec Add 2026 Prospect. STL SP. LHP with above-average command and developing breaking ball. Cardinals love him as rotation depth. Could see meaningful innings in 2026. Spec add only.",
       "health_pct": 82,
       "role": "sp"
+    },
+    {
+      "name": "Pablo López",
+      "tags": [
+        "INJURED"
+      ],
+      "note": "Torn UCL at start of spring training. Out for entire 2026 season. Posted 2.74 ERA over 14 starts in 2025. Dynasty stash only.",
+      "health_pct": 0,
+      "role": "MIN SP — torn UCL, out full 2026 season",
+      "_section": "SP — IL / DELAYED / INJURED"
+    },
+    {
+      "name": "Felix Bautista",
+      "tags": [
+        "INJURED"
+      ],
+      "note": "Labrum + rotator cuff surgery. Missed 2024 with TJ, saved 19 in 2025 before shoulder issues. Might not pitch at all in 2026. Ryan Helsley now closer in BAL.",
+      "health_pct": 5,
+      "role": "BAL RP — labrum+RC surgery, likely out full 2026",
+      "_section": "RELIEVERS"
+    },
+    {
+      "name": "Josh Hader",
+      "tags": [
+        "IL_START",
+        "INJURY_RISK"
+      ],
+      "note": "Left biceps inflammation has kept him off the mound all spring — hasn't progressed past flat-ground work. Follows 2025 shoulder strain (team says unrelated). Unlikely ready for Opening Day. Bryan Abreu covering closer role to start.",
+      "health_pct": 50,
+      "role": "HOU RP — biceps inflammation, Opening Day IL likely",
+      "_section": "RELIEVERS"
+    },
+    {
+      "name": "Ryan Helsley",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Added to Baltimore to close after Felix Bautista's surgery. Top-tier closer in his own right. Locked role in BAL.",
+      "health_pct": 95,
+      "role": "BAL — locked closer (replaces Bautista)",
+      "_section": "RELIEVERS"
+    },
+    {
+      "name": "Bryan Abreu",
+      "tags": [
+        "SP_LOCKED"
+      ],
+      "note": "Houston will not rush Hader (biceps) — Abreu is the closer to start 2026. High-leverage arm with closer stuff. Roster immediately.",
+      "health_pct": 95,
+      "role": "HOU RP — closer to open season (Hader out)",
+      "_section": "RELIEVERS"
+    },
+    {
+      "name": "Carlos Estévez",
+      "tags": [
+        "CLOSER_RISK"
+      ],
+      "note": "Average fastball velocity down ~6 mph from 2025 this spring. Still projects for 20-25 saves but ERA likely 3.50-4.00 range. Monitor velocity trend.",
+      "health_pct": 88,
+      "role": "RP — velocity down, closer situation to watch",
+      "_section": "RELIEVERS"
+    },
+    {
+      "name": "J.P. Crawford",
+      "tags": [
+        "DTD"
+      ],
+      "note": "Missed brief time with shoulder pain but back in Cactus League. Said he's played through worse. Barring setback, fine for Opening Day.",
+      "health_pct": 90,
+      "role": "SEA SS — shoulder rest, expected Opening Day ready",
+      "_section": "OTHER"
     }
   ]
 }
