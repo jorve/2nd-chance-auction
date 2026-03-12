@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { FRY_NEEDS, TEAM_COLORS } from '../store/auctionStore.jsx'
+import { useEffect, useRef, useState } from 'react'
+import { FRY_NEEDS, TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
@@ -211,9 +211,36 @@ function SectionLabel({ children }) {
 
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 export default function PlayerCard({ player, onClose, teams, onNominate }) {
+  if (!player) return null
   const type   = getType(player)
   const tColor = TIER_COLORS[player.tier] || 'var(--muted)'
   const fry    = teams['FRY'] || {}
+
+  const manualNote   = useAuctionStore(s => s.getNoteForPlayer(player.name))
+  const hasManual     = useAuctionStore(s => s.hasManualNote(player.name))
+  const setManualNote = useAuctionStore(s => s.setManualNote)
+  const deleteManual  = useAuctionStore(s => s.deleteManualNote)
+  const targetAvoid   = useAuctionStore(s => s.getTargetAvoid(player.name))
+  const toggleTargetAvoid = useAuctionStore(s => s.toggleTargetAvoid)
+
+  const effectiveNote = manualNote ?? player.note ?? ''
+  const [noteDraft, setNoteDraft] = useState(effectiveNote)
+  const [noteSaving, setNoteSaving] = useState(false)
+
+  useEffect(() => { setNoteDraft(effectiveNote) }, [effectiveNote, player.name])
+
+  async function handleSaveNote() {
+    setNoteSaving(true)
+    const ok = await setManualNote(player.name, noteDraft.trim())
+    setNoteSaving(false)
+  }
+
+  async function handleDeleteNote() {
+    setNoteSaving(true)
+    const ok = await deleteManual(player.name)
+    if (ok) setNoteDraft(player.note ?? '')
+    setNoteSaving(false)
+  }
 
   const isSP  = type === 'SP'
   const isRP  = type === 'RP'
@@ -222,12 +249,34 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
   const frySignal = getFrySignal(player, fry, type)
   const hasAthletic = isSP && player.athl_rank != null
 
+  const modalRef = useRef(null)
+
   // ESC to close
   useEffect(() => {
     const fn = e => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', fn)
     return () => document.removeEventListener('keydown', fn)
   }, [onClose])
+
+  // Focus trap + initial focus
+  useEffect(() => {
+    const el = modalRef.current
+    if (!el) return
+    const focusables = el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (first) first.focus()
+    function trap(e) {
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus() }
+      }
+    }
+    document.addEventListener('keydown', trap)
+    return () => document.removeEventListener('keydown', trap)
+  }, [])
 
   // Score delta display
   const scoreDelta = player.oopsy_ldb_score != null
@@ -236,6 +285,9 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="player-card-title"
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
       style={{
         position: 'fixed', inset: 0, zIndex: 300,
@@ -244,12 +296,15 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
         overflowY: 'auto', padding: '32px 16px 64px',
       }}
     >
-      <div style={{
-        background: 'var(--surface)', border: `1px solid ${tColor}44`,
-        borderRadius: 12, width: '100%', maxWidth: 620,
-        boxShadow: `0 24px 80px rgba(0,0,0,.7), 0 0 0 1px ${tColor}22`,
-        position: 'relative',
-      }}>
+      <div
+        ref={modalRef}
+        style={{
+          background: 'var(--surface)', border: `1px solid ${tColor}44`,
+          borderRadius: 12, width: '100%', maxWidth: 620,
+          boxShadow: `0 24px 80px rgba(0,0,0,.7), 0 0 0 1px ${tColor}22`,
+          position: 'relative',
+        }}
+      >
 
         {/* ── HEADER ── */}
         <div style={{
@@ -273,8 +328,8 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
           {/* Name + team + hand */}
           <div style={{ marginRight: 36 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
-                {player.name}
+              <span id="player-card-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
+                {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
               </span>
               {player.handedness && (
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)', letterSpacing: 1 }}>
@@ -303,13 +358,6 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1,
                 color: tColor, border: `1px solid ${tColor}55`, padding: '2px 7px', borderRadius: 3,
               }}>{TIER_NAMES[player.tier] || `T${player.tier}`}</span>
-
-              {/* Positions */}
-              {player.positions?.length > 0 && (
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)', letterSpacing: 0.5 }}>
-                  {player.positions.join(' · ')}
-                </span>
-              )}
 
               {/* ROFR */}
               {player.rfa_team && (
@@ -468,8 +516,86 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             </div>
           </>)}
 
-          {/* ── SCOUT / NOTES ── */}
-          {(player.note || player.pl_note || player.role || player.health_pct != null) && (<>
+          {/* ── TARGET / AVOID ── */}
+          <SectionLabel>Target / Avoid</SectionLabel>
+          <div style={{ display: 'flex', gap: 8, marginBottom: 4 }}>
+            <button
+              onClick={() => toggleTargetAvoid(player.name, targetAvoid === 'target' ? null : 'target')}
+              style={{
+                background: targetAvoid === 'target' ? 'rgba(74,222,128,.2)' : 'var(--surface2)',
+                border: `1px solid ${targetAvoid === 'target' ? 'var(--green)' : 'var(--border)'}`,
+                borderRadius: 4, padding: '5px 12px',
+                fontFamily: "'DM Mono', monospace", fontSize: 10,
+                color: targetAvoid === 'target' ? 'var(--green)' : 'var(--text-dim)',
+                cursor: 'pointer',
+              }}
+            >★ Target</button>
+            <button
+              onClick={() => toggleTargetAvoid(player.name, targetAvoid === 'avoid' ? null : 'avoid')}
+              style={{
+                background: targetAvoid === 'avoid' ? 'rgba(248,113,113,.2)' : 'var(--surface2)',
+                border: `1px solid ${targetAvoid === 'avoid' ? 'var(--red)' : 'var(--border)'}`,
+                borderRadius: 4, padding: '5px 12px',
+                fontFamily: "'DM Mono', monospace", fontSize: 10,
+                color: targetAvoid === 'avoid' ? 'var(--red)' : 'var(--text-dim)',
+                cursor: 'pointer',
+              }}
+            >✕ Avoid</button>
+          </div>
+
+          {/* ── MANUAL NOTE EDITOR ── */}
+          <SectionLabel>Manual Note</SectionLabel>
+          <div style={{
+            display: 'flex', flexDirection: 'column', gap: 8,
+            background: 'rgba(255,255,255,.02)', border: '1px solid var(--border)',
+            borderRadius: 6, padding: '10px 12px',
+          }}>
+            <textarea
+              value={noteDraft}
+              onChange={e => setNoteDraft(e.target.value)}
+              placeholder="Add a personal note for this player (saved to player_notes.json)"
+              rows={3}
+              style={{
+                width: '100%', resize: 'vertical', minHeight: 60,
+                background: 'var(--surface2)', border: '1px solid var(--border2)',
+                borderRadius: 4, padding: '8px 10px',
+                fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text)',
+                lineHeight: 1.5,
+              }}
+              aria-label="Manual note"
+            />
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <button
+                onClick={handleSaveNote}
+                disabled={noteSaving || noteDraft.trim() === (effectiveNote || '').trim()}
+                style={{
+                  padding: '6px 14px', borderRadius: 4, cursor: noteSaving ? 'wait' : 'pointer',
+                  background: 'var(--accent)', border: '1px solid var(--accent)',
+                  fontFamily: "'DM Mono', monospace", fontSize: 10, fontWeight: 600,
+                  color: '#0a0c10', letterSpacing: 1,
+                }}
+              >
+                {noteSaving ? 'Saving…' : 'Save'}
+              </button>
+              {hasManual && (
+                <button
+                  onClick={handleDeleteNote}
+                  disabled={noteSaving}
+                  style={{
+                    padding: '6px 14px', borderRadius: 4, cursor: noteSaving ? 'wait' : 'pointer',
+                    background: 'transparent', border: '1px solid var(--red)',
+                    fontFamily: "'DM Mono', monospace", fontSize: 10,
+                    color: 'var(--red)',
+                  }}
+                >
+                  Delete note
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* ── SCOUT INTEL ── */}
+          {(player.pl_note || player.role || player.health_pct != null) && (<>
             <SectionLabel>Scout Intel</SectionLabel>
 
             {/* Health + Role strip */}
@@ -500,19 +626,8 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
               </div>
             )}
 
-            {/* Manual scouting note */}
-            {player.note && (
-              <div style={{
-                background: 'rgba(255,255,255,.02)', borderLeft: `2px solid ${tColor}88`,
-                borderRadius: '0 5px 5px 0', padding: '8px 12px', marginBottom: 8,
-                fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)', lineHeight: 1.6,
-              }}>
-                {player.note}
-              </div>
-            )}
-
             {/* PL note */}
-            {player.pl_note && player.pl_note !== player.note && (
+            {player.pl_note && player.pl_note !== effectiveNote && (
               <div style={{
                 background: 'rgba(167,139,250,.04)', borderLeft: '2px solid rgba(167,139,250,.5)',
                 borderRadius: '0 5px 5px 0', padding: '8px 12px',

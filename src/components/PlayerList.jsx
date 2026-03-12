@@ -91,6 +91,8 @@ export default function PlayerList() {
     tierFilter, toggleTier,
     sold, setNominatedPlayer,
     teams,
+    toggleTargetAvoid,
+    getTargetAvoid,
   } = useAuctionStore()
 
   const [sortCol, setSortCol]               = useState('adj_value')
@@ -98,6 +100,7 @@ export default function PlayerList() {
   const [selectedPlayer, setSelectedPlayer] = useState(null)
   const [tagFilter, setTagFilter]           = useState(new Set())
   const [showTagPicker, setShowTagPicker]   = useState(false)
+  const [targetAvoidFilter, setTargetAvoidFilter] = useState(null) // 'target' | 'avoid' | null
 
   // Reset sort + filters when tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(1) }, [rankingsTab])
@@ -174,12 +177,16 @@ export default function PlayerList() {
       const playerTags = new Set(p.tags ?? [])
       if (![...tagFilter].some(t => playerTags.has(t))) return false
     }
+    if (targetAvoidFilter) {
+      const flag = getTargetAvoid(p.name)
+      if (!flag || flag !== targetAvoidFilter) return false
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       return p.name.toLowerCase().includes(q) || (p.team || '').toLowerCase().includes(q)
     }
     return true
-  }), [unsold, tierFilter, posFilter, tagFilter, searchQuery])
+  }), [unsold, tierFilter, posFilter, tagFilter, searchQuery, targetAvoidFilter, getTargetAvoid])
 
   const sorted = useMemo(() => [...filtered].sort((a, b) => {
     const av = a[sortCol] ?? 0, bv = b[sortCol] ?? 0
@@ -347,6 +354,19 @@ export default function PlayerList() {
 
         <div style={{ flex: 1 }} />
 
+        {/* Target / Avoid filter */}
+        <div style={{ display: 'flex', gap: 4 }}>
+          {[['target', '★'], ['avoid', '✕']].map(([key, label]) => (
+            <button key={key} onClick={() => setTargetAvoidFilter(prev => prev === key ? null : key)} title={key === 'target' ? 'Target only' : 'Avoid only'} style={{
+              background: targetAvoidFilter === key ? (key === 'target' ? 'rgba(74,222,128,.2)' : 'rgba(248,113,113,.2)') : 'transparent',
+              border: `1px solid ${targetAvoidFilter === key ? (key === 'target' ? 'var(--green)' : 'var(--red)') : 'var(--border)'}`,
+              borderRadius: 4, padding: '3px 6px', fontSize: 11,
+              color: targetAvoidFilter === key ? (key === 'target' ? 'var(--green)' : 'var(--red)') : 'var(--text-dim)',
+              cursor: 'pointer',
+            }}>{label}</button>
+          ))}
+        </div>
+
         {/* Tier filters */}
         {[1,2,3,4,5].map(t => (
           <button key={t} onClick={() => toggleTier(t)} style={{
@@ -444,19 +464,41 @@ export default function PlayerList() {
 
                     {/* Name + positions + tags */}
                     <td style={{ ...tdBase, textAlign: 'left', maxWidth: 200, minWidth: 160 }}>
-                      <div
+                      <span style={{ display: 'inline-flex', gap: 4, alignItems: 'center', marginRight: 6 }}>
+                        <button
+                          type="button"
+                          onClick={e => { e.stopPropagation(); toggleTargetAvoid(p.name, getTargetAvoid(p.name) === 'target' ? null : 'target') }}
+                          title="Mark as target"
+                          style={{
+                            background: getTargetAvoid(p.name) === 'target' ? 'rgba(74,222,128,.25)' : 'transparent',
+                            border: 'none', padding: '0 2px', cursor: 'pointer',
+                            color: getTargetAvoid(p.name) === 'target' ? 'var(--green)' : 'var(--text-faint)',
+                            fontSize: 12,
+                          }}
+                        >★</button>
+                        <button
+                          type="button"
+                          onClick={e => { e.stopPropagation(); toggleTargetAvoid(p.name, getTargetAvoid(p.name) === 'avoid' ? null : 'avoid') }}
+                          title="Mark as avoid"
+                          style={{
+                            background: getTargetAvoid(p.name) === 'avoid' ? 'rgba(248,113,113,.25)' : 'transparent',
+                            border: 'none', padding: '0 2px', cursor: 'pointer',
+                            color: getTargetAvoid(p.name) === 'avoid' ? 'var(--red)' : 'var(--text-faint)',
+                            fontSize: 12,
+                          }}
+                        >✕</button>
+                      </span>
+                      <button
+                        type="button"
                         onClick={() => setSelectedPlayer(p)}
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.2)', textUnderlineOffset: 3 }}
-                        onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
-                        onMouseLeave={e => e.currentTarget.style.color = 'var(--text)'}
+                        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedPlayer(p) } }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.2)', textUnderlineOffset: 3, background: 'none', border: 'none', padding: 0, textAlign: 'left', width: '100%', display: 'block' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--accent)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text)' }}
+                        aria-label={`View details for ${p.name}${p.positions?.length ? `, ${p.positions.join(', ')}` : ''}`}
                       >
-                        {p.name}
-                      </div>
-                      {p.positions?.length > 0 && (
-                        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)', marginTop: 1, letterSpacing: 0.3 }}>
-                          {p.positions.join(' · ')}
-                        </div>
-                      )}
+                        {p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}
+                      </button>
                       {p.tags?.length > 0 && (
                         <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap', marginTop: 2 }}>
                           {p.tags.map(tag => <MiniTag key={tag} tag={tag} />)}
@@ -535,7 +577,9 @@ export default function PlayerList() {
                     {/* Nominate */}
                     <td style={{ padding: '5px 8px', textAlign: 'center' }}>
                       <button
+                        type="button"
                         onClick={() => setNominatedPlayer(p)}
+                        aria-label={`Nominate ${p.name} for auction`}
                         style={{
                           background: 'var(--surface2)', border: '1px solid var(--border2)',
                           borderRadius: 3, padding: '3px 8px',

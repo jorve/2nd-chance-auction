@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
 import { LDB_DATA } from '../data/ldb_data.js'
 
@@ -10,20 +11,102 @@ export default function LeagueView() {
   // Budget bar max
   const maxBudget = Math.max(...teamList.map(t => t.budget_initial ?? t.budget_rem))
 
-  // Build per-team roster from sold + initial keepers
+  // Inflation & spend pace
+  const metrics = useMemo(() => {
+    const allPlayers = [...batters, ...sp, ...rp]
+    const unsold = allPlayers.filter(p => !sold[p.name])
+    const totalRemaining = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
+    const totalSpent = auctionLog.reduce((s, e) => s + e.price, 0)
+    const meta = LDB_DATA.meta || {}
+    const totalBudget = meta.total_budget || (totalRemaining + totalSpent)
+    const remainingValue = unsold.reduce((s, p) => s + (p.est_value ?? 0), 0)
+    const inflation = remainingValue > 0 ? ((totalRemaining / remainingValue) - 1) * 100 : 0
+    const playerPct = allPlayers.length > 0 ? (Object.keys(sold).length / allPlayers.length) * 100 : 0
+    const budgetPct = totalBudget > 0 ? (totalSpent / totalBudget) * 100 : 0
+    return { inflation, playerPct, budgetPct, unsold, totalRemaining, remainingValue }
+  }, [batters, sp, rp, sold, teams, auctionLog])
+
+  // Who's left: by position, elite count
+  const whosLeft = useMemo(() => {
+    const unsold = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
+    const byPos = {}
+    let elite = 0
+    for (const p of unsold) {
+      for (const pos of (p.positions || [])) {
+        byPos[pos] = (byPos[pos] || 0) + 1
+      }
+      if (p.tier <= 2) elite++
+    }
+    return { byPos, elite }
+  }, [batters, sp, rp, sold])
+
+  // Pre-auction validation
+  const validation = useMemo(() => {
+    const meta = LDB_DATA.meta || {}
+    const totalBudget = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
+    const expectedBudget = meta.total_budget || 0
+    const totalSlots = Object.values(teams).reduce((s, t) => s + (t.slots_current ?? 0), 0)
+    const issues = []
+    if (Math.abs(totalBudget - expectedBudget) > 0.01) {
+      issues.push(`Budget mismatch: $${Math.round(totalBudget)}M remaining vs expected $${Math.round(expectedBudget)}M total`)
+    }
+    return { ok: issues.length === 0, issues, totalBudget, totalSlots }
+  }, [teams, auctionLog])
+
   function getTeamWins(abbr) {
     return auctionLog.filter(e => e.team === abbr)
   }
 
   return (
     <div style={{ padding: 24 }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
         <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3, color: 'var(--text)' }}>
           LEAGUE BOARD — 2026 AUCTION
         </h2>
+        {auctionLog.length === 0 && (
+          <span style={{
+            fontFamily: "'DM Mono', monospace", fontSize: 10,
+            color: validation.ok ? 'var(--green)' : 'var(--orange)',
+            background: validation.ok ? 'rgba(74,222,128,.1)' : 'rgba(251,146,60,.1)',
+            padding: '4px 10px', borderRadius: 4,
+          }}>
+            {validation.ok ? '✓ Pre-auction OK' : `⚠ ${validation.issues[0]}`}
+          </span>
+        )}
         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }}>
           {Object.keys(sold).length} players sold · ${Math.round(auctionLog.reduce((s, e) => s + e.price, 0))}M spent
         </div>
+      </div>
+
+      {/* Inflation + spend pace */}
+      <div style={{
+        display: 'flex', gap: 12, marginBottom: 16, flexWrap: 'wrap',
+        background: 'rgba(255,255,255,.03)', border: '1px solid var(--border)',
+        borderRadius: 8, padding: '12px 16px',
+      }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', letterSpacing: 1 }}>
+          INFLATION <span style={{ color: metrics.inflation > 15 ? 'var(--orange)' : 'var(--text)', fontWeight: 600 }}>{metrics.inflation.toFixed(1)}%</span>
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', letterSpacing: 1 }}>
+          SPEND PACE <span style={{ color: 'var(--text)', fontWeight: 600 }}>{metrics.playerPct.toFixed(0)}%</span> players · <span style={{ fontWeight: 600 }}>{metrics.budgetPct.toFixed(0)}%</span> budget
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', letterSpacing: 1 }}>
+          $/VALUE <span style={{ color: 'var(--purple)', fontWeight: 600 }}>
+            {metrics.remainingValue > 0 ? `$${(metrics.totalRemaining / metrics.remainingValue).toFixed(2)}M` : '—'}
+          </span> per LDB point
+        </div>
+      </div>
+
+      {/* Who's left */}
+      <div style={{
+        display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap',
+        fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)',
+      }}>
+        <span>LEFT: </span>
+        {Object.entries(whosLeft.byPos).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([pos, n]) => (
+          <span key={pos} style={{ background: 'var(--border)', padding: '2px 8px', borderRadius: 4 }}>{pos}: {n}</span>
+        ))}
+        <span style={{ color: 'var(--t1)', fontWeight: 600 }}>T1–2: {whosLeft.elite}</span>
       </div>
 
       {/* Summary bar */}

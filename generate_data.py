@@ -22,6 +22,7 @@ Required source files (set INPUT_DIR below):
 
 import csv, json, statistics, re
 from pathlib import Path
+from datetime import date
 from difflib import SequenceMatcher
 
 # ── PATHS ──────────────────────────────────────────────────────────────────────
@@ -52,6 +53,7 @@ MIN_IP  = 20
 HIT_SPLIT = 0.50
 SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
+RP_VALUE_SCALE = 0.80  # Scale RP values down (fewer innings than SPs)
 
 FRY_TEAM = "FRY"
 FRY_KEEPERS = ["Ronald Acuña Jr.", "Rafael Devers", "Brent Rooker",
@@ -71,18 +73,42 @@ POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def norm(name):
-    return (name.lower().strip()
-        .replace("á","a").replace("é","e").replace("í","i")
-        .replace("ó","o").replace("ú","u").replace("ü","u").replace("ñ","n")
-        .replace(".","").replace("-"," ").replace("'","")
-        .replace(" jr","").replace(" iii","").replace(" ii","")
-        .replace("  "," ").strip())
+    """Normalize name for matching: lowercase, strip accents, remove suffixes, collapse whitespace."""
+    if not name or not isinstance(name, str):
+        return ""
+    s = name.lower().strip()
+    s = s.replace("á","a").replace("é","e").replace("í","i").replace("ó","o")
+    s = s.replace("ú","u").replace("ü","u").replace("ñ","n").replace("ö","o")
+    s = s.replace(".","").replace("-"," ").replace("'","").replace("`","")
+    # Remove common suffixes (order matters: longer first)
+    for suf in (" jr", " sr", " iii", " iv", " ii"):
+        if s.endswith(suf):
+            s = s[: -len(suf)]
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
-def abbrev_match(short, full):
-    s, f = norm(short).split(), norm(full).split()
-    if len(s) < 2 or len(f) < 2: return False
-    if s[-1] != f[-1]: return False
-    return f[0].startswith(s[0].replace(".",""))
+def strip_team_suffix(name):
+    """Remove trailing parenthetical team code e.g. ' (MIL)' or '(NYY)' from draft board names."""
+    if not name or not isinstance(name, str):
+        return name
+    return re.sub(r"\s*\([A-Za-z0-9]+\)\s*$", "", name).strip()
+
+def abbrev_match(name_a, name_b):
+    """
+    Check if two names refer to the same player, handling:
+    - Abbreviated first names (J. Rodriguez <-> Julio Rodriguez)
+    - Works bidirectionally (either name may be abbreviated)
+    """
+    s, f = norm(name_a).split(), norm(name_b).split()
+    if len(s) < 2 or len(f) < 2:
+        return False
+    if s[-1] != f[-1]:  # last name must match
+        return False
+    # First name: either one is abbreviation of the other
+    a0, b0 = s[0].replace(".", ""), f[0].replace(".", "")
+    if not a0 or not b0:
+        return False
+    return a0.startswith(b0) or b0.startswith(a0)
 
 def fuzzy(a, b, thresh=0.88):
     return SequenceMatcher(None, norm(a), norm(b)).ratio() >= thresh
@@ -127,13 +153,27 @@ def calc_mgs_per_gs(row):
     if gs == 0: return 0.0
     return calc_mgs_season(row) / gs
 
-def is_unavailable(proj_name, unavail_set):
+def names_match(proj_name, draft_name):
+    """
+    Core matching logic: projection CSV name vs draft board name.
+    Handles abbreviations, accents, suffixes, team codes in draft names.
+    """
+    draft_clean = strip_team_suffix(draft_name)
     n = norm(proj_name)
+    t = norm(draft_clean)
+    if n == t:
+        return True
+    if abbrev_match(proj_name, draft_clean):
+        return True
+    if SequenceMatcher(None, n, t).ratio() >= 0.87:
+        return True
+    return False
+
+def is_unavailable(proj_name, unavail_set):
+    """Check if projection player is owned or in AA on the draft board."""
     for taken in unavail_set:
-        t = norm(taken)
-        if n == t: return True
-        if abbrev_match(taken, proj_name): return True
-        if SequenceMatcher(None, n, t).ratio() > 0.90: return True
+        if names_match(proj_name, taken):
+            return True
     return False
 
 def get_rfa_team(proj_name, rfa_norm):
@@ -469,7 +509,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
-    eligible = assign_est_values(eligible, budget)
+    eligible = assign_est_values(eligible, budget * RP_VALUE_SCALE)
 
     results = []
     for i, p in enumerate(eligible):
@@ -739,19 +779,25 @@ def apply_pl_sp(players: list, pl_index: dict) -> list:
 
 # ── PLAYER NOTES & SMART TAGS ─────────────────────────────────────────────────
 
-def load_player_notes(path: Path) -> dict:
-    """Load player_notes.json → dict keyed by normalised name."""
+def load_player_notes(path: Path) -> tuple[dict, dict]:
+    """Load player_notes.json → (notes_index, manual_notes).
+    notes_index: dict keyed by normalised name from players array.
+    manual_notes: dict keyed by normalised name (UI-added notes, take precedence).
+    """
     if not path.exists():
         print(f"  [notes] {path.name} not found — skipping qualitative data")
-        return {}
+        return {}, {}
     with open(path, encoding="utf-8") as f:
         raw = json.load(f)
     index = {}
     for entry in raw.get("players", []):
         key = norm(entry["name"])
         index[key] = entry
-    print(f"  [notes] Loaded {len(index)} player notes from {path.name}")
-    return index
+    manual = raw.get("manual_notes") or {}
+    if not isinstance(manual, dict):
+        manual = {}
+    print(f"  [notes] Loaded {len(index)} player notes, {len(manual)} manual notes from {path.name}")
+    return index, manual
 
 
 def auto_tags_batter(p: dict) -> list:
@@ -890,8 +936,10 @@ def apply_athletic_sp(players: list, athl_index: dict) -> list:
     return players
 
 
-def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
-    """Merge manual notes + auto tags into each player record."""
+def apply_notes(players: list, notes_index: dict, manual_notes: dict, pool_type: str) -> list:
+    """Merge manual notes + auto tags into each player record.
+    manual_notes (UI-added) take precedence over note_entry.note.
+    """
     auto_fn = TAG_AUTO_FN.get(pool_type)
     for p in players:
         key = norm(p["name"])
@@ -904,10 +952,13 @@ def apply_notes(players: list, notes_index: dict, pool_type: str) -> list:
                     break
         auto = auto_fn(p) if auto_fn else []
         manual_tags = list(note_entry.get("tags", [])) if note_entry else []
-        # Merge: manual tags win; auto tags fill in what isn't already covered
         all_tags = list(dict.fromkeys(manual_tags + [t for t in auto if t not in manual_tags]))
         p["tags"]       = all_tags
-        p["note"]       = (note_entry or {}).get("note", "")
+        # Manual note (from UI) overrides note from players array
+        if key in manual_notes and manual_notes[key]:
+            p["note"] = manual_notes[key]
+        else:
+            p["note"] = (note_entry or {}).get("note", "")
         p["health_pct"] = (note_entry or {}).get("health_pct", 100)
         p["role"]       = (note_entry or {}).get("role", "")
     return players
@@ -953,7 +1004,7 @@ def main():
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
-    notes_index  = load_player_notes(PLAYER_NOTES)
+    notes_index, manual_notes = load_player_notes(PLAYER_NOTES)
     pl_index     = load_pl_batters(PL_BATTERS)
     pl_sp_index  = load_pl_sp(PL_SP)
     athl_sp_index = load_athletic_sp(ATHLETIC_SP)
@@ -963,9 +1014,9 @@ def main():
     sp      = merge_rankings(atc_sp,       oopsy_sp)
     rp      = merge_rankings(atc_rp,       oopsy_rp)
 
-    batters = apply_notes(batters, notes_index, "batters")
-    sp      = apply_notes(sp,      notes_index, "sp")
-    rp      = apply_notes(rp,      notes_index, "rp")
+    batters = apply_notes(batters, notes_index, manual_notes, "batters")
+    sp      = apply_notes(sp,      notes_index, manual_notes, "sp")
+    rp      = apply_notes(rp,      notes_index, manual_notes, "rp")
 
     # PL enrichment
     batters = apply_pl_batters(batters, pl_index)
@@ -984,14 +1035,17 @@ def main():
                 "contract": info["contract"], "pos": info["pos"]
             })
 
+    num_teams = len(teams)
+    pos_slots = {pos: slots * num_teams for pos, slots in POS_SLOTS_PER_TEAM.items()}
     data = {
-        "generated_at": "2026-03-09",
+        "generated_at": str(date.today()),
         "meta": {
             "total_budget": round(total_budget, 2),
             "hit_budget":   round(hit_budget, 2),
             "sp_budget":    round(sp_budget, 2),
             "rp_budget":    round(rp_budget, 2),
             "min_pa": MIN_PA, "min_gs": MIN_GS, "min_ip": MIN_IP,
+            "pos_slots_total": pos_slots,
         },
         "teams": teams,
         "roster_by_team": roster_by_team,

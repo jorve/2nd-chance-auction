@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
+import { toast } from './Toast.jsx'
+import PlayerCard from './PlayerCard.jsx'
 import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
 
 function getType(p) {
@@ -22,7 +24,7 @@ function flagAmbiguous(results) {
 }
 
 // ── AI INTEL ──────────────────────────────────────────────────────────────────
-async function fetchPlayerIntel(player, type, apiKey) {
+async function fetchPlayerIntel(player, type, apiKey, signal) {
   if (!apiKey) throw new Error('No API key set — click SET API KEY in the top bar')
   const posLabel = type === 'BAT' ? 'hitter' : type === 'SP' ? 'starting pitcher' : 'relief pitcher'
   const prompt = `Search for the latest 2026 MLB news on ${player.name} (${player.team || 'Free Agent'}, ${posLabel}).
@@ -42,6 +44,7 @@ Reply with exactly 4 bullet points using this format:
 Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
+    signal,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -134,8 +137,11 @@ export default function AuctionPanel() {
     nominatedPlayer, setNominatedPlayer,
     bidTeam, setBidTeam,
     bidPrice, setBidPrice,
+    nominatedBy, setNominatedBy,
+    currentNominator,
     confirmSale,
     teams, resetAuction,
+    getNoteForPlayer,
   } = useAuctionStore()
 
   const { apiKey } = useApiKeyStore()
@@ -143,8 +149,10 @@ export default function AuctionPanel() {
   const [search, setSearch] = useState('')
   const [focused, setFocused] = useState(false)
   const [showReset, setShowReset] = useState(false)
+  const [showPlayerCard, setShowPlayerCard] = useState(false)
   const [intel, setIntel] = useState(null)            // { text, loading, error, player }
   const searchRef = useRef()
+  const resetModalRef = useRef(null)
 
   const player = nominatedPlayer
   const type = getType(player)
@@ -154,22 +162,30 @@ export default function AuctionPanel() {
   const canConfirm = player && bidTeam && isValidBidPrice(bidPrice) && price <= (bidTeamData?.budget_current ?? Infinity)
 
   const allPlayers = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
-  const searchResults = search.trim().length >= 2
+  const searchResults = search.trim().length >= 1
     ? allPlayers.filter(p => p.name.toLowerCase().includes(search.toLowerCase().trim()))
         .sort((a, b) => a.name.toLowerCase().indexOf(search.toLowerCase()) - b.name.toLowerCase().indexOf(search.toLowerCase()))
         .slice(0, 8)
     : []
   const ambiguous = flagAmbiguous(searchResults)
 
-  // Fetch AI intel when player changes
+  // Fetch AI intel when player or API key changes (cancel stale requests)
   useEffect(() => {
     if (!player) { setIntel(null); return }
+    const abort = new AbortController()
     const t = getType(player)
     setIntel({ loading: true, text: null, error: null, player: player.name })
-    fetchPlayerIntel(player, t, apiKey)
-      .then(text => setIntel({ loading: false, text, error: null, player: player.name }))
-      .catch(err => setIntel({ loading: false, text: null, error: err.message, player: player.name }))
-  }, [player?.name])
+    fetchPlayerIntel(player, t, apiKey, abort.signal)
+      .then(text => {
+        if (abort.signal.aborted) return
+        setIntel({ loading: false, text, error: null, player: player.name })
+      })
+      .catch(err => {
+        if (abort.signal.aborted || err?.name === 'AbortError') return
+        setIntel({ loading: false, text: null, error: err.message, player: player.name })
+      })
+    return () => abort.abort()
+  }, [player?.name, apiKey])
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -177,6 +193,41 @@ export default function AuctionPanel() {
     document.addEventListener('mousedown', handle)
     return () => document.removeEventListener('mousedown', handle)
   }, [])
+
+  // Enter to confirm sale when form is ready (single-user draft speed)
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Enter' && canConfirm && !e.target.matches('input, textarea')) {
+        e.preventDefault()
+        if (player) toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
+        confirmSale()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [canConfirm, confirmSale, player, bidTeam, bidPrice])
+
+  // Reset modal focus trap
+  useEffect(() => {
+    if (!showReset) return
+    const el = resetModalRef.current
+    if (!el) return
+    const focusables = el.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])')
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (first) first.focus()
+    function trap(e) {
+      if (e.key === 'Escape') { setShowReset(false); return }
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus() }
+      }
+    }
+    document.addEventListener('keydown', trap)
+    return () => document.removeEventListener('keydown', trap)
+  }, [showReset])
 
   const tierColors = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
   const tColor = player ? (tierColors[player.tier] || 'var(--text-dim)') : 'var(--text-dim)'
@@ -249,7 +300,7 @@ export default function AuctionPanel() {
                     <span style={{ width: 6, height: 6, borderRadius: '50%', background: tc, display: 'inline-block', flexShrink: 0 }} />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
-                        <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 500 }}>{p.name}</span>
+                        <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 500 }}>{p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}</span>
                         {isAmb && <span style={{ fontSize: 8, background: 'rgba(251,146,60,.15)', color: 'var(--orange)', border: '1px solid var(--orange)', padding: '1px 4px', borderRadius: 2 }}>SIMILAR NAME</span>}
                         <span style={{ fontSize: 10, color: 'var(--text-dim)', fontFamily: "'DM Mono', monospace" }}>{p.team || 'FA'}</span>
                         <span style={{ fontSize: 9, color: pt === 'BAT' ? 'var(--t1)' : pt === 'SP' ? 'var(--blue)' : 'var(--orange)', fontFamily: "'DM Mono', monospace" }}>{pt}</span>
@@ -265,7 +316,7 @@ export default function AuctionPanel() {
         )}
       </div>
 
-      {/* ── Player card ── */}
+      {/* ── Player card (info only — no click-to-open; avoids stray click from dropdown selection) ── */}
       {player && (
         <div style={{
           background: 'var(--surface)', border: `1px solid ${tColor}44`,
@@ -275,7 +326,16 @@ export default function AuctionPanel() {
           {/* Name + meta */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
             <div>
-              <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>{player.name}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                <div style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 4 }}>
+                {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
+                </div>
+                <button
+                  type="button"
+                  onClick={e => { e.stopPropagation(); setShowPlayerCard(true) }}
+                  style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, padding: '2px 6px', background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 3, color: 'var(--text-dim)', cursor: 'pointer' }}
+                >VIEW CARD</button>
+              </div>
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text)', fontWeight: 600 }}>{player.team || 'FA'}</span>
                 <TypeBadge type={type} />
@@ -283,11 +343,6 @@ export default function AuctionPanel() {
                 {player.rfa_team && (
                   <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: player.rfa_team === 'FRY' ? 'var(--fry)' : 'var(--orange)', border: '1px solid currentColor', padding: '1px 5px', borderRadius: 3 }}>
                     ROFR: {player.rfa_team}
-                  </span>
-                )}
-                {(player.positions?.length > 0) && (
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)' }}>
-                    {player.positions.join(' · ')}
                   </span>
                 )}
               </div>
@@ -322,15 +377,15 @@ export default function AuctionPanel() {
             </div>
           )}
 
-          {/* Manual scouting note */}
-          {player.note && (
+          {/* Manual scouting note (includes UI-added notes) */}
+          {(getNoteForPlayer(player.name) ?? player.note) && (
             <div style={{
               marginTop: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 11,
               color: 'var(--text-dim)', lineHeight: 1.5,
               background: 'rgba(255,255,255,.03)', borderLeft: '2px solid var(--border2)',
               padding: '6px 10px', borderRadius: '0 4px 4px 0',
             }}>
-              {player.note}
+              {getNoteForPlayer(player.name) ?? player.note}
             </div>
           )}
         </div>
@@ -360,6 +415,28 @@ export default function AuctionPanel() {
       {/* ── Bid controls ── */}
       {player && (
         <div style={{ marginBottom: 12 }}>
+          {/* Nominated by */}
+          <div style={{ marginBottom: 10 }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>
+              Nominated by <span style={{ color: 'var(--text-faint)', fontWeight: 400 }}>(next: {currentNominator || TEAMS_LIST[0]})</span>
+            </div>
+            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+              {TEAMS_LIST.map(t => {
+                const active = nominatedBy === t
+                const tc = TEAM_COLORS[t] || 'var(--text-dim)'
+                return (
+                  <button key={t} onClick={() => setNominatedBy(active ? '' : t)} style={{
+                    background: active ? `${tc}22` : 'var(--surface)',
+                    border: `1px solid ${active ? tc : 'var(--border)'}`,
+                    borderRadius: 4, padding: '3px 6px',
+                    fontFamily: "'DM Mono', monospace", fontSize: 9,
+                    color: active ? tc : 'var(--text-dim)', cursor: 'pointer',
+                  }}>{t}</button>
+                )
+              })}
+            </div>
+          </div>
+
           {/* Team selector */}
           <div style={{ marginBottom: 10 }}>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>Winning Team</div>
@@ -409,8 +486,14 @@ export default function AuctionPanel() {
 
           {/* Confirm button */}
           <button
-            onClick={() => canConfirm && confirmSale()}
+            onClick={() => {
+              if (canConfirm) {
+                confirmSale()
+                toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
+              }
+            }}
             disabled={!canConfirm}
+            title={canConfirm ? 'Or press Enter' : undefined}
             style={{
               width: '100%', marginTop: 12, padding: '11px',
               background: canConfirm ? 'var(--accent)' : 'var(--surface2)',
@@ -421,7 +504,7 @@ export default function AuctionPanel() {
               transition: 'all .15s',
             }}
           >
-            {canConfirm ? `✓ CONFIRM — ${bidTeam} GETS ${player.name} @ $${fmtPrice(bidPrice)}M` : 'SELECT TEAM + PRICE TO CONFIRM'}
+            {canConfirm ? `✓ CONFIRM — ${bidTeam} GETS ${player.name} @ ${fmtPrice(bidPrice)}` : 'SELECT TEAM + PRICE TO CONFIRM'}
           </button>
         </div>
       )}
@@ -447,9 +530,23 @@ export default function AuctionPanel() {
             </div>
           )}
 
-          {intel?.error && (
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)', padding: '8px 0' }}>
-              ⚠ Could not fetch intel: {intel.error}
+          {intel?.error && !intel.loading && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0' }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)', flex: 1 }}>
+                ⚠ {intel.error}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setIntel({ loading: true, text: null, error: null, player: player.name })
+                  fetchPlayerIntel(player, type, apiKey, new AbortController().signal)
+                    .then(text => setIntel({ loading: false, text, error: null, player: player.name }))
+                    .catch(err => setIntel({ loading: false, text: null, error: err.message, player: player.name }))
+                }}
+                style={{ ...ghostBtn, padding: '4px 8px', fontSize: 9, borderColor: 'var(--blue)', color: 'var(--blue)' }}
+              >
+                RETRY
+              </button>
             </div>
           )}
 
@@ -470,6 +567,16 @@ export default function AuctionPanel() {
         </div>
       )}
 
+      {/* Full player card overlay (explicit button only — avoids stray click from dropdown) */}
+      {player && showPlayerCard && (
+        <PlayerCard
+          player={player}
+          teams={teams}
+          onClose={() => setShowPlayerCard(false)}
+          onNominate={p => { setNominatedPlayer(p); setShowPlayerCard(false) }}
+        />
+      )}
+
       {/* Empty state */}
       {!player && (
         <div style={{ padding: '32px 0', textAlign: 'center' }}>
@@ -485,9 +592,9 @@ export default function AuctionPanel() {
 
       {/* Reset modal */}
       {showReset && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
-          <div style={{ background: 'var(--surface)', border: '1px solid var(--border2)', borderRadius: 12, padding: 28, maxWidth: 320, textAlign: 'center' }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET AUCTION?</div>
+        <div role="dialog" aria-modal="true" aria-labelledby="reset-modal-title" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
+          <div ref={resetModalRef} style={{ background: 'var(--surface)', border: '1px solid var(--border2)', borderRadius: 12, padding: 28, maxWidth: 320, textAlign: 'center' }}>
+            <div id="reset-modal-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET AUCTION?</div>
             <div style={{ color: 'var(--text-dim)', fontSize: 12, marginBottom: 20 }}>Clears all sales and restores all budgets.</div>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
               <button onClick={() => setShowReset(false)} style={ghostBtn}>CANCEL</button>

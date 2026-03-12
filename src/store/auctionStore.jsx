@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { LDB_DATA } from '../data/ldb_data.js'
+import { norm } from '../utils/norm.js'
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcValues(players, teams, soldMap) {
@@ -18,28 +19,73 @@ function recalcValues(players, teams, soldMap) {
   const unsold = players.filter(p => !soldMap[p.name])
   if (!unsold.length || totalRemaining <= 0) return players.map(p => ({ ...p }))
 
-  // Split by type for budget allocation
   const isBatter = p => p.pa !== undefined
   const isSP     = p => p.gs !== undefined
-
-  const hitBudget = totalRemaining * 0.50
-  const spBudget  = totalRemaining * 0.30
-  const rpBudget  = totalRemaining * 0.20
-
-  function allocGroup(group, budget) {
-    const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
-    if (!positiveTotal) return group.map(p => ({ ...p, adj_value: 0.5 }))
-    return group.map(p => ({
-      ...p,
-      adj_value: p.ldb_score > 0
-        ? Math.max(0.5, Math.round((p.ldb_score / positiveTotal) * budget * 2) / 2)
-        : 0.5
-    }))
+  const numTeams = Object.keys(teams).length
+  const POS_SLOTS = { C: 1, "1B": 1, "2B": 1, "3B": 1, SS: 1, OF: 3, CF: 1, RF: 1, UT: 1, SP: 6, RP: 3 }
+  const slotDemand = {}
+  for (const [pos, perTeam] of Object.entries(POS_SLOTS)) slotDemand[pos] = perTeam * numTeams
+  const supply = {}
+  for (const p of unsold) for (const pos of (p.positions || [])) supply[pos] = (supply[pos] || 0) + 1
+  function scarcityMult(positions) {
+    if (!positions?.length) return 1
+    let maxScarcity = 1
+    for (const pos of positions) {
+      const demand = slotDemand[pos], s = supply[pos] || 1
+      if (demand && s > 0 && s < demand * 1.1) maxScarcity = Math.max(maxScarcity, Math.min(1.3, demand / s))
+    }
+    return maxScarcity
   }
+
+  // Dynamic budget split: based on slots to fill vs players remaining (scarcity)
+  const BATTER_SLOTS_PER_TEAM = 11  // C+1B+2B+3B+SS+OF+CF+RF+UT
+  const SP_SLOTS_PER_TEAM = 6
+  const RP_SLOTS_PER_TEAM = 3
+  const totalBatterSlots = BATTER_SLOTS_PER_TEAM * numTeams
+  const totalSPSlots = SP_SLOTS_PER_TEAM * numTeams
+  const totalRPSlots = RP_SLOTS_PER_TEAM * numTeams
+
+  const soldBatters = Object.values(soldMap).filter(s => s.pos_type === 'batter').length
+  const soldSP = Object.values(soldMap).filter(s => s.pos_type === 'sp').length
+  const soldRP = Object.values(soldMap).filter(s => s.pos_type === 'rp').length
 
   const unsoldBatters = unsold.filter(isBatter)
   const unsoldSP      = unsold.filter(isSP)
   const unsoldRP      = unsold.filter(p => !isBatter(p) && !isSP(p))
+
+  const batterSlotsToFill = Math.max(0, totalBatterSlots - soldBatters)
+  const spSlotsToFill = Math.max(0, totalSPSlots - soldSP)
+  const rpSlotsToFill = Math.max(0, totalRPSlots - soldRP)
+
+  const batterScarcity = unsoldBatters.length > 0 ? batterSlotsToFill / unsoldBatters.length : 0
+  const spScarcity = unsoldSP.length > 0 ? spSlotsToFill / unsoldSP.length : 0
+  const rpScarcity = unsoldRP.length > 0 ? rpSlotsToFill / unsoldRP.length : 0
+  const totalScarcity = batterScarcity + spScarcity + rpScarcity
+  // Blend dynamic scarcity with baseline (50/30/20); bench slots (11/team) absorb any type, so don't overcorrect
+  const BLEND = 0.5  // 50% dynamic, 50% baseline
+  const baseline = { hit: 0.50, sp: 0.30, rp: 0.20 }
+  const dyn = totalScarcity > 0
+    ? { hit: batterScarcity / totalScarcity, sp: spScarcity / totalScarcity, rp: rpScarcity / totalScarcity }
+    : baseline
+  const hitShare = BLEND * baseline.hit + (1 - BLEND) * dyn.hit
+  const spShare  = BLEND * baseline.sp  + (1 - BLEND) * dyn.sp
+  const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
+  const hitBudget = totalRemaining * hitShare
+  const spBudget  = totalRemaining * spShare
+  const RP_VALUE_SCALE = 0.80  // Scale RP values down (fewer innings than SPs)
+  const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
+
+  function allocGroup(group, budget) {
+    const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
+    if (!positiveTotal) return group.map(p => ({ ...p, adj_value: 0.5 }))
+    const scarcityWeighted = group.reduce((s, p) => s + Math.max(0, p.ldb_score) * scarcityMult(p.positions), 0)
+    if (!scarcityWeighted) return group.map(p => ({ ...p, adj_value: 0.5 }))
+    return group.map(p => {
+      const mult = scarcityMult(p.positions)
+      const rawShare = (p.ldb_score > 0 ? (p.ldb_score * mult) / scarcityWeighted : 0) * budget
+      return { ...p, adj_value: p.ldb_score > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5 }
+    })
+  }
 
   const adjBatters = allocGroup(unsoldBatters, hitBudget)
   const adjSP      = allocGroup(unsoldSP, spBudget)
@@ -111,7 +157,7 @@ export function fmtPrice(val) {
 // ── PERSISTENCE ────────────────────────────────────────────────────────────
 const LS_KEY = 'ldb_auction_2026'
 
-function saveToStorage(sold, teams, auctionLog) {
+function saveToStorage(sold, teams, auctionLog, currentNominator, targetAvoid) {
   try {
     localStorage.setItem(LS_KEY, JSON.stringify({
       v: 1,
@@ -119,6 +165,8 @@ function saveToStorage(sold, teams, auctionLog) {
       sold,
       teams,
       auctionLog,
+      currentNominator: currentNominator || undefined,
+      targetAvoid: targetAvoid && Object.keys(targetAvoid).length > 0 ? targetAvoid : undefined,
     }))
   } catch (e) {
     console.warn('LDB: localStorage save failed', e)
@@ -131,7 +179,19 @@ function loadFromStorage() {
     if (!raw) return null
     const parsed = JSON.parse(raw)
     if (parsed?.v !== 1 || !parsed.sold || !parsed.teams) return null
-    return parsed
+    const log = parsed.auctionLog || []
+    const teamsList = Object.keys(parsed.teams || {}).sort()
+    for (let i = 0; i < log.length; i++) {
+      if (!log[i].nominatedBy && teamsList.length) {
+        log[i].nominatedBy = teamsList[i % teamsList.length]
+      }
+    }
+    return {
+      ...parsed,
+      auctionLog: log,
+      currentNominator: parsed.currentNominator || '',
+      targetAvoid: parsed.targetAvoid || {},
+    }
   } catch {
     return null
   }
@@ -208,10 +268,16 @@ export const useAuctionStore = create((set, get) => ({
   // Live auction state
   teams:      _init?.teams      ?? initialTeams,
   sold:       _init?.sold       ?? {},    // { playerName: { price, team, pos_type } }
-  auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, ts, rank, est_value }]
+  auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, nominatedBy, ts, rank, est_value }]
+  currentNominator: _saved?.currentNominator ?? '',
   
+  // Manual player notes (persisted to player_notes.json via API)
+  manualNotes: {},
+
+  // Target/avoid flags (persisted)
+  targetAvoid: _saved?.targetAvoid ?? {},
+
   // UI state
-  activeTab: 'rankings',
   rankingsTab: 'batters',
   projSystem: 'batx',   // 'batx' | 'oopsy' | 'both'
   fryLens: false,
@@ -222,9 +288,61 @@ export const useAuctionStore = create((set, get) => ({
   nominatedPlayer: null,
   bidTeam: '',
   bidPrice: '',
+  nominatedBy: '',       // team that put player on block (for auction log)
+  currentNominator: '',  // next team to nominate (round-robin)
+
+  // ── MANUAL NOTES ──────────────────────────────────────────────────────────
+  fetchManualNotes: async () => {
+    try {
+      const r = await fetch('/api/player-notes')
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+    } catch {
+      set({ manualNotes: {} })
+    }
+  },
+  setManualNote: async (playerName, note) => {
+    try {
+      const r = await fetch('/api/player-notes', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: playerName, note: note || '' }),
+      })
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+      return true
+    } catch (e) {
+      console.warn('LDB: Failed to save manual note', e)
+      return false
+    }
+  },
+  deleteManualNote: async (playerName) => {
+    try {
+      const r = await fetch(`/api/player-notes?name=${encodeURIComponent(playerName)}`, {
+        method: 'DELETE',
+      })
+      if (!r.ok) throw new Error(r.statusText)
+      const d = await r.json()
+      set({ manualNotes: d.manual_notes || {} })
+      return true
+    } catch (e) {
+      console.warn('LDB: Failed to delete manual note', e)
+      return false
+    }
+  },
+  getNoteForPlayer: (playerName) => {
+    const { manualNotes } = get()
+    const key = norm(playerName)
+    return manualNotes[key] ?? null
+  },
+  hasManualNote: (playerName) => {
+    const { manualNotes } = get()
+    return norm(playerName) in manualNotes
+  },
 
   // ── ACTIONS ──────────────────────────────────────────────────────────────
-  setActiveTab: tab => set({ activeTab: tab }),
   setRankingsTab: tab => set({ rankingsTab: tab, searchQuery: '' }),
   setProjSystem: sys => set({ projSystem: sys }),
   toggleFryLens: () => set(s => ({ fryLens: !s.fryLens })),
@@ -241,15 +359,29 @@ export const useAuctionStore = create((set, get) => ({
   }),
   setBidTeam: t => set({ bidTeam: t }),
   setBidPrice: p => set({ bidPrice: p }),
+  setNominatedBy: team => set({ nominatedBy: team }),
+  setCurrentNominator: team => set({ currentNominator: team }),
+
+  toggleTargetAvoid: (playerName, flag) => {
+    const { targetAvoid } = get()
+    const next = { ...targetAvoid }
+    if (flag === null) delete next[playerName]
+    else next[playerName] = flag
+    set({ targetAvoid: next })
+    saveToStorage(get().sold, get().teams, get().auctionLog, get().currentNominator, next)
+  },
+  getTargetAvoid: (playerName) => get().targetAvoid[playerName] ?? null,
 
   confirmSale: () => {
-    const { nominatedPlayer, bidTeam, bidPrice, sold, auctionLog, teams } = get()
+    const { nominatedPlayer, bidTeam, bidPrice, sold, auctionLog, teams, nominatedBy, currentNominator, targetAvoid } = get()
     if (!nominatedPlayer || !bidTeam || !bidPrice) return
     const price = parseFloat(bidPrice)
     if (isNaN(price) || price < 0.5) return
 
     const posType = nominatedPlayer.gs !== undefined ? 'sp'
       : nominatedPlayer.pa !== undefined ? 'batter' : 'rp'
+
+    const nominator = nominatedBy || currentNominator || TEAMS_LIST[auctionLog.length % TEAMS_LIST.length]
 
     const newSold = {
       ...sold,
@@ -269,6 +401,7 @@ export const useAuctionStore = create((set, get) => ({
         team_mlb: nominatedPlayer.team,
         price,
         team: bidTeam,
+        nominatedBy: nominator,
         pos_type: posType,
         est_value: nominatedPlayer.est_value,
         oopsy_est_value: nominatedPlayer.oopsy_est_value,
@@ -278,11 +411,13 @@ export const useAuctionStore = create((set, get) => ({
       ...auctionLog,
     ]
 
+    const nextNominator = TEAMS_LIST[(TEAMS_LIST.indexOf(nominator) + 1) % TEAMS_LIST.length]
+
     const newBatters = recalcValues(get().batters, newTeams, newSold)
     const newSP      = recalcValues(get().sp,      newTeams, newSold)
     const newRP      = recalcValues(get().rp,      newTeams, newSold)
 
-    saveToStorage(newSold, newTeams, newLog)
+    saveToStorage(newSold, newTeams, newLog, nextNominator, targetAvoid)
     set({
       sold: newSold,
       teams: newTeams,
@@ -293,11 +428,13 @@ export const useAuctionStore = create((set, get) => ({
       nominatedPlayer: null,
       bidTeam: '',
       bidPrice: '',
+      nominatedBy: '',
+      currentNominator: nextNominator,
     })
   },
 
   undoLastSale: () => {
-    const { auctionLog, sold, teams } = get()
+    const { auctionLog, sold, teams, currentNominator, targetAvoid } = get()
     if (!auctionLog.length) return
     const last = auctionLog[0]
     const newSold = { ...sold }
@@ -311,11 +448,12 @@ export const useAuctionStore = create((set, get) => ({
       }
     }
     const newLog = auctionLog.slice(1)
+    const prevNominator = last.nominatedBy || TEAMS_LIST[(TEAMS_LIST.indexOf(currentNominator || TEAMS_LIST[0]) - 1 + TEAMS_LIST.length) % TEAMS_LIST.length]
     const newBatters = recalcValues(get().batters, newTeams, newSold)
     const newSP      = recalcValues(get().sp,      newTeams, newSold)
     const newRP      = recalcValues(get().rp,      newTeams, newSold)
-    saveToStorage(newSold, newTeams, newLog)
-    set({ sold: newSold, teams: newTeams, auctionLog: newLog, batters: newBatters, sp: newSP, rp: newRP })
+    saveToStorage(newSold, newTeams, newLog, prevNominator, targetAvoid)
+    set({ sold: newSold, teams: newTeams, auctionLog: newLog, batters: newBatters, sp: newSP, rp: newRP, currentNominator: prevNominator })
   },
 
   resetAuction: () => {
@@ -335,9 +473,16 @@ export const useAuctionStore = create((set, get) => ({
 
   // Load a snapshot from an imported file and rebuild state
   restoreFromSnapshot: (snapshot) => {
-    const state = buildStateFromSnapshot(snapshot)
-    saveToStorage(state.sold, state.teams, state.auctionLog)
-    set({ ...state, nominatedPlayer: null, bidTeam: '', bidPrice: '' })
+    const log = snapshot.auctionLog || []
+    const teamsList = TEAMS_LIST
+    for (let i = 0; i < log.length; i++) {
+      if (!log[i].nominatedBy && teamsList.length) log[i].nominatedBy = teamsList[i % teamsList.length]
+    }
+    const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log })
+    const nom = snapshot.currentNominator || ''
+    const ta = snapshot.targetAvoid || {}
+    saveToStorage(state.sold, state.teams, state.auctionLog, nom, ta)
+    set({ ...state, nominatedPlayer: null, bidTeam: '', bidPrice: '', targetAvoid: ta, currentNominator: nom })
   },
 
   // Derived helpers
