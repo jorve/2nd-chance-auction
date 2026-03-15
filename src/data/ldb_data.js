@@ -161,91 +161,141 @@ export const LDB_DATA = {
         "name": "Brophy",
         "salary": 154.62,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "Ag. Ramirez",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "K. Manzardo",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "J. Caminero",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "J. Wilson",
         "salary": 2.25,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "CF"
+        ]
       },
       {
         "name": "B. Buxton",
         "salary": 9.0,
         "contract": "K3",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "W. Langford",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "A. Barger",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "3B",
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "W. Abreu",
         "salary": 3.15,
         "contract": "K3",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "P. Skenes",
         "salary": 1.5,
         "contract": "S2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "L. Webb",
         "salary": 21.6,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "E. Sheehan",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "A. Ashby",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "L. O'Hoppe",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "BN"
+        "pos": "BN",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "R. Lewis",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "BN"
+        "pos": "BN",
+        "positions": [
+          "3B"
+        ]
       }
     ],
     "ICHI": [
@@ -253,49 +303,76 @@ export const LDB_DATA = {
         "name": "Jay/Paul",
         "salary": 176.96,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "W. Contreras",
         "salary": 13.5,
         "contract": "K3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "C. Rafaela",
         "salary": 4.05,
         "contract": "K3",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B",
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "M. Machado",
         "salary": 18.0,
         "contract": "K2",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "L. Butler",
         "salary": 0.5,
         "contract": "K3",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "N. Lodolo",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "N. Cameron",
         "salary": 0.5,
         "contract": "H2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "P. Maton",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       }
     ],
     "WIND": [
@@ -303,61 +380,89 @@ export const LDB_DATA = {
         "name": "Sean",
         "salary": 166.85,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "A. Rutschman",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "M. Chapman",
         "salary": 6.75,
         "contract": "K3",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "T. Story",
         "salary": 3.15,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "R. Weathers",
         "salary": 5.85,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "G. Kirby",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "S. Bieber",
         "salary": 6.3,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "M. Gore",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "K. Bubic",
         "salary": 0.5,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "E. Pagan",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "CF"
+        ]
       }
     ],
     "NEO": [
@@ -365,73 +470,109 @@ export const LDB_DATA = {
         "name": "Tim",
         "salary": 102.13,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "G. Moreno",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "N. Kurtz",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "L. Keaschall",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B"
+        ]
       },
       {
         "name": "Z. Neto",
         "salary": 6.3,
         "contract": "K3",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "J.H. Lee",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "B. Marsh",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "J. Aranda",
         "salary": 5.85,
         "contract": "K2",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "J. deGrom",
         "salary": 18.1,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "C. Ragans",
         "salary": 36.9,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "T. Rogers",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "N. Eovaldi",
         "salary": 10.8,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       }
     ],
     "FRY": [
@@ -439,55 +580,83 @@ export const LDB_DATA = {
         "name": "Jorve",
         "salary": 112.87,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "C. Raleigh",
         "salary": 6.75,
         "contract": "K3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "B. Rooker",
         "salary": 17.1,
         "contract": "K2",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "R. Acuna",
         "salary": 41.8,
         "contract": "K2",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "R. Greene",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "OF"
+        ]
       },
       {
         "name": "C. Carroll",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "D. Rasmussen",
         "salary": 10.8,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "M. Liberatore",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "A. Munoz",
         "salary": 5.85,
         "contract": "K2",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       }
     ],
     "POLL": [
@@ -495,49 +664,70 @@ export const LDB_DATA = {
         "name": "Anton",
         "salary": 106.88,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "B. Turang",
         "salary": 7.2,
         "contract": "K2",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B"
+        ]
       },
       {
         "name": "J. Ramirez",
         "salary": 39.6,
         "contract": "K3",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "J. Pena",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "T. Grisham",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "M. Fried",
         "salary": 26.1,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "J. Musgrove",
         "salary": 1.35,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": []
       },
       {
         "name": "T. Megill",
         "salary": 2.7,
         "contract": "K2",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP"
+        ]
       }
     ],
     "ROOF": [
@@ -545,67 +735,99 @@ export const LDB_DATA = {
         "name": "Mark",
         "salary": 155.73,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "D. Dingler",
         "salary": 3.0,
         "contract": "HTH",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "C. Abrams",
         "salary": 1.5,
         "contract": "S2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "J. Rodriguez",
         "salary": 1.5,
         "contract": "S2",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "K. Tucker",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "F. Valdez",
         "salary": 25.2,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "F. Peralta",
         "salary": 17.1,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "K. Gausman",
         "salary": 8.55,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "H. Brown",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "R. Pepiot",
         "salary": 17.1,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "S. Smith",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP"
+        ]
       }
     ],
     "IPA": [
@@ -613,91 +835,140 @@ export const LDB_DATA = {
         "name": "Chris/Vijay",
         "salary": 144.35,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "S. Torkelson",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "N. Gorman",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B",
+          "3B"
+        ]
       },
       {
         "name": "C. Durbin",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "B. Bichette",
         "salary": 16.2,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "D. Varsho",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "A. Pages",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "S. Frelick",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "V. Scott II",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "G. Cole",
         "salary": 10.8,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": []
       },
       {
         "name": "D. May",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "B. Bello",
         "salary": 3.6,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "S. Gray",
         "salary": 15.3,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "B. King",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       },
       {
         "name": "R. Detmers",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       }
     ],
     "IZZY": [
@@ -705,55 +976,87 @@ export const LDB_DATA = {
         "name": "Ray",
         "salary": 144.57,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "B. Donovan",
         "salary": 3.6,
         "contract": "K3",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B",
+          "OF"
+        ]
       },
       {
         "name": "C. Montgomery",
         "salary": 0.5,
         "contract": "H1",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "B. Witt",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "P. Crow-Armstrong",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "A. Judge",
         "salary": 47.7,
         "contract": "K3",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "J. Caballero",
         "salary": 0.9,
         "contract": "K2",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "2B",
+          "3B",
+          "SS",
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "R. Nelson",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "B. Woodruff",
         "salary": 5.4,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       }
     ],
     "WORK": [
@@ -761,49 +1064,74 @@ export const LDB_DATA = {
         "name": "Dubner",
         "salary": 172.79,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "S. Perez",
         "salary": 4.5,
         "contract": "K3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C",
+          "1B"
+        ]
       },
       {
         "name": "T. Turner",
         "salary": 26.1,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "J. Marsee",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "B. Doyle",
         "salary": 0.5,
         "contract": "K3",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "C. Schlittler",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "R. Suarez",
         "salary": 3.15,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "G. Williams",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "2B"
+        ]
       }
     ],
     "CORN": [
@@ -811,97 +1139,149 @@ export const LDB_DATA = {
         "name": "Ryan",
         "salary": 129.23,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "H. Goodman",
         "salary": 4.95,
         "contract": "K2",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "K. Marte",
         "salary": 17.1,
         "contract": "K3",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B"
+        ]
       },
       {
         "name": "M. Garcia",
         "salary": 3.6,
         "contract": "K2",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B",
+          "SS"
+        ]
       },
       {
         "name": "G. Perdomo",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "J. Soto",
         "salary": 49.5,
         "contract": "K3",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "O. Cruz",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "T. Hernandez",
         "salary": 22.5,
         "contract": "K2",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "T. Bibee",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "J. Jones",
         "salary": 1.5,
         "contract": "S2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "G. Stone",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": []
       },
       {
         "name": "G. Crochet",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "R. Sasaki",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "M. Miller",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "I. Seymour",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "G. Lux",
         "salary": 1.0,
         "contract": "H2",
-        "pos": "BN"
+        "pos": "BN",
+        "positions": [
+          "2B",
+          "OF"
+        ]
       }
     ],
     "AIDS": [
@@ -909,79 +1289,118 @@ export const LDB_DATA = {
         "name": "Josh",
         "salary": 160.17,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "A. Kirk",
         "salary": 1.35,
         "contract": "K2",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "B. Stott",
         "salary": 5.4,
         "contract": "K2",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B"
+        ]
       },
       {
         "name": "D. Swanson",
         "salary": 9.0,
         "contract": "K2",
-        "pos": "SS"
+        "pos": "SS",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "J.Wood",
         "salary": 1.0,
         "contract": "S1",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "OF"
+        ]
       },
       {
         "name": "J. Lowe",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "G. Springer",
         "salary": 4.5,
         "contract": "K2",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "R. Ray",
         "salary": 6.75,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "A. Abbott",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "S. Imanaga",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "S. Baz",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "E. Cabrera",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "RF"
+        ]
       },
       {
         "name": "B. Pfaadt",
         "salary": 1.5,
         "contract": "H3",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP"
+        ]
       }
     ],
     "TONES": [
@@ -989,55 +1408,82 @@ export const LDB_DATA = {
         "name": "Michael",
         "salary": 134.47,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "W. Smith",
         "salary": 10.8,
         "contract": "K2",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "M. Busch",
         "salary": 1.5,
         "contract": "S2",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "G. Torres",
         "salary": 4.95,
         "contract": "K2",
-        "pos": "2B"
+        "pos": "2B",
+        "positions": [
+          "2B"
+        ]
       },
       {
         "name": "E. Suarez",
         "salary": 3.15,
         "contract": "K3",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "C. Rodon",
         "salary": 12.6,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "M. Burrows",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "J. Duran",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "A. Chapman",
         "salary": 2.7,
         "contract": "K2",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       }
     ],
     "NATE": [
@@ -1045,49 +1491,74 @@ export const LDB_DATA = {
         "name": "Nathan",
         "salary": 109.91,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "S. Langeliers",
         "salary": 0.9,
         "contract": "K3",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "B. Rice",
         "salary": 6.75,
         "contract": "K2",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "C",
+          "1B"
+        ]
       },
       {
         "name": "D. Lile",
         "salary": 6.0,
         "contract": "HTH",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "C. Sanchez",
         "salary": 9.0,
         "contract": "K3",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SS"
+        ]
       },
       {
         "name": "B. Woo",
         "salary": 28.8,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "K. Senga",
         "salary": 4.0,
         "contract": "H4",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "C. Sale",
         "salary": 31.5,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       }
     ],
     "PWRS": [
@@ -1095,49 +1566,75 @@ export const LDB_DATA = {
         "name": "Starr",
         "salary": 149.44,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "M. Harris",
         "salary": 7.5,
         "contract": "S4",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "K. Stowers",
         "salary": 0.9,
         "contract": "K2",
-        "pos": "RF"
+        "pos": "RF",
+        "positions": [
+          "RF",
+          "OF"
+        ]
       },
       {
         "name": "I. Herrera",
         "salary": 2.7,
         "contract": "K2",
-        "pos": "UT"
+        "pos": "UT",
+        "positions": [
+          "DH"
+        ]
       },
       {
         "name": "N. Pivetta",
         "salary": 9.9,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "K. Bradish",
         "salary": 1.8,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP"
+        ]
       },
       {
         "name": "B. Ashcraft",
         "salary": 0.9,
         "contract": "K2",
-        "pos": "SP"
+        "pos": "SP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       },
       {
         "name": "J. Wrobleski",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "SP",
+          "RP"
+        ]
       }
     ],
     "BALK": [
@@ -1145,43 +1642,63 @@ export const LDB_DATA = {
         "name": "Ian",
         "salary": 97.8,
         "contract": "",
-        "pos": "2026"
+        "pos": "2026",
+        "positions": []
       },
       {
         "name": "K. Teel",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "C"
+        "pos": "C",
+        "positions": [
+          "C"
+        ]
       },
       {
         "name": "P. Alonso",
         "salary": 29.7,
         "contract": "K1",
-        "pos": "1B"
+        "pos": "1B",
+        "positions": [
+          "1B"
+        ]
       },
       {
         "name": "A. Bohm",
         "salary": 4.0,
         "contract": "S3",
-        "pos": "3B"
+        "pos": "3B",
+        "positions": [
+          "3B"
+        ]
       },
       {
         "name": "G. Stanton",
         "salary": 0.5,
         "contract": "K2",
-        "pos": "OF"
+        "pos": "OF",
+        "positions": [
+          "OF"
+        ]
       },
       {
         "name": "T.J. Friedl",
         "salary": 3.15,
         "contract": "K3",
-        "pos": "CF"
+        "pos": "CF",
+        "positions": [
+          "CF",
+          "OF"
+        ]
       },
       {
         "name": "D. Palencia",
         "salary": 2.0,
         "contract": "HTH",
-        "pos": "RP"
+        "pos": "RP",
+        "positions": [
+          "RP"
+        ]
       }
     ]
   },
@@ -1222,260 +1739,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "S. Basallo",
-    "D. Garcia",
-    "K. Allard",
-    "S. Torkelson",
-    "K. Watson",
-    "T. Beede",
-    "L. Hernandez",
-    "C. Abrams",
-    "J. Arnold",
-    "C. Spangenberg",
-    "A. Baddoo",
-    "K. Griffin",
-    "R. Lewis",
-    "F. Whitley",
-    "K. Robinson",
-    "C. Burns",
-    "D. Whitney",
-    "N. Pearson",
-    "A. Miller",
-    "J. P. Martinez",
-    "C. Smith",
-    "C. Dana",
-    "M. Luciano",
-    "O. Colas",
-    "C. Emerson",
-    "E. Morales",
-    "D. Jones",
-    "B. Eldridge",
-    "E. Green",
-    "J. De Jesus Gonzalez",
-    "C. Early",
-    "J. Crawford",
-    "T. Black",
-    "J. Turner",
-    "Jah. Jones",
-    "T. Bazzana",
-    "J. Groshans",
-    "M. Mayer",
-    "A. Gracia",
-    "J. Rodriguez",
-    "Q. Priester",
-    "H. Davis",
-    "R. Herrera",
-    "M. Liberatore",
-    "A. Freeland",
-    "R. Waldschmidt",
-    "R. Contreras",
-    "R. Calaz",
-    "J. Jobe",
-    "B. House",
-    "A. Meyer",
-    "B. Thompson",
-    "N. McLean",
-    "R. Vilade",
-    "C. Williams",
-    "F. Arias",
-    "S. Howard",
-    "L. Armenteros",
-    "D. Crews",
-    "P. Messick",
-    "D. Espino",
-    "R. Mauricio",
-    "L. Doyle",
-    "N. Schultz",
-    "E. Rodriguez",
-    "S. Zavala",
-    "C. Martin",
-    "C. Norby",
-    "E. Florentino",
-    "E. Hancock",
-    "G. Taylor",
-    "R. Snelling",
-    "F. Wall",
-    "J. Bart",
-    "C. Hernandez",
-    "C. Fulmer",
-    "E. Carter",
-    "T. Szapucki",
-    "F. Alvarez",
-    "A. Nimmala",
-    "B. Shipley",
-    "J. Caglianone",
-    "A. Page",
-    "J. Lebron",
-    "D. Cameron",
-    "C. Mayo",
-    "C. Kieboom",
-    "X. Isaac",
-    "B. Davis",
-    "D. Beavers",
-    "E. Hankins",
-    "T. Troy",
-    "T. Trammell",
-    "H. Alvarez",
-    "A. Hansen",
-    "K. Harrison",
-    "J. Guerra",
-    "A. Jackson",
-    "C. Lagrange",
-    "T. White",
-    "M. Ballesteros",
-    "G. Canning",
-    "C. Moore",
-    "T. Lutz",
-    "S. Jones",
-    "DL Hall",
-    "J. Adams",
-    "O. Peraza",
-    "H. Takahashi",
-    "H. Kjerstad",
-    "N. Gonzales",
-    "A. Medina",
-    "J. Holliday",
-    "H. Smith",
-    "D. Burress",
-    "R. Hassell",
-    "J. Perdomo",
-    "T. Casas",
-    "R. Pint",
-    "F. Kilome",
-    "C. Fuller",
-    "M. Winn",
-    "T. Gillen",
-    "M. Banuelos",
-    "G. Valera",
-    "C. Condon",
-    "S. Beer",
-    "B. Goodwin",
-    "A.J. Reed",
-    "L. Montes",
-    "J. LaViolette",
-    "J. Triantos",
-    "Q. Mathews",
-    "J. Walker",
     "K. Rocker",
-    "M. Sirota",
-    "J. Gonzalez",
-    "E. Florial",
-    "M. Abel",
-    "T. Bradley",
-    "G. Lavigne",
-    "K. Anderson",
-    "J. Groome",
-    "T. Thomas",
-    "B. Rocchio",
-    "H. Bishop",
-    "C. Keith",
-    "A. Gose",
-    "T. Yesavage",
-    "Y. Curet",
-    "R. Tiedemann",
-    "S. Strosnider",
-    "T. Yamada",
-    "O. Caissie",
-    "J. Balazovic",
-    "P. Tolle",
-    "J. Luis",
-    "C. Pache",
-    "Z. Matthews",
-    "J. Misiorowski",
-    "B. Wilken",
-    "Ja. Jung",
-    "J. Williams",
-    "D. Curley",
-    "A. Faedo",
-    "N. Marte",
-    "J. Barrero",
-    "L. Brinson",
-    "F. Barreto",
-    "Jai. Chourio",
-    "M. Harrison",
-    "J. Briceno",
-    "L. Patino",
-    "D.J. Peterson",
-    "B. McKay",
-    "S. Yamashita",
-    "J. Wiggins",
-    "M. Baez",
-    "T. Widener",
-    "Rain. Rodriguez",
-    "A. Genao",
-    "J. Bleday",
-    "L. Pena (MIL)",
-    "B. Montgomery",
-    "Ad. Sanchez",
-    "Z. Hope",
-    "T. Johnson",
-    "P. Burdick",
-    "J. De Leon",
-    "E. Holliday",
-    "L. Matos",
-    "J. Parker",
-    "C. Cowser",
-    "K. Okamoto",
-    "K. Campbell",
-    "L. Allen",
-    "C. Winn",
-    "B. Chandler",
-    "J. De Paula",
-    "J. Lawlar",
-    "J. Bukauskas",
-    "C. Bonemer",
-    "W. Javier",
-    "V. Brujan",
-    "J. Biddle",
-    "R. Anthony",
-    "Z. Veen",
-    "C. Dollander",
-    "E. Perez",
-    "W. Jenkins",
-    "A. Duno",
     "N. Meyer",
-    "S. Walcott",
-    "D. Lesko",
-    "G. Lombard Jr.",
-    "B. Rainer",
-    "O. Martinez",
-    "M. Clark",
-    "J. Dunn",
-    "A. Painter",
-    "D. Cartaya",
-    "C. Benge",
-    "K. Mcgonigle",
-    "T. Hence",
-    "G. Rodriguez",
-    "S. Stewart",
-    "E. Conrad",
+    "T. Yamada",
+    "B. Davis",
+    "K. Watson",
+    "R. Waldschmidt",
+    "J. Bleday",
+    "P. Burdick",
+    "D. Jones",
+    "Jah. Jones",
+    "T. Johnson",
+    "E. Perez",
+    "F. Barreto",
+    "M. Banuelos",
+    "W. Jenkins",
+    "E. Florentino",
+    "H. Smith",
+    "T. Szapucki",
+    "J. Lebron",
+    "C. Hernandez",
+    "J. Rodriguez",
+    "Z. Matthews",
+    "B. Thompson",
+    "R. Herrera",
+    "B. McKay",
+    "E. Hankins",
     "R. Ryan",
-    "C. Young",
-    "S. Sanchez",
-    "A. Tejeda",
-    "K. Alcantara",
-    "N. Carlos Vera",
-    "C. Vaquero",
-    "T. Bremner",
-    "C. Jensen",
-    "D. Waters",
-    "H. Waldrep",
-    "R. Arias",
-    "F. Celesten",
-    "C. Collier",
+    "S. Zavala",
+    "J. Williams",
+    "J. Bart",
+    "K. Campbell",
+    "M. Luciano",
+    "J. LaViolette",
+    "T. Black",
+    "B. Montgomery",
+    "B. Rainer",
+    "L. Brinson",
+    "J. Arnold",
+    "A. Page",
     "M. Manning",
-    "R. Sloan",
-    "M. Arroyo",
-    "A. Bracho",
-    "R. Velazquez",
+    "W. Javier",
+    "R. Arias",
+    "S. Sanchez",
+    "E. Morales",
+    "T. Bazzana",
+    "K. Anderson",
+    "C. Young",
+    "J. Groshans",
+    "D. Garcia",
+    "C. Dollander",
+    "T. White",
+    "J. Perdomo",
+    "D. Espino",
+    "J. Biddle",
+    "K. Robinson",
+    "R. Vilade",
+    "T. Gillen",
+    "M. Ballesteros",
+    "C. Fulmer",
+    "J. Lawlar",
+    "G. Valera",
+    "J. Wiggins",
     "T. Sykora",
+    "H. Alvarez",
+    "R. Lewis",
+    "D. Crews",
+    "M. Winn",
+    "K. Mcgonigle",
+    "T. Trammell",
+    "D. Cartaya",
     "P. Eeles",
-    "L. De Vries",
+    "L. Armenteros",
+    "A. Duno",
+    "H. Davis",
+    "L. Matos",
     "A. Arquette",
-    "J. Farmelo",
+    "F. Celesten",
+    "C. Emerson",
+    "Jai. Chourio",
+    "L. Patino",
+    "R. Mauricio",
+    "G. Rodriguez",
+    "S. Beer",
+    "A. Tejeda",
+    "L. Montes",
+    "C. Vaquero",
+    "J. P. Martinez",
+    "R. Hassell",
+    "E. Conrad",
+    "A. Medina",
+    "Z. Veen",
+    "C. Moore",
+    "O. Colas",
+    "D. Cameron",
+    "A. Jackson",
+    "A. Baddoo",
+    "K. Harrison",
+    "C. Bonemer",
+    "J. Bukauskas",
+    "Rain. Rodriguez",
+    "C. Collier",
+    "N. McLean",
+    "T. Casas",
+    "M. Mayer",
+    "J. Triantos",
+    "E. Carter",
+    "Ja. Jung",
+    "J. Groome",
+    "E. Florial",
+    "J. De Jesus Gonzalez",
+    "R. Sloan",
+    "J. Turner",
+    "V. Brujan",
+    "T. Widener",
+    "R. Anthony",
+    "L. Hernandez",
+    "J. Caglianone",
+    "J. Barrero",
+    "L. Doyle",
+    "M. Liberatore",
+    "F. Whitley",
     "A. Martin",
+    "T. Yesavage",
+    "J. Balazovic",
+    "C. Mayo",
+    "A. Gracia",
+    "A. Freeland",
+    "C. Kieboom",
+    "R. Tiedemann",
+    "F. Arias",
+    "T. Bremner",
+    "C. Fuller",
+    "C. Jensen",
+    "C. Early",
+    "D. Lesko",
+    "R. Calaz",
+    "J. Holliday",
+    "E. Hancock",
+    "S. Howard",
+    "DL Hall",
+    "Ad. Sanchez",
+    "N. Carlos Vera",
+    "D. Beavers",
+    "N. Schultz",
+    "L. Allen",
+    "S. Stewart",
+    "D. Whitney",
+    "J. Jobe",
+    "L. Pena (MIL)",
+    "S. Torkelson",
+    "C. Martin",
+    "C. Smith",
+    "H. Bishop",
+    "S. Basallo",
+    "A. Bracho",
+    "F. Kilome",
+    "J. Luis",
+    "T. Hence",
+    "M. Abel",
+    "B. Goodwin",
+    "T. Lutz",
+    "Q. Mathews",
+    "A. Hansen",
+    "L. De Vries",
+    "D.J. Peterson",
+    "D. Curley",
+    "E. Holliday",
+    "G. Lavigne",
+    "C. Lagrange",
+    "B. Chandler",
+    "F. Wall",
+    "Z. Hope",
+    "J. Adams",
+    "R. Pint",
+    "C. Cowser",
+    "M. Harrison",
+    "A. Meyer",
+    "C. Spangenberg",
+    "A. Genao",
+    "H. Waldrep",
+    "C. Condon",
+    "M. Clark",
+    "C. Dana",
+    "A.J. Reed",
+    "J. Gonzalez",
+    "M. Sirota",
+    "Q. Priester",
+    "B. Rocchio",
+    "X. Neyens",
+    "S. Strosnider",
+    "F. Alvarez",
+    "P. Tolle",
+    "B. Eldridge",
+    "O. Caissie",
+    "B. Shipley",
+    "H. Kjerstad",
+    "K. Alcantara",
+    "G. Lombard Jr.",
     "C. DeLauter",
-    "X. Neyens"
+    "R. Contreras",
+    "M. Baez",
+    "C. Pache",
+    "B. House",
+    "T. Bradley",
+    "S. Walcott",
+    "A. Painter",
+    "R. Snelling",
+    "H. Takahashi",
+    "C. Benge",
+    "C. Williams",
+    "D. Burress",
+    "S. Yamashita",
+    "B. Wilken",
+    "T. Troy",
+    "R. Velazquez",
+    "J. Farmelo",
+    "M. Arroyo",
+    "J. Briceno",
+    "K. Allard",
+    "N. Marte",
+    "J. Crawford",
+    "G. Taylor",
+    "E. Rodriguez",
+    "C. Abrams",
+    "A. Miller",
+    "G. Canning",
+    "N. Gonzales",
+    "Y. Curet",
+    "J. Misiorowski",
+    "K. Griffin",
+    "J. Walker",
+    "C. Burns",
+    "J. Guerra",
+    "J. De Paula",
+    "X. Isaac",
+    "C. Keith",
+    "J. Dunn",
+    "A. Faedo",
+    "C. Norby",
+    "A. Nimmala",
+    "E. Green",
+    "T. Beede",
+    "O. Peraza",
+    "J. Parker",
+    "O. Martinez",
+    "J. De Leon",
+    "C. Winn",
+    "T. Thomas",
+    "S. Jones",
+    "K. Okamoto",
+    "P. Messick",
+    "D. Waters",
+    "A. Gose",
+    "N. Pearson"
   ],
   "batters": [
     {
@@ -1899,7 +2416,7 @@ export const LDB_DATA = {
       "positions": [
         "1B"
       ],
-      "is_fry_keeper": true,
+      "is_fry_keeper": false,
       "oopsy_rank": 32,
       "oopsy_tier": 2,
       "oopsy_est_value": 24.5,
@@ -1918,9 +2435,9 @@ export const LDB_DATA = {
         "ADP_AVOID",
         "BUST"
       ],
-      "note": "[PL #36, dropped 5] Zone-contact 73.8% — worst among 500+ PA qualifiers. Only player below 75% zone contact with 500+ PA. 'Poor man's Schwarber' comp. .250 BA floor is low end. LDB: OPS/OBP value but contact erosion is real risk.",
+      "note": "Back in Cactus League after brief hamstring tightness — should be fine for Opening Day. Zone-contact concerns remain (73.8% — worst among 500+ PA qualifiers). LDB: OPS/OBP value real but contact erosion is ongoing risk.",
       "health_pct": 90,
-      "role": "SFG 1B — concern over contact erosion",
+      "role": "SFG 1B — healthy for Opening Day",
       "pl_rank": 36,
       "pl_tier": 5,
       "pl_tier_name": "Value",
@@ -2066,8 +2583,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.89,
       "oopsy_g": 143.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -2215,11 +2732,12 @@ export const LDB_DATA = {
       "oopsy_war": 4.48,
       "oopsy_g": 146.0,
       "tags": [
-        "DTD"
+        "DTD",
+        "BOUNCE_BACK"
       ],
-      "note": "Hamate surgery — PL dropped only a few spots, limited long-term power impact. 30 HR / 30 SB floor when healthy. Top SS in LDB OBP+OPS format.",
-      "health_pct": 82,
-      "role": "NYM SS — hamate surgery, monitor return",
+      "note": "Hamate surgery + elbow cleanup this offseason. Back in Cactus League. Hard-hit rate key metric to watch — may suppress power early. 30/30 floor when right. Top SS in OBP+OPS formats.",
+      "health_pct": 85,
+      "role": "NYM SS — back in spring lineup, monitor hard-hit rate",
       "pl_rank": 15,
       "pl_tier": 3,
       "pl_tier_name": "Stud",
@@ -2265,8 +2783,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.54,
       "oopsy_g": 136.0,
       "tags": [
-        "BUST",
-        "SLEEPER"
+        "SLEEPER",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -2365,8 +2883,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -2668,8 +3186,8 @@ export const LDB_DATA = {
       "oopsy_war": 3.9,
       "oopsy_g": 157.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -3201,8 +3719,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -3707,8 +4225,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.55,
       "oopsy_g": 113.0,
       "tags": [
-        "INJURY_RISK",
         "PLATOON",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4119,8 +4637,8 @@ export const LDB_DATA = {
       "oopsy_g": 131.0,
       "tags": [
         "STREAKY",
-        "INJURY_RISK",
-        "SLEEPER"
+        "SLEEPER",
+        "INJURY_RISK"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
       "health_pct": 72,
@@ -4277,8 +4795,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 130.0,
       "tags": [
-        "ADP_VALUE",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -4584,8 +5102,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4991,8 +5509,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -5901,8 +6419,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.14,
       "oopsy_g": 110.0,
       "tags": [
-        "ADP_VALUE",
-        "PLATOON"
+        "PLATOON",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -7072,8 +7590,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 100.0,
       "tags": [
-        "INJURY_RISK",
         "PLATOON",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -7175,8 +7693,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.86,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -7721,8 +8239,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -7973,8 +8491,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 109.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -8312,8 +8830,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8704,8 +9222,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.91,
       "oopsy_g": 97.0,
       "tags": [
-        "ADP_VALUE",
-        "PLATOON"
+        "PLATOON",
+        "ADP_VALUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -10800,8 +11318,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_VALUE"
       ],
       "note": "",
@@ -11050,8 +11568,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.88,
       "oopsy_g": 96.0,
       "tags": [
-        "BUST",
-        "SLEEPER"
+        "SLEEPER",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -13268,9 +13786,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 13.16,
       "oopsy_fip": 2.706,
       "tags": [
-        "SP_LOCKED",
+        "RATIOS_ACE",
         "BREAKOUT",
-        "RATIOS_ACE"
+        "SP_LOCKED"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
       "health_pct": 95,
@@ -13326,9 +13844,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.46,
       "oopsy_fip": 3.353,
       "tags": [
-        "SP_LOCKED",
         "BOUNCE_BACK",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Listed as Dodgers SP1 — TJ return confirmed, opening day starter. If stuff is back, elite upside. Huge bounce-back candidate if velocity holds.",
       "health_pct": 78,
@@ -13384,8 +13902,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.38,
       "oopsy_fip": 3.298,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
       "health_pct": 93,
@@ -13441,8 +13959,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.58,
       "oopsy_fip": 3.314,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "STASH",
         "INJURY_RISK",
         "ADP_AVOID"
@@ -13501,10 +14019,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "INJURED",
+        "RATIOS_ACE",
         "IL_START",
-        "ROFR_TARGET",
-        "RATIOS_ACE"
+        "INJURED",
+        "ROFR_TARGET"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -13560,14 +14078,14 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
-        "ROLE_UNCLEAR",
-        "AGING",
         "RATIOS_ACE",
+        "ROLE_UNCLEAR",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
-      "note": "Still unsigned as of March 2026. Stuff declined in 2024 with Giants. Risk of poor team or bullpen role.",
-      "health_pct": 70,
-      "role": "TBD / unsigned",
+      "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
+      "health_pct": 65,
+      "role": "SP — durability risk, monitor spring",
       "pl_rank": 44,
       "pl_tier": 9,
       "pl_tier_name": "Cherry Bomb But Moreso",
@@ -13619,8 +14137,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.598,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ADP_AVOID"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
@@ -13678,8 +14196,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.352,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
       "health_pct": 92,
@@ -13735,8 +14253,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.75,
       "oopsy_fip": 3.738,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
@@ -13794,8 +14312,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.41,
       "oopsy_fip": 3.718,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
       "health_pct": 88,
@@ -13963,10 +14481,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.25,
       "oopsy_fip": 3.839,
       "tags": [
-        "SP_LOCKED",
         "BOUNCE_BACK",
         "RATIOS_ACE",
         "INJURED",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -14136,16 +14654,15 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
-        "SP_LOCKED",
-        "BOUNCE_BACK",
-        "INJURY_RISK",
-        "RATIOS_ACE",
         "STASH",
+        "RATIOS_ACE",
+        "IL_START",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
-      "note": "PL #67 Injury Stash 1. ATL SP. TJ return, replacing Wentz in rotation. Big sinker + slider induces extreme groundball rates. ATL defense = ratios gold. Light workload initially but real value if it sticks.",
-      "health_pct": 65,
-      "role": "sp",
+      "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
+      "health_pct": 55,
+      "role": "ATL SP — bone spur surgery, ETA June 2026",
       "pl_rank": 67,
       "pl_tier": 13,
       "pl_tier_name": "Injury Stash 1",
@@ -14369,9 +14886,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.57,
       "oopsy_fip": 4.011,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -14543,9 +15060,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
         "RATIOS_ACE",
+        "ROLE_UNCLEAR",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -14602,10 +15119,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.22,
       "oopsy_fip": 4.118,
       "tags": [
-        "SP_LOCKED",
-        "BREAKOUT",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED",
+        "BREAKOUT"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
       "health_pct": 85,
@@ -14720,9 +15237,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.88,
       "oopsy_fip": 4.11,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED"
       ],
       "note": "PL #37 Holly. CHC SP. Highly anticipated debut arm — mid-to-high 90s + three sharp secondary pitches. Full-season opportunity in CHC rotation. K upside + Wrigley day games = variance.",
       "health_pct": 85,
@@ -14778,8 +15295,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.052,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ADP_AVOID"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
@@ -15062,10 +15579,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.35,
       "oopsy_fip": 3.695,
       "tags": [
-        "SP_LOCKED",
         "BOUNCE_BACK",
         "RATIOS_ACE",
         "SLEEPER",
+        "SP_LOCKED",
         "ROLE_UNCLEAR"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
@@ -15122,9 +15639,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.97,
       "oopsy_fip": 3.963,
       "tags": [
-        "SP_LOCKED",
         "BOUNCE_BACK",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
       "health_pct": 72,
@@ -15239,9 +15756,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
-        "IL_START",
+        "DTD",
         "RATIOS_ACE",
-        "DTD"
+        "IL_START"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
       "health_pct": 65,
@@ -15351,9 +15868,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.23,
       "oopsy_fip": 4.387,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -15641,8 +16158,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.73,
       "oopsy_fip": 4.697,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
@@ -15699,9 +16216,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.61,
       "oopsy_fip": 4.298,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED"
       ],
       "note": "PL #92 Late Upside. TEX SP. Former #2 overall pick finally getting full rotation shot. Plus fastball + elite cutter combo. TEX park challenging but K upside real. Could be 2026 breakout arm.",
       "health_pct": 83,
@@ -15873,9 +16390,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.87,
       "oopsy_fip": 3.981,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -15932,9 +16449,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.5,
       "oopsy_fip": 4.343,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -16393,9 +16910,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.82,
       "oopsy_fip": 4.512,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -16628,8 +17145,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.23,
       "oopsy_fip": 4.279,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -16805,9 +17322,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
-        "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
         "RATIOS_ACE",
+        "ROLE_UNCLEAR",
         "ADP_AVOID"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
@@ -17149,8 +17666,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.11,
       "oopsy_fip": 4.557,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST",
         "DEEP_LEAGUE"
       ],
@@ -17614,9 +18131,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.5,
       "oopsy_fip": 4.729,
       "tags": [
-        "SP_LOCKED",
         "DEEP_LEAGUE",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ROLE_UNCLEAR",
         "STASH",
         "ADP_AVOID"
@@ -17736,8 +18253,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.67,
       "oopsy_fip": 4.577,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST",
         "SLEEPER"
       ],
@@ -18197,8 +18714,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.61,
       "oopsy_fip": 4.44,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST",
         "DEEP_LEAGUE"
       ],
@@ -18313,8 +18830,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.67,
       "oopsy_fip": 4.131,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -18492,8 +19009,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.721,
       "tags": [
         "ADP_AVOID",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST",
         "DEEP_LEAGUE"
       ],
@@ -18601,8 +19118,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.62,
       "oopsy_fip": 4.28,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "BUST",
         "DEEP_LEAGUE"
       ],
@@ -19479,8 +19996,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -1.75,
       "oopsy_fip": 5.163,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -19887,13 +20404,12 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.602,
       "tags": [
-        "INJURED",
-        "IL",
+        "SP_LOCKED",
         "ELITE_ERA"
       ],
-      "note": "Recovering from 2023 WBC knee injury; returned strong in 2024 but durability always a concern. Mets closer.",
-      "health_pct": 80,
-      "role": "Locked closer"
+      "note": "Signed 3-year $69M deal with the Dodgers. Now LAD closer — elite stuff, locked role. Removes the Mets save situation uncertainty.",
+      "health_pct": 90,
+      "role": "LAD — locked closer (signed 3yr/$69M)"
     },
     {
       "id": "atc_rp_1",
@@ -20030,11 +20546,12 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.36,
       "tags": [
+        "SP_LOCKED",
         "ELITE_ERA"
       ],
-      "note": "",
-      "health_pct": 100,
-      "role": ""
+      "note": "Houston will not rush Hader (biceps) — Abreu is the closer to start 2026. High-leverage arm with closer stuff. Roster immediately.",
+      "health_pct": 95,
+      "role": "HOU RP — closer to open season (Hader out)"
     },
     {
       "id": "atc_rp_4",
@@ -20124,11 +20641,13 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.55,
       "tags": [
+        "IL_START",
+        "INJURY_RISK",
         "ELITE_ERA"
       ],
-      "note": "",
-      "health_pct": 100,
-      "role": ""
+      "note": "Left biceps inflammation has kept him off the mound all spring — hasn't progressed past flat-ground work. Follows 2025 shoulder strain (team says unrelated). Unlikely ready for Opening Day. Bryan Abreu covering closer role to start.",
+      "health_pct": 50,
+      "role": "HOU RP — biceps inflammation, Opening Day IL likely"
     },
     {
       "id": "atc_rp_6",
@@ -20876,11 +21395,12 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.496,
       "tags": [
+        "SP_LOCKED",
         "ELITE_ERA"
       ],
-      "note": "",
-      "health_pct": 100,
-      "role": ""
+      "note": "Added to Baltimore to close after Felix Bautista's surgery. Top-tier closer in his own right. Locked role in BAL.",
+      "health_pct": 95,
+      "role": "BAL — locked closer (replaces Bautista)"
     },
     {
       "id": "atc_rp_22",
@@ -22008,11 +22528,12 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.538,
       "tags": [
+        "CLOSER_RISK",
         "ELITE_ERA"
       ],
-      "note": "",
-      "health_pct": 100,
-      "role": ""
+      "note": "Average fastball velocity down ~6 mph from 2025 this spring. Still projects for 20-25 saves but ERA likely 3.50-4.00 range. Monitor velocity trend.",
+      "health_pct": 88,
+      "role": "RP — velocity down, closer situation to watch"
     },
     {
       "id": "atc_rp_46",
@@ -34777,7 +35298,9 @@ export const LDB_DATA = {
       "war": 0.13,
       "ldb_score": -4.392,
       "rfa_team": "",
-      "positions": [],
+      "positions": [
+        "C"
+      ],
       "is_fry_keeper": false,
       "oopsy_rank": 395,
       "oopsy_tier": 5,
@@ -34907,7 +35430,9 @@ export const LDB_DATA = {
       "war": -0.14,
       "ldb_score": -4.435,
       "rfa_team": "",
-      "positions": [],
+      "positions": [
+        "RP"
+      ],
       "is_fry_keeper": false,
       "oopsy_rank": 411,
       "oopsy_tier": 5,
@@ -37825,12 +38350,12 @@ export const LDB_DATA = {
   ],
   "fry_keepers": [
     "Ronald Acuña Jr.",
-    "Rafael Devers",
     "Brent Rooker",
     "Riley Greene",
     "Corbin Carroll",
     "Cal Raleigh",
     "Drew Rasmussen",
-    "Matthew Liberatore"
+    "Matthew Liberatore",
+    "Andrés Muñoz"
   ]
 };

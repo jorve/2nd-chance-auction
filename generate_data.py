@@ -56,9 +56,9 @@ RP_SPLIT  = 0.20
 RP_VALUE_SCALE = 0.80  # Scale RP values down (fewer innings than SPs)
 
 FRY_TEAM = "FRY"
-FRY_KEEPERS = ["Ronald Acuña Jr.", "Rafael Devers", "Brent Rooker",
+FRY_KEEPERS = ["Ronald Acuña Jr.", "Brent Rooker",
                "Riley Greene", "Corbin Carroll", "Cal Raleigh",
-               "Drew Rasmussen", "Matthew Liberatore"]
+               "Drew Rasmussen", "Matthew Liberatore", "Andrés Muñoz"]
 
 RFA_TEAM_MAP = {
     "aids":"AIDS","fish fry":"FRY","balks":"BALK","choice":"CHOICE",
@@ -387,8 +387,14 @@ def parse_positions_cbs(bat_path, sp_path, rp_path):
     return pos_map, pos_by_name_team
 
 def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
-    """Look up positions for a player. Uses (name, team) key first if available to resolve collisions."""
-    n = norm(proj_name)
+    """Look up positions for a player. Uses (name, team) key first if available to resolve collisions.
+    Falls back to abbrev_match (e.g. 'C. Raleigh' → 'Cal Raleigh') for draft-board abbreviated names.
+    Also handles edge cases: missing space in 'J.Wood' → 'J. Wood', double initials 'J.H. Lee'.
+    """
+    # Pre-process: insert space after period glued to capital letter (e.g. "J.Wood" → "J. Wood")
+    clean_name = re.sub(r'\.([A-Z])', r'. \1', proj_name).strip()
+
+    n = norm(clean_name)
     # Try precise (name, team) lookup first to avoid same-name collisions
     if pos_by_name_team and mlb_team:
         key = (n, mlb_team.strip().upper())
@@ -396,9 +402,21 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
             return pos_by_name_team[key]
     if n in pos_map:
         return pos_map[n]
+    # Fuzzy ratio match
     for pn, pos in pos_map.items():
         if SequenceMatcher(None, n, pn).ratio() > 0.88:
             return pos
+    # Abbreviated first-name match (e.g. draft board "C. Raleigh" vs CBS "Cal Raleigh")
+    for pn, pos in pos_map.items():
+        if abbrev_match(clean_name, pn):
+            return pos
+    # Double-initial fallback: strip second initial (e.g. "J.H. Lee" → last name "lee" match)
+    parts = n.split()
+    if len(parts) >= 2 and len(parts[0]) <= 2:
+        last = parts[-1]
+        candidates = [(pn, pos) for pn, pos in pos_map.items() if pn.split()[-1] == last]
+        if len(candidates) == 1:
+            return candidates[0][1]
     return []
 
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
@@ -1032,7 +1050,8 @@ def main():
         if t in roster_by_team:
             roster_by_team[t].append({
                 "name": name, "salary": info["salary"],
-                "contract": info["contract"], "pos": info["pos"]
+                "contract": info["contract"], "pos": info["pos"],
+                "positions": get_positions(name, pos_map, pos_by_name_team),
             })
 
     num_teams = len(teams)

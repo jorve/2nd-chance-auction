@@ -510,9 +510,9 @@ export const TEAM_COLORS = {
 
 // FRY positional needs from league rules — drives lens priority signals
 export const FRY_NEEDS = {
-  critical: ['SP', 'RP'],   // nearly empty / zero VIJAY
-  needed:   ['SS', '2B'],   // positional gaps
-  filled:   ['C', 'RF', '3B', '1B'],
+  critical: ['SP', 'SS', '3B'],   // nearly empty / totally open positions
+  needed:   ['1B', '2B', 'RP'],   // empty or thin slots
+  filled:   ['C', 'RF'],          // Raleigh + Acuña/Rooker covered
 }
 
 // Contract code helpers
