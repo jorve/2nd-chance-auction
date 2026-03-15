@@ -79,6 +79,9 @@ def norm(name):
     s = name.lower().strip()
     s = s.replace("á","a").replace("é","e").replace("í","i").replace("ó","o")
     s = s.replace("ú","u").replace("ü","u").replace("ñ","n").replace("ö","o")
+    # Insert space after period glued to a letter BEFORE stripping periods
+    # Handles "J.Wood" → "J. Wood", "J.H. Lee" → "J. H. Lee"
+    s = re.sub(r"\.([a-z])", r" \1", s)
     s = s.replace(".","").replace("-"," ").replace("'","").replace("`","")
     # Remove common suffixes (order matters: longer first)
     for suf in (" jr", " sr", " iii", " iv", " ii"):
@@ -169,10 +172,48 @@ def names_match(proj_name, draft_name):
         return True
     return False
 
-def is_unavailable(proj_name, unavail_set):
-    """Check if projection player is owned or in AA on the draft board."""
+def build_unavail_index(unavail_set):
+    """Pre-compute fast lookup structures from the unavailable set so that
+    is_unavailable() runs in O(1)/O(k) instead of O(n * SequenceMatcher).
+
+    Returns (norm_exact, last_name_idx, norm_pairs):
+      norm_exact    — set of pre-normalised names for exact hits
+      last_name_idx — last_name → [(orig_name, norm_name)] for abbrev lookups
+      norm_pairs    — [(orig_name, norm_name)] for the rare fuzzy-ratio fallback
+    """
+    norm_exact    = set()
+    last_name_idx = {}
+    norm_pairs    = []
     for taken in unavail_set:
-        if names_match(proj_name, taken):
+        clean = strip_team_suffix(taken)
+        n = norm(clean)
+        norm_exact.add(n)
+        norm_pairs.append((clean, n))
+        parts = n.split()
+        if parts:
+            last_name_idx.setdefault(parts[-1], []).append((clean, n))
+    return norm_exact, last_name_idx, norm_pairs
+
+def is_unavailable(proj_name, unavail_idx):
+    """Fast unavailability check using pre-built index.
+    unavail_idx is the tuple returned by build_unavail_index().
+    Falls back to SequenceMatcher only after cheap O(1)/O(k) checks fail.
+    """
+    norm_exact, last_name_idx, norm_pairs = unavail_idx
+    n = norm(proj_name)
+    # 1. O(1) exact norm match
+    if n in norm_exact:
+        return True
+    # 2. O(k) abbreviated-first-name match — only candidates with same last name
+    parts = n.split()
+    if parts:
+        for orig, tn in last_name_idx.get(parts[-1], []):
+            tp = tn.split()
+            if tp and (parts[0].startswith(tp[0]) or tp[0].startswith(parts[0])):
+                return True
+    # 3. Rare fallback: fuzzy ratio over full list (handles accent/typo mismatches)
+    for orig, tn in norm_pairs:
+        if SequenceMatcher(None, n, tn).ratio() >= 0.87:
             return True
     return False
 
@@ -239,7 +280,9 @@ def parse_draft_board(path):
         teams.append({"abbr":abbr, "col":col, "budget_rem":budget, "slots_rem":slots, "gm":gm})
 
     STOP_LABELS = {"MISC","LUX","MCQ","INN","$$$","%"}
-    SKIP_LABELS = {"SN1","SN2","SN3","SN4","SN5","SN6",""}
+    # SN1-6 are promoted minor-league slots — they ARE active rostered players with salaries.
+    # Do NOT skip them; treat them as owned just like any other position slot.
+    SKIP_LABELS = {""}
     aa_section = False
     owned = {}   # name -> {team, salary, contract, pos}
     aa_names = set()
@@ -261,7 +304,7 @@ def parse_draft_board(path):
 
             if aa_section:
                 aa_names.add(name)
-            elif label not in SKIP_LABELS and label not in STOP_LABELS and label != "AA":
+            elif label not in STOP_LABELS and label != "AA":
                 owned[name] = {"team":t["abbr"], "salary":salary, "contract":contract, "pos":label}
 
     teams_out = {}
@@ -384,17 +427,22 @@ def parse_positions_cbs(bat_path, sp_path, rp_path):
             best = max(entries, key=lambda e: len(e[0]))
             pos_map[norm_name] = best[0]
 
-    return pos_map, pos_by_name_team
+    # Build a last-name → [(norm_name, positions)] index for fast abbrev lookups
+    pos_by_last = {}
+    for norm_name, pos in pos_map.items():
+        parts = norm_name.split()
+        if parts:
+            pos_by_last.setdefault(parts[-1], []).append((norm_name, pos))
 
-def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
+    return pos_map, pos_by_name_team, pos_by_last
+
+def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team="", pos_by_last=None):
     """Look up positions for a player. Uses (name, team) key first if available to resolve collisions.
     Falls back to abbrev_match (e.g. 'C. Raleigh' → 'Cal Raleigh') for draft-board abbreviated names.
-    Also handles edge cases: missing space in 'J.Wood' → 'J. Wood', double initials 'J.H. Lee'.
+    pos_by_last is a last-name index for O(1) abbrev lookups instead of O(n) full scan.
+    norm() handles 'J.Wood' → 'j wood' and 'J.H. Lee' → 'j h lee' edge cases.
     """
-    # Pre-process: insert space after period glued to capital letter (e.g. "J.Wood" → "J. Wood")
-    clean_name = re.sub(r'\.([A-Z])', r'. \1', proj_name).strip()
-
-    n = norm(clean_name)
+    n = norm(proj_name)
     # Try precise (name, team) lookup first to avoid same-name collisions
     if pos_by_name_team and mlb_team:
         key = (n, mlb_team.strip().upper())
@@ -406,21 +454,18 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team=""):
     for pn, pos in pos_map.items():
         if SequenceMatcher(None, n, pn).ratio() > 0.88:
             return pos
-    # Abbreviated first-name match (e.g. draft board "C. Raleigh" vs CBS "Cal Raleigh")
-    for pn, pos in pos_map.items():
-        if abbrev_match(clean_name, pn):
-            return pos
-    # Double-initial fallback: strip second initial (e.g. "J.H. Lee" → last name "lee" match)
-    parts = n.split()
-    if len(parts) >= 2 and len(parts[0]) <= 2:
-        last = parts[-1]
-        candidates = [(pn, pos) for pn, pos in pos_map.items() if pn.split()[-1] == last]
-        if len(candidates) == 1:
-            return candidates[0][1]
+    # Abbreviated first-name match using last-name index (O(k) not O(n))
+    # e.g. draft board "C. Raleigh" → last name "raleigh" → find "cal raleigh" via abbrev_match
+    if pos_by_last:
+        parts = n.split()
+        if parts:
+            for pn, pos in pos_by_last.get(parts[-1], []):
+                if abbrev_match(proj_name, pn):
+                    return pos
     return []
 
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
-def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
+def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
@@ -459,13 +504,13 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
-            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
 
 # ── SP RANKINGS ────────────────────────────────────────────────────────────────
-def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
+def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
@@ -502,13 +547,13 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
-            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
 
 # ── RP RANKINGS ────────────────────────────────────────────────────────────────
-def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name):
+def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
@@ -546,7 +591,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm),
-            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team","")),
+            "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
     return results
@@ -988,8 +1033,9 @@ def main():
 
     print("\n[1/6] Parsing draft board...")
     board = parse_draft_board(DRAFT_BOARD)
-    unavail = board["all_unavailable"]
-    teams   = board["teams"]
+    unavail     = board["all_unavailable"]
+    unavail_idx = build_unavail_index(unavail)   # fast O(1)/O(k) lookup index
+    teams        = board["teams"]
     total_budget = board["total_budget"]
     print(f"  Teams: {len(teams)}  |  Total pool: ${total_budget:.2f}M")
     print(f"  Owned: {len(board['owned'])}  |  AA: {len(board['aa_names'])}")
@@ -1000,7 +1046,7 @@ def main():
     print(f"  RFA entries: {len(rfa_norm)}  |  FRY ROFR: {fry_rfa}")
 
     print("\n[3/6] Parsing CBS positional eligibility...")
-    pos_map, pos_by_name_team = parse_positions_cbs(CBS_BAT_ELIG, CBS_SP_ELIG, CBS_RP_ELIG)
+    pos_map, pos_by_name_team, pos_by_last = parse_positions_cbs(CBS_BAT_ELIG, CBS_SP_ELIG, CBS_RP_ELIG)
     print(f"  Players with eligibility: {len(pos_map)}")
 
     hit_budget = total_budget * HIT_SPLIT
@@ -1009,16 +1055,16 @@ def main():
     print(f"\n[4/6] Budget splits: Hit=${hit_budget:.0f}M  SP=${sp_budget:.0f}M  RP=${rp_budget:.0f}M")
 
     print("\n[5/6] Building rankings (ATC/BATX + OOPSY)...")
-    batx_batters  = build_batters(BATX_BATTERS,  unavail, rfa_norm, pos_map, pos_by_name_team, hit_budget, "batx")
-    oopsy_batters = build_batters(OOPSY_BATTERS, unavail, rfa_norm, pos_map, pos_by_name_team, hit_budget, "oopsy")
+    batx_batters  = build_batters(BATX_BATTERS,  unavail_idx, rfa_norm, pos_map, pos_by_name_team, hit_budget, "batx",   pos_by_last)
+    oopsy_batters = build_batters(OOPSY_BATTERS, unavail_idx, rfa_norm, pos_map, pos_by_name_team, hit_budget, "oopsy",  pos_by_last)
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
-    atc_sp   = build_sp(ATC_SP,   unavail, rfa_norm, pos_map, pos_by_name_team, sp_budget, "atc")
-    oopsy_sp = build_sp(OOPSY_SP, unavail, rfa_norm, pos_map, pos_by_name_team, sp_budget, "oopsy")
+    atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team, sp_budget, "atc",   pos_by_last)
+    oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team, sp_budget, "oopsy", pos_by_last)
     print(f"  SP:      {len(atc_sp)} ATC / {len(oopsy_sp)} OOPSY")
 
-    atc_rp   = build_rp(ATC_RP,   unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "atc")
-    oopsy_rp = build_rp(OOPSY_RP, unavail, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy")
+    atc_rp   = build_rp(ATC_RP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team, rp_budget, "atc",   pos_by_last)
+    oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy", pos_by_last)
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
@@ -1051,7 +1097,7 @@ def main():
             roster_by_team[t].append({
                 "name": name, "salary": info["salary"],
                 "contract": info["contract"], "pos": info["pos"],
-                "positions": get_positions(name, pos_map, pos_by_name_team),
+                "positions": get_positions(name, pos_map, pos_by_name_team, pos_by_last=pos_by_last),
             })
 
     num_teams = len(teams)
