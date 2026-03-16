@@ -3208,260 +3208,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "L. Montes",
-    "M. Banuelos",
-    "E. Conrad",
     "J. Bukauskas",
-    "J. Caglianone",
-    "A. Medina",
-    "H. Alvarez",
-    "D. Waters",
-    "D.J. Peterson",
-    "M. Abel",
-    "J. P. Martinez",
-    "R. Ryan",
-    "T. Yesavage",
-    "L. Pena (MIL)",
-    "C. Moore",
-    "W. Javier",
-    "K. Campbell",
-    "T. Szapucki",
-    "D. Garcia",
-    "Q. Mathews",
-    "C. Dollander",
-    "J. Walker",
-    "T. Trammell",
-    "J. Farmelo",
-    "M. Luciano",
-    "R. Waldschmidt",
-    "J. Crawford",
-    "J. Parker",
-    "D. Jones",
-    "H. Takahashi",
-    "C. Condon",
-    "R. Anthony",
-    "K. Anderson",
-    "F. Celesten",
-    "N. Schultz",
-    "E. Rodriguez",
-    "A. Painter",
-    "J. Bleday",
-    "M. Harrison",
-    "E. Florial",
-    "C. Early",
-    "B. Wilken",
-    "E. Hankins",
-    "L. Brinson",
-    "L. Armenteros",
-    "V. Brujan",
-    "T. Sykora",
-    "T. Johnson",
-    "F. Kilome",
-    "M. Arroyo",
-    "R. Lewis",
-    "Z. Matthews",
-    "J. Groome",
-    "B. Goodwin",
-    "M. Liberatore",
-    "Jai. Chourio",
-    "A. Gose",
-    "R. Herrera",
-    "T. Troy",
-    "X. Isaac",
-    "C. Spangenberg",
-    "K. Allard",
-    "N. McLean",
-    "D. Beavers",
-    "Y. Curet",
-    "B. McKay",
-    "G. Taylor",
-    "R. Contreras",
-    "O. Colas",
-    "K. Robinson",
-    "S. Basallo",
-    "T. Widener",
-    "C. Burns",
-    "L. Matos",
-    "K. Alcantara",
-    "D. Cartaya",
-    "J. Turner",
-    "P. Tolle",
-    "M. Winn",
-    "C. Pache",
-    "A.J. Reed",
-    "C. Lagrange",
-    "C. Williams",
-    "E. Carter",
-    "O. Peraza",
-    "T. Gillen",
-    "M. Baez",
-    "A. Baddoo",
-    "K. Okamoto",
-    "M. Manning",
-    "C. Bonemer",
-    "G. Lavigne",
-    "S. Strosnider",
-    "Q. Priester",
-    "S. Zavala",
-    "R. Sloan",
-    "L. Allen",
-    "C. Vaquero",
-    "J. Misiorowski",
-    "A. Faedo",
-    "J. Jobe",
-    "A. Bracho",
-    "A. Page",
-    "R. Snelling",
-    "T. Lutz",
-    "N. Gonzales",
-    "S. Beer",
-    "A. Jackson",
-    "Z. Veen",
-    "C. Dana",
-    "R. Mauricio",
-    "J. De Leon",
-    "D. Espino",
-    "R. Arias",
-    "A. Freeland",
-    "C. Collier",
-    "C. Jensen",
-    "F. Whitley",
-    "J. Rodriguez",
-    "R. Calaz",
-    "M. Clark",
-    "H. Kjerstad",
-    "C. Martin",
-    "J. Williams",
-    "O. Martinez",
-    "X. Neyens",
-    "J. Holliday",
-    "T. Hence",
-    "J. Lebron",
-    "Jah. Jones",
-    "G. Valera",
-    "D. Cameron",
-    "A. Martin",
-    "K. Griffin",
-    "T. Casas",
-    "T. Bradley",
-    "A. Gracia",
-    "J. Wiggins",
-    "B. House",
-    "C. DeLauter",
-    "DL Hall",
-    "P. Eeles",
-    "K. Mcgonigle",
-    "T. Yamada",
-    "S. Howard",
-    "E. Morales",
-    "H. Davis",
-    "J. De Jesus Gonzalez",
-    "J. Balazovic",
-    "J. De Paula",
-    "L. Doyle",
-    "J. Adams",
-    "F. Barreto",
-    "B. Chandler",
-    "C. Kieboom",
-    "B. Thompson",
-    "C. Norby",
-    "T. White",
-    "J. Biddle",
-    "N. Marte",
-    "E. Holliday",
-    "B. Montgomery",
-    "C. Benge",
-    "J. Perdomo",
     "J. Briceno",
+    "C. Kieboom",
+    "J. Williams",
     "C. Hernandez",
-    "D. Crews",
-    "T. Thomas",
-    "J. Guerra",
-    "C. Keith",
-    "S. Walcott",
-    "J. Arnold",
-    "D. Lesko",
-    "C. Smith",
-    "T. Beede",
-    "W. Jenkins",
-    "K. Rocker",
-    "Ad. Sanchez",
-    "E. Green",
-    "B. Rocchio",
-    "D. Whitney",
-    "B. Davis",
-    "C. Cowser",
-    "L. Hernandez",
-    "S. Sanchez",
-    "C. Emerson",
-    "A. Hansen",
-    "S. Jones",
-    "J. LaViolette",
-    "G. Rodriguez",
-    "C. Abrams",
-    "P. Burdick",
-    "C. Fuller",
-    "T. Bazzana",
-    "R. Hassell",
-    "Ja. Jung",
-    "S. Stewart",
-    "J. Bart",
-    "D. Curley",
-    "G. Canning",
-    "E. Hancock",
-    "A. Tejeda",
-    "F. Arias",
-    "B. Eldridge",
-    "F. Alvarez",
-    "N. Carlos Vera",
-    "T. Bremner",
-    "M. Mayer",
-    "L. De Vries",
-    "B. Rainer",
-    "J. Triantos",
-    "Rain. Rodriguez",
-    "S. Yamashita",
-    "P. Messick",
-    "N. Pearson",
-    "A. Genao",
-    "R. Pint",
-    "H. Waldrep",
-    "F. Wall",
-    "R. Vilade",
-    "J. Luis",
-    "E. Perez",
-    "H. Smith",
-    "R. Tiedemann",
-    "C. Young",
-    "C. Mayo",
-    "J. Groshans",
-    "A. Duno",
-    "J. Barrero",
-    "N. Meyer",
-    "L. Patino",
-    "J. Gonzalez",
-    "A. Nimmala",
-    "A. Meyer",
-    "A. Miller",
-    "A. Arquette",
-    "E. Florentino",
-    "M. Sirota",
-    "S. Torkelson",
-    "H. Bishop",
-    "C. Winn",
-    "Z. Hope",
-    "J. Dunn",
-    "R. Velazquez",
-    "K. Harrison",
-    "O. Caissie",
-    "B. Shipley",
-    "D. Burress",
+    "D. Cameron",
     "K. Watson",
+    "R. Mauricio",
+    "G. Taylor",
+    "A. Baddoo",
+    "W. Javier",
+    "Q. Priester",
+    "T. Bazzana",
+    "N. Marte",
+    "Ad. Sanchez",
+    "M. Harrison",
+    "T. White",
+    "H. Takahashi",
+    "G. Canning",
+    "C. Dana",
+    "D. Crews",
+    "N. Carlos Vera",
     "G. Lombard Jr.",
+    "W. Jenkins",
+    "C. Emerson",
+    "P. Eeles",
+    "L. De Vries",
+    "T. Gillen",
+    "S. Strosnider",
+    "H. Davis",
+    "R. Herrera",
+    "R. Ryan",
+    "K. Griffin",
+    "K. Alcantara",
+    "E. Conrad",
+    "C. Keith",
+    "E. Green",
+    "D. Waters",
+    "H. Bishop",
+    "C. DeLauter",
+    "B. McKay",
+    "C. Dollander",
+    "T. Casas",
+    "J. Arnold",
+    "B. Eldridge",
+    "S. Howard",
+    "A. Freeland",
+    "J. Groshans",
+    "A. Gose",
+    "M. Mayer",
+    "C. Smith",
+    "J. De Leon",
+    "R. Arias",
+    "H. Smith",
+    "A. Hansen",
+    "L. Pena (MIL)",
+    "V. Brujan",
+    "B. Shipley",
+    "C. Abrams",
+    "P. Tolle",
+    "J. Walker",
+    "T. Szapucki",
+    "A. Gracia",
+    "R. Waldschmidt",
+    "M. Clark",
+    "F. Whitley",
+    "J. Lebron",
+    "A. Tejeda",
+    "D. Espino",
+    "B. Davis",
+    "C. Norby",
+    "T. Trammell",
+    "L. Matos",
+    "C. Jensen",
+    "J. Turner",
+    "T. Bradley",
+    "Q. Mathews",
+    "D. Whitney",
+    "L. Montes",
+    "S. Stewart",
+    "J. LaViolette",
+    "C. Cowser",
+    "O. Peraza",
+    "C. Lagrange",
+    "J. Crawford",
+    "L. Armenteros",
+    "C. Collier",
+    "K. Rocker",
+    "F. Kilome",
+    "T. Bremner",
+    "C. Benge",
+    "A. Bracho",
+    "J. Bleday",
+    "A. Jackson",
     "J. Lawlar",
-    "M. Ballesteros",
+    "R. Anthony",
+    "S. Walcott",
+    "O. Colas",
+    "T. Hence",
+    "C. Pache",
+    "A. Martin",
+    "C. Young",
+    "M. Abel",
+    "R. Lewis",
+    "DL Hall",
+    "K. Allard",
+    "C. Fulmer",
+    "C. Fuller",
+    "R. Velazquez",
+    "N. Pearson",
+    "A. Meyer",
+    "J. P. Martinez",
+    "B. Thompson",
+    "S. Torkelson",
+    "J. Adams",
+    "J. Parker",
+    "E. Rodriguez",
+    "J. Groome",
+    "S. Sanchez",
+    "R. Calaz",
+    "D. Burress",
+    "S. Beer",
+    "P. Burdick",
+    "Z. Hope",
+    "T. Lutz",
+    "F. Arias",
+    "C. Williams",
+    "A. Miller",
+    "K. Anderson",
+    "H. Kjerstad",
+    "L. Doyle",
+    "D. Garcia",
+    "K. Mcgonigle",
+    "E. Hankins",
+    "E. Carter",
+    "J. Holliday",
+    "R. Tiedemann",
+    "P. Messick",
+    "B. Wilken",
     "T. Black",
-    "C. Fulmer"
+    "O. Caissie",
+    "L. Allen",
+    "Jai. Chourio",
+    "T. Yamada",
+    "H. Waldrep",
+    "J. De Paula",
+    "F. Alvarez",
+    "E. Morales",
+    "A. Duno",
+    "T. Yesavage",
+    "M. Manning",
+    "H. Alvarez",
+    "B. Rocchio",
+    "N. McLean",
+    "A. Faedo",
+    "J. Guerra",
+    "F. Wall",
+    "E. Perez",
+    "M. Banuelos",
+    "D. Curley",
+    "J. Gonzalez",
+    "R. Pint",
+    "C. Winn",
+    "J. Luis",
+    "A. Nimmala",
+    "E. Florial",
+    "N. Gonzales",
+    "E. Florentino",
+    "X. Isaac",
+    "T. Widener",
+    "M. Liberatore",
+    "R. Snelling",
+    "L. Hernandez",
+    "E. Hancock",
+    "T. Sykora",
+    "G. Rodriguez",
+    "A. Medina",
+    "R. Contreras",
+    "D. Beavers",
+    "T. Thomas",
+    "B. Goodwin",
+    "T. Johnson",
+    "S. Jones",
+    "Z. Veen",
+    "C. Mayo",
+    "J. Farmelo",
+    "Z. Matthews",
+    "M. Sirota",
+    "T. Beede",
+    "J. Misiorowski",
+    "J. De Jesus Gonzalez",
+    "K. Harrison",
+    "B. House",
+    "J. Wiggins",
+    "M. Baez",
+    "T. Troy",
+    "R. Vilade",
+    "A. Page",
+    "F. Celesten",
+    "M. Arroyo",
+    "D. Jones",
+    "K. Robinson",
+    "N. Meyer",
+    "J. Rodriguez",
+    "Rain. Rodriguez",
+    "R. Hassell",
+    "A.J. Reed",
+    "J. Biddle",
+    "B. Chandler",
+    "A. Genao",
+    "G. Valera",
+    "M. Luciano",
+    "J. Bart",
+    "D. Cartaya",
+    "K. Okamoto",
+    "J. Jobe",
+    "S. Zavala",
+    "J. Barrero",
+    "C. Spangenberg",
+    "C. Moore",
+    "A. Arquette",
+    "Jah. Jones",
+    "B. Rainer",
+    "C. Burns",
+    "N. Schultz",
+    "C. Bonemer",
+    "C. Condon",
+    "K. Campbell",
+    "C. Vaquero",
+    "F. Barreto",
+    "S. Basallo",
+    "Y. Curet",
+    "G. Lavigne",
+    "J. Caglianone",
+    "M. Winn",
+    "E. Holliday",
+    "D. Lesko",
+    "B. Montgomery",
+    "R. Sloan",
+    "C. Martin",
+    "J. Triantos",
+    "J. Perdomo",
+    "J. Dunn",
+    "X. Neyens",
+    "O. Martinez",
+    "D.J. Peterson",
+    "S. Yamashita",
+    "L. Brinson",
+    "L. Patino",
+    "M. Ballesteros",
+    "Ja. Jung",
+    "C. Early",
+    "J. Balazovic",
+    "A. Painter"
   ],
   "batters": [
     {
@@ -4095,8 +4095,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.48,
       "oopsy_g": 146.0,
       "tags": [
-        "DTD",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "DTD"
       ],
       "note": "Hamate surgery + elbow cleanup this offseason. Back in Cactus League. Hard-hit rate key metric to watch — may suppress power early. 30/30 floor when right. Top SS in OBP+OPS formats.",
       "health_pct": 85,
@@ -4259,8 +4259,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4988,8 +4988,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5365,8 +5365,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.55,
       "oopsy_g": 113.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5906,9 +5906,9 @@ export const LDB_DATA = {
       "oopsy_war": 2.82,
       "oopsy_g": 131.0,
       "tags": [
-        "STREAKY",
         "INJURY_RISK",
-        "SLEEPER"
+        "SLEEPER",
+        "STREAKY"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
       "health_pct": 72,
@@ -6020,8 +6020,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.21,
       "oopsy_g": 110.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -6128,8 +6128,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6988,8 +6988,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7311,8 +7311,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 97.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -7635,8 +7635,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.58,
       "oopsy_g": 105.0,
       "tags": [
-        "SLEEPER",
-        "SPEED_VALUE"
+        "SPEED_VALUE",
+        "SLEEPER"
       ],
       "note": "[PL #117] Zero barrels in 376 batted-ball events. But 44 SB in 104 G — on pace for 70+ in full season. TBR platoon limits AB. LDB: aSB efficiency could be spectacular if usage rate holds. Pure speed play.",
       "health_pct": 90,
@@ -8117,8 +8117,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.73,
       "oopsy_g": 112.0,
       "tags": [
-        "BUST",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -8495,8 +8495,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.76,
       "oopsy_g": 113.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -8657,8 +8657,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 100.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8930,8 +8930,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.86,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9524,8 +9524,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9737,8 +9737,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -12249,8 +12249,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -15110,8 +15110,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 13.16,
       "oopsy_fip": 2.706,
       "tags": [
-        "SP_LOCKED",
         "BREAKOUT",
+        "SP_LOCKED",
         "RATIOS_ACE"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
@@ -15235,10 +15235,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "RATIOS_ACE",
         "INJURED",
+        "IL_START",
         "ROFR_TARGET",
-        "IL_START"
+        "RATIOS_ACE"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -15425,8 +15425,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.75,
       "oopsy_fip": 3.738,
       "tags": [
-        "SP_LOCKED",
         "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
@@ -15488,9 +15488,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
-        "RATIOS_ACE",
         "INJURY_RISK",
-        "ROLE_UNCLEAR"
+        "ROLE_UNCLEAR",
+        "RATIOS_ACE"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
       "health_pct": 65,
@@ -15739,9 +15739,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.25,
       "oopsy_fip": 3.839,
       "tags": [
-        "SP_LOCKED",
         "INJURED",
         "BOUNCE_BACK",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "SLEEPER"
       ],
@@ -16173,9 +16173,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.57,
       "oopsy_fip": 4.011,
       "tags": [
+        "ROLE_UNCLEAR",
         "SP_LOCKED",
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -16298,9 +16298,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "RATIOS_ACE",
-        "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
+        "DEEP_LEAGUE",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -16548,10 +16548,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
-        "RATIOS_ACE",
         "STASH",
         "INJURY_RISK",
-        "IL_START"
+        "IL_START",
+        "RATIOS_ACE"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
       "health_pct": 55,
@@ -16612,10 +16612,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.22,
       "oopsy_fip": 4.118,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE",
         "BREAKOUT",
-        "SLEEPER"
+        "SLEEPER",
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
       "health_pct": 85,
@@ -16738,8 +16738,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.97,
       "oopsy_fip": 3.963,
       "tags": [
-        "SP_LOCKED",
         "BOUNCE_BACK",
+        "SP_LOCKED",
         "RATIOS_ACE"
       ],
       "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
@@ -16923,10 +16923,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.35,
       "oopsy_fip": 3.695,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE",
         "BOUNCE_BACK",
         "SLEEPER",
+        "SP_LOCKED",
+        "RATIOS_ACE",
         "ROLE_UNCLEAR"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
@@ -17051,9 +17051,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
+        "IL_START",
         "DTD",
-        "RATIOS_ACE",
-        "IL_START"
+        "RATIOS_ACE"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
       "health_pct": 65,
@@ -17112,9 +17112,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.23,
       "oopsy_fip": 4.387,
       "tags": [
+        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "RATIOS_ACE"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -17548,9 +17548,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.5,
       "oopsy_fip": 4.343,
       "tags": [
+        "ROLE_UNCLEAR",
         "SP_LOCKED",
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -17736,9 +17736,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.87,
       "oopsy_fip": 3.981,
       "tags": [
+        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "RATIOS_ACE"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -18050,9 +18050,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.82,
       "oopsy_fip": 4.512,
       "tags": [
+        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "RATIOS_ACE"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -18547,9 +18547,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
-        "RATIOS_ACE",
+        "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR"
+        "RATIOS_ACE"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
       "health_pct": 82,
@@ -18797,8 +18797,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.11,
       "oopsy_fip": 4.557,
       "tags": [
-        "SP_LOCKED",
         "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
@@ -19418,8 +19418,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.5,
       "oopsy_fip": 4.729,
       "tags": [
-        "SP_LOCKED",
         "DEEP_LEAGUE",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "STASH"
@@ -20158,8 +20158,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.71,
       "oopsy_fip": 4.721,
       "tags": [
-        "SP_LOCKED",
         "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
@@ -20285,8 +20285,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.61,
       "oopsy_fip": 4.44,
       "tags": [
-        "SP_LOCKED",
         "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
@@ -20412,8 +20412,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.62,
       "oopsy_fip": 4.28,
       "tags": [
-        "SP_LOCKED",
         "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
@@ -22559,7 +22559,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.404,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -24656,7 +24657,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.295,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -25014,7 +25016,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.371,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -25117,7 +25120,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.328,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -25979,7 +25983,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.36,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -26133,7 +26138,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.327,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -26542,7 +26548,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.3,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -26645,7 +26652,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.328,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27003,7 +27011,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.32,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27259,7 +27268,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.236,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27362,7 +27372,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.264,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27414,7 +27425,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.3,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27466,7 +27478,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.298,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27569,7 +27582,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.077,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27621,7 +27635,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.364,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27673,7 +27688,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.306,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27876,7 +27892,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.357,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -27979,7 +27996,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.159,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -28537,7 +28555,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.344,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -28946,7 +28965,8 @@ export const LDB_DATA = {
       "tags": [
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "Spring: 3.0 IP, 2 ER, 3 H, 0 BB, 2 K. Doing his best to force a White Sox rotation spot — not going to happen per scouts. Likely bullpen.",
       "health_pct": 80,
@@ -29151,7 +29171,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.365,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -29607,7 +29628,8 @@ export const LDB_DATA = {
       "tags": [
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 5 H, 0 BB, 4 K. 58 pitches — filthy 83/84 mph curveball, splitter with 3/13 whiffs. Sinker down from 96 to 94/95 and sitting away to RHB — can't get it armside. Ideal profile is sinker/curve with splitter/four-seamer vs LHB, but command isn't there yet. Competing for Pirates SP5.",
       "health_pct": 80,
@@ -30116,7 +30138,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.277,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -30321,7 +30344,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.26,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -30473,7 +30497,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.05,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -30574,7 +30599,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.176,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -30881,7 +30907,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.037,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31084,7 +31111,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.302,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31136,7 +31164,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.169,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31188,7 +31217,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.23,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31291,7 +31321,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.323,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31496,7 +31527,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.31,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31548,7 +31580,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.236,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -31700,7 +31733,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.276,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -32055,7 +32089,8 @@ export const LDB_DATA = {
       "tags": [
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "NOT in Orioles rotation — Bassitt signed. Moves to bullpen or depth role. Was competing for rotation spot but that door is closed.",
       "health_pct": 82,
@@ -32107,7 +32142,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.204,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -32612,7 +32648,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.148,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -33069,7 +33106,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.052,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -33121,7 +33159,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.205,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -33783,7 +33822,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.023,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -33835,7 +33875,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.221,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -34089,7 +34130,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.23,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -34787,7 +34829,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.318,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -34839,7 +34882,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.069,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -34993,7 +35037,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.02,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35045,7 +35090,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.36,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35097,7 +35143,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.314,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35149,7 +35196,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.312,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35201,7 +35249,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.277,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35253,7 +35302,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.023,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35394,7 +35444,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.15,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -35881,7 +35932,8 @@ export const LDB_DATA = {
       "oopsy_est_value": null,
       "oopsy_ldb_score": null,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -36226,7 +36278,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.277,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -36431,7 +36484,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.3,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -36483,7 +36537,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.292,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -36637,7 +36692,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.288,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37235,7 +37291,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.162,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37325,7 +37382,8 @@ export const LDB_DATA = {
       "oopsy_est_value": null,
       "oopsy_ldb_score": null,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37376,7 +37434,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.054,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37428,7 +37487,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.236,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37480,7 +37540,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.2,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37532,7 +37593,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.157,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37684,7 +37746,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.236,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37725,7 +37788,8 @@ export const LDB_DATA = {
       "oopsy_est_value": null,
       "oopsy_ldb_score": null,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37777,7 +37841,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.3,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37879,7 +37944,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.054,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -37982,7 +38048,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.051,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38183,7 +38250,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.188,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38286,7 +38354,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.229,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38491,7 +38560,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.202,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38543,7 +38613,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.276,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38584,7 +38655,8 @@ export const LDB_DATA = {
       "oopsy_est_value": null,
       "oopsy_ldb_score": null,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38685,7 +38757,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.045,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -38837,7 +38910,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.173,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39129,7 +39203,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.208,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39183,7 +39258,8 @@ export const LDB_DATA = {
       "tags": [
         "IL_START",
         "INJURED",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "IL to open 2026 with left arm nerve issue. Was finally going to get his rotation shot — now delayed further. Cubs rotation: Imanaga, Boyd, Horton, Taillon, Cabrera locked.",
       "health_pct": 60,
@@ -39325,7 +39401,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.045,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39717,7 +39794,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.193,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39769,7 +39847,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.077,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39810,7 +39889,8 @@ export const LDB_DATA = {
       "oopsy_est_value": null,
       "oopsy_ldb_score": null,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -39862,7 +39942,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.208,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40196,7 +40277,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.046,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40588,7 +40670,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.23,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40640,7 +40723,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.036,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40794,7 +40878,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.198,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40846,7 +40931,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.289,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -40900,7 +40986,8 @@ export const LDB_DATA = {
       "tags": [
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 1 H, 1 BB, 2 K. Lots of vert, can't elevate four-seamer. Kitchen-sink approach but command isn't there. Behind Garrett for Marlins rotation spot.",
       "health_pct": 78,
@@ -40952,7 +41039,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.202,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -41004,7 +41092,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": 0.043,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -41056,7 +41145,8 @@ export const LDB_DATA = {
       "oopsy_bs": 0.0,
       "oopsy_vijay": -0.057,
       "tags": [
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
@@ -41213,7 +41303,8 @@ export const LDB_DATA = {
         "ROLE_UNCLEAR",
         "INJURED",
         "DEEP_LEAGUE",
-        "ELITE_ERA"
+        "ELITE_ERA",
+        "RP_SP_ELIG"
       ],
       "note": "Spring: 2.0 IP, 0 ER, 2 H, 1 BB, 1 K — removed from spring squad after this. Up to 97/98 mph but Empty Velocity, some four-seamers acting as sinkers with poor movement. Can't find the zone. Splitter spotted in there. Monitor mid-season.",
       "health_pct": 65,

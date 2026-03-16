@@ -113,7 +113,7 @@ def load_tag_policy(path: Path):
         "ELITE_ERA", "VIJAY_ELITE", "SLEEPER", "BREAKOUT", "BOUNCE_BACK",
         "BUST", "INJURED", "IL", "IL_START", "DTD", "DELAYED", "INJURY_RISK",
         "ROLE_UNCLEAR", "STASH", "PROSPECT", "DEEP_LEAGUE", "ROFR_TARGET",
-        "LDB_NEED", "SP_LOCKED", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
+        "LDB_NEED", "SP_LOCKED", "RP_SP_ELIG", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
         "SPEED_VALUE", "MULTI_POS",
     }
     default_blocked = {"ADP_AVOID", "ADP_VALUE"}
@@ -1449,6 +1449,9 @@ def auto_tags_rp(p: dict) -> list:
     if era <= 2.50:                          tags.append("ELITE_ERA")
     if vijay / g >= 0.45 if g > 0 else False: tags.append("VIJAY_ELITE")
     if vijay / g < 0.15 if g > 0 else False:  tags.append("DEEP_LEAGUE")
+    positions = [str(x).upper() for x in (p.get("positions") or [])]
+    if "SP" in positions:
+        tags.append("RP_SP_ELIG")
     return tags
 
 
