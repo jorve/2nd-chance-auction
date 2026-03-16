@@ -125,7 +125,7 @@ function BidStepper({ value, onChange, maxBudget }) {
           }}>${q}</button>
         ))}
       </div>
-      {isOver && <div style={{ fontSize: 10, color: 'var(--red)', fontFamily: "'DM Mono', monospace" }}>⚠ Over budget (${maxBudget?.toFixed(1)}M left)</div>}
+      {isOver && <div style={{ fontSize: 10, color: 'var(--red)', fontFamily: "'DM Mono', monospace" }}>⚠ Over bid cap (${maxBudget?.toFixed(1)}M max with reserves)</div>}
     </div>
   )
 }
@@ -142,6 +142,7 @@ export default function AuctionPanel() {
     confirmSale,
     teams, resetAuction,
     getNoteForPlayer,
+    getMaxBidForTeam,
   } = useAuctionStore()
 
   const { apiKey } = useApiKeyStore()
@@ -159,7 +160,8 @@ export default function AuctionPanel() {
   const fry = teams['FRY'] || {}
   const bidTeamData = bidTeam ? teams[bidTeam] : null
   const price = parseFloat(bidPrice) || 0
-  const canConfirm = player && bidTeam && isValidBidPrice(bidPrice) && price <= (bidTeamData?.budget_current ?? Infinity)
+  const bidCap = bidTeam ? getMaxBidForTeam(bidTeam) : 0
+  const canConfirm = player && bidTeam && isValidBidPrice(bidPrice) && price <= bidCap
 
   const allPlayers = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
   const searchResults = search.trim().length >= 1
@@ -459,7 +461,7 @@ export default function AuctionPanel() {
           </div>
 
           {/* Bid stepper */}
-          <BidStepper value={bidPrice} onChange={setBidPrice} maxBudget={bidTeamData?.budget_current} />
+          <BidStepper value={bidPrice} onChange={setBidPrice} maxBudget={bidCap} />
 
           {/* Price context */}
           {bidTeam && price > 0 && (
@@ -474,8 +476,8 @@ export default function AuctionPanel() {
                 </span>
               </span>
               <span>
-                {bidTeam} budget:{' '}
-                <span style={{ color: pctBudget > 50 ? 'var(--red)' : 'var(--text)' }}>{pctBudget}%</span>
+                {bidTeam} cap:{' '}
+                <span style={{ color: price > bidCap ? 'var(--red)' : 'var(--text)' }}>${bidCap.toFixed(1)}M</span>
               </span>
             </div>
           )}

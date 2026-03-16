@@ -2,6 +2,24 @@ import { create } from 'zustand'
 import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
 
+const LEAGUE_MIN_BID = 0.5
+const IN_SEASON_CARRY_RESERVE = 5.0
+
+function effectiveAuctionBudgetForValuation(teamState) {
+  const budget = parseFloat(teamState?.budget_current) || 0
+  const slots = Math.max(0, parseInt(teamState?.slots_current ?? 0, 10) || 0)
+  const requiredReserve = (slots * LEAGUE_MIN_BID) + IN_SEASON_CARRY_RESERVE
+  return Math.max(0, budget - requiredReserve)
+}
+
+function reserveAwareMaxBid(teamState) {
+  const budget = parseFloat(teamState?.budget_current) || 0
+  const slots = Math.max(0, parseInt(teamState?.slots_current ?? 0, 10) || 0)
+  if (slots <= 0) return 0
+  const reserveAfterThisPurchase = ((slots - 1) * LEAGUE_MIN_BID) + IN_SEASON_CARRY_RESERVE
+  return Math.max(0, Math.min(budget, budget - reserveAfterThisPurchase))
+}
+
 // Tunables for below-replacement valuation behavior.
 const NEGATIVE_VALUE_CONFIG = {
   priorityBoostScale: 1.5,
@@ -25,8 +43,12 @@ const NEGATIVE_VALUE_CONFIG = {
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcAllValues(batters, sp, rp, teams, soldMap) {
-  const totalRemaining = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
-  if (totalRemaining <= 0) {
+  const effectiveAuctionBudgetByTeam = {}
+  for (const [team, t] of Object.entries(teams)) {
+    effectiveAuctionBudgetByTeam[team] = effectiveAuctionBudgetForValuation(t)
+  }
+  const totalEffectiveAuctionBudget = Object.values(effectiveAuctionBudgetByTeam).reduce((s, v) => s + v, 0)
+  if (totalEffectiveAuctionBudget <= 0) {
     return {
       batters: batters.map(p => ({ ...p })),
       sp:      sp.map(p => ({ ...p })),
@@ -67,10 +89,10 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const spShare  = BLEND * baseline.sp  + (1 - BLEND) * dyn.sp
   const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
 
-  const hitBudget = totalRemaining * hitShare
-  const spBudget  = totalRemaining * spShare
+  const hitBudget = totalEffectiveAuctionBudget * hitShare
+  const spBudget  = totalEffectiveAuctionBudget * spShare
   const RP_VALUE_SCALE = 0.80
-  const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
+  const rpBudget  = totalEffectiveAuctionBudget * rpShare * RP_VALUE_SCALE
 
   const roundHalf = v => Math.round(v * 2) / 2
   const roundTenth = v => Math.round(v * 10) / 10
@@ -422,12 +444,15 @@ export const useAuctionStore = create((set, get) => ({
     saveToStorage(get().sold, get().teams, get().auctionLog, get().currentNominator, next)
   },
   getTargetAvoid: (playerName) => get().targetAvoid[playerName] ?? null,
+  getMaxBidForTeam: (team) => reserveAwareMaxBid(get().teams[team]),
 
   confirmSale: () => {
     const { nominatedPlayer, bidTeam, bidPrice, sold, auctionLog, teams, nominatedBy, currentNominator, targetAvoid } = get()
     if (!nominatedPlayer || !bidTeam || !bidPrice) return
     const price = parseFloat(bidPrice)
     if (isNaN(price) || price < 0.5) return
+    const maxBid = reserveAwareMaxBid(teams[bidTeam])
+    if (price > maxBid) return
 
     const posType = nominatedPlayer.gs !== undefined ? 'sp'
       : nominatedPlayer.pa !== undefined ? 'batter' : 'rp'

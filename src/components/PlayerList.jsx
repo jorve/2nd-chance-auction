@@ -9,6 +9,7 @@ const TIER_LABELS = { 1: 'TIER 1 · ELITE', 2: 'TIER 2 · PREMIUM', 3: 'TIER 3 �
 const BATTER_COLS = [
   { key: 'hr',       label: 'HR',   fmt: 0 },
   { key: 'r',        label: 'R',    fmt: 0 },
+  { key: 'rbi',      label: 'aRBI', fmt: 0 },
   { key: 'obp',      label: 'OBP',  fmt: 3 },
   { key: 'ops',      label: 'OPS',  fmt: 3 },
   { key: 'asb',      label: 'aSB',  fmt: 1 },
