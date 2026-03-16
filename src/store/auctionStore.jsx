@@ -41,6 +41,16 @@ const NEGATIVE_VALUE_CONFIG = {
   ],
 }
 
+// Opportunity-cost model for positive valuations:
+// premium raw shares are discounted, then re-normalized to pool budget.
+const OPPORTUNITY_COST_CONFIG = {
+  enabled: true,
+  premiumStartMultiple: 3.0, // start discounting above ~3x average slot spend
+  alpha: 0.3,                // higher => stronger discount on expensive players
+  curve: 'log',              // softer than linear penalty ramp
+  minPenalty: 0.75,          // keep floor so stars are not overly crushed
+}
+
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const effectiveAuctionBudgetByTeam = {}
@@ -123,17 +133,42 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const rpBudget = totalMass > 0
     ? totalEffectiveAuctionBudget * (rpMass / totalMass)
     : totalEffectiveAuctionBudget / 3
-  const allocGroup = (group, budget, negativePriorityScores = new Map()) => {
+  const allocGroup = (group, budget, negativePriorityScores = new Map(), slotsToFill = 0) => {
     const totalPositiveVorp = group.reduce((s, p) => s + positiveVorp(p), 0)
     if (!totalPositiveVorp) {
       // Keep the board differentiated when everyone in a pool grades below replacement.
       return new Map(group.map(p => [p.name, roundTenth(Math.min(0, rawVorp(p)))]))
     }
     const dollarsPerVorp = budget / totalPositiveVorp
+    const positivePlayers = group.filter(p => rawVorp(p) > 0)
+    const linearRawByName = new Map()
+    for (const p of positivePlayers) {
+      linearRawByName.set(p.name, rawVorp(p) * dollarsPerVorp)
+    }
+    let adjustedPositiveByName = new Map(linearRawByName)
+    if (OPPORTUNITY_COST_CONFIG.enabled && positivePlayers.length > 0 && slotsToFill > 0) {
+      const avgSlotSpend = budget / Math.max(1, slotsToFill)
+      let discountedSum = 0
+      adjustedPositiveByName = new Map()
+      for (const p of positivePlayers) {
+        const linearRaw = linearRawByName.get(p.name) ?? 0
+        const spendMultiple = avgSlotSpend > 0 ? (linearRaw / avgSlotSpend) : 1
+        const excess = Math.max(0, spendMultiple - OPPORTUNITY_COST_CONFIG.premiumStartMultiple)
+        const basePenalty = OPPORTUNITY_COST_CONFIG.curve === 'log'
+          ? (1 / (1 + (OPPORTUNITY_COST_CONFIG.alpha * Math.log1p(excess))))
+          : (1 / (1 + (OPPORTUNITY_COST_CONFIG.alpha * excess)))
+        const penalty = Math.max(OPPORTUNITY_COST_CONFIG.minPenalty ?? 0, basePenalty)
+        const discounted = linearRaw * penalty
+        adjustedPositiveByName.set(p.name, discounted)
+        discountedSum += discounted
+      }
+      // Intentionally do not renormalize up to budget.
+      // Opportunity-cost adjustment is one-way: values can only decrease.
+    }
     const out = new Map()
     for (const p of group) {
       const pv = rawVorp(p)
-      const rawShare = pv * dollarsPerVorp
+      const rawShare = pv > 0 ? (adjustedPositiveByName.get(p.name) ?? 0) : (pv * dollarsPerVorp)
       // Positive values still honor the auction floor, negatives are shown on the board.
       if (pv > 0) {
         out.set(p.name, Math.max(0.5, roundHalf(rawShare)))
@@ -151,9 +186,9 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const spNegPriority = computePriorityScores(unsoldSP, NEGATIVE_VALUE_CONFIG.sp)
   const rpNegPriority = computePriorityScores(unsoldRP, NEGATIVE_VALUE_CONFIG.rp)
 
-  const adjBatters = allocGroup(unsoldBatters, hitBudget, batterNegPriority)
-  const adjSP = allocGroup(unsoldSP, spBudget, spNegPriority)
-  const adjRP = allocGroup(unsoldRP, rpBudget, rpNegPriority)
+  const adjBatters = allocGroup(unsoldBatters, hitBudget, batterNegPriority, batterSlotsToFill)
+  const adjSP = allocGroup(unsoldSP, spBudget, spNegPriority, spSlotsToFill)
+  const adjRP = allocGroup(unsoldRP, rpBudget, rpNegPriority, rpSlotsToFill)
 
   const applyAdj = (players, adjMap) => players.map(p => ({
     ...p,
