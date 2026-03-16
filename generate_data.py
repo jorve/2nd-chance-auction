@@ -56,6 +56,9 @@ SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
 RP_VALUE_SCALE    = 0.80   # Scale RP values down (fewer innings than SPs)
 FULL_TEAM_BUDGET  = 200.0  # Fixed baseline per-team budget for theoretical values
+SEASON_WEEKS = 26
+TEAM_WEEKLY_AB = 200.0
+TEAM_WEEKLY_IP = 50.0
 
 FRY_TEAM = "FRY"
 FRY_KEEPERS = ["Ronald Acuña Jr.", "Brent Rooker",
@@ -236,6 +239,24 @@ def calc_mgs_per_gs(row):
     if gs == 0: return 0.0
     return calc_mgs_season(row) / gs
 
+
+def calc_ab_per_week(row):
+    # Use PA as best available proxy for weekly AB share.
+    return fv(row, "PA") / SEASON_WEEKS if SEASON_WEEKS > 0 else 0.0
+
+
+def calc_ip_per_week(row):
+    return fv(row, "IP") / SEASON_WEEKS if SEASON_WEEKS > 0 else 0.0
+
+
+def ratio_weekly_delta(player_ratio, player_weekly_volume, team_ratio, team_weekly_volume):
+    """Weekly ratio movement if player contributes into a team-level denominator bucket."""
+    denom = team_weekly_volume + player_weekly_volume
+    if denom <= 0:
+        return 0.0
+    blended = ((team_ratio * team_weekly_volume) + (player_ratio * player_weekly_volume)) / denom
+    return blended - team_ratio
+
 def names_match(proj_name, draft_name):
     """
     Core matching logic: projection CSV name vs draft board name.
@@ -396,31 +417,44 @@ def get_scored_pool_cached(pool_kind, proj_path):
         rows = get_csv_rows_cached(proj_path)
         if pool_kind == "bat":
             pool = [r for r in rows if fv(r, "PA") >= MIN_PA]
+            team_obp = statistics.mean(fv(r, "OBP") for r in pool) if pool else 0.0
+            team_ops = statistics.mean(fv(r, "OPS") for r in pool) if pool else 0.0
             for r in pool:
+                ab_wk = calc_ab_per_week(r)
                 r["_raw_aSB"]  = calc_aSB(r)
                 r["_raw_HR"]   = fv(r, "HR")
                 r["_raw_R"]    = fv(r, "R")
-                r["_raw_OBP"]  = fv(r, "OBP")
-                r["_raw_OPS"]  = fv(r, "OPS")
+                # Ratio categories are scored by weekly team-impact, not raw ratio level.
+                r["_ab_per_week"] = ab_wk
+                r["_raw_OBP"] = ratio_weekly_delta(fv(r, "OBP"), ab_wk, team_obp, TEAM_WEEKLY_AB)
+                r["_raw_OPS"] = ratio_weekly_delta(fv(r, "OPS"), ab_wk, team_ops, TEAM_WEEKLY_AB)
                 r["_raw_aRBI"] = fv(r, "RBI")
             pool = compute_ldb_scores(pool, CAT_BAT)
         elif pool_kind == "sp":
             pool = [r for r in rows if fv(r, "GS") >= MIN_GS]
+            team_era = statistics.mean(fv(r, "ERA") for r in pool) if pool else 0.0
+            team_whip = statistics.mean(fv(r, "WHIP") for r in pool) if pool else 0.0
             for r in pool:
+                ip_wk = calc_ip_per_week(r)
                 r["_raw_MGS"]   = calc_mgs_season(r)
                 r["_raw_K"]     = fv(r, "SO")
-                r["_raw_ERA"]   = fv(r, "ERA")
+                r["_ip_per_week"] = ip_wk
+                r["_raw_ERA"] = ratio_weekly_delta(fv(r, "ERA"), ip_wk, team_era, TEAM_WEEKLY_IP)
                 r["_raw_HRA"]   = fv(r, "HR")
-                r["_raw_aWHIP"] = fv(r, "WHIP")
+                r["_raw_aWHIP"] = ratio_weekly_delta(fv(r, "WHIP"), ip_wk, team_whip, TEAM_WEEKLY_IP)
             pool = compute_ldb_scores(pool, CAT_SP)
         elif pool_kind == "rp":
             pool = [r for r in rows if fv(r, "IP") >= MIN_IP]
+            team_era = statistics.mean(fv(r, "ERA") for r in pool) if pool else 0.0
+            team_whip = statistics.mean(fv(r, "WHIP") for r in pool) if pool else 0.0
             for r in pool:
+                ip_wk = calc_ip_per_week(r)
                 r["_raw_VIJAY"] = calc_vijay_season(r)
                 r["_raw_K"]     = fv(r, "SO")
-                r["_raw_ERA"]   = fv(r, "ERA")
+                r["_ip_per_week"] = ip_wk
+                r["_raw_ERA"] = ratio_weekly_delta(fv(r, "ERA"), ip_wk, team_era, TEAM_WEEKLY_IP)
                 r["_raw_HRA"]   = fv(r, "HR")
-                r["_raw_aWHIP"] = fv(r, "WHIP")
+                r["_raw_aWHIP"] = ratio_weekly_delta(fv(r, "WHIP"), ip_wk, team_whip, TEAM_WEEKLY_IP)
             pool = compute_ldb_scores(pool, CAT_RP)
         else:
             raise ValueError(f"Unknown pool_kind: {pool_kind}")
@@ -1002,6 +1036,9 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "rbi": round(fv(p,"RBI"),1), "sb": round(fv(p,"SB"),1),
             "asb": round(p["_raw_aSB"],1), "wrc_plus": round(fv(p,"wRC+"),1),
             "war": round(fv(p,"WAR"),2),
+            "ab_per_week": round(p.get("_ab_per_week", 0.0), 2),
+            "obp_weekly_impact": round(p.get("_raw_OBP", 0.0), 6),
+            "ops_weekly_impact": round(p.get("_raw_OPS", 0.0), 6),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1038,6 +1075,9 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "whip": round(fv(p,"WHIP"),3), "hra": round(fv(p,"HR"),1),
             "mgs": round(calc_mgs_per_gs(p), 2), "fip": round(fv(p,"FIP"),3),
             "war": round(fv(p,"WAR"),2),
+            "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
+            "era_weekly_impact": round(p.get("_raw_ERA", 0.0), 6),
+            "whip_weekly_impact": round(p.get("_raw_aWHIP", 0.0), 6),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1075,6 +1115,9 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "era": round(fv(p,"ERA"),3), "whip": round(fv(p,"WHIP"),3),
             "hra": round(fv(p,"HR"),1), "vijay": round(calc_vijay_per_g(p), 3),
             "war": round(fv(p,"WAR"),2),
+            "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
+            "era_weekly_impact": round(p.get("_raw_ERA", 0.0), 6),
+            "whip_weekly_impact": round(p.get("_raw_aWHIP", 0.0), 6),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1618,6 +1661,12 @@ def main():
             "rp_budget":    round(rp_budget, 2),
             "min_pa": MIN_PA, "min_gs": MIN_GS, "min_ip": MIN_IP,
             "pos_slots_total": pos_slots,
+            "ratio_model": {
+                "season_weeks": SEASON_WEEKS,
+                "team_weekly_ab": TEAM_WEEKLY_AB,
+                "team_weekly_ip": TEAM_WEEKLY_IP,
+                "notes": "OBP/OPS/ERA/WHIP scored by weekly ratio movement vs team baseline.",
+            },
         },
         "replacement_levels": {
             # Backward-compatible defaults for the primary systems shown in the UI.
