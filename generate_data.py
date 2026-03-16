@@ -86,12 +86,12 @@ REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
 REPL_TOP_N     = 5            # average top-N remaining players = replacement level
 
 # Shared category weights used by scoring cache.
-CAT_BAT = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
-           "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
-CAT_SP  = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
-           "HRA":(False,1.5),"aWHIP":(False,1.5)}
-CAT_RP  = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
-           "HRA":(False,1.0),"aWHIP":(False,1.0)}
+CAT_BAT = {"OPS":(True,2.8),"OBP":(True,2.5),"HR":(True,1.9),
+           "aSB":(True,1.4),"R":(True,1.4),"aRBI":(True,1.4)}
+CAT_SP  = {"MGS":(True,2.5),"K":(True,2.2),"ERA":(False,1.9),
+           "HRA":(False,1.3),"aWHIP":(False,1.6)}
+CAT_RP  = {"VIJAY":(True,3.0),"K":(True,1.6),"ERA":(False,1.0),
+           "HRA":(False,0.9),"aWHIP":(False,1.2)}
 
 # ── DEBUG FLAGS ────────────────────────────────────────────────────────────────
 # Set LDB_DEBUG_AMBIG_POS=1 to print ambiguous abbreviated position lookups.
