@@ -56,43 +56,9 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
     }
   }
 
-  const soldValues = Object.values(soldMap)
-  let soldBatters = 0, soldSP = 0, soldRP = 0
-  for (const s of soldValues) {
-    if (s.pos_type === 'batter') soldBatters += 1
-    else if (s.pos_type === 'sp') soldSP += 1
-    else if (s.pos_type === 'rp') soldRP += 1
-  }
-
   const unsoldBatters = batters.filter(p => !soldMap[p.name])
   const unsoldSP      = sp.filter(p => !soldMap[p.name])
   const unsoldRP      = rp.filter(p => !soldMap[p.name])
-
-  const numTeams = Object.keys(teams).length
-  const BATTER_SLOTS_PER_TEAM = 11
-  const SP_SLOTS_PER_TEAM = 6
-  const RP_SLOTS_PER_TEAM = 3
-  const batterSlotsToFill = Math.max(0, BATTER_SLOTS_PER_TEAM * numTeams - soldBatters)
-  const spSlotsToFill = Math.max(0, SP_SLOTS_PER_TEAM * numTeams - soldSP)
-  const rpSlotsToFill = Math.max(0, RP_SLOTS_PER_TEAM * numTeams - soldRP)
-
-  const batterScarcity = unsoldBatters.length > 0 ? batterSlotsToFill / unsoldBatters.length : 0
-  const spScarcity = unsoldSP.length > 0 ? spSlotsToFill / unsoldSP.length : 0
-  const rpScarcity = unsoldRP.length > 0 ? rpSlotsToFill / unsoldRP.length : 0
-  const totalScarcity = batterScarcity + spScarcity + rpScarcity
-  const BLEND = 0.5
-  const baseline = { hit: 0.50, sp: 0.30, rp: 0.20 }
-  const dyn = totalScarcity > 0
-    ? { hit: batterScarcity / totalScarcity, sp: spScarcity / totalScarcity, rp: rpScarcity / totalScarcity }
-    : baseline
-  const hitShare = BLEND * baseline.hit + (1 - BLEND) * dyn.hit
-  const spShare  = BLEND * baseline.sp  + (1 - BLEND) * dyn.sp
-  const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
-
-  const hitBudget = totalEffectiveAuctionBudget * hitShare
-  const spBudget  = totalEffectiveAuctionBudget * spShare
-  const RP_VALUE_SCALE = 0.80
-  const rpBudget  = totalEffectiveAuctionBudget * rpShare * RP_VALUE_SCALE
 
   const roundHalf = v => Math.round(v * 2) / 2
   const roundTenth = v => Math.round(v * 10) / 10
@@ -120,6 +86,20 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   }
   const rawVorp = p => (p.ldb_score - (p.repl_level ?? 0))
   const positiveVorp = p => Math.max(0, rawVorp(p))
+  const sumPositiveVorp = (group) => group.reduce((s, p) => s + positiveVorp(p), 0)
+  const totalPositiveVorpAll =
+    sumPositiveVorp(unsoldBatters) +
+    sumPositiveVorp(unsoldSP) +
+    sumPositiveVorp(unsoldRP)
+  const hitBudget = totalPositiveVorpAll > 0
+    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldBatters) / totalPositiveVorpAll)
+    : totalEffectiveAuctionBudget / 3
+  const spBudget = totalPositiveVorpAll > 0
+    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldSP) / totalPositiveVorpAll)
+    : totalEffectiveAuctionBudget / 3
+  const rpBudget = totalPositiveVorpAll > 0
+    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldRP) / totalPositiveVorpAll)
+    : totalEffectiveAuctionBudget / 3
   const allocGroup = (group, budget, negativePriorityScores = new Map()) => {
     const totalPositiveVorp = group.reduce((s, p) => s + positiveVorp(p), 0)
     if (!totalPositiveVorp) {
