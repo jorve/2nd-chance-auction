@@ -30,6 +30,7 @@ const SP_COLS = [
   { key: 'athl_health',  label: 'H%',     fmt: 0, noZ: true },
 ]
 const RP_COLS = [
+  { key: 'pl_rp_rank', label: 'PL RP Rank', fmt: 0, noZ: true },
   { key: 'ip',    label: 'IP',   fmt: 0 },
   { key: 'sv',    label: 'SV',   fmt: 0 },
   { key: 'hld',   label: 'HLD',  fmt: 0 },
@@ -837,6 +838,7 @@ const TAG_CONFIG = {
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSP' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP' },
   RP_SP_ELIG:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RP+SP' },
+  PL_RP_SP_ELIG:{ bg: 'rgba(56,189,248,.16)',  color: 'var(--blue)',    text: 'PL+RP+SP' },
 }
 
 function MiniTag({ tag }) {

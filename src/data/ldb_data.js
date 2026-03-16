@@ -3208,260 +3208,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "J. Bukauskas",
-    "J. Briceno",
-    "C. Kieboom",
-    "J. Williams",
+    "J. Rodriguez",
+    "A. Hansen",
+    "A. Faedo",
+    "H. Alvarez",
+    "J. Triantos",
+    "R. Anthony",
+    "N. Gonzales",
+    "Z. Matthews",
+    "Z. Hope",
+    "J. Lawlar",
+    "F. Arias",
+    "Y. Curet",
+    "J. Wiggins",
+    "S. Howard",
+    "M. Clark",
+    "R. Arias",
+    "K. Allard",
+    "A. Gose",
+    "C. Keith",
+    "L. Hernandez",
     "C. Hernandez",
-    "D. Cameron",
-    "K. Watson",
-    "R. Mauricio",
+    "L. Doyle",
+    "J. De Paula",
+    "C. Fuller",
+    "C. Williams",
+    "J. Perdomo",
+    "C. DeLauter",
+    "S. Sanchez",
+    "A. Genao",
+    "D. Whitney",
+    "C. Norby",
+    "D.J. Peterson",
+    "Q. Mathews",
+    "X. Isaac",
+    "P. Messick",
+    "F. Wall",
+    "K. Campbell",
+    "P. Burdick",
+    "C. Spangenberg",
+    "D. Cartaya",
+    "M. Sirota",
+    "A.J. Reed",
+    "C. Fulmer",
+    "C. Moore",
+    "C. Benge",
+    "W. Javier",
+    "D. Crews",
+    "A. Meyer",
+    "T. Beede",
+    "J. Farmelo",
+    "M. Ballesteros",
+    "J. Turner",
+    "J. Bukauskas",
+    "S. Jones",
+    "C. Emerson",
+    "H. Smith",
+    "M. Manning",
+    "A. Gracia",
+    "E. Green",
+    "T. Bremner",
+    "T. Troy",
+    "R. Velazquez",
+    "F. Celesten",
+    "G. Valera",
+    "J. Bleday",
+    "R. Herrera",
+    "L. Matos",
+    "B. Montgomery",
+    "M. Baez",
+    "R. Pint",
+    "R. Lewis",
+    "J. Lebron",
+    "M. Harrison",
+    "S. Yamashita",
+    "J. Groome",
+    "C. Abrams",
+    "Z. Veen",
+    "C. Cowser",
+    "M. Banuelos",
+    "J. Misiorowski",
+    "T. Widener",
+    "B. Davis",
+    "A. Tejeda",
+    "T. Gillen",
+    "A. Arquette",
+    "C. Martin",
+    "E. Carter",
+    "C. Collier",
+    "S. Zavala",
+    "K. Rocker",
+    "S. Stewart",
+    "Jai. Chourio",
+    "L. Pena (MIL)",
+    "F. Whitley",
+    "K. Robinson",
+    "A. Nimmala",
+    "D. Espino",
+    "K. Griffin",
+    "E. Morales",
+    "Ad. Sanchez",
+    "B. Rocchio",
+    "T. Szapucki",
+    "R. Waldschmidt",
+    "C. Winn",
+    "T. Yamada",
+    "T. White",
+    "J. Gonzalez",
+    "R. Tiedemann",
+    "J. De Leon",
+    "T. Hence",
+    "G. Lombard Jr.",
+    "T. Bradley",
+    "S. Walcott",
+    "W. Jenkins",
+    "D. Lesko",
+    "J. Jobe",
+    "S. Strosnider",
+    "B. Eldridge",
+    "P. Tolle",
+    "E. Florentino",
+    "K. Anderson",
+    "O. Martinez",
+    "E. Florial",
+    "M. Mayer",
     "G. Taylor",
     "A. Baddoo",
-    "W. Javier",
-    "Q. Priester",
-    "T. Bazzana",
-    "N. Marte",
-    "Ad. Sanchez",
-    "M. Harrison",
-    "T. White",
-    "H. Takahashi",
-    "G. Canning",
-    "C. Dana",
-    "D. Crews",
-    "N. Carlos Vera",
-    "G. Lombard Jr.",
-    "W. Jenkins",
-    "C. Emerson",
-    "P. Eeles",
-    "L. De Vries",
-    "T. Gillen",
-    "S. Strosnider",
-    "H. Davis",
-    "R. Herrera",
-    "R. Ryan",
-    "K. Griffin",
-    "K. Alcantara",
-    "E. Conrad",
-    "C. Keith",
-    "E. Green",
-    "D. Waters",
-    "H. Bishop",
-    "C. DeLauter",
-    "B. McKay",
-    "C. Dollander",
-    "T. Casas",
-    "J. Arnold",
-    "B. Eldridge",
-    "S. Howard",
-    "A. Freeland",
-    "J. Groshans",
-    "A. Gose",
-    "M. Mayer",
-    "C. Smith",
-    "J. De Leon",
-    "R. Arias",
-    "H. Smith",
-    "A. Hansen",
-    "L. Pena (MIL)",
-    "V. Brujan",
-    "B. Shipley",
-    "C. Abrams",
-    "P. Tolle",
-    "J. Walker",
-    "T. Szapucki",
-    "A. Gracia",
-    "R. Waldschmidt",
-    "M. Clark",
-    "F. Whitley",
-    "J. Lebron",
-    "A. Tejeda",
-    "D. Espino",
-    "B. Davis",
-    "C. Norby",
-    "T. Trammell",
-    "L. Matos",
-    "C. Jensen",
-    "J. Turner",
-    "T. Bradley",
-    "Q. Mathews",
-    "D. Whitney",
-    "L. Montes",
-    "S. Stewart",
-    "J. LaViolette",
-    "C. Cowser",
-    "O. Peraza",
-    "C. Lagrange",
-    "J. Crawford",
-    "L. Armenteros",
-    "C. Collier",
-    "K. Rocker",
-    "F. Kilome",
-    "T. Bremner",
-    "C. Benge",
-    "A. Bracho",
-    "J. Bleday",
-    "A. Jackson",
-    "J. Lawlar",
-    "R. Anthony",
-    "S. Walcott",
-    "O. Colas",
-    "T. Hence",
-    "C. Pache",
-    "A. Martin",
-    "C. Young",
-    "M. Abel",
-    "R. Lewis",
-    "DL Hall",
-    "K. Allard",
-    "C. Fulmer",
-    "C. Fuller",
-    "R. Velazquez",
-    "N. Pearson",
-    "A. Meyer",
-    "J. P. Martinez",
-    "B. Thompson",
-    "S. Torkelson",
-    "J. Adams",
-    "J. Parker",
-    "E. Rodriguez",
-    "J. Groome",
-    "S. Sanchez",
-    "R. Calaz",
-    "D. Burress",
-    "S. Beer",
-    "P. Burdick",
-    "Z. Hope",
-    "T. Lutz",
-    "F. Arias",
-    "C. Williams",
-    "A. Miller",
-    "K. Anderson",
-    "H. Kjerstad",
-    "L. Doyle",
-    "D. Garcia",
-    "K. Mcgonigle",
-    "E. Hankins",
-    "E. Carter",
-    "J. Holliday",
-    "R. Tiedemann",
-    "P. Messick",
-    "B. Wilken",
-    "T. Black",
-    "O. Caissie",
-    "L. Allen",
-    "Jai. Chourio",
-    "T. Yamada",
-    "H. Waldrep",
-    "J. De Paula",
+    "C. Burns",
     "F. Alvarez",
-    "E. Morales",
-    "A. Duno",
-    "T. Yesavage",
-    "M. Manning",
-    "H. Alvarez",
-    "B. Rocchio",
-    "N. McLean",
-    "A. Faedo",
-    "J. Guerra",
-    "F. Wall",
-    "E. Perez",
-    "M. Banuelos",
-    "D. Curley",
-    "J. Gonzalez",
-    "R. Pint",
-    "C. Winn",
-    "J. Luis",
-    "A. Nimmala",
-    "E. Florial",
-    "N. Gonzales",
-    "E. Florentino",
-    "X. Isaac",
-    "T. Widener",
     "M. Liberatore",
+    "D. Jones",
+    "T. Casas",
+    "C. Young",
+    "D. Garcia",
+    "B. House",
+    "A. Medina",
+    "J. Parker",
+    "E. Perez",
     "R. Snelling",
-    "L. Hernandez",
+    "B. Wilken",
+    "D. Cameron",
+    "D. Waters",
+    "O. Peraza",
+    "Ja. Jung",
+    "J. LaViolette",
+    "T. Johnson",
+    "C. Pache",
+    "A. Freeland",
+    "A. Jackson",
+    "R. Sloan",
+    "A. Duno",
+    "J. Caglianone",
+    "N. Pearson",
+    "B. Shipley",
+    "F. Kilome",
+    "C. Mayo",
+    "A. Miller",
+    "J. Adams",
+    "H. Waldrep",
+    "E. Holliday",
+    "C. Kieboom",
+    "D. Curley",
+    "J. Crawford",
+    "J. Bart",
+    "R. Hassell",
+    "Jah. Jones",
+    "R. Calaz",
+    "C. Dollander",
+    "N. Marte",
+    "D. Beavers",
     "E. Hancock",
+    "A. Bracho",
+    "J. Biddle",
+    "T. Black",
+    "L. Patino",
+    "M. Winn",
+    "L. Brinson",
+    "J. Guerra",
+    "T. Trammell",
+    "S. Basallo",
+    "D. Burress",
+    "N. Carlos Vera",
+    "T. Yesavage",
+    "J. Luis",
+    "A. Page",
+    "N. Schultz",
+    "B. Rainer",
+    "V. Brujan",
+    "C. Bonemer",
+    "J. Groshans",
+    "G. Canning",
+    "L. Armenteros",
+    "B. Thompson",
+    "X. Neyens",
+    "J. De Jesus Gonzalez",
+    "J. Holliday",
+    "L. De Vries",
+    "H. Bishop",
+    "K. Alcantara",
+    "J. Dunn",
+    "T. Lutz",
+    "H. Takahashi",
+    "P. Eeles",
+    "H. Davis",
+    "B. McKay",
+    "L. Allen",
+    "DL Hall",
+    "C. Smith",
+    "N. Meyer",
+    "J. Briceno",
+    "J. Walker",
+    "E. Rodriguez",
+    "A. Painter",
+    "J. P. Martinez",
+    "G. Lavigne",
+    "J. Balazovic",
+    "S. Beer",
+    "Q. Priester",
+    "B. Goodwin",
+    "O. Colas",
+    "E. Conrad",
+    "T. Thomas",
+    "F. Barreto",
+    "C. Dana",
     "T. Sykora",
     "G. Rodriguez",
-    "A. Medina",
-    "R. Contreras",
-    "D. Beavers",
-    "T. Thomas",
-    "B. Goodwin",
-    "T. Johnson",
-    "S. Jones",
-    "Z. Veen",
-    "C. Mayo",
-    "J. Farmelo",
-    "Z. Matthews",
-    "M. Sirota",
-    "T. Beede",
-    "J. Misiorowski",
-    "J. De Jesus Gonzalez",
-    "K. Harrison",
-    "B. House",
-    "J. Wiggins",
-    "M. Baez",
-    "T. Troy",
-    "R. Vilade",
-    "A. Page",
-    "F. Celesten",
-    "M. Arroyo",
-    "D. Jones",
-    "K. Robinson",
-    "N. Meyer",
-    "J. Rodriguez",
-    "Rain. Rodriguez",
-    "R. Hassell",
-    "A.J. Reed",
-    "J. Biddle",
-    "B. Chandler",
-    "A. Genao",
-    "G. Valera",
-    "M. Luciano",
-    "J. Bart",
-    "D. Cartaya",
+    "E. Hankins",
+    "C. Jensen",
     "K. Okamoto",
-    "J. Jobe",
-    "S. Zavala",
+    "K. Harrison",
     "J. Barrero",
-    "C. Spangenberg",
-    "C. Moore",
-    "A. Arquette",
-    "Jah. Jones",
-    "B. Rainer",
-    "C. Burns",
-    "N. Schultz",
-    "C. Bonemer",
+    "L. Montes",
+    "A. Martin",
+    "M. Abel",
+    "M. Luciano",
+    "H. Kjerstad",
+    "B. Chandler",
+    "S. Torkelson",
+    "N. McLean",
+    "O. Caissie",
+    "R. Vilade",
+    "R. Contreras",
+    "Rain. Rodriguez",
+    "R. Ryan",
     "C. Condon",
-    "K. Campbell",
-    "C. Vaquero",
-    "F. Barreto",
-    "S. Basallo",
-    "Y. Curet",
-    "G. Lavigne",
-    "J. Caglianone",
-    "M. Winn",
-    "E. Holliday",
-    "D. Lesko",
-    "B. Montgomery",
-    "R. Sloan",
-    "C. Martin",
-    "J. Triantos",
-    "J. Perdomo",
-    "J. Dunn",
-    "X. Neyens",
-    "O. Martinez",
-    "D.J. Peterson",
-    "S. Yamashita",
-    "L. Brinson",
-    "L. Patino",
-    "M. Ballesteros",
-    "Ja. Jung",
+    "J. Arnold",
+    "K. Mcgonigle",
+    "K. Watson",
+    "T. Bazzana",
+    "M. Arroyo",
     "C. Early",
-    "J. Balazovic",
-    "A. Painter"
+    "C. Lagrange",
+    "C. Vaquero",
+    "J. Williams",
+    "R. Mauricio"
   ],
   "batters": [
     {
@@ -4095,8 +4095,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.48,
       "oopsy_g": 146.0,
       "tags": [
-        "BOUNCE_BACK",
-        "DTD"
+        "DTD",
+        "BOUNCE_BACK"
       ],
       "note": "Hamate surgery + elbow cleanup this offseason. Back in Cactus League. Hard-hit rate key metric to watch — may suppress power early. 30/30 floor when right. Top SS in OBP+OPS formats.",
       "health_pct": 85,
@@ -4204,8 +4204,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.54,
       "oopsy_g": 136.0,
       "tags": [
-        "SLEEPER",
-        "BUST"
+        "BUST",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -4259,8 +4259,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4988,8 +4988,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5365,8 +5365,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.55,
       "oopsy_g": 113.0,
       "tags": [
-        "PLATOON",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6020,8 +6020,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.21,
       "oopsy_g": 110.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6128,8 +6128,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6988,8 +6988,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7311,8 +7311,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 97.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8495,8 +8495,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.76,
       "oopsy_g": 113.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8657,8 +8657,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 100.0,
       "tags": [
-        "PLATOON",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8930,8 +8930,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.86,
       "oopsy_g": 131.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9524,8 +9524,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9737,8 +9737,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 112.0,
       "tags": [
-        "PLATOON",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -12249,8 +12249,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "BOUNCE_BACK",
-        "INJURY_RISK"
+        "INJURY_RISK",
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -12496,8 +12496,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.88,
       "oopsy_g": 96.0,
       "tags": [
-        "SLEEPER",
-        "BUST"
+        "BUST",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -12913,8 +12913,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.52,
       "oopsy_g": 63.0,
       "tags": [
-        "SLEEPER",
-        "PLATOON"
+        "PLATOON",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -15111,8 +15111,8 @@ export const LDB_DATA = {
       "oopsy_fip": 2.706,
       "tags": [
         "BREAKOUT",
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
       "health_pct": 95,
@@ -15173,8 +15173,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.38,
       "oopsy_fip": 3.298,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
       "health_pct": 93,
@@ -15235,10 +15235,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "INJURED",
-        "IL_START",
         "ROFR_TARGET",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "IL_START",
+        "INJURED"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -15299,8 +15299,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.58,
       "oopsy_fip": 3.314,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "STASH",
         "INJURY_RISK"
       ],
@@ -15363,8 +15363,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.598,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
       "health_pct": 82,
@@ -15426,8 +15426,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.738,
       "tags": [
         "BUST",
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
       "health_pct": 90,
@@ -15488,8 +15488,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
-        "INJURY_RISK",
         "ROLE_UNCLEAR",
+        "INJURY_RISK",
         "RATIOS_ACE"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
@@ -15552,8 +15552,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.41,
       "oopsy_fip": 3.718,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
       "health_pct": 88,
@@ -15615,8 +15615,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.352,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
       "health_pct": 92,
@@ -15741,8 +15741,8 @@ export const LDB_DATA = {
       "tags": [
         "INJURED",
         "BOUNCE_BACK",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -16174,8 +16174,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.011,
       "tags": [
         "ROLE_UNCLEAR",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -16298,8 +16298,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
+        "ROLE_UNCLEAR",
         "RATIOS_ACE",
         "SLEEPER"
       ],
@@ -16362,8 +16362,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.052,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
       "health_pct": 90,
@@ -16550,8 +16550,8 @@ export const LDB_DATA = {
       "tags": [
         "STASH",
         "INJURY_RISK",
-        "IL_START",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "IL_START"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
       "health_pct": 55,
@@ -16739,8 +16739,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.963,
       "tags": [
         "BOUNCE_BACK",
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
       "health_pct": 72,
@@ -17051,9 +17051,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
-        "IL_START",
         "DTD",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "IL_START"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
       "health_pct": 65,
@@ -17484,8 +17484,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.73,
       "oopsy_fip": 4.697,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
@@ -17549,8 +17549,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.343,
       "tags": [
         "ROLE_UNCLEAR",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -18168,8 +18168,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.23,
       "oopsy_fip": 4.279,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 2 H, 2 BB, 3 K. Only faced RHB (sinker/slider day). Velo a tick down, less rise on four-seamer. Interesting new 81 mph cutter — possibly a bad sweeper, possibly a new weapon. Nothing alarming. Reds SP4 confirmed.",
@@ -18548,8 +18548,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.519,
       "tags": [
         "ROLE_UNCLEAR",
-        "DEEP_LEAGUE",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
       "health_pct": 82,
@@ -18798,8 +18798,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.557,
       "tags": [
         "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
@@ -19419,8 +19419,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.729,
       "tags": [
         "DEEP_LEAGUE",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ROLE_UNCLEAR",
         "STASH"
       ],
@@ -20159,8 +20159,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.721,
       "tags": [
         "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
@@ -20286,8 +20286,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.44,
       "tags": [
         "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
@@ -20349,8 +20349,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.67,
       "oopsy_fip": 4.131,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 4 IP, 1 ER, 2 H, 1 BB, 3 K. Sinker inside to RHB, cut-fastball to LHB. 44% slider usage to RHB — moved away from four-seamer. Cardinals going with him. Could be decent in a stealth way.",
@@ -20413,8 +20413,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.28,
       "tags": [
         "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
@@ -21354,8 +21354,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -1.75,
       "oopsy_fip": 5.163,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.1 IP, 0 ER, 0 H, 2 BB, 3 K. Finally using cutter (20% usage, 77% strikes) — his best pitch. In Phillies rotation if cutter keeps cooking. Some NL-only upside per scouts. Phillies SP4.",
@@ -21794,7 +21794,8 @@ export const LDB_DATA = {
       ],
       "note": "Signed 3-year $69M deal with the Dodgers. Now LAD closer — elite stuff, locked role. Removes the Mets save situation uncertainty.",
       "health_pct": 90,
-      "role": "LAD — locked closer (signed 3yr/$69M)"
+      "role": "LAD — locked closer (signed 3yr/$69M)",
+      "pl_rp_rank": 2
     },
     {
       "id": "atc_rp_1",
@@ -21846,7 +21847,8 @@ export const LDB_DATA = {
       ],
       "note": "Houston will not rush Hader (biceps) — Abreu is the closer to start 2026. High-leverage arm with closer stuff. Roster immediately.",
       "health_pct": 95,
-      "role": "HOU RP — closer to open season (Hader out)"
+      "role": "HOU RP — closer to open season (Hader out)",
+      "pl_rp_rank": 10
     },
     {
       "id": "atc_rp_2",
@@ -21897,7 +21899,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 12
     },
     {
       "id": "atc_rp_3",
@@ -21948,7 +21951,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 4
     },
     {
       "id": "atc_rp_4",
@@ -21999,7 +22003,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 11
     },
     {
       "id": "atc_rp_5",
@@ -22050,7 +22055,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 15
     },
     {
       "id": "atc_rp_6",
@@ -22101,7 +22107,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 23
     },
     {
       "id": "atc_rp_7",
@@ -22152,7 +22159,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 26
     },
     {
       "id": "atc_rp_8",
@@ -22203,7 +22211,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 59
     },
     {
       "id": "atc_rp_9",
@@ -22256,7 +22265,8 @@ export const LDB_DATA = {
       ],
       "note": "Left biceps inflammation has kept him off the mound all spring — hasn't progressed past flat-ground work. Follows 2025 shoulder strain (team says unrelated). Unlikely ready for Opening Day. Bryan Abreu covering closer role to start.",
       "health_pct": 50,
-      "role": "HOU RP — biceps inflammation, Opening Day IL likely"
+      "role": "HOU RP — biceps inflammation, Opening Day IL likely",
+      "pl_rp_rank": 13
     },
     {
       "id": "atc_rp_10",
@@ -22307,7 +22317,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 31
     },
     {
       "id": "atc_rp_11",
@@ -22358,7 +22369,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 28
     },
     {
       "id": "atc_rp_12",
@@ -22409,7 +22421,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 16
     },
     {
       "id": "atc_rp_13",
@@ -22460,7 +22473,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 29
     },
     {
       "id": "atc_rp_14",
@@ -22511,7 +22525,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 27
     },
     {
       "id": "atc_rp_15",
@@ -22560,11 +22575,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.404,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 3
     },
     {
       "id": "atc_rp_16",
@@ -22615,7 +22632,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 52
     },
     {
       "id": "atc_rp_17",
@@ -22666,7 +22684,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 91
     },
     {
       "id": "atc_rp_18",
@@ -22717,7 +22736,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 24
     },
     {
       "id": "atc_rp_19",
@@ -22769,7 +22789,8 @@ export const LDB_DATA = {
       ],
       "note": "Added to Baltimore to close after Felix Bautista's surgery. Top-tier closer in his own right. Locked role in BAL.",
       "health_pct": 95,
-      "role": "BAL — locked closer (replaces Bautista)"
+      "role": "BAL — locked closer (replaces Bautista)",
+      "pl_rp_rank": 20
     },
     {
       "id": "atc_rp_20",
@@ -22820,7 +22841,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 56
     },
     {
       "id": "atc_rp_21",
@@ -22871,7 +22893,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 75
     },
     {
       "id": "atc_rp_22",
@@ -22922,7 +22945,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 69
     },
     {
       "id": "atc_rp_23",
@@ -22973,7 +22997,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 14
     },
     {
       "id": "atc_rp_24",
@@ -23024,7 +23049,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 58
     },
     {
       "id": "atc_rp_25",
@@ -23075,7 +23101,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 50
     },
     {
       "id": "atc_rp_26",
@@ -23126,7 +23153,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 17
     },
     {
       "id": "atc_rp_27",
@@ -23177,7 +23205,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 32
     },
     {
       "id": "atc_rp_28",
@@ -23229,7 +23258,8 @@ export const LDB_DATA = {
       ],
       "note": "FRY ROFR. Dodgers closer situation. Good K rate, reliable holds even if not locking saves.",
       "health_pct": 90,
-      "role": "High-leverage RP"
+      "role": "High-leverage RP",
+      "pl_rp_rank": 22
     },
     {
       "id": "atc_rp_29",
@@ -23280,7 +23310,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 47
     },
     {
       "id": "atc_rp_30",
@@ -23331,7 +23362,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 73
     },
     {
       "id": "atc_rp_31",
@@ -23384,7 +23416,8 @@ export const LDB_DATA = {
       ],
       "note": "FRY ROFR. Elite stuff but walk rate and blown save history create real VIJAY variance.",
       "health_pct": 85,
-      "role": "Closer / volatile"
+      "role": "Closer / volatile",
+      "pl_rp_rank": 60
     },
     {
       "id": "atc_rp_32",
@@ -23435,7 +23468,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 49
     },
     {
       "id": "atc_rp_33",
@@ -23486,7 +23520,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 71
     },
     {
       "id": "atc_rp_34",
@@ -23537,7 +23572,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 48
     },
     {
       "id": "atc_rp_35",
@@ -23588,7 +23624,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 61
     },
     {
       "id": "atc_rp_36",
@@ -23639,7 +23676,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 110
     },
     {
       "id": "atc_rp_37",
@@ -23690,7 +23728,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 83
     },
     {
       "id": "atc_rp_38",
@@ -23741,7 +23780,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 53
     },
     {
       "id": "atc_rp_39",
@@ -23792,7 +23832,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 44
     },
     {
       "id": "atc_rp_40",
@@ -23843,7 +23884,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 54
     },
     {
       "id": "atc_rp_41",
@@ -23894,7 +23936,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 45
     },
     {
       "id": "atc_rp_42",
@@ -23945,7 +23988,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 81
     },
     {
       "id": "atc_rp_43",
@@ -23997,7 +24041,8 @@ export const LDB_DATA = {
       ],
       "note": "Average fastball velocity down ~6 mph from 2025 this spring. Still projects for 20-25 saves but ERA likely 3.50-4.00 range. Monitor velocity trend.",
       "health_pct": 88,
-      "role": "RP — velocity down, closer situation to watch"
+      "role": "RP — velocity down, closer situation to watch",
+      "pl_rp_rank": 121
     },
     {
       "id": "atc_rp_44",
@@ -24048,7 +24093,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 146
     },
     {
       "id": "atc_rp_45",
@@ -24099,7 +24145,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 34
     },
     {
       "id": "atc_rp_46",
@@ -24150,7 +24197,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 76
     },
     {
       "id": "atc_rp_47",
@@ -24201,7 +24249,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 70
     },
     {
       "id": "atc_rp_48",
@@ -24252,7 +24301,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 165
     },
     {
       "id": "atc_rp_49",
@@ -24303,7 +24353,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 42
     },
     {
       "id": "atc_rp_50",
@@ -24354,7 +24405,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 66
     },
     {
       "id": "atc_rp_51",
@@ -24405,7 +24457,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 136
     },
     {
       "id": "atc_rp_52",
@@ -24456,7 +24509,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 63
     },
     {
       "id": "atc_rp_53",
@@ -24507,7 +24561,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 100
     },
     {
       "id": "atc_rp_54",
@@ -24558,7 +24613,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 161
     },
     {
       "id": "atc_rp_55",
@@ -24609,7 +24665,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 74
     },
     {
       "id": "atc_rp_56",
@@ -24658,11 +24715,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.295,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 94
     },
     {
       "id": "atc_rp_57",
@@ -24713,7 +24772,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 117
     },
     {
       "id": "atc_rp_58",
@@ -24764,7 +24824,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 93
     },
     {
       "id": "atc_rp_59",
@@ -24815,7 +24876,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 126
     },
     {
       "id": "atc_rp_60",
@@ -24866,7 +24928,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 82
     },
     {
       "id": "atc_rp_61",
@@ -24917,7 +24980,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 38
     },
     {
       "id": "atc_rp_62",
@@ -24968,7 +25032,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 51
     },
     {
       "id": "atc_rp_63",
@@ -25017,11 +25082,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.371,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 67
     },
     {
       "id": "atc_rp_64",
@@ -25072,7 +25139,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 30
     },
     {
       "id": "atc_rp_65",
@@ -25121,11 +25189,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.328,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 40
     },
     {
       "id": "atc_rp_66",
@@ -25176,7 +25246,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 35
     },
     {
       "id": "atc_rp_67",
@@ -25227,7 +25298,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 41
     },
     {
       "id": "atc_rp_68",
@@ -25278,7 +25350,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 72
     },
     {
       "id": "atc_rp_69",
@@ -25329,7 +25402,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 86
     },
     {
       "id": "atc_rp_70",
@@ -25380,7 +25454,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 102
     },
     {
       "id": "atc_rp_71",
@@ -25429,7 +25504,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 68
     },
     {
       "id": "atc_rp_72",
@@ -25480,7 +25556,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 39
     },
     {
       "id": "atc_rp_73",
@@ -25531,7 +25608,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 88
     },
     {
       "id": "atc_rp_74",
@@ -25582,7 +25660,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 273
     },
     {
       "id": "atc_rp_75",
@@ -25633,7 +25712,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 175
     },
     {
       "id": "atc_rp_76",
@@ -25684,7 +25764,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 101
     },
     {
       "id": "atc_rp_77",
@@ -25735,7 +25816,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 185
     },
     {
       "id": "atc_rp_78",
@@ -25784,7 +25866,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_79",
@@ -25833,7 +25916,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_80",
@@ -25884,7 +25968,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 140
     },
     {
       "id": "atc_rp_81",
@@ -25935,7 +26020,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 141
     },
     {
       "id": "atc_rp_82",
@@ -25984,11 +26070,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.36,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 37
     },
     {
       "id": "atc_rp_83",
@@ -26039,7 +26127,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 95
     },
     {
       "id": "atc_rp_84",
@@ -26090,7 +26179,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 166
     },
     {
       "id": "atc_rp_85",
@@ -26139,11 +26229,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.327,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 97
     },
     {
       "id": "atc_rp_86",
@@ -26194,7 +26286,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 85
     },
     {
       "id": "atc_rp_87",
@@ -26245,7 +26338,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 163
     },
     {
       "id": "atc_rp_88",
@@ -26296,7 +26390,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 188
     },
     {
       "id": "atc_rp_89",
@@ -26347,7 +26442,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 154
     },
     {
       "id": "atc_rp_90",
@@ -26398,7 +26494,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 122
     },
     {
       "id": "atc_rp_91",
@@ -26449,7 +26546,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 160
     },
     {
       "id": "atc_rp_92",
@@ -26500,7 +26598,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 103
     },
     {
       "id": "atc_rp_93",
@@ -26549,11 +26648,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.3,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 104
     },
     {
       "id": "atc_rp_94",
@@ -26604,7 +26705,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 84
     },
     {
       "id": "atc_rp_95",
@@ -26653,11 +26755,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.328,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 65
     },
     {
       "id": "atc_rp_96",
@@ -26708,7 +26812,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 156
     },
     {
       "id": "atc_rp_97",
@@ -26759,7 +26864,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 155
     },
     {
       "id": "atc_rp_98",
@@ -26810,7 +26916,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 184
     },
     {
       "id": "atc_rp_99",
@@ -26861,7 +26968,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 90
     },
     {
       "id": "atc_rp_100",
@@ -26912,7 +27020,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 120
     },
     {
       "id": "atc_rp_101",
@@ -26963,7 +27072,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 149
     },
     {
       "id": "atc_rp_102",
@@ -27012,11 +27122,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.32,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 57
     },
     {
       "id": "atc_rp_103",
@@ -27067,7 +27179,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 128
     },
     {
       "id": "atc_rp_104",
@@ -27118,7 +27231,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 144
     },
     {
       "id": "atc_rp_105",
@@ -27169,7 +27283,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 115
     },
     {
       "id": "atc_rp_106",
@@ -27220,7 +27335,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 109
     },
     {
       "id": "atc_rp_107",
@@ -27269,11 +27385,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.236,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 87
     },
     {
       "id": "atc_rp_108",
@@ -27324,7 +27442,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 153
     },
     {
       "id": "atc_rp_109",
@@ -27373,11 +27492,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.264,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 179
     },
     {
       "id": "atc_rp_110",
@@ -27426,11 +27547,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.3,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 135
     },
     {
       "id": "atc_rp_111",
@@ -27479,11 +27602,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.298,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 105
     },
     {
       "id": "atc_rp_112",
@@ -27534,7 +27659,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 108
     },
     {
       "id": "atc_rp_113",
@@ -27587,7 +27713,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_114",
@@ -27636,11 +27763,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.364,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 131
     },
     {
       "id": "atc_rp_115",
@@ -27689,11 +27818,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.306,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 89
     },
     {
       "id": "atc_rp_116",
@@ -27744,7 +27875,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 181
     },
     {
       "id": "atc_rp_117",
@@ -27795,7 +27927,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_118",
@@ -27844,7 +27977,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_119",
@@ -27893,11 +28027,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.357,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 178
     },
     {
       "id": "atc_rp_120",
@@ -27948,7 +28084,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_121",
@@ -27997,11 +28134,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.159,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 145
     },
     {
       "id": "atc_rp_122",
@@ -28050,7 +28189,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 134
     },
     {
       "id": "atc_rp_123",
@@ -28101,7 +28241,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 123
     },
     {
       "id": "atc_rp_124",
@@ -28152,7 +28293,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_125",
@@ -28203,7 +28345,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 159
     },
     {
       "id": "atc_rp_126",
@@ -28254,7 +28397,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 116
     },
     {
       "id": "atc_rp_127",
@@ -28303,7 +28447,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 234
     },
     {
       "id": "atc_rp_128",
@@ -28354,7 +28499,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_129",
@@ -28405,7 +28551,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_130",
@@ -28456,7 +28603,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 204
     },
     {
       "id": "atc_rp_131",
@@ -28507,7 +28655,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 226
     },
     {
       "id": "atc_rp_132",
@@ -28556,11 +28705,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.344,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 64
     },
     {
       "id": "atc_rp_133",
@@ -28611,7 +28762,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 219
     },
     {
       "id": "atc_rp_134",
@@ -28660,7 +28812,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 205
     },
     {
       "id": "atc_rp_135",
@@ -28711,7 +28864,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_136",
@@ -28762,7 +28916,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 78
     },
     {
       "id": "atc_rp_137",
@@ -28813,7 +28968,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 211
     },
     {
       "id": "atc_rp_138",
@@ -28864,7 +29020,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 209
     },
     {
       "id": "atc_rp_139",
@@ -28915,7 +29072,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 96
     },
     {
       "id": "atc_rp_140",
@@ -28970,7 +29128,8 @@ export const LDB_DATA = {
       ],
       "note": "Spring: 3.0 IP, 2 ER, 3 H, 0 BB, 2 K. Doing his best to force a White Sox rotation spot — not going to happen per scouts. Likely bullpen.",
       "health_pct": 80,
-      "role": "White Sox — unlikely to crack rotation"
+      "role": "White Sox — unlikely to crack rotation",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_141",
@@ -29021,7 +29180,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_142",
@@ -29072,7 +29232,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 254
     },
     {
       "id": "atc_rp_143",
@@ -29123,7 +29284,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 92
     },
     {
       "id": "atc_rp_144",
@@ -29172,11 +29334,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.365,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 55
     },
     {
       "id": "atc_rp_145",
@@ -29225,7 +29389,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 177
     },
     {
       "id": "atc_rp_146",
@@ -29276,7 +29441,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_147",
@@ -29325,7 +29491,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 191
     },
     {
       "id": "atc_rp_148",
@@ -29374,7 +29541,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 286
     },
     {
       "id": "atc_rp_149",
@@ -29425,7 +29593,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 152
     },
     {
       "id": "atc_rp_150",
@@ -29476,7 +29645,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 169
     },
     {
       "id": "atc_rp_151",
@@ -29527,7 +29697,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 113
     },
     {
       "id": "atc_rp_152",
@@ -29578,7 +29749,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 180
     },
     {
       "id": "atc_rp_153",
@@ -29629,11 +29801,13 @@ export const LDB_DATA = {
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 5 H, 0 BB, 4 K. 58 pitches — filthy 83/84 mph curveball, splitter with 3/13 whiffs. Sinker down from 96 to 94/95 and sitting away to RHB — can't get it armside. Ideal profile is sinker/curve with splitter/four-seamer vs LHB, but command isn't there yet. Competing for Pirates SP5.",
       "health_pct": 80,
-      "role": "Pirates — competing for SP5"
+      "role": "Pirates — competing for SP5",
+      "pl_rp_rank": 80
     },
     {
       "id": "atc_rp_154",
@@ -29682,7 +29856,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 222
     },
     {
       "id": "atc_rp_155",
@@ -29733,7 +29908,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 171
     },
     {
       "id": "atc_rp_156",
@@ -29784,7 +29960,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 212
     },
     {
       "id": "atc_rp_157",
@@ -29835,7 +30012,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 225
     },
     {
       "id": "atc_rp_158",
@@ -29886,7 +30064,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 172
     },
     {
       "id": "atc_rp_159",
@@ -29937,7 +30116,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_160",
@@ -29988,7 +30168,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_161",
@@ -30039,7 +30220,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 197
     },
     {
       "id": "atc_rp_162",
@@ -30090,7 +30272,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_163",
@@ -30139,11 +30322,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.277,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 173
     },
     {
       "id": "atc_rp_164",
@@ -30194,7 +30379,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 106
     },
     {
       "id": "atc_rp_165",
@@ -30245,7 +30431,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 168
     },
     {
       "id": "atc_rp_166",
@@ -30296,7 +30483,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_167",
@@ -30345,11 +30533,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.26,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 263
     },
     {
       "id": "atc_rp_168",
@@ -30400,7 +30590,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 182
     },
     {
       "id": "atc_rp_169",
@@ -30449,7 +30640,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_170",
@@ -30502,7 +30694,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_171",
@@ -30551,7 +30744,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_172",
@@ -30600,11 +30794,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.176,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 194
     },
     {
       "id": "atc_rp_173",
@@ -30655,7 +30851,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 138
     },
     {
       "id": "atc_rp_174",
@@ -30706,7 +30903,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 253
     },
     {
       "id": "atc_rp_175",
@@ -30757,7 +30955,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 264
     },
     {
       "id": "atc_rp_176",
@@ -30808,7 +31007,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 183
     },
     {
       "id": "atc_rp_177",
@@ -30859,7 +31059,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 214
     },
     {
       "id": "atc_rp_178",
@@ -30908,11 +31109,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.037,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 216
     },
     {
       "id": "atc_rp_179",
@@ -30961,7 +31164,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_180",
@@ -31012,7 +31216,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_181",
@@ -31063,7 +31268,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_182",
@@ -31112,11 +31318,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.302,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 112
     },
     {
       "id": "atc_rp_183",
@@ -31169,7 +31377,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_184",
@@ -31218,11 +31427,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.23,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 261
     },
     {
       "id": "atc_rp_185",
@@ -31273,7 +31484,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 176
     },
     {
       "id": "atc_rp_186",
@@ -31322,11 +31534,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.323,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 118
     },
     {
       "id": "atc_rp_187",
@@ -31377,7 +31591,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 143
     },
     {
       "id": "atc_rp_188",
@@ -31428,7 +31643,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_189",
@@ -31479,7 +31695,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 284
     },
     {
       "id": "atc_rp_190",
@@ -31528,11 +31745,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.31,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 107
     },
     {
       "id": "atc_rp_191",
@@ -31581,11 +31800,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.236,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 158
     },
     {
       "id": "atc_rp_192",
@@ -31634,7 +31855,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 276
     },
     {
       "id": "atc_rp_193",
@@ -31685,7 +31907,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 297
     },
     {
       "id": "atc_rp_194",
@@ -31734,11 +31957,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.276,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 164
     },
     {
       "id": "atc_rp_195",
@@ -31789,7 +32014,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 260
     },
     {
       "id": "atc_rp_196",
@@ -31840,7 +32066,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 266
     },
     {
       "id": "atc_rp_197",
@@ -31891,7 +32118,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_198",
@@ -31942,7 +32170,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 257
     },
     {
       "id": "atc_rp_199",
@@ -31991,7 +32220,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_200",
@@ -32040,7 +32270,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 256
     },
     {
       "id": "atc_rp_201",
@@ -32094,7 +32325,8 @@ export const LDB_DATA = {
       ],
       "note": "NOT in Orioles rotation — Bassitt signed. Moves to bullpen or depth role. Was competing for rotation spot but that door is closed.",
       "health_pct": 82,
-      "role": "Orioles — out of rotation"
+      "role": "Orioles — out of rotation",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_202",
@@ -32147,7 +32379,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_203",
@@ -32198,7 +32431,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 148
     },
     {
       "id": "atc_rp_204",
@@ -32249,7 +32483,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_205",
@@ -32298,7 +32533,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_206",
@@ -32347,7 +32583,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 242
     },
     {
       "id": "atc_rp_207",
@@ -32398,7 +32635,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 285
     },
     {
       "id": "atc_rp_208",
@@ -32447,7 +32685,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 238
     },
     {
       "id": "atc_rp_209",
@@ -32498,7 +32737,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_210",
@@ -32549,7 +32789,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 237
     },
     {
       "id": "atc_rp_211",
@@ -32600,7 +32841,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_212",
@@ -32649,11 +32891,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.148,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 269
     },
     {
       "id": "atc_rp_213",
@@ -32704,7 +32948,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 300
     },
     {
       "id": "atc_rp_214",
@@ -32755,7 +33000,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_215",
@@ -32806,7 +33052,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 125
     },
     {
       "id": "atc_rp_216",
@@ -32857,7 +33104,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 236
     },
     {
       "id": "atc_rp_217",
@@ -32908,7 +33156,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 202
     },
     {
       "id": "atc_rp_218",
@@ -32959,7 +33208,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_219",
@@ -33008,7 +33258,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_220",
@@ -33059,7 +33310,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 79
     },
     {
       "id": "atc_rp_221",
@@ -33111,7 +33363,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_222",
@@ -33160,11 +33413,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.205,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 283
     },
     {
       "id": "atc_rp_223",
@@ -33215,7 +33470,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 203
     },
     {
       "id": "atc_rp_224",
@@ -33266,7 +33522,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 129
     },
     {
       "id": "atc_rp_225",
@@ -33317,7 +33574,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 229
     },
     {
       "id": "atc_rp_226",
@@ -33368,7 +33626,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_227",
@@ -33419,7 +33678,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 130
     },
     {
       "id": "atc_rp_228",
@@ -33470,7 +33730,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_229",
@@ -33521,7 +33782,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 241
     },
     {
       "id": "atc_rp_230",
@@ -33572,7 +33834,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 189
     },
     {
       "id": "atc_rp_231",
@@ -33621,7 +33884,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_232",
@@ -33672,7 +33936,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 228
     },
     {
       "id": "atc_rp_233",
@@ -33723,7 +33988,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_234",
@@ -33774,7 +34040,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 151
     },
     {
       "id": "atc_rp_235",
@@ -33827,7 +34094,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_236",
@@ -33876,11 +34144,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.221,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 139
     },
     {
       "id": "atc_rp_237",
@@ -33931,7 +34201,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 249
     },
     {
       "id": "atc_rp_238",
@@ -33980,7 +34251,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_239",
@@ -34031,7 +34303,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_240",
@@ -34082,7 +34355,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_241",
@@ -34131,11 +34405,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.23,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 200
     },
     {
       "id": "atc_rp_242",
@@ -34186,7 +34462,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_243",
@@ -34237,7 +34514,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_244",
@@ -34286,7 +34564,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 282
     },
     {
       "id": "atc_rp_245",
@@ -34337,7 +34616,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 133
     },
     {
       "id": "atc_rp_246",
@@ -34386,7 +34666,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 124
     },
     {
       "id": "atc_rp_247",
@@ -34437,7 +34718,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_248",
@@ -34488,7 +34770,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 175
     },
     {
       "id": "atc_rp_249",
@@ -34526,7 +34809,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_250",
@@ -34577,7 +34861,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_251",
@@ -34628,7 +34913,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_252",
@@ -34679,7 +34965,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 223
     },
     {
       "id": "atc_rp_253",
@@ -34730,7 +35017,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 224
     },
     {
       "id": "atc_rp_254",
@@ -34781,7 +35069,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 280
     },
     {
       "id": "atc_rp_255",
@@ -34834,7 +35123,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_256",
@@ -34883,11 +35173,13 @@ export const LDB_DATA = {
       "oopsy_vijay": -0.069,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 246
     },
     {
       "id": "atc_rp_257",
@@ -34938,7 +35230,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_258",
@@ -34989,7 +35282,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_259",
@@ -35038,11 +35332,13 @@ export const LDB_DATA = {
       "oopsy_vijay": -0.02,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 137
     },
     {
       "id": "atc_rp_260",
@@ -35091,11 +35387,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.36,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 150
     },
     {
       "id": "atc_rp_261",
@@ -35144,11 +35442,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.314,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 243
     },
     {
       "id": "atc_rp_262",
@@ -35197,11 +35497,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.312,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 132
     },
     {
       "id": "atc_rp_263",
@@ -35250,11 +35552,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.277,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 99
     },
     {
       "id": "atc_rp_264",
@@ -35303,11 +35607,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.023,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 206
     },
     {
       "id": "atc_rp_265",
@@ -35358,7 +35664,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 247
     },
     {
       "id": "atc_rp_266",
@@ -35396,7 +35703,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_267",
@@ -35445,11 +35753,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.15,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 218
     },
     {
       "id": "atc_rp_268",
@@ -35498,7 +35808,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_269",
@@ -35549,7 +35860,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 262
     },
     {
       "id": "atc_rp_270",
@@ -35600,7 +35912,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_271",
@@ -35651,7 +35964,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 114
     },
     {
       "id": "atc_rp_272",
@@ -35702,7 +36016,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_273",
@@ -35753,7 +36068,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 291
     },
     {
       "id": "atc_rp_274",
@@ -35804,7 +36120,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_275",
@@ -35844,7 +36161,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_276",
@@ -35895,7 +36213,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_277",
@@ -35937,7 +36256,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_278",
@@ -35977,7 +36297,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 278
     },
     {
       "id": "atc_rp_279",
@@ -36028,7 +36349,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 157
     },
     {
       "id": "atc_rp_280",
@@ -36077,7 +36399,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 287
     },
     {
       "id": "atc_rp_281",
@@ -36128,7 +36451,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_282",
@@ -36179,7 +36503,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 230
     },
     {
       "id": "atc_rp_283",
@@ -36230,7 +36555,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 245
     },
     {
       "id": "atc_rp_284",
@@ -36279,11 +36605,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.277,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 98
     },
     {
       "id": "atc_rp_285",
@@ -36334,7 +36662,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 296
     },
     {
       "id": "atc_rp_286",
@@ -36385,7 +36714,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_287",
@@ -36436,7 +36766,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 215
     },
     {
       "id": "atc_rp_288",
@@ -36485,11 +36816,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.3,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 199
     },
     {
       "id": "atc_rp_289",
@@ -36538,11 +36871,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.292,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 127
     },
     {
       "id": "atc_rp_290",
@@ -36593,7 +36928,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 210
     },
     {
       "id": "atc_rp_291",
@@ -36644,7 +36980,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 279
     },
     {
       "id": "atc_rp_292",
@@ -36693,11 +37030,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.288,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 198
     },
     {
       "id": "atc_rp_293",
@@ -36737,7 +37076,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_294",
@@ -36786,7 +37126,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_295",
@@ -36837,7 +37178,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_296",
@@ -36886,7 +37228,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_297",
@@ -36937,7 +37280,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_298",
@@ -36988,7 +37332,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_299",
@@ -37039,7 +37384,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_300",
@@ -37090,7 +37436,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_301",
@@ -37141,7 +37488,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 288
     },
     {
       "id": "atc_rp_302",
@@ -37192,7 +37540,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 258
     },
     {
       "id": "atc_rp_303",
@@ -37243,7 +37592,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_304",
@@ -37296,7 +37646,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_305",
@@ -37345,7 +37696,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_306",
@@ -37387,7 +37739,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_307",
@@ -37439,7 +37792,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_308",
@@ -37488,11 +37842,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.236,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 142
     },
     {
       "id": "atc_rp_309",
@@ -37545,7 +37901,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_310",
@@ -37598,7 +37955,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_311",
@@ -37649,7 +38007,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 251
     },
     {
       "id": "atc_rp_312",
@@ -37698,7 +38057,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 252
     },
     {
       "id": "atc_rp_313",
@@ -37751,7 +38111,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_314",
@@ -37793,7 +38154,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_315",
@@ -37842,11 +38204,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.3,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 174
     },
     {
       "id": "atc_rp_316",
@@ -37897,7 +38261,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 281
     },
     {
       "id": "atc_rp_317",
@@ -37949,7 +38314,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_318",
@@ -38000,7 +38366,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_319",
@@ -38049,11 +38416,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.051,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 192
     },
     {
       "id": "atc_rp_320",
@@ -38102,7 +38471,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_321",
@@ -38151,7 +38521,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_322",
@@ -38202,7 +38573,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_323",
@@ -38255,7 +38627,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_324",
@@ -38306,7 +38679,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_325",
@@ -38355,11 +38729,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.229,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 190
     },
     {
       "id": "atc_rp_326",
@@ -38410,7 +38786,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 119
     },
     {
       "id": "atc_rp_327",
@@ -38461,7 +38838,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_328",
@@ -38512,7 +38890,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 221
     },
     {
       "id": "atc_rp_329",
@@ -38561,11 +38940,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.202,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 244
     },
     {
       "id": "atc_rp_330",
@@ -38614,11 +38995,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.276,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 111
     },
     {
       "id": "atc_rp_331",
@@ -38656,11 +39039,13 @@ export const LDB_DATA = {
       "oopsy_ldb_score": null,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 277
     },
     {
       "id": "atc_rp_332",
@@ -38709,7 +39094,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_333",
@@ -38762,7 +39148,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_334",
@@ -38811,7 +39198,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_335",
@@ -38862,7 +39250,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_336",
@@ -38911,11 +39300,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.173,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 272
     },
     {
       "id": "atc_rp_337",
@@ -38955,7 +39346,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 274
     },
     {
       "id": "atc_rp_338",
@@ -39006,7 +39398,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_339",
@@ -39055,7 +39448,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 299
     },
     {
       "id": "atc_rp_340",
@@ -39104,7 +39498,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_341",
@@ -39155,7 +39550,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 195
     },
     {
       "id": "atc_rp_342",
@@ -39208,7 +39604,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_343",
@@ -39259,11 +39656,13 @@ export const LDB_DATA = {
         "IL_START",
         "INJURED",
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "IL to open 2026 with left arm nerve issue. Was finally going to get his rotation shot — now delayed further. Cubs rotation: Imanaga, Boyd, Horton, Taillon, Cabrera locked.",
       "health_pct": 60,
-      "role": "IL start — nerve issue"
+      "role": "IL start — nerve issue",
+      "pl_rp_rank": 193
     },
     {
       "id": "atc_rp_344",
@@ -39303,7 +39702,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_345",
@@ -39354,7 +39754,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_346",
@@ -39406,7 +39807,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_347",
@@ -39457,7 +39859,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_348",
@@ -39506,7 +39909,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_349",
@@ -39557,7 +39961,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_350",
@@ -39597,7 +40002,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_351",
@@ -39646,7 +40052,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 255
     },
     {
       "id": "atc_rp_352",
@@ -39697,7 +40104,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_353",
@@ -39746,7 +40154,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_354",
@@ -39799,7 +40208,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_355",
@@ -39852,7 +40262,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_356",
@@ -39894,7 +40305,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_357",
@@ -39947,7 +40359,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_358",
@@ -39998,7 +40411,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 186
     },
     {
       "id": "atc_rp_359",
@@ -40049,7 +40463,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 196
     },
     {
       "id": "atc_rp_360",
@@ -40089,7 +40504,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_361",
@@ -40138,7 +40554,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_362",
@@ -40178,7 +40595,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 290
     },
     {
       "id": "atc_rp_363",
@@ -40229,7 +40647,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_364",
@@ -40282,7 +40701,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_365",
@@ -40333,7 +40753,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 232
     },
     {
       "id": "atc_rp_366",
@@ -40384,7 +40805,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 231
     },
     {
       "id": "atc_rp_367",
@@ -40433,7 +40855,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_368",
@@ -40484,7 +40907,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_369",
@@ -40533,7 +40957,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_370",
@@ -40582,7 +41007,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_371",
@@ -40622,7 +41048,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_372",
@@ -40671,11 +41098,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.23,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 259
     },
     {
       "id": "atc_rp_373",
@@ -40724,11 +41153,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.036,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 162
     },
     {
       "id": "atc_rp_374",
@@ -40779,7 +41210,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_375",
@@ -40830,7 +41262,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 170
     },
     {
       "id": "atc_rp_376",
@@ -40883,7 +41316,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_377",
@@ -40932,11 +41366,13 @@ export const LDB_DATA = {
       "oopsy_vijay": 0.289,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 201
     },
     {
       "id": "atc_rp_378",
@@ -40991,7 +41427,8 @@ export const LDB_DATA = {
       ],
       "note": "Spring: 3.0 IP, 0 ER, 1 H, 1 BB, 2 K. Lots of vert, can't elevate four-seamer. Kitchen-sink approach but command isn't there. Behind Garrett for Marlins rotation spot.",
       "health_pct": 78,
-      "role": "Marlins — depth behind Garrett"
+      "role": "Marlins — depth behind Garrett",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_379",
@@ -41044,7 +41481,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_380",
@@ -41097,7 +41535,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": null
     },
     {
       "id": "atc_rp_381",
@@ -41146,11 +41585,13 @@ export const LDB_DATA = {
       "oopsy_vijay": -0.057,
       "tags": [
         "ELITE_ERA",
-        "RP_SP_ELIG"
+        "RP_SP_ELIG",
+        "PL_RP_SP_ELIG"
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 248
     },
     {
       "id": "atc_rp_382",
@@ -41201,7 +41642,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 187
     },
     {
       "id": "atc_rp_383",
@@ -41252,7 +41694,8 @@ export const LDB_DATA = {
       ],
       "note": "",
       "health_pct": 100,
-      "role": ""
+      "role": "",
+      "pl_rp_rank": 295
     },
     {
       "id": "atc_rp_384",
@@ -41308,7 +41751,8 @@ export const LDB_DATA = {
       ],
       "note": "Spring: 2.0 IP, 0 ER, 2 H, 1 BB, 1 K — removed from spring squad after this. Up to 97/98 mph but Empty Velocity, some four-seamers acting as sinkers with poor movement. Can't find the zone. Splitter spotted in there. Monitor mid-season.",
       "health_pct": 65,
-      "role": "Reds — removed from spring squad"
+      "role": "Reds — removed from spring squad",
+      "pl_rp_rank": null
     }
   ],
   "fry_keepers": [

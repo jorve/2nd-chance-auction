@@ -44,6 +44,7 @@ CBS_RP_ELIG   = INPUT_DIR / "CBS_RP_elig.csv"
 PLAYER_NOTES  = INPUT_DIR / "player_notes.json"
 PL_BATTERS    = INPUT_DIR / "2026_PL_Batter_Rankings.csv"
 PL_SP         = INPUT_DIR / "2026_PL_SP_Rankings.csv"
+PL_RP         = INPUT_DIR / "PL_RP_SVHLD_rankings.csv"
 ATHLETIC_SP   = INPUT_DIR / "2026_Athletic_SP_Rankings.csv"
 TAG_POLICY_FILE = INPUT_DIR / "tag_policy.json"
 
@@ -113,7 +114,7 @@ def load_tag_policy(path: Path):
         "ELITE_ERA", "VIJAY_ELITE", "SLEEPER", "BREAKOUT", "BOUNCE_BACK",
         "BUST", "INJURED", "IL", "IL_START", "DTD", "DELAYED", "INJURY_RISK",
         "ROLE_UNCLEAR", "STASH", "PROSPECT", "DEEP_LEAGUE", "ROFR_TARGET",
-        "LDB_NEED", "SP_LOCKED", "RP_SP_ELIG", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
+        "LDB_NEED", "SP_LOCKED", "RP_SP_ELIG", "PL_RP_SP_ELIG", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
         "SPEED_VALUE", "MULTI_POS",
     }
     default_blocked = {"ADP_AVOID", "ADP_VALUE"}
@@ -1368,6 +1369,39 @@ def apply_pl_sp(players: list, pl_index: dict) -> list:
     return players
 
 
+def load_pl_rp(path: Path) -> dict:
+    """Load PL RP rankings CSV -> dict keyed by normalized pitcher name."""
+    if not path.exists():
+        print(f"  [PL-RP] {path.name} not found - skipping")
+        return {}
+    index = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            try:
+                pl_rank = int(str(row.get("rank", "")).strip())
+            except (ValueError, TypeError):
+                continue
+            key = norm(row.get("pitcher", ""))
+            if not key:
+                continue
+            index[key] = {"pl_rp_rank": pl_rank}
+    print(f"  [PL-RP] Loaded {len(index)} PL RP rankings")
+    return index
+
+
+def apply_pl_rp(players: list, pl_rp_index: dict) -> list:
+    """Inject PL RP rank into RP player records."""
+    rp_matcher = NameMatcher(pl_rp_index, fuzzy_threshold=0.88)
+    for p in players:
+        entry = rp_matcher.get(p["name"])
+        p["pl_rp_rank"] = entry["pl_rp_rank"] if entry else None
+        if entry and "SP" in [str(x).upper() for x in (p.get("positions") or [])]:
+            tags = list(p.get("tags", []))
+            if "PL_RP_SP_ELIG" not in tags:
+                p["tags"] = tags + ["PL_RP_SP_ELIG"]
+    return players
+
+
 # ── PLAYER NOTES & SMART TAGS ─────────────────────────────────────────────────
 
 def load_player_notes(path: Path) -> tuple[dict, dict]:
@@ -1649,6 +1683,7 @@ def main():
     notes_index, manual_notes = load_player_notes(PLAYER_NOTES)
     pl_index     = load_pl_batters(PL_BATTERS)
     pl_sp_index  = load_pl_sp(PL_SP)
+    pl_rp_index  = load_pl_rp(PL_RP)
     athl_sp_index = load_athletic_sp(ATHLETIC_SP)
 
     print("\n[7/7] Merging + writing ldb_data.js...")
@@ -1663,6 +1698,7 @@ def main():
     # PL enrichment
     batters = apply_pl_batters(batters, pl_index)
     sp      = apply_pl_sp(sp, pl_sp_index)
+    rp      = apply_pl_rp(rp, pl_rp_index)
 
     # Athletic SP enrichment
     sp = apply_athletic_sp(sp, athl_sp_index)

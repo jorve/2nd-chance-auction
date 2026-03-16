@@ -59,6 +59,7 @@ const TAG_CONFIG = {
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
   SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
   RP_SP_ELIG:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RP + SP ELIG' },
+  PL_RP_SP_ELIG:{ bg: 'rgba(56,189,248,.16)',  color: 'var(--blue)',    text: 'PL RP + SP ELIG' },
 }
 
 function TagPill({ tag }) {
