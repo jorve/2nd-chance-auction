@@ -210,10 +210,20 @@ export default function PlayerList() {
   }), [unsold, tierFilter, posFilter, tagFilter, searchQuery, targetAvoidFilter, getTargetAvoid])
 
   const sorted = useMemo(() => [...filtered].sort((a, b) => {
-    const av = a[sortCol] ?? 0, bv = b[sortCol] ?? 0
-    if (typeof bv === 'string' || typeof av === 'string')
-      return sortDir * String(av || '').localeCompare(String(bv || ''))
-    return sortDir * (bv - av)
+    const av = a[sortCol]
+    const bv = b[sortCol]
+    const aMissing = av == null || av === ''
+    const bMissing = bv == null || bv === ''
+    if (aMissing || bMissing) {
+      if (aMissing && bMissing) return 0
+      // For descending sorts (default), missing values go to the bottom.
+      if (sortDir === 1) return aMissing ? 1 : -1
+      return aMissing ? -1 : 1
+    }
+    if (typeof bv === 'string' || typeof av === 'string') {
+      return sortDir * String(av).localeCompare(String(bv))
+    }
+    return sortDir * ((bv ?? 0) - (av ?? 0))
   }), [filtered, sortCol, sortDir])
 
   function getVirtualConfig() {
