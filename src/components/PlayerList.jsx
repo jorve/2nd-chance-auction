@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { useAuctionStore, TEAM_COLORS, FRY_NEEDS } from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
 
@@ -38,6 +38,11 @@ const RP_COLS = [
   { key: 'war',   label: 'WAR',  fmt: 1 },
 ]
 const STAT_COLS = { batters: BATTER_COLS, sp: SP_COLS, rp: RP_COLS }
+const VIRT_BASE_ROWS = 120
+const VIRT_MIN_CHUNK = 180
+const VIRT_MAX_CHUNK = 450
+const EST_ROW_HEIGHT = 38
+const VIRT_PREFETCH_VIEWPORTS = 1.25
 
 function fmt(v, dec = 0) {
   if (v == null || v === '') return '—'
@@ -101,6 +106,9 @@ export default function PlayerList() {
   const [tagFilter, setTagFilter]           = useState(new Set())
   const [showTagPicker, setShowTagPicker]   = useState(false)
   const [targetAvoidFilter, setTargetAvoidFilter] = useState(null) // 'target' | 'avoid' | null
+  const [visibleCount, setVisibleCount] = useState(250)
+  const scrollRef = useRef(null)
+  const loadMoreRef = useRef(null)
 
   // Reset sort + filters when tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(1) }, [rankingsTab])
@@ -194,6 +202,60 @@ export default function PlayerList() {
       return sortDir * String(av || '').localeCompare(String(bv || ''))
     return sortDir * (bv - av)
   }), [filtered, sortCol, sortDir])
+
+  function getVirtualConfig() {
+    const viewportH = scrollRef.current?.clientHeight || window.innerHeight || 900
+    const viewportRows = Math.ceil(viewportH / EST_ROW_HEIGHT)
+    return {
+      initial: Math.max(VIRT_BASE_ROWS, viewportRows * 4),
+      minChunk: Math.max(VIRT_MIN_CHUNK, viewportRows * 3),
+      maxChunk: Math.max(VIRT_MAX_CHUNK, viewportRows * 8),
+      rootMargin: Math.max(500, Math.round(viewportH * VIRT_PREFETCH_VIEWPORTS)),
+    }
+  }
+
+  useEffect(() => {
+    const cfg = getVirtualConfig()
+    setVisibleCount(Math.min(sorted.length, cfg.initial))
+  }, [rankingsTab, sortCol, sortDir, sorted.length])
+
+  useEffect(() => {
+    const onResize = () => {
+      const cfg = getVirtualConfig()
+      setVisibleCount(v => {
+        const capped = Math.min(v, sorted.length)
+        // Keep already-loaded rows, but ensure at least a viewport-aware baseline.
+        return Math.max(capped, Math.min(sorted.length, cfg.initial))
+      })
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [sorted.length])
+
+  useEffect(() => {
+    const node = loadMoreRef.current
+    if (!node || visibleCount >= sorted.length) return
+    const cfg = getVirtualConfig()
+    const obs = new IntersectionObserver(
+      entries => {
+        if (entries[0]?.isIntersecting) {
+          setVisibleCount(v => {
+            const dynamicStep = Math.ceil(v * 0.35)
+            const step = Math.max(cfg.minChunk, Math.min(cfg.maxChunk, dynamicStep))
+            return Math.min(sorted.length, v + step)
+          })
+        }
+      },
+      { root: scrollRef.current, rootMargin: `${cfg.rootMargin}px` },
+    )
+    obs.observe(node)
+    return () => obs.disconnect()
+  }, [sorted.length, visibleCount])
+
+  const visibleRows = useMemo(
+    () => sorted.slice(0, visibleCount),
+    [sorted, visibleCount],
+  )
 
   function handleSort(col) {
     if (sortCol === col) setSortDir(d => d * -1)
@@ -407,7 +469,7 @@ export default function PlayerList() {
       )}
 
       {/* ── Table ── */}
-      <div style={{ flex: 1, overflow: 'auto' }}>
+      <div ref={scrollRef} style={{ flex: 1, overflow: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 900 }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             <tr>
@@ -430,10 +492,10 @@ export default function PlayerList() {
             </tr>
           </thead>
           <tbody>
-            {sorted.map((p, i) => {
+            {visibleRows.map((p, i) => {
               const tColor    = TIER_COLORS[p.tier] || 'var(--muted)'
               const rfaIsFry  = p.rfa_team === 'FRY'
-              const prev      = i > 0 ? sorted[i-1] : null
+              const prev      = i > 0 ? visibleRows[i-1] : null
               const showDivider = prev && prev.tier !== p.tier && !searchQuery
               const signal    = fryLens ? getFrySignal(p, fry) : null
               const pz        = zScores[p.name] || {}
@@ -596,6 +658,20 @@ export default function PlayerList() {
             })}
           </tbody>
         </table>
+        {visibleCount < sorted.length && (
+          <div
+            ref={loadMoreRef}
+            style={{
+              padding: '10px 12px',
+              textAlign: 'center',
+              color: 'var(--text-dim)',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: 10,
+            }}
+          >
+            Rendering {visibleCount} / {sorted.length} players...
+          </div>
+        )}
       </div>
     </div>
   )

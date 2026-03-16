@@ -3,52 +3,50 @@ import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
-function recalcValues(players, teams, soldMap) {
-  // If nothing has been sold yet, just return players with adj_value = est_value.
-  // This avoids float-point drift between Python round() and JS Math.round()
-  // that would show spurious non-zero deltas at auction start.
+function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const anySold = Object.keys(soldMap).length > 0
   if (!anySold) {
-    return players.map(p => ({ ...p, adj_value: p.est_value }))
+    return {
+      batters: batters.map(p => ({ ...p, adj_value: p.est_value })),
+      sp:      sp.map(p => ({ ...p, adj_value: p.est_value })),
+      rp:      rp.map(p => ({ ...p, adj_value: p.est_value })),
+    }
   }
 
-  // Total remaining budget across all teams
   const totalRemaining = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
+  if (totalRemaining <= 0) {
+    return {
+      batters: batters.map(p => ({ ...p })),
+      sp:      sp.map(p => ({ ...p })),
+      rp:      rp.map(p => ({ ...p })),
+    }
+  }
 
-  // Unsold players
-  const unsold = players.filter(p => !soldMap[p.name])
-  if (!unsold.length || totalRemaining <= 0) return players.map(p => ({ ...p }))
+  const soldValues = Object.values(soldMap)
+  let soldBatters = 0, soldSP = 0, soldRP = 0
+  for (const s of soldValues) {
+    if (s.pos_type === 'batter') soldBatters += 1
+    else if (s.pos_type === 'sp') soldSP += 1
+    else if (s.pos_type === 'rp') soldRP += 1
+  }
 
-  const isBatter = p => p.pa !== undefined
-  const isSP     = p => p.gs !== undefined
+  const unsoldBatters = batters.filter(p => !soldMap[p.name])
+  const unsoldSP      = sp.filter(p => !soldMap[p.name])
+  const unsoldRP      = rp.filter(p => !soldMap[p.name])
+
   const numTeams = Object.keys(teams).length
-
-  // Dynamic budget split: based on slots to fill vs players remaining (scarcity)
-  const BATTER_SLOTS_PER_TEAM = 11  // C+1B+2B+3B+SS+OF+CF+RF+UT
+  const BATTER_SLOTS_PER_TEAM = 11
   const SP_SLOTS_PER_TEAM = 6
   const RP_SLOTS_PER_TEAM = 3
-  const totalBatterSlots = BATTER_SLOTS_PER_TEAM * numTeams
-  const totalSPSlots = SP_SLOTS_PER_TEAM * numTeams
-  const totalRPSlots = RP_SLOTS_PER_TEAM * numTeams
-
-  const soldBatters = Object.values(soldMap).filter(s => s.pos_type === 'batter').length
-  const soldSP = Object.values(soldMap).filter(s => s.pos_type === 'sp').length
-  const soldRP = Object.values(soldMap).filter(s => s.pos_type === 'rp').length
-
-  const unsoldBatters = unsold.filter(isBatter)
-  const unsoldSP      = unsold.filter(isSP)
-  const unsoldRP      = unsold.filter(p => !isBatter(p) && !isSP(p))
-
-  const batterSlotsToFill = Math.max(0, totalBatterSlots - soldBatters)
-  const spSlotsToFill = Math.max(0, totalSPSlots - soldSP)
-  const rpSlotsToFill = Math.max(0, totalRPSlots - soldRP)
+  const batterSlotsToFill = Math.max(0, BATTER_SLOTS_PER_TEAM * numTeams - soldBatters)
+  const spSlotsToFill = Math.max(0, SP_SLOTS_PER_TEAM * numTeams - soldSP)
+  const rpSlotsToFill = Math.max(0, RP_SLOTS_PER_TEAM * numTeams - soldRP)
 
   const batterScarcity = unsoldBatters.length > 0 ? batterSlotsToFill / unsoldBatters.length : 0
   const spScarcity = unsoldSP.length > 0 ? spSlotsToFill / unsoldSP.length : 0
   const rpScarcity = unsoldRP.length > 0 ? rpSlotsToFill / unsoldRP.length : 0
   const totalScarcity = batterScarcity + spScarcity + rpScarcity
-  // Blend dynamic scarcity with baseline (50/30/20); bench slots absorb any type, so don't overcorrect
-  const BLEND = 0.5  // 50% dynamic, 50% baseline
+  const BLEND = 0.5
   const baseline = { hit: 0.50, sp: 0.30, rp: 0.20 }
   const dyn = totalScarcity > 0
     ? { hit: batterScarcity / totalScarcity, sp: spScarcity / totalScarcity, rp: rpScarcity / totalScarcity }
@@ -56,37 +54,43 @@ function recalcValues(players, teams, soldMap) {
   const hitShare = BLEND * baseline.hit + (1 - BLEND) * dyn.hit
   const spShare  = BLEND * baseline.sp  + (1 - BLEND) * dyn.sp
   const rpShare  = BLEND * baseline.rp  + (1 - BLEND) * dyn.rp
+
   const hitBudget = totalRemaining * hitShare
   const spBudget  = totalRemaining * spShare
-  const RP_VALUE_SCALE = 0.80  // Scale RP values down (fewer innings than SPs)
+  const RP_VALUE_SCALE = 0.80
   const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
 
-  // VORP: value above each player's positional replacement level (baked in by Python pipeline)
-  function vorp(p) { return Math.max(0, p.ldb_score - (p.repl_level ?? 0)) }
-
-  function allocGroup(group, budget) {
+  const vorp = p => Math.max(0, p.ldb_score - (p.repl_level ?? 0))
+  const allocGroup = (group, budget) => {
     const totalVorp = group.reduce((s, p) => s + vorp(p), 0)
-    if (!totalVorp) return group.map(p => ({ ...p, adj_value: 0.5 }))
-    return group.map(p => {
+    if (!totalVorp) {
+      return new Map(group.map(p => [p.name, 0.5]))
+    }
+    const out = new Map()
+    for (const p of group) {
       const pv = vorp(p)
       const rawShare = (pv / totalVorp) * budget
-      return { ...p, adj_value: pv > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5 }
-    })
+      out.set(p.name, pv > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5)
+    }
+    return out
   }
 
   const adjBatters = allocGroup(unsoldBatters, hitBudget)
-  const adjSP      = allocGroup(unsoldSP, spBudget)
-  const adjRP      = allocGroup(unsoldRP, rpBudget)
+  const adjSP = allocGroup(unsoldSP, spBudget)
+  const adjRP = allocGroup(unsoldRP, rpBudget)
 
-  const adjMap = {}
-  ;[...adjBatters, ...adjSP, ...adjRP].forEach(p => { adjMap[p.name] = p.adj_value })
-
-  return players.map(p => ({
+  const applyAdj = (players, adjMap) => players.map(p => ({
     ...p,
     adj_value: soldMap[p.name]
       ? soldMap[p.name].price
-      : (adjMap[p.name] ?? p.est_value)
+      : (adjMap.get(p.name) ?? p.est_value),
   }))
+
+  return {
+    batters: applyAdj(batters, adjBatters),
+    sp: applyAdj(sp, adjSP),
+    rp: applyAdj(rp, adjRP),
+  }
 }
 
 // ── INITIAL STATE ──────────────────────────────────────────────────────────
@@ -103,9 +107,10 @@ function buildInitialTeams() {
 }
 
 const initialTeams = buildInitialTeams()
-const initialBatters = recalcValues(LDB_DATA.batters, initialTeams, {})
-const initialSP      = recalcValues(LDB_DATA.sp,      initialTeams, {})
-const initialRP      = recalcValues(LDB_DATA.rp,      initialTeams, {})
+const initialRecalc = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, initialTeams, {})
+const initialBatters = initialRecalc.batters
+const initialSP      = initialRecalc.sp
+const initialRP      = initialRecalc.rp
 
 // Load saved session if present
 const _saved = loadFromStorage()
@@ -239,9 +244,10 @@ export function savedSessionMeta() {
 // Rebuild state from a saved snapshot + fresh player data
 function buildStateFromSnapshot(snapshot) {
   const { sold, teams, auctionLog } = snapshot
-  const batters = recalcValues(LDB_DATA.batters, teams, sold)
-  const sp      = recalcValues(LDB_DATA.sp,      teams, sold)
-  const rp      = recalcValues(LDB_DATA.rp,      teams, sold)
+  const recalced = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, teams, sold)
+  const batters = recalced.batters
+  const sp      = recalced.sp
+  const rp      = recalced.rp
   return { sold, teams, auctionLog, batters, sp, rp }
 }
 
@@ -400,9 +406,10 @@ export const useAuctionStore = create((set, get) => ({
 
     const nextNominator = TEAMS_LIST[(TEAMS_LIST.indexOf(nominator) + 1) % TEAMS_LIST.length]
 
-    const newBatters = recalcValues(get().batters, newTeams, newSold)
-    const newSP      = recalcValues(get().sp,      newTeams, newSold)
-    const newRP      = recalcValues(get().rp,      newTeams, newSold)
+    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold)
+    const newBatters = recalc.batters
+    const newSP      = recalc.sp
+    const newRP      = recalc.rp
 
     saveToStorage(newSold, newTeams, newLog, nextNominator, targetAvoid)
     set({
@@ -436,23 +443,25 @@ export const useAuctionStore = create((set, get) => ({
     }
     const newLog = auctionLog.slice(1)
     const prevNominator = last.nominatedBy || TEAMS_LIST[(TEAMS_LIST.indexOf(currentNominator || TEAMS_LIST[0]) - 1 + TEAMS_LIST.length) % TEAMS_LIST.length]
-    const newBatters = recalcValues(get().batters, newTeams, newSold)
-    const newSP      = recalcValues(get().sp,      newTeams, newSold)
-    const newRP      = recalcValues(get().rp,      newTeams, newSold)
+    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold)
+    const newBatters = recalc.batters
+    const newSP      = recalc.sp
+    const newRP      = recalc.rp
     saveToStorage(newSold, newTeams, newLog, prevNominator, targetAvoid)
     set({ sold: newSold, teams: newTeams, auctionLog: newLog, batters: newBatters, sp: newSP, rp: newRP, currentNominator: prevNominator })
   },
 
   resetAuction: () => {
     const t = buildInitialTeams()
+    const recalc = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, t, {})
     clearStorage()
     set({
       teams: t,
       sold: {},
       auctionLog: [],
-      batters: recalcValues(LDB_DATA.batters, t, {}),
-      sp:      recalcValues(LDB_DATA.sp,      t, {}),
-      rp:      recalcValues(LDB_DATA.rp,      t, {}),
+      batters: recalc.batters,
+      sp:      recalc.sp,
+      rp:      recalc.rp,
       nominatedPlayer: null,
       bidTeam: '', bidPrice: '',
     })

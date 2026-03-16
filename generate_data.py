@@ -20,7 +20,7 @@ Required source files (set INPUT_DIR below):
   player_positions.csv  (optional — placeholder format: Name,Positions)
 """
 
-import csv, json, statistics, re
+import csv, json, statistics, re, os
 from pathlib import Path
 from datetime import date
 from difflib import SequenceMatcher
@@ -81,6 +81,23 @@ REPL_RP_SLOTS_PER_TEAM = 6   # RP starters per team
 REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
 REPL_TOP_N     = 5            # average top-N remaining players = replacement level
 
+# Shared category weights used by scoring cache.
+CAT_BAT = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
+           "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
+CAT_SP  = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
+           "HRA":(False,1.5),"aWHIP":(False,1.5)}
+CAT_RP  = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
+           "HRA":(False,1.0),"aWHIP":(False,1.0)}
+
+# ── DEBUG FLAGS ────────────────────────────────────────────────────────────────
+# Set LDB_DEBUG_AMBIG_POS=1 to print ambiguous abbreviated position lookups.
+DEBUG_AMBIG_POS = os.getenv("LDB_DEBUG_AMBIG_POS", "").strip() in {"1", "true", "TRUE", "yes", "YES"}
+_AMBIG_POS_SEEN = set()
+
+# ── RUNTIME CACHES ─────────────────────────────────────────────────────────────
+_CSV_ROWS_CACHE = {}
+_SCORED_POOL_CACHE = {}
+
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def norm(name):
     """Normalize name for matching: lowercase, strip accents, remove suffixes, collapse whitespace."""
@@ -105,6 +122,14 @@ def strip_team_suffix(name):
     if not name or not isinstance(name, str):
         return name
     return re.sub(r"\s*\([A-Za-z0-9]+\)\s*$", "", name).strip()
+
+
+def is_abbrev_name(name):
+    """Heuristic: abbreviated names usually look like 'J. Smith' or single-letter first token."""
+    if "." in name:
+        return True
+    parts = norm(name).split()
+    return bool(parts) and len(parts[0]) == 1
 
 def abbrev_match(name_a, name_b):
     """
@@ -186,30 +211,27 @@ def build_unavail_index(unavail_set):
     """Pre-compute fast lookup structures from the unavailable set so that
     is_unavailable() runs in O(1)/O(k) instead of O(n * SequenceMatcher).
 
-    Returns (norm_exact, last_name_idx, norm_pairs):
+    Returns (norm_exact, last_name_idx):
       norm_exact    — set of pre-normalised names for exact hits
       last_name_idx — last_name → [(orig_name, norm_name)] for abbrev lookups
-      norm_pairs    — [(orig_name, norm_name)] for the rare fuzzy-ratio fallback
     """
     norm_exact    = set()
     last_name_idx = {}
-    norm_pairs    = []
     for taken in unavail_set:
         clean = strip_team_suffix(taken)
         n = norm(clean)
         norm_exact.add(n)
-        norm_pairs.append((clean, n))
         parts = n.split()
         if parts:
             last_name_idx.setdefault(parts[-1], []).append((clean, n))
-    return norm_exact, last_name_idx, norm_pairs
+    return norm_exact, last_name_idx
 
 def is_unavailable(proj_name, unavail_idx):
     """Fast unavailability check using pre-built index.
     unavail_idx is the tuple returned by build_unavail_index().
-    Falls back to SequenceMatcher only after cheap O(1)/O(k) checks fail.
+    Falls back to SequenceMatcher only within same-last-name candidates.
     """
-    norm_exact, last_name_idx, norm_pairs = unavail_idx
+    norm_exact, last_name_idx = unavail_idx
     n = norm(proj_name)
     # 1. O(1) exact norm match
     if n in norm_exact:
@@ -217,21 +239,59 @@ def is_unavailable(proj_name, unavail_idx):
     # 2. O(k) abbreviated-first-name match — only candidates with same last name
     parts = n.split()
     if parts:
-        for orig, tn in last_name_idx.get(parts[-1], []):
+        same_last = last_name_idx.get(parts[-1], [])
+        for orig, tn in same_last:
             tp = tn.split()
             if tp and (parts[0].startswith(tp[0]) or tp[0].startswith(parts[0])):
                 return True
-    # 3. Rare fallback: fuzzy ratio over full list (handles accent/typo mismatches)
-    for orig, tn in norm_pairs:
-        if SequenceMatcher(None, n, tn).ratio() >= 0.87:
-            return True
+        # 3. Rare fallback: fuzzy ratio within same-last-name bucket only
+        # (avoids expensive O(n) scans over all unavailable names).
+        for orig, tn in same_last:
+            if SequenceMatcher(None, n, tn).ratio() >= 0.87:
+                return True
     return False
 
-def get_rfa_team(proj_name, rfa_norm):
+class NameMatcher:
+    """Reusable exact/abbrev/fuzzy matcher over a normalized-name keyed map."""
+    def __init__(self, by_norm, fuzzy_threshold=0.88):
+        self.by_norm = by_norm
+        self.fuzzy_threshold = fuzzy_threshold
+        self.by_last = {}
+        for n, v in by_norm.items():
+            parts = n.split()
+            if parts:
+                self.by_last.setdefault(parts[-1], []).append((n, v))
+
+    def get(self, query_name):
+        n = norm(query_name)
+        hit = self.by_norm.get(n)
+        if hit is not None:
+            return hit
+        parts = n.split()
+        if parts:
+            bucket = self.by_last.get(parts[-1], [])
+            for cand_name, val in bucket:
+                if abbrev_match(query_name, cand_name):
+                    return val
+            for cand_name, val in bucket:
+                if SequenceMatcher(None, n, cand_name).ratio() > self.fuzzy_threshold:
+                    return val
+        # Rare fallback for names lacking a usable last-name token.
+        for cand_name, val in self.by_norm.items():
+            if SequenceMatcher(None, n, cand_name).ratio() > self.fuzzy_threshold:
+                return val
+        return None
+
+
+def get_rfa_team(proj_name, rfa_norm, rfa_matcher=None):
+    if rfa_matcher:
+        return rfa_matcher.get(proj_name) or ""
     n = norm(proj_name)
-    if n in rfa_norm: return rfa_norm[n]
+    if n in rfa_norm:
+        return rfa_norm[n]
     for rn, t in rfa_norm.items():
-        if SequenceMatcher(None, n, rn).ratio() > 0.85: return t
+        if SequenceMatcher(None, n, rn).ratio() > 0.85:
+            return t
     return ""
 
 def compute_ldb_scores(players, cat_weights):
@@ -273,6 +333,57 @@ def compute_values(players, cat_weights, budget):
     players = assign_est_values(players, budget)
     return players
 
+
+def get_csv_rows_cached(path):
+    """Read projection CSV rows once; return fresh row dict copies."""
+    key = str(path)
+    if key not in _CSV_ROWS_CACHE:
+        with open(path, encoding="utf-8-sig") as f:
+            _CSV_ROWS_CACHE[key] = list(csv.DictReader(f))
+    # Return copies so callers can mutate safely.
+    return [dict(r) for r in _CSV_ROWS_CACHE[key]]
+
+
+def get_scored_pool_cached(pool_kind, proj_path):
+    """Return a fresh copy of pre-scored projection pool for bat/sp/rp."""
+    key = (pool_kind, str(proj_path))
+    if key not in _SCORED_POOL_CACHE:
+        rows = get_csv_rows_cached(proj_path)
+        if pool_kind == "bat":
+            pool = [r for r in rows if fv(r, "PA") >= MIN_PA]
+            for r in pool:
+                r["_raw_aSB"]  = calc_aSB(r)
+                r["_raw_HR"]   = fv(r, "HR")
+                r["_raw_R"]    = fv(r, "R")
+                r["_raw_OBP"]  = fv(r, "OBP")
+                r["_raw_OPS"]  = fv(r, "OPS")
+                r["_raw_aRBI"] = fv(r, "RBI")
+            pool = compute_ldb_scores(pool, CAT_BAT)
+        elif pool_kind == "sp":
+            pool = [r for r in rows if fv(r, "GS") >= MIN_GS]
+            for r in pool:
+                r["_raw_MGS"]   = calc_mgs_season(r)
+                r["_raw_K"]     = fv(r, "SO")
+                r["_raw_ERA"]   = fv(r, "ERA")
+                r["_raw_HRA"]   = fv(r, "HR")
+                r["_raw_aWHIP"] = fv(r, "WHIP")
+            pool = compute_ldb_scores(pool, CAT_SP)
+        elif pool_kind == "rp":
+            pool = [r for r in rows if fv(r, "IP") >= MIN_IP]
+            for r in pool:
+                r["_raw_VIJAY"] = calc_vijay_season(r)
+                r["_raw_K"]     = fv(r, "SO")
+                r["_raw_ERA"]   = fv(r, "ERA")
+                r["_raw_HRA"]   = fv(r, "HR")
+                r["_raw_aWHIP"] = fv(r, "WHIP")
+            pool = compute_ldb_scores(pool, CAT_RP)
+        else:
+            raise ValueError(f"Unknown pool_kind: {pool_kind}")
+        _SCORED_POOL_CACHE[key] = pool
+
+    # Return copies so downstream valuation mutation doesn't contaminate cache.
+    return [dict(r) for r in _SCORED_POOL_CACHE[key]]
+
 # ── REPLACEMENT LEVEL ENGINE ───────────────────────────────────────────────────
 
 def normalize_pos_for_repl(positions):
@@ -309,20 +420,7 @@ def compute_batter_replacement_levels(
 
     Returns {pos: replacement_ldb_score}
     """
-    cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
-                   "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
-
-    with open(proj_path, encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
-    all_qual = [r for r in rows if fv(r,"PA") >= MIN_PA]
-    for r in all_qual:
-        r["_raw_aSB"]  = calc_aSB(r)
-        r["_raw_HR"]   = fv(r,"HR")
-        r["_raw_R"]    = fv(r,"R")
-        r["_raw_OBP"]  = fv(r,"OBP")
-        r["_raw_OPS"]  = fv(r,"OPS")
-        r["_raw_aRBI"] = fv(r,"RBI")
-    all_qual = compute_ldb_scores(all_qual, cat_weights)
+    all_qual = get_scored_pool_cached("bat", proj_path)
 
     # Pre-cache normalised positions for every player
     pos_cache = {}
@@ -334,19 +432,23 @@ def compute_batter_replacement_levels(
     aa_norms    = {norm(n) for n in aa_names}
 
     # ── Count owned (non-AA) players per position slot (one slot per player) ──
+    # IMPORTANT: use full draft-board ownership, not projection-qualified subset,
+    # so owned players below MIN_PA still consume roster capacity.
     total_slots   = {pos: s * num_teams for pos, s in REPL_BAT_SLOTS.items() if pos != "UT"}
     owned_count   = {pos: 0 for pos in total_slots}
     SLOT_ORDER    = ["C","1B","2B","3B","SS","OF"]  # deterministic primary assignment
 
-    for p in sorted(all_qual, key=lambda x: x["LDB_Score"], reverse=True):
-        n = norm(p["Name"])
-        if n in owned_norms and n not in aa_norms:
-            eligible_pos = pos_cache.get(n, set()) & set(SLOT_ORDER)
-            # Assign to first standard slot in order — prevents double-counting
-            for pos in SLOT_ORDER:
-                if pos in eligible_pos:
-                    owned_count[pos] += 1
-                    break
+    for owned_name in owned.keys():
+        n = norm(owned_name)
+        if n in aa_norms:
+            continue
+        raw_pos = get_positions(owned_name, pos_map, pos_by_name_team, "", pos_by_last)
+        eligible_pos = normalize_pos_for_repl(raw_pos) & set(SLOT_ORDER)
+        # Assign to first standard slot in order — prevents double-counting
+        for pos in SLOT_ORDER:
+            if pos in eligible_pos:
+                owned_count[pos] += 1
+                break
 
     remaining_slots = {pos: max(0, total_slots[pos] - owned_count[pos]) for pos in total_slots}
 
@@ -410,26 +512,21 @@ def compute_pitcher_replacement_levels(
     aa_norms    = {norm(n) for n in aa_names}
     all_unavail = owned_norms | aa_norms
 
-    cat_sp = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
-              "HRA":(False,1.5),"aWHIP":(False,1.5)}
-    cat_rp = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
-              "HRA":(False,1.0),"aWHIP":(False,1.0)}
-
     # ── SP ──────────────────────────────────────────────────────────────────
-    with open(sp_proj_path, encoding="utf-8-sig") as f:
-        sp_rows = list(csv.DictReader(f))
-    all_sp = [r for r in sp_rows if fv(r,"GS") >= MIN_GS]
-    for r in all_sp:
-        r["_raw_MGS"]   = calc_mgs_season(r)
-        r["_raw_K"]     = fv(r,"SO")
-        r["_raw_ERA"]   = fv(r,"ERA")
-        r["_raw_HRA"]   = fv(r,"HR")
-        r["_raw_aWHIP"] = fv(r,"WHIP")
-    all_sp = compute_ldb_scores(all_sp, cat_sp)
+    all_sp = get_scored_pool_cached("sp", sp_proj_path)
 
-    total_sp   = sp_slots * num_teams
-    owned_sp   = sum(1 for p in all_sp
-                     if norm(p["Name"]) in owned_norms and norm(p["Name"]) not in aa_norms)
+    sp_norms = {norm(p["Name"]) for p in all_sp}
+    total_sp = sp_slots * num_teams
+    owned_sp = 0
+    for owned_name, info in owned.items():
+        n = norm(owned_name)
+        if n in aa_norms:
+            continue
+        # Use draft-board slot label first; fallback to projection membership so
+        # owned players below MIN_GS still count if they are SPs.
+        pos_label = str(info.get("pos", "")).upper()
+        if "SP" in pos_label or n in sp_norms:
+            owned_sp += 1
     remain_sp  = max(0, total_sp - owned_sp)
     bench_sp   = int(remain_sp * bench_pct)
 
@@ -440,20 +537,20 @@ def compute_pitcher_replacement_levels(
                   if repl_sp_p else (avail_sp[-1]["LDB_Score"] if avail_sp else 0.0))
 
     # ── RP ──────────────────────────────────────────────────────────────────
-    with open(rp_proj_path, encoding="utf-8-sig") as f:
-        rp_rows = list(csv.DictReader(f))
-    all_rp = [r for r in rp_rows if fv(r,"IP") >= MIN_IP]
-    for r in all_rp:
-        r["_raw_VIJAY"] = calc_vijay_season(r)
-        r["_raw_K"]     = fv(r,"SO")
-        r["_raw_ERA"]   = fv(r,"ERA")
-        r["_raw_HRA"]   = fv(r,"HR")
-        r["_raw_aWHIP"] = fv(r,"WHIP")
-    all_rp = compute_ldb_scores(all_rp, cat_rp)
+    all_rp = get_scored_pool_cached("rp", rp_proj_path)
 
-    total_rp   = rp_slots * num_teams
-    owned_rp   = sum(1 for p in all_rp
-                     if norm(p["Name"]) in owned_norms and norm(p["Name"]) not in aa_norms)
+    rp_norms = {norm(p["Name"]) for p in all_rp}
+    total_rp = rp_slots * num_teams
+    owned_rp = 0
+    for owned_name, info in owned.items():
+        n = norm(owned_name)
+        if n in aa_norms:
+            continue
+        # Use draft-board slot label first; fallback to projection membership so
+        # owned players below MIN_IP still count if they are RPs.
+        pos_label = str(info.get("pos", "")).upper()
+        if "RP" in pos_label or n in rp_norms:
+            owned_rp += 1
     remain_rp  = max(0, total_rp - owned_rp)
     bench_rp   = int(remain_rp * bench_pct)
 
@@ -550,67 +647,32 @@ def build_full_pool_values(num_teams, pos_map, pos_by_name_team, pos_by_last):
     full_sp    = full_total * SP_SPLIT
     full_rp    = full_total * RP_SPLIT * RP_VALUE_SCALE
 
-    cat_bat = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
-               "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
-    cat_sp  = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
-               "HRA":(False,1.5),"aWHIP":(False,1.5)}
-    cat_rp  = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
-               "HRA":(False,1.0),"aWHIP":(False,1.0)}
-
     # ── Greenfield replacement levels (empty owned/AA — full pool sim) ────────
     gf_repl_bat = compute_batter_replacement_levels(
         BATX_BATTERS, {}, set(), pos_map, pos_by_name_team, pos_by_last, num_teams)
     gf_repl_pit = compute_pitcher_replacement_levels(
         ATC_SP, ATC_RP, {}, set(), num_teams)
-    print(f"  Greenfield replacement levels — bat: "
+    print(f"  Greenfield replacement levels - bat: "
           + ", ".join(f"{p}:{v:+.2f}" for p, v in sorted(gf_repl_bat.items()))
           + f"  SP:{gf_repl_pit['SP']:+.2f}  RP:{gf_repl_pit['RP']:+.2f}")
 
     result = {}
 
     # ── Batters (BATX — primary system) ──────────────────────────────────────
-    with open(BATX_BATTERS, encoding="utf-8-sig") as f:
-        bat_rows = list(csv.DictReader(f))
-    bat_pool = [r for r in bat_rows if fv(r, "PA") >= MIN_PA]
-    for r in bat_pool:
-        r["_raw_aSB"]  = calc_aSB(r)
-        r["_raw_HR"]   = fv(r, "HR")
-        r["_raw_R"]    = fv(r, "R")
-        r["_raw_OBP"]  = fv(r, "OBP")
-        r["_raw_OPS"]  = fv(r, "OPS")
-        r["_raw_aRBI"] = fv(r, "RBI")
-    bat_pool = compute_ldb_scores(bat_pool, cat_bat)
+    bat_pool = get_scored_pool_cached("bat", BATX_BATTERS)
     bat_pool = assign_est_values_vorp(bat_pool, full_hit, gf_repl_bat,
                                       pos_map, pos_by_name_team, pos_by_last)
     for p in bat_pool:
         result[norm(p["Name"])] = p["Est_Value"]
 
     # ── Starting pitchers (ATC — primary system) ──────────────────────────────
-    with open(ATC_SP, encoding="utf-8-sig") as f:
-        sp_rows = list(csv.DictReader(f))
-    sp_pool = [r for r in sp_rows if fv(r, "GS") >= MIN_GS]
-    for r in sp_pool:
-        r["_raw_MGS"]   = calc_mgs_season(r)
-        r["_raw_K"]     = fv(r, "SO")
-        r["_raw_ERA"]   = fv(r, "ERA")
-        r["_raw_HRA"]   = fv(r, "HR")
-        r["_raw_aWHIP"] = fv(r, "WHIP")
-    sp_pool = compute_ldb_scores(sp_pool, cat_sp)
+    sp_pool = get_scored_pool_cached("sp", ATC_SP)
     sp_pool = assign_est_values_vorp_pitcher(sp_pool, full_sp, gf_repl_pit["SP"])
     for p in sp_pool:
         result[norm(p["Name"])] = p["Est_Value"]
 
     # ── Relief pitchers (ATC — primary system) ────────────────────────────────
-    with open(ATC_RP, encoding="utf-8-sig") as f:
-        rp_rows = list(csv.DictReader(f))
-    rp_pool = [r for r in rp_rows if fv(r, "IP") >= MIN_IP]
-    for r in rp_pool:
-        r["_raw_VIJAY"] = calc_vijay_season(r)
-        r["_raw_K"]     = fv(r, "SO")
-        r["_raw_ERA"]   = fv(r, "ERA")
-        r["_raw_HRA"]   = fv(r, "HR")
-        r["_raw_aWHIP"] = fv(r, "WHIP")
-    rp_pool = compute_ldb_scores(rp_pool, cat_rp)
+    rp_pool = get_scored_pool_cached("rp", ATC_RP)
     rp_pool = assign_est_values_vorp_pitcher(rp_pool, full_rp, gf_repl_pit["RP"])
     for p in rp_pool:
         result[norm(p["Name"])] = p["Est_Value"]
@@ -740,7 +802,7 @@ def parse_positions_cbs(bat_path, sp_path, rp_path):
 
     def ingest(path, skip_rows=2):
         if not path.exists():
-            print(f"  WARNING: {path.name} not found — skipping")
+            print(f"  WARNING: {path.name} not found - skipping")
             return
         with open(path, encoding="utf-8-sig") as f:
             lines = f.readlines()
@@ -807,45 +869,68 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team="", pos_by
     norm() handles 'J.Wood' → 'j wood' and 'J.H. Lee' → 'j h lee' edge cases.
     """
     n = norm(proj_name)
-    # Try precise (name, team) lookup first to avoid same-name collisions
+    team_key = mlb_team.strip().upper() if mlb_team else ""
+
+    # Memoize frequent repeated lookups during pipeline runs.
+    cache = getattr(get_positions, "_cache", None)
+    if cache is None:
+        cache = {}
+        setattr(get_positions, "_cache", cache)
+    cache_key = (n, team_key, id(pos_map), id(pos_by_name_team), id(pos_by_last))
+    if cache_key in cache:
+        return cache[cache_key]
+
+    # Try precise (name, team) lookup first to avoid same-name collisions.
     if pos_by_name_team and mlb_team:
-        key = (n, mlb_team.strip().upper())
+        key = (n, team_key)
         if key in pos_by_name_team:
-            return pos_by_name_team[key]
+            cache[cache_key] = pos_by_name_team[key]
+            return cache[cache_key]
     if n in pos_map:
-        return pos_map[n]
-    # Fuzzy ratio match
-    for pn, pos in pos_map.items():
-        if SequenceMatcher(None, n, pn).ratio() > 0.88:
-            return pos
-    # Abbreviated first-name match using last-name index (O(k) not O(n))
+        cache[cache_key] = pos_map[n]
+        return cache[cache_key]
+
+    # Abbreviated first-name match using last-name index (O(k) not O(n)).
     # e.g. draft board "C. Raleigh" → last name "raleigh" → find "cal raleigh" via abbrev_match
     if pos_by_last:
         parts = n.split()
         if parts:
-            for pn, pos in pos_by_last.get(parts[-1], []):
+            same_last = pos_by_last.get(parts[-1], [])
+            if DEBUG_AMBIG_POS and is_abbrev_name(proj_name) and len(same_last) > 1:
+                dbg_key = (n, team_key, parts[-1])
+                if dbg_key not in _AMBIG_POS_SEEN:
+                    _AMBIG_POS_SEEN.add(dbg_key)
+                    cands = ", ".join(pn for pn, _ in same_last[:8])
+                    if len(same_last) > 8:
+                        cands += ", ..."
+                    print(
+                        f"  [debug:ambig-pos] '{proj_name}' team='{team_key or '-'}' "
+                        f"last='{parts[-1]}' candidates={len(same_last)} -> [{cands}]"
+                    )
+            for pn, pos in same_last:
                 if abbrev_match(proj_name, pn):
-                    return pos
-    return []
+                    cache[cache_key] = pos
+                    return cache[cache_key]
+            # Fuzzy fallback restricted to same-last-name candidates.
+            for pn, pos in same_last:
+                if SequenceMatcher(None, n, pn).ratio() > 0.88:
+                    cache[cache_key] = pos
+                    return cache[cache_key]
+
+    # Final fallback for legacy paths without last-name index.
+    for pn, pos in pos_map.items():
+        if SequenceMatcher(None, n, pn).ratio() > 0.88:
+            cache[cache_key] = pos
+            return cache[cache_key]
+
+    cache[cache_key] = []
+    return cache[cache_key]
 
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
 def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
-                  pos_by_last=None, replacement_levels=None):
-    with open(proj_path, encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
-    cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
-                   "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
-
+                  pos_by_last=None, replacement_levels=None, rfa_matcher=None):
     # ── Global ranking: all players meeting stat minimum ──────────────────────
-    all_qualified = [r for r in rows if fv(r,"PA") >= MIN_PA]
-    for r in all_qualified:
-        r["_raw_aSB"]  = calc_aSB(r)
-        r["_raw_HR"]   = fv(r,"HR")
-        r["_raw_R"]    = fv(r,"R")
-        r["_raw_OBP"]  = fv(r,"OBP")
-        r["_raw_OPS"]  = fv(r,"OPS")
-        r["_raw_aRBI"] = fv(r,"RBI")
-    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    all_qualified = get_scored_pool_cached("bat", proj_path)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -873,7 +958,7 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "asb": round(p["_raw_aSB"],1), "wrc_plus": round(fv(p,"wRC+"),1),
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
-            "rfa_team": get_rfa_team(p["Name"], rfa_norm),
+            "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
@@ -881,21 +966,9 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
 
 # ── SP RANKINGS ────────────────────────────────────────────────────────────────
 def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
-             pos_by_last=None, replacement_level=None):
-    with open(proj_path, encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
-    cat_weights = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
-                   "HRA":(False,1.5),"aWHIP":(False,1.5)}
-
+             pos_by_last=None, replacement_level=None, rfa_matcher=None):
     # ── Global ranking: all players meeting stat minimum ──────────────────────
-    all_qualified = [r for r in rows if fv(r,"GS") >= MIN_GS]
-    for r in all_qualified:
-        r["_raw_MGS"]   = calc_mgs_season(r)
-        r["_raw_K"]     = fv(r,"SO")
-        r["_raw_ERA"]   = fv(r,"ERA")
-        r["_raw_HRA"]   = fv(r,"HR")
-        r["_raw_aWHIP"] = fv(r,"WHIP")
-    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    all_qualified = get_scored_pool_cached("sp", proj_path)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -921,7 +994,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "mgs": round(calc_mgs_per_gs(p), 2), "fip": round(fv(p,"FIP"),3),
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
-            "rfa_team": get_rfa_team(p["Name"], rfa_norm),
+            "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
@@ -929,21 +1002,9 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 
 # ── RP RANKINGS ────────────────────────────────────────────────────────────────
 def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
-             pos_by_last=None, replacement_level=None):
-    with open(proj_path, encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
-    cat_weights = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
-                   "HRA":(False,1.0),"aWHIP":(False,1.0)}
-
+             pos_by_last=None, replacement_level=None, rfa_matcher=None):
     # ── Global ranking: all players meeting stat minimum ──────────────────────
-    all_qualified = [r for r in rows if fv(r,"IP") >= MIN_IP]
-    for r in all_qualified:
-        r["_raw_VIJAY"] = calc_vijay_season(r)
-        r["_raw_K"]     = fv(r,"SO")
-        r["_raw_ERA"]   = fv(r,"ERA")
-        r["_raw_HRA"]   = fv(r,"HR")
-        r["_raw_aWHIP"] = fv(r,"WHIP")
-    all_qualified = compute_ldb_scores(all_qualified, cat_weights)
+    all_qualified = get_scored_pool_cached("rp", proj_path)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -970,7 +1031,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "hra": round(fv(p,"HR"),1), "vijay": round(calc_vijay_per_g(p), 3),
             "war": round(fv(p,"WAR"),2),
             "ldb_score": round(p["LDB_Score"],3),
-            "rfa_team": get_rfa_team(p["Name"], rfa_norm),
+            "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
         })
@@ -980,20 +1041,12 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 def merge_rankings(primary_list, secondary_list):
     """Merge secondary data into primary list by player name matching.
     Returns combined list with both systems' data on each player object."""
-    sec_by_norm = {}
-    for p in secondary_list:
-        sec_by_norm[norm(p["name"])] = p
-        # Also index by fuzzy for fallback
+    sec_by_norm = {norm(p["name"]): p for p in secondary_list}
+    sec_matcher = NameMatcher(sec_by_norm, fuzzy_threshold=0.88)
     
     merged = []
     for p in primary_list:
-        n = norm(p["name"])
-        sec = sec_by_norm.get(n)
-        if not sec:
-            for sn, sv in sec_by_norm.items():
-                if SequenceMatcher(None, n, sn).ratio() > 0.88:
-                    sec = sv
-                    break
+        sec = sec_matcher.get(p["name"])
         entry = dict(p)
         entry["system"] = "batx" if p.get("pa") is not None else ("atc_sp" if p.get("gs") is not None else "atc_rp")
         if sec:
@@ -1023,7 +1076,7 @@ def merge_rankings(primary_list, secondary_list):
 def load_pl_batters(path):
     """Load PL batter rankings CSV -> dict keyed by normalised name."""
     if not path.exists():
-        print(f"  [PL] {path.name} not found — skipping")
+        print(f"  [PL] {path.name} not found - skipping")
         return {}
     index = {}
     with open(path, encoding="utf-8-sig") as f:
@@ -1056,15 +1109,10 @@ _PL_QUALITATIVE_TAGS = {
 
 def apply_pl_batters(players, pl_index):
     """Inject pl_rank/tier/note + smart tags from PL into each batter record."""
+    pl_matcher = NameMatcher(pl_index, fuzzy_threshold=0.88)
     for i, p in enumerate(players):
         ldb_rank = i + 1
-        key = norm(p["name"])
-        pl  = pl_index.get(key)
-        if not pl:
-            for pk, pv in pl_index.items():
-                if SequenceMatcher(None, key, pk).ratio() > 0.88:
-                    pl = pv
-                    break
+        pl = pl_matcher.get(p["name"])
 
         if pl:
             p["pl_rank"]      = pl["pl_rank"]
@@ -1147,7 +1195,7 @@ def load_pl_sp(path: Path) -> dict:
     Derives tags from tier numbers since the SP file has no Tags column.
     """
     if not path.exists():
-        print(f"  [PL-SP] {path.name} not found — skipping")
+        print(f"  [PL-SP] {path.name} not found - skipping")
         return {}
     index = {}
     with open(path, encoding="utf-8-sig") as f:
@@ -1174,15 +1222,10 @@ def load_pl_sp(path: Path) -> dict:
 
 def apply_pl_sp(players: list, pl_index: dict) -> list:
     """Inject pl_rank/tier + smart tags from PL into each SP record."""
+    pl_matcher = NameMatcher(pl_index, fuzzy_threshold=0.88)
     for i, p in enumerate(players):
         ldb_rank = i + 1
-        key = norm(p["name"])
-        pl  = pl_index.get(key)
-        if not pl:
-            for pk, pv in pl_index.items():
-                if SequenceMatcher(None, key, pk).ratio() > 0.88:
-                    pl = pv
-                    break
+        pl = pl_matcher.get(p["name"])
 
         if pl:
             p["pl_rank"]      = pl["pl_rank"]
@@ -1228,7 +1271,7 @@ def load_player_notes(path: Path) -> tuple[dict, dict]:
     manual_notes: dict keyed by normalised name (UI-added notes, take precedence).
     """
     if not path.exists():
-        print(f"  [notes] {path.name} not found — skipping qualitative data")
+        print(f"  [notes] {path.name} not found - skipping qualitative data")
         return {}, {}
     with open(path, encoding="utf-8") as f:
         raw = json.load(f)
@@ -1314,7 +1357,7 @@ def load_athletic_sp(path: Path) -> dict:
     Columns: Rank, Name, Team, Stuff+, Location+, Pitching+, Health%, Proj_IP, ppERA, ppK%
     """
     if not path.exists():
-        print(f"  [Athletic] {path.name} not found — skipping")
+        print(f"  [Athletic] {path.name} not found - skipping")
         return {}
     index = {}
     with open(path, encoding="utf-8-sig") as f:
@@ -1348,14 +1391,9 @@ def load_athletic_sp(path: Path) -> dict:
 def apply_athletic_sp(players: list, athl_index: dict) -> list:
     """Inject Athletic SP fields into each SP record."""
     matched = 0
+    athl_matcher = NameMatcher(athl_index, fuzzy_threshold=0.88)
     for p in players:
-        key = norm(p["name"])
-        athl = athl_index.get(key)
-        if not athl:
-            for ak, av in athl_index.items():
-                if SequenceMatcher(None, key, ak).ratio() > 0.88:
-                    athl = av
-                    break
+        athl = athl_matcher.get(p["name"])
         if athl:
             p["athl_rank"]     = athl["athl_rank"]
             p["stuff_plus"]    = athl["stuff_plus"]
@@ -1384,15 +1422,10 @@ def apply_notes(players: list, notes_index: dict, manual_notes: dict, pool_type:
     manual_notes (UI-added) take precedence over note_entry.note.
     """
     auto_fn = TAG_AUTO_FN.get(pool_type)
+    note_matcher = NameMatcher(notes_index, fuzzy_threshold=0.88)
     for p in players:
         key = norm(p["name"])
-        # Fuzzy fallback if exact norm doesn't match
-        note_entry = notes_index.get(key)
-        if note_entry is None:
-            for nk, ne in notes_index.items():
-                if SequenceMatcher(None, key, nk).ratio() > 0.88:
-                    note_entry = ne
-                    break
+        note_entry = note_matcher.get(p["name"])
         auto = auto_fn(p) if auto_fn else []
         manual_tags = list(note_entry.get("tags", [])) if note_entry else []
         all_tags = list(dict.fromkeys(manual_tags + [t for t in auto if t not in manual_tags]))
@@ -1422,6 +1455,7 @@ def main():
 
     print("\n[2/6] Parsing RFA rights...")
     rfa_norm = parse_rfa(RFA_FILE)
+    rfa_matcher = NameMatcher(rfa_norm, fuzzy_threshold=0.85)
     fry_rfa = [p for p, t in rfa_norm.items() if t == FRY_TEAM]
     print(f"  RFA entries: {len(rfa_norm)}  |  FRY ROFR: {fry_rfa}")
 
@@ -1429,7 +1463,7 @@ def main():
     pos_map, pos_by_name_team, pos_by_last = parse_positions_cbs(CBS_BAT_ELIG, CBS_SP_ELIG, CBS_RP_ELIG)
     print(f"  Players with eligibility: {len(pos_map)}")
 
-    print(f"\n[3.5] Building full-pool theoretical values ({len(teams)} teams × ${FULL_TEAM_BUDGET:.0f}M)...")
+    print(f"\n[3.5] Building full-pool theoretical values ({len(teams)} teams x ${FULL_TEAM_BUDGET:.0f}M)...")
     theoretical_values, tv_by_last = build_full_pool_values(
         len(teams), pos_map, pos_by_name_team, pos_by_last)
 
@@ -1440,36 +1474,65 @@ def main():
 
     num_teams = len(teams)
     print(f"\n[4.5] Computing scarcity-based replacement levels ({num_teams} teams)...")
-    repl_bat = compute_batter_replacement_levels(
-        BATX_BATTERS, board["owned"], set(board["aa_names"]),
-        pos_map, pos_by_name_team, pos_by_last, num_teams=num_teams)
-    repl_pit = compute_pitcher_replacement_levels(
-        ATC_SP, ATC_RP, board["owned"], set(board["aa_names"]), num_teams=num_teams)
-    print(f"  Batter replacement levels (LDB_Score):")
-    for pos, rl in sorted(repl_bat.items()):
+    repl_bat_by_system = {
+        "batx": compute_batter_replacement_levels(
+            BATX_BATTERS, board["owned"], set(board["aa_names"]),
+            pos_map, pos_by_name_team, pos_by_last, num_teams=num_teams),
+        "oopsy": compute_batter_replacement_levels(
+            OOPSY_BATTERS, board["owned"], set(board["aa_names"]),
+            pos_map, pos_by_name_team, pos_by_last, num_teams=num_teams),
+    }
+    repl_pit_by_system = {
+        "atc": compute_pitcher_replacement_levels(
+            ATC_SP, ATC_RP, board["owned"], set(board["aa_names"]), num_teams=num_teams),
+        "oopsy": compute_pitcher_replacement_levels(
+            OOPSY_SP, OOPSY_RP, board["owned"], set(board["aa_names"]), num_teams=num_teams),
+    }
+
+    print("  BATX batter replacement levels (LDB_Score):")
+    for pos, rl in sorted(repl_bat_by_system["batx"].items()):
         print(f"    {pos:<4} {rl:+.3f}  (slots/team={REPL_BAT_SLOTS.get(pos,'?')})")
-    print(f"  SP {repl_pit['SP']:+.3f}  (slots/team={REPL_SP_SLOTS_PER_TEAM}  "
-          f"total={REPL_SP_SLOTS_PER_TEAM*num_teams})")
-    print(f"  RP {repl_pit['RP']:+.3f}  (slots/team={REPL_RP_SLOTS_PER_TEAM}  "
-          f"total={REPL_RP_SLOTS_PER_TEAM*num_teams})")
+    print("  OOPSY batter replacement levels (LDB_Score):")
+    for pos, rl in sorted(repl_bat_by_system["oopsy"].items()):
+        print(f"    {pos:<4} {rl:+.3f}  (slots/team={REPL_BAT_SLOTS.get(pos,'?')})")
+    print(f"  ATC SP {repl_pit_by_system['atc']['SP']:+.3f}  "
+          f"(slots/team={REPL_SP_SLOTS_PER_TEAM}  total={REPL_SP_SLOTS_PER_TEAM*num_teams})")
+    print(f"  OOPSY SP {repl_pit_by_system['oopsy']['SP']:+.3f}  "
+          f"(slots/team={REPL_SP_SLOTS_PER_TEAM}  total={REPL_SP_SLOTS_PER_TEAM*num_teams})")
+    print(f"  ATC RP {repl_pit_by_system['atc']['RP']:+.3f}  "
+          f"(slots/team={REPL_RP_SLOTS_PER_TEAM}  total={REPL_RP_SLOTS_PER_TEAM*num_teams})")
+    print(f"  OOPSY RP {repl_pit_by_system['oopsy']['RP']:+.3f}  "
+          f"(slots/team={REPL_RP_SLOTS_PER_TEAM}  total={REPL_RP_SLOTS_PER_TEAM*num_teams})")
 
     print("\n[5/6] Building rankings (ATC/BATX + OOPSY)...")
     batx_batters  = build_batters(BATX_BATTERS,  unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                                  hit_budget, "batx",  pos_by_last, replacement_levels=repl_bat)
+                                  hit_budget, "batx",  pos_by_last,
+                                  replacement_levels=repl_bat_by_system["batx"],
+                                  rfa_matcher=rfa_matcher)
     oopsy_batters = build_batters(OOPSY_BATTERS, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                                  hit_budget, "oopsy", pos_by_last, replacement_levels=repl_bat)
+                                  hit_budget, "oopsy", pos_by_last,
+                                  replacement_levels=repl_bat_by_system["oopsy"],
+                                  rfa_matcher=rfa_matcher)
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
     atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                        sp_budget, "atc",   pos_by_last, replacement_level=repl_pit["SP"])
+                        sp_budget, "atc",   pos_by_last,
+                        replacement_level=repl_pit_by_system["atc"]["SP"],
+                        rfa_matcher=rfa_matcher)
     oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                        sp_budget, "oopsy", pos_by_last, replacement_level=repl_pit["SP"])
+                        sp_budget, "oopsy", pos_by_last,
+                        replacement_level=repl_pit_by_system["oopsy"]["SP"],
+                        rfa_matcher=rfa_matcher)
     print(f"  SP:      {len(atc_sp)} ATC / {len(oopsy_sp)} OOPSY")
 
     atc_rp   = build_rp(ATC_RP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                        rp_budget, "atc",   pos_by_last, replacement_level=repl_pit["RP"])
+                        rp_budget, "atc",   pos_by_last,
+                        replacement_level=repl_pit_by_system["atc"]["RP"],
+                        rfa_matcher=rfa_matcher)
     oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
-                        rp_budget, "oopsy", pos_by_last, replacement_level=repl_pit["RP"])
+                        rp_budget, "oopsy", pos_by_last,
+                        replacement_level=repl_pit_by_system["oopsy"]["RP"],
+                        rfa_matcher=rfa_matcher)
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
@@ -1518,9 +1581,23 @@ def main():
             "pos_slots_total": pos_slots,
         },
         "replacement_levels": {
-            "bat": {pos: round(v, 3) for pos, v in repl_bat.items()},
-            "sp":  round(repl_pit["SP"], 3),
-            "rp":  round(repl_pit["RP"], 3),
+            # Backward-compatible defaults for the primary systems shown in the UI.
+            "bat": {pos: round(v, 3) for pos, v in repl_bat_by_system["batx"].items()},
+            "sp":  round(repl_pit_by_system["atc"]["SP"], 3),
+            "rp":  round(repl_pit_by_system["atc"]["RP"], 3),
+            # System-specific baselines used to compute each projection system's VORP.
+            "systems": {
+                "batx": {
+                    "bat": {pos: round(v, 3) for pos, v in repl_bat_by_system["batx"].items()},
+                    "sp":  round(repl_pit_by_system["atc"]["SP"], 3),
+                    "rp":  round(repl_pit_by_system["atc"]["RP"], 3),
+                },
+                "oopsy": {
+                    "bat": {pos: round(v, 3) for pos, v in repl_bat_by_system["oopsy"].items()},
+                    "sp":  round(repl_pit_by_system["oopsy"]["SP"], 3),
+                    "rp":  round(repl_pit_by_system["oopsy"]["RP"], 3),
+                },
+            },
             "config": {
                 "bat_slots_per_team": REPL_BAT_SLOTS,
                 "sp_slots_per_team":  REPL_SP_SLOTS_PER_TEAM,
@@ -1542,25 +1619,25 @@ def main():
 
     OUTPUT_JS.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_JS, "w", encoding="utf-8") as f:
-        f.write("// AUTO-GENERATED by generate_data.py — do not edit manually\n")
+        f.write("// AUTO-GENERATED by generate_data.py -- do not edit manually\n")
         f.write(f"// Generated: {data['generated_at']}\n\n")
         f.write("export const LDB_DATA = ")
         f.write(json.dumps(data, indent=2, ensure_ascii=False))
         f.write(";\n")
 
-    print(f"  ✓ Written to {OUTPUT_JS}")
-    print(f"\n── TOP 5 BATTERS (BATX, VORP-based) ──")
+    print(f"  [OK] Written to {OUTPUT_JS}")
+    print(f"\n-- TOP 5 BATTERS (BATX, VORP-based) --")
     for p in batters[:5]:
-        oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
+        oopsy = f"OOPSY #{p.get('oopsy_rank','-')}" if p.get('oopsy_rank') else "no OOPSY match"
         rl = p.get("repl_level", 0)
         print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  repl={rl:+.3f}  {oopsy}")
-    print(f"\n── TOP 5 SP (ATC, VORP-based) — repl={repl_pit['SP']:+.3f} ──")
+    print(f"\n-- TOP 5 SP (ATC, VORP-based) -- repl={repl_pit_by_system['atc']['SP']:+.3f}")
     for p in sp[:5]:
-        oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
+        oopsy = f"OOPSY #{p.get('oopsy_rank','-')}" if p.get('oopsy_rank') else "no OOPSY match"
         print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  {oopsy}")
-    print(f"\n── TOP 5 RP (ATC, VORP-based) — repl={repl_pit['RP']:+.3f} ──")
+    print(f"\n-- TOP 5 RP (ATC, VORP-based) -- repl={repl_pit_by_system['atc']['RP']:+.3f}")
     for p in rp[:5]:
-        oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
+        oopsy = f"OOPSY #{p.get('oopsy_rank','-')}" if p.get('oopsy_rank') else "no OOPSY match"
         print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  {oopsy}")
     print("\nDone!")
 
