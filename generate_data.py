@@ -72,6 +72,15 @@ RFA_TEAM_MAP = {
 # Position eligibility slots per team (used for scarcity)
 POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT":1,"SP":6,"RP":3}
 
+# ── REPLACEMENT LEVEL CONFIG ───────────────────────────────────────────────────
+# Simplified position buckets used for replacement level simulation.
+# OF=5 covers all outfield slots (3 pure OF + CF + RF).
+REPL_BAT_SLOTS = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":5,"UT":1}
+REPL_SP_SLOTS_PER_TEAM = 7   # average SPs carried per team
+REPL_RP_SLOTS_PER_TEAM = 6   # RP starters per team
+REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
+REPL_TOP_N     = 5            # average top-N remaining players = replacement level
+
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def norm(name):
     """Normalize name for matching: lowercase, strip accents, remove suffixes, collapse whitespace."""
@@ -264,6 +273,241 @@ def compute_values(players, cat_weights, budget):
     players = assign_est_values(players, budget)
     return players
 
+# ── REPLACEMENT LEVEL ENGINE ───────────────────────────────────────────────────
+
+def normalize_pos_for_repl(positions):
+    """Map CBS position tokens to simplified REPL_BAT_SLOTS bucket keys."""
+    result = set()
+    for p in positions:
+        if p == "C":               result.add("C")
+        elif p == "1B":            result.add("1B")
+        elif p == "DH":            result.add("1B")   # DH counts as 1B utility
+        elif p == "2B":            result.add("2B")
+        elif p == "3B":            result.add("3B")
+        elif p == "SS":            result.add("SS")
+        elif p in {"OF","CF","RF","LF"}: result.add("OF")
+        elif p == "INF":           result.update({"2B","3B","SS"})
+        elif p == "U":             result.add("UT")
+    return result
+
+
+def compute_batter_replacement_levels(
+        proj_path, owned, aa_names, pos_map, pos_by_name_team, pos_by_last,
+        num_teams, bench_pct=REPL_BENCH_PCT, top_n=REPL_TOP_N):
+    """
+    Compute replacement-level LDB_Score for each batting position using a
+    scarcity-aware draft simulation.
+
+    Algorithm:
+      1. Score all qualified batters globally (LDB z-score).
+      2. Count how many owned (non-AA) players are eligible at each position.
+      3. Rank positions most-scarce → least-scarce by remaining_slots / total_slots.
+      4. For each position in that order, pull top (remaining + 20% bench) available
+         players and mark them as assigned.
+      5. Replacement level = avg LDB_Score of the top-N still-available players
+         eligible at that position.
+
+    Returns {pos: replacement_ldb_score}
+    """
+    cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
+                   "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
+
+    with open(proj_path, encoding="utf-8-sig") as f:
+        rows = list(csv.DictReader(f))
+    all_qual = [r for r in rows if fv(r,"PA") >= MIN_PA]
+    for r in all_qual:
+        r["_raw_aSB"]  = calc_aSB(r)
+        r["_raw_HR"]   = fv(r,"HR")
+        r["_raw_R"]    = fv(r,"R")
+        r["_raw_OBP"]  = fv(r,"OBP")
+        r["_raw_OPS"]  = fv(r,"OPS")
+        r["_raw_aRBI"] = fv(r,"RBI")
+    all_qual = compute_ldb_scores(all_qual, cat_weights)
+
+    # Pre-cache normalised positions for every player
+    pos_cache = {}
+    for p in all_qual:
+        raw_pos = get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last)
+        pos_cache[norm(p["Name"])] = normalize_pos_for_repl(raw_pos)
+
+    owned_norms = {norm(n) for n in owned.keys()}
+    aa_norms    = {norm(n) for n in aa_names}
+
+    # ── Count owned (non-AA) players per position slot (one slot per player) ──
+    total_slots   = {pos: s * num_teams for pos, s in REPL_BAT_SLOTS.items() if pos != "UT"}
+    owned_count   = {pos: 0 for pos in total_slots}
+    SLOT_ORDER    = ["C","1B","2B","3B","SS","OF"]  # deterministic primary assignment
+
+    for p in sorted(all_qual, key=lambda x: x["LDB_Score"], reverse=True):
+        n = norm(p["Name"])
+        if n in owned_norms and n not in aa_norms:
+            eligible_pos = pos_cache.get(n, set()) & set(SLOT_ORDER)
+            # Assign to first standard slot in order — prevents double-counting
+            for pos in SLOT_ORDER:
+                if pos in eligible_pos:
+                    owned_count[pos] += 1
+                    break
+
+    remaining_slots = {pos: max(0, total_slots[pos] - owned_count[pos]) for pos in total_slots}
+
+    # Scarcity order: fewest remaining_slots/total_slots first (most scarce first)
+    scarcity_order = sorted(total_slots.keys(),
+        key=lambda p: (remaining_slots[p] / total_slots[p]) if total_slots[p] > 0 else 1.0)
+
+    # ── Simulate draft filling ─────────────────────────────────────────────────
+    assigned  = owned_norms | aa_norms
+    available = [p for p in all_qual if norm(p["Name"]) not in assigned]
+
+    replacement_levels = {}
+
+    for pos in scarcity_order:
+        need       = remaining_slots[pos]
+        total_need = need + int(need * bench_pct)
+
+        eligible   = [p for p in available if pos in pos_cache.get(norm(p["Name"]), set())]
+        fill_count = min(total_need, len(eligible))
+
+        newly     = {norm(eligible[i]["Name"]) for i in range(fill_count)}
+        assigned |= newly
+        available  = [p for p in available if norm(p["Name"]) not in assigned]
+
+        # Replacement = avg LDB_Score of top-N remaining eligible at this position
+        remaining_elig = [p for p in available
+                          if pos in pos_cache.get(norm(p["Name"]), set())][:top_n]
+        if remaining_elig:
+            replacement_levels[pos] = statistics.mean(p["LDB_Score"] for p in remaining_elig)
+        elif eligible and fill_count > 0:
+            # Fallback: last filled player's score
+            replacement_levels[pos] = eligible[fill_count - 1]["LDB_Score"]
+        else:
+            replacement_levels[pos] = 0.0
+
+    # ── UT: fill UT slots from remaining pool (any batter), then find replacement ──
+    ut_total = REPL_BAT_SLOTS["UT"] * num_teams
+    ut_need  = ut_total + int(ut_total * bench_pct)
+    ut_fill  = min(ut_need, len(available))
+    ut_newly = {norm(available[i]["Name"]) for i in range(ut_fill)}
+    assigned |= ut_newly
+    available = [p for p in available if norm(p["Name"]) not in assigned]
+
+    remaining_ut = available[:top_n]
+    replacement_levels["UT"] = (
+        statistics.mean(p["LDB_Score"] for p in remaining_ut) if remaining_ut else 0.0)
+
+    return replacement_levels
+
+
+def compute_pitcher_replacement_levels(
+        sp_proj_path, rp_proj_path, owned, aa_names, num_teams,
+        sp_slots=REPL_SP_SLOTS_PER_TEAM, rp_slots=REPL_RP_SLOTS_PER_TEAM,
+        bench_pct=REPL_BENCH_PCT, top_n=REPL_TOP_N):
+    """
+    Compute replacement-level LDB_Score for SP and RP independently.
+    SP slots are filled first (higher priority); RP from a separate pool.
+    Returns {"SP": float, "RP": float}
+    """
+    owned_norms = {norm(n) for n in owned.keys()}
+    aa_norms    = {norm(n) for n in aa_names}
+    all_unavail = owned_norms | aa_norms
+
+    cat_sp = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
+              "HRA":(False,1.5),"aWHIP":(False,1.5)}
+    cat_rp = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
+              "HRA":(False,1.0),"aWHIP":(False,1.0)}
+
+    # ── SP ──────────────────────────────────────────────────────────────────
+    with open(sp_proj_path, encoding="utf-8-sig") as f:
+        sp_rows = list(csv.DictReader(f))
+    all_sp = [r for r in sp_rows if fv(r,"GS") >= MIN_GS]
+    for r in all_sp:
+        r["_raw_MGS"]   = calc_mgs_season(r)
+        r["_raw_K"]     = fv(r,"SO")
+        r["_raw_ERA"]   = fv(r,"ERA")
+        r["_raw_HRA"]   = fv(r,"HR")
+        r["_raw_aWHIP"] = fv(r,"WHIP")
+    all_sp = compute_ldb_scores(all_sp, cat_sp)
+
+    total_sp   = sp_slots * num_teams
+    owned_sp   = sum(1 for p in all_sp
+                     if norm(p["Name"]) in owned_norms and norm(p["Name"]) not in aa_norms)
+    remain_sp  = max(0, total_sp - owned_sp)
+    bench_sp   = int(remain_sp * bench_pct)
+
+    avail_sp   = [p for p in all_sp if norm(p["Name"]) not in all_unavail]
+    fill_sp    = min(remain_sp + bench_sp, len(avail_sp))
+    repl_sp_p  = avail_sp[fill_sp : fill_sp + top_n]
+    sp_repl    = (statistics.mean(p["LDB_Score"] for p in repl_sp_p)
+                  if repl_sp_p else (avail_sp[-1]["LDB_Score"] if avail_sp else 0.0))
+
+    # ── RP ──────────────────────────────────────────────────────────────────
+    with open(rp_proj_path, encoding="utf-8-sig") as f:
+        rp_rows = list(csv.DictReader(f))
+    all_rp = [r for r in rp_rows if fv(r,"IP") >= MIN_IP]
+    for r in all_rp:
+        r["_raw_VIJAY"] = calc_vijay_season(r)
+        r["_raw_K"]     = fv(r,"SO")
+        r["_raw_ERA"]   = fv(r,"ERA")
+        r["_raw_HRA"]   = fv(r,"HR")
+        r["_raw_aWHIP"] = fv(r,"WHIP")
+    all_rp = compute_ldb_scores(all_rp, cat_rp)
+
+    total_rp   = rp_slots * num_teams
+    owned_rp   = sum(1 for p in all_rp
+                     if norm(p["Name"]) in owned_norms and norm(p["Name"]) not in aa_norms)
+    remain_rp  = max(0, total_rp - owned_rp)
+    bench_rp   = int(remain_rp * bench_pct)
+
+    avail_rp   = [p for p in all_rp if norm(p["Name"]) not in all_unavail]
+    fill_rp    = min(remain_rp + bench_rp, len(avail_rp))
+    repl_rp_p  = avail_rp[fill_rp : fill_rp + top_n]
+    rp_repl    = (statistics.mean(p["LDB_Score"] for p in repl_rp_p)
+                  if repl_rp_p else (avail_rp[-1]["LDB_Score"] if avail_rp else 0.0))
+
+    return {"SP": sp_repl, "RP": rp_repl}
+
+
+def assign_est_values_vorp(players, budget, replacement_levels,
+                           pos_map, pos_by_name_team, pos_by_last):
+    """
+    Assign Est_Value proportional to value above replacement (VORP).
+    Each player's replacement level = lowest threshold among their eligible positions
+    (= the position where they contribute the most value above a weak baseline).
+    Players at or below replacement get the $0.5M floor.
+    """
+    for p in players:
+        raw_pos   = get_positions(p["Name"], pos_map, pos_by_name_team,
+                                  p.get("Team",""), pos_by_last)
+        norm_pos  = normalize_pos_for_repl(raw_pos)
+        valid_rl  = [replacement_levels[pos] for pos in norm_pos if pos in replacement_levels]
+        best_repl = min(valid_rl) if valid_rl else 0.0   # position with worst baseline = most valuable
+        p["_repl_level"] = best_repl
+        p["_vorp"]       = max(0.0, p["LDB_Score"] - best_repl)
+
+    total_vorp = sum(p["_vorp"] for p in players)
+    for p in players:
+        if total_vorp > 0 and p["_vorp"] > 0:
+            raw = (p["_vorp"] / total_vorp) * budget
+            p["Est_Value"] = max(0.5, round(raw * 2) / 2)
+        else:
+            p["Est_Value"] = 0.5
+    return players
+
+
+def assign_est_values_vorp_pitcher(players, budget, replacement_level_score):
+    """VORP-based value allocation for a single pitcher pool (SP or RP)."""
+    for p in players:
+        p["_repl_level"] = replacement_level_score
+        p["_vorp"]       = max(0.0, p["LDB_Score"] - replacement_level_score)
+    total_vorp = sum(p["_vorp"] for p in players)
+    for p in players:
+        if total_vorp > 0 and p["_vorp"] > 0:
+            raw = (p["_vorp"] / total_vorp) * budget
+            p["Est_Value"] = max(0.5, round(raw * 2) / 2)
+        else:
+            p["Est_Value"] = 0.5
+    return players
+
+
 def lookup_theoretical_value(player_name, tv_map, tv_by_last):
     """Look up theoretical value for a player, handling abbreviated draft-board names.
     Exact norm match first, then abbrev_match via last-name index, then fuzzy fallback.
@@ -287,17 +531,19 @@ def lookup_theoretical_value(player_name, tv_map, tv_by_last):
     return None
 
 
-def build_full_pool_values(num_teams):
+def build_full_pool_values(num_teams, pos_map, pos_by_name_team, pos_by_last):
     """Compute theoretical auction values for ALL qualified players using a fixed
     full-draft baseline of FULL_TEAM_BUDGET × num_teams dollars (no availability
-    filter — owned and free players alike).
+    filter — owned and free players alike, i.e. 'greenfield' pool).
+
+    Values are computed using VORP (Value Over Replacement Player) with replacement
+    levels derived from the same scarcity simulation as the main pipeline, but run
+    against the full unfiltered pool (no owned/AA exclusions) so that theoretical
+    values reflect true scarcity-adjusted auction values for keeper surplus calculation.
 
     Returns (tv_map, tv_by_last):
       tv_map     — {norm(name): theoretical_value}
       tv_by_last — {last_name: [(norm_name, value), ...]} index for abbrev lookups
-
-    Uses the same z-score + proportional allocation methodology as the main
-    valuation engine, but against a 'greenfield' $200M-per-team budget.
     """
     full_total = FULL_TEAM_BUDGET * num_teams
     full_hit   = full_total * HIT_SPLIT
@@ -310,6 +556,15 @@ def build_full_pool_values(num_teams):
                "HRA":(False,1.5),"aWHIP":(False,1.5)}
     cat_rp  = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
                "HRA":(False,1.0),"aWHIP":(False,1.0)}
+
+    # ── Greenfield replacement levels (empty owned/AA — full pool sim) ────────
+    gf_repl_bat = compute_batter_replacement_levels(
+        BATX_BATTERS, {}, set(), pos_map, pos_by_name_team, pos_by_last, num_teams)
+    gf_repl_pit = compute_pitcher_replacement_levels(
+        ATC_SP, ATC_RP, {}, set(), num_teams)
+    print(f"  Greenfield replacement levels — bat: "
+          + ", ".join(f"{p}:{v:+.2f}" for p, v in sorted(gf_repl_bat.items()))
+          + f"  SP:{gf_repl_pit['SP']:+.2f}  RP:{gf_repl_pit['RP']:+.2f}")
 
     result = {}
 
@@ -325,7 +580,8 @@ def build_full_pool_values(num_teams):
         r["_raw_OPS"]  = fv(r, "OPS")
         r["_raw_aRBI"] = fv(r, "RBI")
     bat_pool = compute_ldb_scores(bat_pool, cat_bat)
-    bat_pool = assign_est_values(bat_pool, full_hit)
+    bat_pool = assign_est_values_vorp(bat_pool, full_hit, gf_repl_bat,
+                                      pos_map, pos_by_name_team, pos_by_last)
     for p in bat_pool:
         result[norm(p["Name"])] = p["Est_Value"]
 
@@ -340,7 +596,7 @@ def build_full_pool_values(num_teams):
         r["_raw_HRA"]   = fv(r, "HR")
         r["_raw_aWHIP"] = fv(r, "WHIP")
     sp_pool = compute_ldb_scores(sp_pool, cat_sp)
-    sp_pool = assign_est_values(sp_pool, full_sp)
+    sp_pool = assign_est_values_vorp_pitcher(sp_pool, full_sp, gf_repl_pit["SP"])
     for p in sp_pool:
         result[norm(p["Name"])] = p["Est_Value"]
 
@@ -355,7 +611,7 @@ def build_full_pool_values(num_teams):
         r["_raw_HRA"]   = fv(r, "HR")
         r["_raw_aWHIP"] = fv(r, "WHIP")
     rp_pool = compute_ldb_scores(rp_pool, cat_rp)
-    rp_pool = assign_est_values(rp_pool, full_rp)
+    rp_pool = assign_est_values_vorp_pitcher(rp_pool, full_rp, gf_repl_pit["RP"])
     for p in rp_pool:
         result[norm(p["Name"])] = p["Est_Value"]
 
@@ -573,7 +829,8 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team="", pos_by
     return []
 
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
-def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
+def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
+                  pos_by_last=None, replacement_levels=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
@@ -593,7 +850,11 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
-    eligible = assign_est_values(eligible, budget)
+    if replacement_levels:
+        eligible = assign_est_values_vorp(eligible, budget, replacement_levels,
+                                          pos_map, pos_by_name_team, pos_by_last)
+    else:
+        eligible = assign_est_values(eligible, budget)
 
     results = []
     for i, p in enumerate(eligible):
@@ -603,6 +864,7 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "system": system_name,
             "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
+            "repl_level": round(p.get("_repl_level", 0.0), 3),
             "name": p["Name"], "team": p.get("Team",""),
             "g": round(fv(p,"G"),1), "pa": round(fv(p,"PA"),1),
             "hr": round(fv(p,"HR"),1), "r": round(fv(p,"R"),1),
@@ -618,7 +880,8 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
     return results
 
 # ── SP RANKINGS ────────────────────────────────────────────────────────────────
-def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
+def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
+             pos_by_last=None, replacement_level=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
@@ -637,7 +900,10 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
-    eligible = assign_est_values(eligible, budget)
+    if replacement_level is not None:
+        eligible = assign_est_values_vorp_pitcher(eligible, budget, replacement_level)
+    else:
+        eligible = assign_est_values(eligible, budget)
 
     results = []
     for i, p in enumerate(eligible):
@@ -647,6 +913,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "system": system_name,
             "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
+            "repl_level": round(p.get("_repl_level", 0.0), 3),
             "name": p["Name"], "team": p.get("Team",""),
             "gs": round(fv(p,"GS"),1), "ip": round(fv(p,"IP"),1),
             "k": round(fv(p,"SO"),1), "era": round(fv(p,"ERA"),3),
@@ -661,7 +928,8 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
     return results
 
 # ── RP RANKINGS ────────────────────────────────────────────────────────────────
-def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name, pos_by_last=None):
+def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
+             pos_by_last=None, replacement_level=None):
     with open(proj_path, encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     cat_weights = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
@@ -680,7 +948,10 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
-    eligible = assign_est_values(eligible, budget * RP_VALUE_SCALE)
+    if replacement_level is not None:
+        eligible = assign_est_values_vorp_pitcher(eligible, budget * RP_VALUE_SCALE, replacement_level)
+    else:
+        eligible = assign_est_values(eligible, budget * RP_VALUE_SCALE)
 
     results = []
     for i, p in enumerate(eligible):
@@ -690,6 +961,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "system": system_name,
             "rank": global_rank.get(norm(p["Name"]), i+1), "tier": tier,
             "est_value": p["Est_Value"],
+            "repl_level": round(p.get("_repl_level", 0.0), 3),
             "name": p["Name"], "team": p.get("Team",""),
             "g": round(fv(p,"G"),1), "ip": round(fv(p,"IP"),1),
             "sv": round(fv(p,"SV"),1), "hld": round(fv(p,"HLD"),1),
@@ -1158,24 +1430,46 @@ def main():
     print(f"  Players with eligibility: {len(pos_map)}")
 
     print(f"\n[3.5] Building full-pool theoretical values ({len(teams)} teams × ${FULL_TEAM_BUDGET:.0f}M)...")
-    theoretical_values, tv_by_last = build_full_pool_values(len(teams))
+    theoretical_values, tv_by_last = build_full_pool_values(
+        len(teams), pos_map, pos_by_name_team, pos_by_last)
 
     hit_budget = total_budget * HIT_SPLIT
     sp_budget  = total_budget * SP_SPLIT
     rp_budget  = total_budget * RP_SPLIT
     print(f"\n[4/6] Budget splits: Hit=${hit_budget:.0f}M  SP=${sp_budget:.0f}M  RP=${rp_budget:.0f}M")
 
+    num_teams = len(teams)
+    print(f"\n[4.5] Computing scarcity-based replacement levels ({num_teams} teams)...")
+    repl_bat = compute_batter_replacement_levels(
+        BATX_BATTERS, board["owned"], set(board["aa_names"]),
+        pos_map, pos_by_name_team, pos_by_last, num_teams=num_teams)
+    repl_pit = compute_pitcher_replacement_levels(
+        ATC_SP, ATC_RP, board["owned"], set(board["aa_names"]), num_teams=num_teams)
+    print(f"  Batter replacement levels (LDB_Score):")
+    for pos, rl in sorted(repl_bat.items()):
+        print(f"    {pos:<4} {rl:+.3f}  (slots/team={REPL_BAT_SLOTS.get(pos,'?')})")
+    print(f"  SP {repl_pit['SP']:+.3f}  (slots/team={REPL_SP_SLOTS_PER_TEAM}  "
+          f"total={REPL_SP_SLOTS_PER_TEAM*num_teams})")
+    print(f"  RP {repl_pit['RP']:+.3f}  (slots/team={REPL_RP_SLOTS_PER_TEAM}  "
+          f"total={REPL_RP_SLOTS_PER_TEAM*num_teams})")
+
     print("\n[5/6] Building rankings (ATC/BATX + OOPSY)...")
-    batx_batters  = build_batters(BATX_BATTERS,  unavail_idx, rfa_norm, pos_map, pos_by_name_team, hit_budget, "batx",   pos_by_last)
-    oopsy_batters = build_batters(OOPSY_BATTERS, unavail_idx, rfa_norm, pos_map, pos_by_name_team, hit_budget, "oopsy",  pos_by_last)
+    batx_batters  = build_batters(BATX_BATTERS,  unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                                  hit_budget, "batx",  pos_by_last, replacement_levels=repl_bat)
+    oopsy_batters = build_batters(OOPSY_BATTERS, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                                  hit_budget, "oopsy", pos_by_last, replacement_levels=repl_bat)
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
-    atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team, sp_budget, "atc",   pos_by_last)
-    oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team, sp_budget, "oopsy", pos_by_last)
+    atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                        sp_budget, "atc",   pos_by_last, replacement_level=repl_pit["SP"])
+    oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                        sp_budget, "oopsy", pos_by_last, replacement_level=repl_pit["SP"])
     print(f"  SP:      {len(atc_sp)} ATC / {len(oopsy_sp)} OOPSY")
 
-    atc_rp   = build_rp(ATC_RP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team, rp_budget, "atc",   pos_by_last)
-    oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team, rp_budget, "oopsy", pos_by_last)
+    atc_rp   = build_rp(ATC_RP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                        rp_budget, "atc",   pos_by_last, replacement_level=repl_pit["RP"])
+    oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
+                        rp_budget, "oopsy", pos_by_last, replacement_level=repl_pit["RP"])
     print(f"  RP:      {len(atc_rp)} ATC / {len(oopsy_rp)} OOPSY")
 
     print("\n[6/7] Loading player notes + PL rankings + Athletic SP + tags...")
@@ -1212,7 +1506,6 @@ def main():
                 "theoretical_value": lookup_theoretical_value(name, theoretical_values, tv_by_last),
             })
 
-    num_teams = len(teams)
     pos_slots = {pos: slots * num_teams for pos, slots in POS_SLOTS_PER_TEAM.items()}
     data = {
         "generated_at": str(date.today()),
@@ -1223,6 +1516,18 @@ def main():
             "rp_budget":    round(rp_budget, 2),
             "min_pa": MIN_PA, "min_gs": MIN_GS, "min_ip": MIN_IP,
             "pos_slots_total": pos_slots,
+        },
+        "replacement_levels": {
+            "bat": {pos: round(v, 3) for pos, v in repl_bat.items()},
+            "sp":  round(repl_pit["SP"], 3),
+            "rp":  round(repl_pit["RP"], 3),
+            "config": {
+                "bat_slots_per_team": REPL_BAT_SLOTS,
+                "sp_slots_per_team":  REPL_SP_SLOTS_PER_TEAM,
+                "rp_slots_per_team":  REPL_RP_SLOTS_PER_TEAM,
+                "bench_pct":          REPL_BENCH_PCT,
+                "top_n":              REPL_TOP_N,
+            },
         },
         "teams": teams,
         "roster_by_team": roster_by_team,
@@ -1244,15 +1549,16 @@ def main():
         f.write(";\n")
 
     print(f"  ✓ Written to {OUTPUT_JS}")
-    print(f"\n── TOP 5 BATTERS (BATX) ──")
+    print(f"\n── TOP 5 BATTERS (BATX, VORP-based) ──")
     for p in batters[:5]:
         oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
-        print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  {oopsy}")
-    print(f"\n── TOP 5 SP (ATC) ──")
+        rl = p.get("repl_level", 0)
+        print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  repl={rl:+.3f}  {oopsy}")
+    print(f"\n── TOP 5 SP (ATC, VORP-based) — repl={repl_pit['SP']:+.3f} ──")
     for p in sp[:5]:
         oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
         print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  {oopsy}")
-    print(f"\n── TOP 5 RP (ATC) ──")
+    print(f"\n── TOP 5 RP (ATC, VORP-based) — repl={repl_pit['RP']:+.3f} ──")
     for p in rp[:5]:
         oopsy = f"OOPSY #{p.get('oopsy_rank','—')}" if p.get('oopsy_rank') else "no OOPSY match"
         print(f"  #{p['rank']:<3} {p['name']:<25} ${p['est_value']}M  {oopsy}")

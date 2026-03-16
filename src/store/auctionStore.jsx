@@ -22,20 +22,6 @@ function recalcValues(players, teams, soldMap) {
   const isBatter = p => p.pa !== undefined
   const isSP     = p => p.gs !== undefined
   const numTeams = Object.keys(teams).length
-  const POS_SLOTS = { C: 1, "1B": 1, "2B": 1, "3B": 1, SS: 1, OF: 3, CF: 1, RF: 1, UT: 1, SP: 6, RP: 3 }
-  const slotDemand = {}
-  for (const [pos, perTeam] of Object.entries(POS_SLOTS)) slotDemand[pos] = perTeam * numTeams
-  const supply = {}
-  for (const p of unsold) for (const pos of (p.positions || [])) supply[pos] = (supply[pos] || 0) + 1
-  function scarcityMult(positions) {
-    if (!positions?.length) return 1
-    let maxScarcity = 1
-    for (const pos of positions) {
-      const demand = slotDemand[pos], s = supply[pos] || 1
-      if (demand && s > 0 && s < demand * 1.1) maxScarcity = Math.max(maxScarcity, Math.min(1.3, demand / s))
-    }
-    return maxScarcity
-  }
 
   // Dynamic budget split: based on slots to fill vs players remaining (scarcity)
   const BATTER_SLOTS_PER_TEAM = 11  // C+1B+2B+3B+SS+OF+CF+RF+UT
@@ -61,7 +47,7 @@ function recalcValues(players, teams, soldMap) {
   const spScarcity = unsoldSP.length > 0 ? spSlotsToFill / unsoldSP.length : 0
   const rpScarcity = unsoldRP.length > 0 ? rpSlotsToFill / unsoldRP.length : 0
   const totalScarcity = batterScarcity + spScarcity + rpScarcity
-  // Blend dynamic scarcity with baseline (50/30/20); bench slots (11/team) absorb any type, so don't overcorrect
+  // Blend dynamic scarcity with baseline (50/30/20); bench slots absorb any type, so don't overcorrect
   const BLEND = 0.5  // 50% dynamic, 50% baseline
   const baseline = { hit: 0.50, sp: 0.30, rp: 0.20 }
   const dyn = totalScarcity > 0
@@ -75,15 +61,16 @@ function recalcValues(players, teams, soldMap) {
   const RP_VALUE_SCALE = 0.80  // Scale RP values down (fewer innings than SPs)
   const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
 
+  // VORP: value above each player's positional replacement level (baked in by Python pipeline)
+  function vorp(p) { return Math.max(0, p.ldb_score - (p.repl_level ?? 0)) }
+
   function allocGroup(group, budget) {
-    const positiveTotal = group.reduce((s, p) => s + Math.max(0, p.ldb_score), 0)
-    if (!positiveTotal) return group.map(p => ({ ...p, adj_value: 0.5 }))
-    const scarcityWeighted = group.reduce((s, p) => s + Math.max(0, p.ldb_score) * scarcityMult(p.positions), 0)
-    if (!scarcityWeighted) return group.map(p => ({ ...p, adj_value: 0.5 }))
+    const totalVorp = group.reduce((s, p) => s + vorp(p), 0)
+    if (!totalVorp) return group.map(p => ({ ...p, adj_value: 0.5 }))
     return group.map(p => {
-      const mult = scarcityMult(p.positions)
-      const rawShare = (p.ldb_score > 0 ? (p.ldb_score * mult) / scarcityWeighted : 0) * budget
-      return { ...p, adj_value: p.ldb_score > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5 }
+      const pv = vorp(p)
+      const rawShare = (pv / totalVorp) * budget
+      return { ...p, adj_value: pv > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5 }
     })
   }
 
