@@ -4,10 +4,10 @@
 export const LDB_DATA = {
   "generated_at": "2026-03-16",
   "meta": {
-    "total_budget": 2218.77,
-    "hit_budget": 1109.38,
-    "sp_budget": 665.63,
-    "rp_budget": 443.75,
+    "total_budget": 2218.27,
+    "hit_budget": 1109.13,
+    "sp_budget": 665.48,
+    "rp_budget": 443.65,
     "min_pa": 200,
     "min_gs": 10,
     "min_ip": 20,
@@ -38,7 +38,7 @@ export const LDB_DATA = {
       "2B": 5.424,
       "3B": 6.754,
       "1B": 9.975,
-      "OF": 2.665,
+      "OF": 2.725,
       "UT": 7.569
     },
     "sp": -1.082,
@@ -51,7 +51,7 @@ export const LDB_DATA = {
           "2B": 5.424,
           "3B": 6.754,
           "1B": 9.975,
-          "OF": 2.665,
+          "OF": 2.725,
           "UT": 7.569
         },
         "sp": -1.082,
@@ -64,7 +64,7 @@ export const LDB_DATA = {
           "2B": 3.485,
           "3B": 2.994,
           "1B": 9.162,
-          "OF": 1.677,
+          "OF": 1.84,
           "UT": 5.949
         },
         "sp": -0.192,
@@ -171,9 +171,9 @@ export const LDB_DATA = {
     "CORN": {
       "abbr": "CORN",
       "gm": "Ryan",
-      "budget_rem": 129.23,
+      "budget_rem": 128.73,
       "slots_rem": 16,
-      "budget_initial": 129.23,
+      "budget_initial": 128.73,
       "slots_initial": 16
     },
     "AIDS": {
@@ -1444,7 +1444,7 @@ export const LDB_DATA = {
     "CORN": [
       {
         "name": "Ryan",
-        "salary": 129.23,
+        "salary": 128.73,
         "contract": "",
         "pos": "2026",
         "positions": [],
@@ -1504,8 +1504,8 @@ export const LDB_DATA = {
       },
       {
         "name": "O. Cruz",
-        "salary": 1.0,
-        "contract": "H2",
+        "salary": 1.5,
+        "contract": "H3",
         "pos": "CF",
         "positions": [
           "CF",
@@ -3208,260 +3208,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "J. Rodriguez",
-    "A. Hansen",
-    "A. Faedo",
-    "H. Alvarez",
-    "J. Triantos",
-    "R. Anthony",
-    "N. Gonzales",
-    "Z. Matthews",
-    "Z. Hope",
-    "J. Lawlar",
-    "F. Arias",
-    "Y. Curet",
-    "J. Wiggins",
-    "S. Howard",
-    "M. Clark",
-    "R. Arias",
-    "K. Allard",
-    "A. Gose",
-    "C. Keith",
-    "L. Hernandez",
-    "C. Hernandez",
-    "L. Doyle",
-    "J. De Paula",
-    "C. Fuller",
-    "C. Williams",
-    "J. Perdomo",
-    "C. DeLauter",
-    "S. Sanchez",
-    "A. Genao",
-    "D. Whitney",
-    "C. Norby",
-    "D.J. Peterson",
-    "Q. Mathews",
-    "X. Isaac",
-    "P. Messick",
-    "F. Wall",
-    "K. Campbell",
-    "P. Burdick",
-    "C. Spangenberg",
-    "D. Cartaya",
-    "M. Sirota",
-    "A.J. Reed",
-    "C. Fulmer",
-    "C. Moore",
-    "C. Benge",
-    "W. Javier",
-    "D. Crews",
-    "A. Meyer",
-    "T. Beede",
-    "J. Farmelo",
-    "M. Ballesteros",
-    "J. Turner",
-    "J. Bukauskas",
-    "S. Jones",
-    "C. Emerson",
-    "H. Smith",
-    "M. Manning",
-    "A. Gracia",
-    "E. Green",
-    "T. Bremner",
-    "T. Troy",
-    "R. Velazquez",
-    "F. Celesten",
-    "G. Valera",
-    "J. Bleday",
-    "R. Herrera",
-    "L. Matos",
-    "B. Montgomery",
-    "M. Baez",
-    "R. Pint",
-    "R. Lewis",
-    "J. Lebron",
-    "M. Harrison",
-    "S. Yamashita",
-    "J. Groome",
-    "C. Abrams",
-    "Z. Veen",
-    "C. Cowser",
-    "M. Banuelos",
-    "J. Misiorowski",
-    "T. Widener",
-    "B. Davis",
-    "A. Tejeda",
-    "T. Gillen",
-    "A. Arquette",
-    "C. Martin",
-    "E. Carter",
-    "C. Collier",
-    "S. Zavala",
-    "K. Rocker",
-    "S. Stewart",
-    "Jai. Chourio",
-    "L. Pena (MIL)",
-    "F. Whitley",
-    "K. Robinson",
-    "A. Nimmala",
-    "D. Espino",
-    "K. Griffin",
-    "E. Morales",
-    "Ad. Sanchez",
-    "B. Rocchio",
-    "T. Szapucki",
-    "R. Waldschmidt",
-    "C. Winn",
-    "T. Yamada",
-    "T. White",
-    "J. Gonzalez",
-    "R. Tiedemann",
-    "J. De Leon",
-    "T. Hence",
-    "G. Lombard Jr.",
-    "T. Bradley",
-    "S. Walcott",
-    "W. Jenkins",
-    "D. Lesko",
-    "J. Jobe",
-    "S. Strosnider",
-    "B. Eldridge",
-    "P. Tolle",
-    "E. Florentino",
-    "K. Anderson",
-    "O. Martinez",
-    "E. Florial",
-    "M. Mayer",
-    "G. Taylor",
-    "A. Baddoo",
-    "C. Burns",
-    "F. Alvarez",
-    "M. Liberatore",
-    "D. Jones",
-    "T. Casas",
-    "C. Young",
-    "D. Garcia",
-    "B. House",
-    "A. Medina",
-    "J. Parker",
-    "E. Perez",
-    "R. Snelling",
-    "B. Wilken",
-    "D. Cameron",
-    "D. Waters",
-    "O. Peraza",
-    "Ja. Jung",
-    "J. LaViolette",
-    "T. Johnson",
-    "C. Pache",
-    "A. Freeland",
-    "A. Jackson",
-    "R. Sloan",
-    "A. Duno",
-    "J. Caglianone",
-    "N. Pearson",
-    "B. Shipley",
-    "F. Kilome",
-    "C. Mayo",
-    "A. Miller",
-    "J. Adams",
-    "H. Waldrep",
-    "E. Holliday",
-    "C. Kieboom",
-    "D. Curley",
-    "J. Crawford",
-    "J. Bart",
-    "R. Hassell",
-    "Jah. Jones",
-    "R. Calaz",
-    "C. Dollander",
-    "N. Marte",
-    "D. Beavers",
-    "E. Hancock",
-    "A. Bracho",
-    "J. Biddle",
-    "T. Black",
-    "L. Patino",
-    "M. Winn",
-    "L. Brinson",
-    "J. Guerra",
-    "T. Trammell",
-    "S. Basallo",
-    "D. Burress",
-    "N. Carlos Vera",
-    "T. Yesavage",
-    "J. Luis",
-    "A. Page",
-    "N. Schultz",
-    "B. Rainer",
-    "V. Brujan",
-    "C. Bonemer",
-    "J. Groshans",
-    "G. Canning",
-    "L. Armenteros",
-    "B. Thompson",
-    "X. Neyens",
-    "J. De Jesus Gonzalez",
-    "J. Holliday",
-    "L. De Vries",
-    "H. Bishop",
-    "K. Alcantara",
-    "J. Dunn",
-    "T. Lutz",
-    "H. Takahashi",
-    "P. Eeles",
-    "H. Davis",
-    "B. McKay",
-    "L. Allen",
-    "DL Hall",
     "C. Smith",
-    "N. Meyer",
-    "J. Briceno",
+    "A. Baddoo",
+    "C. Spangenberg",
+    "C. Keith",
+    "J. Lebron",
+    "T. Szapucki",
+    "E. Florentino",
+    "K. Robinson",
+    "T. Troy",
+    "F. Celesten",
+    "R. Pint",
+    "C. Fuller",
+    "C. Pache",
+    "H. Takahashi",
+    "S. Basallo",
     "J. Walker",
-    "E. Rodriguez",
-    "A. Painter",
-    "J. P. Martinez",
-    "G. Lavigne",
-    "J. Balazovic",
-    "S. Beer",
-    "Q. Priester",
     "B. Goodwin",
-    "O. Colas",
-    "E. Conrad",
-    "T. Thomas",
-    "F. Barreto",
-    "C. Dana",
-    "T. Sykora",
-    "G. Rodriguez",
-    "E. Hankins",
-    "C. Jensen",
-    "K. Okamoto",
-    "K. Harrison",
-    "J. Barrero",
-    "L. Montes",
-    "A. Martin",
-    "M. Abel",
-    "M. Luciano",
-    "H. Kjerstad",
-    "B. Chandler",
-    "S. Torkelson",
-    "N. McLean",
-    "O. Caissie",
-    "R. Vilade",
-    "R. Contreras",
-    "Rain. Rodriguez",
-    "R. Ryan",
-    "C. Condon",
-    "J. Arnold",
+    "J. Dunn",
+    "H. Bishop",
     "K. Mcgonigle",
+    "T. Gillen",
+    "A. Gose",
+    "J. P. Martinez",
+    "O. Colas",
+    "T. Thomas",
+    "P. Eeles",
+    "B. Eldridge",
+    "C. DeLauter",
+    "R. Sloan",
+    "J. Guerra",
+    "J. Turner",
+    "A. Painter",
+    "C. Hernandez",
+    "J. Parker",
+    "L. Brinson",
+    "K. Okamoto",
+    "B. Rocchio",
+    "M. Winn",
+    "J. Groome",
+    "A. Genao",
+    "C. Burns",
+    "R. Ryan",
+    "D. Curley",
+    "E. Holliday",
+    "C. Condon",
+    "J. Wiggins",
+    "Z. Veen",
+    "D. Espino",
+    "F. Barreto",
+    "B. McKay",
+    "T. Bradley",
+    "N. Gonzales",
+    "C. Williams",
+    "M. Liberatore",
+    "H. Davis",
+    "R. Anthony",
+    "X. Neyens",
+    "L. Allen",
+    "M. Sirota",
+    "T. Johnson",
+    "R. Mauricio",
+    "E. Conrad",
+    "D. Whitney",
+    "G. Valera",
+    "C. Moore",
+    "E. Rodriguez",
+    "M. Mayer",
+    "C. Jensen",
+    "N. Marte",
+    "B. Montgomery",
+    "D. Lesko",
+    "M. Ballesteros",
+    "R. Velazquez",
+    "S. Stewart",
+    "D. Crews",
+    "J. Lawlar",
+    "R. Herrera",
+    "S. Walcott",
+    "F. Alvarez",
+    "A. Medina",
+    "A. Martin",
+    "A. Duno",
+    "K. Rocker",
+    "M. Banuelos",
+    "K. Anderson",
+    "H. Smith",
+    "J. LaViolette",
+    "L. Matos",
+    "C. Collier",
+    "J. Caglianone",
+    "C. Emerson",
+    "J. Bukauskas",
+    "R. Arias",
+    "R. Calaz",
+    "R. Waldschmidt",
+    "G. Taylor",
     "K. Watson",
-    "T. Bazzana",
+    "C. Mayo",
+    "J. Luis",
+    "Ad. Sanchez",
+    "Rain. Rodriguez",
+    "A. Jackson",
+    "J. Adams",
+    "C. Norby",
+    "C. Dana",
+    "G. Lavigne",
+    "E. Green",
+    "J. De Paula",
+    "W. Javier",
+    "D. Beavers",
+    "S. Howard",
+    "T. Lutz",
+    "M. Harrison",
+    "G. Canning",
     "M. Arroyo",
-    "C. Early",
-    "C. Lagrange",
-    "C. Vaquero",
+    "T. Casas",
+    "J. De Jesus Gonzalez",
+    "J. Briceno",
+    "F. Whitley",
+    "Q. Mathews",
+    "K. Campbell",
     "J. Williams",
-    "R. Mauricio"
+    "J. De Leon",
+    "S. Beer",
+    "E. Carter",
+    "C. Early",
+    "S. Yamashita",
+    "A. Nimmala",
+    "N. Meyer",
+    "DL Hall",
+    "T. White",
+    "F. Arias",
+    "J. Jobe",
+    "S. Zavala",
+    "N. Schultz",
+    "O. Peraza",
+    "C. Lagrange",
+    "G. Rodriguez",
+    "D. Garcia",
+    "B. Chandler",
+    "O. Caissie",
+    "N. Carlos Vera",
+    "T. Bremner",
+    "L. Armenteros",
+    "S. Torkelson",
+    "T. Yamada",
+    "A. Bracho",
+    "R. Snelling",
+    "J. Arnold",
+    "M. Murakami",
+    "T. Black",
+    "K. Allard",
+    "A. Gracia",
+    "E. Hancock",
+    "C. Fulmer",
+    "Jai. Chourio",
+    "E. Florial",
+    "C. Benge",
+    "P. Tolle",
+    "H. Waldrep",
+    "J. Balazovic",
+    "D. Cameron",
+    "T. Trammell",
+    "X. Isaac",
+    "L. Patino",
+    "B. Davis",
+    "E. Perez",
+    "F. Wall",
+    "Q. Priester",
+    "J. Triantos",
+    "L. De Vries",
+    "V. Brujan",
+    "D. Cartaya",
+    "K. Alcantara",
+    "W. Jenkins",
+    "N. McLean",
+    "M. Clark",
+    "A. Page",
+    "J. Farmelo",
+    "A. Freeland",
+    "C. Martin",
+    "B. Shipley",
+    "J. Biddle",
+    "D. Waters",
+    "R. Tiedemann",
+    "C. Winn",
+    "Z. Matthews",
+    "C. Dollander",
+    "T. Beede",
+    "P. Burdick",
+    "B. Wilken",
+    "B. Thompson",
+    "M. Abel",
+    "K. Griffin",
+    "J. Bart",
+    "J. Perdomo",
+    "L. Hernandez",
+    "S. Strosnider",
+    "J. Crawford",
+    "L. Pena (MIL)",
+    "L. Doyle",
+    "E. Morales",
+    "Z. Hope",
+    "T. Widener",
+    "N. Pearson",
+    "J. Gonzalez",
+    "A.J. Reed",
+    "S. Jones",
+    "T. Yesavage",
+    "A. Meyer",
+    "P. Messick",
+    "A. Arquette",
+    "R. Contreras",
+    "Y. Curet",
+    "J. Holliday",
+    "R. Lewis",
+    "C. Young",
+    "B. House",
+    "H. Kjerstad",
+    "C. Abrams",
+    "L. Montes",
+    "Jah. Jones",
+    "B. Rainer",
+    "A. Faedo",
+    "A. Tejeda",
+    "D. Burress",
+    "C. Bonemer",
+    "A. Miller",
+    "C. Kieboom",
+    "M. Luciano",
+    "M. Baez",
+    "C. Vaquero",
+    "D.J. Peterson",
+    "T. Hence",
+    "R. Vilade",
+    "M. Manning",
+    "S. Sanchez",
+    "E. Hankins",
+    "Ja. Jung",
+    "J. Groshans",
+    "K. Harrison",
+    "G. Lombard Jr.",
+    "A. Hansen",
+    "J. Bleday",
+    "F. Kilome",
+    "R. Hassell",
+    "T. Sykora",
+    "J. Barrero",
+    "T. Bazzana",
+    "C. Cowser",
+    "J. Misiorowski",
+    "O. Martinez",
+    "D. Jones",
+    "H. Alvarez"
   ],
   "batters": [
     {
@@ -3469,7 +3469,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 2,
       "tier": 1,
-      "est_value": 175.5,
+      "est_value": 178.0,
       "repl_level": 7.569,
       "name": "Shohei Ohtani",
       "team": "LAD",
@@ -3496,7 +3496,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 2,
       "oopsy_tier": 1,
-      "oopsy_est_value": 176.0,
+      "oopsy_est_value": 180.5,
       "oopsy_ldb_score": 42.299,
       "oopsy_hr": 50.0,
       "oopsy_r": 124.0,
@@ -3524,7 +3524,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 5,
       "tier": 1,
-      "est_value": 87.5,
+      "est_value": 89.0,
       "repl_level": 9.975,
       "name": "Vladimir Guerrero Jr.",
       "team": "TOR",
@@ -3550,7 +3550,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 6,
       "oopsy_tier": 1,
-      "oopsy_est_value": 93.0,
+      "oopsy_est_value": 95.5,
       "oopsy_ldb_score": 28.38,
       "oopsy_hr": 33.0,
       "oopsy_r": 98.0,
@@ -3576,7 +3576,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 7,
       "tier": 1,
-      "est_value": 81.5,
+      "est_value": 82.5,
       "repl_level": 9.975,
       "name": "Yordan Alvarez",
       "team": "HOU",
@@ -3602,7 +3602,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 7,
       "oopsy_tier": 1,
-      "oopsy_est_value": 85.0,
+      "oopsy_est_value": 87.0,
       "oopsy_ldb_score": 26.743,
       "oopsy_hr": 33.0,
       "oopsy_r": 87.0,
@@ -3630,7 +3630,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 8,
       "tier": 1,
-      "est_value": 65.5,
+      "est_value": 66.5,
       "repl_level": 9.975,
       "name": "Kyle Schwarber",
       "team": "PHI",
@@ -3656,7 +3656,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 10,
       "oopsy_tier": 1,
-      "oopsy_est_value": 64.5,
+      "oopsy_est_value": 66.0,
       "oopsy_ldb_score": 22.491,
       "oopsy_hr": 43.0,
       "oopsy_r": 96.0,
@@ -3682,8 +3682,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 10,
       "tier": 1,
-      "est_value": 99.5,
-      "repl_level": 2.665,
+      "est_value": 100.5,
+      "repl_level": 2.725,
       "name": "Fernando Tatis Jr.",
       "team": "SDP",
       "g": 148.3,
@@ -3709,7 +3709,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 11,
       "oopsy_tier": 1,
-      "oopsy_est_value": 93.5,
+      "oopsy_est_value": 95.0,
       "oopsy_ldb_score": 21.024,
       "oopsy_hr": 31.0,
       "oopsy_r": 93.0,
@@ -3735,7 +3735,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 14,
       "tier": 1,
-      "est_value": 48.0,
+      "est_value": 49.0,
       "repl_level": 9.975,
       "name": "Bryce Harper",
       "team": "PHI",
@@ -3761,7 +3761,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 12,
       "oopsy_tier": 1,
-      "oopsy_est_value": 54.0,
+      "oopsy_est_value": 55.5,
       "oopsy_ldb_score": 20.338,
       "oopsy_hr": 31.0,
       "oopsy_r": 90.0,
@@ -3789,7 +3789,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 18,
       "tier": 1,
-      "est_value": 37.5,
+      "est_value": 38.0,
       "repl_level": 9.975,
       "name": "Rafael Devers",
       "team": "SFG",
@@ -3815,7 +3815,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 28,
       "oopsy_tier": 2,
-      "oopsy_est_value": 21.5,
+      "oopsy_est_value": 22.5,
       "oopsy_ldb_score": 13.651,
       "oopsy_hr": 29.0,
       "oopsy_r": 90.0,
@@ -3843,7 +3843,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 21,
       "tier": 1,
-      "est_value": 10.5,
+      "est_value": 11.0,
       "repl_level": 14.791,
       "name": "Corey Seager",
       "team": "TEX",
@@ -3949,7 +3949,7 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 29,
       "tier": 1,
-      "est_value": 20.5,
+      "est_value": 21.0,
       "repl_level": 9.975,
       "name": "Freddie Freeman",
       "team": "LAD",
@@ -3975,7 +3975,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 26,
       "oopsy_tier": 1,
-      "oopsy_est_value": 25.5,
+      "oopsy_est_value": 26.5,
       "oopsy_ldb_score": 14.458,
       "oopsy_hr": 24.0,
       "oopsy_r": 87.0,
@@ -4001,8 +4001,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 31,
       "tier": 2,
-      "est_value": 53.5,
-      "repl_level": 2.665,
+      "est_value": 54.0,
+      "repl_level": 2.725,
       "name": "Seiya Suzuki",
       "team": "CHC",
       "g": 139.5,
@@ -4163,61 +4163,6 @@ export const LDB_DATA = {
     {
       "id": "batx_b_13",
       "system": "batx",
-      "rank": 37,
-      "tier": 2,
-      "est_value": 9.0,
-      "repl_level": 9.975,
-      "name": "Munetaka Murakami",
-      "team": "CHW",
-      "g": 133.1,
-      "pa": 546.3,
-      "hr": 31.0,
-      "r": 77.4,
-      "obp": 0.331,
-      "ops": 0.779,
-      "rbi": 77.4,
-      "sb": 11.5,
-      "asb": 9.6,
-      "wrc_plus": 117.1,
-      "war": 2.08,
-      "ab_per_week": 21.01,
-      "obp_weekly_impact": 0.001775,
-      "ops_weekly_impact": 0.006091,
-      "ldb_score": 11.802,
-      "rfa_team": "",
-      "positions": [
-        "1B"
-      ],
-      "is_fry_keeper": false,
-      "oopsy_rank": 35,
-      "oopsy_tier": 2,
-      "oopsy_est_value": 11.5,
-      "oopsy_ldb_score": 11.49,
-      "oopsy_hr": 30.0,
-      "oopsy_r": 75.0,
-      "oopsy_obp": 0.346,
-      "oopsy_ops": 0.792,
-      "oopsy_rbi": 77.0,
-      "oopsy_sb": 12.0,
-      "oopsy_asb": 9.0,
-      "oopsy_wrc_plus": 121.6,
-      "oopsy_war": 2.54,
-      "oopsy_g": 136.0,
-      "tags": [
-        "BUST",
-        "SLEEPER"
-      ],
-      "note": "",
-      "health_pct": 100,
-      "role": "",
-      "pl_rank": 99,
-      "pl_tier": 11,
-      "pl_tier_name": "Lottery",
-      "pl_note": "30 HR power; 30%+ K risk; Japan import; CHW poor development track record"
-    },
-    {
-      "id": "batx_b_14",
-      "system": "batx",
       "rank": 38,
       "tier": 2,
       "est_value": 24.5,
@@ -4246,7 +4191,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 22,
       "oopsy_tier": 1,
-      "oopsy_est_value": 59.5,
+      "oopsy_est_value": 61.0,
       "oopsy_ldb_score": 15.305,
       "oopsy_hr": 33.0,
       "oopsy_r": 92.0,
@@ -4271,12 +4216,12 @@ export const LDB_DATA = {
       "pl_note": "2-year injury funk; 33+ HR history; 29 yo; projections bullish; get one 3B here"
     },
     {
-      "id": "batx_b_15",
+      "id": "batx_b_14",
       "system": "batx",
       "rank": 43,
       "tier": 2,
       "est_value": 40.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Randy Arozarena",
       "team": "SEA",
       "g": 151.7,
@@ -4323,12 +4268,12 @@ export const LDB_DATA = {
       "pl_note": "27 HR / 31 SB; streaky due to zone contact (77.9%); 20-20 reliable floor"
     },
     {
-      "id": "batx_b_16",
+      "id": "batx_b_15",
       "system": "batx",
       "rank": 44,
       "tier": 2,
-      "est_value": 39.5,
-      "repl_level": 2.665,
+      "est_value": 40.0,
+      "repl_level": 2.725,
       "name": "Taylor Ward",
       "team": "BAL",
       "g": 147.8,
@@ -4375,12 +4320,12 @@ export const LDB_DATA = {
       "pl_note": "36 HR / 103 RBI; 30+ HR repeatable; Camden Yards new home; manage K spikes"
     },
     {
-      "id": "batx_b_17",
+      "id": "batx_b_16",
       "system": "batx",
       "rank": 46,
       "tier": 2,
       "est_value": 39.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jackson Chourio",
       "team": "MIL",
       "g": 144.9,
@@ -4429,11 +4374,11 @@ export const LDB_DATA = {
       "pl_note": "Back-to-back 20-20; 25-25 full-season projection; hamstring history"
     },
     {
-      "id": "batx_b_18",
+      "id": "batx_b_17",
       "system": "batx",
       "rank": 48,
       "tier": 2,
-      "est_value": 24.0,
+      "est_value": 24.5,
       "repl_level": 5.424,
       "name": "Jazz Chisholm Jr.",
       "team": "NYY",
@@ -4460,7 +4405,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 36,
       "oopsy_tier": 2,
-      "oopsy_est_value": 40.0,
+      "oopsy_est_value": 41.0,
       "oopsy_ldb_score": 11.298,
       "oopsy_hr": 28.0,
       "oopsy_r": 78.0,
@@ -4482,12 +4427,12 @@ export const LDB_DATA = {
       "pl_note": "30-35 HR / 30-35 SB; 2B+3B eligible; volatile but wRC+ 100+ every month in 2025"
     },
     {
-      "id": "batx_b_19",
+      "id": "batx_b_18",
       "system": "batx",
       "rank": 49,
       "tier": 2,
       "est_value": 37.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Mike Trout",
       "team": "LAA",
       "g": 117.9,
@@ -4513,7 +4458,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 34,
       "oopsy_tier": 2,
-      "oopsy_est_value": 48.0,
+      "oopsy_est_value": 48.5,
       "oopsy_ldb_score": 11.597,
       "oopsy_hr": 28.0,
       "oopsy_r": 77.0,
@@ -4537,7 +4482,7 @@ export const LDB_DATA = {
       "pl_note": "130 G first since 2019; 32% K rate new career-high concern; top-80 if 120+ G"
     },
     {
-      "id": "batx_b_20",
+      "id": "batx_b_19",
       "system": "batx",
       "rank": 50,
       "tier": 2,
@@ -4567,7 +4512,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 19,
       "oopsy_tier": 1,
-      "oopsy_est_value": 33.5,
+      "oopsy_est_value": 34.5,
       "oopsy_ldb_score": 16.085,
       "oopsy_hr": 33.0,
       "oopsy_r": 93.0,
@@ -4589,7 +4534,7 @@ export const LDB_DATA = {
       "pl_note": "162 G four straight seasons; 28-30 HR reliable; durable anchor"
     },
     {
-      "id": "batx_b_21",
+      "id": "batx_b_20",
       "system": "batx",
       "rank": 51,
       "tier": 2,
@@ -4643,12 +4588,12 @@ export const LDB_DATA = {
       "pl_note": "July 1.096 OPS; 18 HR 2H; consistent top-50 finisher despite brutal starts"
     },
     {
-      "id": "batx_b_22",
+      "id": "batx_b_21",
       "system": "batx",
       "rank": 54,
       "tier": 2,
       "est_value": 32.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Christian Yelich",
       "team": "MIL",
       "g": 135.0,
@@ -4695,12 +4640,12 @@ export const LDB_DATA = {
       "pl_note": "140+ G third time in 4 seasons; 20-25 HR + 15-20 SB; Brewers potent offense"
     },
     {
-      "id": "batx_b_23",
+      "id": "batx_b_22",
       "system": "batx",
       "rank": 56,
       "tier": 2,
       "est_value": 31.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Ian Happ",
       "team": "CHC",
       "g": 145.8,
@@ -4725,7 +4670,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 62,
       "oopsy_tier": 2,
-      "oopsy_est_value": 27.0,
+      "oopsy_est_value": 26.5,
       "oopsy_ldb_score": 7.21,
       "oopsy_hr": 22.0,
       "oopsy_r": 82.0,
@@ -4747,12 +4692,12 @@ export const LDB_DATA = {
       "pl_note": "20+ HR / 85+ R / 79+ RBI three straight seasons; .340-.360 OBP; bankable"
     },
     {
-      "id": "batx_b_24",
+      "id": "batx_b_23",
       "system": "batx",
       "rank": 60,
       "tier": 2,
       "est_value": 29.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Brandon Nimmo",
       "team": "TEX",
       "g": 144.4,
@@ -4777,7 +4722,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 82,
       "oopsy_tier": 2,
-      "oopsy_est_value": 15.5,
+      "oopsy_est_value": 15.0,
       "oopsy_ldb_score": 4.868,
       "oopsy_hr": 20.0,
       "oopsy_r": 78.0,
@@ -4799,7 +4744,7 @@ export const LDB_DATA = {
       "pl_note": "23-25 HR / double-digit SB; full season; Texas move lowers R ceiling slightly"
     },
     {
-      "id": "batx_b_25",
+      "id": "batx_b_24",
       "system": "batx",
       "rank": 62,
       "tier": 2,
@@ -4851,7 +4796,7 @@ export const LDB_DATA = {
       "pl_note": "18 HR in 114 G; walk rate back; Wrigley suits pull-heavy approach"
     },
     {
-      "id": "batx_b_26",
+      "id": "batx_b_25",
       "system": "batx",
       "rank": 71,
       "tier": 2,
@@ -4903,12 +4848,12 @@ export const LDB_DATA = {
       "pl_note": "25 HR safer projection; elite K avoidance = points league bump; injury risk"
     },
     {
-      "id": "batx_b_27",
+      "id": "batx_b_26",
       "system": "batx",
       "rank": 73,
       "tier": 2,
-      "est_value": 22.5,
-      "repl_level": 2.665,
+      "est_value": 23.0,
+      "repl_level": 2.725,
       "name": "Jurickson Profar",
       "team": "ATL",
       "g": 137.8,
@@ -4945,7 +4890,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_28",
+      "id": "batx_b_27",
       "system": "batx",
       "rank": 306,
       "tier": 2,
@@ -5000,12 +4945,12 @@ export const LDB_DATA = {
       "pl_note": "Glasses fix real (.264 from May 1); 40-50 G IL near-certain; LAD power boost"
     },
     {
-      "id": "batx_b_29",
+      "id": "batx_b_28",
       "system": "batx",
       "rank": 83,
       "tier": 2,
       "est_value": 15.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Bryan Reynolds",
       "team": "PIT",
       "g": 146.1,
@@ -5030,8 +4975,8 @@ export const LDB_DATA = {
       ],
       "is_fry_keeper": false,
       "oopsy_rank": 92,
-      "oopsy_tier": 3,
-      "oopsy_est_value": 9.5,
+      "oopsy_tier": 2,
+      "oopsy_est_value": 9.0,
       "oopsy_ldb_score": 3.675,
       "oopsy_hr": 21.0,
       "oopsy_r": 80.0,
@@ -5053,12 +4998,12 @@ export const LDB_DATA = {
       "pl_note": "Strong 2H; top-80 ceiling; PIT context limits floor; trade upside years away"
     },
     {
-      "id": "batx_b_30",
+      "id": "batx_b_29",
       "system": "batx",
       "rank": 89,
-      "tier": 3,
+      "tier": 2,
       "est_value": 13.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jose Altuve",
       "team": "HOU",
       "g": 138.6,
@@ -5084,7 +5029,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 110,
       "oopsy_tier": 3,
-      "oopsy_est_value": 4.0,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": 2.483,
       "oopsy_hr": 17.0,
       "oopsy_r": 72.0,
@@ -5106,7 +5051,7 @@ export const LDB_DATA = {
       "pl_note": "26 HR; 157 R+RBI; second straight 150+ G; turns 36 in May; OF eligible"
     },
     {
-      "id": "batx_b_31",
+      "id": "batx_b_30",
       "system": "batx",
       "rank": 92,
       "tier": 3,
@@ -5158,7 +5103,7 @@ export const LDB_DATA = {
       "pl_note": "15 SB / 10 HR / .260 BA; bankable floor for deep leagues; mileage adding up"
     },
     {
-      "id": "batx_b_32",
+      "id": "batx_b_31",
       "system": "batx",
       "rank": 97,
       "tier": 3,
@@ -5210,12 +5155,12 @@ export const LDB_DATA = {
       "pl_note": "30 SB from 1B just twice caught; 3-year 90+ RBI streak; safe contact floor"
     },
     {
-      "id": "batx_b_33",
+      "id": "batx_b_32",
       "system": "batx",
       "rank": 99,
       "tier": 3,
       "est_value": 9.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Lars Nootbaar",
       "team": "STL",
       "g": 120.7,
@@ -5265,12 +5210,12 @@ export const LDB_DATA = {
       "pl_note": "Top-100 flashes; 140 wRC+ in April; faded badly; OBP+points value"
     },
     {
-      "id": "batx_b_34",
+      "id": "batx_b_33",
       "system": "batx",
       "rank": 101,
       "tier": 3,
       "est_value": 8.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Cody Bellinger",
       "team": "NYY",
       "g": 138.6,
@@ -5297,7 +5242,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 101,
       "oopsy_tier": 3,
-      "oopsy_est_value": 6.0,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": 2.921,
       "oopsy_hr": 20.0,
       "oopsy_r": 78.0,
@@ -5321,12 +5266,12 @@ export const LDB_DATA = {
       "pl_note": "25 HR; below-avg barrel/hard-hit; Bronx park compensates; 2 crappy months likely"
     },
     {
-      "id": "batx_b_35",
+      "id": "batx_b_34",
       "system": "batx",
       "rank": 103,
       "tier": 3,
       "est_value": 6.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Kerry Carpenter",
       "team": "DET",
       "g": 116.0,
@@ -5352,7 +5297,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 117,
       "oopsy_tier": 3,
-      "oopsy_est_value": 2.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": 2.192,
       "oopsy_hr": 23.0,
       "oopsy_r": 65.0,
@@ -5365,8 +5310,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.55,
       "oopsy_g": 113.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5377,7 +5322,7 @@ export const LDB_DATA = {
       "pl_note": "30-35 HR pop; platoon + injury risk; power streamer + bench replacement combo"
     },
     {
-      "id": "batx_b_36",
+      "id": "batx_b_35",
       "system": "batx",
       "rank": 104,
       "tier": 3,
@@ -5429,12 +5374,12 @@ export const LDB_DATA = {
       "pl_note": "18-20 HR / OBP value / 70 RBI; vs LHP declining; MIN 3rd on bad team"
     },
     {
-      "id": "batx_b_37",
+      "id": "batx_b_36",
       "system": "batx",
       "rank": 105,
       "tier": 3,
-      "est_value": 6.5,
-      "repl_level": 2.665,
+      "est_value": 6.0,
+      "repl_level": 2.725,
       "name": "Alec Burleson",
       "team": "STL",
       "g": 138.7,
@@ -5461,7 +5406,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 109,
       "oopsy_tier": 3,
-      "oopsy_est_value": 4.0,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": 2.486,
       "oopsy_hr": 19.0,
       "oopsy_r": 68.0,
@@ -5483,12 +5428,12 @@ export const LDB_DATA = {
       "pl_note": "~.280 BA; 23-25 HR; low K; STL thin lineup hurts counting stats"
     },
     {
-      "id": "batx_b_38",
+      "id": "batx_b_37",
       "system": "batx",
       "rank": 107,
       "tier": 3,
       "est_value": 6.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jonathan India",
       "team": "KCR",
       "g": 126.2,
@@ -5537,7 +5482,7 @@ export const LDB_DATA = {
       "pl_note": "10-12 HR / 10 SB; fences moving in helps; 130+ G if healthy; 2B/3B/OF"
     },
     {
-      "id": "batx_b_39",
+      "id": "batx_b_38",
       "system": "batx",
       "rank": 109,
       "tier": 3,
@@ -5591,12 +5536,12 @@ export const LDB_DATA = {
       "pl_note": "Core injury explains 2025; turns 35; PIT fit awkward; top-80 if healthy"
     },
     {
-      "id": "batx_b_40",
+      "id": "batx_b_39",
       "system": "batx",
       "rank": 111,
       "tier": 3,
-      "est_value": 4.0,
-      "repl_level": 2.665,
+      "est_value": 3.5,
+      "repl_level": 2.725,
       "name": "Jordan Beck",
       "team": "COL",
       "g": 130.6,
@@ -5620,7 +5565,7 @@ export const LDB_DATA = {
       ],
       "is_fry_keeper": false,
       "oopsy_rank": 168,
-      "oopsy_tier": 4,
+      "oopsy_tier": 3,
       "oopsy_est_value": 0.5,
       "oopsy_ldb_score": -0.542,
       "oopsy_hr": 17.0,
@@ -5634,8 +5579,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.53,
       "oopsy_g": 134.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "PLATOON"
+        "PLATOON",
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -5646,7 +5591,7 @@ export const LDB_DATA = {
       "pl_note": "20 HR / 20 SB in Coors; road splits unusable; 31.9% K in 2H; Coors streamer"
     },
     {
-      "id": "batx_b_41",
+      "id": "batx_b_40",
       "system": "batx",
       "rank": 112,
       "tier": 3,
@@ -5699,7 +5644,7 @@ export const LDB_DATA = {
       "pl_note": "~.260-.270 BA; neutral all categories; MIA SS starter; 2B eligible in fantasy"
     },
     {
-      "id": "batx_b_42",
+      "id": "batx_b_41",
       "system": "batx",
       "rank": 113,
       "tier": 3,
@@ -5753,7 +5698,7 @@ export const LDB_DATA = {
       "pl_note": "Plate discipline gains in MIL real; .250 / 20 HR mid-lineup; trust the new org"
     },
     {
-      "id": "batx_b_43",
+      "id": "batx_b_42",
       "system": "batx",
       "rank": 115,
       "tier": 3,
@@ -5807,12 +5752,12 @@ export const LDB_DATA = {
       "pl_note": "30 HR ceiling; strong 2H salvaged season; rising K + falling walk = floor risk"
     },
     {
-      "id": "batx_b_44",
+      "id": "batx_b_43",
       "system": "batx",
       "rank": 116,
       "tier": 3,
       "est_value": 1.0,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Willi Castro",
       "team": "COL",
       "g": 127.4,
@@ -5840,7 +5785,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 112,
       "oopsy_tier": 3,
-      "oopsy_est_value": 3.5,
+      "oopsy_est_value": 2.5,
       "oopsy_ldb_score": 2.384,
       "oopsy_hr": 13.0,
       "oopsy_r": 70.0,
@@ -5862,12 +5807,12 @@ export const LDB_DATA = {
       "pl_note": "15 HR / .260 BA / 15 SB in Coors; 2B/3B/OF eligible; utility value"
     },
     {
-      "id": "batx_b_45",
+      "id": "batx_b_44",
       "system": "batx",
       "rank": 117,
       "tier": 3,
-      "est_value": 1.0,
-      "repl_level": 2.665,
+      "est_value": 0.5,
+      "repl_level": 2.725,
       "name": "Luis Robert Jr.",
       "team": "NYM",
       "g": 127.5,
@@ -5893,7 +5838,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 86,
       "oopsy_tier": 2,
-      "oopsy_est_value": 15.0,
+      "oopsy_est_value": 14.5,
       "oopsy_ldb_score": 4.736,
       "oopsy_hr": 22.0,
       "oopsy_r": 67.0,
@@ -5906,8 +5851,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.82,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
         "SLEEPER",
+        "INJURY_RISK",
         "STREAKY"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
@@ -5919,12 +5864,12 @@ export const LDB_DATA = {
       "pl_note": "20 HR / 50 SB pace in 110 G; floor awful; Mets may help consistency"
     },
     {
-      "id": "batx_b_46",
+      "id": "batx_b_45",
       "system": "batx",
       "rank": 118,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Mickey Moniak",
       "team": "COL",
       "g": 116.7,
@@ -5951,7 +5896,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 104,
       "oopsy_tier": 3,
-      "oopsy_est_value": 5.5,
+      "oopsy_est_value": 5.0,
       "oopsy_ldb_score": 2.827,
       "oopsy_hr": 21.0,
       "oopsy_r": 67.0,
@@ -5964,8 +5909,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.08,
       "oopsy_g": 112.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "PLATOON"
+        "PLATOON",
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -5976,12 +5921,12 @@ export const LDB_DATA = {
       "pl_note": "Best zone contact of career in Coors; road/LHP sits; Coors-only streamer"
     },
     {
-      "id": "batx_b_47",
+      "id": "batx_b_46",
       "system": "batx",
       "rank": 120,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Matt Wallner",
       "team": "MIN",
       "g": 117.1,
@@ -6007,7 +5952,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 71,
       "oopsy_tier": 2,
-      "oopsy_est_value": 21.0,
+      "oopsy_est_value": 20.5,
       "oopsy_ldb_score": 5.964,
       "oopsy_hr": 22.0,
       "oopsy_r": 66.0,
@@ -6020,8 +5965,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.21,
       "oopsy_g": 110.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -6032,7 +5977,7 @@ export const LDB_DATA = {
       "pl_note": "Big power vs RHP; huge contact issues; hot wire adds only; platoon ceiling"
     },
     {
-      "id": "batx_b_48",
+      "id": "batx_b_47",
       "system": "batx",
       "rank": 123,
       "tier": 3,
@@ -6084,12 +6029,12 @@ export const LDB_DATA = {
       "pl_note": "Back-to-back .240 slash; NYM move boosts counting stats; June 2025 was real"
     },
     {
-      "id": "batx_b_49",
+      "id": "batx_b_48",
       "system": "batx",
       "rank": 124,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Ramón Laureano",
       "team": "SDP",
       "g": 127.1,
@@ -6115,7 +6060,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 100,
       "oopsy_tier": 3,
-      "oopsy_est_value": 6.0,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": 2.942,
       "oopsy_hr": 23.0,
       "oopsy_r": 69.0,
@@ -6140,12 +6085,12 @@ export const LDB_DATA = {
       "pl_note": "Career Statcast highs at 30; never played 105+ G since 2019; tall ask to repeat"
     },
     {
-      "id": "batx_b_50",
+      "id": "batx_b_49",
       "system": "batx",
       "rank": 125,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Ryan O'Hearn",
       "team": "PIT",
       "g": 125.0,
@@ -6194,7 +6139,7 @@ export const LDB_DATA = {
       "pl_note": "15-17 HR; solid ratios; PIT everyday by default; high floor for late pick"
     },
     {
-      "id": "batx_b_51",
+      "id": "batx_b_50",
       "system": "batx",
       "rank": 126,
       "tier": 3,
@@ -6246,7 +6191,7 @@ export const LDB_DATA = {
       "pl_note": "25+ SB / .280 BA floor; sub-10 HR; fits specific power-heavy roster needs"
     },
     {
-      "id": "batx_b_52",
+      "id": "batx_b_51",
       "system": "batx",
       "rank": 127,
       "tier": 3,
@@ -6300,7 +6245,7 @@ export const LDB_DATA = {
       "pl_note": "LD rate drop + K spike + HR/FB halved = .220 / sub-20 HR; one offseason to fix"
     },
     {
-      "id": "batx_b_53",
+      "id": "batx_b_52",
       "system": "batx",
       "rank": 128,
       "tier": 3,
@@ -6352,7 +6297,7 @@ export const LDB_DATA = {
       "pl_note": "500+ PA every full season; low K; OBP value; bottom-order SDP; 1B/2B/SS"
     },
     {
-      "id": "batx_b_54",
+      "id": "batx_b_53",
       "system": "batx",
       "rank": 129,
       "tier": 3,
@@ -6406,12 +6351,12 @@ export const LDB_DATA = {
       "pl_note": "Top-75 when healthy; 40+ G missed 3 straight years; 3B eligible in Yahoo"
     },
     {
-      "id": "batx_b_55",
+      "id": "batx_b_54",
       "system": "batx",
       "rank": 130,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Tyler Freeman",
       "team": "COL",
       "g": 83.8,
@@ -6460,7 +6405,7 @@ export const LDB_DATA = {
       "pl_note": "~.275-.280 BA / 15 SB / no power; COL; points only value"
     },
     {
-      "id": "batx_b_56",
+      "id": "batx_b_55",
       "system": "batx",
       "rank": 133,
       "tier": 3,
@@ -6514,12 +6459,12 @@ export const LDB_DATA = {
       "pl_note": "31 HR / 161 R+RBI; PIT less platoon risk; 50+ G missed in 3 of 4 seasons"
     },
     {
-      "id": "batx_b_57",
+      "id": "batx_b_56",
       "system": "batx",
       "rank": 135,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Cedric Mullins",
       "team": "TBR",
       "g": 111.1,
@@ -6569,7 +6514,7 @@ export const LDB_DATA = {
       "pl_note": "20 SB / 15-17 HR; TBR platoon likely; not getting faster; ratios hurt"
     },
     {
-      "id": "batx_b_58",
+      "id": "batx_b_57",
       "system": "batx",
       "rank": 136,
       "tier": 3,
@@ -6621,12 +6566,12 @@ export const LDB_DATA = {
       "pl_note": "30 HR ceiling; Astros PT uncertain vs Correa; extreme pull-fly approach works"
     },
     {
-      "id": "batx_b_59",
+      "id": "batx_b_58",
       "system": "batx",
       "rank": 137,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jorge Soler",
       "team": "LAA",
       "g": 115.8,
@@ -6676,7 +6621,7 @@ export const LDB_DATA = {
       "pl_note": "20 HR upside; LAA buried; injury risk; misses months; deep only"
     },
     {
-      "id": "batx_b_60",
+      "id": "batx_b_59",
       "system": "batx",
       "rank": 138,
       "tier": 3,
@@ -6728,12 +6673,12 @@ export const LDB_DATA = {
       "pl_note": "25 HR / TEX middle-order; ratios hurt; could bottom out; boom-or-bust"
     },
     {
-      "id": "batx_b_61",
+      "id": "batx_b_60",
       "system": "batx",
       "rank": 139,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Tyler O'Neill",
       "team": "BAL",
       "g": 88.7,
@@ -6785,7 +6730,7 @@ export const LDB_DATA = {
       "pl_note": "Plus power + speed; deep slumps + injury history; volatile lottery ticket BAL"
     },
     {
-      "id": "batx_b_62",
+      "id": "batx_b_61",
       "system": "batx",
       "rank": 140,
       "tier": 3,
@@ -6837,7 +6782,7 @@ export const LDB_DATA = {
       "pl_note": "Elite contact + discipline; minimal power; points/OBP bump; LAA context hurts"
     },
     {
-      "id": "batx_b_63",
+      "id": "batx_b_62",
       "system": "batx",
       "rank": 141,
       "tier": 3,
@@ -6892,7 +6837,7 @@ export const LDB_DATA = {
       "pl_note": "27.1% LD rate HOU fluky (career norm 20.7%); lineup position valuable; 2 positions"
     },
     {
-      "id": "batx_b_64",
+      "id": "batx_b_63",
       "system": "batx",
       "rank": 142,
       "tier": 3,
@@ -6944,7 +6889,7 @@ export const LDB_DATA = {
       "pl_note": "12 HR in 134 G; declining power; backend only; volume value deep"
     },
     {
-      "id": "batx_b_65",
+      "id": "batx_b_64",
       "system": "batx",
       "rank": 145,
       "tier": 3,
@@ -7000,7 +6945,7 @@ export const LDB_DATA = {
       "pl_note": "23-25 HR / .265 BA when healthy; 2nd straight 50+ G IL; 2B+3B eligible"
     },
     {
-      "id": "batx_b_66",
+      "id": "batx_b_65",
       "system": "batx",
       "rank": 146,
       "tier": 3,
@@ -7054,12 +6999,12 @@ export const LDB_DATA = {
       "pl_note": "~15 HR vs RHP; TEX DH; streamer vs soft righties; McCutchen doesn't change it"
     },
     {
-      "id": "batx_b_67",
+      "id": "batx_b_66",
       "system": "batx",
       "rank": 147,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Adolis García",
       "team": "PHI",
       "g": 135.0,
@@ -7107,7 +7052,7 @@ export const LDB_DATA = {
       "pl_note": "PHI everyday role; 25 HR / 10 SB upside; strikeout rate hasn't collapsed yet"
     },
     {
-      "id": "batx_b_68",
+      "id": "batx_b_67",
       "system": "batx",
       "rank": 153,
       "tier": 3,
@@ -7161,12 +7106,12 @@ export const LDB_DATA = {
       "pl_note": "Strong 2H; below-avg pop by PLV; 18 HR / 15 SB ceiling; 3rd-best 2B in 2H"
     },
     {
-      "id": "batx_b_69",
+      "id": "batx_b_68",
       "system": "batx",
       "rank": 154,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Andrew Benintendi",
       "team": "CHW",
       "g": 119.6,
@@ -7215,10 +7160,10 @@ export const LDB_DATA = {
       "pl_note": "15-17 HR / .250 BA; injury likely; floor decent when healthy; CHW"
     },
     {
-      "id": "batx_b_70",
+      "id": "batx_b_69",
       "system": "batx",
       "rank": 155,
-      "tier": 4,
+      "tier": 3,
       "est_value": 0.5,
       "repl_level": 5.424,
       "name": "Luis García Jr.",
@@ -7267,12 +7212,12 @@ export const LDB_DATA = {
       "pl_note": "16-18 HR / 10+ SB / low K; career .299 OBP hurts OBP leagues; platoon risk"
     },
     {
-      "id": "batx_b_71",
+      "id": "batx_b_70",
       "system": "batx",
       "rank": 156,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jesús Sánchez",
       "team": "TOR",
       "g": 103.9,
@@ -7311,8 +7256,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 97.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -7323,7 +7268,7 @@ export const LDB_DATA = {
       "pl_note": "15 HR / 15 SB ceiling; TOR already has 3 LH OFs; role very unclear"
     },
     {
-      "id": "batx_b_72",
+      "id": "batx_b_71",
       "system": "batx",
       "rank": 157,
       "tier": 4,
@@ -7376,12 +7321,12 @@ export const LDB_DATA = {
       "pl_note": "30-35 SB / .280-.290 BA / near-zero HR; 2B+SS eligible; locked everyday role"
     },
     {
-      "id": "batx_b_73",
+      "id": "batx_b_72",
       "system": "batx",
       "rank": 158,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Steven Kwan",
       "team": "CLE",
       "g": 147.3,
@@ -7406,7 +7351,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 96,
       "oopsy_tier": 3,
-      "oopsy_est_value": 8.0,
+      "oopsy_est_value": 7.5,
       "oopsy_ldb_score": 3.326,
       "oopsy_hr": 8.0,
       "oopsy_r": 83.0,
@@ -7428,7 +7373,7 @@ export const LDB_DATA = {
       "pl_note": "Elite contact; ~.300 BA / 20 SB / 80-90 R; points bump; OBP caution"
     },
     {
-      "id": "batx_b_74",
+      "id": "batx_b_73",
       "system": "batx",
       "rank": 160,
       "tier": 4,
@@ -7482,12 +7427,12 @@ export const LDB_DATA = {
       "pl_note": "20 HR; BA likely BABIP-corrects upward; slow start explained; C/1B eligible"
     },
     {
-      "id": "batx_b_75",
+      "id": "batx_b_74",
       "system": "batx",
       "rank": 163,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jeff McNeil",
       "team": "ATH",
       "g": 131.6,
@@ -7536,12 +7481,12 @@ export const LDB_DATA = {
       "pl_note": "OAK park helps power; hits 5th behind four strong bats; 15 HR ceiling; 2B+OF"
     },
     {
-      "id": "batx_b_76",
+      "id": "batx_b_75",
       "system": "batx",
       "rank": 167,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Mike Yastrzemski",
       "team": "ATL",
       "g": 109.3,
@@ -7591,12 +7536,12 @@ export const LDB_DATA = {
       "pl_note": "Profar suspended = de facto ATL starter; 20 HR / OBP value; left-only"
     },
     {
-      "id": "batx_b_77",
+      "id": "batx_b_76",
       "system": "batx",
       "rank": 168,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Chandler Simpson",
       "team": "TBR",
       "g": 108.9,
@@ -7635,8 +7580,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.58,
       "oopsy_g": 105.0,
       "tags": [
-        "SPEED_VALUE",
-        "SLEEPER"
+        "SLEEPER",
+        "SPEED_VALUE"
       ],
       "note": "[PL #117] Zero barrels in 376 batted-ball events. But 44 SB in 104 G — on pace for 70+ in full season. TBR platoon limits AB. LDB: aSB efficiency could be spectacular if usage rate holds. Pure speed play.",
       "health_pct": 90,
@@ -7647,12 +7592,12 @@ export const LDB_DATA = {
       "pl_note": "44 SB in 104 G; zero barrels in 376 BIP; dead-last avg exit velo; speed only"
     },
     {
-      "id": "batx_b_78",
+      "id": "batx_b_77",
       "system": "batx",
       "rank": 169,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Trevor Larnach",
       "team": "MIN",
       "g": 106.7,
@@ -7702,7 +7647,7 @@ export const LDB_DATA = {
       "pl_note": "~.250/.330/.420 vs RHP; 15 HR; MIN platoon; honest work floor"
     },
     {
-      "id": "batx_b_79",
+      "id": "batx_b_78",
       "system": "batx",
       "rank": 170,
       "tier": 4,
@@ -7756,7 +7701,7 @@ export const LDB_DATA = {
       "pl_note": "15 HR / .245 BA; volume; nothing special but reliable MIN catcher"
     },
     {
-      "id": "batx_b_80",
+      "id": "batx_b_79",
       "system": "batx",
       "rank": 175,
       "tier": 4,
@@ -7808,12 +7753,12 @@ export const LDB_DATA = {
       "pl_note": "Strong 2H; loses 2B eligibility; 6th-best 2B in 2H; PIT; ratios boost"
     },
     {
-      "id": "batx_b_81",
+      "id": "batx_b_80",
       "system": "batx",
       "rank": 179,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Isaac Collins",
       "team": "KCR",
       "g": 107.7,
@@ -7860,7 +7805,7 @@ export const LDB_DATA = {
       "pl_note": "122 wRC+ June-Aug; awful Apr/May/Sep; KCR role; 10 HR / 15 SB if starter"
     },
     {
-      "id": "batx_b_82",
+      "id": "batx_b_81",
       "system": "batx",
       "rank": 180,
       "tier": 4,
@@ -7912,7 +7857,7 @@ export const LDB_DATA = {
       "pl_note": "Lowest K rate 4 straight seasons; .292 worst BA; SF leadoff ideal fit"
     },
     {
-      "id": "batx_b_83",
+      "id": "batx_b_82",
       "system": "batx",
       "rank": 181,
       "tier": 4,
@@ -7966,12 +7911,12 @@ export const LDB_DATA = {
       "pl_note": "Clear path to 140 G; 15-17 HR / 60-70 RBI; shell-of-himself concern in 2025"
     },
     {
-      "id": "batx_b_84",
+      "id": "batx_b_83",
       "system": "batx",
       "rank": 182,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Harrison Bader",
       "team": "SFG",
       "g": 122.8,
@@ -8019,12 +7964,12 @@ export const LDB_DATA = {
       "pl_note": "15 HR / 15 SB; .305 BABIP won't repeat; counting stats low; Giants bottom third"
     },
     {
-      "id": "batx_b_85",
+      "id": "batx_b_84",
       "system": "batx",
       "rank": 183,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Lane Thomas",
       "team": "KCR",
       "g": 98.4,
@@ -8074,7 +8019,7 @@ export const LDB_DATA = {
       "pl_note": "15-15 ceiling; K rate rising; IL stints 2 of last 3 seasons; KCR"
     },
     {
-      "id": "batx_b_86",
+      "id": "batx_b_85",
       "system": "batx",
       "rank": 186,
       "tier": 4,
@@ -8129,7 +8074,7 @@ export const LDB_DATA = {
       "pl_note": "33.8% K rate in 2025; 15 HR / 50 RBI if healthy; eroded contact ability"
     },
     {
-      "id": "batx_b_87",
+      "id": "batx_b_86",
       "system": "batx",
       "rank": 188,
       "tier": 4,
@@ -8183,12 +8128,12 @@ export const LDB_DATA = {
       "pl_note": "3B secured PIT; 10 HR / 15 SB ceiling; 1B/2B/3B/SS eligible; volume"
     },
     {
-      "id": "batx_b_88",
+      "id": "batx_b_87",
       "system": "batx",
       "rank": 189,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jake Meyers",
       "team": "HOU",
       "g": 117.8,
@@ -8238,7 +8183,7 @@ export const LDB_DATA = {
       "pl_note": "12-15 SB part-time; decent discipline; HOU; AL-only value"
     },
     {
-      "id": "batx_b_89",
+      "id": "batx_b_88",
       "system": "batx",
       "rank": 192,
       "tier": 4,
@@ -8292,7 +8237,7 @@ export const LDB_DATA = {
       "pl_note": "20 HR with full-time role; Suárez signing threatens AB; 1B+OF eligible"
     },
     {
-      "id": "batx_b_90",
+      "id": "batx_b_89",
       "system": "batx",
       "rank": 195,
       "tier": 4,
@@ -8346,12 +8291,12 @@ export const LDB_DATA = {
       "pl_note": "Summer return; 20 SB / .240 BA pro-rated; ATL lineup context interesting"
     },
     {
-      "id": "batx_b_91",
+      "id": "batx_b_90",
       "system": "batx",
       "rank": 196,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jake McCarthy",
       "team": "COL",
       "g": 90.6,
@@ -8400,7 +8345,7 @@ export const LDB_DATA = {
       "pl_note": "Speed + hit tool; Rockies streaming when home; platoon risk COL"
     },
     {
-      "id": "batx_b_92",
+      "id": "batx_b_91",
       "system": "batx",
       "rank": 201,
       "tier": 4,
@@ -8452,7 +8397,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_93",
+      "id": "batx_b_92",
       "system": "batx",
       "rank": 202,
       "tier": 4,
@@ -8495,8 +8440,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.76,
       "oopsy_g": 113.0,
       "tags": [
-        "BUST",
-        "PLATOON"
+        "PLATOON",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -8507,12 +8452,12 @@ export const LDB_DATA = {
       "pl_note": "5-year 150 G / 20 HR streak in jeopardy; NYY can't hit LHP; .210 BA path"
     },
     {
-      "id": "batx_b_94",
+      "id": "batx_b_93",
       "system": "batx",
       "rank": 203,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Lourdes Gurriel Jr.",
       "team": "ARI",
       "g": 81.4,
@@ -8561,7 +8506,7 @@ export const LDB_DATA = {
       "pl_note": "ACL tear Sept; late summer return at earliest; watchlist only; 3 straight 18+ HR"
     },
     {
-      "id": "batx_b_95",
+      "id": "batx_b_94",
       "system": "batx",
       "rank": 204,
       "tier": 4,
@@ -8614,7 +8559,7 @@ export const LDB_DATA = {
       "pl_note": "Patient to fault; COL may help contact issues; 2B eligible; watchlist"
     },
     {
-      "id": "batx_b_96",
+      "id": "batx_b_95",
       "system": "batx",
       "rank": 207,
       "tier": 4,
@@ -8657,8 +8602,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 100.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8669,12 +8614,12 @@ export const LDB_DATA = {
       "pl_note": "12 HR in 90 G; CLE platoon; power streamer; .748 OPS when healthy"
     },
     {
-      "id": "batx_b_97",
+      "id": "batx_b_96",
       "system": "batx",
       "rank": 208,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Gavin Sheets",
       "team": "SDP",
       "g": 117.5,
@@ -8723,7 +8668,7 @@ export const LDB_DATA = {
       "pl_note": "Streaky power vs RHP; O'Hearn gone opens PT; streaming vs righties only"
     },
     {
-      "id": "batx_b_98",
+      "id": "batx_b_97",
       "system": "batx",
       "rank": 209,
       "tier": 4,
@@ -8777,12 +8722,12 @@ export const LDB_DATA = {
       "pl_note": "10 HR / 15-20 SB / .240-.250 BA; bounce-back from nightmare 2025 season"
     },
     {
-      "id": "batx_b_99",
+      "id": "batx_b_98",
       "system": "batx",
       "rank": 211,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Josh Smith",
       "team": "TEX",
       "g": 125.0,
@@ -8832,7 +8777,7 @@ export const LDB_DATA = {
       "pl_note": "~120 G / 10 HR / 10 SB / .250 BA; TEX utility; 1B/3B/SS eligible"
     },
     {
-      "id": "batx_b_100",
+      "id": "batx_b_99",
       "system": "batx",
       "rank": 214,
       "tier": 4,
@@ -8887,7 +8832,7 @@ export const LDB_DATA = {
       "pl_note": ".305 BA / .483 SLG in 96 G; 9 HR; BoSox role unclear; watchlist; Durbin blocks"
     },
     {
-      "id": "batx_b_101",
+      "id": "batx_b_100",
       "system": "batx",
       "rank": 215,
       "tier": 4,
@@ -8942,12 +8887,12 @@ export const LDB_DATA = {
       "pl_note": "K rate below 30%; 30 HR history if healthy; significant missed time 3 of 4 years"
     },
     {
-      "id": "batx_b_102",
+      "id": "batx_b_101",
       "system": "batx",
       "rank": 217,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Tommy Edman",
       "team": "LAD",
       "g": 109.2,
@@ -8998,12 +8943,12 @@ export const LDB_DATA = {
       "pl_note": "13 HR in 97 G; LAD everyday when healthy; misses Opening Day; 2B/3B/OF"
     },
     {
-      "id": "batx_b_103",
+      "id": "batx_b_102",
       "system": "batx",
       "rank": 218,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Davis Schneider",
       "team": "TOR",
       "g": 86.5,
@@ -9051,7 +8996,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_104",
+      "id": "batx_b_103",
       "system": "batx",
       "rank": 221,
       "tier": 4,
@@ -9105,12 +9050,12 @@ export const LDB_DATA = {
       "pl_note": "7 HR in 17 G peak; 12 HR / .240 BA season-long; .340 OBP; CHC 2C value"
     },
     {
-      "id": "batx_b_105",
+      "id": "batx_b_104",
       "system": "batx",
       "rank": 224,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Christopher Morel",
       "team": "MIA",
       "g": 86.6,
@@ -9157,12 +9102,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_106",
+      "id": "batx_b_105",
       "system": "batx",
       "rank": 225,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Wenceel Pérez",
       "team": "DET",
       "g": 109.1,
@@ -9213,7 +9158,7 @@ export const LDB_DATA = {
       "pl_note": "~.240 BA / some pop+speed; 30-40 G missed; DET moderate floor"
     },
     {
-      "id": "batx_b_107",
+      "id": "batx_b_106",
       "system": "batx",
       "rank": 226,
       "tier": 4,
@@ -9266,7 +9211,7 @@ export const LDB_DATA = {
       "pl_note": "~15 SB / .270+ BA / double-digit HR; CWS leadoff; 2B+SS; floor play"
     },
     {
-      "id": "batx_b_108",
+      "id": "batx_b_107",
       "system": "batx",
       "rank": 228,
       "tier": 4,
@@ -9320,7 +9265,7 @@ export const LDB_DATA = {
       "pl_note": "21 HR; 1H dominant then cratered .208/.259/.403 2H; NYY starting role"
     },
     {
-      "id": "batx_b_109",
+      "id": "batx_b_108",
       "system": "batx",
       "rank": 229,
       "tier": 4,
@@ -9374,7 +9319,7 @@ export const LDB_DATA = {
       "pl_note": "14 HR career high; extreme fly-ball; .205 BA; volume if ratios tolerable"
     },
     {
-      "id": "batx_b_110",
+      "id": "batx_b_109",
       "system": "batx",
       "rank": 230,
       "tier": 4,
@@ -9426,12 +9371,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_111",
+      "id": "batx_b_110",
       "system": "batx",
       "rank": 231,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Zach McKinstry",
       "team": "DET",
       "g": 111.0,
@@ -9481,7 +9426,7 @@ export const LDB_DATA = {
       "pl_note": "10 HR / 15 SB / .250 BA; career-high everything 2025; 1H >> 2H; DET utility"
     },
     {
-      "id": "batx_b_112",
+      "id": "batx_b_111",
       "system": "batx",
       "rank": 233,
       "tier": 4,
@@ -9536,7 +9481,7 @@ export const LDB_DATA = {
       "pl_note": "May return; .200 BA risk; primary role when healthy; ATL DH"
     },
     {
-      "id": "batx_b_113",
+      "id": "batx_b_112",
       "system": "batx",
       "rank": 234,
       "tier": 4,
@@ -9588,7 +9533,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_114",
+      "id": "batx_b_113",
       "system": "batx",
       "rank": 235,
       "tier": 4,
@@ -9642,7 +9587,7 @@ export const LDB_DATA = {
       "pl_note": "~.260 BA / 10 HR / 90-110 G rotation with Jeffers; OBP value floor"
     },
     {
-      "id": "batx_b_115",
+      "id": "batx_b_114",
       "system": "batx",
       "rank": 236,
       "tier": 4,
@@ -9694,12 +9639,12 @@ export const LDB_DATA = {
       "pl_note": "More hit tool than power; Driveline launch angle work; CHW debut solid"
     },
     {
-      "id": "batx_b_116",
+      "id": "batx_b_115",
       "system": "batx",
       "rank": 237,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Austin Hays",
       "team": "CHW",
       "g": 111.4,
@@ -9737,8 +9682,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9749,7 +9694,7 @@ export const LDB_DATA = {
       "pl_note": "Struggles vs RHP last 2 seasons unusual; 20 HR ceiling if full-time CHW"
     },
     {
-      "id": "batx_b_117",
+      "id": "batx_b_116",
       "system": "batx",
       "rank": 239,
       "tier": 4,
@@ -9803,12 +9748,12 @@ export const LDB_DATA = {
       "pl_note": "17-20 HR / 15-20 SB / high BA; STL starter; 2B eligible April; Nate loves him"
     },
     {
-      "id": "batx_b_118",
+      "id": "batx_b_117",
       "system": "batx",
       "rank": 242,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Dominic Canzone",
       "team": "SEA",
       "g": 102.9,
@@ -9858,12 +9803,12 @@ export const LDB_DATA = {
       "pl_note": ".300/.358/.481 in 82 G; Refsnyder platoon limits to DH role; streaming"
     },
     {
-      "id": "batx_b_119",
+      "id": "batx_b_118",
       "system": "batx",
       "rank": 244,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jake Fraley",
       "team": "TBR",
       "g": 96.1,
@@ -9913,12 +9858,12 @@ export const LDB_DATA = {
       "pl_note": "Career .776 OPS vs RHP; TBR platoon; streamable vs soft righties"
     },
     {
-      "id": "batx_b_120",
+      "id": "batx_b_119",
       "system": "batx",
       "rank": 246,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Parker Meadows",
       "team": "DET",
       "g": 118.2,
@@ -9968,12 +9913,12 @@ export const LDB_DATA = {
       "pl_note": "15 HR / 15 SB ceiling; injury + inconsistency DET; platoon limits upside"
     },
     {
-      "id": "batx_b_121",
+      "id": "batx_b_120",
       "system": "batx",
       "rank": 247,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jake Bauers",
       "team": "MIL",
       "g": 86.9,
@@ -10021,7 +9966,7 @@ export const LDB_DATA = {
       "pl_note": "Elite walk rate; 80-90 G MIL; OBP value in deep leagues; 1B+OF eligible"
     },
     {
-      "id": "batx_b_122",
+      "id": "batx_b_121",
       "system": "batx",
       "rank": 248,
       "tier": 4,
@@ -10073,12 +10018,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_123",
+      "id": "batx_b_122",
       "system": "batx",
       "rank": 249,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Joey Ortiz",
       "team": "MIL",
       "g": 131.1,
@@ -10127,12 +10072,12 @@ export const LDB_DATA = {
       "pl_note": "500+ PA guaranteed; 12-15 SB / .230 BA; MIL bottom of order; volume floor"
     },
     {
-      "id": "batx_b_124",
+      "id": "batx_b_123",
       "system": "batx",
       "rank": 250,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Kody Clemens",
       "team": "MIN",
       "g": 74.0,
@@ -10183,12 +10128,12 @@ export const LDB_DATA = {
       "pl_note": "19 HR vs RHP in 119 G; .213 BA; MIN platoon utility; all 19 HR vs RHP"
     },
     {
-      "id": "batx_b_125",
+      "id": "batx_b_124",
       "system": "batx",
       "rank": 254,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Nick Castellanos",
       "team": "SDP",
       "g": 82.0,
@@ -10213,7 +10158,7 @@ export const LDB_DATA = {
       ],
       "is_fry_keeper": false,
       "oopsy_rank": 275,
-      "oopsy_tier": 5,
+      "oopsy_tier": 4,
       "oopsy_est_value": 0.5,
       "oopsy_ldb_score": -7.807,
       "oopsy_hr": 11.0,
@@ -10238,12 +10183,12 @@ export const LDB_DATA = {
       "pl_note": "SDP bench role; needs multiple injuries ahead of him; last 12-team ranking"
     },
     {
-      "id": "batx_b_126",
+      "id": "batx_b_125",
       "system": "batx",
       "rank": 256,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Will Benson",
       "team": "CIN",
       "g": 60.5,
@@ -10291,12 +10236,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_127",
+      "id": "batx_b_126",
       "system": "batx",
       "rank": 257,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Rob Refsnyder",
       "team": "SEA",
       "g": 62.3,
@@ -10344,7 +10289,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_128",
+      "id": "batx_b_127",
       "system": "batx",
       "rank": 258,
       "tier": 4,
@@ -10386,12 +10331,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_129",
+      "id": "batx_b_128",
       "system": "batx",
       "rank": 259,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Victor Robles",
       "team": "SEA",
       "g": 88.3,
@@ -10441,12 +10386,12 @@ export const LDB_DATA = {
       "pl_note": "~.300 BA / 30 SB when healthy; 32 G only in 2025; small side of platoon SEA"
     },
     {
-      "id": "batx_b_130",
+      "id": "batx_b_129",
       "system": "batx",
       "rank": 260,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Brooks Baldwin",
       "team": "CHW",
       "g": 99.4,
@@ -10497,7 +10442,7 @@ export const LDB_DATA = {
       "pl_note": "Switch hit utility; ~90-100 G CHW; eligible everywhere; Acuña competition"
     },
     {
-      "id": "batx_b_131",
+      "id": "batx_b_130",
       "system": "batx",
       "rank": 261,
       "tier": 4,
@@ -10551,7 +10496,7 @@ export const LDB_DATA = {
       "pl_note": "Top-100 in 2H; all 4 infield spots eligible; TOR starter; soft-hitting stabilizer"
     },
     {
-      "id": "batx_b_132",
+      "id": "batx_b_131",
       "system": "batx",
       "rank": 262,
       "tier": 4,
@@ -10605,12 +10550,12 @@ export const LDB_DATA = {
       "pl_note": "~.231 BA; 15 HR possible; <10% barrel but decent exit velo; BoSox 6-hole"
     },
     {
-      "id": "batx_b_133",
+      "id": "batx_b_132",
       "system": "batx",
       "rank": 263,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Luke Raley",
       "team": "SEA",
       "g": 74.6,
@@ -10659,12 +10604,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_134",
+      "id": "batx_b_133",
       "system": "batx",
       "rank": 265,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Heriberto Hernández",
       "team": "MIA",
       "g": 83.3,
@@ -10711,12 +10656,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_135",
+      "id": "batx_b_134",
       "system": "batx",
       "rank": 267,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Tommy Pham",
       "team": "",
       "g": 66.1,
@@ -10753,7 +10698,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_136",
+      "id": "batx_b_135",
       "system": "batx",
       "rank": 269,
       "tier": 4,
@@ -10805,7 +10750,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_137",
+      "id": "batx_b_136",
       "system": "batx",
       "rank": 271,
       "tier": 4,
@@ -10847,7 +10792,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_138",
+      "id": "batx_b_137",
       "system": "batx",
       "rank": 273,
       "tier": 4,
@@ -10903,7 +10848,7 @@ export const LDB_DATA = {
       "pl_note": "50 PA hot streak (4 HR .667 SLG); rest of season .376 SLG; SFG utility"
     },
     {
-      "id": "batx_b_139",
+      "id": "batx_b_138",
       "system": "batx",
       "rank": 274,
       "tier": 4,
@@ -10955,10 +10900,10 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_140",
+      "id": "batx_b_139",
       "system": "batx",
       "rank": 275,
-      "tier": 5,
+      "tier": 4,
       "est_value": 0.5,
       "repl_level": 6.754,
       "name": "Otto Kemp",
@@ -11008,7 +10953,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_141",
+      "id": "batx_b_140",
       "system": "batx",
       "rank": 277,
       "tier": 5,
@@ -11060,7 +11005,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_142",
+      "id": "batx_b_141",
       "system": "batx",
       "rank": 278,
       "tier": 5,
@@ -11114,7 +11059,7 @@ export const LDB_DATA = {
       "pl_note": "~.210 BA / 13 HR / 90 G; TEX; career-high K rate concern; Higashioka threat"
     },
     {
-      "id": "batx_b_143",
+      "id": "batx_b_142",
       "system": "batx",
       "rank": 279,
       "tier": 5,
@@ -11166,12 +11111,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_144",
+      "id": "batx_b_143",
       "system": "batx",
       "rank": 281,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Nathan Lukes",
       "team": "TOR",
       "g": 80.8,
@@ -11222,7 +11167,7 @@ export const LDB_DATA = {
       "pl_note": "~.250-.260 / low K; TOR platoon vs RHP; stream vs bad righties only"
     },
     {
-      "id": "batx_b_145",
+      "id": "batx_b_144",
       "system": "batx",
       "rank": 282,
       "tier": 5,
@@ -11262,12 +11207,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_146",
+      "id": "batx_b_145",
       "system": "batx",
       "rank": 283,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "CJ Kayfus",
       "team": "CLE",
       "g": 75.8,
@@ -11318,7 +11263,7 @@ export const LDB_DATA = {
       "pl_note": "15 HR / .235 BA in 90-120 G; CLE path blocked; unclear role vs LHB"
     },
     {
-      "id": "batx_b_147",
+      "id": "batx_b_146",
       "system": "batx",
       "rank": 285,
       "tier": 5,
@@ -11372,12 +11317,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_148",
+      "id": "batx_b_147",
       "system": "batx",
       "rank": 286,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Matt Vierling",
       "team": "DET",
       "g": 62.3,
@@ -11415,12 +11360,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_149",
+      "id": "batx_b_148",
       "system": "batx",
       "rank": 288,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Troy Johnston",
       "team": "COL",
       "g": 65.5,
@@ -11469,7 +11414,7 @@ export const LDB_DATA = {
       "pl_note": "~.277 BA / 4 HR in 121 PA; COL move; Coors streaming upside if starter"
     },
     {
-      "id": "batx_b_150",
+      "id": "batx_b_149",
       "system": "batx",
       "rank": 289,
       "tier": 5,
@@ -11521,7 +11466,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_151",
+      "id": "batx_b_150",
       "system": "batx",
       "rank": 290,
       "tier": 5,
@@ -11575,12 +11520,12 @@ export const LDB_DATA = {
       "pl_note": "Good defender + volume; 10-12 SB; low power via high GB; CIN"
     },
     {
-      "id": "batx_b_152",
+      "id": "batx_b_151",
       "system": "batx",
       "rank": 292,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Colby Thomas",
       "team": "ATH",
       "g": 68.0,
@@ -11628,7 +11573,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_153",
+      "id": "batx_b_152",
       "system": "batx",
       "rank": 293,
       "tier": 5,
@@ -11681,12 +11626,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_154",
+      "id": "batx_b_153",
       "system": "batx",
       "rank": 294,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Javier Sanoja",
       "team": "MIA",
       "g": 61.0,
@@ -11735,12 +11680,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_155",
+      "id": "batx_b_154",
       "system": "batx",
       "rank": 295,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Dane Myers",
       "team": "CIN",
       "g": 62.7,
@@ -11789,12 +11734,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_156",
+      "id": "batx_b_155",
       "system": "batx",
       "rank": 296,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Sam Haggerty",
       "team": "TEX",
       "g": 59.8,
@@ -11841,7 +11786,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_157",
+      "id": "batx_b_156",
       "system": "batx",
       "rank": 297,
       "tier": 5,
@@ -11895,12 +11840,12 @@ export const LDB_DATA = {
       "pl_note": "30 SB in 100-120 G; major negative everywhere else; WSN leadoff candidate"
     },
     {
-      "id": "batx_b_158",
+      "id": "batx_b_157",
       "system": "batx",
       "rank": 298,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Miguel Andujar",
       "team": "SDP",
       "g": 90.5,
@@ -11948,7 +11893,7 @@ export const LDB_DATA = {
       "pl_note": "~100-110 G / .270 BA / 10-12 HR; 7 HR .970 OPS 2H; SDP platoon DH"
     },
     {
-      "id": "batx_b_159",
+      "id": "batx_b_158",
       "system": "batx",
       "rank": 299,
       "tier": 5,
@@ -12003,7 +11948,7 @@ export const LDB_DATA = {
       "pl_note": "~100 G / 10-12 HR / .250 BA; CHW utility role infield"
     },
     {
-      "id": "batx_b_160",
+      "id": "batx_b_159",
       "system": "batx",
       "rank": 300,
       "tier": 5,
@@ -12057,7 +12002,7 @@ export const LDB_DATA = {
       "pl_note": "Full-time until Holliday ready; BAL bridge; 2B+3B eligible; no upside"
     },
     {
-      "id": "batx_b_161",
+      "id": "batx_b_160",
       "system": "batx",
       "rank": 302,
       "tier": 5,
@@ -12099,7 +12044,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_162",
+      "id": "batx_b_161",
       "system": "batx",
       "rank": 304,
       "tier": 5,
@@ -12151,7 +12096,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_163",
+      "id": "batx_b_162",
       "system": "batx",
       "rank": 305,
       "tier": 5,
@@ -12205,7 +12150,7 @@ export const LDB_DATA = {
       "pl_note": "10 HR / 8-10 SB / .250 BA; LAA competing with Moore; Moore likely wins job"
     },
     {
-      "id": "batx_b_164",
+      "id": "batx_b_163",
       "system": "batx",
       "rank": 306,
       "tier": 5,
@@ -12261,7 +12206,7 @@ export const LDB_DATA = {
       "pl_note": "Glasses fix real (.264 from May 1); 40-50 G IL near-certain; LAD power boost"
     },
     {
-      "id": "batx_b_165",
+      "id": "batx_b_164",
       "system": "batx",
       "rank": 307,
       "tier": 5,
@@ -12303,7 +12248,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_166",
+      "id": "batx_b_165",
       "system": "batx",
       "rank": 309,
       "tier": 5,
@@ -12345,7 +12290,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_167",
+      "id": "batx_b_166",
       "system": "batx",
       "rank": 310,
       "tier": 5,
@@ -12398,7 +12343,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_168",
+      "id": "batx_b_167",
       "system": "batx",
       "rank": 311,
       "tier": 5,
@@ -12453,12 +12398,12 @@ export const LDB_DATA = {
       "pl_note": "100-110 G CLE; 10+ HR; 30%+ K; terrible ratios; utility eligible"
     },
     {
-      "id": "batx_b_169",
+      "id": "batx_b_168",
       "system": "batx",
       "rank": 312,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Zach Cole",
       "team": "HOU",
       "g": 93.1,
@@ -12496,8 +12441,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.88,
       "oopsy_g": 96.0,
       "tags": [
-        "BUST",
-        "SLEEPER"
+        "SLEEPER",
+        "BUST"
       ],
       "note": "",
       "health_pct": 100,
@@ -12508,7 +12453,7 @@ export const LDB_DATA = {
       "pl_note": "MiLB .279/.377/.539; 35%+ K in MLB; 15 HR / 15 SB if sustained; HOU"
     },
     {
-      "id": "batx_b_170",
+      "id": "batx_b_169",
       "system": "batx",
       "rank": 314,
       "tier": 5,
@@ -12563,7 +12508,7 @@ export const LDB_DATA = {
       "pl_note": "MIL starter finally; low walk + bad GBs; SB only value; likely loses job fast"
     },
     {
-      "id": "batx_b_171",
+      "id": "batx_b_170",
       "system": "batx",
       "rank": 315,
       "tier": 5,
@@ -12615,7 +12560,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_172",
+      "id": "batx_b_171",
       "system": "batx",
       "rank": 316,
       "tier": 5,
@@ -12668,12 +12613,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_173",
+      "id": "batx_b_172",
       "system": "batx",
       "rank": 317,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jonny DeLuca",
       "team": "TBR",
       "g": 72.6,
@@ -12721,12 +12666,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_174",
+      "id": "batx_b_173",
       "system": "batx",
       "rank": 318,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jake Mangum",
       "team": "PIT",
       "g": 80.1,
@@ -12775,12 +12720,12 @@ export const LDB_DATA = {
       "pl_note": "35 SB / .280-.290 BA / switch hitter; zero power; points league depth"
     },
     {
-      "id": "batx_b_175",
+      "id": "batx_b_174",
       "system": "batx",
       "rank": 319,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Denzel Clarke",
       "team": "ATH",
       "g": 97.8,
@@ -12828,7 +12773,7 @@ export const LDB_DATA = {
       "pl_note": "20-25 SB / 10-12 HR; ATH CF starter; K rate concern; bandbox helps"
     },
     {
-      "id": "batx_b_176",
+      "id": "batx_b_175",
       "system": "batx",
       "rank": 320,
       "tier": 5,
@@ -12870,12 +12815,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_177",
+      "id": "batx_b_176",
       "system": "batx",
       "rank": 321,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jhostynxon Garcia",
       "team": "PIT",
       "g": 76.8,
@@ -12913,8 +12858,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.52,
       "oopsy_g": 63.0,
       "tags": [
-        "PLATOON",
-        "SLEEPER"
+        "SLEEPER",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -12925,7 +12870,7 @@ export const LDB_DATA = {
       "pl_note": "20+ HR each of last 2 MiLB seasons; PIT platoon; zone contact issues"
     },
     {
-      "id": "batx_b_178",
+      "id": "batx_b_177",
       "system": "batx",
       "rank": 322,
       "tier": 5,
@@ -12977,7 +12922,7 @@ export const LDB_DATA = {
       "pl_note": "20 SB / 5 HR / .260 BA if 100 G; CHW middle infield competition tough"
     },
     {
-      "id": "batx_b_179",
+      "id": "batx_b_178",
       "system": "batx",
       "rank": 323,
       "tier": 5,
@@ -13019,12 +12964,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_180",
+      "id": "batx_b_179",
       "system": "batx",
       "rank": 324,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Enrique Hernández",
       "team": "LAD",
       "g": 54.6,
@@ -13064,7 +13009,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_181",
+      "id": "batx_b_180",
       "system": "batx",
       "rank": 325,
       "tier": 5,
@@ -13107,7 +13052,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_182",
+      "id": "batx_b_181",
       "system": "batx",
       "rank": 326,
       "tier": 5,
@@ -13159,12 +13104,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_183",
+      "id": "batx_b_182",
       "system": "batx",
       "rank": 327,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Daniel Schneemann",
       "team": "CLE",
       "g": 54.9,
@@ -13204,12 +13149,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_184",
+      "id": "batx_b_183",
       "system": "batx",
       "rank": 328,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Everson Pereira",
       "team": "CHW",
       "g": 57.0,
@@ -13257,7 +13202,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_185",
+      "id": "batx_b_184",
       "system": "batx",
       "rank": 329,
       "tier": 5,
@@ -13309,12 +13254,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_186",
+      "id": "batx_b_185",
       "system": "batx",
       "rank": 330,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Joey Loperfido",
       "team": "HOU",
       "g": 94.0,
@@ -13352,8 +13297,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.82,
       "oopsy_g": 92.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "PLATOON"
+        "PLATOON",
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -13364,12 +13309,12 @@ export const LDB_DATA = {
       "pl_note": "Platoon bat vs RHP; .210 BABIP won't repeat; HOU; watchlist only"
     },
     {
-      "id": "batx_b_187",
+      "id": "batx_b_186",
       "system": "batx",
       "rank": 331,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Tyrone Taylor",
       "team": "NYM",
       "g": 76.3,
@@ -13417,7 +13362,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_188",
+      "id": "batx_b_187",
       "system": "batx",
       "rank": 333,
       "tier": 5,
@@ -13469,7 +13414,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_189",
+      "id": "batx_b_188",
       "system": "batx",
       "rank": 334,
       "tier": 5,
@@ -13521,12 +13466,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_190",
+      "id": "batx_b_189",
       "system": "batx",
       "rank": 336,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jacob Young",
       "team": "WSN",
       "g": 84.8,
@@ -13574,7 +13519,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_191",
+      "id": "batx_b_190",
       "system": "batx",
       "rank": 337,
       "tier": 5,
@@ -13618,7 +13563,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_192",
+      "id": "batx_b_191",
       "system": "batx",
       "rank": 338,
       "tier": 5,
@@ -13670,12 +13615,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_193",
+      "id": "batx_b_192",
       "system": "batx",
       "rank": 341,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Jeremiah Jackson",
       "team": "BAL",
       "g": 59.2,
@@ -13723,7 +13668,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_194",
+      "id": "batx_b_193",
       "system": "batx",
       "rank": 342,
       "tier": 5,
@@ -13775,12 +13720,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_195",
+      "id": "batx_b_194",
       "system": "batx",
       "rank": 343,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Angel Martínez",
       "team": "CLE",
       "g": 65.9,
@@ -13829,12 +13774,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_196",
+      "id": "batx_b_195",
       "system": "batx",
       "rank": 344,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Mauricio Dubón",
       "team": "ATL",
       "g": 89.7,
@@ -13885,7 +13830,7 @@ export const LDB_DATA = {
       "pl_note": "Kim placeholder ATL; ~.260 BA / low power; everyday until Kim return"
     },
     {
-      "id": "batx_b_197",
+      "id": "batx_b_196",
       "system": "batx",
       "rank": 345,
       "tier": 5,
@@ -13937,12 +13882,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_198",
+      "id": "batx_b_197",
       "system": "batx",
       "rank": 346,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Blake Perkins",
       "team": "MIL",
       "g": 57.2,
@@ -13990,7 +13935,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_199",
+      "id": "batx_b_198",
       "system": "batx",
       "rank": 347,
       "tier": 5,
@@ -14042,7 +13987,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_200",
+      "id": "batx_b_199",
       "system": "batx",
       "rank": 348,
       "tier": 5,
@@ -14094,12 +14039,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_201",
+      "id": "batx_b_200",
       "system": "batx",
       "rank": 349,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Kyle Isbel",
       "team": "KCR",
       "g": 117.5,
@@ -14147,12 +14092,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_202",
+      "id": "batx_b_201",
       "system": "batx",
       "rank": 350,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Javier Báez",
       "team": "DET",
       "g": 87.0,
@@ -14202,7 +14147,7 @@ export const LDB_DATA = {
       "pl_note": "Best BA since 2021 (.257); 10 HR; 4-position eligible DET; not cooked yet"
     },
     {
-      "id": "batx_b_203",
+      "id": "batx_b_202",
       "system": "batx",
       "rank": 351,
       "tier": 5,
@@ -14244,7 +14189,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_204",
+      "id": "batx_b_203",
       "system": "batx",
       "rank": 352,
       "tier": 5,
@@ -14296,7 +14241,7 @@ export const LDB_DATA = {
       "pl_note": "KBO import; ~15 HR equivalent; speed + hit tool; SDP part-time watch"
     },
     {
-      "id": "batx_b_205",
+      "id": "batx_b_204",
       "system": "batx",
       "rank": 353,
       "tier": 5,
@@ -14348,7 +14293,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_206",
+      "id": "batx_b_205",
       "system": "batx",
       "rank": 354,
       "tier": 5,
@@ -14400,7 +14345,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_207",
+      "id": "batx_b_206",
       "system": "batx",
       "rank": 355,
       "tier": 5,
@@ -14454,12 +14399,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_208",
+      "id": "batx_b_207",
       "system": "batx",
       "rank": 356,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Griffin Conine",
       "team": "MIA",
       "g": 82.8,
@@ -14506,7 +14451,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_209",
+      "id": "batx_b_208",
       "system": "batx",
       "rank": 357,
       "tier": 5,
@@ -14560,7 +14505,7 @@ export const LDB_DATA = {
       "pl_note": "5th straight 10+ HR; limited TEX role; 17 HR in 2024 shows ceiling"
     },
     {
-      "id": "batx_b_210",
+      "id": "batx_b_209",
       "system": "batx",
       "rank": 358,
       "tier": 5,
@@ -14603,7 +14548,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_211",
+      "id": "batx_b_210",
       "system": "batx",
       "rank": 359,
       "tier": 5,
@@ -14657,7 +14602,7 @@ export const LDB_DATA = {
       "pl_note": "~.250 / 7-9 HR; volume at C; outperforms expected avg; SDP 2C value"
     },
     {
-      "id": "batx_b_212",
+      "id": "batx_b_211",
       "system": "batx",
       "rank": 360,
       "tier": 5,
@@ -14709,7 +14654,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_213",
+      "id": "batx_b_212",
       "system": "batx",
       "rank": 361,
       "tier": 5,
@@ -14761,7 +14706,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_214",
+      "id": "batx_b_213",
       "system": "batx",
       "rank": 362,
       "tier": 5,
@@ -14813,7 +14758,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_215",
+      "id": "batx_b_214",
       "system": "batx",
       "rank": 363,
       "tier": 5,
@@ -14865,7 +14810,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_216",
+      "id": "batx_b_215",
       "system": "batx",
       "rank": 364,
       "tier": 5,
@@ -14919,12 +14864,12 @@ export const LDB_DATA = {
       "pl_note": "~.250-.260 BA / sub-10 HR; nearly never walks; WSN C volume"
     },
     {
-      "id": "batx_b_217",
+      "id": "batx_b_216",
       "system": "batx",
       "rank": 365,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Adam Frazier",
       "team": "LAA",
       "g": 57.4,
@@ -14962,7 +14907,7 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_218",
+      "id": "batx_b_217",
       "system": "batx",
       "rank": 366,
       "tier": 5,
@@ -15014,12 +14959,12 @@ export const LDB_DATA = {
       "pl_note": ""
     },
     {
-      "id": "batx_b_219",
+      "id": "batx_b_218",
       "system": "batx",
       "rank": 367,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.665,
+      "repl_level": 2.725,
       "name": "Bryce Teodosio",
       "team": "LAA",
       "g": 61.2,
@@ -15110,9 +15055,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 13.16,
       "oopsy_fip": 2.706,
       "tags": [
-        "BREAKOUT",
+        "SP_LOCKED",
         "RATIOS_ACE",
-        "SP_LOCKED"
+        "BREAKOUT"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
       "health_pct": 95,
@@ -15173,8 +15118,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.38,
       "oopsy_fip": 3.298,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
       "health_pct": 93,
@@ -15235,10 +15180,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "ROFR_TARGET",
-        "RATIOS_ACE",
         "IL_START",
-        "INJURED"
+        "RATIOS_ACE",
+        "INJURED",
+        "ROFR_TARGET"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -15299,8 +15244,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.58,
       "oopsy_fip": 3.314,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "STASH",
         "INJURY_RISK"
       ],
@@ -15363,8 +15308,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.598,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
       "health_pct": 82,
@@ -15425,9 +15370,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.75,
       "oopsy_fip": 3.738,
       "tags": [
-        "BUST",
+        "SP_LOCKED",
         "RATIOS_ACE",
-        "SP_LOCKED"
+        "BUST"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
       "health_pct": 90,
@@ -15488,9 +15433,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
-        "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "INJURY_RISK",
-        "RATIOS_ACE"
+        "ROLE_UNCLEAR"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
       "health_pct": 65,
@@ -15552,8 +15497,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.41,
       "oopsy_fip": 3.718,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
       "health_pct": 88,
@@ -15615,8 +15560,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.352,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
       "health_pct": 92,
@@ -15739,10 +15684,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.25,
       "oopsy_fip": 3.839,
       "tags": [
-        "INJURED",
-        "BOUNCE_BACK",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "BOUNCE_BACK",
+        "INJURED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -16173,9 +16118,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.57,
       "oopsy_fip": 4.011,
       "tags": [
-        "ROLE_UNCLEAR",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "ROLE_UNCLEAR",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -16298,9 +16243,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
+        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -16362,8 +16307,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.052,
       "tags": [
-        "RATIOS_ACE",
-        "SP_LOCKED"
+        "SP_LOCKED",
+        "RATIOS_ACE"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
       "health_pct": 90,
@@ -16548,10 +16493,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
-        "STASH",
-        "INJURY_RISK",
+        "IL_START",
         "RATIOS_ACE",
-        "IL_START"
+        "INJURY_RISK",
+        "STASH"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
       "health_pct": 55,
@@ -16612,10 +16557,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.22,
       "oopsy_fip": 4.118,
       "tags": [
-        "BREAKOUT",
         "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "BREAKOUT"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
       "health_pct": 85,
@@ -16738,9 +16683,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.97,
       "oopsy_fip": 3.963,
       "tags": [
-        "BOUNCE_BACK",
+        "SP_LOCKED",
         "RATIOS_ACE",
-        "SP_LOCKED"
+        "BOUNCE_BACK"
       ],
       "note": "Marlins SP1 — confirmed. Return from TJ surgery. If fully healthy, workhorse with elite ground ball rate and MGS upside.",
       "health_pct": 72,
@@ -16923,10 +16868,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.35,
       "oopsy_fip": 3.695,
       "tags": [
-        "BOUNCE_BACK",
         "SLEEPER",
         "SP_LOCKED",
         "RATIOS_ACE",
+        "BOUNCE_BACK",
         "ROLE_UNCLEAR"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
@@ -17484,8 +17429,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.73,
       "oopsy_fip": 4.697,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
@@ -17548,9 +17493,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.5,
       "oopsy_fip": 4.343,
       "tags": [
-        "ROLE_UNCLEAR",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "ROLE_UNCLEAR",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -18168,8 +18113,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.23,
       "oopsy_fip": 4.279,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 2 H, 2 BB, 3 K. Only faced RHB (sinker/slider day). Velo a tick down, less rise on four-seamer. Interesting new 81 mph cutter — possibly a bad sweeper, possibly a new weapon. Nothing alarming. Reds SP4 confirmed.",
@@ -18547,9 +18492,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
-        "ROLE_UNCLEAR",
         "RATIOS_ACE",
-        "DEEP_LEAGUE"
+        "DEEP_LEAGUE",
+        "ROLE_UNCLEAR"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
       "health_pct": 82,
@@ -18797,9 +18742,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.11,
       "oopsy_fip": 4.557,
       "tags": [
-        "BUST",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
@@ -19418,9 +19363,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.5,
       "oopsy_fip": 4.729,
       "tags": [
-        "DEEP_LEAGUE",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
         "STASH"
       ],
@@ -20158,9 +20103,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.71,
       "oopsy_fip": 4.721,
       "tags": [
-        "BUST",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
@@ -20285,9 +20230,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.61,
       "oopsy_fip": 4.44,
       "tags": [
-        "BUST",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
@@ -20349,8 +20294,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.67,
       "oopsy_fip": 4.131,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 4 IP, 1 ER, 2 H, 1 BB, 3 K. Sinker inside to RHB, cut-fastball to LHB. 44% slider usage to RHB — moved away from four-seamer. Cardinals going with him. Could be decent in a stealth way.",
@@ -20412,9 +20357,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.62,
       "oopsy_fip": 4.28,
       "tags": [
-        "BUST",
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
@@ -21354,8 +21299,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -1.75,
       "oopsy_fip": 5.163,
       "tags": [
-        "RATIOS_ACE",
         "SP_LOCKED",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.1 IP, 0 ER, 0 H, 2 BB, 3 K. Finally using cutter (20% usage, 77% strikes) — his best pitch. In Phillies rotation if cutter keeps cooking. Some NL-only upside per scouts. Phillies SP4.",

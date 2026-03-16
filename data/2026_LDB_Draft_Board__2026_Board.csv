@@ -1,12 +1,12 @@
 ,REM,CHOICE,17,K,ICHI,21,K,WIND,18,K,NEO,19,K,FRY,23,K,POLL,19,K,ROOF,21,K,IPA,17,K,IZZY,23,K,WORK,24,K,CORN,16,K,AIDS,18,K,TONES,22,K,NATE,18,K,PWRS,20,K,BALK,24,K,REM
-2026,320,Brophy,154.62,,Jay/Paul,176.96,,Sean,166.85,,Tim,102.13,,Jorve,112.87,,Anton,106.88,,Mark,155.73,,Chris/Vijay,144.35,,Ray,144.57,,Dubner,172.79,,Ryan,129.23,,Josh,160.17,,Michael,134.47,,Nathan,109.91,,Starr,149.44,,Ian,97.80,,320
+2026,320,Brophy,154.62,,Jay/Paul,176.96,,Sean,166.85,,Tim,102.13,,Jorve,112.87,,Anton,106.88,,Mark,155.73,,Chris/Vijay,144.35,,Ray,144.57,,Dubner,172.79,,Ryan,128.73,,Josh,160.17,,Michael,134.47,,Nathan,109.91,,Starr,149.44,,Ian,97.80,,320
 C,4,Ag. Ramirez,1.00,S1,W. Contreras,13.50,K3,A. Rutschman,4.00,S3,G. Moreno,1.50,H3,C. Raleigh,6.75,K3,,,,D. Dingler,3.00,HTH,,,,,,,S. Perez,4.50,K3,H. Goodman,4.95,K2,A. Kirk,1.35,K2,W. Smith,10.80,K2,S. Langeliers,0.90,K3,,,,K. Teel,0.50,K2,C
 1B,10,K. Manzardo,1.00,S1,,,,,,,N. Kurtz,1.00,S1,,,,,,,,,,S. Torkelson,1.00,S1,,,,,,,,,,,,,M. Busch,1.50,S2,B. Rice,6.75,K2,,,,P. Alonso,29.70,K1,1B
 2B,8,,,,C. Rafaela,4.05,K3,,,,L. Keaschall,1.00,S1,,,,B. Turang,7.20,K2,,,,N. Gorman,4.00,S3,B. Donovan,3.60,K3,,,,K. Marte,17.10,K3,B. Stott,5.40,K2,G. Torres,4.95,K2,,,,,,,,,,2B
 3B,7,J. Caminero,1.00,S1,M. Machado,18.00,K2,M. Chapman,6.75,K3,,,,,,,J. Ramirez,39.60,K3,,,,C. Durbin,0.50,K2,C. Montgomery,0.50,H1,,,,M. Garcia,3.60,K2,,,,E. Suarez,3.15,K3,,,,,,,A. Bohm,4.00,S3,3B
 SS,6,J. Wilson,2.25,K2,,,,T. Story,3.15,K2,Z. Neto,6.30,K3,,,,J. Pena,7.50,S4,C. Abrams,1.50,S2,B. Bichette,16.20,K2,B. Witt,4.00,H4,T. Turner,26.10,K2,G. Perdomo,0.50,K2,D. Swanson,9.00,K2,,,,,,,,,,,,,SS
 OF,7,B. Buxton,9.00,K3,,,,,,,J.H. Lee,1.00,H2,B. Rooker,17.10,K2,,,,,,,D. Varsho,4.00,H4,,,,J. Marsee,6.00,HTH,J. Soto,49.50,K3,J.Wood,1.00,S1,,,,D. Lile,6.00,HTH,,,,G. Stanton,0.50,K2,OF
-CF,5,W. Langford,1.00,S1,L. Butler,0.50,K3,,,,B. Marsh,4.00,S3,,,,T. Grisham,6.00,HTH,J. Rodriguez,1.50,S2,A. Pages,1.00,S1,P. Crow-Armstrong,1.00,H2,B. Doyle,0.50,K3,O. Cruz,1.00,H2,,,,,,,,,,M. Harris,7.50,S4,T.J. Friedl,3.15,K3,CF
+CF,5,W. Langford,1.00,S1,L. Butler,0.50,K3,,,,B. Marsh,4.00,S3,,,,T. Grisham,6.00,HTH,J. Rodriguez,1.50,S2,A. Pages,1.00,S1,P. Crow-Armstrong,1.00,H2,B. Doyle,0.50,K3,O. Cruz,1.50,H3,,,,,,,,,,M. Harris,7.50,S4,T.J. Friedl,3.15,K3,CF
 RF,8,A. Barger,0.50,K2,,,,,,,,,,R. Acuna,41.80,K2,,,,K. Tucker,7.50,S4,S. Frelick,1.00,H2,A. Judge,47.70,K3,,,,T. Hernandez,22.50,K2,J. Lowe,4.00,S3,,,,,,,K. Stowers,0.90,K2,,,,RF
 UT,24,,,,,,,,,,J. Aranda,5.85,K2,R. Greene,1.50,H3,,,,,,,V. Scott II,1.00,H2,,,,,,,,,,G. Springer,4.50,K2,,,,,,,I. Herrera,2.70,K2,,,,UT
 UT,,W. Abreu,3.15,K3,,,,,,,,,,C. Carroll,4.00,S3,,,,,,,,,,J. Caballero,0.90,K2,,,,,,,,,,,,,,,,,,,,,,UT
@@ -46,8 +46,8 @@ AA,,A. Freeland,0.00,,B. Chandler,0.00,,C. Williams,0.00,,S. Strosnider,0.00,,X.
 AA,,B. Wilken,0.00,,J. Arnold,0.00,,N. Schultz,0.00,,K. Okamoto,0.00,,K. Campbell,0.00,,M. Manning,0.00,,V. Brujan,0.00,,A. Page,0.00,,E. Hancock,0.00,,,,,,,,C. Dollander,0.00,,,,,,,,R. Waldschmidt,0.00,,,,,AA
 AA,,D. Curley,0.00,,Jai. Chourio,0.00,,T. Troy,0.00,,,,,A. Nimmala,0.00,,R. Lewis,0.00,,G. Canning,0.00,,G. Lavigne,0.00,,,,,,,,,,,,,,,,,,,,C. Bonemer,0.00,,,,,AA
 AA,,N. Gonzales,0.00,,J. Parker,0.00,,N. Meyer,0.00,,,,,J. Briceno,0.00,,S. Sanchez,0.00,,R. Mauricio,0.00,,E. Hankins,0.00,,,,,,,,,,,,,,,,,,,,R. Velazquez,0.00,,,,,AA
-AA,,O. Martinez,0.00,,,,,T. Sykora,0.00,,,,,Y. Curet,0.00,,C. Winn,0.00,,J. Rodriguez,0.00,,E. Holliday,0.00,,,,,,,,,,,,,,,,,,,,C. Lagrange,0.00,,,,,AA
-AA,,R. Vilade,0.00,,,,,G. Taylor,0.00,,,,,R. Sloan,0.00,,D. Lesko,0.00,,L. Allen,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
+AA,,O. Martinez,0.00,,,,,T. Sykora,0.00,,,,,Y. Curet,0.00,,C. Winn,0.00,,E. Perez,0.00,,E. Holliday,0.00,,,,,,,,,,,,,,,,,,,,C. Lagrange,0.00,,,,,AA
+AA,,R. Vilade,0.00,,,,,G. Taylor,0.00,,,,,R. Sloan,0.00,,D. Lesko,0.00,,L. Allen,0.00,,M. Murakami,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,K. Allard,0.00,,,,,S. Stewart,0.00,,,,,K. Anderson,0.00,,,,,G. Valera,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,D. Cameron,0.00,,,,,L. Pena (MIL),0.00,,,,,C. Fuller,0.00,,,,,J. Dunn,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,C. Kieboom,0.00,,,,,Rain. Rodriguez,0.00,,,,,H. Alvarez,0.00,,,,,C. Abrams,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
@@ -65,7 +65,7 @@ AA,,,,,,,,,,,,,,,,,,,,J. Balazovic,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,M. Abel,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,R. Contreras,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,K. Harrison,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
-AA,,,,,,,,,,,,,,,,,,,,E. Perez,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
+AA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
@@ -96,6 +96,6 @@ LUX,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,5.95
 MCQ,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,3.00,,,0.00,,,0.00,,,0.00,,,6.00,,,0.00,,,2.50,,,0.00,,MCQ
 INN,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,INN
 $$$,C.O.,,-2.12,,,-22.76,,,-7.90,,,-5.58,,,-1.67,,,-2.83,,,-3.18,,,-6.75,,,-11.17,,,-11.04,,,-26.90,,,-4.42,,,-7.67,,,-2.86,,,-4.64,,,-0.08,,$$$
-%,Hit,10%,18.90,,18%,36.05,,7%,13.90,,11%,20.65,,40%,71.15,,33%,60.30,,7%,13.50,,16%,28.70,,31%,57.70,,20%,37.10,,48%,99.15,,14%,25.25,,12%,22.20,,8%,13.65,,6%,11.10,,21%,37.85,,Hit
+%,Hit,10%,18.90,,18%,36.05,,7%,13.90,,11%,20.65,,40%,71.15,,33%,60.30,,7%,13.50,,16%,28.70,,31%,57.70,,20%,37.10,,49%,99.65,,14%,25.25,,12%,22.20,,8%,13.65,,6%,11.10,,21%,37.85,,Hit
 %,Pit,17%,30.10,,5%,10.00,,11%,20.15,,39%,71.80,,10%,17.65,,17%,30.15,,40%,72.45,,21%,39.70,,3%,5.90,,7%,13.15,,8%,15.50,,15%,27.25,,9%,16.20,,41%,73.30,,8%,14.60,,1%,2.00,,Pit
 %,Ben,3%,5.00,,1%,3.00,,3%,5.50,,1%,1.50,,0%,0.00,,4%,6.50,,0%,0.00,,0%,0.00,,0%,0.00,,0%,0.00,,0%,1.00,,1%,1.00,,2%,4.00,,4%,7.50,,2%,4.50,,1%,1.00,,Ben
