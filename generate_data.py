@@ -83,6 +83,7 @@ REPL_BAT_SLOTS = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":5,"UT":1}
 REPL_SP_SLOTS_PER_TEAM = 8   # average SPs carried per team (less strict SP replacement baseline)
 REPL_RP_SLOTS_PER_TEAM = 5   # RP starters per team (stricter replacement baseline)
 REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
+REPL_BAT_BENCH_PCT = 0.30     # deeper batter replacement pool -> lower batter threshold
 REPL_TOP_N     = 5            # average top-N remaining players = replacement level
 
 # Shared category weights used by scoring cache.
@@ -506,7 +507,7 @@ def normalize_pos_for_repl(positions):
 
 def compute_batter_replacement_levels(
         proj_path, owned, aa_names, pos_map, pos_by_name_team, pos_by_last,
-        num_teams, bench_pct=REPL_BENCH_PCT, top_n=REPL_TOP_N):
+        num_teams, bench_pct=REPL_BAT_BENCH_PCT, top_n=REPL_TOP_N):
     """
     Compute replacement-level LDB_Score for each batting position using a
     scarcity-aware draft simulation.
