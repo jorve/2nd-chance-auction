@@ -33,39 +33,39 @@ export const LDB_DATA = {
   },
   "replacement_levels": {
     "bat": {
-      "C": 12.054,
-      "SS": 14.791,
-      "2B": 5.424,
-      "3B": 6.754,
-      "1B": 9.975,
-      "OF": 2.725,
-      "UT": 7.569
+      "C": -4.568,
+      "1B": 4.43,
+      "2B": 0.337,
+      "3B": -2.197,
+      "SS": -0.656,
+      "OF": -5.6,
+      "UT": 15.376
     },
     "sp": -1.082,
     "rp": 3.415,
     "systems": {
       "batx": {
         "bat": {
-          "C": 12.054,
-          "SS": 14.791,
-          "2B": 5.424,
-          "3B": 6.754,
-          "1B": 9.975,
-          "OF": 2.725,
-          "UT": 7.569
+          "C": -4.568,
+          "1B": 4.43,
+          "2B": 0.337,
+          "3B": -2.197,
+          "SS": -0.656,
+          "OF": -5.6,
+          "UT": 15.376
         },
         "sp": -1.082,
         "rp": 3.415
       },
       "oopsy": {
         "bat": {
-          "C": 9.518,
-          "SS": 16.138,
-          "2B": 3.485,
-          "3B": 2.994,
-          "1B": 9.162,
-          "OF": 1.84,
-          "UT": 5.949
+          "C": -3.884,
+          "1B": 2.601,
+          "2B": -0.402,
+          "3B": -0.885,
+          "SS": 0.23,
+          "OF": -5.559,
+          "UT": 15.037
         },
         "sp": -0.192,
         "rp": 4.147
@@ -220,14 +220,6 @@ export const LDB_DATA = {
   "roster_by_team": {
     "CHOICE": [
       {
-        "name": "Brophy",
-        "salary": 154.62,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
-      {
         "name": "Ag. Ramirez",
         "salary": 1.0,
         "contract": "S1",
@@ -235,7 +227,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.0,
+        "marginal_auction_value": 8.5,
+        "keeper_vorp": 4.1652715022180615
       },
       {
         "name": "K. Manzardo",
@@ -245,7 +239,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "J. Caminero",
@@ -255,7 +251,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 15.0
+        "theoretical_value": 15.0,
+        "marginal_auction_value": 24.0,
+        "keeper_vorp": 16.25388890150504
       },
       {
         "name": "J. Wilson",
@@ -265,7 +263,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 1.5,
+        "marginal_auction_value": 3.0,
+        "keeper_vorp": 3.2387345460396917
       },
       {
         "name": "B. Buxton",
@@ -276,7 +276,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 13.5
+        "theoretical_value": 14.5,
+        "marginal_auction_value": 23.5,
+        "keeper_vorp": 16.9477984705032
       },
       {
         "name": "W. Langford",
@@ -287,7 +289,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 17.0
+        "theoretical_value": 18.0,
+        "marginal_auction_value": 27.0,
+        "keeper_vorp": 20.65175019691783
       },
       {
         "name": "A. Barger",
@@ -299,7 +303,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 3.5
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 7.0,
+        "keeper_vorp": 5.1531008918229215
       },
       {
         "name": "W. Abreu",
@@ -310,7 +316,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 9.5,
+        "marginal_auction_value": 19.0,
+        "keeper_vorp": 10.437971978217554
       },
       {
         "name": "P. Skenes",
@@ -320,7 +328,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 25.0
+        "theoretical_value": 25.0,
+        "marginal_auction_value": 36.5,
+        "keeper_vorp": 25.818079269816714
       },
       {
         "name": "L. Webb",
@@ -330,7 +340,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 16.0
+        "theoretical_value": 16.0,
+        "marginal_auction_value": 21.0,
+        "keeper_vorp": 15.672733604775392
       },
       {
         "name": "E. Sheehan",
@@ -341,7 +353,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 9.0,
+        "marginal_auction_value": 12.0,
+        "keeper_vorp": 8.644777407945078
       },
       {
         "name": "A. Ashby",
@@ -352,7 +366,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.2971528935922829
       },
       {
         "name": "L. O'Hoppe",
@@ -362,7 +378,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 1.0
+        "theoretical_value": 1.0,
+        "marginal_auction_value": 2.5,
+        "keeper_vorp": 0.6978850176382903
       },
       {
         "name": "R. Lewis",
@@ -372,18 +390,12 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 1.7234726008693215
       }
     ],
     "ICHI": [
-      {
-        "name": "Jay/Paul",
-        "salary": 176.96,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "W. Contreras",
         "salary": 13.5,
@@ -392,7 +404,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 12.5
+        "theoretical_value": 13.5,
+        "marginal_auction_value": 23.0,
+        "keeper_vorp": 4.223829837289282
       },
       {
         "name": "C. Rafaela",
@@ -404,7 +418,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 9.5,
+        "keeper_vorp": 5.859491970521846
       },
       {
         "name": "M. Machado",
@@ -414,7 +430,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 11.5
+        "theoretical_value": 11.0,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 11.1068262224183
       },
       {
         "name": "L. Butler",
@@ -426,7 +444,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 9.0,
+        "marginal_auction_value": 18.5,
+        "keeper_vorp": 10.619424025957303
       },
       {
         "name": "N. Lodolo",
@@ -437,7 +457,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.0,
+        "marginal_auction_value": 8.0,
+        "keeper_vorp": 4.156808170105506
       },
       {
         "name": "N. Cameron",
@@ -447,7 +469,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 2.5
+        "theoretical_value": 2.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "P. Maton",
@@ -457,7 +481,9 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 8.5,
+        "keeper_vorp": 3.9878628820421698
       },
       {
         "name": "B. Lee",
@@ -469,7 +495,9 @@ export const LDB_DATA = {
           "3B",
           "SS"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "G. Mitchell",
@@ -480,7 +508,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 1.8520002845053627
       },
       {
         "name": "T. Bradley",
@@ -490,18 +520,12 @@ export const LDB_DATA = {
         "positions": [
           "LF"
         ],
-        "theoretical_value": 2.5
+        "theoretical_value": 2.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       }
     ],
     "WIND": [
-      {
-        "name": "Sean",
-        "salary": 166.85,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "A. Rutschman",
         "salary": 4.0,
@@ -510,7 +534,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 8.0,
+        "marginal_auction_value": 16.0,
+        "keeper_vorp": 8.813705118799291
       },
       {
         "name": "M. Chapman",
@@ -520,7 +546,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 12.5
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 10.140576649014916
       },
       {
         "name": "T. Story",
@@ -530,7 +558,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 6.0
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 10.0,
+        "keeper_vorp": 2.90539768052589
       },
       {
         "name": "R. Weathers",
@@ -540,7 +570,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 3.5,
+        "keeper_vorp": 1.8810586402250795
       },
       {
         "name": "G. Kirby",
@@ -550,7 +582,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 12.0
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 14.5,
+        "keeper_vorp": 11.541107065599611
       },
       {
         "name": "S. Bieber",
@@ -560,7 +594,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 6.5
+        "theoretical_value": 6.5,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 2.361600404463568
       },
       {
         "name": "M. Gore",
@@ -570,7 +606,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 8.5
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 11.0,
+        "keeper_vorp": 5.868807402291894
       },
       {
         "name": "K. Bubic",
@@ -580,7 +618,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 8.0
+        "theoretical_value": 8.0,
+        "marginal_auction_value": 9.5,
+        "keeper_vorp": 2.9460764977509224
       },
       {
         "name": "E. Pagan",
@@ -590,7 +630,9 @@ export const LDB_DATA = {
         "positions": [
           "CF"
         ],
-        "theoretical_value": 1.0
+        "theoretical_value": 1.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 2.068211112236743
       },
       {
         "name": "A. Thomas",
@@ -601,7 +643,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "M. Meyer",
@@ -611,7 +655,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 2.0
+        "theoretical_value": 2.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "G. Henderson",
@@ -621,7 +667,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 16.0
+        "theoretical_value": 16.0,
+        "marginal_auction_value": 25.0,
+        "keeper_vorp": 20.943111318976854
       },
       {
         "name": "Y. Yamamoto",
@@ -631,18 +679,12 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 16.0
+        "theoretical_value": 16.0,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 14.397756128547961
       }
     ],
     "NEO": [
-      {
-        "name": "Tim",
-        "salary": 102.13,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "G. Moreno",
         "salary": 1.5,
@@ -651,7 +693,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 11.5,
+        "keeper_vorp": 5.774451319855407
       },
       {
         "name": "N. Kurtz",
@@ -661,7 +705,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 11.5
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 15.082846245407737
       },
       {
         "name": "L. Keaschall",
@@ -671,7 +717,9 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 10.0,
+        "keeper_vorp": 5.46391349063098
       },
       {
         "name": "Z. Neto",
@@ -681,7 +729,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 11.5
+        "theoretical_value": 11.0,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 12.416724242563689
       },
       {
         "name": "J.H. Lee",
@@ -692,7 +742,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 11.0,
+        "keeper_vorp": 8.530352835065298
       },
       {
         "name": "B. Marsh",
@@ -703,7 +755,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 9.0,
+        "keeper_vorp": 6.353145664202108
       },
       {
         "name": "J. Aranda",
@@ -713,7 +767,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 1.8951676807637436
       },
       {
         "name": "J. deGrom",
@@ -723,7 +779,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 15.0
+        "theoretical_value": 15.0,
+        "marginal_auction_value": 19.0,
+        "keeper_vorp": 13.286338418935436
       },
       {
         "name": "C. Ragans",
@@ -733,7 +791,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 15.0
+        "theoretical_value": 15.0,
+        "marginal_auction_value": 19.5,
+        "keeper_vorp": 13.324010426786097
       },
       {
         "name": "T. Rogers",
@@ -743,7 +803,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 2.5,
+        "keeper_vorp": 3.7591973656172506
       },
       {
         "name": "N. Eovaldi",
@@ -753,7 +815,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 11.0,
+        "marginal_auction_value": 14.0,
+        "keeper_vorp": 8.426013897198294
       },
       {
         "name": "A. Volpe",
@@ -763,18 +827,12 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       }
     ],
     "FRY": [
-      {
-        "name": "Jorve",
-        "salary": 112.87,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "C. Raleigh",
         "salary": 6.75,
@@ -783,7 +841,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 16.5
+        "theoretical_value": 17.5,
+        "marginal_auction_value": 26.5,
+        "keeper_vorp": 19.758811329362445
       },
       {
         "name": "B. Rooker",
@@ -794,7 +854,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 20.5
+        "theoretical_value": 22.0,
+        "marginal_auction_value": 33.0,
+        "keeper_vorp": 23.549310212734888
       },
       {
         "name": "R. Acuna",
@@ -805,7 +867,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 27.5
+        "theoretical_value": 29.5,
+        "marginal_auction_value": 44.0,
+        "keeper_vorp": 34.96995225014501
       },
       {
         "name": "R. Greene",
@@ -815,7 +879,9 @@ export const LDB_DATA = {
         "positions": [
           "OF"
         ],
-        "theoretical_value": 12.0
+        "theoretical_value": 12.5,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 17.061098790616782
       },
       {
         "name": "C. Carroll",
@@ -826,7 +892,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 22.0
+        "theoretical_value": 23.5,
+        "marginal_auction_value": 35.0,
+        "keeper_vorp": 25.990330194392282
       },
       {
         "name": "D. Rasmussen",
@@ -836,7 +904,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 9.5
+        "theoretical_value": 9.5,
+        "marginal_auction_value": 12.5,
+        "keeper_vorp": 6.979025074312751
       },
       {
         "name": "M. Liberatore",
@@ -846,7 +916,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 1.5
+        "theoretical_value": 1.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "A. Munoz",
@@ -856,18 +928,12 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 14.5
+        "theoretical_value": 14.5,
+        "marginal_auction_value": 18.5,
+        "keeper_vorp": 9.966730448936474
       }
     ],
     "POLL": [
-      {
-        "name": "Anton",
-        "salary": 106.88,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "B. Turang",
         "salary": 7.2,
@@ -876,7 +942,9 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 9.0,
+        "keeper_vorp": 4.680262305280265
       },
       {
         "name": "J. Ramirez",
@@ -886,7 +954,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 19.5
+        "theoretical_value": 19.5,
+        "marginal_auction_value": 29.5,
+        "keeper_vorp": 19.047994796130567
       },
       {
         "name": "J. Pena",
@@ -896,7 +966,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 8.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 15.5,
+        "keeper_vorp": 6.883474751359529
       },
       {
         "name": "T. Grisham",
@@ -907,7 +979,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 11.5,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 11.5986259507926
       },
       {
         "name": "M. Fried",
@@ -917,7 +991,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 14.5
+        "theoretical_value": 14.5,
+        "marginal_auction_value": 19.0,
+        "keeper_vorp": 13.278949559474032
       },
       {
         "name": "J. Musgrove",
@@ -925,7 +1001,9 @@ export const LDB_DATA = {
         "contract": "K2",
         "pos": "SP",
         "positions": [],
-        "theoretical_value": 6.5
+        "theoretical_value": 6.5,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 3.557159153094851
       },
       {
         "name": "T. Megill",
@@ -935,7 +1013,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 8.5
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 9.5,
+        "keeper_vorp": 6.079950425292408
       },
       {
         "name": "J. Merrill",
@@ -946,7 +1026,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 12.5
+        "theoretical_value": 13.0,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 12.673533485085617
       },
       {
         "name": "D. Baldwin",
@@ -956,7 +1038,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.0,
+        "marginal_auction_value": 8.5,
+        "keeper_vorp": 7.493727124566559
       },
       {
         "name": "J. Adell",
@@ -968,7 +1052,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 10.5
+        "theoretical_value": 10.5,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 13.57732568845746
       },
       {
         "name": "C. Cowser",
@@ -979,7 +1065,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 15.0,
+        "keeper_vorp": 8.668336426643242
       },
       {
         "name": "G. Holmes",
@@ -990,18 +1078,12 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 3.5
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.604394039479942
       }
     ],
     "ROOF": [
-      {
-        "name": "Mark",
-        "salary": 155.73,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "D. Dingler",
         "salary": 3.0,
@@ -1010,7 +1092,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "C. Abrams",
@@ -1020,7 +1104,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 7.5,
+        "keeper_vorp": 5.152088239572891
       },
       {
         "name": "J. Rodriguez",
@@ -1031,7 +1117,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 20.0
+        "theoretical_value": 21.0,
+        "marginal_auction_value": 31.5,
+        "keeper_vorp": 24.56874607471343
       },
       {
         "name": "K. Tucker",
@@ -1042,7 +1130,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 24.0
+        "theoretical_value": 25.5,
+        "marginal_auction_value": 37.5,
+        "keeper_vorp": 28.886588449079333
       },
       {
         "name": "F. Valdez",
@@ -1052,7 +1142,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 13.5
+        "theoretical_value": 13.5,
+        "marginal_auction_value": 16.5,
+        "keeper_vorp": 11.030481126580352
       },
       {
         "name": "F. Peralta",
@@ -1062,7 +1154,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 11.0,
+        "marginal_auction_value": 13.5,
+        "keeper_vorp": 7.814048604957886
       },
       {
         "name": "K. Gausman",
@@ -1072,7 +1166,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 9.5
+        "theoretical_value": 9.5,
+        "marginal_auction_value": 12.5,
+        "keeper_vorp": 5.59634955626809
       },
       {
         "name": "H. Brown",
@@ -1082,7 +1178,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 14.5
+        "theoretical_value": 14.5,
+        "marginal_auction_value": 18.5,
+        "keeper_vorp": 13.217924807023106
       },
       {
         "name": "R. Pepiot",
@@ -1092,7 +1190,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 9.0,
+        "keeper_vorp": 5.375121336544262
       },
       {
         "name": "S. Smith",
@@ -1102,18 +1202,12 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 1.723538165392883
       }
     ],
     "IPA": [
-      {
-        "name": "Chris/Vijay",
-        "salary": 144.35,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "S. Torkelson",
         "salary": 1.0,
@@ -1122,7 +1216,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 1.5
+        "theoretical_value": 1.0,
+        "marginal_auction_value": 2.5,
+        "keeper_vorp": 2.215295686424027
       },
       {
         "name": "N. Gorman",
@@ -1133,7 +1229,9 @@ export const LDB_DATA = {
           "2B",
           "3B"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "C. Durbin",
@@ -1143,7 +1241,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 1.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.5314101223424359
       },
       {
         "name": "B. Bichette",
@@ -1153,7 +1253,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 6.0,
+        "marginal_auction_value": 12.5,
+        "keeper_vorp": 7.154091022948711
       },
       {
         "name": "D. Varsho",
@@ -1164,7 +1266,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 6.5
+        "theoretical_value": 6.5,
+        "marginal_auction_value": 13.5,
+        "keeper_vorp": 6.4632671814935865
       },
       {
         "name": "A. Pages",
@@ -1176,7 +1280,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 9.5
+        "theoretical_value": 10.0,
+        "marginal_auction_value": 20.0,
+        "keeper_vorp": 10.894170094598941
       },
       {
         "name": "S. Frelick",
@@ -1187,7 +1293,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 2.5
+        "theoretical_value": 2.0,
+        "marginal_auction_value": 4.0,
+        "keeper_vorp": 2.9300797101256797
       },
       {
         "name": "V. Scott II",
@@ -1198,7 +1306,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "G. Cole",
@@ -1206,7 +1316,9 @@ export const LDB_DATA = {
         "contract": "K2",
         "pos": "SP",
         "positions": [],
-        "theoretical_value": 6.5
+        "theoretical_value": 6.5,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 4.7443574311452785
       },
       {
         "name": "D. May",
@@ -1217,7 +1329,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 3.5
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "B. Bello",
@@ -1228,7 +1342,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 2.5
+        "theoretical_value": 2.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "S. Gray",
@@ -1238,7 +1354,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 10.5
+        "theoretical_value": 10.5,
+        "marginal_auction_value": 13.0,
+        "keeper_vorp": 8.223558760813688
       },
       {
         "name": "B. King",
@@ -1248,7 +1366,9 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 8.5,
+        "keeper_vorp": 3.53906267289599
       },
       {
         "name": "R. Detmers",
@@ -1258,18 +1378,12 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 4.19298031794868
       }
     ],
     "IZZY": [
-      {
-        "name": "Ray",
-        "salary": 144.57,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "B. Donovan",
         "salary": 3.6,
@@ -1279,7 +1393,9 @@ export const LDB_DATA = {
           "2B",
           "OF"
         ],
-        "theoretical_value": 8.5
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 17.5,
+        "keeper_vorp": 8.034939781309156
       },
       {
         "name": "C. Montgomery",
@@ -1289,7 +1405,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "B. Witt",
@@ -1299,7 +1417,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 24.5
+        "theoretical_value": 25.0,
+        "marginal_auction_value": 37.0,
+        "keeper_vorp": 28.442148383509508
       },
       {
         "name": "P. Crow-Armstrong",
@@ -1310,7 +1430,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 11.5,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 13.677061310245914
       },
       {
         "name": "A. Judge",
@@ -1321,7 +1443,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 41.5
+        "theoretical_value": 44.5,
+        "marginal_auction_value": 65.0,
+        "keeper_vorp": 52.746079869400546
       },
       {
         "name": "J. Caballero",
@@ -1335,7 +1459,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 2.0
+        "theoretical_value": 1.5,
+        "marginal_auction_value": 3.5,
+        "keeper_vorp": 1.1697729667909735
       },
       {
         "name": "R. Nelson",
@@ -1345,7 +1471,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.07567697805660371
       },
       {
         "name": "B. Woodruff",
@@ -1355,18 +1483,12 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 10.0
+        "theoretical_value": 10.0,
+        "marginal_auction_value": 13.0,
+        "keeper_vorp": 5.605863318688045
       }
     ],
     "WORK": [
-      {
-        "name": "Dubner",
-        "salary": 172.79,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "S. Perez",
         "salary": 4.5,
@@ -1376,7 +1498,9 @@ export const LDB_DATA = {
           "C",
           "1B"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 17.0,
+        "keeper_vorp": 7.871564117937872
       },
       {
         "name": "T. Turner",
@@ -1386,7 +1510,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 12.0
+        "theoretical_value": 11.5,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 10.182946171153093
       },
       {
         "name": "J. Marsee",
@@ -1397,7 +1523,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 14.5,
+        "keeper_vorp": 8.088760980593715
       },
       {
         "name": "B. Doyle",
@@ -1408,7 +1536,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 10.0
+        "theoretical_value": 10.5,
+        "marginal_auction_value": 21.0,
+        "keeper_vorp": 7.87350454383572
       },
       {
         "name": "C. Schlittler",
@@ -1418,7 +1548,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 6.0
+        "theoretical_value": 6.0,
+        "marginal_auction_value": 5.5,
+        "keeper_vorp": 2.872138545996246
       },
       {
         "name": "R. Suarez",
@@ -1428,7 +1560,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 9.0,
+        "marginal_auction_value": 12.0,
+        "keeper_vorp": 4.12185611858602
       },
       {
         "name": "G. Williams",
@@ -1438,18 +1572,12 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.0,
+        "marginal_auction_value": 7.0,
+        "keeper_vorp": 3.703769309184528
       }
     ],
     "CORN": [
-      {
-        "name": "Ryan",
-        "salary": 128.73,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "H. Goodman",
         "salary": 4.95,
@@ -1458,7 +1586,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 9.5
+        "theoretical_value": 10.5,
+        "marginal_auction_value": 21.0,
+        "keeper_vorp": 10.45976706389532
       },
       {
         "name": "K. Marte",
@@ -1468,7 +1598,9 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 17.0
+        "theoretical_value": 18.0,
+        "marginal_auction_value": 27.0,
+        "keeper_vorp": 17.238064088415356
       },
       {
         "name": "M. Garcia",
@@ -1479,7 +1611,9 @@ export const LDB_DATA = {
           "3B",
           "SS"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 17.0,
+        "keeper_vorp": 8.319430305705847
       },
       {
         "name": "G. Perdomo",
@@ -1489,7 +1623,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 6.5,
+        "marginal_auction_value": 13.0,
+        "keeper_vorp": 7.728499352710165
       },
       {
         "name": "J. Soto",
@@ -1500,7 +1636,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 35.0
+        "theoretical_value": 37.5,
+        "marginal_auction_value": 55.5,
+        "keeper_vorp": 44.16153448011298
       },
       {
         "name": "O. Cruz",
@@ -1511,7 +1649,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 14.0
+        "theoretical_value": 15.0,
+        "marginal_auction_value": 24.0,
+        "keeper_vorp": 15.341890368727157
       },
       {
         "name": "T. Hernandez",
@@ -1522,7 +1662,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 12.0
+        "theoretical_value": 12.5,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 13.499726232023594
       },
       {
         "name": "T. Bibee",
@@ -1532,7 +1674,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 9.0,
+        "keeper_vorp": 4.7703883272280585
       },
       {
         "name": "J. Jones",
@@ -1543,7 +1687,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.0,
+        "marginal_auction_value": 1.0,
+        "keeper_vorp": 0.9600450392125641
       },
       {
         "name": "G. Stone",
@@ -1551,7 +1697,9 @@ export const LDB_DATA = {
         "contract": "H3",
         "pos": "SP",
         "positions": [],
-        "theoretical_value": null
+        "theoretical_value": null,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "G. Crochet",
@@ -1561,7 +1709,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 22.0
+        "theoretical_value": 22.0,
+        "marginal_auction_value": 31.0,
+        "keeper_vorp": 23.40865163087122
       },
       {
         "name": "R. Sasaki",
@@ -1572,7 +1722,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 3.5
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.007734942139344447
       },
       {
         "name": "M. Miller",
@@ -1582,7 +1734,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 17.0
+        "theoretical_value": 17.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 13.380290045286845
       },
       {
         "name": "I. Seymour",
@@ -1593,7 +1747,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 1.5819118497217404
       },
       {
         "name": "G. Lux",
@@ -1604,18 +1760,12 @@ export const LDB_DATA = {
           "2B",
           "OF"
         ],
-        "theoretical_value": 2.0
+        "theoretical_value": 2.0,
+        "marginal_auction_value": 3.5,
+        "keeper_vorp": 1.043114582880028
       }
     ],
     "AIDS": [
-      {
-        "name": "Josh",
-        "salary": 160.17,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "A. Kirk",
         "salary": 1.35,
@@ -1624,7 +1774,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 8.0
+        "theoretical_value": 8.5,
+        "marginal_auction_value": 17.5,
+        "keeper_vorp": 9.171547032488576
       },
       {
         "name": "B. Stott",
@@ -1634,7 +1786,9 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 6.5,
+        "keeper_vorp": 3.2563862343466434
       },
       {
         "name": "D. Swanson",
@@ -1644,7 +1798,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 6.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 11.0,
+        "keeper_vorp": 3.9795270181296987
       },
       {
         "name": "J.Wood",
@@ -1654,7 +1810,9 @@ export const LDB_DATA = {
         "positions": [
           "OF"
         ],
-        "theoretical_value": 16.5
+        "theoretical_value": 17.5,
+        "marginal_auction_value": 26.5,
+        "keeper_vorp": 19.464433773698183
       },
       {
         "name": "J. Lowe",
@@ -1665,7 +1823,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 2.0
+        "theoretical_value": 2.0,
+        "marginal_auction_value": 4.0,
+        "keeper_vorp": 4.782103373625292
       },
       {
         "name": "G. Springer",
@@ -1676,7 +1836,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 16.5
+        "theoretical_value": 17.5,
+        "marginal_auction_value": 26.5,
+        "keeper_vorp": 17.35400616848712
       },
       {
         "name": "R. Ray",
@@ -1686,7 +1848,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 4.5,
+        "keeper_vorp": 1.8603459889238003
       },
       {
         "name": "A. Abbott",
@@ -1696,7 +1860,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 1.5,
+        "keeper_vorp": 0.3879216934578329
       },
       {
         "name": "S. Imanaga",
@@ -1706,7 +1872,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 6.0
+        "theoretical_value": 6.0,
+        "marginal_auction_value": 5.5,
+        "keeper_vorp": 1.5678342339936668
       },
       {
         "name": "S. Baz",
@@ -1716,7 +1884,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 3.5,
+        "keeper_vorp": 1.51763791420216
       },
       {
         "name": "E. Cabrera",
@@ -1726,7 +1896,9 @@ export const LDB_DATA = {
         "positions": [
           "RF"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.0,
+        "marginal_auction_value": 7.5,
+        "keeper_vorp": 4.752950087694773
       },
       {
         "name": "B. Pfaadt",
@@ -1736,7 +1908,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 2.0
+        "theoretical_value": 2.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "J. Dominguez",
@@ -1746,18 +1920,12 @@ export const LDB_DATA = {
         "positions": [
           "OF"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.23132290022822133
       }
     ],
     "TONES": [
-      {
-        "name": "Michael",
-        "salary": 134.47,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "W. Smith",
         "salary": 10.8,
@@ -1766,7 +1934,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 15.5
+        "theoretical_value": 16.5,
+        "marginal_auction_value": 26.0,
+        "keeper_vorp": 14.951747580996113
       },
       {
         "name": "M. Busch",
@@ -1776,7 +1946,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 4.180849248006097
       },
       {
         "name": "G. Torres",
@@ -1786,7 +1958,9 @@ export const LDB_DATA = {
         "positions": [
           "2B"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 11.5,
+        "keeper_vorp": 7.08645502075222
       },
       {
         "name": "E. Suarez",
@@ -1796,7 +1970,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 10.0
+        "theoretical_value": 9.0,
+        "marginal_auction_value": 18.5,
+        "keeper_vorp": 7.480962418482923
       },
       {
         "name": "C. Rodon",
@@ -1806,7 +1982,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 7.0
+        "theoretical_value": 7.0,
+        "marginal_auction_value": 7.5,
+        "keeper_vorp": 3.646023709629672
       },
       {
         "name": "M. Burrows",
@@ -1817,7 +1995,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.39704983546692324
       },
       {
         "name": "J. Duran",
@@ -1828,7 +2008,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 14.0
+        "theoretical_value": 15.0,
+        "marginal_auction_value": 20.5,
+        "keeper_vorp": 11.992266006574127
       },
       {
         "name": "A. Chapman",
@@ -1838,7 +2020,9 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 11.5
+        "theoretical_value": 11.5,
+        "marginal_auction_value": 14.5,
+        "keeper_vorp": 8.378480805786499
       },
       {
         "name": "J. Hoffman",
@@ -1848,18 +2032,12 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 8.0
+        "theoretical_value": 8.0,
+        "marginal_auction_value": 9.0,
+        "keeper_vorp": 5.102223472663013
       }
     ],
     "NATE": [
-      {
-        "name": "Nathan",
-        "salary": 109.91,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "S. Langeliers",
         "salary": 0.9,
@@ -1868,7 +2046,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 11.779364600748714
       },
       {
         "name": "B. Rice",
@@ -1879,7 +2059,9 @@ export const LDB_DATA = {
           "C",
           "1B"
         ],
-        "theoretical_value": 12.0
+        "theoretical_value": 13.0,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 13.748920723995305
       },
       {
         "name": "D. Lile",
@@ -1890,7 +2072,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 9.5,
+        "keeper_vorp": 5.155790829420651
       },
       {
         "name": "C. Sanchez",
@@ -1900,7 +2084,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 17.0
+        "theoretical_value": 17.0,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 17.407332615063545
       },
       {
         "name": "B. Woo",
@@ -1910,7 +2096,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 17.0
+        "theoretical_value": 17.0,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 17.312055493921683
       },
       {
         "name": "K. Senga",
@@ -1920,7 +2108,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 6.0
+        "theoretical_value": 6.0,
+        "marginal_auction_value": 5.0,
+        "keeper_vorp": 1.4587266197385307
       },
       {
         "name": "C. Sale",
@@ -1931,7 +2121,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 18.0
+        "theoretical_value": 18.0,
+        "marginal_auction_value": 24.0,
+        "keeper_vorp": 17.32061314368698
       },
       {
         "name": "J. Boyle",
@@ -1942,7 +2134,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.5069903961307318
       },
       {
         "name": "J. Leiter",
@@ -1952,7 +2146,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 4.0,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.13901940284290304
       },
       {
         "name": "S. Woods-Richardson",
@@ -1963,7 +2159,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "M. Vientos",
@@ -1973,7 +2171,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "E. De La Cruz",
@@ -1983,7 +2183,9 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 13.5
+        "theoretical_value": 13.0,
+        "marginal_auction_value": 22.5,
+        "keeper_vorp": 16.51209239579161
       },
       {
         "name": "B. Baty",
@@ -1994,18 +2196,12 @@ export const LDB_DATA = {
           "2B",
           "3B"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       }
     ],
     "PWRS": [
-      {
-        "name": "Starr",
-        "salary": 149.44,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "M. Harris",
         "salary": 7.5,
@@ -2015,7 +2211,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 7.5
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 15.0,
+        "keeper_vorp": 10.91006061082268
       },
       {
         "name": "K. Stowers",
@@ -2026,7 +2224,9 @@ export const LDB_DATA = {
           "RF",
           "OF"
         ],
-        "theoretical_value": 9.0
+        "theoretical_value": 9.0,
+        "marginal_auction_value": 18.5,
+        "keeper_vorp": 12.011920621167418
       },
       {
         "name": "I. Herrera",
@@ -2036,7 +2236,9 @@ export const LDB_DATA = {
         "positions": [
           "DH"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 4.568923513011212
       },
       {
         "name": "N. Pivetta",
@@ -2046,7 +2248,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 10.0
+        "theoretical_value": 10.0,
+        "marginal_auction_value": 13.0,
+        "keeper_vorp": 8.099626891486324
       },
       {
         "name": "K. Bradish",
@@ -2056,7 +2260,9 @@ export const LDB_DATA = {
         "positions": [
           "SP"
         ],
-        "theoretical_value": 10.0
+        "theoretical_value": 10.0,
+        "marginal_auction_value": 13.0,
+        "keeper_vorp": 7.401727420793363
       },
       {
         "name": "B. Ashcraft",
@@ -2067,7 +2273,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 5.5
+        "theoretical_value": 5.5,
+        "marginal_auction_value": 4.5,
+        "keeper_vorp": 3.3943860179798016
       },
       {
         "name": "J. Wrobleski",
@@ -2078,7 +2286,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 0.5
+        "theoretical_value": 0.5,
+        "marginal_auction_value": 0.5,
+        "keeper_vorp": 0.0
       },
       {
         "name": "T. Soderstrom",
@@ -2089,7 +2299,9 @@ export const LDB_DATA = {
           "1B",
           "OF"
         ],
-        "theoretical_value": 11.5
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 12.657713669522785
       },
       {
         "name": "C. Horton",
@@ -2100,7 +2312,9 @@ export const LDB_DATA = {
           "SP",
           "RP"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 5.0,
+        "marginal_auction_value": 3.5,
+        "keeper_vorp": 1.1671143891361284
       },
       {
         "name": "M. Vargas",
@@ -2111,7 +2325,9 @@ export const LDB_DATA = {
           "1B",
           "3B"
         ],
-        "theoretical_value": 8.0
+        "theoretical_value": 7.5,
+        "marginal_auction_value": 15.0,
+        "keeper_vorp": 5.793501533784849
       },
       {
         "name": "H. Ramos",
@@ -2121,18 +2337,12 @@ export const LDB_DATA = {
         "positions": [
           "OF"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 12.0,
+        "marginal_auction_value": 22.0,
+        "keeper_vorp": 10.949837373091585
       }
     ],
     "BALK": [
-      {
-        "name": "Ian",
-        "salary": 97.8,
-        "contract": "",
-        "pos": "2026",
-        "positions": [],
-        "theoretical_value": null
-      },
       {
         "name": "K. Teel",
         "salary": 0.5,
@@ -2141,7 +2351,9 @@ export const LDB_DATA = {
         "positions": [
           "C"
         ],
-        "theoretical_value": 3.0
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 7.0,
+        "keeper_vorp": 2.319047798668147
       },
       {
         "name": "P. Alonso",
@@ -2151,7 +2363,9 @@ export const LDB_DATA = {
         "positions": [
           "1B"
         ],
-        "theoretical_value": 11.0
+        "theoretical_value": 11.5,
+        "marginal_auction_value": 21.5,
+        "keeper_vorp": 13.730901117748807
       },
       {
         "name": "A. Bohm",
@@ -2161,7 +2375,9 @@ export const LDB_DATA = {
         "positions": [
           "3B"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 3.0,
+        "marginal_auction_value": 6.0,
+        "keeper_vorp": 2.5777893752180288
       },
       {
         "name": "G. Stanton",
@@ -2171,7 +2387,9 @@ export const LDB_DATA = {
         "positions": [
           "OF"
         ],
-        "theoretical_value": 4.5
+        "theoretical_value": 4.5,
+        "marginal_auction_value": 8.5,
+        "keeper_vorp": 5.932353703260633
       },
       {
         "name": "T.J. Friedl",
@@ -2182,7 +2400,9 @@ export const LDB_DATA = {
           "CF",
           "OF"
         ],
-        "theoretical_value": 4.0
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 7.5,
+        "keeper_vorp": 5.035015652608044
       },
       {
         "name": "D. Palencia",
@@ -2192,7 +2412,9 @@ export const LDB_DATA = {
         "positions": [
           "RP"
         ],
-        "theoretical_value": 8.0
+        "theoretical_value": 8.0,
+        "marginal_auction_value": 9.5,
+        "keeper_vorp": 6.355577206540602
       },
       {
         "name": "E. Tovar",
@@ -2202,160 +2424,162 @@ export const LDB_DATA = {
         "positions": [
           "SS"
         ],
-        "theoretical_value": 5.0
+        "theoretical_value": 3.5,
+        "marginal_auction_value": 7.5,
+        "keeper_vorp": 2.5126061641062463
       }
     ]
   },
   "theoretical_values": {
-    "aaron judge": 41.5,
+    "aaron judge": 44.5,
     "shohei ohtani": 11.0,
-    "juan soto": 35.0,
-    "ronald acuna": 27.5,
-    "vladimir guerrero": 19.5,
-    "bobby witt": 24.5,
-    "yordan alvarez": 18.5,
-    "kyle schwarber": 16.0,
-    "kyle tucker": 24.0,
-    "fernando tatis": 23.5,
-    "corbin carroll": 22.0,
-    "ketel marte": 17.0,
+    "juan soto": 37.5,
+    "ronald acuna": 29.5,
+    "vladimir guerrero": 20.5,
+    "bobby witt": 25.0,
+    "yordan alvarez": 19.5,
+    "kyle schwarber": 16.5,
+    "kyle tucker": 25.5,
+    "fernando tatis": 25.0,
+    "corbin carroll": 23.5,
+    "ketel marte": 18.0,
     "jose ramirez": 19.5,
-    "bryce harper": 13.0,
-    "brent rooker": 20.5,
-    "julio rodriguez": 20.0,
-    "nick kurtz": 11.5,
-    "rafael devers": 11.0,
+    "bryce harper": 13.5,
+    "brent rooker": 22.0,
+    "julio rodriguez": 21.0,
+    "nick kurtz": 12.0,
+    "rafael devers": 11.5,
     "gunnar henderson": 16.0,
-    "pete alonso": 11.0,
-    "corey seager": 16.0,
-    "cal raleigh": 16.5,
-    "wyatt langford": 17.0,
+    "pete alonso": 11.5,
+    "corey seager": 15.5,
+    "cal raleigh": 17.5,
+    "wyatt langford": 18.0,
     "junior caminero": 15.0,
-    "will smith": 15.5,
-    "george springer": 16.5,
-    "james wood": 16.5,
+    "will smith": 16.5,
+    "george springer": 17.5,
+    "james wood": 17.5,
     "yandy diaz": 8.5,
     "freddie freeman": 8.5,
-    "elly de la cruz": 13.5,
-    "seiya suzuki": 16.0,
-    "roman anthony": 15.5,
-    "francisco lindor": 12.5,
-    "trea turner": 12.0,
-    "mookie betts": 11.5,
-    "zach neto": 11.5,
+    "elly de la cruz": 13.0,
+    "seiya suzuki": 17.0,
+    "roman anthony": 16.5,
+    "francisco lindor": 12.0,
+    "trea turner": 11.5,
+    "mookie betts": 11.0,
+    "zach neto": 11.0,
     "munetaka murakami": 6.5,
-    "austin riley": 12.5,
-    "jarren duran": 14.0,
-    "matt chapman": 12.5,
-    "oneil cruz": 14.0,
-    "william contreras": 12.5,
-    "randy arozarena": 14.0,
-    "taylor ward": 13.5,
-    "byron buxton": 13.5,
-    "jackson chourio": 13.5,
-    "manny machado": 11.5,
-    "jazz chisholm": 11.5,
-    "mike trout": 13.5,
+    "austin riley": 12.0,
+    "jarren duran": 15.0,
+    "matt chapman": 12.0,
+    "oneil cruz": 15.0,
+    "william contreras": 13.5,
+    "randy arozarena": 14.5,
+    "taylor ward": 14.5,
+    "byron buxton": 14.5,
+    "jackson chourio": 14.0,
+    "manny machado": 11.0,
+    "jazz chisholm": 11.0,
+    "mike trout": 14.0,
     "matt olson": 5.0,
-    "willy adames": 10.0,
-    "ben rice": 12.0,
-    "willson contreras": 5.0,
-    "christian yelich": 12.5,
-    "jackson merrill": 12.5,
-    "ian happ": 12.0,
-    "shea langeliers": 11.0,
-    "teoscar hernandez": 12.0,
-    "riley greene": 12.0,
-    "brandon nimmo": 12.0,
-    "eugenio suarez": 10.0,
-    "alex bregman": 9.5,
-    "jeremy pena": 8.5,
-    "tyler soderstrom": 11.5,
-    "heliot ramos": 11.0,
+    "willy adames": 9.5,
+    "ben rice": 13.0,
+    "willson contreras": 4.5,
+    "christian yelich": 13.0,
+    "jackson merrill": 13.0,
+    "ian happ": 13.0,
+    "shea langeliers": 12.0,
+    "teoscar hernandez": 12.5,
+    "riley greene": 12.5,
+    "brandon nimmo": 12.5,
+    "eugenio suarez": 9.0,
+    "alex bregman": 9.0,
+    "jeremy pena": 7.5,
+    "tyler soderstrom": 12.0,
+    "heliot ramos": 12.0,
     "ivan herrera": 3.0,
     "jonathan aranda": 3.0,
     "michael busch": 3.0,
-    "maikel garcia": 9.0,
-    "pete crow armstrong": 11.0,
-    "vinnie pasquantino": 3.0,
-    "trent grisham": 11.0,
-    "jurickson profar": 11.0,
-    "hunter goodman": 9.5,
+    "maikel garcia": 8.5,
+    "pete crow armstrong": 11.5,
+    "vinnie pasquantino": 2.5,
+    "trent grisham": 11.5,
+    "jurickson profar": 11.5,
+    "hunter goodman": 10.5,
     "gleyber torres": 5.5,
-    "geraldo perdomo": 7.5,
+    "geraldo perdomo": 6.5,
     "jo adell": 10.5,
-    "bo bichette": 7.0,
-    "brenton doyle": 10.0,
-    "miguel vargas": 8.0,
-    "luke keaschall": 4.5,
+    "bo bichette": 6.0,
+    "brenton doyle": 10.5,
+    "miguel vargas": 7.5,
+    "luke keaschall": 5.0,
     "max muncy": 0.5,
-    "bryan reynolds": 9.5,
-    "kazuma okamoto": 8.0,
-    "spencer torkelson": 1.5,
-    "andy pages": 9.5,
-    "dansby swanson": 6.5,
-    "brice turang": 4.0,
-    "jose altuve": 9.0,
-    "wilyer abreu": 9.0,
-    "alejandro kirk": 8.0,
-    "xander bogaerts": 6.0,
-    "trevor story": 6.0,
-    "salvador perez": 7.5,
+    "bryan reynolds": 10.0,
+    "kazuma okamoto": 7.0,
+    "spencer torkelson": 1.0,
+    "andy pages": 10.0,
+    "dansby swanson": 5.5,
+    "brice turang": 4.5,
+    "jose altuve": 9.5,
+    "wilyer abreu": 9.5,
+    "alejandro kirk": 8.5,
+    "xander bogaerts": 5.0,
+    "trevor story": 5.0,
+    "salvador perez": 8.5,
     "kyle stowers": 9.0,
     "lawrence butler": 9.0,
     "josh naylor": 0.5,
     "sal stewart": 0.5,
-    "lars nootbaar": 8.5,
-    "adley rutschman": 7.0,
+    "lars nootbaar": 9.0,
+    "adley rutschman": 8.0,
     "cody bellinger": 8.5,
     "brendan donovan": 8.5,
-    "kerry carpenter": 8.0,
+    "kerry carpenter": 8.5,
     "josh bell": 0.5,
-    "alec burleson": 8.0,
+    "alec burleson": 8.5,
     "bryson stott": 3.0,
-    "jonathan india": 8.0,
-    "ezequiel tovar": 5.0,
+    "jonathan india": 8.5,
+    "ezequiel tovar": 3.5,
     "marcell ozuna": 0.5,
-    "cj abrams": 5.0,
-    "jordan beck": 7.5,
-    "otto lopez": 5.0,
+    "cj abrams": 3.5,
+    "jordan beck": 8.0,
+    "otto lopez": 3.5,
     "andrew vaughn": 0.5,
     "michael harris": 7.5,
     "christian walker": 0.5,
-    "willi castro": 7.0,
-    "luis robert": 7.0,
-    "mickey moniak": 7.0,
+    "willi castro": 7.5,
+    "luis robert": 7.5,
+    "mickey moniak": 7.5,
     "kyle manzardo": 0.5,
-    "matt wallner": 7.0,
-    "colton cowser": 7.0,
-    "jakob marsee": 7.0,
+    "matt wallner": 7.5,
+    "colton cowser": 7.5,
+    "jakob marsee": 7.5,
     "marcus semien": 2.0,
     "ramon laureano": 7.0,
     "ryan ohearn": 7.0,
-    "nico hoerner": 1.5,
-    "matt mclain": 1.5,
+    "nico hoerner": 2.0,
+    "matt mclain": 2.0,
     "jake cronenworth": 1.5,
     "jorge polanco": 1.5,
     "tyler freeman": 6.5,
     "gabriel moreno": 5.5,
     "daulton varsho": 6.5,
-    "brandon lowe": 1.0,
-    "jackson holliday": 1.0,
+    "brandon lowe": 1.5,
+    "jackson holliday": 1.5,
     "cedric mullins": 6.5,
-    "isaac paredes": 4.5,
+    "isaac paredes": 3.5,
     "jorge soler": 6.5,
     "jake burger": 0.5,
-    "tyler oneill": 6.0,
+    "tyler oneill": 6.5,
     "nolan schanuel": 0.5,
-    "carlos correa": 4.0,
+    "carlos correa": 3.0,
     "j t realmuto": 5.0,
-    "jacob wilson": 3.0,
-    "alec bohm": 4.0,
-    "jordan westburg": 4.0,
+    "jacob wilson": 1.5,
+    "alec bohm": 3.0,
+    "jordan westburg": 3.0,
     "joc pederson": 0.5,
     "adolis garcia": 5.5,
     "jung hoo lee": 5.5,
-    "colt keith": 3.5,
+    "colt keith": 2.5,
     "noelvi marte": 5.0,
     "agustin ramirez": 4.0,
     "drake baldwin": 4.0,
@@ -2363,7 +2587,7 @@ export const LDB_DATA = {
     "andrew benintendi": 5.0,
     "luis garcia": 0.5,
     "jesus sanchez": 5.0,
-    "xavier edwards": 2.0,
+    "xavier edwards": 0.5,
     "steven kwan": 5.0,
     "ceddanne rafaela": 4.5,
     "yainer diaz": 3.5,
@@ -2372,14 +2596,14 @@ export const LDB_DATA = {
     "jeff mcneil": 4.5,
     "dylan crews": 4.5,
     "giancarlo stanton": 4.5,
-    "kyle teel": 3.0,
+    "kyle teel": 3.5,
     "mike yastrzemski": 4.5,
     "chandler simpson": 4.0,
     "trevor larnach": 4.0,
     "ryan jeffers": 3.0,
-    "j p crawford": 1.0,
-    "konnor griffin": 1.0,
-    "tj friedl": 4.0,
+    "j p crawford": 0.5,
+    "konnor griffin": 0.5,
+    "tj friedl": 3.5,
     "bryce eldridge": 0.5,
     "spencer horwitz": 0.5,
     "jordan walker": 3.5,
@@ -2387,14 +2611,14 @@ export const LDB_DATA = {
     "addison barger": 3.5,
     "isaac collins": 3.5,
     "luis arraez": 0.5,
-    "nolan arenado": 1.5,
-    "harrison bader": 3.5,
-    "lane thomas": 3.5,
-    "dylan beavers": 3.5,
-    "caleb durbin": 1.5,
+    "nolan arenado": 0.5,
+    "harrison bader": 3.0,
+    "lane thomas": 3.0,
+    "dylan beavers": 3.0,
+    "caleb durbin": 0.5,
     "tyler stephenson": 2.0,
     "evan carter": 3.0,
-    "jared triolo": 1.0,
+    "jared triolo": 0.5,
     "jake meyers": 3.0,
     "jac caglianone": 2.5,
     "justin crawford": 2.5,
@@ -2402,9 +2626,9 @@ export const LDB_DATA = {
     "kevin mcgonigle": 0.5,
     "royce lewis": 0.5,
     "ha seong kim": 0.5,
-    "jake mccarthy": 2.5,
+    "jake mccarthy": 2.0,
     "logan ohoppe": 1.0,
-    "sal frelick": 2.5,
+    "sal frelick": 2.0,
     "carter jensen": 1.0,
     "josh lowe": 2.0,
     "pavin smith": 0.5,
@@ -2414,24 +2638,24 @@ export const LDB_DATA = {
     "masyn winn": 0.5,
     "gavin lux": 2.0,
     "rhys hoskins": 0.5,
-    "gavin sheets": 2.0,
+    "gavin sheets": 1.5,
     "andres gimenez": 0.5,
-    "jj bleday": 2.0,
-    "josh smith": 2.0,
-    "jose caballero": 2.0,
-    "austin martin": 2.0,
+    "jj bleday": 1.5,
+    "josh smith": 1.5,
+    "jose caballero": 1.5,
+    "austin martin": 1.5,
     "romy gonzalez": 0.5,
     "josh jung": 0.5,
     "connor norby": 0.5,
-    "tommy edman": 1.5,
-    "davis schneider": 1.5,
-    "cam smith": 1.5,
+    "tommy edman": 1.0,
+    "davis schneider": 1.0,
+    "cam smith": 1.0,
     "samuel basallo": 0.5,
     "carson kelly": 0.5,
     "brett baty": 0.5,
     "mark vientos": 0.5,
-    "christopher morel": 1.5,
-    "wenceel perez": 1.5,
+    "christopher morel": 1.0,
+    "wenceel perez": 1.0,
     "chase meidroth": 0.5,
     "francisco alvarez": 0.5,
     "austin wells": 0.5,
@@ -2443,7 +2667,7 @@ export const LDB_DATA = {
     "paul goldschmidt": 0.5,
     "victor caratini": 0.5,
     "edgar quero": 0.5,
-    "austin hays": 1.0,
+    "austin hays": 0.5,
     "marcelo mayer": 0.5,
     "jj wetherholt": 0.5,
     "nick gonzales": 0.5,
@@ -3208,260 +3432,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "C. Smith",
-    "A. Baddoo",
-    "C. Spangenberg",
-    "C. Keith",
-    "J. Lebron",
-    "T. Szapucki",
-    "E. Florentino",
-    "K. Robinson",
-    "T. Troy",
-    "F. Celesten",
-    "R. Pint",
-    "C. Fuller",
-    "C. Pache",
-    "H. Takahashi",
-    "S. Basallo",
-    "J. Walker",
-    "B. Goodwin",
-    "J. Dunn",
-    "H. Bishop",
-    "K. Mcgonigle",
-    "T. Gillen",
-    "A. Gose",
-    "J. P. Martinez",
-    "O. Colas",
-    "T. Thomas",
-    "P. Eeles",
-    "B. Eldridge",
-    "C. DeLauter",
-    "R. Sloan",
-    "J. Guerra",
-    "J. Turner",
-    "A. Painter",
-    "C. Hernandez",
-    "J. Parker",
-    "L. Brinson",
-    "K. Okamoto",
-    "B. Rocchio",
-    "M. Winn",
-    "J. Groome",
-    "A. Genao",
-    "C. Burns",
-    "R. Ryan",
-    "D. Curley",
-    "E. Holliday",
-    "C. Condon",
-    "J. Wiggins",
-    "Z. Veen",
-    "D. Espino",
-    "F. Barreto",
-    "B. McKay",
-    "T. Bradley",
-    "N. Gonzales",
-    "C. Williams",
-    "M. Liberatore",
-    "H. Davis",
-    "R. Anthony",
-    "X. Neyens",
-    "L. Allen",
-    "M. Sirota",
-    "T. Johnson",
-    "R. Mauricio",
-    "E. Conrad",
-    "D. Whitney",
-    "G. Valera",
-    "C. Moore",
-    "E. Rodriguez",
-    "M. Mayer",
-    "C. Jensen",
-    "N. Marte",
-    "B. Montgomery",
-    "D. Lesko",
-    "M. Ballesteros",
-    "R. Velazquez",
-    "S. Stewart",
-    "D. Crews",
-    "J. Lawlar",
-    "R. Herrera",
-    "S. Walcott",
-    "F. Alvarez",
-    "A. Medina",
-    "A. Martin",
-    "A. Duno",
-    "K. Rocker",
-    "M. Banuelos",
-    "K. Anderson",
-    "H. Smith",
-    "J. LaViolette",
-    "L. Matos",
-    "C. Collier",
-    "J. Caglianone",
-    "C. Emerson",
-    "J. Bukauskas",
-    "R. Arias",
-    "R. Calaz",
-    "R. Waldschmidt",
-    "G. Taylor",
-    "K. Watson",
-    "C. Mayo",
-    "J. Luis",
-    "Ad. Sanchez",
-    "Rain. Rodriguez",
-    "A. Jackson",
-    "J. Adams",
-    "C. Norby",
-    "C. Dana",
-    "G. Lavigne",
-    "E. Green",
-    "J. De Paula",
-    "W. Javier",
-    "D. Beavers",
-    "S. Howard",
-    "T. Lutz",
-    "M. Harrison",
-    "G. Canning",
-    "M. Arroyo",
     "T. Casas",
-    "J. De Jesus Gonzalez",
-    "J. Briceno",
-    "F. Whitley",
-    "Q. Mathews",
+    "J. Luis",
+    "P. Burdick",
+    "T. Widener",
+    "M. Manning",
+    "A. Genao",
+    "J. Dunn",
+    "E. Green",
+    "O. Caissie",
+    "J. Lebron",
+    "C. Fulmer",
+    "K. Griffin",
+    "J. Arnold",
+    "H. Kjerstad",
+    "N. Marte",
+    "D. Cartaya",
+    "F. Kilome",
+    "C. Benge",
+    "G. Canning",
+    "K. Allard",
+    "E. Conrad",
+    "N. Schultz",
+    "J. Balazovic",
+    "C. Dollander",
+    "M. Harrison",
+    "C. Cowser",
     "K. Campbell",
-    "J. Williams",
-    "J. De Leon",
-    "S. Beer",
-    "E. Carter",
-    "C. Early",
-    "S. Yamashita",
-    "A. Nimmala",
-    "N. Meyer",
+    "H. Davis",
+    "G. Rodriguez",
+    "H. Takahashi",
+    "R. Contreras",
+    "C. Moore",
+    "A. Medina",
+    "A. Baddoo",
+    "J. Lawlar",
+    "M. Ballesteros",
+    "C. Mayo",
+    "C. Hernandez",
+    "E. Hankins",
+    "L. Allen",
+    "J. Misiorowski",
+    "B. McKay",
+    "M. Murakami",
+    "H. Waldrep",
+    "Y. Curet",
+    "M. Winn",
+    "J. LaViolette",
+    "J. Bukauskas",
+    "W. Javier",
+    "C. Burns",
+    "L. Matos",
+    "S. Sanchez",
+    "J. Barrero",
+    "R. Pint",
+    "S. Walcott",
     "DL Hall",
     "T. White",
-    "F. Arias",
-    "J. Jobe",
-    "S. Zavala",
-    "N. Schultz",
-    "O. Peraza",
-    "C. Lagrange",
-    "G. Rodriguez",
-    "D. Garcia",
-    "B. Chandler",
-    "O. Caissie",
-    "N. Carlos Vera",
-    "T. Bremner",
-    "L. Armenteros",
-    "S. Torkelson",
-    "T. Yamada",
-    "A. Bracho",
-    "R. Snelling",
-    "J. Arnold",
-    "M. Murakami",
-    "T. Black",
-    "K. Allard",
-    "A. Gracia",
-    "E. Hancock",
-    "C. Fulmer",
-    "Jai. Chourio",
-    "E. Florial",
-    "C. Benge",
-    "P. Tolle",
-    "H. Waldrep",
-    "J. Balazovic",
-    "D. Cameron",
-    "T. Trammell",
     "X. Isaac",
-    "L. Patino",
-    "B. Davis",
-    "E. Perez",
-    "F. Wall",
-    "Q. Priester",
-    "J. Triantos",
-    "L. De Vries",
-    "V. Brujan",
-    "D. Cartaya",
-    "K. Alcantara",
-    "W. Jenkins",
-    "N. McLean",
-    "M. Clark",
-    "A. Page",
-    "J. Farmelo",
-    "A. Freeland",
-    "C. Martin",
-    "B. Shipley",
-    "J. Biddle",
-    "D. Waters",
-    "R. Tiedemann",
-    "C. Winn",
-    "Z. Matthews",
-    "C. Dollander",
-    "T. Beede",
-    "P. Burdick",
-    "B. Wilken",
-    "B. Thompson",
-    "M. Abel",
-    "K. Griffin",
-    "J. Bart",
-    "J. Perdomo",
-    "L. Hernandez",
     "S. Strosnider",
-    "J. Crawford",
-    "L. Pena (MIL)",
-    "L. Doyle",
-    "E. Morales",
-    "Z. Hope",
-    "T. Widener",
-    "N. Pearson",
-    "J. Gonzalez",
-    "A.J. Reed",
-    "S. Jones",
-    "T. Yesavage",
-    "A. Meyer",
-    "P. Messick",
-    "A. Arquette",
-    "R. Contreras",
-    "Y. Curet",
-    "J. Holliday",
-    "R. Lewis",
-    "C. Young",
-    "B. House",
-    "H. Kjerstad",
-    "C. Abrams",
-    "L. Montes",
-    "Jah. Jones",
+    "D. Lesko",
     "B. Rainer",
-    "A. Faedo",
-    "A. Tejeda",
-    "D. Burress",
-    "C. Bonemer",
-    "A. Miller",
-    "C. Kieboom",
-    "M. Luciano",
-    "M. Baez",
-    "C. Vaquero",
-    "D.J. Peterson",
-    "T. Hence",
+    "S. Jones",
+    "A. Gose",
+    "D. Cameron",
+    "A. Martin",
+    "C. Collier",
+    "J. Briceno",
+    "J. Caglianone",
+    "T. Gillen",
+    "E. Rodriguez",
     "R. Vilade",
-    "M. Manning",
-    "S. Sanchez",
-    "E. Hankins",
-    "Ja. Jung",
-    "J. Groshans",
+    "F. Arias",
+    "O. Colas",
+    "C. Lagrange",
+    "R. Arias",
+    "C. Young",
+    "N. Gonzales",
+    "H. Smith",
+    "D. Burress",
     "K. Harrison",
-    "G. Lombard Jr.",
-    "A. Hansen",
-    "J. Bleday",
-    "F. Kilome",
+    "M. Sirota",
+    "L. Doyle",
+    "S. Basallo",
+    "K. Anderson",
+    "J. Gonzalez",
+    "C. Condon",
+    "A. Nimmala",
+    "L. De Vries",
+    "B. Davis",
+    "M. Mayer",
+    "J. De Paula",
+    "D. Whitney",
+    "T. Yesavage",
+    "C. Keith",
+    "E. Perez",
+    "N. McLean",
+    "D. Beavers",
+    "R. Velazquez",
+    "E. Hancock",
+    "F. Barreto",
+    "C. Fuller",
+    "P. Tolle",
+    "T. Hence",
+    "N. Meyer",
+    "T. Johnson",
+    "C. Abrams",
+    "J. Walker",
     "R. Hassell",
-    "T. Sykora",
-    "J. Barrero",
-    "T. Bazzana",
-    "C. Cowser",
-    "J. Misiorowski",
-    "O. Martinez",
     "D. Jones",
-    "H. Alvarez"
+    "B. House",
+    "E. Florial",
+    "A. Bracho",
+    "B. Wilken",
+    "G. Lavigne",
+    "B. Goodwin",
+    "P. Eeles",
+    "N. Carlos Vera",
+    "T. Bradley",
+    "S. Yamashita",
+    "C. Dana",
+    "Q. Mathews",
+    "J. Triantos",
+    "S. Zavala",
+    "K. Watson",
+    "K. Mcgonigle",
+    "A. Painter",
+    "A. Page",
+    "J. Parker",
+    "O. Martinez",
+    "J. Groome",
+    "Jah. Jones",
+    "P. Messick",
+    "M. Clark",
+    "M. Liberatore",
+    "X. Neyens",
+    "J. Adams",
+    "F. Whitley",
+    "C. Bonemer",
+    "T. Bazzana",
+    "M. Baez",
+    "Jai. Chourio",
+    "L. Pena (MIL)",
+    "J. Perdomo",
+    "N. Pearson",
+    "Q. Priester",
+    "B. Montgomery",
+    "J. Holliday",
+    "T. Bremner",
+    "F. Wall",
+    "B. Rocchio",
+    "A. Faedo",
+    "T. Black",
+    "T. Thomas",
+    "K. Alcantara",
+    "C. Pache",
+    "W. Jenkins",
+    "E. Holliday",
+    "F. Alvarez",
+    "E. Carter",
+    "L. Montes",
+    "M. Abel",
+    "C. Martin",
+    "S. Howard",
+    "R. Snelling",
+    "A.J. Reed",
+    "G. Valera",
+    "M. Arroyo",
+    "J. Guerra",
+    "B. Eldridge",
+    "S. Beer",
+    "V. Brujan",
+    "T. Lutz",
+    "D. Espino",
+    "J. Crawford",
+    "A. Hansen",
+    "J. De Jesus Gonzalez",
+    "T. Trammell",
+    "L. Armenteros",
+    "A. Arquette",
+    "J. Turner",
+    "A. Tejeda",
+    "C. Norby",
+    "K. Okamoto",
+    "T. Yamada",
+    "J. P. Martinez",
+    "R. Waldschmidt",
+    "T. Szapucki",
+    "Ja. Jung",
+    "C. Spangenberg",
+    "R. Anthony",
+    "B. Shipley",
+    "K. Rocker",
+    "A. Jackson",
+    "C. Williams",
+    "J. Biddle",
+    "S. Torkelson",
+    "Rain. Rodriguez",
+    "C. Jensen",
+    "B. Thompson",
+    "J. Farmelo",
+    "J. Bart",
+    "H. Alvarez",
+    "S. Stewart",
+    "M. Banuelos",
+    "J. Groshans",
+    "D. Crews",
+    "E. Florentino",
+    "D. Garcia",
+    "G. Taylor",
+    "H. Bishop",
+    "B. Chandler",
+    "C. DeLauter",
+    "C. Vaquero",
+    "T. Troy",
+    "J. Bleday",
+    "D. Waters",
+    "Z. Veen",
+    "J. De Leon",
+    "T. Sykora",
+    "D. Curley",
+    "C. Early",
+    "J. Jobe",
+    "F. Celesten",
+    "J. Williams",
+    "L. Hernandez",
+    "R. Calaz",
+    "Z. Hope",
+    "Z. Matthews",
+    "R. Tiedemann",
+    "L. Patino",
+    "G. Lombard Jr.",
+    "O. Peraza",
+    "C. Emerson",
+    "R. Lewis",
+    "M. Luciano",
+    "C. Kieboom",
+    "L. Brinson",
+    "A. Duno",
+    "R. Herrera",
+    "R. Sloan",
+    "R. Mauricio",
+    "A. Gracia",
+    "Ad. Sanchez",
+    "A. Miller",
+    "A. Freeland",
+    "J. Wiggins",
+    "A. Meyer",
+    "C. Smith",
+    "K. Robinson",
+    "T. Beede",
+    "C. Winn",
+    "E. Morales",
+    "D.J. Peterson",
+    "R. Ryan"
   ],
   "batters": [
     {
@@ -3469,8 +3693,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 2,
       "tier": 1,
-      "est_value": 178.0,
-      "repl_level": 7.569,
+      "est_value": 45.0,
+      "repl_level": 15.376,
       "name": "Shohei Ohtani",
       "team": "LAD",
       "g": 148.3,
@@ -3496,7 +3720,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 2,
       "oopsy_tier": 1,
-      "oopsy_est_value": 180.5,
+      "oopsy_est_value": 49.0,
       "oopsy_ldb_score": 42.299,
       "oopsy_hr": 50.0,
       "oopsy_r": 124.0,
@@ -3524,8 +3748,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 5,
       "tier": 1,
-      "est_value": 89.0,
-      "repl_level": 9.975,
+      "est_value": 37.5,
+      "repl_level": 4.43,
       "name": "Vladimir Guerrero Jr.",
       "team": "TOR",
       "g": 152.9,
@@ -3550,7 +3774,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 6,
       "oopsy_tier": 1,
-      "oopsy_est_value": 95.5,
+      "oopsy_est_value": 46.5,
       "oopsy_ldb_score": 28.38,
       "oopsy_hr": 33.0,
       "oopsy_r": 98.0,
@@ -3576,8 +3800,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 7,
       "tier": 1,
-      "est_value": 82.5,
-      "repl_level": 9.975,
+      "est_value": 35.5,
+      "repl_level": 4.43,
       "name": "Yordan Alvarez",
       "team": "HOU",
       "g": 129.4,
@@ -3602,7 +3826,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 7,
       "oopsy_tier": 1,
-      "oopsy_est_value": 87.0,
+      "oopsy_est_value": 43.5,
       "oopsy_ldb_score": 26.743,
       "oopsy_hr": 33.0,
       "oopsy_r": 87.0,
@@ -3630,8 +3854,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 8,
       "tier": 1,
-      "est_value": 66.5,
-      "repl_level": 9.975,
+      "est_value": 30.0,
+      "repl_level": 4.43,
       "name": "Kyle Schwarber",
       "team": "PHI",
       "g": 150.0,
@@ -3656,7 +3880,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 10,
       "oopsy_tier": 1,
-      "oopsy_est_value": 66.0,
+      "oopsy_est_value": 36.0,
       "oopsy_ldb_score": 22.491,
       "oopsy_hr": 43.0,
       "oopsy_r": 96.0,
@@ -3682,8 +3906,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 10,
       "tier": 1,
-      "est_value": 100.5,
-      "repl_level": 2.725,
+      "est_value": 45.5,
+      "repl_level": -5.6,
       "name": "Fernando Tatis Jr.",
       "team": "SDP",
       "g": 148.3,
@@ -3709,7 +3933,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 11,
       "oopsy_tier": 1,
-      "oopsy_est_value": 95.0,
+      "oopsy_est_value": 48.0,
       "oopsy_ldb_score": 21.024,
       "oopsy_hr": 31.0,
       "oopsy_r": 93.0,
@@ -3735,8 +3959,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 14,
       "tier": 1,
-      "est_value": 49.0,
-      "repl_level": 9.975,
+      "est_value": 24.5,
+      "repl_level": 4.43,
       "name": "Bryce Harper",
       "team": "PHI",
       "g": 140.2,
@@ -3761,7 +3985,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 12,
       "oopsy_tier": 1,
-      "oopsy_est_value": 55.5,
+      "oopsy_est_value": 32.0,
       "oopsy_ldb_score": 20.338,
       "oopsy_hr": 31.0,
       "oopsy_r": 90.0,
@@ -3789,8 +4013,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 18,
       "tier": 1,
-      "est_value": 38.0,
-      "repl_level": 9.975,
+      "est_value": 21.0,
+      "repl_level": 4.43,
       "name": "Rafael Devers",
       "team": "SFG",
       "g": 149.9,
@@ -3815,7 +4039,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 28,
       "oopsy_tier": 2,
-      "oopsy_est_value": 22.5,
+      "oopsy_est_value": 20.0,
       "oopsy_ldb_score": 13.651,
       "oopsy_hr": 29.0,
       "oopsy_r": 90.0,
@@ -3843,8 +4067,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 21,
       "tier": 1,
-      "est_value": 11.0,
-      "repl_level": 14.791,
+      "est_value": 28.0,
+      "repl_level": -0.656,
       "name": "Corey Seager",
       "team": "TEX",
       "g": 123.6,
@@ -3869,7 +4093,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 21,
       "oopsy_tier": 1,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 27.0,
       "oopsy_ldb_score": 15.313,
       "oopsy_hr": 29.0,
       "oopsy_r": 77.0,
@@ -3897,8 +4121,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 28,
       "tier": 1,
-      "est_value": 21.0,
-      "repl_level": 9.975,
+      "est_value": 15.5,
+      "repl_level": 4.43,
       "name": "Yandy Díaz",
       "team": "TBR",
       "g": 142.2,
@@ -3923,7 +4147,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 52,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 10.0,
       "oopsy_ldb_score": 8.157,
       "oopsy_hr": 19.0,
       "oopsy_r": 80.0,
@@ -3949,8 +4173,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 29,
       "tier": 1,
-      "est_value": 21.0,
-      "repl_level": 9.975,
+      "est_value": 15.5,
+      "repl_level": 4.43,
       "name": "Freddie Freeman",
       "team": "LAD",
       "g": 143.0,
@@ -3975,7 +4199,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 26,
       "oopsy_tier": 1,
-      "oopsy_est_value": 26.5,
+      "oopsy_est_value": 21.5,
       "oopsy_ldb_score": 14.458,
       "oopsy_hr": 24.0,
       "oopsy_r": 87.0,
@@ -4001,8 +4225,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 31,
       "tier": 2,
-      "est_value": 54.0,
-      "repl_level": 2.725,
+      "est_value": 30.5,
+      "repl_level": -5.6,
       "name": "Seiya Suzuki",
       "team": "CHC",
       "g": 139.5,
@@ -4028,7 +4252,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 37,
       "oopsy_tier": 2,
-      "oopsy_est_value": 43.0,
+      "oopsy_est_value": 29.0,
       "oopsy_ldb_score": 10.517,
       "oopsy_hr": 26.0,
       "oopsy_r": 85.0,
@@ -4056,8 +4280,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 33,
       "tier": 2,
-      "est_value": 0.5,
-      "repl_level": 14.791,
+      "est_value": 21.5,
+      "repl_level": -0.656,
       "name": "Francisco Lindor",
       "team": "NYM",
       "g": 140.0,
@@ -4082,7 +4306,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 41,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 17.0,
       "oopsy_ldb_score": 9.542,
       "oopsy_hr": 24.0,
       "oopsy_r": 81.0,
@@ -4111,8 +4335,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 35,
       "tier": 2,
-      "est_value": 0.5,
-      "repl_level": 14.791,
+      "est_value": 20.0,
+      "repl_level": -0.656,
       "name": "Mookie Betts",
       "team": "LAD",
       "g": 142.4,
@@ -4137,7 +4361,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 38,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 18.0,
       "oopsy_ldb_score": 10.278,
       "oopsy_hr": 22.0,
       "oopsy_r": 87.0,
@@ -4165,8 +4389,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 38,
       "tier": 2,
-      "est_value": 24.5,
-      "repl_level": 6.754,
+      "est_value": 22.0,
+      "repl_level": -2.197,
       "name": "Austin Riley",
       "team": "ATL",
       "g": 146.0,
@@ -4191,7 +4415,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 22,
       "oopsy_tier": 1,
-      "oopsy_est_value": 61.0,
+      "oopsy_est_value": 29.0,
       "oopsy_ldb_score": 15.305,
       "oopsy_hr": 33.0,
       "oopsy_r": 92.0,
@@ -4204,8 +4428,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4220,8 +4444,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 43,
       "tier": 2,
-      "est_value": 40.5,
-      "repl_level": 2.725,
+      "est_value": 26.0,
+      "repl_level": -5.6,
       "name": "Randy Arozarena",
       "team": "SEA",
       "g": 151.7,
@@ -4246,7 +4470,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 46,
       "oopsy_tier": 2,
-      "oopsy_est_value": 35.0,
+      "oopsy_est_value": 26.0,
       "oopsy_ldb_score": 8.908,
       "oopsy_hr": 23.0,
       "oopsy_r": 85.0,
@@ -4272,8 +4496,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 44,
       "tier": 2,
-      "est_value": 40.0,
-      "repl_level": 2.725,
+      "est_value": 26.0,
+      "repl_level": -5.6,
       "name": "Taylor Ward",
       "team": "BAL",
       "g": 147.8,
@@ -4298,7 +4522,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 56,
       "oopsy_tier": 2,
-      "oopsy_est_value": 29.5,
+      "oopsy_est_value": 24.0,
       "oopsy_ldb_score": 7.77,
       "oopsy_hr": 28.0,
       "oopsy_r": 84.0,
@@ -4324,8 +4548,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 46,
       "tier": 2,
-      "est_value": 39.0,
-      "repl_level": 2.725,
+      "est_value": 25.5,
+      "repl_level": -5.6,
       "name": "Jackson Chourio",
       "team": "MIL",
       "g": 144.9,
@@ -4352,7 +4576,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 42,
       "oopsy_tier": 2,
-      "oopsy_est_value": 38.0,
+      "oopsy_est_value": 27.0,
       "oopsy_ldb_score": 9.494,
       "oopsy_hr": 25.0,
       "oopsy_r": 86.0,
@@ -4378,8 +4602,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 48,
       "tier": 2,
-      "est_value": 24.5,
-      "repl_level": 5.424,
+      "est_value": 20.0,
+      "repl_level": -2.197,
       "name": "Jazz Chisholm Jr.",
       "team": "NYY",
       "g": 139.9,
@@ -4405,7 +4629,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 36,
       "oopsy_tier": 2,
-      "oopsy_est_value": 41.0,
+      "oopsy_est_value": 22.0,
       "oopsy_ldb_score": 11.298,
       "oopsy_hr": 28.0,
       "oopsy_r": 78.0,
@@ -4431,8 +4655,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 49,
       "tier": 2,
-      "est_value": 37.5,
-      "repl_level": 2.725,
+      "est_value": 25.0,
+      "repl_level": -5.6,
       "name": "Mike Trout",
       "team": "LAA",
       "g": 117.9,
@@ -4458,7 +4682,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 34,
       "oopsy_tier": 2,
-      "oopsy_est_value": 48.5,
+      "oopsy_est_value": 31.0,
       "oopsy_ldb_score": 11.597,
       "oopsy_hr": 28.0,
       "oopsy_r": 77.0,
@@ -4486,8 +4710,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 50,
       "tier": 2,
-      "est_value": 1.0,
-      "repl_level": 9.975,
+      "est_value": 9.0,
+      "repl_level": 4.43,
       "name": "Matt Olson",
       "team": "ATL",
       "g": 153.6,
@@ -4512,7 +4736,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 19,
       "oopsy_tier": 1,
-      "oopsy_est_value": 34.5,
+      "oopsy_est_value": 24.5,
       "oopsy_ldb_score": 16.085,
       "oopsy_hr": 33.0,
       "oopsy_r": 93.0,
@@ -4538,8 +4762,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 51,
       "tier": 2,
-      "est_value": 0.5,
-      "repl_level": 14.791,
+      "est_value": 17.0,
+      "repl_level": -0.656,
       "name": "Willy Adames",
       "team": "SFG",
       "g": 151.8,
@@ -4564,7 +4788,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 70,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 10.5,
       "oopsy_ldb_score": 5.987,
       "oopsy_hr": 26.0,
       "oopsy_r": 81.0,
@@ -4592,8 +4816,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 54,
       "tier": 2,
-      "est_value": 32.5,
-      "repl_level": 2.725,
+      "est_value": 23.5,
+      "repl_level": -5.6,
       "name": "Christian Yelich",
       "team": "MIL",
       "g": 135.0,
@@ -4618,7 +4842,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 55,
       "oopsy_tier": 2,
-      "oopsy_est_value": 30.0,
+      "oopsy_est_value": 24.0,
       "oopsy_ldb_score": 7.859,
       "oopsy_hr": 20.0,
       "oopsy_r": 78.0,
@@ -4644,8 +4868,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 56,
       "tier": 2,
-      "est_value": 31.0,
-      "repl_level": 2.725,
+      "est_value": 23.0,
+      "repl_level": -5.6,
       "name": "Ian Happ",
       "team": "CHC",
       "g": 145.8,
@@ -4670,7 +4894,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 62,
       "oopsy_tier": 2,
-      "oopsy_est_value": 26.5,
+      "oopsy_est_value": 23.0,
       "oopsy_ldb_score": 7.21,
       "oopsy_hr": 22.0,
       "oopsy_r": 82.0,
@@ -4696,8 +4920,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 60,
       "tier": 2,
-      "est_value": 29.0,
-      "repl_level": 2.725,
+      "est_value": 22.5,
+      "repl_level": -5.6,
       "name": "Brandon Nimmo",
       "team": "TEX",
       "g": 144.4,
@@ -4722,7 +4946,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 82,
       "oopsy_tier": 2,
-      "oopsy_est_value": 15.0,
+      "oopsy_est_value": 19.0,
       "oopsy_ldb_score": 4.868,
       "oopsy_hr": 20.0,
       "oopsy_r": 78.0,
@@ -4748,8 +4972,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 62,
       "tier": 2,
-      "est_value": 7.5,
-      "repl_level": 6.754,
+      "est_value": 16.5,
+      "repl_level": -2.197,
       "name": "Alex Bregman",
       "team": "CHC",
       "g": 148.7,
@@ -4774,7 +4998,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 97,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 7.0,
       "oopsy_ldb_score": 3.128,
       "oopsy_hr": 19.0,
       "oopsy_r": 80.0,
@@ -4800,8 +5024,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 71,
       "tier": 2,
-      "est_value": 0.5,
-      "repl_level": 9.975,
+      "est_value": 5.0,
+      "repl_level": 4.43,
       "name": "Vinnie Pasquantino",
       "team": "KCR",
       "g": 147.0,
@@ -4826,7 +5050,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 47,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 11.5,
       "oopsy_ldb_score": 8.858,
       "oopsy_hr": 25.0,
       "oopsy_r": 81.0,
@@ -4852,8 +5076,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 73,
       "tier": 2,
-      "est_value": 23.0,
-      "repl_level": 2.725,
+      "est_value": 20.5,
+      "repl_level": -5.6,
       "name": "Jurickson Profar",
       "team": "ATL",
       "g": 137.8,
@@ -4894,8 +5118,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 306,
       "tier": 2,
-      "est_value": 0.5,
-      "repl_level": 6.754,
+      "est_value": 13.0,
+      "repl_level": -2.197,
       "name": "Max Muncy",
       "team": "LAD",
       "g": 111.6,
@@ -4933,8 +5157,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4949,8 +5173,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 83,
       "tier": 2,
-      "est_value": 15.5,
-      "repl_level": 2.725,
+      "est_value": 18.0,
+      "repl_level": -5.6,
       "name": "Bryan Reynolds",
       "team": "PIT",
       "g": 146.1,
@@ -4976,7 +5200,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 92,
       "oopsy_tier": 2,
-      "oopsy_est_value": 9.0,
+      "oopsy_est_value": 16.5,
       "oopsy_ldb_score": 3.675,
       "oopsy_hr": 21.0,
       "oopsy_r": 80.0,
@@ -5002,8 +5226,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 89,
       "tier": 2,
-      "est_value": 13.0,
-      "repl_level": 2.725,
+      "est_value": 17.5,
+      "repl_level": -5.6,
       "name": "Jose Altuve",
       "team": "HOU",
       "g": 138.6,
@@ -5029,7 +5253,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 110,
       "oopsy_tier": 3,
-      "oopsy_est_value": 3.0,
+      "oopsy_est_value": 14.5,
       "oopsy_ldb_score": 2.483,
       "oopsy_hr": 17.0,
       "oopsy_r": 72.0,
@@ -5055,8 +5279,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 92,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 14.791,
+      "est_value": 9.0,
+      "repl_level": -0.656,
       "name": "Xander Bogaerts",
       "team": "SDP",
       "g": 136.6,
@@ -5081,7 +5305,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 137,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 1.5,
       "oopsy_ldb_score": 1.014,
       "oopsy_hr": 15.0,
       "oopsy_r": 67.0,
@@ -5108,7 +5332,7 @@ export const LDB_DATA = {
       "rank": 97,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Josh Naylor",
       "team": "SEA",
       "g": 144.1,
@@ -5133,7 +5357,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 83,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 4.0,
       "oopsy_ldb_score": 4.859,
       "oopsy_hr": 20.0,
       "oopsy_r": 72.0,
@@ -5159,8 +5383,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 99,
       "tier": 3,
-      "est_value": 9.0,
-      "repl_level": 2.725,
+      "est_value": 16.0,
+      "repl_level": -5.6,
       "name": "Lars Nootbaar",
       "team": "STL",
       "g": 120.7,
@@ -5186,7 +5410,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 126,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 13.0,
       "oopsy_ldb_score": 1.664,
       "oopsy_hr": 16.0,
       "oopsy_r": 66.0,
@@ -5214,8 +5438,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 101,
       "tier": 3,
-      "est_value": 8.0,
-      "repl_level": 2.725,
+      "est_value": 15.5,
+      "repl_level": -5.6,
       "name": "Cody Bellinger",
       "team": "NYY",
       "g": 138.6,
@@ -5242,7 +5466,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 101,
       "oopsy_tier": 3,
-      "oopsy_est_value": 5.5,
+      "oopsy_est_value": 15.5,
       "oopsy_ldb_score": 2.921,
       "oopsy_hr": 20.0,
       "oopsy_r": 78.0,
@@ -5270,8 +5494,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 103,
       "tier": 3,
-      "est_value": 6.5,
-      "repl_level": 2.725,
+      "est_value": 15.0,
+      "repl_level": -5.6,
       "name": "Kerry Carpenter",
       "team": "DET",
       "g": 116.0,
@@ -5297,7 +5521,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 117,
       "oopsy_tier": 3,
-      "oopsy_est_value": 2.0,
+      "oopsy_est_value": 14.0,
       "oopsy_ldb_score": 2.192,
       "oopsy_hr": 23.0,
       "oopsy_r": 65.0,
@@ -5327,7 +5551,7 @@ export const LDB_DATA = {
       "rank": 104,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Josh Bell",
       "team": "MIN",
       "g": 131.1,
@@ -5378,8 +5602,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 105,
       "tier": 3,
-      "est_value": 6.0,
-      "repl_level": 2.725,
+      "est_value": 15.0,
+      "repl_level": -5.6,
       "name": "Alec Burleson",
       "team": "STL",
       "g": 138.7,
@@ -5406,7 +5630,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 109,
       "oopsy_tier": 3,
-      "oopsy_est_value": 3.0,
+      "oopsy_est_value": 14.5,
       "oopsy_ldb_score": 2.486,
       "oopsy_hr": 19.0,
       "oopsy_r": 68.0,
@@ -5432,8 +5656,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 107,
       "tier": 3,
-      "est_value": 6.0,
-      "repl_level": 2.725,
+      "est_value": 15.0,
+      "repl_level": -5.6,
       "name": "Jonathan India",
       "team": "KCR",
       "g": 126.2,
@@ -5460,7 +5684,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 145,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 11.5,
       "oopsy_ldb_score": 0.728,
       "oopsy_hr": 12.0,
       "oopsy_r": 61.0,
@@ -5487,7 +5711,7 @@ export const LDB_DATA = {
       "rank": 109,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Marcell Ozuna",
       "team": "PIT",
       "g": 123.4,
@@ -5540,8 +5764,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 111,
       "tier": 3,
-      "est_value": 3.5,
-      "repl_level": 2.725,
+      "est_value": 14.5,
+      "repl_level": -5.6,
       "name": "Jordan Beck",
       "team": "COL",
       "g": 130.6,
@@ -5566,7 +5790,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 168,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 9.0,
       "oopsy_ldb_score": -0.542,
       "oopsy_hr": 17.0,
       "oopsy_r": 69.0,
@@ -5595,8 +5819,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 112,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 6.5,
+      "repl_level": -0.656,
       "name": "Otto Lopez",
       "team": "MIA",
       "g": 135.9,
@@ -5649,7 +5873,7 @@ export const LDB_DATA = {
       "rank": 113,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Andrew Vaughn",
       "team": "MIL",
       "g": 128.9,
@@ -5703,7 +5927,7 @@ export const LDB_DATA = {
       "rank": 115,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Christian Walker",
       "team": "HOU",
       "g": 135.2,
@@ -5756,8 +5980,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 116,
       "tier": 3,
-      "est_value": 1.0,
-      "repl_level": 2.725,
+      "est_value": 13.5,
+      "repl_level": -5.6,
       "name": "Willi Castro",
       "team": "COL",
       "g": 127.4,
@@ -5785,7 +6009,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 112,
       "oopsy_tier": 3,
-      "oopsy_est_value": 2.5,
+      "oopsy_est_value": 14.5,
       "oopsy_ldb_score": 2.384,
       "oopsy_hr": 13.0,
       "oopsy_r": 70.0,
@@ -5811,8 +6035,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 117,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 13.5,
+      "repl_level": -5.6,
       "name": "Luis Robert Jr.",
       "team": "NYM",
       "g": 127.5,
@@ -5838,7 +6062,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 86,
       "oopsy_tier": 2,
-      "oopsy_est_value": 14.5,
+      "oopsy_est_value": 18.5,
       "oopsy_ldb_score": 4.736,
       "oopsy_hr": 22.0,
       "oopsy_r": 67.0,
@@ -5851,9 +6075,9 @@ export const LDB_DATA = {
       "oopsy_war": 2.82,
       "oopsy_g": 131.0,
       "tags": [
+        "STREAKY",
         "SLEEPER",
-        "INJURY_RISK",
-        "STREAKY"
+        "INJURY_RISK"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
       "health_pct": 72,
@@ -5868,8 +6092,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 118,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 13.5,
+      "repl_level": -5.6,
       "name": "Mickey Moniak",
       "team": "COL",
       "g": 116.7,
@@ -5896,7 +6120,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 104,
       "oopsy_tier": 3,
-      "oopsy_est_value": 5.0,
+      "oopsy_est_value": 15.0,
       "oopsy_ldb_score": 2.827,
       "oopsy_hr": 21.0,
       "oopsy_r": 67.0,
@@ -5925,8 +6149,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 120,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 13.0,
+      "repl_level": -5.6,
       "name": "Matt Wallner",
       "team": "MIN",
       "g": 117.1,
@@ -5952,7 +6176,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 71,
       "oopsy_tier": 2,
-      "oopsy_est_value": 20.5,
+      "oopsy_est_value": 21.0,
       "oopsy_ldb_score": 5.964,
       "oopsy_hr": 22.0,
       "oopsy_r": 66.0,
@@ -5981,8 +6205,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 123,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 3.5,
+      "repl_level": 0.337,
       "name": "Marcus Semien",
       "team": "NYM",
       "g": 137.2,
@@ -6033,8 +6257,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 124,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 13.0,
+      "repl_level": -5.6,
       "name": "Ramón Laureano",
       "team": "SDP",
       "g": 127.1,
@@ -6060,7 +6284,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 100,
       "oopsy_tier": 3,
-      "oopsy_est_value": 5.5,
+      "oopsy_est_value": 15.5,
       "oopsy_ldb_score": 2.942,
       "oopsy_hr": 23.0,
       "oopsy_r": 69.0,
@@ -6073,8 +6297,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6089,8 +6313,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 125,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 13.0,
+      "repl_level": -5.6,
       "name": "Ryan O'Hearn",
       "team": "PIT",
       "g": 125.0,
@@ -6117,7 +6341,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 133,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 12.0,
       "oopsy_ldb_score": 1.155,
       "oopsy_hr": 15.0,
       "oopsy_r": 65.0,
@@ -6143,8 +6367,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 126,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 3.5,
+      "repl_level": 0.337,
       "name": "Nico Hoerner",
       "team": "CHC",
       "g": 146.0,
@@ -6169,7 +6393,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 130,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": 1.272,
       "oopsy_hr": 7.0,
       "oopsy_r": 76.0,
@@ -6195,8 +6419,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 127,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 3.5,
+      "repl_level": 0.337,
       "name": "Matt McLain",
       "team": "CIN",
       "g": 130.8,
@@ -6221,7 +6445,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 111,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.0,
       "oopsy_ldb_score": 2.432,
       "oopsy_hr": 20.0,
       "oopsy_r": 72.0,
@@ -6249,8 +6473,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 128,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 3.0,
+      "repl_level": 0.337,
       "name": "Jake Cronenworth",
       "team": "SDP",
       "g": 140.8,
@@ -6301,8 +6525,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 129,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 3.0,
+      "repl_level": 0.337,
       "name": "Jorge Polanco",
       "team": "NYM",
       "g": 123.1,
@@ -6327,7 +6551,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 121,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 4.0,
       "oopsy_ldb_score": 1.938,
       "oopsy_hr": 20.0,
       "oopsy_r": 64.0,
@@ -6355,8 +6579,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 130,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 12.0,
+      "repl_level": -5.6,
       "name": "Tyler Freeman",
       "team": "COL",
       "g": 83.8,
@@ -6383,7 +6607,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 196,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": -2.46,
       "oopsy_hr": 5.0,
       "oopsy_r": 41.0,
@@ -6409,8 +6633,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 133,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 2.5,
+      "repl_level": 0.337,
       "name": "Brandon Lowe",
       "team": "PIT",
       "g": 125.2,
@@ -6435,7 +6659,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 93,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 7.0,
       "oopsy_ldb_score": 3.524,
       "oopsy_hr": 24.0,
       "oopsy_r": 67.0,
@@ -6463,8 +6687,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 135,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 12.0,
+      "repl_level": -5.6,
       "name": "Cedric Mullins",
       "team": "TBR",
       "g": 111.1,
@@ -6518,8 +6742,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 136,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 6.754,
+      "est_value": 6.5,
+      "repl_level": -2.197,
       "name": "Isaac Paredes",
       "team": "HOU",
       "g": 114.0,
@@ -6544,7 +6768,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 116,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": 2.263,
       "oopsy_hr": 16.0,
       "oopsy_r": 64.0,
@@ -6570,8 +6794,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 137,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 11.5,
+      "repl_level": -5.6,
       "name": "Jorge Soler",
       "team": "LAA",
       "g": 115.8,
@@ -6597,7 +6821,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 161,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 10.0,
       "oopsy_ldb_score": 0.012,
       "oopsy_hr": 22.0,
       "oopsy_r": 59.0,
@@ -6626,7 +6850,7 @@ export const LDB_DATA = {
       "rank": 138,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Jake Burger",
       "team": "TEX",
       "g": 129.5,
@@ -6677,8 +6901,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 139,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 11.5,
+      "repl_level": -5.6,
       "name": "Tyler O'Neill",
       "team": "BAL",
       "g": 88.7,
@@ -6704,7 +6928,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 135,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 12.0,
       "oopsy_ldb_score": 1.062,
       "oopsy_hr": 20.0,
       "oopsy_r": 52.0,
@@ -6735,7 +6959,7 @@ export const LDB_DATA = {
       "rank": 140,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Nolan Schanuel",
       "team": "LAA",
       "g": 140.7,
@@ -6760,7 +6984,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 90,
       "oopsy_tier": 2,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.5,
       "oopsy_ldb_score": 4.047,
       "oopsy_hr": 12.0,
       "oopsy_r": 74.0,
@@ -6786,8 +7010,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 141,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 6.754,
+      "est_value": 5.5,
+      "repl_level": -2.197,
       "name": "Carlos Correa",
       "team": "HOU",
       "g": 129.2,
@@ -6813,7 +7037,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 106,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 6.5,
       "oopsy_ldb_score": 2.646,
       "oopsy_hr": 17.0,
       "oopsy_r": 68.0,
@@ -6841,8 +7065,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 142,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 12.054,
+      "est_value": 9.5,
+      "repl_level": -4.568,
       "name": "J.T. Realmuto",
       "team": "PHI",
       "g": 121.0,
@@ -6867,7 +7091,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 201,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": -2.848,
       "oopsy_hr": 16.0,
       "oopsy_r": 59.0,
@@ -6893,8 +7117,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 145,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 5.0,
+      "repl_level": -2.197,
       "name": "Jordan Westburg",
       "team": "BAL",
       "g": 94.5,
@@ -6920,7 +7144,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 155,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": 0.27,
       "oopsy_hr": 18.0,
       "oopsy_r": 59.0,
@@ -6933,8 +7157,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6950,7 +7174,7 @@ export const LDB_DATA = {
       "rank": 146,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Joc Pederson",
       "team": "TEX",
       "g": 102.6,
@@ -7003,8 +7227,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 147,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 10.0,
+      "repl_level": -5.6,
       "name": "Adolis García",
       "team": "PHI",
       "g": 135.0,
@@ -7030,7 +7254,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 127,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 13.0,
       "oopsy_ldb_score": 1.561,
       "oopsy_hr": 26.0,
       "oopsy_r": 70.0,
@@ -7057,7 +7281,7 @@ export const LDB_DATA = {
       "rank": 153,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Ozzie Albies",
       "team": "ATL",
       "g": 140.1,
@@ -7082,7 +7306,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 131,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": 1.198,
       "oopsy_hr": 18.0,
       "oopsy_r": 76.0,
@@ -7110,8 +7334,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 154,
       "tier": 3,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 9.0,
+      "repl_level": -5.6,
       "name": "Andrew Benintendi",
       "team": "CHW",
       "g": 119.6,
@@ -7136,7 +7360,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 197,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": -2.511,
       "oopsy_hr": 15.0,
       "oopsy_r": 59.0,
@@ -7165,7 +7389,7 @@ export const LDB_DATA = {
       "rank": 155,
       "tier": 3,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Luis García Jr.",
       "team": "WSN",
       "g": 123.8,
@@ -7190,7 +7414,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 152,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 1.5,
       "oopsy_ldb_score": 0.387,
       "oopsy_hr": 16.0,
       "oopsy_r": 58.0,
@@ -7216,8 +7440,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 156,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 9.0,
+      "repl_level": -5.6,
       "name": "Jesús Sánchez",
       "team": "TOR",
       "g": 103.9,
@@ -7243,7 +7467,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 140,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 11.5,
       "oopsy_ldb_score": 0.887,
       "oopsy_hr": 17.0,
       "oopsy_r": 55.0,
@@ -7272,8 +7496,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 157,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 5.424,
+      "est_value": 1.0,
+      "repl_level": -0.656,
       "name": "Xavier Edwards",
       "team": "MIA",
       "g": 134.8,
@@ -7299,7 +7523,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 150,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 1.5,
       "oopsy_ldb_score": 0.517,
       "oopsy_hr": 5.0,
       "oopsy_r": 73.0,
@@ -7325,8 +7549,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 158,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 8.5,
+      "repl_level": -5.6,
       "name": "Steven Kwan",
       "team": "CLE",
       "g": 147.3,
@@ -7351,7 +7575,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 96,
       "oopsy_tier": 3,
-      "oopsy_est_value": 7.5,
+      "oopsy_est_value": 16.0,
       "oopsy_ldb_score": 3.326,
       "oopsy_hr": 8.0,
       "oopsy_r": 83.0,
@@ -7377,8 +7601,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 160,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 12.054,
+      "est_value": 6.5,
+      "repl_level": -4.568,
       "name": "Yainer Diaz",
       "team": "HOU",
       "g": 130.5,
@@ -7403,7 +7627,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 165,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 6.5,
       "oopsy_ldb_score": -0.232,
       "oopsy_hr": 19.0,
       "oopsy_r": 60.0,
@@ -7431,8 +7655,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 163,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 8.0,
+      "repl_level": -5.6,
       "name": "Jeff McNeil",
       "team": "ATH",
       "g": 131.6,
@@ -7459,7 +7683,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 200,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.0,
       "oopsy_ldb_score": -2.768,
       "oopsy_hr": 10.0,
       "oopsy_r": 67.0,
@@ -7485,8 +7709,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 167,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 7.5,
+      "repl_level": -5.6,
       "name": "Mike Yastrzemski",
       "team": "ATL",
       "g": 109.3,
@@ -7512,7 +7736,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 208,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 4.0,
       "oopsy_ldb_score": -3.341,
       "oopsy_hr": 16.0,
       "oopsy_r": 59.0,
@@ -7540,8 +7764,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 168,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 7.5,
+      "repl_level": -5.6,
       "name": "Chandler Simpson",
       "team": "TBR",
       "g": 108.9,
@@ -7567,7 +7791,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 227,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": -4.539,
       "oopsy_hr": 2.0,
       "oopsy_r": 49.0,
@@ -7580,8 +7804,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.58,
       "oopsy_g": 105.0,
       "tags": [
-        "SLEEPER",
-        "SPEED_VALUE"
+        "SPEED_VALUE",
+        "SLEEPER"
       ],
       "note": "[PL #117] Zero barrels in 376 batted-ball events. But 44 SB in 104 G — on pace for 70+ in full season. TBR platoon limits AB. LDB: aSB efficiency could be spectacular if usage rate holds. Pure speed play.",
       "health_pct": 90,
@@ -7596,8 +7820,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 169,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 7.5,
+      "repl_level": -5.6,
       "name": "Trevor Larnach",
       "team": "MIN",
       "g": 106.7,
@@ -7623,7 +7847,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 202,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.0,
       "oopsy_ldb_score": -2.864,
       "oopsy_hr": 13.0,
       "oopsy_r": 51.0,
@@ -7651,8 +7875,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 170,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 12.054,
+      "est_value": 5.5,
+      "repl_level": -4.568,
       "name": "Ryan Jeffers",
       "team": "MIN",
       "g": 125.4,
@@ -7677,7 +7901,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 148,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 8.0,
       "oopsy_ldb_score": 0.659,
       "oopsy_hr": 16.0,
       "oopsy_r": 63.0,
@@ -7706,7 +7930,7 @@ export const LDB_DATA = {
       "rank": 175,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Spencer Horwitz",
       "team": "PIT",
       "g": 116.7,
@@ -7757,8 +7981,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 179,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 6.0,
+      "repl_level": -5.6,
       "name": "Isaac Collins",
       "team": "KCR",
       "g": 107.7,
@@ -7783,7 +8007,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 163,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 10.0,
       "oopsy_ldb_score": -0.065,
       "oopsy_hr": 8.0,
       "oopsy_r": 60.0,
@@ -7810,7 +8034,7 @@ export const LDB_DATA = {
       "rank": 180,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Luis Arraez",
       "team": "SFG",
       "g": 139.3,
@@ -7862,7 +8086,7 @@ export const LDB_DATA = {
       "rank": 181,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Nolan Arenado",
       "team": "ARI",
       "g": 133.1,
@@ -7915,8 +8139,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 182,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 6.0,
+      "repl_level": -5.6,
       "name": "Harrison Bader",
       "team": "SFG",
       "g": 122.8,
@@ -7968,8 +8192,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 183,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 6.0,
+      "repl_level": -5.6,
       "name": "Lane Thomas",
       "team": "KCR",
       "g": 98.4,
@@ -7995,7 +8219,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 213,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.5,
       "oopsy_ldb_score": -3.644,
       "oopsy_hr": 12.0,
       "oopsy_r": 49.0,
@@ -8023,8 +8247,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 186,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 12.054,
+      "est_value": 4.0,
+      "repl_level": -4.568,
       "name": "Tyler Stephenson",
       "team": "CIN",
       "g": 108.4,
@@ -8049,7 +8273,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 190,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": -2.24,
       "oopsy_hr": 16.0,
       "oopsy_r": 51.0,
@@ -8062,8 +8286,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.73,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "BUST"
+        "BUST",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8079,7 +8303,7 @@ export const LDB_DATA = {
       "rank": 188,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Jared Triolo",
       "team": "PIT",
       "g": 125.8,
@@ -8132,8 +8356,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 189,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 5.0,
+      "repl_level": -5.6,
       "name": "Jake Meyers",
       "team": "HOU",
       "g": 117.8,
@@ -8159,7 +8383,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 214,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.5,
       "oopsy_ldb_score": -3.683,
       "oopsy_hr": 11.0,
       "oopsy_r": 55.0,
@@ -8188,7 +8412,7 @@ export const LDB_DATA = {
       "rank": 192,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Spencer Steer",
       "team": "CIN",
       "g": 100.2,
@@ -8242,7 +8466,7 @@ export const LDB_DATA = {
       "rank": 195,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 14.791,
+      "repl_level": -0.656,
       "name": "Ha-Seong Kim",
       "team": "ATL",
       "g": 88.7,
@@ -8295,8 +8519,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 196,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 4.0,
+      "repl_level": -5.6,
       "name": "Jake McCarthy",
       "team": "COL",
       "g": 90.6,
@@ -8321,7 +8545,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 191,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 6.0,
       "oopsy_ldb_score": -2.242,
       "oopsy_hr": 7.0,
       "oopsy_r": 49.0,
@@ -8350,7 +8574,7 @@ export const LDB_DATA = {
       "rank": 201,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Pavin Smith",
       "team": "ARI",
       "g": 99.4,
@@ -8402,7 +8626,7 @@ export const LDB_DATA = {
       "rank": 202,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Ryan McMahon",
       "team": "NYY",
       "g": 117.2,
@@ -8456,8 +8680,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 203,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 3.5,
+      "repl_level": -5.6,
       "name": "Lourdes Gurriel Jr.",
       "team": "ARI",
       "g": 81.4,
@@ -8482,7 +8706,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 215,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.5,
       "oopsy_ldb_score": -3.733,
       "oopsy_hr": 13.0,
       "oopsy_r": 53.0,
@@ -8511,7 +8735,7 @@ export const LDB_DATA = {
       "rank": 204,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Edouard Julien",
       "team": "COL",
       "g": 88.3,
@@ -8564,7 +8788,7 @@ export const LDB_DATA = {
       "rank": 207,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Rhys Hoskins",
       "team": "CLE",
       "g": 94.3,
@@ -8618,8 +8842,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 208,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 3.0,
+      "repl_level": -5.6,
       "name": "Gavin Sheets",
       "team": "SDP",
       "g": 117.5,
@@ -8673,7 +8897,7 @@ export const LDB_DATA = {
       "rank": 209,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Andrés Giménez",
       "team": "TOR",
       "g": 138.2,
@@ -8726,8 +8950,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 211,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 3.0,
+      "repl_level": -5.6,
       "name": "Josh Smith",
       "team": "TEX",
       "g": 125.0,
@@ -8755,7 +8979,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 189,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 6.0,
       "oopsy_ldb_score": -2.118,
       "oopsy_hr": 10.0,
       "oopsy_r": 59.0,
@@ -8782,7 +9006,7 @@ export const LDB_DATA = {
       "rank": 214,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Romy Gonzalez",
       "team": "BOS",
       "g": 71.1,
@@ -8837,7 +9061,7 @@ export const LDB_DATA = {
       "rank": 215,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Josh Jung",
       "team": "TEX",
       "g": 127.9,
@@ -8875,8 +9099,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.86,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8891,8 +9115,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 217,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 2.0,
+      "repl_level": -5.6,
       "name": "Tommy Edman",
       "team": "LAD",
       "g": 109.2,
@@ -8947,8 +9171,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 218,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 2.0,
+      "repl_level": -5.6,
       "name": "Davis Schneider",
       "team": "TOR",
       "g": 86.5,
@@ -8974,7 +9198,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 232,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 1.0,
       "oopsy_ldb_score": -4.934,
       "oopsy_hr": 12.0,
       "oopsy_r": 39.0,
@@ -9001,7 +9225,7 @@ export const LDB_DATA = {
       "rank": 221,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Carson Kelly",
       "team": "CHC",
       "g": 95.4,
@@ -9054,8 +9278,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 224,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 2.0,
+      "repl_level": -5.6,
       "name": "Christopher Morel",
       "team": "MIA",
       "g": 86.6,
@@ -9106,8 +9330,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 225,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 2.0,
+      "repl_level": -5.6,
       "name": "Wenceel Pérez",
       "team": "DET",
       "g": 109.1,
@@ -9134,7 +9358,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 195,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.5,
       "oopsy_ldb_score": -2.46,
       "oopsy_hr": 13.0,
       "oopsy_r": 71.0,
@@ -9163,7 +9387,7 @@ export const LDB_DATA = {
       "rank": 226,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -0.656,
       "name": "Chase Meidroth",
       "team": "CHW",
       "g": 124.5,
@@ -9216,7 +9440,7 @@ export const LDB_DATA = {
       "rank": 228,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Austin Wells",
       "team": "NYY",
       "g": 117.0,
@@ -9241,7 +9465,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 188,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": -2.095,
       "oopsy_hr": 18.0,
       "oopsy_r": 55.0,
@@ -9270,7 +9494,7 @@ export const LDB_DATA = {
       "rank": 229,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Bo Naylor",
       "team": "CLE",
       "g": 120.6,
@@ -9324,7 +9548,7 @@ export const LDB_DATA = {
       "rank": 230,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Yoán Moncada",
       "team": "LAA",
       "g": 90.8,
@@ -9375,8 +9599,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 231,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 1.5,
+      "repl_level": -5.6,
       "name": "Zach McKinstry",
       "team": "DET",
       "g": 111.0,
@@ -9431,7 +9655,7 @@ export const LDB_DATA = {
       "rank": 233,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Sean Murphy",
       "team": "ATL",
       "g": 83.1,
@@ -9456,7 +9680,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 203,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": -2.895,
       "oopsy_hr": 16.0,
       "oopsy_r": 47.0,
@@ -9469,8 +9693,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9486,7 +9710,7 @@ export const LDB_DATA = {
       "rank": 234,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Paul Goldschmidt",
       "team": "NYY",
       "g": 88.8,
@@ -9538,7 +9762,7 @@ export const LDB_DATA = {
       "rank": 235,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Victor Caratini",
       "team": "MIN",
       "g": 91.9,
@@ -9592,7 +9816,7 @@ export const LDB_DATA = {
       "rank": 236,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Edgar Quero",
       "team": "CHW",
       "g": 110.0,
@@ -9643,8 +9867,8 @@ export const LDB_DATA = {
       "system": "batx",
       "rank": 237,
       "tier": 4,
-      "est_value": 0.5,
-      "repl_level": 2.725,
+      "est_value": 1.0,
+      "repl_level": -5.6,
       "name": "Austin Hays",
       "team": "CHW",
       "g": 111.4,
@@ -9669,7 +9893,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 224,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.5,
       "oopsy_ldb_score": -4.23,
       "oopsy_hr": 15.0,
       "oopsy_r": 56.0,
@@ -9699,7 +9923,7 @@ export const LDB_DATA = {
       "rank": 239,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 14.791,
+      "repl_level": -0.656,
       "name": "JJ Wetherholt",
       "team": "STL",
       "g": 118.9,
@@ -9724,7 +9948,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 124,
       "oopsy_tier": 3,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 3.0,
       "oopsy_ldb_score": 1.817,
       "oopsy_hr": 14.0,
       "oopsy_r": 64.0,
@@ -9753,7 +9977,7 @@ export const LDB_DATA = {
       "rank": 242,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Dominic Canzone",
       "team": "SEA",
       "g": 102.9,
@@ -9779,7 +10003,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 222,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.5,
       "oopsy_ldb_score": -4.156,
       "oopsy_hr": 16.0,
       "oopsy_r": 48.0,
@@ -9808,7 +10032,7 @@ export const LDB_DATA = {
       "rank": 244,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jake Fraley",
       "team": "TBR",
       "g": 96.1,
@@ -9863,7 +10087,7 @@ export const LDB_DATA = {
       "rank": 246,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Parker Meadows",
       "team": "DET",
       "g": 118.2,
@@ -9889,7 +10113,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 207,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 4.5,
       "oopsy_ldb_score": -3.147,
       "oopsy_hr": 13.0,
       "oopsy_r": 67.0,
@@ -9918,7 +10142,7 @@ export const LDB_DATA = {
       "rank": 247,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jake Bauers",
       "team": "MIL",
       "g": 86.9,
@@ -9944,7 +10168,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 231,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 1.0,
       "oopsy_ldb_score": -4.902,
       "oopsy_hr": 12.0,
       "oopsy_r": 37.0,
@@ -9971,7 +10195,7 @@ export const LDB_DATA = {
       "rank": 248,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Jesse Winker",
       "team": "",
       "g": 67.2,
@@ -10023,7 +10247,7 @@ export const LDB_DATA = {
       "rank": 249,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Joey Ortiz",
       "team": "MIL",
       "g": 131.1,
@@ -10048,7 +10272,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 199,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 5.0,
       "oopsy_ldb_score": -2.724,
       "oopsy_hr": 13.0,
       "oopsy_r": 75.0,
@@ -10077,7 +10301,7 @@ export const LDB_DATA = {
       "rank": 250,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Kody Clemens",
       "team": "MIN",
       "g": 74.0,
@@ -10133,7 +10357,7 @@ export const LDB_DATA = {
       "rank": 254,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Nick Castellanos",
       "team": "SDP",
       "g": 82.0,
@@ -10188,7 +10412,7 @@ export const LDB_DATA = {
       "rank": 256,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Will Benson",
       "team": "CIN",
       "g": 60.5,
@@ -10241,7 +10465,7 @@ export const LDB_DATA = {
       "rank": 257,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Rob Refsnyder",
       "team": "SEA",
       "g": 62.3,
@@ -10294,7 +10518,7 @@ export const LDB_DATA = {
       "rank": 258,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Andrew McCutchen",
       "team": "TEX",
       "g": 61.1,
@@ -10336,7 +10560,7 @@ export const LDB_DATA = {
       "rank": 259,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Victor Robles",
       "team": "SEA",
       "g": 88.3,
@@ -10391,7 +10615,7 @@ export const LDB_DATA = {
       "rank": 260,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Brooks Baldwin",
       "team": "CHW",
       "g": 99.4,
@@ -10447,7 +10671,7 @@ export const LDB_DATA = {
       "rank": 261,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Ernie Clement",
       "team": "TOR",
       "g": 139.8,
@@ -10501,7 +10725,7 @@ export const LDB_DATA = {
       "rank": 262,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Carlos Narváez",
       "team": "BOS",
       "g": 107.7,
@@ -10555,7 +10779,7 @@ export const LDB_DATA = {
       "rank": 263,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Luke Raley",
       "team": "SEA",
       "g": 74.6,
@@ -10609,7 +10833,7 @@ export const LDB_DATA = {
       "rank": 265,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Heriberto Hernández",
       "team": "MIA",
       "g": 83.3,
@@ -10661,7 +10885,7 @@ export const LDB_DATA = {
       "rank": 267,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Tommy Pham",
       "team": "",
       "g": 66.1,
@@ -10703,7 +10927,7 @@ export const LDB_DATA = {
       "rank": 269,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Starling Marte",
       "team": "KCR",
       "g": 58.8,
@@ -10755,7 +10979,7 @@ export const LDB_DATA = {
       "rank": 271,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Masataka Yoshida",
       "team": "BOS",
       "g": 51.8,
@@ -10797,7 +11021,7 @@ export const LDB_DATA = {
       "rank": 273,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Casey Schmitt",
       "team": "SFG",
       "g": 73.0,
@@ -10853,7 +11077,7 @@ export const LDB_DATA = {
       "rank": 274,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Matt Shaw",
       "team": "CHC",
       "g": 76.4,
@@ -10905,7 +11129,7 @@ export const LDB_DATA = {
       "rank": 275,
       "tier": 4,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Otto Kemp",
       "team": "PHI",
       "g": 61.9,
@@ -10958,7 +11182,7 @@ export const LDB_DATA = {
       "rank": 277,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Kyle Karros",
       "team": "COL",
       "g": 58.3,
@@ -11010,7 +11234,7 @@ export const LDB_DATA = {
       "rank": 278,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Danny Jansen",
       "team": "TEX",
       "g": 90.0,
@@ -11064,7 +11288,7 @@ export const LDB_DATA = {
       "rank": 279,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Harry Ford",
       "team": "WSN",
       "g": 98.2,
@@ -11116,7 +11340,7 @@ export const LDB_DATA = {
       "rank": 281,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Nathan Lukes",
       "team": "TOR",
       "g": 80.8,
@@ -11212,7 +11436,7 @@ export const LDB_DATA = {
       "rank": 283,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "CJ Kayfus",
       "team": "CLE",
       "g": 75.8,
@@ -11268,7 +11492,7 @@ export const LDB_DATA = {
       "rank": 285,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Edmundo Sosa",
       "team": "PHI",
       "g": 66.0,
@@ -11322,7 +11546,7 @@ export const LDB_DATA = {
       "rank": 286,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Matt Vierling",
       "team": "DET",
       "g": 62.3,
@@ -11365,7 +11589,7 @@ export const LDB_DATA = {
       "rank": 288,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Troy Johnston",
       "team": "COL",
       "g": 65.5,
@@ -11419,7 +11643,7 @@ export const LDB_DATA = {
       "rank": 289,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Carlos Santana",
       "team": "ARI",
       "g": 82.8,
@@ -11471,7 +11695,7 @@ export const LDB_DATA = {
       "rank": 290,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Ke'Bryan Hayes",
       "team": "CIN",
       "g": 127.1,
@@ -11525,7 +11749,7 @@ export const LDB_DATA = {
       "rank": 292,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Colby Thomas",
       "team": "ATH",
       "g": 68.0,
@@ -11578,7 +11802,7 @@ export const LDB_DATA = {
       "rank": 293,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Ramón Urías",
       "team": "STL",
       "g": 73.2,
@@ -11631,7 +11855,7 @@ export const LDB_DATA = {
       "rank": 294,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Javier Sanoja",
       "team": "MIA",
       "g": 61.0,
@@ -11685,7 +11909,7 @@ export const LDB_DATA = {
       "rank": 295,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Dane Myers",
       "team": "CIN",
       "g": 62.7,
@@ -11739,7 +11963,7 @@ export const LDB_DATA = {
       "rank": 296,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Sam Haggerty",
       "team": "TEX",
       "g": 59.8,
@@ -11791,7 +12015,7 @@ export const LDB_DATA = {
       "rank": 297,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 14.791,
+      "repl_level": -0.656,
       "name": "Nasim Nuñez",
       "team": "WSN",
       "g": 90.8,
@@ -11845,7 +12069,7 @@ export const LDB_DATA = {
       "rank": 298,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Miguel Andujar",
       "team": "SDP",
       "g": 90.5,
@@ -11898,7 +12122,7 @@ export const LDB_DATA = {
       "rank": 299,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Lenyn Sosa",
       "team": "CHW",
       "g": 100.3,
@@ -11953,7 +12177,7 @@ export const LDB_DATA = {
       "rank": 300,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Blaze Alexander",
       "team": "BAL",
       "g": 84.3,
@@ -12007,7 +12231,7 @@ export const LDB_DATA = {
       "rank": 302,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Braxton Fulford",
       "team": "COL",
       "g": 57.7,
@@ -12049,7 +12273,7 @@ export const LDB_DATA = {
       "rank": 304,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 14.791,
+      "repl_level": -0.656,
       "name": "Taylor Walls",
       "team": "TBR",
       "g": 85.6,
@@ -12101,7 +12325,7 @@ export const LDB_DATA = {
       "rank": 305,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Vaughn Grissom",
       "team": "LAA",
       "g": 77.5,
@@ -12155,7 +12379,7 @@ export const LDB_DATA = {
       "rank": 306,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Max Muncy",
       "team": "ATH",
       "g": 85.9,
@@ -12194,8 +12418,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -12211,7 +12435,7 @@ export const LDB_DATA = {
       "rank": 307,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Dalton Rushing",
       "team": "LAD",
       "g": 55.8,
@@ -12253,7 +12477,7 @@ export const LDB_DATA = {
       "rank": 309,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Tyler Locklear",
       "team": "ARI",
       "g": 53.5,
@@ -12295,7 +12519,7 @@ export const LDB_DATA = {
       "rank": 310,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": -4.568,
       "name": "Liam Hicks",
       "team": "MIA",
       "g": 84.6,
@@ -12348,7 +12572,7 @@ export const LDB_DATA = {
       "rank": 311,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -0.656,
       "name": "Gabriel Arias",
       "team": "CLE",
       "g": 111.9,
@@ -12403,7 +12627,7 @@ export const LDB_DATA = {
       "rank": 312,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Zach Cole",
       "team": "HOU",
       "g": 93.1,
@@ -12458,7 +12682,7 @@ export const LDB_DATA = {
       "rank": 314,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Luis Rengifo",
       "team": "MIL",
       "g": 106.8,
@@ -12513,7 +12737,7 @@ export const LDB_DATA = {
       "rank": 315,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Michael Massey",
       "team": "KCR",
       "g": 80.8,
@@ -12565,7 +12789,7 @@ export const LDB_DATA = {
       "rank": 316,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Amed Rosario",
       "team": "NYY",
       "g": 66.2,
@@ -12618,7 +12842,7 @@ export const LDB_DATA = {
       "rank": 317,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jonny DeLuca",
       "team": "TBR",
       "g": 72.6,
@@ -12671,7 +12895,7 @@ export const LDB_DATA = {
       "rank": 318,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jake Mangum",
       "team": "PIT",
       "g": 80.1,
@@ -12725,7 +12949,7 @@ export const LDB_DATA = {
       "rank": 319,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Denzel Clarke",
       "team": "ATH",
       "g": 97.8,
@@ -12751,7 +12975,7 @@ export const LDB_DATA = {
       "is_fry_keeper": false,
       "oopsy_rank": 226,
       "oopsy_tier": 4,
-      "oopsy_est_value": 0.5,
+      "oopsy_est_value": 2.0,
       "oopsy_ldb_score": -4.41,
       "oopsy_hr": 11.0,
       "oopsy_r": 55.0,
@@ -12778,7 +13002,7 @@ export const LDB_DATA = {
       "rank": 320,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Rowdy Tellez",
       "team": "",
       "g": 63.6,
@@ -12820,7 +13044,7 @@ export const LDB_DATA = {
       "rank": 321,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jhostynxon Garcia",
       "team": "PIT",
       "g": 76.8,
@@ -12858,8 +13082,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.52,
       "oopsy_g": 63.0,
       "tags": [
-        "SLEEPER",
-        "PLATOON"
+        "PLATOON",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -12875,7 +13099,7 @@ export const LDB_DATA = {
       "rank": 322,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Luisangel Acuña",
       "team": "CHW",
       "g": 97.8,
@@ -12927,7 +13151,7 @@ export const LDB_DATA = {
       "rank": 323,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Adrian Del Castillo",
       "team": "ARI",
       "g": 62.5,
@@ -12969,7 +13193,7 @@ export const LDB_DATA = {
       "rank": 324,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Enrique Hernández",
       "team": "LAD",
       "g": 54.6,
@@ -13014,7 +13238,7 @@ export const LDB_DATA = {
       "rank": 325,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -0.656,
       "name": "Ryan Ritter",
       "team": "COL",
       "g": 53.6,
@@ -13057,7 +13281,7 @@ export const LDB_DATA = {
       "rank": 326,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Graham Pauley",
       "team": "MIA",
       "g": 82.0,
@@ -13109,7 +13333,7 @@ export const LDB_DATA = {
       "rank": 327,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Daniel Schneemann",
       "team": "CLE",
       "g": 54.9,
@@ -13154,7 +13378,7 @@ export const LDB_DATA = {
       "rank": 328,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Everson Pereira",
       "team": "CHW",
       "g": 57.0,
@@ -13207,7 +13431,7 @@ export const LDB_DATA = {
       "rank": 329,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "José Tena",
       "team": "WSN",
       "g": 69.6,
@@ -13259,7 +13483,7 @@ export const LDB_DATA = {
       "rank": 330,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Joey Loperfido",
       "team": "HOU",
       "g": 94.0,
@@ -13314,7 +13538,7 @@ export const LDB_DATA = {
       "rank": 331,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Tyrone Taylor",
       "team": "NYM",
       "g": 76.3,
@@ -13367,7 +13591,7 @@ export const LDB_DATA = {
       "rank": 333,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Travis d'Arnaud",
       "team": "LAA",
       "g": 60.5,
@@ -13419,7 +13643,7 @@ export const LDB_DATA = {
       "rank": 334,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Andrés Chaparro",
       "team": "WSN",
       "g": 71.3,
@@ -13471,7 +13695,7 @@ export const LDB_DATA = {
       "rank": 336,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jacob Young",
       "team": "WSN",
       "g": 84.8,
@@ -13524,7 +13748,7 @@ export const LDB_DATA = {
       "rank": 337,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -2.197,
       "name": "Thomas Saggese",
       "team": "STL",
       "g": 63.8,
@@ -13568,7 +13792,7 @@ export const LDB_DATA = {
       "rank": 338,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Connor Wong",
       "team": "BOS",
       "g": 60.4,
@@ -13620,7 +13844,7 @@ export const LDB_DATA = {
       "rank": 341,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Jeremiah Jackson",
       "team": "BAL",
       "g": 59.2,
@@ -13673,7 +13897,7 @@ export const LDB_DATA = {
       "rank": 342,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Ben Williamson",
       "team": "TBR",
       "g": 60.0,
@@ -13725,7 +13949,7 @@ export const LDB_DATA = {
       "rank": 343,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Angel Martínez",
       "team": "CLE",
       "g": 65.9,
@@ -13779,7 +14003,7 @@ export const LDB_DATA = {
       "rank": 344,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Mauricio Dubón",
       "team": "ATL",
       "g": 89.7,
@@ -13835,7 +14059,7 @@ export const LDB_DATA = {
       "rank": 345,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Miguel Amaya",
       "team": "CHC",
       "g": 77.1,
@@ -13887,7 +14111,7 @@ export const LDB_DATA = {
       "rank": 346,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Blake Perkins",
       "team": "MIL",
       "g": 57.2,
@@ -13940,7 +14164,7 @@ export const LDB_DATA = {
       "rank": 347,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Luis Torrens",
       "team": "NYM",
       "g": 62.3,
@@ -13992,7 +14216,7 @@ export const LDB_DATA = {
       "rank": 348,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Luis Campusano",
       "team": "SDP",
       "g": 73.5,
@@ -14044,7 +14268,7 @@ export const LDB_DATA = {
       "rank": 349,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Kyle Isbel",
       "team": "KCR",
       "g": 117.5,
@@ -14097,7 +14321,7 @@ export const LDB_DATA = {
       "rank": 350,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Javier Báez",
       "team": "DET",
       "g": 87.0,
@@ -14152,7 +14376,7 @@ export const LDB_DATA = {
       "rank": 351,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Wilmer Flores",
       "team": "",
       "g": 51.6,
@@ -14194,7 +14418,7 @@ export const LDB_DATA = {
       "rank": 352,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": 0.337,
       "name": "Sung-Mun Song",
       "team": "SDP",
       "g": 65.1,
@@ -14246,7 +14470,7 @@ export const LDB_DATA = {
       "rank": 353,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 9.975,
+      "repl_level": 4.43,
       "name": "Abimelec Ortiz",
       "team": "WSN",
       "g": 51.1,
@@ -14298,7 +14522,7 @@ export const LDB_DATA = {
       "rank": 354,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Joe Mack",
       "team": "MIA",
       "g": 64.3,
@@ -14350,7 +14574,7 @@ export const LDB_DATA = {
       "rank": 355,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 5.424,
+      "repl_level": -0.656,
       "name": "Ezequiel Duran",
       "team": "TEX",
       "g": 78.4,
@@ -14404,7 +14628,7 @@ export const LDB_DATA = {
       "rank": 356,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Griffin Conine",
       "team": "MIA",
       "g": 82.8,
@@ -14456,7 +14680,7 @@ export const LDB_DATA = {
       "rank": 357,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Kyle Higashioka",
       "team": "TEX",
       "g": 75.2,
@@ -14510,7 +14734,7 @@ export const LDB_DATA = {
       "rank": 358,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 6.754,
+      "repl_level": -2.197,
       "name": "Isiah Kiner-Falefa",
       "team": "BOS",
       "g": 53.6,
@@ -14553,7 +14777,7 @@ export const LDB_DATA = {
       "rank": 359,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Freddy Fermin",
       "team": "SDP",
       "g": 116.7,
@@ -14607,7 +14831,7 @@ export const LDB_DATA = {
       "rank": 360,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Jose Trevino",
       "team": "CIN",
       "g": 70.1,
@@ -14659,7 +14883,7 @@ export const LDB_DATA = {
       "rank": 361,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Hunter Feduccia",
       "team": "TBR",
       "g": 74.0,
@@ -14711,7 +14935,7 @@ export const LDB_DATA = {
       "rank": 362,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Pedro Pagés",
       "team": "STL",
       "g": 89.7,
@@ -14763,7 +14987,7 @@ export const LDB_DATA = {
       "rank": 363,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Patrick Bailey",
       "team": "SFG",
       "g": 127.0,
@@ -14815,7 +15039,7 @@ export const LDB_DATA = {
       "rank": 364,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Keibert Ruiz",
       "team": "WSN",
       "g": 85.9,
@@ -14869,7 +15093,7 @@ export const LDB_DATA = {
       "rank": 365,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Adam Frazier",
       "team": "LAA",
       "g": 57.4,
@@ -14912,7 +15136,7 @@ export const LDB_DATA = {
       "rank": 366,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 12.054,
+      "repl_level": -4.568,
       "name": "Nick Fortes",
       "team": "TBR",
       "g": 90.0,
@@ -14964,7 +15188,7 @@ export const LDB_DATA = {
       "rank": 367,
       "tier": 5,
       "est_value": 0.5,
-      "repl_level": 2.725,
+      "repl_level": -5.6,
       "name": "Bryce Teodosio",
       "team": "LAA",
       "g": 61.2,
@@ -15056,8 +15280,8 @@ export const LDB_DATA = {
       "oopsy_fip": 2.706,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "BREAKOUT"
+        "BREAKOUT",
+        "RATIOS_ACE"
       ],
       "note": "Tigers SP1 — locked. Reigning AL Cy Young, elite ratios. Only risk is modest regression. Premier auction target.",
       "health_pct": 95,
@@ -15180,9 +15404,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
-        "IL_START",
-        "RATIOS_ACE",
         "INJURED",
+        "RATIOS_ACE",
+        "IL_START",
         "ROFR_TARGET"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
@@ -15433,9 +15657,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
+        "ROLE_UNCLEAR",
         "RATIOS_ACE",
-        "INJURY_RISK",
-        "ROLE_UNCLEAR"
+        "INJURY_RISK"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
       "health_pct": 65,
@@ -15685,9 +15909,9 @@ export const LDB_DATA = {
       "oopsy_fip": 3.839,
       "tags": [
         "SP_LOCKED",
+        "INJURED",
         "RATIOS_ACE",
         "BOUNCE_BACK",
-        "INJURED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -16119,8 +16343,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.011,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -16243,9 +16467,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -16493,10 +16717,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
+        "STASH",
         "IL_START",
         "RATIOS_ACE",
-        "INJURY_RISK",
-        "STASH"
+        "INJURY_RISK"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
       "health_pct": 55,
@@ -16557,10 +16781,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.22,
       "oopsy_fip": 4.118,
       "tags": [
-        "SLEEPER",
         "SP_LOCKED",
+        "BREAKOUT",
         "RATIOS_ACE",
-        "BREAKOUT"
+        "SLEEPER"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
       "health_pct": 85,
@@ -16868,10 +17092,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.35,
       "oopsy_fip": 3.695,
       "tags": [
-        "SLEEPER",
         "SP_LOCKED",
         "RATIOS_ACE",
         "BOUNCE_BACK",
+        "SLEEPER",
         "ROLE_UNCLEAR"
       ],
       "note": "Spring: 3.0 IP, 1 ER, 1 H, 1 BB, 2 K. Returning from injury — cutter acts like 88 mph gyro slider, 83 mph slider is two-plane sweeper (-11 sweep, -5 depth). Four-seamer has cut action. Not jamming RHB enough, command needs help. Skills are visible — could find groove as season progresses. Marlins SP2.",
@@ -17057,9 +17281,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.23,
       "oopsy_fip": 4.387,
       "tags": [
-        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SLEEPER"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -17494,8 +17718,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.343,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -17681,9 +17905,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.87,
       "oopsy_fip": 3.981,
       "tags": [
-        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SLEEPER"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -17995,9 +18219,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.82,
       "oopsy_fip": 4.512,
       "tags": [
-        "SLEEPER",
         "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SLEEPER"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -18492,9 +18716,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
+        "ROLE_UNCLEAR",
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ROLE_UNCLEAR"
+        "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
       "health_pct": 82,

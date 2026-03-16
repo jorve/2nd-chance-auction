@@ -20,7 +20,7 @@ Required source files (set INPUT_DIR below):
   player_positions.csv  (optional — placeholder format: Name,Positions)
 """
 
-import csv, json, statistics, re, os
+import csv, json, statistics, re, os, math
 from pathlib import Path
 from datetime import date
 from difflib import SequenceMatcher
@@ -29,6 +29,7 @@ from difflib import SequenceMatcher
 _HERE      = Path(__file__).parent
 INPUT_DIR  = _HERE / "data"
 OUTPUT_JS  = _HERE / "src" / "data" / "ldb_data.js"
+OUTPUT_PREVIEW_MD = _HERE / "LDB_2026_Auction_Preview.md"
 
 DRAFT_BOARD   = INPUT_DIR / "2026_LDB_Draft_Board__2026_Board.csv"
 RFA_FILE      = INPUT_DIR / "2026_LDB_Draft_Board__RFA_Rights.csv"
@@ -510,95 +511,48 @@ def compute_batter_replacement_levels(
         proj_path, owned, aa_names, pos_map, pos_by_name_team, pos_by_last,
         num_teams, bench_pct=REPL_BAT_BENCH_PCT, top_n=REPL_TOP_N):
     """
-    Compute replacement-level LDB_Score for each batting position using a
-    scarcity-aware draft simulation.
+    Compute replacement-level LDB_Score for each batting position from the
+    *available* pool (excluding owned + AA), while anchoring the replacement
+    window to league-wide slot baselines.
 
-    Algorithm:
-      1. Score all qualified batters globally (LDB z-score).
-      2. Count how many owned (non-AA) players are eligible at each position.
-      3. Rank positions most-scarce → least-scarce by remaining_slots / total_slots.
-      4. For each position in that order, pull top (remaining + 20% bench) available
-         players and mark them as assigned.
-      5. Replacement level = avg LDB_Score of the top-N still-available players
-         eligible at that position.
+    For each position:
+      - Determine league starter slots (slots/team * num_teams)
+      - Add bench depth (bench_pct)
+      - In the available eligible list, replacement level = avg LDB_Score of
+        players in [cutoff : cutoff + top_n)
 
-    Returns {pos: replacement_ldb_score}
+    Example for C in 16-team league (1 C/team, bench_pct=0.30, top_n=5):
+      cutoff = 16 + floor(16 * 0.30) = 20
+      replacement ≈ available catcher ranks 21-25 by LDB_Score.
     """
     all_qual = get_scored_pool_cached("bat", proj_path)
 
-    # Pre-cache normalised positions for every player
+    # Pre-cache normalized positions for every player.
     pos_cache = {}
     for p in all_qual:
         raw_pos = get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last)
         pos_cache[norm(p["Name"])] = normalize_pos_for_repl(raw_pos)
 
-    owned_norms = {norm(n) for n in owned.keys()}
-    aa_norms    = {norm(n) for n in aa_names}
+    unavailable_norms = {norm(n) for n in owned.keys()} | {norm(n) for n in aa_names}
+    available = [p for p in all_qual if norm(p["Name"]) not in unavailable_norms]
 
-    # ── Count owned (non-AA) players per position slot (one slot per player) ──
-    # IMPORTANT: use full draft-board ownership, not projection-qualified subset,
-    # so owned players below MIN_PA still consume roster capacity.
-    total_slots   = {pos: s * num_teams for pos, s in REPL_BAT_SLOTS.items() if pos != "UT"}
-    owned_count   = {pos: 0 for pos in total_slots}
-    SLOT_ORDER    = ["C","1B","2B","3B","SS","OF"]  # deterministic primary assignment
-
-    for owned_name in owned.keys():
-        n = norm(owned_name)
-        if n in aa_norms:
-            continue
-        raw_pos = get_positions(owned_name, pos_map, pos_by_name_team, "", pos_by_last)
-        eligible_pos = normalize_pos_for_repl(raw_pos) & set(SLOT_ORDER)
-        # Assign to first standard slot in order — prevents double-counting
-        for pos in SLOT_ORDER:
-            if pos in eligible_pos:
-                owned_count[pos] += 1
-                break
-
-    remaining_slots = {pos: max(0, total_slots[pos] - owned_count[pos]) for pos in total_slots}
-
-    # Scarcity order: fewest remaining_slots/total_slots first (most scarce first)
-    scarcity_order = sorted(total_slots.keys(),
-        key=lambda p: (remaining_slots[p] / total_slots[p]) if total_slots[p] > 0 else 1.0)
-
-    # ── Simulate draft filling ─────────────────────────────────────────────────
-    assigned  = owned_norms | aa_norms
-    available = [p for p in all_qual if norm(p["Name"]) not in assigned]
-
+    total_slots = {pos: s * num_teams for pos, s in REPL_BAT_SLOTS.items()}
     replacement_levels = {}
-
-    for pos in scarcity_order:
-        need       = remaining_slots[pos]
-        total_need = need + int(need * bench_pct)
-
-        eligible   = [p for p in available if pos in pos_cache.get(norm(p["Name"]), set())]
-        fill_count = min(total_need, len(eligible))
-
-        newly     = {norm(eligible[i]["Name"]) for i in range(fill_count)}
-        assigned |= newly
-        available  = [p for p in available if norm(p["Name"]) not in assigned]
-
-        # Replacement = avg LDB_Score of top-N remaining eligible at this position
-        remaining_elig = [p for p in available
-                          if pos in pos_cache.get(norm(p["Name"]), set())][:top_n]
-        if remaining_elig:
-            replacement_levels[pos] = statistics.mean(p["LDB_Score"] for p in remaining_elig)
-        elif eligible and fill_count > 0:
-            # Fallback: last filled player's score
-            replacement_levels[pos] = eligible[fill_count - 1]["LDB_Score"]
+    for pos in ["C", "1B", "2B", "3B", "SS", "OF", "UT"]:
+        slots = total_slots.get(pos, 0)
+        cutoff = slots + int(slots * bench_pct)
+        # Utility is an "any bat" slot, not only explicit U-eligible players.
+        if pos == "UT":
+            eligible = list(available)
+        else:
+            eligible = [p for p in available if pos in pos_cache.get(norm(p["Name"]), set())]
+        window = eligible[cutoff: cutoff + top_n]
+        if window:
+            replacement_levels[pos] = statistics.mean(p["LDB_Score"] for p in window)
+        elif eligible:
+            replacement_levels[pos] = eligible[-1]["LDB_Score"]
         else:
             replacement_levels[pos] = 0.0
-
-    # ── UT: fill UT slots from remaining pool (any batter), then find replacement ──
-    ut_total = REPL_BAT_SLOTS["UT"] * num_teams
-    ut_need  = ut_total + int(ut_total * bench_pct)
-    ut_fill  = min(ut_need, len(available))
-    ut_newly = {norm(available[i]["Name"]) for i in range(ut_fill)}
-    assigned |= ut_newly
-    available = [p for p in available if norm(p["Name"]) not in assigned]
-
-    remaining_ut = available[:top_n]
-    replacement_levels["UT"] = (
-        statistics.mean(p["LDB_Score"] for p in remaining_ut) if remaining_ut else 0.0)
 
     return replacement_levels
 
@@ -816,8 +770,12 @@ def parse_draft_board(path):
     aa_section = False
     owned = {}   # name -> {team, salary, contract, pos}
     aa_names = set()
+    aa_by_team = {t["abbr"]: [] for t in teams}
 
-    for row in rows:
+    for row_idx, row in enumerate(rows):
+        # Row 0: team headers, Row 1: GM + budget metadata.
+        if row_idx < 2:
+            continue
         label = row[0].strip() if row else ""
         if label == "AA": aa_section = True
         if label in STOP_LABELS and aa_section: aa_section = False
@@ -834,6 +792,7 @@ def parse_draft_board(path):
 
             if aa_section:
                 aa_names.add(name)
+                aa_by_team[t["abbr"]].append(name)
             elif label not in STOP_LABELS and label != "AA":
                 owned[name] = {"team":t["abbr"], "salary":salary, "contract":contract, "pos":label}
 
@@ -853,12 +812,14 @@ def parse_draft_board(path):
         "total_budget": sum(t["budget_rem"] for t in teams),
         "owned": owned,
         "aa_names": list(aa_names),
+        "aa_by_team": aa_by_team,
         "all_unavailable": set(owned.keys()) | aa_names,
     }
 
 # ── RFA ────────────────────────────────────────────────────────────────────────
 def parse_rfa(path):
     rfa = {}
+    rfa_by_team = {}
     with open(path, encoding="utf-8-sig") as f:
         reader = csv.reader(f)
         next(reader)
@@ -868,7 +829,8 @@ def parse_rfa(path):
                 team_raw = row[1].strip().lower()
                 team = RFA_TEAM_MAP.get(team_raw, team_raw.upper())
                 rfa[norm(player)] = team
-    return rfa
+                rfa_by_team.setdefault(team, []).append(player)
+    return rfa, rfa_by_team
 
 # ── POSITIONS (CBS eligibility files) ─────────────────────────────────────────
 # CBS Player column format: "Name POS1,POS2 | TEAM"  (pipe separates name+pos from team)
@@ -1582,6 +1544,430 @@ def apply_notes(players: list, notes_index: dict, manual_notes: dict, pool_type:
         p["role"]       = (note_entry or {}).get("role", "")
     return players
 
+
+def _zscore_map(metric_by_team: dict) -> dict:
+    vals = list(metric_by_team.values())
+    if not vals:
+        return {k: 0.0 for k in metric_by_team}
+    mean = statistics.mean(vals)
+    stdev = statistics.stdev(vals) if len(vals) > 1 else 0.0
+    if stdev == 0:
+        return {k: 0.0 for k in metric_by_team}
+    return {k: (v - mean) / stdev for k, v in metric_by_team.items()}
+
+
+def _fmt_signed_money(v: float) -> str:
+    sign = "+" if v >= 0 else "-"
+    return f"${sign}{abs(v):.1f}M"
+
+
+def _fmt_signed_num(v: float) -> str:
+    sign = "+" if v >= 0 else "-"
+    return f"{sign}{abs(v):.1f}"
+
+
+def _safe_avg(values: list[float]) -> float:
+    vals = [v for v in values if v is not None]
+    return statistics.mean(vals) if vals else 0.0
+
+
+def build_team_vorp_context(board, repl_bat_by_system, repl_pit_by_system, pos_map, pos_by_name_team, pos_by_last):
+    """
+    Build per-team VORP totals for owned (non-AA) players and AA impact details.
+    VORP definitions:
+      - Batters: avg(BATX VORP, OOPSY VORP), with VORP vs positional replacement.
+      - SP/RP: avg(ATC VORP, OOPSY VORP) within role pool.
+    """
+    # Batters
+    batx_pool = get_scored_pool_cached("bat", BATX_BATTERS)
+    oopsy_bat_pool = get_scored_pool_cached("bat", OOPSY_BATTERS)
+    batx_map = {}
+    oopsy_bat_map = {}
+    for p in batx_pool:
+        positions = normalize_pos_for_repl(
+            get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
+        )
+        repls = [repl_bat_by_system["batx"][pos] for pos in positions if pos in repl_bat_by_system["batx"]]
+        batx_map[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+    for p in oopsy_bat_pool:
+        positions = normalize_pos_for_repl(
+            get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
+        )
+        repls = [repl_bat_by_system["oopsy"][pos] for pos in positions if pos in repl_bat_by_system["oopsy"]]
+        oopsy_bat_map[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+
+    # Pitchers
+    atc_sp_pool = get_scored_pool_cached("sp", ATC_SP)
+    oopsy_sp_pool = get_scored_pool_cached("sp", OOPSY_SP)
+    atc_rp_pool = get_scored_pool_cached("rp", ATC_RP)
+    oopsy_rp_pool = get_scored_pool_cached("rp", OOPSY_RP)
+    atc_sp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["SP"]) for p in atc_sp_pool}
+    oopsy_sp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["oopsy"]["SP"]) for p in oopsy_sp_pool}
+    atc_rp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["RP"]) for p in atc_rp_pool}
+    oopsy_rp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["oopsy"]["RP"]) for p in oopsy_rp_pool}
+
+    # Unified VORP map by name (best role for pitcher-eligible players)
+    vorp_by_name = {}
+    all_names = (
+        set(batx_map.keys()) | set(oopsy_bat_map.keys()) |
+        set(atc_sp_map.keys()) | set(oopsy_sp_map.keys()) |
+        set(atc_rp_map.keys()) | set(oopsy_rp_map.keys())
+    )
+    for n in all_names:
+        bat_v = _safe_avg([batx_map.get(n), oopsy_bat_map.get(n)])
+        sp_v = _safe_avg([atc_sp_map.get(n), oopsy_sp_map.get(n)])
+        rp_v = _safe_avg([atc_rp_map.get(n), oopsy_rp_map.get(n)])
+        vorp_by_name[n] = max(bat_v, sp_v, rp_v)
+    vorp_matcher = NameMatcher(vorp_by_name, fuzzy_threshold=0.87)
+
+    # Team totals (owned only = excludes AA by construction)
+    team_vorp = {abbr: 0.0 for abbr in board["teams"]}
+    for name, info in board["owned"].items():
+        team_vorp[info["team"]] += float(vorp_matcher.get(name) or 0.0)
+
+    owned_vorp_by_name = {}
+    for name in board["owned"].keys():
+        owned_vorp_by_name[name] = float(vorp_matcher.get(name) or 0.0)
+
+    aa_detail_by_team = {}
+    for abbr, aa_list in board.get("aa_by_team", {}).items():
+        rows = []
+        for aa_name in aa_list:
+            aa_v = float(vorp_matcher.get(aa_name) or 0.0)
+            # Best-effort role classification for display
+            pos = get_positions(aa_name, pos_map, pos_by_name_team, pos_by_last=pos_by_last)
+            role = "BAT"
+            up = {str(p).upper() for p in (pos or [])}
+            if "SP" in up:
+                role = "SP"
+            elif "RP" in up:
+                role = "RP"
+            rows.append({"name": aa_name, "role": role, "vorp": aa_v})
+        rows.sort(key=lambda x: x["vorp"], reverse=True)
+        aa_detail_by_team[abbr] = rows
+
+    return team_vorp, owned_vorp_by_name, aa_detail_by_team
+
+
+def build_owned_marginal_auction_values(
+    board, pos_map, pos_by_name_team, pos_by_last, unavail_idx,
+    repl_bat_by_system, repl_pit_by_system, hit_budget, sp_budget, rp_budget
+):
+    """
+    Compute marginal auction price for each owned player by adding that single player
+    to the current available pool and pricing with the same replacement levels/budgets.
+    Uses primary systems: BATX (bat), ATC (SP/RP).
+    """
+    # Mirror live auction opportunity-cost model from src/store/auctionStore.jsx.
+    LEAGUE_MIN_BID = 0.5
+    IN_SEASON_CARRY_RESERVE = 5.0
+    OC_PREMIUM_START_MULTIPLE = 3.0
+    OC_ALPHA = 0.3
+    OC_MIN_PENALTY = 0.75
+    BATTER_SLOTS_PER_TEAM = 11
+    SP_SLOTS_PER_TEAM = 6
+    RP_SLOTS_PER_TEAM = 3
+
+    def round_half(v: float) -> float:
+        return round(v * 2) / 2
+
+    def effective_auction_budget_for_team(team_state: dict) -> float:
+        budget = float(team_state.get("budget_rem", 0) or 0)
+        slots = max(0, int(team_state.get("slots_rem", 0) or 0))
+        required_reserve = (slots * LEAGUE_MIN_BID) + IN_SEASON_CARRY_RESERVE
+        return max(0.0, budget - required_reserve)
+
+    def demand_limited_positive_mass(vals: list[float], slots_to_fill: int) -> float:
+        if slots_to_fill <= 0:
+            return 0.0
+        top = sorted((v for v in vals if v > 0), reverse=True)[:slots_to_fill]
+        return sum(top)
+
+    def oc_adjusted_value(player_vorp: float, total_positive_vorp: float, pool_budget: float, slots_to_fill: int) -> float:
+        if player_vorp <= 0 or total_positive_vorp <= 0 or pool_budget <= 0:
+            return 0.5
+        dollars_per_vorp = pool_budget / total_positive_vorp
+        linear_raw = player_vorp * dollars_per_vorp
+        if slots_to_fill > 0:
+            avg_slot_spend = pool_budget / max(1, slots_to_fill)
+            spend_multiple = (linear_raw / avg_slot_spend) if avg_slot_spend > 0 else 1.0
+            excess = max(0.0, spend_multiple - OC_PREMIUM_START_MULTIPLE)
+            base_penalty = 1.0 / (1.0 + (OC_ALPHA * math.log1p(excess)))
+            penalty = max(OC_MIN_PENALTY, base_penalty)
+            linear_raw = linear_raw * penalty
+        return max(0.5, round_half(linear_raw))
+
+    # Build per-pool VORP maps for all qualified players.
+    bat_pool = get_scored_pool_cached("bat", BATX_BATTERS)
+    bat_vorp = {}
+    for p in bat_pool:
+        positions = normalize_pos_for_repl(
+            get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
+        )
+        repls = [repl_bat_by_system["batx"][pos] for pos in positions if pos in repl_bat_by_system["batx"]]
+        bat_vorp[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+
+    sp_pool = get_scored_pool_cached("sp", ATC_SP)
+    rp_pool = get_scored_pool_cached("rp", ATC_RP)
+    sp_vorp = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["SP"]) for p in sp_pool}
+    rp_vorp = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["RP"]) for p in rp_pool}
+
+    bat_matcher = NameMatcher(bat_vorp, fuzzy_threshold=0.87)
+    sp_matcher = NameMatcher(sp_vorp, fuzzy_threshold=0.87)
+    rp_matcher = NameMatcher(rp_vorp, fuzzy_threshold=0.87)
+
+    # Base available pool VORP vectors (excluding owned+AA).
+    base_bat_vals = [
+        bat_vorp.get(norm(p["Name"]), 0.0)
+        for p in bat_pool
+        if not is_unavailable(p["Name"], unavail_idx)
+    ]
+    base_sp_vals = [
+        sp_vorp.get(norm(p["Name"]), 0.0)
+        for p in sp_pool
+        if not is_unavailable(p["Name"], unavail_idx)
+    ]
+    base_rp_vals = [
+        rp_vorp.get(norm(p["Name"]), 0.0)
+        for p in rp_pool
+        if not is_unavailable(p["Name"], unavail_idx)
+    ]
+
+    num_teams = len(board["teams"])
+    batter_slots_to_fill = BATTER_SLOTS_PER_TEAM * num_teams
+    sp_slots_to_fill = SP_SLOTS_PER_TEAM * num_teams
+    rp_slots_to_fill = RP_SLOTS_PER_TEAM * num_teams
+
+    total_effective_budget = sum(
+        effective_auction_budget_for_team(tstate)
+        for tstate in board["teams"].values()
+    )
+
+    marginal = {}
+    for name, info in board["owned"].items():
+        pos_label = str(info.get("pos", "")).upper()
+        # Prefer explicit draft-board role labels.
+        if "SP" in pos_label:
+            role = "SP"
+        elif "RP" in pos_label:
+            role = "RP"
+        else:
+            # Fallback to eligibility when label is generic (e.g. SN/HTH variants).
+            positions = {str(x).upper() for x in (get_positions(name, pos_map, pos_by_name_team, pos_by_last=pos_by_last) or [])}
+            if "SP" in positions:
+                role = "SP"
+            elif "RP" in positions:
+                role = "RP"
+            else:
+                role = "BAT"
+
+        bat_vals = list(base_bat_vals)
+        sp_vals = list(base_sp_vals)
+        rp_vals = list(base_rp_vals)
+
+        if role == "SP":
+            v = float(sp_matcher.get(name) or 0.0)
+            sp_vals.append(v)
+        elif role == "RP":
+            v = float(rp_matcher.get(name) or 0.0)
+            rp_vals.append(v)
+        else:
+            v = float(bat_matcher.get(name) or 0.0)
+            bat_vals.append(v)
+
+        bat_mass = demand_limited_positive_mass(bat_vals, batter_slots_to_fill)
+        sp_mass = demand_limited_positive_mass(sp_vals, sp_slots_to_fill)
+        rp_mass = demand_limited_positive_mass(rp_vals, rp_slots_to_fill)
+        total_mass = bat_mass + sp_mass + rp_mass
+
+        if total_mass > 0:
+            live_hit_budget = total_effective_budget * (bat_mass / total_mass)
+            live_sp_budget = total_effective_budget * (sp_mass / total_mass)
+            live_rp_budget = total_effective_budget * (rp_mass / total_mass)
+        else:
+            live_hit_budget = total_effective_budget / 3.0
+            live_sp_budget = total_effective_budget / 3.0
+            live_rp_budget = total_effective_budget / 3.0
+
+        if role == "SP":
+            total_positive = sum(x for x in sp_vals if x > 0)
+            marginal[name] = oc_adjusted_value(v, total_positive, live_sp_budget, sp_slots_to_fill)
+        elif role == "RP":
+            total_positive = sum(x for x in rp_vals if x > 0)
+            marginal[name] = oc_adjusted_value(v, total_positive, live_rp_budget, rp_slots_to_fill)
+        else:
+            total_positive = sum(x for x in bat_vals if x > 0)
+            marginal[name] = oc_adjusted_value(v, total_positive, live_hit_budget, batter_slots_to_fill)
+
+    return marginal
+
+
+def write_auction_preview_md(board, roster_by_team, team_vorp, aa_detail_by_team, rfa_by_team):
+    teams = board["teams"]
+    team_rows = []
+    marginal_surplus_by_team = {}
+    dps_by_team = {}
+    keepers_by_team = {}
+
+    for abbr, roster in roster_by_team.items():
+        team_salary_total = 0.0
+        team_marginal_total = 0.0
+        bat_k = 0
+        pit_k = 0
+        for p in roster:
+            sal = float(p.get("salary", 0) or 0)
+            team_salary_total += sal
+            mv = p.get("marginal_auction_value")
+            if mv is not None:
+                team_marginal_total += float(mv)
+            positions = {str(x).upper() for x in (p.get("positions") or [])}
+            if "SP" in positions or "RP" in positions:
+                pit_k += 1
+            else:
+                bat_k += 1
+        marginal_surplus = team_marginal_total - team_salary_total
+        marginal_surplus_by_team[abbr] = marginal_surplus
+        keepers_by_team[abbr] = {"total": len(roster), "bat": bat_k, "pit": pit_k}
+        slots = max(1, int(teams[abbr]["slots_rem"]))
+        dps_by_team[abbr] = float(teams[abbr]["budget_rem"]) / slots
+
+    z_surplus = _zscore_map(marginal_surplus_by_team)
+    z_vorp = _zscore_map(team_vorp)
+    z_dps = _zscore_map(dps_by_team)
+    composite_raw = {
+        abbr: (z_surplus[abbr] + z_vorp[abbr] + z_dps[abbr]) / 3.0
+        for abbr in teams
+    }
+    raw_vals = list(composite_raw.values())
+    min_raw = min(raw_vals) if raw_vals else 0.0
+    max_raw = max(raw_vals) if raw_vals else 1.0
+    scale = (max_raw - min_raw) if (max_raw - min_raw) > 0 else 1.0
+    composite = {abbr: round(((composite_raw[abbr] - min_raw) / scale) * 100) for abbr in teams}
+
+    for abbr in teams:
+        aa_rows = aa_detail_by_team.get(abbr, [])
+        aa_impact_count = len([r for r in aa_rows if r["vorp"] > 0])
+        aa_impact_vorp = sum(r["vorp"] for r in aa_rows if r["vorp"] > 0)
+        team_rows.append({
+            "abbr": abbr,
+            "gm": teams[abbr]["gm"],
+            "budget": float(teams[abbr]["budget_rem"]),
+            "slots": int(teams[abbr]["slots_rem"]),
+            "composite": composite[abbr],
+            "surplus": marginal_surplus_by_team[abbr],
+            "vorp": team_vorp[abbr],
+            "dps": dps_by_team[abbr],
+            "keepers_total": keepers_by_team[abbr]["total"],
+            "keepers_bat": keepers_by_team[abbr]["bat"],
+            "keepers_pit": keepers_by_team[abbr]["pit"],
+            "aa_impact_count": aa_impact_count,
+            "aa_impact_vorp": aa_impact_vorp,
+        })
+
+    team_rows.sort(key=lambda x: x["composite"], reverse=True)
+    total_pool = sum(float(teams[a]["budget_rem"]) for a in teams)
+
+    lines = []
+    lines.append("# LDB 2026 League-Wide Auction Preview")
+    lines.append("")
+    lines.append(
+        "*Composite = 33% z-score total marginal surplus + 33% z-score total keeper VORP (excluding AA) "
+        "+ 33% z-score $/slot, scaled 0-100 · "
+        "VORP = avg BATX+OOPSY (bat) / ATC+OOPSY (pit) vs. positional replacement level · "
+        f"{len(teams)} teams · ${round(total_pool):.0f}M total pool*"
+    )
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## At a Glance")
+    lines.append("")
+    lines.append("| Rank | Team | GM | Composite | Surplus | VORP | $/Slot | Budget | Slots | Keepers | AA Impact |")
+    lines.append("|------|------|----|-----------|---------|------|--------|--------|-------|---------|-----------|")
+    for i, t in enumerate(team_rows, start=1):
+        aa_cell = str(t["aa_impact_count"]) if t["aa_impact_count"] > 0 else "—"
+        lines.append(
+            f"| {i} | **{t['abbr']}** | {t['gm']} | **{t['composite']}** | {_fmt_signed_money(t['surplus'])} "
+            f"| {_fmt_signed_num(t['vorp'])} | ${t['dps']:.1f}M | ${t['budget']:.1f}M | {t['slots']} "
+            f"| {t['keepers_total']} | {aa_cell} |"
+        )
+
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## Team-by-Team Breakdown")
+    lines.append("")
+
+    for i, t in enumerate(team_rows, start=1):
+        abbr = t["abbr"]
+        roster = roster_by_team.get(abbr, [])
+        lines.append(f"### {i}. {abbr} — {t['gm']}")
+        lines.append("")
+        lines.append(
+            f"**Composite: {t['composite']}/100** · Surplus: {_fmt_signed_money(t['surplus'])} "
+            f"· Keeper VORP: {_fmt_signed_num(t['vorp'])} · Budget: ${t['budget']:.1f}M "
+            f"· {t['slots']} slots · {t['keepers_total']} keepers ({t['keepers_bat']} bat / {t['keepers_pit']} pitch)"
+        )
+        lines.append("")
+
+        # All owned keepers
+        keeper_rows = []
+        for p in roster:
+            tv = p.get("theoretical_value")
+            if tv is None:
+                continue
+            sal = float(p.get("salary", 0) or 0)
+            keeper_rows.append({
+                "name": p["name"],
+                "salary": sal,
+                "tv": float(tv),
+                "marginal": p.get("marginal_auction_value"),
+                "player_vorp": float(p.get("keeper_vorp") or 0.0),
+                "surplus": float(tv) - sal,
+                "contract": p.get("contract", ""),
+                "vorp": team_vorp.get(abbr, 0.0),  # placeholder for prose consistency
+            })
+        keeper_rows.sort(key=lambda x: x["surplus"], reverse=True)
+
+        lines.append("**All Keepers:**")
+        lines.append("")
+        for k in keeper_rows:
+            marginal_txt = (
+                f", ${float(k['marginal']):.1f}M marginal auction"
+                if k.get("marginal") is not None else ""
+            )
+            lines.append(
+                f"- {k['name']} — ${k['salary']:.1f}M salary, ${k['tv']:.1f}M value, "
+                f"**{_fmt_signed_money(k['surplus'])} surplus**, VORP {_fmt_signed_num(k['player_vorp'])}"
+                f"{marginal_txt} ({k['contract']})"
+            )
+        aa_rows = aa_detail_by_team.get(abbr, [])
+        if not keeper_rows:
+            lines.append("- No keeper entries found.")
+        lines.append("")
+
+        impact = [r for r in aa_rows if r["vorp"] > 0]
+        if aa_rows:
+            lines.append(
+                f"**AA Pipeline** ({len(impact)} impact player{'s' if len(impact) != 1 else ''} from {len(aa_rows)} total "
+                f"· combined VORP {_fmt_signed_num(sum(r['vorp'] for r in impact))}):"
+            )
+            lines.append("")
+            for r in impact[:4]:
+                lines.append(f"- {r['name']} ({r['role']}) — avg VORP {_fmt_signed_num(r['vorp'])}")
+            lines.append("")
+
+        rfas = rfa_by_team.get(abbr, [])
+        if rfas:
+            lines.append(f"**RFA Rights:** {', '.join(rfas)}")
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
+
+    with open(OUTPUT_PREVIEW_MD, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines).rstrip() + "\n")
+    print(f"  [OK] Written auction preview to {OUTPUT_PREVIEW_MD}")
+
 def main():
     print("=" * 60)
     print("LDB 2026 Data Generation")
@@ -1598,7 +1984,7 @@ def main():
     print(f"  Owned: {len(board['owned'])}  |  AA: {len(board['aa_names'])}")
 
     print("\n[2/6] Parsing RFA rights...")
-    rfa_norm = parse_rfa(RFA_FILE)
+    rfa_norm, rfa_by_team = parse_rfa(RFA_FILE)
     rfa_matcher = NameMatcher(rfa_norm, fuzzy_threshold=0.85)
     fry_rfa = [p for p, t in rfa_norm.items() if t == FRY_TEAM]
     print(f"  RFA entries: {len(rfa_norm)}  |  FRY ROFR: {fry_rfa}")
@@ -1703,6 +2089,15 @@ def main():
     # Athletic SP enrichment
     sp = apply_athletic_sp(sp, athl_sp_index)
 
+    marginal_auction_values = build_owned_marginal_auction_values(
+        board, pos_map, pos_by_name_team, pos_by_last, unavail_idx,
+        repl_bat_by_system, repl_pit_by_system, hit_budget, sp_budget, rp_budget
+    )
+
+    team_vorp, owned_vorp_by_name, aa_detail_by_team = build_team_vorp_context(
+        board, repl_bat_by_system, repl_pit_by_system, pos_map, pos_by_name_team, pos_by_last
+    )
+
     # Build owned roster per team (for league board)
     roster_by_team = {abbr: [] for abbr in teams}
     for name, info in board["owned"].items():
@@ -1713,6 +2108,8 @@ def main():
                 "contract": info["contract"], "pos": info["pos"],
                 "positions": get_positions(name, pos_map, pos_by_name_team, pos_by_last=pos_by_last),
                 "theoretical_value": lookup_theoretical_value(name, theoretical_values, tv_by_last),
+                "marginal_auction_value": marginal_auction_values.get(name),
+                "keeper_vorp": owned_vorp_by_name.get(name, 0.0),
             })
 
     pos_slots = {pos: slots * num_teams for pos, slots in POS_SLOTS_PER_TEAM.items()}
@@ -1778,6 +2175,7 @@ def main():
         f.write(";\n")
 
     print(f"  [OK] Written to {OUTPUT_JS}")
+    write_auction_preview_md(board, roster_by_team, team_vorp, aa_detail_by_team, rfa_by_team)
     print(f"\n-- TOP 5 BATTERS (BATX, VORP-based) --")
     for p in batters[:5]:
         oopsy = f"OOPSY #{p.get('oopsy_rank','-')}" if p.get('oopsy_rank') else "no OOPSY match"
