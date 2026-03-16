@@ -25,15 +25,6 @@ const NEGATIVE_VALUE_CONFIG = {
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcAllValues(batters, sp, rp, teams, soldMap) {
-  const anySold = Object.keys(soldMap).length > 0
-  if (!anySold) {
-    return {
-      batters: batters.map(p => ({ ...p, adj_value: p.est_value })),
-      sp:      sp.map(p => ({ ...p, adj_value: p.est_value })),
-      rp:      rp.map(p => ({ ...p, adj_value: p.est_value })),
-    }
-  }
-
   const totalRemaining = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
   if (totalRemaining <= 0) {
     return {
@@ -82,6 +73,7 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
 
   const roundHalf = v => Math.round(v * 2) / 2
+  const roundTenth = v => Math.round(v * 10) / 10
   const safeNum = v => {
     const n = parseFloat(v)
     return Number.isFinite(n) ? n : 0
@@ -110,7 +102,7 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
     const totalPositiveVorp = group.reduce((s, p) => s + positiveVorp(p), 0)
     if (!totalPositiveVorp) {
       // Keep the board differentiated when everyone in a pool grades below replacement.
-      return new Map(group.map(p => [p.name, roundHalf(rawVorp(p))]))
+      return new Map(group.map(p => [p.name, roundTenth(Math.min(0, rawVorp(p)))]))
     }
     const dollarsPerVorp = budget / totalPositiveVorp
     const out = new Map()
@@ -125,7 +117,7 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
       // Below replacement: emphasize "stability" categories for ordering.
       const priorityBoost = (negativePriorityScores.get(p.name) ?? 0) * NEGATIVE_VALUE_CONFIG.priorityBoostScale
       const adjusted = (rawShare * NEGATIVE_VALUE_CONFIG.rawShareScale) + priorityBoost
-      out.set(p.name, roundHalf(Math.min(0, adjusted)))
+      out.set(p.name, roundTenth(Math.min(0, adjusted)))
     }
     return out
   }
