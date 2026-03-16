@@ -53,7 +53,8 @@ MIN_IP  = 20
 HIT_SPLIT = 0.50
 SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
-RP_VALUE_SCALE = 0.80  # Scale RP values down (fewer innings than SPs)
+RP_VALUE_SCALE    = 0.80   # Scale RP values down (fewer innings than SPs)
+FULL_TEAM_BUDGET  = 200.0  # Fixed baseline per-team budget for theoretical values
 
 FRY_TEAM = "FRY"
 FRY_KEEPERS = ["Ronald Acuña Jr.", "Brent Rooker",
@@ -262,6 +263,113 @@ def compute_values(players, cat_weights, budget):
     players = compute_ldb_scores(players, cat_weights)
     players = assign_est_values(players, budget)
     return players
+
+def lookup_theoretical_value(player_name, tv_map, tv_by_last):
+    """Look up theoretical value for a player, handling abbreviated draft-board names.
+    Exact norm match first, then abbrev_match via last-name index, then fuzzy fallback.
+    Returns the float value, or None if not found.
+    """
+    n = norm(player_name)
+    # 1. Exact norm match
+    if n in tv_map:
+        return tv_map[n]
+    # 2. Abbreviated first-name match via last-name index (O(k))
+    #    e.g. "C. Raleigh" → last name "raleigh" → find "cal raleigh"
+    parts = n.split()
+    if parts and tv_by_last:
+        for pn, v in tv_by_last.get(parts[-1], []):
+            if abbrev_match(player_name, pn):
+                return v
+    # 3. Fuzzy ratio fallback (rare — accent/typo edge cases)
+    for pn, v in tv_map.items():
+        if SequenceMatcher(None, n, pn).ratio() > 0.88:
+            return v
+    return None
+
+
+def build_full_pool_values(num_teams):
+    """Compute theoretical auction values for ALL qualified players using a fixed
+    full-draft baseline of FULL_TEAM_BUDGET × num_teams dollars (no availability
+    filter — owned and free players alike).
+
+    Returns (tv_map, tv_by_last):
+      tv_map     — {norm(name): theoretical_value}
+      tv_by_last — {last_name: [(norm_name, value), ...]} index for abbrev lookups
+
+    Uses the same z-score + proportional allocation methodology as the main
+    valuation engine, but against a 'greenfield' $200M-per-team budget.
+    """
+    full_total = FULL_TEAM_BUDGET * num_teams
+    full_hit   = full_total * HIT_SPLIT
+    full_sp    = full_total * SP_SPLIT
+    full_rp    = full_total * RP_SPLIT * RP_VALUE_SCALE
+
+    cat_bat = {"OPS":(True,3.0),"OBP":(True,2.5),"HR":(True,2.0),
+               "aSB":(True,1.5),"R":(True,1.5),"aRBI":(True,1.0)}
+    cat_sp  = {"MGS":(True,2.5),"K":(True,2.0),"ERA":(False,2.0),
+               "HRA":(False,1.5),"aWHIP":(False,1.5)}
+    cat_rp  = {"VIJAY":(True,3.0),"K":(True,1.5),"ERA":(False,1.0),
+               "HRA":(False,1.0),"aWHIP":(False,1.0)}
+
+    result = {}
+
+    # ── Batters (BATX — primary system) ──────────────────────────────────────
+    with open(BATX_BATTERS, encoding="utf-8-sig") as f:
+        bat_rows = list(csv.DictReader(f))
+    bat_pool = [r for r in bat_rows if fv(r, "PA") >= MIN_PA]
+    for r in bat_pool:
+        r["_raw_aSB"]  = calc_aSB(r)
+        r["_raw_HR"]   = fv(r, "HR")
+        r["_raw_R"]    = fv(r, "R")
+        r["_raw_OBP"]  = fv(r, "OBP")
+        r["_raw_OPS"]  = fv(r, "OPS")
+        r["_raw_aRBI"] = fv(r, "RBI")
+    bat_pool = compute_ldb_scores(bat_pool, cat_bat)
+    bat_pool = assign_est_values(bat_pool, full_hit)
+    for p in bat_pool:
+        result[norm(p["Name"])] = p["Est_Value"]
+
+    # ── Starting pitchers (ATC — primary system) ──────────────────────────────
+    with open(ATC_SP, encoding="utf-8-sig") as f:
+        sp_rows = list(csv.DictReader(f))
+    sp_pool = [r for r in sp_rows if fv(r, "GS") >= MIN_GS]
+    for r in sp_pool:
+        r["_raw_MGS"]   = calc_mgs_season(r)
+        r["_raw_K"]     = fv(r, "SO")
+        r["_raw_ERA"]   = fv(r, "ERA")
+        r["_raw_HRA"]   = fv(r, "HR")
+        r["_raw_aWHIP"] = fv(r, "WHIP")
+    sp_pool = compute_ldb_scores(sp_pool, cat_sp)
+    sp_pool = assign_est_values(sp_pool, full_sp)
+    for p in sp_pool:
+        result[norm(p["Name"])] = p["Est_Value"]
+
+    # ── Relief pitchers (ATC — primary system) ────────────────────────────────
+    with open(ATC_RP, encoding="utf-8-sig") as f:
+        rp_rows = list(csv.DictReader(f))
+    rp_pool = [r for r in rp_rows if fv(r, "IP") >= MIN_IP]
+    for r in rp_pool:
+        r["_raw_VIJAY"] = calc_vijay_season(r)
+        r["_raw_K"]     = fv(r, "SO")
+        r["_raw_ERA"]   = fv(r, "ERA")
+        r["_raw_HRA"]   = fv(r, "HR")
+        r["_raw_aWHIP"] = fv(r, "WHIP")
+    rp_pool = compute_ldb_scores(rp_pool, cat_rp)
+    rp_pool = assign_est_values(rp_pool, full_rp)
+    for p in rp_pool:
+        result[norm(p["Name"])] = p["Est_Value"]
+
+    # Build last-name index for abbrev lookups (handles "C. Raleigh" → "cal raleigh")
+    tv_by_last = {}
+    for n, v in result.items():
+        parts = n.split()
+        if parts:
+            tv_by_last.setdefault(parts[-1], []).append((n, v))
+
+    print(f"  Full-pool theoretical values: {len(result)} players "
+          f"({len(bat_pool)} bat / {len(sp_pool)} SP / {len(rp_pool)} RP)  "
+          f"Budget: ${full_total:.0f}M  (hit ${full_hit:.0f} / SP ${full_sp:.0f} / RP ${full_rp:.0f})")
+    return result, tv_by_last
 
 # ── DRAFT BOARD ────────────────────────────────────────────────────────────────
 def parse_draft_board(path):
@@ -1049,6 +1157,9 @@ def main():
     pos_map, pos_by_name_team, pos_by_last = parse_positions_cbs(CBS_BAT_ELIG, CBS_SP_ELIG, CBS_RP_ELIG)
     print(f"  Players with eligibility: {len(pos_map)}")
 
+    print(f"\n[3.5] Building full-pool theoretical values ({len(teams)} teams × ${FULL_TEAM_BUDGET:.0f}M)...")
+    theoretical_values, tv_by_last = build_full_pool_values(len(teams))
+
     hit_budget = total_budget * HIT_SPLIT
     sp_budget  = total_budget * SP_SPLIT
     rp_budget  = total_budget * RP_SPLIT
@@ -1098,6 +1209,7 @@ def main():
                 "name": name, "salary": info["salary"],
                 "contract": info["contract"], "pos": info["pos"],
                 "positions": get_positions(name, pos_map, pos_by_name_team, pos_by_last=pos_by_last),
+                "theoretical_value": lookup_theoretical_value(name, theoretical_values, tv_by_last),
             })
 
     num_teams = len(teams)
@@ -1114,6 +1226,7 @@ def main():
         },
         "teams": teams,
         "roster_by_team": roster_by_team,
+        "theoretical_values": theoretical_values,
         "rfa": {p: t for p, t in rfa_norm.items()},
         "aa_names": board["aa_names"],
         "batters": batters,

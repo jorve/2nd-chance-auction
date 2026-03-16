@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
 import { LDB_DATA } from '../data/ldb_data.js'
+import { norm } from '../utils/norm.js'
 
 export default function LeagueView() {
   const { teams, sold, auctionLog, batters, sp, rp } = useAuctionStore()
@@ -144,6 +145,26 @@ function TeamCard({ team, maxBudget, wins, isFry, roster }) {
   const spentAuction = wins.reduce((s, w) => s + w.price, 0)
   const threat = getBudgetThreat(team.budget_current)
 
+  // ── Surplus value calculation ───────────────────────────────────────────────
+  const tvMap = LDB_DATA.theoretical_values || {}
+
+  // Keeper surplus: theoretical_value is baked into each roster_by_team entry.
+  // Only include entries where TV is known — excludes GM/budget rows (no projection data).
+  const keeperPlayers  = roster.filter(p => p.theoretical_value != null)
+  const keeperTotalTV     = keeperPlayers.reduce((s, p) => s + p.theoretical_value, 0)
+  const keeperTotalSalary = keeperPlayers.reduce((s, p) => s + (p.salary ?? 0), 0)
+
+  // Auction wins surplus: look up from flat theoretical_values dict
+  const auctionTotalTV     = wins.reduce((s, w) => s + (tvMap[norm(w.playerName)] ?? 0), 0)
+  const auctionTotalSalary = wins.reduce((s, w) => s + (w.price ?? 0), 0)
+
+  const totalTV      = keeperTotalTV + auctionTotalTV
+  const totalSurplus = totalTV - (keeperTotalSalary + auctionTotalSalary)
+  const totalSalary  = keeperTotalSalary + auctionTotalSalary
+  // Efficiency: how far ahead/behind fair value the team's spend is (positive = good deal)
+  const efficiency   = totalSalary > 0 ? (totalSurplus / totalSalary) * 100 : null
+  const hasSurplusData = (keeperPlayers.length > 0 || wins.length > 0)
+
   return (
     <div style={{
       background: isFry ? 'rgba(200,241,53,.04)' : 'var(--surface)',
@@ -196,12 +217,45 @@ function TeamCard({ team, maxBudget, wins, isFry, roster }) {
       </div>
 
       {/* Stats row */}
-      <div style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
+      <div style={{ display: 'flex', gap: 12, marginBottom: 8 }}>
         <Stat label="SLOTS" value={team.slots_current} />
         <Stat label="AUCTION WINS" value={wins.length} />
         <Stat label="SPENT TODAY" value={`$${Math.round(spentAuction)}M`} />
         <Stat label="$/SLOT" value={team.slots_current > 0 ? `$${Math.round(team.budget_current / team.slots_current)}` : '—'} />
       </div>
+
+      {/* Surplus row */}
+      {hasSurplusData && (
+        <div style={{
+          display: 'flex', gap: 12, marginBottom: 12,
+          padding: '6px 8px', borderRadius: 4,
+          background: totalSurplus >= 0 ? 'rgba(74,222,128,.06)' : 'rgba(248,113,113,.06)',
+          border: `1px solid ${totalSurplus >= 0 ? 'rgba(74,222,128,.15)' : 'rgba(248,113,113,.15)'}`,
+        }}>
+          <Stat
+            label="SURPLUS"
+            value={
+              <span style={{ color: totalSurplus >= 0 ? 'var(--green)' : 'var(--red)' }}>
+                {totalSurplus >= 0 ? '+' : '-'}${Math.abs(Math.round(totalSurplus))}M
+              </span>
+            }
+          />
+          {efficiency !== null && (
+            <Stat
+              label="EFFICIENCY"
+              value={
+                <span style={{ color: efficiency >= 0 ? 'var(--green)' : 'var(--red)' }}>
+                  {efficiency >= 0 ? '+' : ''}{efficiency.toFixed(0)}%
+                </span>
+              }
+            />
+          )}
+          <Stat
+            label="TV TOTAL"
+            value={<span style={{ color: 'var(--text-dim)' }}>${Math.round(totalTV)}M</span>}
+          />
+        </div>
+      )}
 
       {/* Recent wins */}
       {wins.length > 0 && (

@@ -162,7 +162,8 @@ export const LDB_DATA = {
         "salary": 154.62,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "Ag. Ramirez",
@@ -171,7 +172,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 1.0
       },
       {
         "name": "K. Manzardo",
@@ -180,7 +182,8 @@ export const LDB_DATA = {
         "pos": "1B",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 4.0
       },
       {
         "name": "J. Caminero",
@@ -189,7 +192,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 16.5
       },
       {
         "name": "J. Wilson",
@@ -198,7 +202,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "CF"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "B. Buxton",
@@ -208,7 +213,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 13.5
       },
       {
         "name": "W. Langford",
@@ -218,7 +224,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 17.0
       },
       {
         "name": "A. Barger",
@@ -229,7 +236,8 @@ export const LDB_DATA = {
           "3B",
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "W. Abreu",
@@ -239,7 +247,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "P. Skenes",
@@ -248,7 +257,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 44.0
       },
       {
         "name": "L. Webb",
@@ -257,7 +267,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 24.5
       },
       {
         "name": "E. Sheehan",
@@ -267,7 +278,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 11.0
       },
       {
         "name": "A. Ashby",
@@ -277,7 +289,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 1.0
       },
       {
         "name": "L. O'Hoppe",
@@ -286,7 +299,8 @@ export const LDB_DATA = {
         "pos": "BN",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "R. Lewis",
@@ -295,7 +309,8 @@ export const LDB_DATA = {
         "pos": "BN",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "ICHI": [
@@ -304,7 +319,8 @@ export const LDB_DATA = {
         "salary": 176.96,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "W. Contreras",
@@ -313,7 +329,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 12.0
       },
       {
         "name": "C. Rafaela",
@@ -324,7 +341,8 @@ export const LDB_DATA = {
           "2B",
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 1.0
       },
       {
         "name": "M. Machado",
@@ -333,7 +351,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 12.0
       },
       {
         "name": "L. Butler",
@@ -344,7 +363,8 @@ export const LDB_DATA = {
           "CF",
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 6.5
       },
       {
         "name": "N. Lodolo",
@@ -354,7 +374,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "N. Cameron",
@@ -363,7 +384,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "P. Maton",
@@ -372,7 +394,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "B. Lee",
@@ -383,7 +406,8 @@ export const LDB_DATA = {
           "2B",
           "3B",
           "SS"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "G. Mitchell",
@@ -393,7 +417,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "T. Bradley",
@@ -402,7 +427,8 @@ export const LDB_DATA = {
         "pos": "SN3",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "WIND": [
@@ -411,7 +437,8 @@ export const LDB_DATA = {
         "salary": 166.85,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "A. Rutschman",
@@ -420,7 +447,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 5.5
       },
       {
         "name": "M. Chapman",
@@ -429,7 +457,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 13.0
       },
       {
         "name": "T. Story",
@@ -438,7 +467,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "R. Weathers",
@@ -447,7 +477,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 2.5
       },
       {
         "name": "G. Kirby",
@@ -456,7 +487,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 16.0
       },
       {
         "name": "S. Bieber",
@@ -465,7 +497,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 6.5
       },
       {
         "name": "M. Gore",
@@ -474,7 +507,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 9.0
       },
       {
         "name": "K. Bubic",
@@ -483,7 +517,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 8.5
       },
       {
         "name": "E. Pagan",
@@ -492,7 +527,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "CF"
-        ]
+        ],
+        "theoretical_value": 1.0
       },
       {
         "name": "A. Thomas",
@@ -502,7 +538,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "M. Meyer",
@@ -511,7 +548,8 @@ export const LDB_DATA = {
         "pos": "SN2",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "G. Henderson",
@@ -520,7 +558,8 @@ export const LDB_DATA = {
         "pos": "SN3",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 19.0
       },
       {
         "name": "Y. Yamamoto",
@@ -529,7 +568,8 @@ export const LDB_DATA = {
         "pos": "SN4",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 26.5
       }
     ],
     "NEO": [
@@ -538,7 +578,8 @@ export const LDB_DATA = {
         "salary": 102.13,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "G. Moreno",
@@ -547,7 +588,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 4.0
       },
       {
         "name": "N. Kurtz",
@@ -556,7 +598,8 @@ export const LDB_DATA = {
         "pos": "1B",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 20.5
       },
       {
         "name": "L. Keaschall",
@@ -565,7 +608,8 @@ export const LDB_DATA = {
         "pos": "2B",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 8.0
       },
       {
         "name": "Z. Neto",
@@ -574,7 +618,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 14.0
       },
       {
         "name": "J.H. Lee",
@@ -584,7 +629,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "B. Marsh",
@@ -594,7 +640,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "J. Aranda",
@@ -603,7 +650,8 @@ export const LDB_DATA = {
         "pos": "UT",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 9.0
       },
       {
         "name": "J. deGrom",
@@ -612,7 +660,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 23.0
       },
       {
         "name": "C. Ragans",
@@ -621,7 +670,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 24.0
       },
       {
         "name": "T. Rogers",
@@ -630,7 +680,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "N. Eovaldi",
@@ -639,7 +690,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 15.5
       },
       {
         "name": "A. Volpe",
@@ -648,7 +700,8 @@ export const LDB_DATA = {
         "pos": "SN1",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "FRY": [
@@ -657,7 +710,8 @@ export const LDB_DATA = {
         "salary": 112.87,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "C. Raleigh",
@@ -666,7 +720,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 17.5
       },
       {
         "name": "B. Rooker",
@@ -676,7 +731,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 21.0
       },
       {
         "name": "R. Acuna",
@@ -686,7 +742,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 30.5
       },
       {
         "name": "R. Greene",
@@ -695,7 +752,8 @@ export const LDB_DATA = {
         "pos": "UT",
         "positions": [
           "OF"
-        ]
+        ],
+        "theoretical_value": 10.0
       },
       {
         "name": "C. Carroll",
@@ -705,7 +763,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 24.5
       },
       {
         "name": "D. Rasmussen",
@@ -714,7 +773,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 12.0
       },
       {
         "name": "M. Liberatore",
@@ -723,7 +783,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "A. Munoz",
@@ -732,7 +793,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 10.0
       }
     ],
     "POLL": [
@@ -741,7 +803,8 @@ export const LDB_DATA = {
         "salary": 106.88,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "B. Turang",
@@ -750,7 +813,8 @@ export const LDB_DATA = {
         "pos": "2B",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 7.5
       },
       {
         "name": "J. Ramirez",
@@ -759,7 +823,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 22.5
       },
       {
         "name": "J. Pena",
@@ -768,7 +833,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 9.5
       },
       {
         "name": "T. Grisham",
@@ -778,7 +844,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 9.5
       },
       {
         "name": "M. Fried",
@@ -787,14 +854,16 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 22.5
       },
       {
         "name": "J. Musgrove",
         "salary": 1.35,
         "contract": "K2",
         "pos": "SP",
-        "positions": []
+        "positions": [],
+        "theoretical_value": 5.0
       },
       {
         "name": "T. Megill",
@@ -803,7 +872,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "J. Merrill",
@@ -813,7 +883,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 10.5
       },
       {
         "name": "D. Baldwin",
@@ -822,7 +893,8 @@ export const LDB_DATA = {
         "pos": "SN2",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 1.0
       },
       {
         "name": "J. Adell",
@@ -833,7 +905,8 @@ export const LDB_DATA = {
           "CF",
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 8.5
       },
       {
         "name": "C. Cowser",
@@ -843,7 +916,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 4.0
       },
       {
         "name": "G. Holmes",
@@ -853,7 +927,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "ROOF": [
@@ -862,7 +937,8 @@ export const LDB_DATA = {
         "salary": 155.73,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "D. Dingler",
@@ -871,7 +947,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "C. Abrams",
@@ -880,7 +957,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 5.5
       },
       {
         "name": "J. Rodriguez",
@@ -889,7 +967,8 @@ export const LDB_DATA = {
         "pos": "CF",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 20.5
       },
       {
         "name": "K. Tucker",
@@ -899,7 +978,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 25.5
       },
       {
         "name": "F. Valdez",
@@ -908,7 +988,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 19.5
       },
       {
         "name": "F. Peralta",
@@ -917,7 +998,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 14.0
       },
       {
         "name": "K. Gausman",
@@ -926,7 +1008,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 10.0
       },
       {
         "name": "H. Brown",
@@ -935,7 +1018,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 21.5
       },
       {
         "name": "R. Pepiot",
@@ -944,7 +1028,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "S. Smith",
@@ -953,7 +1038,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 2.5
       }
     ],
     "IPA": [
@@ -962,7 +1048,8 @@ export const LDB_DATA = {
         "salary": 144.35,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "S. Torkelson",
@@ -971,7 +1058,8 @@ export const LDB_DATA = {
         "pos": "1B",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "N. Gorman",
@@ -981,7 +1069,8 @@ export const LDB_DATA = {
         "positions": [
           "2B",
           "3B"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "C. Durbin",
@@ -990,7 +1079,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "B. Bichette",
@@ -999,7 +1089,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 7.5
       },
       {
         "name": "D. Varsho",
@@ -1009,7 +1100,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 3.5
       },
       {
         "name": "A. Pages",
@@ -1020,7 +1112,8 @@ export const LDB_DATA = {
           "CF",
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "S. Frelick",
@@ -1030,7 +1123,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "V. Scott II",
@@ -1040,14 +1134,16 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "G. Cole",
         "salary": 10.8,
         "contract": "K2",
         "pos": "SP",
-        "positions": []
+        "positions": [],
+        "theoretical_value": 6.0
       },
       {
         "name": "D. May",
@@ -1057,7 +1153,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "B. Bello",
@@ -1067,7 +1164,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "S. Gray",
@@ -1076,7 +1174,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 13.0
       },
       {
         "name": "B. King",
@@ -1085,7 +1184,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "R. Detmers",
@@ -1094,7 +1194,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 1.5
       }
     ],
     "IZZY": [
@@ -1103,7 +1204,8 @@ export const LDB_DATA = {
         "salary": 144.57,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "B. Donovan",
@@ -1113,7 +1215,8 @@ export const LDB_DATA = {
         "positions": [
           "2B",
           "OF"
-        ]
+        ],
+        "theoretical_value": 5.5
       },
       {
         "name": "C. Montgomery",
@@ -1122,7 +1225,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "B. Witt",
@@ -1131,7 +1235,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 30.5
       },
       {
         "name": "P. Crow-Armstrong",
@@ -1141,7 +1246,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 10.5
       },
       {
         "name": "A. Judge",
@@ -1151,7 +1257,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 47.5
       },
       {
         "name": "J. Caballero",
@@ -1164,7 +1271,8 @@ export const LDB_DATA = {
           "SS",
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "R. Nelson",
@@ -1173,7 +1281,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "B. Woodruff",
@@ -1182,7 +1291,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 13.0
       }
     ],
     "WORK": [
@@ -1191,7 +1301,8 @@ export const LDB_DATA = {
         "salary": 172.79,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "S. Perez",
@@ -1201,7 +1312,8 @@ export const LDB_DATA = {
         "positions": [
           "C",
           "1B"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "T. Turner",
@@ -1210,7 +1322,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 14.5
       },
       {
         "name": "J. Marsee",
@@ -1220,7 +1333,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 4.5
       },
       {
         "name": "B. Doyle",
@@ -1230,7 +1344,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 8.0
       },
       {
         "name": "C. Schlittler",
@@ -1239,7 +1354,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 4.5
       },
       {
         "name": "R. Suarez",
@@ -1248,7 +1364,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 10.5
       },
       {
         "name": "G. Williams",
@@ -1257,7 +1374,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 5.5
       }
     ],
     "CORN": [
@@ -1266,7 +1384,8 @@ export const LDB_DATA = {
         "salary": 129.23,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "H. Goodman",
@@ -1275,7 +1394,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 9.0
       },
       {
         "name": "K. Marte",
@@ -1284,7 +1404,8 @@ export const LDB_DATA = {
         "pos": "2B",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 22.5
       },
       {
         "name": "M. Garcia",
@@ -1294,7 +1415,8 @@ export const LDB_DATA = {
         "positions": [
           "3B",
           "SS"
-        ]
+        ],
+        "theoretical_value": 9.0
       },
       {
         "name": "G. Perdomo",
@@ -1303,7 +1425,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 8.0
       },
       {
         "name": "J. Soto",
@@ -1313,7 +1436,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 38.0
       },
       {
         "name": "O. Cruz",
@@ -1323,7 +1447,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 14.5
       },
       {
         "name": "T. Hernandez",
@@ -1333,7 +1458,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 11.0
       },
       {
         "name": "T. Bibee",
@@ -1342,7 +1468,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "J. Jones",
@@ -1352,14 +1479,16 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "G. Stone",
         "salary": 1.5,
         "contract": "H3",
         "pos": "SP",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "G. Crochet",
@@ -1368,7 +1497,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 37.0
       },
       {
         "name": "R. Sasaki",
@@ -1378,7 +1508,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "M. Miller",
@@ -1387,7 +1518,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 10.0
       },
       {
         "name": "I. Seymour",
@@ -1397,7 +1529,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 3.5
       },
       {
         "name": "G. Lux",
@@ -1407,7 +1540,8 @@ export const LDB_DATA = {
         "positions": [
           "2B",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "AIDS": [
@@ -1416,7 +1550,8 @@ export const LDB_DATA = {
         "salary": 160.17,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "A. Kirk",
@@ -1425,7 +1560,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 7.5
       },
       {
         "name": "B. Stott",
@@ -1434,7 +1570,8 @@ export const LDB_DATA = {
         "pos": "2B",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 5.5
       },
       {
         "name": "D. Swanson",
@@ -1443,7 +1580,8 @@ export const LDB_DATA = {
         "pos": "SS",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "J.Wood",
@@ -1452,7 +1590,8 @@ export const LDB_DATA = {
         "pos": "OF",
         "positions": [
           "OF"
-        ]
+        ],
+        "theoretical_value": 16.0
       },
       {
         "name": "J. Lowe",
@@ -1462,7 +1601,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "G. Springer",
@@ -1472,7 +1612,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 17.0
       },
       {
         "name": "R. Ray",
@@ -1481,7 +1622,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 2.5
       },
       {
         "name": "A. Abbott",
@@ -1490,7 +1632,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "S. Imanaga",
@@ -1499,7 +1642,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 2.5
       },
       {
         "name": "S. Baz",
@@ -1508,7 +1652,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "E. Cabrera",
@@ -1517,7 +1662,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "RF"
-        ]
+        ],
+        "theoretical_value": 6.5
       },
       {
         "name": "B. Pfaadt",
@@ -1526,7 +1672,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "J. Dominguez",
@@ -1535,7 +1682,8 @@ export const LDB_DATA = {
         "pos": "SN1",
         "positions": [
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "TONES": [
@@ -1544,7 +1692,8 @@ export const LDB_DATA = {
         "salary": 134.47,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "W. Smith",
@@ -1553,7 +1702,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 18.5
       },
       {
         "name": "M. Busch",
@@ -1562,7 +1712,8 @@ export const LDB_DATA = {
         "pos": "1B",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 9.0
       },
       {
         "name": "G. Torres",
@@ -1571,7 +1722,8 @@ export const LDB_DATA = {
         "pos": "2B",
         "positions": [
           "2B"
-        ]
+        ],
+        "theoretical_value": 7.5
       },
       {
         "name": "E. Suarez",
@@ -1580,7 +1732,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 10.0
       },
       {
         "name": "C. Rodon",
@@ -1589,7 +1742,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "M. Burrows",
@@ -1599,7 +1753,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "J. Duran",
@@ -1609,7 +1764,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 13.5
       },
       {
         "name": "A. Chapman",
@@ -1618,7 +1774,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 9.5
       },
       {
         "name": "J. Hoffman",
@@ -1627,7 +1784,8 @@ export const LDB_DATA = {
         "pos": "SN1",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 6.0
       }
     ],
     "NATE": [
@@ -1636,7 +1794,8 @@ export const LDB_DATA = {
         "salary": 109.91,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "S. Langeliers",
@@ -1645,7 +1804,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 11.5
       },
       {
         "name": "B. Rice",
@@ -1655,7 +1815,8 @@ export const LDB_DATA = {
         "positions": [
           "C",
           "1B"
-        ]
+        ],
+        "theoretical_value": 12.5
       },
       {
         "name": "D. Lile",
@@ -1665,7 +1826,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "C. Sanchez",
@@ -1674,7 +1836,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 26.5
       },
       {
         "name": "B. Woo",
@@ -1683,7 +1846,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 25.0
       },
       {
         "name": "K. Senga",
@@ -1692,7 +1856,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 4.5
       },
       {
         "name": "C. Sale",
@@ -1702,7 +1867,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 30.0
       },
       {
         "name": "J. Boyle",
@@ -1712,7 +1878,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "J. Leiter",
@@ -1721,7 +1888,8 @@ export const LDB_DATA = {
         "pos": "SN2",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "S. Woods-Richardson",
@@ -1731,7 +1899,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "M. Vientos",
@@ -1740,7 +1909,8 @@ export const LDB_DATA = {
         "pos": "SN4",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "E. De La Cruz",
@@ -1749,7 +1919,8 @@ export const LDB_DATA = {
         "pos": "SN5",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 17.0
       },
       {
         "name": "B. Baty",
@@ -1759,7 +1930,8 @@ export const LDB_DATA = {
         "positions": [
           "2B",
           "3B"
-        ]
+        ],
+        "theoretical_value": 0.5
       }
     ],
     "PWRS": [
@@ -1768,7 +1940,8 @@ export const LDB_DATA = {
         "salary": 149.44,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "M. Harris",
@@ -1778,7 +1951,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 4.5
       },
       {
         "name": "K. Stowers",
@@ -1788,7 +1962,8 @@ export const LDB_DATA = {
         "positions": [
           "RF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 6.0
       },
       {
         "name": "I. Herrera",
@@ -1797,7 +1972,8 @@ export const LDB_DATA = {
         "pos": "UT",
         "positions": [
           "DH"
-        ]
+        ],
+        "theoretical_value": 9.5
       },
       {
         "name": "N. Pivetta",
@@ -1806,7 +1982,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 11.5
       },
       {
         "name": "K. Bradish",
@@ -1815,7 +1992,8 @@ export const LDB_DATA = {
         "pos": "SP",
         "positions": [
           "SP"
-        ]
+        ],
+        "theoretical_value": 14.0
       },
       {
         "name": "B. Ashcraft",
@@ -1825,7 +2003,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 4.0
       },
       {
         "name": "J. Wrobleski",
@@ -1835,7 +2014,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "T. Soderstrom",
@@ -1845,7 +2025,8 @@ export const LDB_DATA = {
         "positions": [
           "1B",
           "OF"
-        ]
+        ],
+        "theoretical_value": 9.5
       },
       {
         "name": "C. Horton",
@@ -1855,7 +2036,8 @@ export const LDB_DATA = {
         "positions": [
           "SP",
           "RP"
-        ]
+        ],
+        "theoretical_value": 2.5
       },
       {
         "name": "M. Vargas",
@@ -1865,7 +2047,8 @@ export const LDB_DATA = {
         "positions": [
           "1B",
           "3B"
-        ]
+        ],
+        "theoretical_value": 7.5
       },
       {
         "name": "H. Ramos",
@@ -1874,7 +2057,8 @@ export const LDB_DATA = {
         "pos": "SN4",
         "positions": [
           "OF"
-        ]
+        ],
+        "theoretical_value": 9.5
       }
     ],
     "BALK": [
@@ -1883,7 +2067,8 @@ export const LDB_DATA = {
         "salary": 97.8,
         "contract": "",
         "pos": "2026",
-        "positions": []
+        "positions": [],
+        "theoretical_value": null
       },
       {
         "name": "K. Teel",
@@ -1892,7 +2077,8 @@ export const LDB_DATA = {
         "pos": "C",
         "positions": [
           "C"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "P. Alonso",
@@ -1901,7 +2087,8 @@ export const LDB_DATA = {
         "pos": "1B",
         "positions": [
           "1B"
-        ]
+        ],
+        "theoretical_value": 19.0
       },
       {
         "name": "A. Bohm",
@@ -1910,7 +2097,8 @@ export const LDB_DATA = {
         "pos": "3B",
         "positions": [
           "3B"
-        ]
+        ],
+        "theoretical_value": 1.5
       },
       {
         "name": "G. Stanton",
@@ -1919,7 +2107,8 @@ export const LDB_DATA = {
         "pos": "OF",
         "positions": [
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "T.J. Friedl",
@@ -1929,7 +2118,8 @@ export const LDB_DATA = {
         "positions": [
           "CF",
           "OF"
-        ]
+        ],
+        "theoretical_value": 0.5
       },
       {
         "name": "D. Palencia",
@@ -1938,7 +2128,8 @@ export const LDB_DATA = {
         "pos": "RP",
         "positions": [
           "RP"
-        ]
+        ],
+        "theoretical_value": 7.0
       },
       {
         "name": "E. Tovar",
@@ -1947,9 +2138,975 @@ export const LDB_DATA = {
         "pos": "SN1",
         "positions": [
           "SS"
-        ]
+        ],
+        "theoretical_value": 5.0
       }
     ]
+  },
+  "theoretical_values": {
+    "aaron judge": 47.5,
+    "shohei ohtani": 18.0,
+    "juan soto": 38.0,
+    "ronald acuna": 30.5,
+    "yordan alvarez": 30.5,
+    "bobby witt": 30.5,
+    "vladimir guerrero": 28.5,
+    "kyle tucker": 25.5,
+    "fernando tatis": 25.0,
+    "kyle schwarber": 25.0,
+    "corbin carroll": 24.5,
+    "jose ramirez": 22.5,
+    "ketel marte": 22.5,
+    "bryce harper": 21.5,
+    "brent rooker": 21.0,
+    "julio rodriguez": 20.5,
+    "nick kurtz": 20.5,
+    "corey seager": 20.0,
+    "gunnar henderson": 19.0,
+    "pete alonso": 19.0,
+    "rafael devers": 18.5,
+    "will smith": 18.5,
+    "cal raleigh": 17.5,
+    "wyatt langford": 17.0,
+    "george springer": 17.0,
+    "elly de la cruz": 17.0,
+    "junior caminero": 16.5,
+    "james wood": 16.0,
+    "seiya suzuki": 15.5,
+    "freddie freeman": 15.5,
+    "yandy diaz": 15.5,
+    "francisco lindor": 15.0,
+    "roman anthony": 14.5,
+    "oneil cruz": 14.5,
+    "munetaka murakami": 14.5,
+    "trea turner": 14.5,
+    "zach neto": 14.0,
+    "byron buxton": 13.5,
+    "jarren duran": 13.5,
+    "jazz chisholm": 13.0,
+    "austin riley": 13.0,
+    "mike trout": 13.0,
+    "mookie betts": 13.0,
+    "matt chapman": 13.0,
+    "randy arozarena": 13.0,
+    "jackson chourio": 12.5,
+    "ben rice": 12.5,
+    "william contreras": 12.0,
+    "taylor ward": 12.0,
+    "manny machado": 12.0,
+    "willy adames": 12.0,
+    "willson contreras": 11.5,
+    "shea langeliers": 11.5,
+    "christian yelich": 11.0,
+    "matt olson": 11.0,
+    "teoscar hernandez": 11.0,
+    "jackson merrill": 10.5,
+    "pete crow armstrong": 10.5,
+    "ian happ": 10.0,
+    "riley greene": 10.0,
+    "eugenio suarez": 10.0,
+    "brandon nimmo": 10.0,
+    "ivan herrera": 9.5,
+    "jeremy pena": 9.5,
+    "trent grisham": 9.5,
+    "tyler soderstrom": 9.5,
+    "heliot ramos": 9.5,
+    "alex bregman": 9.0,
+    "jonathan aranda": 9.0,
+    "maikel garcia": 9.0,
+    "michael busch": 9.0,
+    "hunter goodman": 9.0,
+    "jurickson profar": 8.5,
+    "jo adell": 8.5,
+    "max muncy": 0.5,
+    "vinnie pasquantino": 8.5,
+    "brenton doyle": 8.0,
+    "luke keaschall": 8.0,
+    "geraldo perdomo": 8.0,
+    "gleyber torres": 7.5,
+    "miguel vargas": 7.5,
+    "kazuma okamoto": 7.5,
+    "bo bichette": 7.5,
+    "brice turang": 7.5,
+    "alejandro kirk": 7.5,
+    "andy pages": 7.0,
+    "dansby swanson": 7.0,
+    "wilyer abreu": 7.0,
+    "spencer torkelson": 7.0,
+    "trevor story": 7.0,
+    "jose altuve": 7.0,
+    "lawrence butler": 6.5,
+    "xander bogaerts": 6.5,
+    "sal stewart": 6.5,
+    "bryan reynolds": 6.5,
+    "tyler freeman": 6.5,
+    "kyle stowers": 6.0,
+    "lars nootbaar": 6.0,
+    "salvador perez": 6.0,
+    "josh naylor": 6.0,
+    "cody bellinger": 6.0,
+    "kerry carpenter": 6.0,
+    "bryson stott": 5.5,
+    "cj abrams": 5.5,
+    "adley rutschman": 5.5,
+    "brendan donovan": 5.5,
+    "jonathan india": 5.0,
+    "josh bell": 5.0,
+    "alec burleson": 5.0,
+    "jordan beck": 5.0,
+    "ezequiel tovar": 5.0,
+    "marcell ozuna": 5.0,
+    "otto lopez": 4.5,
+    "luis robert": 4.5,
+    "michael harris": 4.5,
+    "jakob marsee": 4.5,
+    "willi castro": 4.5,
+    "mickey moniak": 4.5,
+    "andrew vaughn": 4.0,
+    "matt wallner": 4.0,
+    "colton cowser": 4.0,
+    "christian walker": 4.0,
+    "tyler oneill": 4.0,
+    "gabriel moreno": 4.0,
+    "marcus semien": 4.0,
+    "kyle manzardo": 4.0,
+    "matt mclain": 4.0,
+    "ramon laureano": 4.0,
+    "nico hoerner": 3.5,
+    "ryan ohearn": 3.5,
+    "jackson holliday": 3.5,
+    "cedric mullins": 3.5,
+    "jorge polanco": 3.5,
+    "daulton varsho": 3.5,
+    "jake cronenworth": 3.0,
+    "isaac paredes": 3.0,
+    "jorge soler": 3.0,
+    "jordan westburg": 3.0,
+    "brandon lowe": 3.0,
+    "joc pederson": 2.5,
+    "j t realmuto": 2.5,
+    "jake burger": 2.5,
+    "carlos correa": 2.0,
+    "nolan schanuel": 2.0,
+    "adolis garcia": 2.0,
+    "alec bohm": 1.5,
+    "colt keith": 1.5,
+    "jacob wilson": 1.5,
+    "jung hoo lee": 1.5,
+    "jesus sanchez": 1.0,
+    "noelvi marte": 1.0,
+    "ozzie albies": 1.0,
+    "ceddanne rafaela": 1.0,
+    "xavier edwards": 1.0,
+    "agustin ramirez": 1.0,
+    "andrew benintendi": 1.0,
+    "luis garcia": 0.5,
+    "drake baldwin": 1.0,
+    "steven kwan": 0.5,
+    "dylan crews": 0.5,
+    "daylen lile": 0.5,
+    "brandon marsh": 0.5,
+    "chandler simpson": 0.5,
+    "yainer diaz": 0.5,
+    "kyle teel": 0.5,
+    "mike yastrzemski": 0.5,
+    "trevor larnach": 0.5,
+    "giancarlo stanton": 0.5,
+    "jeff mcneil": 0.5,
+    "ryan jeffers": 0.5,
+    "konnor griffin": 0.5,
+    "bryce eldridge": 0.5,
+    "tj friedl": 0.5,
+    "isaac collins": 0.5,
+    "spencer horwitz": 0.5,
+    "j p crawford": 0.5,
+    "colson montgomery": 0.5,
+    "jordan walker": 0.5,
+    "dylan beavers": 0.5,
+    "addison barger": 0.5,
+    "harrison bader": 0.5,
+    "caleb durbin": 0.5,
+    "kevin mcgonigle": 0.5,
+    "lane thomas": 0.5,
+    "nolan arenado": 0.5,
+    "evan carter": 0.5,
+    "tyler stephenson": 0.5,
+    "luis arraez": 0.5,
+    "jared triolo": 0.5,
+    "jake meyers": 0.5,
+    "edouard julien": 0.5,
+    "austin martin": 0.5,
+    "jake mccarthy": 0.5,
+    "ha seong kim": 0.5,
+    "romy gonzalez": 0.5,
+    "justin crawford": 0.5,
+    "spencer steer": 0.5,
+    "masyn winn": 0.5,
+    "lourdes gurriel": 0.5,
+    "sal frelick": 0.5,
+    "jac caglianone": 0.5,
+    "andres gimenez": 0.5,
+    "carter jensen": 0.5,
+    "royce lewis": 0.5,
+    "josh lowe": 0.5,
+    "pavin smith": 0.5,
+    "gavin lux": 0.5,
+    "jj bleday": 0.5,
+    "logan ohoppe": 0.5,
+    "ryan mcmahon": 0.5,
+    "josh smith": 0.5,
+    "rhys hoskins": 0.5,
+    "gavin sheets": 0.5,
+    "josh jung": 0.5,
+    "connor norby": 0.5,
+    "cam smith": 0.5,
+    "davis schneider": 0.5,
+    "carson kelly": 0.5,
+    "chase meidroth": 0.5,
+    "tommy edman": 0.5,
+    "jose caballero": 0.5,
+    "samuel basallo": 0.5,
+    "yoan moncada": 0.5,
+    "wenceel perez": 0.5,
+    "brett baty": 0.5,
+    "mark vientos": 0.5,
+    "rob refsnyder": 0.5,
+    "jasson dominguez": 0.5,
+    "sean murphy": 0.5,
+    "jesse winker": 0.5,
+    "zach mckinstry": 0.5,
+    "christopher morel": 0.5,
+    "victor caratini": 0.5,
+    "francisco alvarez": 0.5,
+    "anthony volpe": 0.5,
+    "austin wells": 0.5,
+    "bo naylor": 0.5,
+    "masataka yoshida": 0.5,
+    "edgar quero": 0.5,
+    "paul goldschmidt": 0.5,
+    "jj wetherholt": 0.5,
+    "nick gonzales": 0.5,
+    "austin hays": 0.5,
+    "andrew mccutchen": 0.5,
+    "marcelo mayer": 0.5,
+    "victor scott": 0.5,
+    "moises ballesteros": 0.5,
+    "joey bart": 0.5,
+    "joey ortiz": 0.5,
+    "nolan gorman": 0.5,
+    "parker meadows": 0.5,
+    "kyle karros": 0.5,
+    "ernie clement": 0.5,
+    "will benson": 0.5,
+    "jake fraley": 0.5,
+    "dominic canzone": 0.5,
+    "chase delauter": 0.5,
+    "nick castellanos": 0.5,
+    "carson benge": 0.5,
+    "kody clemens": 0.5,
+    "starling marte": 0.5,
+    "jake bauers": 0.5,
+    "tommy pham": 0.5,
+    "nathaniel lowe": 0.5,
+    "cole young": 0.5,
+    "victor robles": 0.5,
+    "luke raley": 0.5,
+    "brooks baldwin": 0.5,
+    "carlos narvaez": 0.5,
+    "heriberto hernandez": 0.5,
+    "dillon dingler": 0.5,
+    "otto kemp": 0.5,
+    "jordan lawlar": 0.5,
+    "alek thomas": 0.5,
+    "casey schmitt": 0.5,
+    "owen caissie": 0.5,
+    "matt shaw": 0.5,
+    "nathan lukes": 0.5,
+    "garrett mitchell": 0.5,
+    "kebryan hayes": 0.5,
+    "matt vierling": 0.5,
+    "brooks lee": 0.5,
+    "javier sanoja": 0.5,
+    "harry ford": 0.5,
+    "cj kayfus": 0.5,
+    "danny jansen": 0.5,
+    "troy johnston": 0.5,
+    "christian moore": 0.5,
+    "george valera": 0.5,
+    "edmundo sosa": 0.5,
+    "colt emerson": 0.5,
+    "brayan rocchio": 0.5,
+    "ramon urias": 0.5,
+    "liam hicks": 0.5,
+    "carson williams": 0.5,
+    "braxton fulford": 0.5,
+    "carlos santana": 0.5,
+    "charlie condon": 0.5,
+    "lenyn sosa": 0.5,
+    "miguel andujar": 0.5,
+    "dane myers": 0.5,
+    "gabriel arias": 0.5,
+    "sam haggerty": 0.5,
+    "dalton rushing": 0.5,
+    "vaughn grissom": 0.5,
+    "tyler locklear": 0.5,
+    "luis rengifo": 0.5,
+    "colby thomas": 0.5,
+    "blaze alexander": 0.5,
+    "nasim nunez": 0.5,
+    "amed rosario": 0.5,
+    "taylor walls": 0.5,
+    "jake mangum": 0.5,
+    "denzel clarke": 0.5,
+    "zach cole": 0.5,
+    "ryan ritter": 0.5,
+    "henry davis": 0.5,
+    "brady house": 0.5,
+    "michael massey": 0.5,
+    "luisangel acuna": 0.5,
+    "jonny deluca": 0.5,
+    "adrian del castillo": 0.5,
+    "jhostynxon garcia": 0.5,
+    "joey loperfido": 0.5,
+    "kyle isbel": 0.5,
+    "enrique hernandez": 0.5,
+    "rowdy tellez": 0.5,
+    "graham pauley": 0.5,
+    "daniel schneemann": 0.5,
+    "jose tena": 0.5,
+    "robert hassell": 0.5,
+    "jacob young": 0.5,
+    "mauricio dubon": 0.5,
+    "tyrone taylor": 0.5,
+    "everson pereira": 0.5,
+    "andres chaparro": 0.5,
+    "thomas saggese": 0.5,
+    "travis bazzana": 0.5,
+    "travis darnaud": 0.5,
+    "ben williamson": 0.5,
+    "freddy fermin": 0.5,
+    "miguel amaya": 0.5,
+    "luis campusano": 0.5,
+    "connor wong": 0.5,
+    "luis torrens": 0.5,
+    "patrick bailey": 0.5,
+    "angel martinez": 0.5,
+    "griffin conine": 0.5,
+    "javier baez": 0.5,
+    "jeremiah jackson": 0.5,
+    "wilmer flores": 0.5,
+    "blake perkins": 0.5,
+    "sung mun song": 0.5,
+    "oswald peraza": 0.5,
+    "ezequiel duran": 0.5,
+    "joe mack": 0.5,
+    "isiah kiner falefa": 0.5,
+    "abimelec ortiz": 0.5,
+    "kyle higashioka": 0.5,
+    "jose trevino": 0.5,
+    "pedro pages": 0.5,
+    "hunter feduccia": 0.5,
+    "keibert ruiz": 0.5,
+    "nick fortes": 0.5,
+    "adam frazier": 0.5,
+    "bryce teodosio": 0.5,
+    "tarik skubal": 47.0,
+    "paul skenes": 44.0,
+    "garrett crochet": 37.0,
+    "chris sale": 30.0,
+    "cristopher sanchez": 26.5,
+    "yoshinobu yamamoto": 26.5,
+    "bryan woo": 25.0,
+    "logan webb": 24.5,
+    "cole ragans": 24.0,
+    "logan gilbert": 24.0,
+    "jacob degrom": 23.0,
+    "zack wheeler": 22.5,
+    "max fried": 22.5,
+    "hunter brown": 21.5,
+    "hunter greene": 20.0,
+    "framber valdez": 19.5,
+    "blake snell": 19.0,
+    "jesus luzardo": 18.5,
+    "dylan cease": 17.5,
+    "george kirby": 16.0,
+    "joe ryan": 15.5,
+    "nathan eovaldi": 15.5,
+    "chase burns": 15.0,
+    "tyler glasnow": 14.5,
+    "freddy peralta": 14.0,
+    "kyle bradish": 14.0,
+    "sonny gray": 13.0,
+    "brandon woodruff": 13.0,
+    "shane mcclanahan": 12.0,
+    "drew rasmussen": 12.0,
+    "nick pivetta": 11.5,
+    "spencer strider": 11.5,
+    "emmet sheehan": 11.0,
+    "nolan mclean": 11.0,
+    "ranger suarez": 10.5,
+    "eury perez": 10.5,
+    "michael king": 10.0,
+    "kevin gausman": 10.0,
+    "trey yesavage": 9.5,
+    "mackenzie gore": 9.0,
+    "jose soriano": 9.0,
+    "kris bubic": 8.5,
+    "spencer schwellenbach": 8.5,
+    "luis castillo": 7.5,
+    "jack flaherty": 7.0,
+    "shane bieber": 6.5,
+    "matthew boyd": 6.5,
+    "edward cabrera": 6.5,
+    "tanner bibee": 6.0,
+    "joey cantillo": 6.0,
+    "ryan pepiot": 6.0,
+    "justin steele": 6.0,
+    "carlos rodon": 6.0,
+    "jacob misiorowski": 6.0,
+    "gerrit cole": 6.0,
+    "nick lodolo": 6.0,
+    "gavin williams": 5.5,
+    "joe musgrove": 5.0,
+    "cam schlittler": 4.5,
+    "sean manaea": 4.5,
+    "kodai senga": 4.5,
+    "cody ponce": 4.0,
+    "braxton ashcraft": 4.0,
+    "grayson rodriguez": 4.0,
+    "ian seymour": 3.5,
+    "logan henderson": 3.5,
+    "shota imanaga": 2.5,
+    "david peterson": 2.5,
+    "shane smith": 2.5,
+    "cade horton": 2.5,
+    "aaron nola": 2.5,
+    "ryan weathers": 2.5,
+    "reynaldo lopez": 2.5,
+    "merrill kelly": 2.5,
+    "robbie ray": 2.5,
+    "michael soroka": 2.5,
+    "zac gallen": 2.0,
+    "shane baz": 1.5,
+    "braxton garrett": 1.5,
+    "jared jones": 1.5,
+    "sandy alcantara": 1.5,
+    "reid detmers": 1.5,
+    "trevor rogers": 1.5,
+    "clay holmes": 1.5,
+    "zebby matthews": 0.5,
+    "bubba chandler": 0.5,
+    "bryce miller": 0.5,
+    "foster griffin": 0.5,
+    "tatsuya imai": 0.5,
+    "parker messick": 0.5,
+    "mike burrows": 0.5,
+    "hunter barco": 0.5,
+    "andrew abbott": 0.5,
+    "roki sasaki": 0.5,
+    "casey mize": 0.5,
+    "tyler mahle": 0.5,
+    "jacob latz": 0.5,
+    "luis gil": 0.5,
+    "jack leiter": 0.5,
+    "grant holmes": 0.5,
+    "yusei kikuchi": 0.5,
+    "quinn priester": 0.5,
+    "landen roupp": 0.5,
+    "dustin may": 0.5,
+    "jacob lopez": 0.5,
+    "johan oviedo": 0.5,
+    "steven matz": 0.5,
+    "mitch keller": 0.5,
+    "david festa": 0.5,
+    "will warren": 0.5,
+    "chris bassitt": 0.5,
+    "ryne nelson": 0.5,
+    "joe boyle": 0.5,
+    "kyle harrison": 0.5,
+    "bailey ober": 0.5,
+    "kumar rocker": 0.5,
+    "taj bradley": 0.5,
+    "michael mcgreevy": 0.5,
+    "brayan bello": 0.5,
+    "noah cameron": 0.5,
+    "brandon sproat": 0.5,
+    "jose berrios": 0.5,
+    "brady singer": 0.5,
+    "robby snelling": 0.5,
+    "cade cavalli": 0.5,
+    "chad patrick": 0.5,
+    "max meyer": 0.5,
+    "brandon pfaadt": 0.5,
+    "dean kremer": 0.5,
+    "nick martinez": 0.5,
+    "max scherzer": 0.5,
+    "michael wacha": 0.5,
+    "rhett lowder": 0.5,
+    "andrew alvarez": 0.5,
+    "matthew liberatore": 0.5,
+    "jameson taillon": 0.5,
+    "hunter dobbins": 0.5,
+    "seth lugo": 0.5,
+    "justin verlander": 0.5,
+    "kyle leahy": 0.5,
+    "zach eflin": 0.5,
+    "eduardo rodriguez": 0.5,
+    "spencer arrighetti": 0.5,
+    "brad lord": 0.5,
+    "zack littell": 0.5,
+    "griffin canning": 0.5,
+    "luis morales": 0.5,
+    "simeon woods richardson": 0.5,
+    "adrian houser": 0.5,
+    "richard fitts": 0.5,
+    "hurston waldrep": 0.5,
+    "slade cecconi": 0.5,
+    "jeffrey springs": 0.5,
+    "lucas giolito": 0.5,
+    "luis medina": 0.5,
+    "logan evans": 0.5,
+    "luis severino": 0.5,
+    "cristian javier": 0.5,
+    "andre pallante": 0.5,
+    "anthony kay": 0.5,
+    "mick abel": 0.5,
+    "lance mccullers": 0.5,
+    "aaron civale": 0.5,
+    "charlie morton": 0.5,
+    "bryce elder": 0.5,
+    "logan allen": 0.5,
+    "davis martin": 0.5,
+    "andrew painter": 0.5,
+    "chris paddack": 0.5,
+    "sean burke": 0.5,
+    "jose urquidy": 0.5,
+    "marcus stroman": 0.5,
+    "jake irvin": 0.5,
+    "jonathan cannon": 0.5,
+    "alek manoah": 0.5,
+    "patrick corbin": 0.5,
+    "tyler anderson": 0.5,
+    "randy vasquez": 0.5,
+    "miles mikolas": 0.5,
+    "caden dana": 0.5,
+    "erick fedde": 0.5,
+    "ryan feltner": 0.5,
+    "taijuan walker": 0.5,
+    "josiah gray": 0.5,
+    "michael lorenzen": 0.5,
+    "jose quintana": 0.5,
+    "german marquez": 0.5,
+    "kyle freeland": 0.5,
+    "chase dollander": 0.5,
+    "tomoyuki sugano": 0.5,
+    "cade smith": 11.0,
+    "edwin diaz": 11.0,
+    "jhoan duran": 10.0,
+    "andres munoz": 10.0,
+    "mason miller": 10.0,
+    "abner uribe": 9.5,
+    "devin williams": 9.5,
+    "bryan abreu": 9.5,
+    "aroldis chapman": 9.5,
+    "jeremiah estrada": 8.0,
+    "josh hader": 8.0,
+    "david bednar": 8.0,
+    "edwin uceta": 7.5,
+    "garrett cleavinger": 7.0,
+    "daniel palencia": 7.0,
+    "gabe speier": 6.5,
+    "raisel iglesias": 6.5,
+    "jose a ferrer": 6.5,
+    "jojo romero": 6.5,
+    "alex vesia": 6.5,
+    "trevor megill": 6.0,
+    "phil maton": 6.0,
+    "jeff hoffman": 6.0,
+    "hunter harvey": 6.0,
+    "bryan king": 6.0,
+    "dennis santana": 6.0,
+    "jason adam": 5.5,
+    "adrian morejon": 5.5,
+    "pete fairbanks": 5.5,
+    "andrew kittredge": 5.5,
+    "tyler rogers": 5.5,
+    "ryan helsley": 5.5,
+    "erik sabrowski": 5.5,
+    "caleb thielbar": 5.5,
+    "matt svanson": 5.0,
+    "chris martin": 5.0,
+    "robert suarez": 5.0,
+    "riley obrien": 5.0,
+    "gregory soto": 5.0,
+    "dylan lee": 5.0,
+    "a j minter": 5.0,
+    "eduard bazardo": 5.0,
+    "jose alvarado": 4.5,
+    "robert garcia": 4.5,
+    "brooks raley": 4.5,
+    "kevin ginkel": 4.5,
+    "matt brash": 4.5,
+    "tanner scott": 4.5,
+    "camilo doval": 4.5,
+    "kody funderburk": 4.0,
+    "kenley jansen": 4.0,
+    "tony santillan": 4.0,
+    "clayton beeter": 4.0,
+    "bennett sousa": 4.0,
+    "griffin jax": 4.0,
+    "taylor rogers": 4.0,
+    "garrett whitlock": 4.0,
+    "lucas erceg": 4.0,
+    "carlos estevez": 4.0,
+    "kirby yates": 4.0,
+    "hoby milner": 3.5,
+    "seranthony dominguez": 3.5,
+    "grant taylor": 3.5,
+    "bryan baker": 3.5,
+    "brendon little": 3.5,
+    "robert stephenson": 3.5,
+    "ryan thompson": 3.0,
+    "anthony bender": 3.0,
+    "john schreiber": 3.0,
+    "tommy nance": 3.0,
+    "mark leiter": 3.0,
+    "mason montgomery": 3.0,
+    "yimi garcia": 2.5,
+    "jovani moran": 2.5,
+    "sam hentges": 2.5,
+    "brusdar graterol": 2.5,
+    "ben joyce": 2.5,
+    "andrew nardi": 2.5,
+    "tyler kinley": 2.5,
+    "cole henry": 2.5,
+    "ryan walker": 2.5,
+    "kade strowd": 2.5,
+    "cole winn": 2.5,
+    "matt strahm": 2.0,
+    "kyle finnegan": 2.0,
+    "fernando cruz": 2.0,
+    "julian fernandez": 2.0,
+    "joel peguero": 2.0,
+    "tim herrin": 2.0,
+    "hunter gaddis": 2.0,
+    "matt festa": 2.0,
+    "elvis alvarado": 2.0,
+    "blake treinen": 2.0,
+    "pj poulin": 2.0,
+    "will vest": 2.0,
+    "justin slaten": 2.0,
+    "yennier cano": 2.0,
+    "victor vodnik": 2.0,
+    "isaac mattson": 2.0,
+    "justin lawrence": 2.0,
+    "greg weissert": 1.5,
+    "brent headrick": 1.5,
+    "jared koenig": 1.5,
+    "tim hill": 1.5,
+    "justin wilson": 1.5,
+    "juan mejia": 1.5,
+    "joel payamps": 1.5,
+    "evan sisk": 1.5,
+    "pierce johnson": 1.5,
+    "paul sewald": 1.5,
+    "louis varland": 1.5,
+    "nick mears": 1.5,
+    "shawn armstrong": 1.5,
+    "justin martinez": 1.0,
+    "brock stewart": 1.0,
+    "luke weaver": 1.0,
+    "erik miller": 1.0,
+    "jordan romano": 1.0,
+    "griff mcgarry": 1.0,
+    "bryan hudson": 1.0,
+    "emilio pagan": 1.0,
+    "jacob webb": 1.0,
+    "enyel de los santos": 1.0,
+    "aaron ashby": 1.0,
+    "josh white": 1.0,
+    "colin selby": 1.0,
+    "tyler holton": 0.5,
+    "brad keller": 0.5,
+    "orion kerkering": 0.5,
+    "eric orze": 0.5,
+    "a j puk": 0.5,
+    "brandyn garcia": 0.5,
+    "grant anderson": 0.5,
+    "aaron bummer": 0.5,
+    "justin bruihl": 0.5,
+    "yohan ramirez": 0.5,
+    "ryan fernandez": 0.5,
+    "matt pushard": 0.5,
+    "porter hodge": 0.5,
+    "richard lovelady": 0.5,
+    "alex lange": 0.5,
+    "hayden harris": 0.5,
+    "drew pomeranz": 0.5,
+    "ryan watson": 0.5,
+    "sam moll": 0.5,
+    "carlos vargas": 0.5,
+    "mason fluharty": 0.5,
+    "kevin kelly": 0.5,
+    "josh sborz": 0.5,
+    "cole sands": 0.5,
+    "chase silseth": 0.5,
+    "yuki matsui": 0.5,
+    "craig yoho": 0.5,
+    "yerry de los santos": 0.5,
+    "andrew chafin": 0.5,
+    "nate pearson": 0.5,
+    "braydon fisher": 0.5,
+    "ryne stanek": 0.5,
+    "jason foley": 0.5,
+    "tommy kahnle": 0.5,
+    "dauri moreta": 0.5,
+    "will klein": 0.5,
+    "brant hurter": 0.5,
+    "yaramil hiraldo": 0.5,
+    "danny coulombe": 0.5,
+    "bradgley rodriguez": 0.5,
+    "luinder avila": 0.5,
+    "alexis diaz": 0.5,
+    "justin topa": 0.5,
+    "austin warren": 0.5,
+    "john king": 0.5,
+    "drey jameson": 0.5,
+    "jack dreyer": 0.5,
+    "andre granillo": 0.5,
+    "yosver zulueta": 0.5,
+    "dylan ross": 0.5,
+    "chase lee": 0.5,
+    "eduarniel nunez": 0.5,
+    "easton mcgee": 0.5,
+    "angel zerpa": 0.5,
+    "hogan harris": 0.5,
+    "peyton pallette": 0.5,
+    "dylan smith": 0.5,
+    "zach mccambley": 0.5,
+    "tyler ferguson": 0.5,
+    "michael kelly": 0.5,
+    "ethan roberts": 0.5,
+    "jonathan loaisiga": 0.5,
+    "andrew walters": 0.5,
+    "trent thornton": 0.5,
+    "keegan akin": 0.5,
+    "gus varland": 0.5,
+    "anthony nunez": 0.5,
+    "calvin faucher": 0.5,
+    "steven okert": 0.5,
+    "graham ashcraft": 0.5,
+    "coleman crow": 0.5,
+    "grant wolfram": 0.5,
+    "philip abner": 0.5,
+    "liam hendriks": 0.5,
+    "adbert alzolay": 0.5,
+    "carter baumler": 0.5,
+    "kyle nicolas": 0.5,
+    "seth halvorsen": 0.5,
+    "ben brown": 0.5,
+    "jedixson paez": 0.5,
+    "tanner banks": 0.5,
+    "drew anderson": 0.5,
+    "robinson ortiz": 0.5,
+    "ron marinaccio": 0.5,
+    "chris murphy": 0.5,
+    "george soriano": 0.5,
+    "luke jackson": 0.5,
+    "colin holderman": 0.5,
+    "zak kent": 0.5,
+    "nick raquet": 0.5,
+    "mason englert": 0.5,
+    "max lazar": 0.5,
+    "ian hamilton": 0.5,
+    "connor brogdon": 0.5,
+    "tim mayza": 0.5,
+    "daysbel hernandez": 0.5,
+    "sean newcomb": 0.5,
+    "james mcarthur": 0.5,
+    "zach pop": 0.5,
+    "jakob junis": 0.5,
+    "jordan leasure": 0.5,
+    "jaden hill": 0.5,
+    "edgardo henriquez": 0.5,
+    "brenan hanifee": 0.5,
+    "jack perkins": 0.5,
+    "christian scott": 0.5,
+    "steven wilson": 0.5,
+    "matt gage": 0.5,
+    "spencer bivens": 0.5,
+    "wikelman gonzalez": 0.5,
+    "garrett hawkins": 0.5,
+    "cionel perez": 0.5,
+    "hunter stratton": 0.5,
+    "justin sterner": 0.5,
+    "juan morillo": 0.5,
+    "jose butto": 0.5,
+    "zach maxwell": 0.5,
+    "cody laweryson": 0.5,
+    "craig kimbrel": 0.5,
+    "gregory santos": 0.5,
+    "troy taylor": 0.5,
+    "nick sandlin": 0.5,
+    "justin hagenman": 0.5,
+    "rafael montero": 0.5,
+    "sawyer gipson long": 0.5,
+    "alex carrillo": 0.5,
+    "ryan brasier": 0.5,
+    "yariel rodriguez": 0.5,
+    "chad green": 0.5,
+    "brady basso": 0.5,
+    "shane drohan": 0.5,
+    "cole sulser": 0.5,
+    "cade winquest": 0.5,
+    "bailey horn": 0.5,
+    "huascar brazoban": 0.5,
+    "connor phillips": 0.5,
+    "michael tonkin": 0.5,
+    "chase shugart": 0.5,
+    "drew smith": 0.5,
+    "tayler saucedo": 0.5,
+    "kaleb ort": 0.5,
+    "dietrich enns": 0.5,
+    "ty adcock": 0.5,
+    "david morgan": 0.5,
+    "tristan beck": 0.5,
+    "rj petit": 0.5,
+    "dl hall": 0.5,
+    "brock burke": 0.5,
+    "josh simpson": 0.5,
+    "michael petersen": 0.5,
+    "brandan bidois": 0.5,
+    "caleb ferguson": 0.5,
+    "anthony banda": 0.5,
+    "dj herz": 0.5,
+    "wandy peralta": 0.5,
+    "alek jacob": 0.5,
+    "hayden wesneski": 0.5,
+    "tyler phillips": 0.5,
+    "jorge lopez": 0.5,
+    "tyler samaniego": 0.5,
+    "rico garcia": 0.5,
+    "prelander berroa": 0.5,
+    "keaton winn": 0.5,
+    "paul gervase": 0.5,
+    "tobias myers": 0.5,
+    "ben casparius": 0.5,
+    "jose leclerc": 0.5,
+    "scott barlow": 0.5,
+    "dylan dodd": 0.5,
+    "steven cruz": 0.5,
+    "jt brubaker": 0.5,
+    "carmen mlodzinski": 0.5,
+    "brandon eisert": 0.5,
+    "bryan hoeing": 0.5,
+    "kyle wright": 0.5,
+    "kendall graveman": 0.5,
+    "javier assad": 0.5,
+    "cameron foster": 0.5,
+    "t j mcfarland": 0.5,
+    "justin wrobleski": 0.5,
+    "reiver sanmartin": 0.5,
+    "taylor rashi": 0.5,
+    "angel chivilli": 0.5,
+    "rob zastryzny": 0.5,
+    "juan burgos": 0.5,
+    "chris roycroft": 0.5,
+    "taylor clarke": 0.5,
+    "jimmy herget": 0.5,
+    "carson seymour": 0.5,
+    "andry lara": 0.5,
+    "gordon graceffo": 0.5,
+    "yoendrys gomez": 0.5,
+    "jake bird": 0.5,
+    "kolby allard": 0.5,
+    "andrew hoffmann": 0.5,
+    "austin love": 0.5,
+    "michael kopech": 0.5,
+    "orlando ribalta": 0.5,
+    "luis curvelo": 0.5,
+    "joey lucchesi": 0.5,
+    "hunter bigge": 0.5,
+    "ryan zeferjahn": 0.5,
+    "kendry rojas": 0.5,
+    "luis guerrero": 0.5,
+    "brent suter": 0.5,
+    "jalen beeks": 0.5,
+    "daniel lynch": 0.5,
+    "jordan hicks": 0.5,
+    "jonathan pintaro": 0.5,
+    "jonathan bowlan": 0.5,
+    "ryan harbin": 0.5,
+    "zack kelly": 0.5,
+    "jayden murray": 0.5,
+    "jesse scholtens": 0.5,
+    "ty madden": 0.5,
+    "cade gibson": 0.5,
+    "mitch spence": 0.5,
+    "eli morgan": 0.5,
+    "joe rock": 0.5,
+    "dan altavilla": 0.5,
+    "sam bachman": 0.5,
+    "paul blackburn": 0.5,
+    "connor prielipp": 0.5,
+    "eric lauer": 0.5,
+    "casey legumina": 0.5,
+    "kyle keller": 0.5,
+    "lake bachar": 0.5,
+    "ryan yarbrough": 0.5,
+    "kyle hart": 0.5,
+    "kai wei teng": 0.5,
+    "william kempner": 0.5,
+    "konnor pilkington": 0.5,
+    "tyler gilbert": 0.5,
+    "tyler wells": 0.5,
+    "jackson rutledge": 0.5,
+    "cam sanders": 0.5,
+    "colton gordon": 0.5,
+    "paxton schultz": 0.5,
+    "luis mey": 0.5,
+    "carlos rodriguez": 0.5,
+    "albert suarez": 0.5,
+    "joe ross": 0.5,
+    "scott alexander": 0.5,
+    "lou trivino": 0.5,
+    "brandon young": 0.5,
+    "trevor williams": 0.5,
+    "ryan rolison": 0.5,
+    "pedro avila": 0.5,
+    "jayvien sandridge": 0.5,
+    "john klein": 0.5,
+    "grant holman": 0.5,
+    "marc church": 0.5,
+    "brennan bernardino": 0.5,
+    "jake eder": 0.5,
+    "aj blubaugh": 0.5,
+    "roddery munoz": 0.5,
+    "adam mazur": 0.5,
+    "lyon richardson": 0.5,
+    "pierson ohl": 0.5,
+    "mike vasil": 0.5,
+    "keegan thompson": 0.5,
+    "zach agnos": 0.5,
+    "brandon williamson": 0.5,
+    "bobby miller": 0.5,
+    "beau brieske": 0.5,
+    "julian aguiar": 0.5,
+    "tyler alexander": 0.5,
+    "scott mcgough": 0.5,
+    "joey estes": 0.5,
+    "ryan gusto": 0.5,
+    "doug nikhazy": 0.5,
+    "mike clevinger": 0.5,
+    "yilber diaz": 0.5,
+    "travis adams": 0.5,
+    "seth johnson": 0.5,
+    "isaiah campbell": 0.5,
+    "gabriel hughes": 0.5,
+    "victor mederos": 0.5,
+    "carson palmquist": 0.5,
+    "luis peralta": 0.5,
+    "chase petty": 0.5
   },
   "rfa": {
     "lane thomas": "AIDS",
@@ -1988,260 +3145,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "K. Mcgonigle",
-    "L. Armenteros",
-    "L. Matos",
-    "G. Lavigne",
-    "C. Mayo",
-    "C. Hernandez",
-    "A. Freeland",
-    "J. Guerra",
-    "H. Waldrep",
-    "M. Clark",
-    "K. Campbell",
-    "A. Hansen",
-    "K. Watson",
-    "B. House",
-    "J. Biddle",
-    "J. Groome",
-    "W. Jenkins",
-    "C. Dana",
-    "A. Faedo",
-    "J. Bukauskas",
-    "C. Bonemer",
-    "J. Caglianone",
-    "N. Carlos Vera",
-    "C. Williams",
-    "C. Fulmer",
-    "C. Young",
-    "C. Norby",
-    "V. Brujan",
-    "T. Yesavage",
-    "J. Jobe",
-    "A. Miller",
-    "G. Rodriguez",
-    "T. Troy",
-    "F. Barreto",
-    "Z. Matthews",
-    "S. Howard",
-    "T. Casas",
-    "O. Peraza",
-    "A. Gracia",
-    "K. Griffin",
-    "T. Hence",
-    "Jah. Jones",
-    "K. Anderson",
-    "B. Eldridge",
-    "F. Whitley",
-    "J. P. Martinez",
-    "D. Cartaya",
-    "A. Page",
-    "H. Alvarez",
-    "J. Wiggins",
-    "J. Turner",
-    "R. Tiedemann",
-    "H. Kjerstad",
-    "J. LaViolette",
-    "D. Espino",
-    "J. De Leon",
-    "F. Wall",
-    "R. Lewis",
-    "E. Morales",
-    "T. Sykora",
-    "R. Calaz",
-    "R. Arias",
-    "H. Takahashi",
-    "B. Davis",
-    "Z. Hope",
-    "F. Celesten",
-    "J. De Paula",
-    "E. Carter",
-    "A. Genao",
-    "R. Waldschmidt",
-    "J. Farmelo",
-    "K. Okamoto",
-    "C. Cowser",
-    "R. Snelling",
-    "K. Alcantara",
-    "J. Holliday",
-    "J. Crawford",
-    "O. Martinez",
-    "C. Fuller",
-    "C. Keith",
-    "G. Valera",
-    "M. Sirota",
-    "P. Tolle",
-    "J. Williams",
-    "P. Messick",
-    "M. Abel",
-    "M. Arroyo",
-    "Rain. Rodriguez",
-    "M. Ballesteros",
-    "G. Lombard Jr.",
-    "C. Burns",
-    "C. Vaquero",
-    "T. Beede",
-    "T. Trammell",
-    "B. McKay",
-    "A. Duno",
-    "S. Beer",
-    "M. Banuelos",
-    "B. Chandler",
-    "A.J. Reed",
-    "C. Dollander",
-    "R. Velazquez",
-    "M. Liberatore",
-    "M. Manning",
-    "D. Waters",
-    "S. Yamashita",
-    "S. Torkelson",
-    "J. Balazovic",
-    "S. Zavala",
-    "E. Perez",
-    "H. Davis",
-    "A. Nimmala",
-    "J. Groshans",
-    "J. Arnold",
-    "J. Rodriguez",
-    "J. Adams",
-    "N. Meyer",
-    "T. Bremner",
-    "A. Martin",
-    "L. De Vries",
-    "A. Medina",
-    "K. Robinson",
-    "J. Lebron",
-    "T. Szapucki",
-    "J. Gonzalez",
-    "N. McLean",
-    "R. Vilade",
-    "M. Baez",
-    "A. Painter",
-    "B. Goodwin",
-    "R. Ryan",
-    "B. Rocchio",
-    "R. Herrera",
-    "S. Stewart",
-    "S. Strosnider",
-    "F. Kilome",
-    "C. Moore",
-    "J. Misiorowski",
-    "R. Pint",
-    "T. Bradley",
-    "L. Hernandez",
-    "B. Montgomery",
-    "E. Holliday",
-    "C. Abrams",
-    "M. Mayer",
-    "D. Garcia",
-    "F. Arias",
-    "N. Pearson",
-    "T. Thomas",
-    "B. Shipley",
-    "C. Pache",
-    "D. Beavers",
-    "X. Isaac",
-    "N. Schultz",
-    "D. Cameron",
-    "C. Martin",
-    "W. Javier",
-    "C. Emerson",
-    "Ad. Sanchez",
-    "T. Yamada",
-    "C. Smith",
-    "O. Colas",
-    "D. Curley",
-    "S. Sanchez",
-    "J. Briceno",
-    "R. Contreras",
-    "D.J. Peterson",
-    "M. Luciano",
-    "X. Neyens",
-    "Y. Curet",
-    "Z. Veen",
-    "D. Lesko",
-    "J. De Jesus Gonzalez",
-    "A. Bracho",
-    "B. Thompson",
-    "J. Bleday",
-    "E. Green",
-    "B. Wilken",
-    "J. Luis",
+    "J. Bart",
     "M. Winn",
-    "E. Florentino",
+    "J. Perdomo",
+    "D. Waters",
+    "V. Brujan",
+    "H. Bishop",
+    "D. Curley",
+    "B. Rocchio",
+    "A. Gracia",
+    "K. Robinson",
+    "C. Cowser",
+    "F. Whitley",
+    "DL Hall",
+    "L. Matos",
+    "T. Johnson",
+    "J. Gonzalez",
+    "J. Guerra",
+    "B. House",
+    "D. Cartaya",
+    "J. Groshans",
+    "R. Snelling",
+    "S. Walcott",
+    "L. Pena (MIL)",
+    "Z. Hope",
+    "Z. Matthews",
+    "H. Takahashi",
+    "F. Wall",
+    "D.J. Peterson",
+    "C. Early",
+    "L. Hernandez",
+    "A. Page",
+    "J. Parker",
+    "P. Messick",
+    "D. Beavers",
+    "L. Patino",
+    "C. Kieboom",
+    "L. Doyle",
+    "A. Arquette",
+    "J. Adams",
+    "T. Widener",
+    "Q. Mathews",
+    "C. Dana",
+    "C. Jensen",
+    "T. Casas",
+    "T. Trammell",
+    "M. Mayer",
+    "G. Lombard Jr.",
+    "N. Schultz",
     "B. Rainer",
+    "E. Conrad",
+    "N. McLean",
+    "S. Sanchez",
+    "A. Baddoo",
+    "O. Colas",
+    "A. Duno",
+    "E. Rodriguez",
+    "T. White",
+    "T. Yamada",
+    "K. Griffin",
+    "Y. Curet",
+    "R. Sloan",
+    "N. Gonzales",
+    "Z. Veen",
+    "A. Hansen",
+    "L. Allen",
+    "H. Alvarez",
+    "E. Morales",
+    "D. Burress",
+    "G. Taylor",
+    "F. Alvarez",
+    "C. Moore",
+    "J. Jobe",
     "L. Montes",
     "J. Lawlar",
-    "P. Eeles",
-    "C. Kieboom",
-    "L. Patino",
-    "R. Hassell",
-    "S. Walcott",
-    "E. Conrad",
-    "P. Burdick",
-    "Q. Priester",
-    "E. Florial",
-    "J. Dunn",
-    "H. Bishop",
-    "L. Allen",
-    "C. Benge",
-    "A. Arquette",
-    "M. Harrison",
-    "C. Lagrange",
-    "N. Gonzales",
-    "S. Basallo",
-    "G. Canning",
-    "D. Burress",
-    "J. Triantos",
-    "DL Hall",
-    "T. Gillen",
-    "Ja. Jung",
-    "K. Rocker",
-    "T. Widener",
-    "K. Allard",
-    "Jai. Chourio",
-    "G. Taylor",
-    "T. Black",
-    "Q. Mathews",
-    "R. Anthony",
-    "C. DeLauter",
-    "T. White",
-    "D. Whitney",
-    "E. Hancock",
-    "A. Jackson",
-    "J. Walker",
-    "E. Hankins",
-    "D. Crews",
-    "K. Harrison",
-    "C. Condon",
-    "R. Mauricio",
-    "L. Pena (MIL)",
-    "L. Brinson",
-    "A. Tejeda",
-    "O. Caissie",
-    "J. Barrero",
-    "T. Johnson",
-    "D. Jones",
-    "J. Parker",
+    "C. Young",
+    "S. Strosnider",
+    "C. Hernandez",
     "A. Gose",
-    "C. Winn",
-    "C. Collier",
-    "L. Doyle",
-    "C. Jensen",
-    "A. Meyer",
-    "E. Rodriguez",
-    "R. Sloan",
+    "J. Barrero",
+    "E. Carter",
+    "L. Brinson",
+    "C. DeLauter",
+    "K. Okamoto",
+    "M. Harrison",
+    "M. Manning",
+    "R. Mauricio",
+    "J. Luis",
+    "S. Stewart",
+    "M. Luciano",
+    "G. Valera",
+    "N. Carlos Vera",
+    "P. Tolle",
+    "T. Bradley",
+    "Rain. Rodriguez",
+    "C. Smith",
+    "S. Yamashita",
+    "E. Hancock",
+    "J. De Paula",
+    "R. Anthony",
+    "P. Eeles",
+    "N. Pearson",
+    "R. Ryan",
+    "A. Nimmala",
+    "A. Jackson",
+    "K. Alcantara",
+    "C. Dollander",
+    "C. Pache",
+    "B. McKay",
+    "T. Beede",
+    "J. Crawford",
+    "A. Faedo",
+    "X. Isaac",
+    "C. Bonemer",
+    "C. Williams",
+    "H. Kjerstad",
+    "A. Martin",
+    "A. Genao",
+    "J. P. Martinez",
+    "A. Painter",
+    "B. Eldridge",
+    "A. Bracho",
+    "C. Keith",
+    "T. Szapucki",
+    "J. Lebron",
+    "R. Tiedemann",
+    "C. Condon",
+    "X. Neyens",
+    "T. Troy",
+    "D. Cameron",
+    "R. Herrera",
+    "J. Walker",
+    "F. Kilome",
     "S. Jones",
-    "J. Bart",
-    "C. Early",
-    "C. Spangenberg",
-    "N. Marte",
+    "M. Banuelos",
+    "C. Abrams",
+    "J. Holliday",
+    "R. Vilade",
+    "J. Farmelo",
+    "E. Florentino",
+    "J. Balazovic",
+    "R. Pint",
     "T. Lutz",
-    "T. Bazzana",
-    "F. Alvarez",
-    "J. Perdomo",
+    "C. Norby",
+    "C. Fuller",
+    "H. Waldrep",
+    "J. Misiorowski",
+    "C. Collier",
+    "J. Williams",
+    "R. Contreras",
+    "J. De Leon",
+    "O. Peraza",
+    "K. Anderson",
+    "K. Harrison",
+    "D. Crews",
+    "R. Velazquez",
     "H. Smith",
-    "A. Baddoo"
+    "S. Howard",
+    "O. Martinez",
+    "C. Spangenberg",
+    "J. Turner",
+    "J. De Jesus Gonzalez",
+    "C. Winn",
+    "A. Meyer",
+    "S. Basallo",
+    "B. Wilken",
+    "F. Barreto",
+    "K. Watson",
+    "N. Marte",
+    "C. Benge",
+    "G. Lavigne",
+    "Jah. Jones",
+    "M. Liberatore",
+    "Jai. Chourio",
+    "A. Freeland",
+    "L. Armenteros",
+    "K. Campbell",
+    "M. Arroyo",
+    "C. Mayo",
+    "Ad. Sanchez",
+    "T. Hence",
+    "E. Perez",
+    "J. Bukauskas",
+    "Q. Priester",
+    "H. Davis",
+    "C. Lagrange",
+    "M. Abel",
+    "T. Bazzana",
+    "B. Montgomery",
+    "K. Mcgonigle",
+    "E. Florial",
+    "C. Burns",
+    "E. Holliday",
+    "R. Waldschmidt",
+    "P. Burdick",
+    "A. Tejeda",
+    "F. Arias",
+    "B. Thompson",
+    "J. Wiggins",
+    "A. Medina",
+    "M. Clark",
+    "J. Dunn",
+    "J. Briceno",
+    "T. Gillen",
+    "E. Green",
+    "J. Biddle",
+    "B. Shipley",
+    "M. Baez",
+    "E. Hankins",
+    "J. Arnold",
+    "W. Jenkins",
+    "D. Lesko",
+    "K. Allard",
+    "D. Garcia",
+    "R. Lewis",
+    "J. Triantos",
+    "J. Bleday",
+    "J. Caglianone",
+    "R. Hassell",
+    "S. Beer",
+    "F. Celesten",
+    "K. Rocker",
+    "M. Sirota",
+    "N. Meyer",
+    "W. Javier",
+    "R. Arias",
+    "C. Vaquero",
+    "R. Calaz",
+    "A.J. Reed",
+    "B. Goodwin",
+    "D. Jones",
+    "B. Chandler",
+    "G. Rodriguez",
+    "T. Thomas",
+    "T. Sykora",
+    "L. De Vries",
+    "J. Groome",
+    "B. Davis",
+    "C. Fulmer",
+    "C. Emerson",
+    "O. Caissie",
+    "J. Rodriguez",
+    "A. Miller",
+    "D. Whitney",
+    "T. Black",
+    "S. Zavala",
+    "G. Canning",
+    "T. Bremner",
+    "J. LaViolette",
+    "M. Ballesteros",
+    "Ja. Jung",
+    "S. Torkelson",
+    "C. Martin",
+    "D. Espino",
+    "T. Yesavage"
   ],
   "batters": [
     {
@@ -2983,8 +4140,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.52,
       "oopsy_g": 156.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -3619,8 +4776,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4074,8 +5231,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.55,
       "oopsy_g": 113.0,
       "tags": [
-        "INJURY_RISK",
         "PLATOON",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -4646,8 +5803,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.21,
       "oopsy_g": 110.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -4748,8 +5905,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.61,
       "oopsy_g": 96.0,
       "tags": [
-        "BUST",
         "ROFR_TARGET",
+        "BUST",
         "INJURY_RISK"
       ],
       "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
@@ -4901,8 +6058,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.19,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -5309,8 +6466,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.35,
       "oopsy_g": 104.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -5715,8 +6872,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 97.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6017,8 +7174,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.58,
       "oopsy_g": 105.0,
       "tags": [
-        "SLEEPER",
-        "SPEED_VALUE"
+        "SPEED_VALUE",
+        "SLEEPER"
       ],
       "note": "[PL #117] Zero barrels in 376 batted-ball events. But 44 SB in 104 G — on pace for 70+ in full season. TBR platoon limits AB. LDB: aSB efficiency could be spectacular if usage rate holds. Pure speed play.",
       "health_pct": 90,
@@ -6579,8 +7736,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.73,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "BUST"
+        "BUST",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7186,8 +8343,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.76,
       "oopsy_g": 113.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -7290,8 +8447,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 100.0,
       "tags": [
-        "INJURY_RISK",
         "PLATOON",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -7393,8 +8550,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.86,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -7797,8 +8954,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.17,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
         "BOUNCE_BACK",
+        "INJURY_RISK",
         "ADP_AVOID"
       ],
       "note": "",
@@ -8336,8 +9493,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "PLATOON"
+        "PLATOON",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -10675,8 +11832,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.56,
       "oopsy_g": 73.0,
       "tags": [
-        "INJURY_RISK",
-        "BOUNCE_BACK"
+        "BOUNCE_BACK",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -13204,8 +14361,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.38,
       "oopsy_fip": 3.298,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Mariners SP1 — locked. Elite K rate, low HR/9, durability. Bryce Miller's uncertainty only elevates his value as team anchor.",
       "health_pct": 93,
@@ -13261,8 +14418,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.58,
       "oopsy_fip": 3.314,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "STASH",
         "INJURY_RISK",
         "ADP_AVOID"
@@ -13322,9 +14479,9 @@ export const LDB_DATA = {
       "oopsy_fip": 3.528,
       "tags": [
         "RATIOS_ACE",
-        "IL_START",
         "INJURED",
-        "ROFR_TARGET"
+        "ROFR_TARGET",
+        "IL_START"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -13380,9 +14537,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.58,
       "oopsy_fip": 3.6,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "INJURY_RISK",
-        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
@@ -13439,8 +14596,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.598,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ADP_AVOID"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
@@ -13498,8 +14655,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.74,
       "oopsy_fip": 3.352,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Listed as Dodgers SP2 — pitching return confirmed for 2026. Also DH. Dual-threat elite value: OPS monster at plate + frontline SP innings. Top-1 overall if fully healthy pitching.",
       "health_pct": 92,
@@ -13555,9 +14712,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.75,
       "oopsy_fip": 3.738,
       "tags": [
-        "BUST",
+        "RATIOS_ACE",
         "SP_LOCKED",
-        "RATIOS_ACE"
+        "BUST"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
       "health_pct": 90,
@@ -13614,8 +14771,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.41,
       "oopsy_fip": 3.718,
       "tags": [
-        "SP_LOCKED",
-        "RATIOS_ACE"
+        "RATIOS_ACE",
+        "SP_LOCKED"
       ],
       "note": "Twins SP1 — confirmed. PabLó out for the year opens innings. Durable strikeout arm, underrated LDB value.",
       "health_pct": 88,
@@ -13783,9 +14940,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.25,
       "oopsy_fip": 3.839,
       "tags": [
+        "INJURED",
         "RATIOS_ACE",
         "SP_LOCKED",
-        "INJURED",
         "BOUNCE_BACK",
         "SLEEPER"
       ],
@@ -13957,10 +15114,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
+        "RATIOS_ACE",
+        "INJURY_RISK",
         "STASH",
         "IL_START",
-        "INJURY_RISK",
-        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
@@ -14189,9 +15346,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 6.57,
       "oopsy_fip": 4.011,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 4.2 IP, 2 ER, 5 H, 0 BB, 4 K. Changeup is filthy (9/19 whiffs, 8/13 vs RHB alone). Textbook HIPSTER — dominant vs RHB-heavy lineups, exposed vs LHB. Four-seamer and slider lack feel. Guardians SP5.",
@@ -14363,9 +15520,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 0 H, 0 BB, 1 K (cruised through, probably threw more after). 36 pitches — only faced one LHB who saw a splitter and grounded out. Blue Jays depth arm.",
@@ -14481,8 +15638,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.052,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "ADP_AVOID"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
@@ -14942,9 +16099,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
+        "RATIOS_ACE",
         "DTD",
-        "IL_START",
-        "RATIOS_ACE"
+        "IL_START"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
       "health_pct": 65,
@@ -15054,9 +16211,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.23,
       "oopsy_fip": 4.387,
       "tags": [
+        "RATIOS_ACE",
         "SP_LOCKED",
-        "SLEEPER",
-        "RATIOS_ACE"
+        "SLEEPER"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -15344,8 +16501,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 8.73,
       "oopsy_fip": 4.697,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "SLEEPER"
       ],
       "note": "Yankees SP5 — locked (Cole & Rodón out until May/June). Gets a full slate of starts early. Elevated value during injury window.",
@@ -15460,9 +16617,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.87,
       "oopsy_fip": 3.981,
       "tags": [
+        "RATIOS_ACE",
         "SP_LOCKED",
-        "SLEEPER",
-        "RATIOS_ACE"
+        "SLEEPER"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -15519,9 +16676,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 2.5,
       "oopsy_fip": 4.343,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER"
       ],
       "note": "Spring: 2.0 IP, 3 ER, 3 H, 1 BB, 1 K. Sinker not armside, changeup non-competitive vs RHB. Experimenting with cutter/slider/sweeper — unclear identity. Need another look before trusting.",
@@ -15920,9 +17077,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.82,
       "oopsy_fip": 4.512,
       "tags": [
+        "RATIOS_ACE",
         "SP_LOCKED",
-        "SLEEPER",
-        "RATIOS_ACE"
+        "SLEEPER"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -16155,8 +17312,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.23,
       "oopsy_fip": 4.279,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -16332,9 +17489,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 1.81,
       "oopsy_fip": 4.519,
       "tags": [
+        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "RATIOS_ACE",
         "ADP_AVOID"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
@@ -16676,9 +17833,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.11,
       "oopsy_fip": 4.557,
       "tags": [
-        "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
@@ -17141,9 +18298,9 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.5,
       "oopsy_fip": 4.729,
       "tags": [
+        "RATIOS_ACE",
         "SP_LOCKED",
         "DEEP_LEAGUE",
-        "RATIOS_ACE",
         "ROLE_UNCLEAR",
         "STASH",
         "ADP_AVOID"
@@ -17664,9 +18821,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.61,
       "oopsy_fip": 4.44,
       "tags": [
-        "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
@@ -17780,8 +18937,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.67,
       "oopsy_fip": 4.131,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
@@ -17958,10 +19115,10 @@ export const LDB_DATA = {
       "oopsy_mgs": -0.71,
       "oopsy_fip": 4.721,
       "tags": [
+        "RATIOS_ACE",
+        "SP_LOCKED",
         "ADP_AVOID",
         "BUST",
-        "SP_LOCKED",
-        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
@@ -18068,9 +19225,9 @@ export const LDB_DATA = {
       "oopsy_mgs": 0.62,
       "oopsy_fip": 4.28,
       "tags": [
-        "BUST",
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
+        "BUST",
         "DEEP_LEAGUE"
       ],
       "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
@@ -18946,8 +20103,8 @@ export const LDB_DATA = {
       "oopsy_mgs": -1.75,
       "oopsy_fip": 5.163,
       "tags": [
-        "SP_LOCKED",
         "RATIOS_ACE",
+        "SP_LOCKED",
         "DEEP_LEAGUE",
         "ADP_AVOID"
       ],
