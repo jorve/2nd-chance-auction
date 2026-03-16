@@ -51,6 +51,14 @@ function fmt(v, dec = 0) {
   return dec ? n.toFixed(dec) : Math.round(n)
 }
 
+function fmtAdjMoney(v) {
+  const n = parseFloat(v)
+  if (isNaN(n)) return '—'
+  const abs = Math.abs(n)
+  const absLabel = Number.isInteger(abs) ? String(abs) : abs.toFixed(1)
+  return n < 0 ? `-$${absLabel}M` : `$${absLabel}M`
+}
+
 // ── Z-SCORE ABOVE REPLACEMENT ─────────────────────────────────────────────────
 // Replacement level = average of $0.5M floor unsold players for each stat.
 // Falls back to Tier 5 if no floor players are present yet.
@@ -109,6 +117,8 @@ export default function PlayerList() {
   const [visibleCount, setVisibleCount] = useState(250)
   const scrollRef = useRef(null)
   const loadMoreRef = useRef(null)
+  const pendingTargetRef = useRef(0)
+  const drainingRef = useRef(false)
 
   // Reset sort + filters when tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(1) }, [rankingsTab])
@@ -214,9 +224,40 @@ export default function PlayerList() {
     }
   }
 
+  function scheduleDrain(totalRows) {
+    if (drainingRef.current) return
+    drainingRef.current = true
+
+    const run = () => {
+      let shouldContinue = false
+      setVisibleCount(prev => {
+        const target = Math.min(totalRows, pendingTargetRef.current)
+        if (prev >= target) return prev
+        const next = prev + Math.min(120, target - prev)
+        shouldContinue = next < target
+        return next
+      })
+
+      if (shouldContinue) {
+        if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(run, { timeout: 50 })
+        } else {
+          window.setTimeout(run, 16)
+        }
+      } else {
+        drainingRef.current = false
+      }
+    }
+
+    run()
+  }
+
   useEffect(() => {
     const cfg = getVirtualConfig()
-    setVisibleCount(Math.min(sorted.length, cfg.initial))
+    const initialVisible = Math.min(sorted.length, cfg.initial)
+    pendingTargetRef.current = initialVisible
+    drainingRef.current = false
+    setVisibleCount(initialVisible)
   }, [rankingsTab, sortCol, sortDir, sorted.length])
 
   useEffect(() => {
@@ -225,7 +266,9 @@ export default function PlayerList() {
       setVisibleCount(v => {
         const capped = Math.min(v, sorted.length)
         // Keep already-loaded rows, but ensure at least a viewport-aware baseline.
-        return Math.max(capped, Math.min(sorted.length, cfg.initial))
+        const next = Math.max(capped, Math.min(sorted.length, cfg.initial))
+        pendingTargetRef.current = Math.max(pendingTargetRef.current, next)
+        return next
       })
     }
     window.addEventListener('resize', onResize)
@@ -239,11 +282,11 @@ export default function PlayerList() {
     const obs = new IntersectionObserver(
       entries => {
         if (entries[0]?.isIntersecting) {
-          setVisibleCount(v => {
-            const dynamicStep = Math.ceil(v * 0.35)
-            const step = Math.max(cfg.minChunk, Math.min(cfg.maxChunk, dynamicStep))
-            return Math.min(sorted.length, v + step)
-          })
+          const dynamicStep = Math.ceil(visibleCount * 0.35)
+          const step = Math.max(cfg.minChunk, Math.min(cfg.maxChunk, dynamicStep))
+          const target = Math.min(sorted.length, visibleCount + step)
+          pendingTargetRef.current = Math.max(pendingTargetRef.current, target)
+          scheduleDrain(sorted.length)
         }
       },
       { root: scrollRef.current, rootMargin: `${cfg.rootMargin}px` },
@@ -494,6 +537,7 @@ export default function PlayerList() {
           <tbody>
             {visibleRows.map((p, i) => {
               const tColor    = TIER_COLORS[p.tier] || 'var(--muted)'
+              const isAdjNegative = (p.adj_value ?? 0) < 0
               const rfaIsFry  = p.rfa_team === 'FRY'
               const prev      = i > 0 ? visibleRows[i-1] : null
               const showDivider = prev && prev.tier !== p.tier && !searchQuery
@@ -514,9 +558,8 @@ export default function PlayerList() {
                     </tr>
                   )}
                   <tr
+                    className="player-row"
                     style={{ borderBottom: '1px solid #13151b', cursor: 'pointer' }}
-                    onMouseEnter={e => e.currentTarget.style.background = '#13161e'}
-                    onMouseLeave={e => e.currentTarget.style.background = ''}
                   >
                     {/* Rank + tier pip */}
                     <td style={{ ...tdBase, textAlign: 'left', color: 'var(--muted)', fontSize: 10, width: 32, paddingLeft: 10 }}>
@@ -561,11 +604,7 @@ export default function PlayerList() {
                       >
                         {p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}
                       </button>
-                      {p.tags?.length > 0 && (
-                        <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap', marginTop: 2 }}>
-                          {p.tags.map(tag => <MiniTag key={tag} tag={tag} />)}
-                        </div>
-                      )}
+                      <MiniTagRow tags={p.tags} max={3} />
                     </td>
 
                     {/* MLB team */}
@@ -576,16 +615,30 @@ export default function PlayerList() {
                     {/* Values */}
                     {showBoth ? (
                       <>
-                        <td style={{ ...tdNum, color: tColor, fontWeight: 600, fontSize: 13 }}>
-                          ${p.adj_value}M
+                        <td style={{
+                          ...tdNum,
+                          color: isAdjNegative ? 'var(--red)' : tColor,
+                          fontWeight: 600,
+                          fontSize: 13,
+                          background: isAdjNegative ? 'rgba(248,113,113,.06)' : 'transparent',
+                          borderRadius: isAdjNegative ? 4 : 0,
+                        }}>
+                          {fmtAdjMoney(p.adj_value)}
                           <ValueDelta adj={p.adj_value} base={p.est_value} />
                         </td>
                         <td style={{ ...tdNum, fontSize: 11 }}>${p.est_value}M</td>
                         <td style={{ ...tdNum, fontSize: 11, color: 'var(--purple)' }}>{p.oopsy_est_value != null ? `$${p.oopsy_est_value}M` : '—'}</td>
                       </>
                     ) : (
-                      <td style={{ ...tdNum, color: tColor, fontWeight: 600, fontSize: 13 }}>
-                        ${p.adj_value}M
+                      <td style={{
+                        ...tdNum,
+                        color: isAdjNegative ? 'var(--red)' : tColor,
+                        fontWeight: 600,
+                        fontSize: 13,
+                        background: isAdjNegative ? 'rgba(248,113,113,.06)' : 'transparent',
+                        borderRadius: isAdjNegative ? 4 : 0,
+                      }}>
+                        {fmtAdjMoney(p.adj_value)}
                         <ValueDelta adj={p.adj_value} base={p.est_value} />
                       </td>
                     )}
@@ -780,8 +833,6 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSP' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP' },
-  ADP_VALUE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'VALUE' },
-  ADP_AVOID:    { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'AVOID' },
 }
 
 function MiniTag({ tag }) {
@@ -789,15 +840,51 @@ function MiniTag({ tag }) {
   return (
     <span style={{
       display: 'inline-block',
-      background: cfg.bg, color: cfg.color,
-      border: `1px solid ${cfg.color}44`,
-      borderRadius: 2, padding: '1px 4px',
+      background: `linear-gradient(180deg, ${cfg.bg}, rgba(8,10,14,.78))`,
+      color: cfg.color,
+      border: `1px solid ${cfg.color}88`,
+      borderRadius: 999,
+      padding: '1px 6px',
       fontFamily: "'DM Mono', monospace", fontSize: 7,
-      letterSpacing: 0.4, lineHeight: 1.5, fontWeight: 600,
+      letterSpacing: 0.3,
+      lineHeight: 1.5,
+      fontWeight: 700,
       textTransform: 'uppercase',
     }}>
       {cfg.text}
     </span>
+  )
+}
+
+function MiniTagRow({ tags, max = 3 }) {
+  if (!tags?.length) return null
+  const shown = tags.slice(0, max)
+  const hiddenCount = Math.max(0, tags.length - shown.length)
+  const hidden = hiddenCount > 0 ? tags.slice(max) : []
+  return (
+    <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap', marginTop: 2 }}>
+      {shown.map(tag => <MiniTag key={tag} tag={tag} />)}
+      {hiddenCount > 0 && (
+        <span
+          title={hidden.join(', ')}
+          style={{
+            display: 'inline-block',
+            background: 'rgba(148,163,184,.08)',
+            color: 'var(--text-faint)',
+            border: '1px solid var(--border2)',
+            borderRadius: 999,
+            padding: '1px 5px',
+            fontFamily: "'DM Mono', monospace",
+            fontSize: 7,
+            letterSpacing: 0.3,
+            lineHeight: 1.5,
+            fontWeight: 700,
+          }}
+        >
+          +{hiddenCount}
+        </span>
+      )}
+    </div>
   )
 }
 

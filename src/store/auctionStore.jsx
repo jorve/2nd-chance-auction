@@ -2,6 +2,27 @@ import { create } from 'zustand'
 import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
 
+// Tunables for below-replacement valuation behavior.
+const NEGATIVE_VALUE_CONFIG = {
+  priorityBoostScale: 1.5,
+  rawShareScale: 0.35,
+  batter: [
+    { key: 'obp',  inv: false, w: 1.0 },
+    { key: 'ops',  inv: false, w: 1.0 },
+    { key: 'asb',  inv: false, w: 0.45 },
+  ],
+  sp: [
+    { key: 'era',  inv: true,  w: 1.0 },
+    { key: 'whip', inv: true,  w: 1.0 },
+    { key: 'mgs',  inv: false, w: 0.75 },
+  ],
+  rp: [
+    { key: 'era',   inv: true,  w: 1.0 },
+    { key: 'whip',  inv: true,  w: 1.0 },
+    { key: 'vijay', inv: false, w: 0.75 },
+  ],
+}
+
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
 function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const anySold = Object.keys(soldMap).length > 0
@@ -60,24 +81,62 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const RP_VALUE_SCALE = 0.80
   const rpBudget  = totalRemaining * rpShare * RP_VALUE_SCALE
 
-  const vorp = p => Math.max(0, p.ldb_score - (p.repl_level ?? 0))
-  const allocGroup = (group, budget) => {
-    const totalVorp = group.reduce((s, p) => s + vorp(p), 0)
-    if (!totalVorp) {
-      return new Map(group.map(p => [p.name, 0.5]))
+  const roundHalf = v => Math.round(v * 2) / 2
+  const safeNum = v => {
+    const n = parseFloat(v)
+    return Number.isFinite(n) ? n : 0
+  }
+  const computePriorityScores = (group, defs) => {
+    const out = new Map(group.map(p => [p.name, 0]))
+    if (!group.length || !defs?.length) return out
+    for (const d of defs) {
+      const vals = group.map(p => safeNum(p[d.key]))
+      if (!vals.length) continue
+      const mean = vals.reduce((s, v) => s + v, 0) / vals.length
+      const variance = vals.reduce((s, v) => s + (v - mean) ** 2, 0) / vals.length
+      const stdev = Math.sqrt(variance)
+      if (!stdev) continue
+      for (const p of group) {
+        const raw = safeNum(p[d.key])
+        const z = d.inv ? (mean - raw) / stdev : (raw - mean) / stdev
+        out.set(p.name, (out.get(p.name) ?? 0) + z * d.w)
+      }
     }
+    return out
+  }
+  const rawVorp = p => (p.ldb_score - (p.repl_level ?? 0))
+  const positiveVorp = p => Math.max(0, rawVorp(p))
+  const allocGroup = (group, budget, negativePriorityScores = new Map()) => {
+    const totalPositiveVorp = group.reduce((s, p) => s + positiveVorp(p), 0)
+    if (!totalPositiveVorp) {
+      // Keep the board differentiated when everyone in a pool grades below replacement.
+      return new Map(group.map(p => [p.name, roundHalf(rawVorp(p))]))
+    }
+    const dollarsPerVorp = budget / totalPositiveVorp
     const out = new Map()
     for (const p of group) {
-      const pv = vorp(p)
-      const rawShare = (pv / totalVorp) * budget
-      out.set(p.name, pv > 0 ? Math.max(0.5, Math.round(rawShare * 2) / 2) : 0.5)
+      const pv = rawVorp(p)
+      const rawShare = pv * dollarsPerVorp
+      // Positive values still honor the auction floor, negatives are shown on the board.
+      if (pv > 0) {
+        out.set(p.name, Math.max(0.5, roundHalf(rawShare)))
+        continue
+      }
+      // Below replacement: emphasize "stability" categories for ordering.
+      const priorityBoost = (negativePriorityScores.get(p.name) ?? 0) * NEGATIVE_VALUE_CONFIG.priorityBoostScale
+      const adjusted = (rawShare * NEGATIVE_VALUE_CONFIG.rawShareScale) + priorityBoost
+      out.set(p.name, roundHalf(Math.min(0, adjusted)))
     }
     return out
   }
 
-  const adjBatters = allocGroup(unsoldBatters, hitBudget)
-  const adjSP = allocGroup(unsoldSP, spBudget)
-  const adjRP = allocGroup(unsoldRP, rpBudget)
+  const batterNegPriority = computePriorityScores(unsoldBatters, NEGATIVE_VALUE_CONFIG.batter)
+  const spNegPriority = computePriorityScores(unsoldSP, NEGATIVE_VALUE_CONFIG.sp)
+  const rpNegPriority = computePriorityScores(unsoldRP, NEGATIVE_VALUE_CONFIG.rp)
+
+  const adjBatters = allocGroup(unsoldBatters, hitBudget, batterNegPriority)
+  const adjSP = allocGroup(unsoldSP, spBudget, spNegPriority)
+  const adjRP = allocGroup(unsoldRP, rpBudget, rpNegPriority)
 
   const applyAdj = (players, adjMap) => players.map(p => ({
     ...p,
@@ -345,11 +404,18 @@ export const useAuctionStore = create((set, get) => ({
     next.has(tier) ? next.delete(tier) : next.add(tier)
     return { tierFilter: next }
   }),
-  setNominatedPlayer: player => set({
-    nominatedPlayer: player,
-    bidPrice: player ? snapToValidIncrement(player.adj_value ?? player.est_value ?? 1) : 0.5,
-    bidTeam: '',
-  }),
+  setNominatedPlayer: player => {
+    const nominationFloor = 0.5
+    const nominated = player
+      ? { ...player, adj_value: Math.max(nominationFloor, player.adj_value ?? player.est_value ?? nominationFloor) }
+      : null
+    return set({
+      nominatedPlayer: nominated,
+      // Nominations cannot open below league minimum.
+      bidPrice: nominated ? snapToValidIncrement(nominated.adj_value ?? nominated.est_value ?? nominationFloor) : nominationFloor,
+      bidTeam: '',
+    })
+  },
   setBidTeam: t => set({ bidTeam: t }),
   setBidPrice: p => set({ bidPrice: p }),
   setNominatedBy: team => set({ nominatedBy: team }),

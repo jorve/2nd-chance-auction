@@ -371,11 +371,7 @@ export default function AuctionPanel() {
           </div>
 
           {/* Smart tags */}
-          {player.tags?.length > 0 && (
-            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 10 }}>
-              {player.tags.map(tag => <TagPill key={tag} tag={tag} />)}
-            </div>
-          )}
+          <CompactTagRow tags={player.tags} max={4} />
 
           {/* Manual scouting note (includes UI-added notes) */}
           {(getNoteForPlayer(player.name) ?? player.note) && (
@@ -705,8 +701,6 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSPECT' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
-  ADP_VALUE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ADP VALUE' },
-  ADP_AVOID:    { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'ADP AVOID' },
   SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
 }
 
@@ -714,15 +708,54 @@ function TagPill({ tag }) {
   const cfg = TAG_CONFIG[tag] || { bg: 'rgba(148,163,184,.10)', color: 'var(--muted)', text: tag }
   return (
     <span style={{
-      display: 'inline-block',
-      background: cfg.bg, color: cfg.color,
-      border: `1px solid ${cfg.color}55`,
-      borderRadius: 3, padding: '3px 8px',
-      fontFamily: "'DM Mono', monospace", fontSize: 9,
-      letterSpacing: 0.6, fontWeight: 600, textTransform: 'uppercase',
+      display: 'inline-flex',
+      alignItems: 'center',
+      background: `linear-gradient(180deg, ${cfg.bg}, rgba(8,10,14,.7))`,
+      color: cfg.color,
+      border: `1px solid ${cfg.color}88`,
+      borderRadius: 999,
+      padding: '3px 9px',
+      fontFamily: "'DM Sans', sans-serif",
+      fontSize: 10,
+      letterSpacing: 0.3,
+      fontWeight: 700,
+      lineHeight: 1.2,
+      textTransform: 'uppercase',
     }}>
       {cfg.text}
     </span>
+  )
+}
+
+function CompactTagRow({ tags, max = 4 }) {
+  if (!tags?.length) return null
+  const shown = tags.slice(0, max)
+  const hiddenCount = Math.max(0, tags.length - shown.length)
+  const hidden = hiddenCount > 0 ? tags.slice(max) : []
+  return (
+    <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginTop: 10 }}>
+      {shown.map(tag => <TagPill key={tag} tag={tag} />)}
+      {hiddenCount > 0 && (
+        <span
+          title={hidden.join(', ')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: 'rgba(148,163,184,.08)',
+            color: 'var(--text-dim)',
+            border: '1px solid var(--border2)',
+            borderRadius: 999,
+            padding: '3px 8px',
+            fontFamily: "'DM Mono', monospace",
+            fontSize: 9,
+            letterSpacing: 0.4,
+            fontWeight: 600,
+          }}
+        >
+          +{hiddenCount}
+        </span>
+      )}
+    </div>
   )
 }
 

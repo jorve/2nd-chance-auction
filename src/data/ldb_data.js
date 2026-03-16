@@ -3202,260 +3202,260 @@ export const LDB_DATA = {
     "jorge soler": "WIND"
   },
   "aa_names": [
-    "B. Rainer",
-    "D. Whitney",
-    "C. Benge",
-    "E. Carter",
-    "C. Cowser",
-    "S. Yamashita",
-    "T. Troy",
-    "C. Vaquero",
-    "Z. Matthews",
-    "A. Genao",
-    "S. Stewart",
-    "C. Smith",
-    "J. Lawlar",
-    "J. Biddle",
-    "T. Casas",
-    "A. Gracia",
-    "M. Arroyo",
-    "A.J. Reed",
-    "O. Martinez",
-    "V. Brujan",
-    "E. Green",
-    "A. Faedo",
-    "Ja. Jung",
-    "D. Curley",
-    "O. Colas",
-    "E. Hankins",
-    "C. Collier",
-    "C. Young",
-    "C. Mayo",
-    "L. Pena (MIL)",
-    "J. Bleday",
-    "B. McKay",
-    "W. Jenkins",
-    "Z. Veen",
-    "O. Caissie",
-    "C. Moore",
-    "A. Nimmala",
-    "J. Rodriguez",
-    "W. Javier",
-    "T. Bradley",
-    "M. Liberatore",
-    "C. Lagrange",
-    "D. Lesko",
-    "J. De Paula",
-    "C. Fuller",
-    "F. Celesten",
-    "Jai. Chourio",
-    "A. Medina",
-    "S. Walcott",
-    "X. Neyens",
-    "M. Clark",
-    "M. Mayer",
-    "R. Waldschmidt",
-    "F. Barreto",
-    "R. Ryan",
-    "B. Thompson",
-    "T. Szapucki",
-    "N. Marte",
-    "L. De Vries",
-    "F. Arias",
-    "R. Sloan",
-    "R. Calaz",
-    "A. Duno",
-    "J. Adams",
-    "C. Spangenberg",
-    "L. Brinson",
-    "C. Norby",
-    "J. Misiorowski",
-    "T. White",
-    "J. Briceno",
-    "O. Peraza",
-    "R. Arias",
-    "R. Vilade",
-    "S. Jones",
-    "R. Velazquez",
-    "N. Gonzales",
-    "J. De Leon",
-    "Rain. Rodriguez",
-    "C. Winn",
-    "T. Yesavage",
-    "G. Taylor",
-    "J. Triantos",
-    "H. Smith",
-    "DL Hall",
-    "J. Luis",
-    "P. Burdick",
-    "T. Black",
-    "P. Messick",
-    "A. Miller",
-    "J. Groshans",
-    "M. Abel",
-    "K. Okamoto",
-    "G. Canning",
-    "H. Kjerstad",
-    "C. Early",
-    "D. Beavers",
-    "B. Chandler",
-    "S. Sanchez",
-    "A. Gose",
-    "R. Pint",
-    "K. Anderson",
-    "J. Holliday",
-    "C. Pache",
-    "J. Perdomo",
-    "N. Pearson",
-    "C. Fulmer",
-    "A. Arquette",
-    "C. Burns",
-    "R. Herrera",
-    "H. Takahashi",
-    "J. Williams",
-    "K. Griffin",
-    "T. Widener",
-    "A. Page",
-    "B. Rocchio",
-    "D.J. Peterson",
-    "T. Bazzana",
-    "N. Carlos Vera",
-    "F. Wall",
-    "R. Contreras",
-    "D. Waters",
-    "M. Manning",
-    "L. Doyle",
-    "T. Bremner",
-    "C. Condon",
-    "F. Whitley",
-    "L. Armenteros",
-    "A. Tejeda",
-    "S. Beer",
-    "S. Basallo",
-    "A. Hansen",
-    "B. Eldridge",
-    "G. Lavigne",
-    "C. Emerson",
-    "Jah. Jones",
-    "J. Bukauskas",
-    "R. Hassell",
-    "E. Rodriguez",
-    "Ad. Sanchez",
-    "J. P. Martinez",
-    "A. Bracho",
-    "C. DeLauter",
-    "J. Groome",
-    "X. Isaac",
-    "H. Davis",
     "N. McLean",
-    "D. Espino",
-    "E. Perez",
-    "K. Campbell",
-    "K. Alcantara",
-    "D. Burress",
-    "N. Schultz",
-    "T. Lutz",
-    "J. Dunn",
-    "D. Crews",
-    "T. Gillen",
-    "Z. Hope",
-    "K. Rocker",
-    "J. Parker",
-    "J. Crawford",
-    "M. Ballesteros",
-    "E. Florentino",
-    "C. Keith",
-    "J. Guerra",
-    "F. Kilome",
-    "K. Allard",
-    "R. Snelling",
-    "J. Bart",
-    "L. Allen",
-    "L. Matos",
-    "D. Cameron",
-    "E. Conrad",
-    "M. Banuelos",
-    "A. Martin",
-    "R. Lewis",
-    "H. Bishop",
-    "D. Cartaya",
-    "J. Balazovic",
-    "J. De Jesus Gonzalez",
-    "J. Farmelo",
-    "T. Thomas",
-    "L. Hernandez",
-    "C. Dana",
-    "J. Wiggins",
-    "H. Alvarez",
-    "C. Kieboom",
-    "S. Zavala",
-    "K. Harrison",
-    "C. Martin",
-    "C. Williams",
-    "M. Sirota",
-    "C. Hernandez",
-    "B. Davis",
-    "K. Mcgonigle",
-    "T. Trammell",
-    "B. Montgomery",
-    "B. Shipley",
-    "T. Sykora",
-    "J. Walker",
-    "C. Jensen",
-    "J. Arnold",
-    "L. Montes",
-    "E. Hancock",
-    "P. Tolle",
-    "M. Baez",
-    "J. Gonzalez",
-    "A. Baddoo",
-    "B. House",
-    "L. Patino",
-    "Y. Curet",
-    "D. Jones",
     "J. LaViolette",
-    "C. Dollander",
-    "J. Turner",
-    "J. Lebron",
-    "M. Luciano",
-    "M. Harrison",
-    "J. Barrero",
-    "T. Yamada",
-    "S. Torkelson",
-    "J. Caglianone",
-    "R. Mauricio",
-    "G. Valera",
-    "T. Beede",
-    "R. Anthony",
-    "A. Meyer",
-    "E. Florial",
-    "T. Hence",
+    "T. Lutz",
+    "J. Bukauskas",
+    "G. Taylor",
+    "C. Lagrange",
+    "C. Collier",
+    "J. Adams",
+    "A. Tejeda",
+    "J. Perdomo",
+    "L. Doyle",
+    "C. Fuller",
+    "M. Abel",
+    "J. Luis",
+    "M. Mayer",
+    "C. Vaquero",
+    "R. Lewis",
+    "Z. Veen",
+    "J. Balazovic",
+    "H. Bishop",
+    "J. Bleday",
+    "E. Hankins",
+    "D.J. Peterson",
+    "C. Smith",
+    "L. Patino",
     "T. Johnson",
-    "M. Winn",
+    "J. Wiggins",
+    "T. Bazzana",
+    "K. Campbell",
+    "G. Valera",
+    "J. Lebron",
+    "F. Whitley",
+    "S. Zavala",
+    "H. Alvarez",
+    "S. Basallo",
+    "T. Bradley",
+    "E. Rodriguez",
+    "M. Luciano",
     "E. Morales",
-    "D. Garcia",
-    "E. Holliday",
-    "K. Robinson",
-    "H. Waldrep",
-    "C. Bonemer",
-    "Q. Mathews",
-    "F. Alvarez",
-    "S. Howard",
+    "C. Benge",
+    "D. Beavers",
+    "T. Sykora",
     "G. Rodriguez",
-    "A. Painter",
-    "R. Tiedemann",
-    "P. Eeles",
-    "B. Goodwin",
+    "K. Anderson",
     "N. Meyer",
-    "S. Strosnider",
-    "J. Jobe",
-    "B. Wilken",
-    "A. Jackson",
+    "Jah. Jones",
+    "B. Goodwin",
+    "J. Walker",
+    "A. Gose",
+    "C. Winn",
+    "B. McKay",
+    "J. Lawlar",
+    "J. Triantos",
+    "D. Whitney",
+    "F. Kilome",
+    "B. Thompson",
     "K. Watson",
+    "D. Espino",
+    "K. Rocker",
+    "A. Medina",
+    "A. Duno",
+    "D. Burress",
+    "P. Tolle",
+    "X. Neyens",
+    "T. Black",
+    "C. Norby",
+    "A. Faedo",
+    "M. Sirota",
+    "J. Holliday",
+    "N. Schultz",
+    "F. Alvarez",
+    "L. De Vries",
+    "B. Wilken",
+    "C. Bonemer",
+    "T. Thomas",
+    "T. Hence",
+    "N. Marte",
+    "K. Harrison",
+    "J. Groshans",
+    "K. Alcantara",
+    "N. Pearson",
+    "E. Florentino",
+    "M. Winn",
+    "K. Robinson",
+    "A. Nimmala",
+    "A. Bracho",
+    "B. Davis",
+    "F. Wall",
+    "E. Conrad",
+    "J. Turner",
+    "Z. Matthews",
+    "B. Rocchio",
+    "R. Tiedemann",
+    "J. Arnold",
+    "R. Sloan",
+    "C. Dollander",
+    "Z. Hope",
+    "T. Yamada",
+    "C. Young",
+    "S. Stewart",
+    "E. Hancock",
+    "R. Velazquez",
+    "A. Gracia",
+    "H. Waldrep",
+    "J. De Leon",
+    "S. Walcott",
+    "C. DeLauter",
+    "N. Gonzales",
+    "H. Kjerstad",
+    "M. Arroyo",
+    "T. Trammell",
+    "N. Carlos Vera",
+    "L. Brinson",
+    "L. Armenteros",
+    "J. Crawford",
+    "E. Carter",
+    "A. Painter",
+    "A.J. Reed",
+    "J. P. Martinez",
+    "A. Martin",
+    "S. Yamashita",
+    "J. Gonzalez",
+    "J. De Paula",
+    "M. Harrison",
+    "A. Genao",
+    "J. De Jesus Gonzalez",
+    "K. Allard",
+    "B. House",
+    "J. Groome",
+    "J. Barrero",
+    "M. Ballesteros",
+    "J. Bart",
+    "R. Mauricio",
+    "T. Beede",
+    "J. Dunn",
+    "Ad. Sanchez",
+    "J. Farmelo",
+    "F. Arias",
+    "T. White",
+    "E. Holliday",
+    "M. Banuelos",
+    "S. Howard",
+    "Y. Curet",
+    "O. Martinez",
+    "R. Calaz",
+    "S. Torkelson",
+    "C. Burns",
     "Q. Priester",
-    "A. Freeland",
+    "J. Guerra",
+    "A. Baddoo",
+    "C. Hernandez",
+    "D. Cameron",
+    "C. Cowser",
+    "C. Pache",
+    "R. Herrera",
+    "T. Yesavage",
+    "C. Fulmer",
+    "H. Smith",
+    "X. Isaac",
+    "A. Jackson",
+    "J. Biddle",
+    "A. Meyer",
+    "P. Messick",
+    "P. Burdick",
+    "W. Jenkins",
+    "R. Anthony",
+    "F. Celesten",
+    "R. Snelling",
+    "D. Curley",
+    "E. Perez",
+    "C. Emerson",
+    "K. Mcgonigle",
+    "Q. Mathews",
+    "C. Condon",
+    "M. Baez",
+    "C. Martin",
+    "V. Brujan",
+    "L. Allen",
+    "P. Eeles",
+    "R. Hassell",
+    "D. Jones",
+    "E. Florial",
+    "O. Caissie",
+    "K. Griffin",
+    "A. Miller",
+    "B. Shipley",
+    "G. Lavigne",
+    "S. Strosnider",
+    "A. Arquette",
     "G. Lombard Jr.",
-    "C. Abrams"
+    "C. Kieboom",
+    "D. Lesko",
+    "L. Pena (MIL)",
+    "J. Caglianone",
+    "C. Mayo",
+    "B. Rainer",
+    "C. Spangenberg",
+    "R. Waldschmidt",
+    "C. Keith",
+    "Jai. Chourio",
+    "J. Parker",
+    "M. Liberatore",
+    "C. Jensen",
+    "S. Jones",
+    "Rain. Rodriguez",
+    "J. Jobe",
+    "DL Hall",
+    "C. Abrams",
+    "R. Pint",
+    "E. Green",
+    "C. Moore",
+    "R. Ryan",
+    "J. Misiorowski",
+    "T. Szapucki",
+    "O. Colas",
+    "T. Widener",
+    "B. Chandler",
+    "B. Montgomery",
+    "T. Troy",
+    "F. Barreto",
+    "T. Bremner",
+    "W. Javier",
+    "S. Beer",
+    "R. Vilade",
+    "C. Dana",
+    "D. Cartaya",
+    "L. Montes",
+    "D. Crews",
+    "D. Garcia",
+    "H. Davis",
+    "Ja. Jung",
+    "T. Gillen",
+    "M. Manning",
+    "O. Peraza",
+    "K. Okamoto",
+    "J. Briceno",
+    "C. Early",
+    "J. Rodriguez",
+    "B. Eldridge",
+    "D. Waters",
+    "A. Hansen",
+    "L. Hernandez",
+    "L. Matos",
+    "R. Arias",
+    "A. Freeland",
+    "C. Williams",
+    "S. Sanchez",
+    "G. Canning",
+    "T. Casas",
+    "J. Williams",
+    "R. Contreras",
+    "H. Takahashi",
+    "M. Clark",
+    "A. Page"
   ],
   "batters": [
     {
@@ -3801,8 +3801,7 @@ export const LDB_DATA = {
       "oopsy_war": 5.26,
       "oopsy_g": 131.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -3853,7 +3852,6 @@ export const LDB_DATA = {
       "oopsy_war": 3.79,
       "oopsy_g": 159.0,
       "tags": [
-        "ADP_AVOID",
         "BUST"
       ],
       "note": "Back in Cactus League after brief hamstring tightness — should be fine for Opening Day. Zone-contact concerns remain (73.8% — worst among 500+ PA qualifiers). LDB: OPS/OBP value real but contact erosion is ongoing risk.",
@@ -3906,7 +3904,6 @@ export const LDB_DATA = {
       "oopsy_war": 2.89,
       "oopsy_g": 143.0,
       "tags": [
-        "ADP_VALUE",
         "BOUNCE_BACK"
       ],
       "note": "",
@@ -4006,9 +4003,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 116.9,
       "oopsy_war": 1.86,
       "oopsy_g": 151.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -4058,8 +4053,8 @@ export const LDB_DATA = {
       "oopsy_war": 4.48,
       "oopsy_g": 146.0,
       "tags": [
-        "BOUNCE_BACK",
-        "DTD"
+        "DTD",
+        "BOUNCE_BACK"
       ],
       "note": "Hamate surgery + elbow cleanup this offseason. Back in Cactus League. Hard-hit rate key metric to watch — may suppress power early. 30/30 floor when right. Top SS in OBP+OPS formats.",
       "health_pct": 85,
@@ -4110,8 +4105,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.54,
       "oopsy_g": 136.0,
       "tags": [
-        "SLEEPER",
-        "BUST"
+        "BUST",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -4265,8 +4260,7 @@ export const LDB_DATA = {
       "oopsy_war": 2.92,
       "oopsy_g": 130.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -4367,9 +4361,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 115.1,
       "oopsy_war": 2.46,
       "oopsy_g": 157.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -4469,9 +4461,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 113.8,
       "oopsy_war": 2.81,
       "oopsy_g": 152.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -4521,7 +4511,6 @@ export const LDB_DATA = {
       "oopsy_war": 3.9,
       "oopsy_g": 157.0,
       "tags": [
-        "ADP_VALUE",
         "BOUNCE_BACK"
       ],
       "note": "",
@@ -4670,9 +4659,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 112.8,
       "oopsy_war": 2.59,
       "oopsy_g": 152.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -4721,9 +4708,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 110.1,
       "oopsy_war": 2.54,
       "oopsy_g": 146.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -4862,8 +4847,7 @@ export const LDB_DATA = {
       "oopsy_g": 73.0,
       "tags": [
         "BOUNCE_BACK",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5012,9 +4996,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 103.4,
       "oopsy_war": 3.24,
       "oopsy_g": 141.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5064,9 +5046,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 104.9,
       "oopsy_war": 1.55,
       "oopsy_g": 149.0,
-      "tags": [
-        "ADP_VALUE"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5117,9 +5097,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 96.5,
       "oopsy_war": 0.91,
       "oopsy_g": 79.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5170,8 +5148,7 @@ export const LDB_DATA = {
       "oopsy_war": 2.0,
       "oopsy_g": 125.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5326,8 +5303,7 @@ export const LDB_DATA = {
       "oopsy_g": 113.0,
       "tags": [
         "PLATOON",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5379,9 +5355,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 106.9,
       "oopsy_war": 2.07,
       "oopsy_g": 115.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5430,9 +5404,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 104.5,
       "oopsy_war": 0.65,
       "oopsy_g": 133.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5483,9 +5455,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 110.2,
       "oopsy_war": 1.33,
       "oopsy_g": 139.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5536,8 +5506,7 @@ export const LDB_DATA = {
       "oopsy_g": 134.0,
       "tags": [
         "PLATOON",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -5588,8 +5557,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.76,
       "oopsy_g": 122.0,
       "tags": [
-        "BOUNCE_BACK",
-        "ADP_AVOID"
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -5640,9 +5608,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 95.7,
       "oopsy_war": 2.62,
       "oopsy_g": 141.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5693,9 +5659,9 @@ export const LDB_DATA = {
       "oopsy_war": 2.82,
       "oopsy_g": 131.0,
       "tags": [
+        "SLEEPER",
         "INJURY_RISK",
-        "STREAKY",
-        "SLEEPER"
+        "STREAKY"
       ],
       "note": "[PL #90] 14 HR / 33 SB in 110 G — projected 20 HR / 50 SB pace. Final month: sub-20% K rate. NYM gamble. LDB: aSB ceiling is enormous if healthy. Floor: brutal injury + cold stretches. Boom/bust.",
       "health_pct": 72,
@@ -5748,9 +5714,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 95.1,
       "oopsy_war": 1.65,
       "oopsy_g": 125.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -5803,8 +5767,7 @@ export const LDB_DATA = {
       "oopsy_g": 112.0,
       "tags": [
         "PLATOON",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -5855,7 +5818,6 @@ export const LDB_DATA = {
       "oopsy_war": 1.13,
       "oopsy_g": 130.0,
       "tags": [
-        "ADP_VALUE",
         "BOUNCE_BACK"
       ],
       "note": "",
@@ -5908,8 +5870,8 @@ export const LDB_DATA = {
       "oopsy_war": 2.21,
       "oopsy_g": 110.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6012,8 +5974,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.61,
       "oopsy_g": 96.0,
       "tags": [
-        "ROFR_TARGET",
         "BUST",
+        "ROFR_TARGET",
         "INJURY_RISK"
       ],
       "note": "FRY ROFR. Power/speed upside but injury history and contact issues cap floor.",
@@ -6064,9 +6026,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 95.4,
       "oopsy_war": 2.79,
       "oopsy_g": 149.0,
-      "tags": [
-        "ADP_VALUE"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6169,8 +6129,7 @@ export const LDB_DATA = {
       "oopsy_g": 130.0,
       "tags": [
         "BOUNCE_BACK",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6271,9 +6230,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 106.3,
       "oopsy_war": 1.65,
       "oopsy_g": 126.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6324,8 +6281,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.77,
       "oopsy_g": 110.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6376,8 +6332,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.92,
       "oopsy_g": 125.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6427,9 +6382,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 100.1,
       "oopsy_war": 2.49,
       "oopsy_g": 146.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6478,9 +6431,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 113.3,
       "oopsy_war": 2.35,
       "oopsy_g": 117.0,
-      "tags": [
-        "ADP_VALUE"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6531,8 +6482,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.67,
       "oopsy_g": 117.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6585,8 +6535,7 @@ export const LDB_DATA = {
       "oopsy_g": 104.0,
       "tags": [
         "BOUNCE_BACK",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -6688,8 +6637,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.99,
       "oopsy_g": 97.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -6739,9 +6687,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 97.4,
       "oopsy_war": 1.95,
       "oopsy_g": 126.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6790,9 +6736,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 110.6,
       "oopsy_war": 1.59,
       "oopsy_g": 138.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6893,9 +6837,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 107.8,
       "oopsy_war": 1.41,
       "oopsy_g": 143.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6945,9 +6887,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 99.4,
       "oopsy_war": 1.71,
       "oopsy_g": 141.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -6998,8 +6938,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 97.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -7101,9 +7041,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 96.2,
       "oopsy_war": 2.27,
       "oopsy_g": 139.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7153,8 +7091,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.44,
       "oopsy_g": 121.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7204,9 +7141,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 107.8,
       "oopsy_war": 2.08,
       "oopsy_g": 115.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7410,8 +7345,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.14,
       "oopsy_g": 110.0,
       "tags": [
-        "PLATOON",
-        "ADP_VALUE"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -7463,8 +7397,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.79,
       "oopsy_g": 99.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -7516,9 +7449,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 94.6,
       "oopsy_war": 1.08,
       "oopsy_g": 134.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7568,8 +7499,7 @@ export const LDB_DATA = {
       "oopsy_war": 2.47,
       "oopsy_g": 130.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -7619,9 +7549,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 103.0,
       "oopsy_war": 1.83,
       "oopsy_g": 104.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7670,9 +7598,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 108.6,
       "oopsy_war": 1.32,
       "oopsy_g": 115.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7722,9 +7648,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 91.3,
       "oopsy_war": 1.5,
       "oopsy_g": 123.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -7775,8 +7699,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.95,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7827,8 +7750,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.46,
       "oopsy_g": 141.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -7879,8 +7801,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.73,
       "oopsy_g": 112.0,
       "tags": [
-        "INJURY_RISK",
-        "BUST"
+        "BUST",
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -7981,9 +7903,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 89.4,
       "oopsy_war": 1.67,
       "oopsy_g": 123.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -8034,8 +7954,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.94,
       "oopsy_g": 110.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -8086,9 +8005,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 95.7,
       "oopsy_war": 0.88,
       "oopsy_g": 97.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -8138,8 +8055,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.99,
       "oopsy_g": 81.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8190,8 +8106,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.57,
       "oopsy_g": 96.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8345,8 +8260,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.95,
       "oopsy_g": 109.0,
       "tags": [
-        "INJURED",
-        "ADP_AVOID"
+        "INJURED"
       ],
       "note": "",
       "health_pct": 100,
@@ -8397,8 +8311,7 @@ export const LDB_DATA = {
       "oopsy_war": 3.07,
       "oopsy_g": 138.0,
       "tags": [
-        "BOUNCE_BACK",
-        "ADP_AVOID"
+        "BOUNCE_BACK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8498,8 +8411,8 @@ export const LDB_DATA = {
       "oopsy_war": 1.76,
       "oopsy_g": 113.0,
       "tags": [
-        "PLATOON",
-        "BUST"
+        "BUST",
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8552,9 +8465,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 101.3,
       "oopsy_war": 2.08,
       "oopsy_g": 115.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -8605,8 +8516,7 @@ export const LDB_DATA = {
       "oopsy_g": 100.0,
       "tags": [
         "PLATOON",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8657,8 +8567,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.55,
       "oopsy_g": 113.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -8710,8 +8619,7 @@ export const LDB_DATA = {
       "oopsy_g": 131.0,
       "tags": [
         "BOUNCE_BACK",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -8812,8 +8720,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.9,
       "oopsy_g": 94.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -8916,8 +8823,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.26,
       "oopsy_g": 115.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9019,8 +8925,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.53,
       "oopsy_g": 121.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -9122,8 +9027,7 @@ export const LDB_DATA = {
       "oopsy_g": 96.0,
       "tags": [
         "BOUNCE_BACK",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9225,9 +9129,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 92.1,
       "oopsy_war": 1.09,
       "oopsy_g": 79.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -9326,8 +9228,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.59,
       "oopsy_g": 97.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -9518,9 +9419,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 98.6,
       "oopsy_war": 0.97,
       "oopsy_g": 112.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -9619,8 +9518,7 @@ export const LDB_DATA = {
       "oopsy_war": 2.71,
       "oopsy_g": 130.0,
       "tags": [
-        "SLEEPER",
-        "ADP_VALUE"
+        "SLEEPER"
       ],
       "note": "[PL #179 — Nate: high floor] STL starter, 17-20 HR / 15-20 SB / high BA. 2B eligible April. Per Nate: highest floor among 2026 prospects. Cheap in standard auctions.",
       "health_pct": 90,
@@ -9762,8 +9660,7 @@ export const LDB_DATA = {
       "oopsy_war": 2.81,
       "oopsy_g": 146.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -9815,8 +9712,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.88,
       "oopsy_g": 113.0,
       "tags": [
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -9917,9 +9813,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 89.0,
       "oopsy_war": 2.12,
       "oopsy_g": 149.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -10020,8 +9914,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.41,
       "oopsy_g": 94.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -10073,8 +9966,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.91,
       "oopsy_g": 97.0,
       "tags": [
-        "PLATOON",
-        "ADP_VALUE"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -10126,8 +10018,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.08,
       "oopsy_g": 86.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -10180,8 +10071,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.53,
       "oopsy_g": 53.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -10281,9 +10171,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 102.2,
       "oopsy_war": 0.71,
       "oopsy_g": 73.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -10410,8 +10298,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.77,
       "oopsy_g": 76.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -10515,8 +10402,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.11,
       "oopsy_g": 92.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -10719,8 +10605,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.43,
       "oopsy_g": 47.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -10822,8 +10707,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.9,
       "oopsy_g": 68.0,
       "tags": [
-        "PLATOON",
-        "ADP_AVOID"
+        "PLATOON"
       ],
       "note": "",
       "health_pct": 100,
@@ -10874,8 +10758,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.68,
       "oopsy_g": 123.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11068,8 +10951,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.48,
       "oopsy_g": 55.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11120,8 +11002,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.31,
       "oopsy_g": 89.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11172,8 +11053,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.14,
       "oopsy_g": 60.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11464,8 +11344,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.7,
       "oopsy_g": 94.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11516,9 +11395,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 95.9,
       "oopsy_war": 0.24,
       "oopsy_g": 84.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -11620,8 +11497,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.84,
       "oopsy_g": 112.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11760,8 +11636,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.01,
       "oopsy_g": 60.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11852,8 +11727,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.94,
       "oopsy_g": 100.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -11954,8 +11828,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.83,
       "oopsy_g": 66.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -12260,9 +12133,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 91.6,
       "oopsy_war": 2.07,
       "oopsy_g": 97.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -12312,8 +12183,8 @@ export const LDB_DATA = {
       "oopsy_war": 0.88,
       "oopsy_g": 96.0,
       "tags": [
-        "SLEEPER",
-        "BUST"
+        "BUST",
+        "SLEEPER"
       ],
       "note": "",
       "health_pct": 100,
@@ -12452,9 +12323,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 80.1,
       "oopsy_war": 0.83,
       "oopsy_g": 92.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -12646,8 +12515,7 @@ export const LDB_DATA = {
       "oopsy_g": 92.0,
       "tags": [
         "PLATOON",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -13022,9 +12890,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 83.3,
       "oopsy_war": 0.93,
       "oopsy_g": 99.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -13362,8 +13228,7 @@ export const LDB_DATA = {
       "oopsy_war": 1.96,
       "oopsy_g": 122.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -13761,9 +13626,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 75.4,
       "oopsy_war": 0.41,
       "oopsy_g": 87.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -13951,9 +13814,7 @@ export const LDB_DATA = {
       "oopsy_wrc_plus": 88.7,
       "oopsy_war": 0.85,
       "oopsy_g": 70.0,
-      "tags": [
-        "ADP_AVOID"
-      ],
+      "tags": [],
       "note": "",
       "health_pct": 100,
       "role": "",
@@ -14192,8 +14053,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.82,
       "oopsy_g": 70.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -14391,8 +14251,7 @@ export const LDB_DATA = {
       "oopsy_war": 0.5,
       "oopsy_g": 81.0,
       "tags": [
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -14701,8 +14560,7 @@ export const LDB_DATA = {
         "SP_LOCKED",
         "RATIOS_ACE",
         "STASH",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "Phillies confirmed. Elite workhorse, consistent MGS producer. One of safest SP floor plays in the pool.",
       "health_pct": 88,
@@ -14759,10 +14617,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 9.19,
       "oopsy_fip": 3.528,
       "tags": [
+        "INJURED",
         "RATIOS_ACE",
-        "ROFR_TARGET",
         "IL_START",
-        "INJURED"
+        "ROFR_TARGET"
       ],
       "note": "FRY ROFR. ELBOW PAIN — shut down from throwing, IL to open season. Timeline unknown. Do not overpay.",
       "health_pct": 40,
@@ -14820,9 +14678,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.6,
       "tags": [
         "INJURY_RISK",
-        "RATIOS_ACE",
         "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "2x Cy Young winner but extreme durability risk. Worth drafting/stashing in dynasty/keeper. Per spring 2026 news, health is uncertain again — draft at your own risk.",
       "health_pct": 65,
@@ -14880,8 +14737,7 @@ export const LDB_DATA = {
       "oopsy_fip": 3.598,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "Phillies SP2 — confirmed. Excellent stuff, finally healthy and in a great park. Premium K upside.",
       "health_pct": 82,
@@ -14998,8 +14854,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.738,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "BUST"
+        "BUST",
+        "RATIOS_ACE"
       ],
       "note": "Blue Jays SP2 — locked. High-K but HR/9 and walk rate make ratios volatile. Petco gone — Rogers Centre is hitter-friendly. Discount from ADP.",
       "health_pct": 90,
@@ -15171,8 +15027,7 @@ export const LDB_DATA = {
       "oopsy_mgs": 4.58,
       "oopsy_fip": 4.024,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,
@@ -15230,9 +15085,9 @@ export const LDB_DATA = {
       "oopsy_fip": 3.839,
       "tags": [
         "SP_LOCKED",
+        "INJURED",
         "RATIOS_ACE",
         "BOUNCE_BACK",
-        "INJURED",
         "SLEEPER"
       ],
       "note": "Confirmed Braves SP2. TJ return — opening day rotation. Massive upside if velocity is back. Risk is real but reward is top-5 SP ceiling.",
@@ -15290,8 +15145,7 @@ export const LDB_DATA = {
       "oopsy_mgs": 4.93,
       "oopsy_fip": 3.916,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,
@@ -15406,11 +15260,10 @@ export const LDB_DATA = {
       "oopsy_mgs": 5.8,
       "oopsy_fip": 3.548,
       "tags": [
-        "INJURY_RISK",
-        "RATIOS_ACE",
         "STASH",
+        "INJURY_RISK",
         "IL_START",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "Bone spur removal surgery (same procedure as Waldrep). Expected out first ~2 months. 3.09 ERA through June 2025 before fractured elbow ended season. Worth stashing in deeper leagues — elite stuff when healthy.",
       "health_pct": 55,
@@ -15704,8 +15557,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "STASH",
-        "INJURY_RISK",
-        "ADP_AVOID"
+        "INJURY_RISK"
       ],
       "note": "",
       "health_pct": 100,
@@ -15819,8 +15671,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 7.14,
       "oopsy_fip": 3.935,
       "tags": [
-        "RATIOS_ACE",
         "ROLE_UNCLEAR",
+        "RATIOS_ACE",
         "DEEP_LEAGUE",
         "SLEEPER"
       ],
@@ -15880,8 +15732,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.118,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER",
+        "RATIOS_ACE",
         "BREAKOUT"
       ],
       "note": "PL #75 HIPSTER 1. MIL SP. Young arm with advanced four-pitch mix — plus fastball, curve, change, cutter. PL's HIPSTER picks are contrarian value calls. Henderson is the highest-upside arm in that group.",
@@ -15940,8 +15792,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.052,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "Phillies SP3 — confirmed. Veteran workhorse, consistent innings and ratios. Solid mid-tier LDB floor.",
       "health_pct": 90,
@@ -16114,8 +15965,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -16229,8 +16079,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.695,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "SLEEPER",
+        "RATIOS_ACE",
         "BOUNCE_BACK",
         "ROLE_UNCLEAR"
       ],
@@ -16350,8 +16200,7 @@ export const LDB_DATA = {
       "oopsy_fip": 3.902,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -16408,8 +16257,8 @@ export const LDB_DATA = {
       "oopsy_mgs": 3.58,
       "oopsy_fip": 4.094,
       "tags": [
-        "DTD",
         "RATIOS_ACE",
+        "DTD",
         "IL_START"
       ],
       "note": "PRP injection, left side inflammation. High chance of IL to open season — Hancock vs. Criswell competing for Mariners SP5 in his absence. Spring return unclear.",
@@ -16466,8 +16315,7 @@ export const LDB_DATA = {
       "oopsy_fip": 3.987,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -16523,8 +16371,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.387,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "RATIOS_ACE"
       ],
       "note": "PL #33 Holly. HOU SP. NPB import — posted from Japan with exceptional K rate. Elite splitter generates tons of weak contact. HOU defense elite. ADP undervalues him; buy at discount.",
       "health_pct": 88,
@@ -16582,8 +16430,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.165,
       "tags": [
         "RATIOS_ACE",
-        "PROSPECT",
-        "ADP_AVOID"
+        "PROSPECT"
       ],
       "note": "",
       "health_pct": 100,
@@ -16641,8 +16488,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.084,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -16759,8 +16605,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.387,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -16877,8 +16722,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.197,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -16936,8 +16780,8 @@ export const LDB_DATA = {
       "oopsy_fip": 3.981,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "RATIOS_ACE"
       ],
       "note": "Spring: 3 IP, 1 ER, 2 H, 1 BB, 2 K. 91 mph cutter + changeup to LHB, sinker/curve base. Needs to get sinker inside to RHB (trying too hard to emulate Nola's backdoor). Leading Tidwell for Giants SP5. 'A few impressive strikeout games when curve and change are cooking.'",
       "health_pct": 85,
@@ -17116,8 +16960,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -17175,8 +17018,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.043,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -17227,8 +17069,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "ROLE_UNCLEAR",
-        "STASH",
-        "ADP_AVOID"
+        "STASH"
       ],
       "note": "",
       "health_pct": 100,
@@ -17345,8 +17186,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.293,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -17404,8 +17244,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.512,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
-        "SLEEPER"
+        "SLEEPER",
+        "RATIOS_ACE"
       ],
       "note": "PL #82 Toby Upside 3. MIN SP. 6'9\" frame with extreme downward angle — K rate consistently 26%+ despite modest velo. Plus slider + changeup. MIN park OK for pitchers. Perennial underdog value.",
       "health_pct": 85,
@@ -17464,8 +17304,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.09,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -17524,8 +17363,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "ROLE_UNCLEAR",
-        "STASH",
-        "ADP_AVOID"
+        "STASH"
       ],
       "note": "",
       "health_pct": 100,
@@ -17584,8 +17422,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.559,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -17644,8 +17481,7 @@ export const LDB_DATA = {
       "tags": [
         "SP_LOCKED",
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.0 IP, 0 ER, 2 H, 2 BB, 3 K. Only faced RHB (sinker/slider day). Velo a tick down, less rise on four-seamer. Interesting new 81 mph cutter — possibly a bad sweeper, possibly a new weapon. Nothing alarming. Reds SP4 confirmed.",
       "health_pct": 86,
@@ -17763,8 +17599,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -17823,9 +17658,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.519,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
         "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "Spring (WBC): 4.1 IP, 0 ER, 2 H, 1 BB, 4 K. Cutter cooking (6/18 whiffs). If Orioles go six-man he's in the rotation. Bassitt signed — Wells out — Kremer next in line.",
       "health_pct": 82,
@@ -17884,8 +17718,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.288,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18001,8 +17834,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.598,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18058,8 +17890,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.454,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -18173,8 +18004,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.557,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "BUST",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 1 ER, 2 H, 2 BB, 3 K. Velocity down to just 91 mph — rough. Cut action not showing the jump scouts wanted. Cubs SP4 by default but not inspiring. 'Not there yet' per scouts.",
@@ -18234,8 +18065,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.478,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -18351,8 +18181,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.656,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18411,8 +18240,7 @@ export const LDB_DATA = {
       "oopsy_fip": 3.968,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -18587,8 +18415,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.441,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18649,8 +18476,7 @@ export const LDB_DATA = {
         "RATIOS_ACE",
         "DEEP_LEAGUE",
         "ROLE_UNCLEAR",
-        "STASH",
-        "ADP_AVOID"
+        "STASH"
       ],
       "note": "Signed with Nationals SP5. Nationals love 90+ pitch outings — innings-eater upside in a weak rotation. Deep league value for MGS accumulation.",
       "health_pct": 85,
@@ -18710,8 +18536,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -18769,8 +18594,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.199,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18829,8 +18653,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.392,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -18888,8 +18711,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.265,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -18948,8 +18770,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.797,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -19007,8 +18828,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.78,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -19067,8 +18887,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "ROLE_UNCLEAR",
-        "STASH",
-        "ADP_AVOID"
+        "STASH"
       ],
       "note": "",
       "health_pct": 100,
@@ -19119,8 +18938,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "INJURED",
-        "IL",
-        "ADP_AVOID"
+        "IL"
       ],
       "note": "",
       "health_pct": 100,
@@ -19178,8 +18996,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.44,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "BUST",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring (WBC/DOM): 4 IP, 1 ER, 3 H, 0 BB, 5 K at 98 mph — likely amped for country. In-season expect 96 mph. Sweeper + cutter is his life now. Sacramento home park is brutal. Fun streamer, not a core hold.",
@@ -19297,8 +19115,7 @@ export const LDB_DATA = {
       "tags": [
         "SP_LOCKED",
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "Spring: 4 IP, 1 ER, 2 H, 1 BB, 3 K. Sinker inside to RHB, cut-fastball to LHB. 44% slider usage to RHB — moved away from four-seamer. Cardinals going with him. Could be decent in a stealth way.",
       "health_pct": 85,
@@ -19357,8 +19174,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -19417,8 +19233,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.611,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -19477,9 +19292,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.721,
       "tags": [
         "SP_LOCKED",
-        "ADP_AVOID",
-        "RATIOS_ACE",
         "BUST",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.2 IP, 2 ER, 5 H, 0 BB, 4 K. 'That's Civale' — everything worse than 2024. 5.5 ft extension helps slightly but Sacramento is a brutal home park. Hard avoid.",
@@ -19589,8 +19403,8 @@ export const LDB_DATA = {
       "oopsy_fip": 4.28,
       "tags": [
         "SP_LOCKED",
-        "RATIOS_ACE",
         "BUST",
+        "RATIOS_ACE",
         "DEEP_LEAGUE"
       ],
       "note": "Gets Braves SP5 by default after Wentz injury. Spring: 3.1 IP, 5 ER, 6 H, 3 BB — ugly. Command is a mess. Only here because rotation is thin. Low floor.",
@@ -19650,8 +19464,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.519,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -19710,8 +19523,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.611,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -19770,8 +19582,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.624,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -19830,8 +19641,7 @@ export const LDB_DATA = {
       "tags": [
         "RATIOS_ACE",
         "DEEP_LEAGUE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -19948,8 +19758,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.821,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -20008,8 +19817,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.821,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -20065,8 +19873,7 @@ export const LDB_DATA = {
       "oopsy_fip": 5.12,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -20244,8 +20051,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.861,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20303,8 +20109,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.803,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20363,8 +20168,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.994,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20422,8 +20226,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.907,
       "tags": [
         "RATIOS_ACE",
-        "ROLE_UNCLEAR",
-        "ADP_AVOID"
+        "ROLE_UNCLEAR"
       ],
       "note": "",
       "health_pct": 100,
@@ -20483,8 +20286,7 @@ export const LDB_DATA = {
       "tags": [
         "SP_LOCKED",
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "Spring: 3.1 IP, 0 ER, 0 H, 2 BB, 3 K. Finally using cutter (20% usage, 77% strikes) — his best pitch. In Phillies rotation if cutter keeps cooking. Some NL-only upside per scouts. Phillies SP4.",
       "health_pct": 82,
@@ -20540,8 +20342,7 @@ export const LDB_DATA = {
       "oopsy_fip": 5.07,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20599,8 +20400,7 @@ export const LDB_DATA = {
       "oopsy_mgs": -3.23,
       "oopsy_fip": 4.841,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20657,8 +20457,7 @@ export const LDB_DATA = {
       "oopsy_mgs": -5.88,
       "oopsy_fip": 5.173,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20716,8 +20515,7 @@ export const LDB_DATA = {
       "oopsy_fip": 4.958,
       "tags": [
         "RATIOS_ACE",
-        "DEEP_LEAGUE",
-        "ADP_AVOID"
+        "DEEP_LEAGUE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20774,8 +20572,7 @@ export const LDB_DATA = {
       "oopsy_mgs": -3.93,
       "oopsy_fip": 4.851,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,
@@ -20832,8 +20629,7 @@ export const LDB_DATA = {
       "oopsy_mgs": -5.71,
       "oopsy_fip": 5.086,
       "tags": [
-        "RATIOS_ACE",
-        "ADP_AVOID"
+        "RATIOS_ACE"
       ],
       "note": "",
       "health_pct": 100,

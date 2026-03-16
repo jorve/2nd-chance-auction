@@ -63,3 +63,11 @@ select:focus-visible {
   }
   .ldb-main-grid .ldb-auction-panel { max-height: 45vh !important; }
 }
+
+/* Player list row hover handled in CSS (avoids JS style thrash). */
+.player-row {
+  transition: background-color 80ms linear;
+}
+.player-row:hover {
+  background: #13161e;
+}

@@ -45,6 +45,7 @@ PLAYER_NOTES  = INPUT_DIR / "player_notes.json"
 PL_BATTERS    = INPUT_DIR / "2026_PL_Batter_Rankings.csv"
 PL_SP         = INPUT_DIR / "2026_PL_SP_Rankings.csv"
 ATHLETIC_SP   = INPUT_DIR / "2026_Athletic_SP_Rankings.csv"
+TAG_POLICY_FILE = INPUT_DIR / "tag_policy.json"
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 MIN_PA  = 200
@@ -97,6 +98,50 @@ _AMBIG_POS_SEEN = set()
 # ── RUNTIME CACHES ─────────────────────────────────────────────────────────────
 _CSV_ROWS_CACHE = {}
 _SCORED_POOL_CACHE = {}
+
+
+def load_tag_policy(path: Path):
+    """Load central tag policy (allowed + blocked tags)."""
+    default_allowed = {
+        "ELITE", "POWER_OBP", "HR_THREAT", "SB_THREAT", "OBP_ONLY",
+        "WORKHORSE", "K_MACHINE", "RATIOS_ACE", "GB_PITCHER", "MGS_ELITE",
+        "INNINGS_EAT", "CLOSER", "HOLDS_VALUE", "SAVES_SAFE", "CLOSER_RISK",
+        "ELITE_ERA", "VIJAY_ELITE", "SLEEPER", "BREAKOUT", "BOUNCE_BACK",
+        "BUST", "INJURED", "IL", "IL_START", "DTD", "DELAYED", "INJURY_RISK",
+        "ROLE_UNCLEAR", "STASH", "PROSPECT", "DEEP_LEAGUE", "ROFR_TARGET",
+        "LDB_NEED", "SP_LOCKED", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
+        "SPEED_VALUE", "MULTI_POS",
+    }
+    default_blocked = {"ADP_AVOID", "ADP_VALUE"}
+    policy = {
+        "allowed_tags": set(default_allowed),
+        "blocked_tags": set(default_blocked),
+    }
+    if not path.exists():
+        return policy
+    try:
+        with open(path, encoding="utf-8") as f:
+            raw = json.load(f)
+        if isinstance(raw.get("allowed_tags"), list):
+            policy["allowed_tags"] = {str(t).strip() for t in raw["allowed_tags"] if str(t).strip()}
+        if isinstance(raw.get("blocked_tags"), list):
+            policy["blocked_tags"] = {str(t).strip() for t in raw["blocked_tags"] if str(t).strip()}
+    except Exception as e:
+        print(f"  [tag-policy] Failed to parse {path.name}: {e}. Using defaults.")
+    return policy
+
+
+TAG_POLICY = load_tag_policy(TAG_POLICY_FILE)
+ALLOWED_TAGS = TAG_POLICY["allowed_tags"]
+BLOCKED_TAGS = TAG_POLICY["blocked_tags"]
+
+
+def is_tag_allowed(tag: str) -> bool:
+    return tag not in BLOCKED_TAGS and (not ALLOWED_TAGS or tag in ALLOWED_TAGS)
+
+
+def policy_filter_tags(tags):
+    return {t for t in tags if is_tag_allowed(t)}
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def norm(name):
@@ -1101,11 +1146,11 @@ def load_pl_batters(path):
 
 
 # PL smart-tag pass — called after merge_rankings + apply_notes for batters
-_PL_QUALITATIVE_TAGS = {
+_PL_QUALITATIVE_TAGS = policy_filter_tags({
     "SLEEPER", "BREAKOUT", "BOUNCE_BACK", "BUST", "STASH",
     "INJURED", "DTD", "IL_START", "DELAYED", "PLATOON",
-    "DEEP_LEAGUE", "ADP_VALUE", "ADP_AVOID", "INJURY_RISK",
-}
+    "DEEP_LEAGUE", "INJURY_RISK",
+})
 
 def apply_pl_batters(players, pl_index):
     """Inject pl_rank/tier/note + smart tags from PL into each batter record."""
@@ -1133,10 +1178,6 @@ def apply_pl_batters(players, pl_index):
 
             # Delta-based auto tags (only when no conflicting tag already set)
             all_tags_so_far = existing | set(new_tags)
-            if delta >= 40 and not (all_tags_so_far & {"SLEEPER", "ADP_VALUE", "ADP_AVOID"}):
-                new_tags.append("ADP_VALUE")
-            if delta <= -40 and not (all_tags_so_far & {"BUST", "ADP_AVOID", "ADP_VALUE", "SLEEPER"}):
-                new_tags.append("ADP_AVOID")
 
             p["tags"] = list(existing) + [t for t in new_tags if t not in existing]
         else:
@@ -1171,11 +1212,11 @@ _PL_SP_TIER_TAGS = {
     28: ["ROLE_UNCLEAR", "STASH"],          # Kinda Cool But No Job
     29: ["PROSPECT", "STASH"],              # Stud Likely 2027 Prospect
     30: ["DEEP_LEAGUE"],
-    31: ["ADP_AVOID"],                      # Has Job But It's The Rockies (Coors)
+    31: [],                                 # Has Job But It's The Rockies (Coors)
     32: ["PROSPECT"],
     33: ["ROLE_UNCLEAR"],
     34: ["PROSPECT", "STASH"],              # Stud Likely 2028 Prospect
-    35: ["ROLE_UNCLEAR", "ADP_AVOID"],      # If Job Would Be For Rockies
+    35: ["ROLE_UNCLEAR"],                   # If Job Would Be For Rockies
     36: ["INJURED"],                        # Hurt But You Forgot
     37: ["ROLE_UNCLEAR", "BUST"],           # Hammock Or Mound?
     38: ["INJURED", "IL"],                  # Out For 2026 Just So You Know
@@ -1183,11 +1224,11 @@ _PL_SP_TIER_TAGS = {
     40: ["ROLE_UNCLEAR"],                   # He's In Japan, Jeez
 }
 
-_PL_SP_QUALITATIVE_TAGS = {
+_PL_SP_QUALITATIVE_TAGS = policy_filter_tags({
     "SLEEPER", "BREAKOUT", "BOUNCE_BACK", "BUST", "STASH",
     "INJURED", "IL", "DTD", "IL_START", "DELAYED", "ROLE_UNCLEAR",
-    "DEEP_LEAGUE", "ADP_VALUE", "ADP_AVOID", "INJURY_RISK", "PROSPECT",
-}
+    "DEEP_LEAGUE", "INJURY_RISK", "PROSPECT",
+})
 
 
 def load_pl_sp(path: Path) -> dict:
@@ -1205,7 +1246,7 @@ def load_pl_sp(path: Path) -> dict:
             except (ValueError, KeyError):
                 continue
             tier_num = int(row.get("Tier", 99)) if str(row.get("Tier","")).isdigit() else 99
-            tier_tags = _PL_SP_TIER_TAGS.get(tier_num, [])
+            tier_tags = [t for t in _PL_SP_TIER_TAGS.get(tier_num, []) if is_tag_allowed(t)]
             entry = {
                 "pl_rank":      pl_rank,
                 "pl_tier":      tier_num,
@@ -1248,10 +1289,6 @@ def apply_pl_sp(players: list, pl_index: dict) -> list:
 
             # Delta-based auto tags — threshold 15 (SP pool is ~191 players)
             all_tags_so_far = existing | set(new_tags)
-            if delta >= 15 and not (all_tags_so_far & {"SLEEPER", "ADP_VALUE", "ADP_AVOID"}):
-                new_tags.append("ADP_VALUE")
-            if delta <= -15 and not (all_tags_so_far & {"BUST", "ADP_AVOID", "ADP_VALUE", "SLEEPER"}):
-                new_tags.append("ADP_AVOID")
 
             p["tags"] = list(existing) + [t for t in new_tags if t not in existing]
         else:
@@ -1429,6 +1466,7 @@ def apply_notes(players: list, notes_index: dict, manual_notes: dict, pool_type:
         auto = auto_fn(p) if auto_fn else []
         manual_tags = list(note_entry.get("tags", [])) if note_entry else []
         all_tags = list(dict.fromkeys(manual_tags + [t for t in auto if t not in manual_tags]))
+        all_tags = [t for t in all_tags if is_tag_allowed(t)]
         p["tags"]       = all_tags
         # Manual note (from UI) overrides note from players array
         if key in manual_notes and manual_notes[key]:
@@ -1443,6 +1481,7 @@ def main():
     print("=" * 60)
     print("LDB 2026 Data Generation")
     print("=" * 60)
+    print(f"[tag-policy] allowed={len(ALLOWED_TAGS)} blocked={len(BLOCKED_TAGS)} from {TAG_POLICY_FILE.name}")
 
     print("\n[1/6] Parsing draft board...")
     board = parse_draft_board(DRAFT_BOARD)

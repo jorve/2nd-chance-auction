@@ -57,8 +57,6 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSPECT' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
-  ADP_VALUE:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ADP VALUE' },
-  ADP_AVOID:    { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'ADP AVOID' },
   SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
 }
 
@@ -66,12 +64,19 @@ function TagPill({ tag }) {
   const cfg = TAG_CONFIG[tag] || { bg: 'rgba(148,163,184,.10)', color: 'var(--muted)', text: tag }
   return (
     <span style={{
-      display: 'inline-block',
-      background: cfg.bg, color: cfg.color,
-      border: `1px solid ${cfg.color}55`,
-      borderRadius: 3, padding: '3px 8px',
-      fontFamily: "'DM Mono', monospace", fontSize: 9,
-      letterSpacing: 0.6, fontWeight: 600, textTransform: 'uppercase',
+      display: 'inline-flex',
+      alignItems: 'center',
+      background: `linear-gradient(180deg, ${cfg.bg}, rgba(8,10,14,.7))`,
+      color: cfg.color,
+      border: `1px solid ${cfg.color}88`,
+      borderRadius: 999,
+      padding: '3px 9px',
+      fontFamily: "'DM Sans', sans-serif",
+      fontSize: 10,
+      letterSpacing: 0.3,
+      fontWeight: 700,
+      lineHeight: 1.2,
+      textTransform: 'uppercase',
     }}>
       {cfg.text}
     </span>
@@ -327,7 +332,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
 
           {/* Name + team + hand */}
           <div style={{ marginRight: 36 }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
               <span id="player-card-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: 'var(--text)', letterSpacing: 2, lineHeight: 1 }}>
                 {player.name}{player.positions?.length ? ` | ${player.positions.join(' · ')}` : ''}
               </span>
@@ -337,6 +342,11 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 </span>
               )}
             </div>
+            {player.tags?.length > 0 && (
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 8 }}>
+                {player.tags.map(tag => <TagPill key={tag} tag={tag} />)}
+              </div>
+            )}
 
             {/* Badge row */}
             <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', marginTop: 8 }}>
@@ -637,14 +647,6 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 {player.pl_note}
               </div>
             )}
-          </>)}
-
-          {/* ── TAGS ── */}
-          {player.tags?.length > 0 && (<>
-            <SectionLabel>Tags</SectionLabel>
-            <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-              {player.tags.map(tag => <TagPill key={tag} tag={tag} />)}
-            </div>
           </>)}
 
           {/* ── FRY SIGNAL ── */}
