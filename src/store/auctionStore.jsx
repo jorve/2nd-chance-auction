@@ -60,6 +60,21 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   const unsoldSP      = sp.filter(p => !soldMap[p.name])
   const unsoldRP      = rp.filter(p => !soldMap[p.name])
 
+  const soldValues = Object.values(soldMap)
+  let soldBatters = 0, soldSP = 0, soldRP = 0
+  for (const s of soldValues) {
+    if (s.pos_type === 'batter') soldBatters += 1
+    else if (s.pos_type === 'sp') soldSP += 1
+    else if (s.pos_type === 'rp') soldRP += 1
+  }
+  const numTeams = Object.keys(teams).length
+  const BATTER_SLOTS_PER_TEAM = 11
+  const SP_SLOTS_PER_TEAM = 6
+  const RP_SLOTS_PER_TEAM = 3
+  const batterSlotsToFill = Math.max(0, BATTER_SLOTS_PER_TEAM * numTeams - soldBatters)
+  const spSlotsToFill = Math.max(0, SP_SLOTS_PER_TEAM * numTeams - soldSP)
+  const rpSlotsToFill = Math.max(0, RP_SLOTS_PER_TEAM * numTeams - soldRP)
+
   const roundHalf = v => Math.round(v * 2) / 2
   const roundTenth = v => Math.round(v * 10) / 10
   const safeNum = v => {
@@ -86,19 +101,27 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
   }
   const rawVorp = p => (p.ldb_score - (p.repl_level ?? 0))
   const positiveVorp = p => Math.max(0, rawVorp(p))
-  const sumPositiveVorp = (group) => group.reduce((s, p) => s + positiveVorp(p), 0)
-  const totalPositiveVorpAll =
-    sumPositiveVorp(unsoldBatters) +
-    sumPositiveVorp(unsoldSP) +
-    sumPositiveVorp(unsoldRP)
-  const hitBudget = totalPositiveVorpAll > 0
-    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldBatters) / totalPositiveVorpAll)
+  const demandLimitedPositiveMass = (group, slotsToFill) => {
+    if (!group.length || slotsToFill <= 0) return 0
+    const top = group
+      .map(positiveVorp)
+      .filter(v => v > 0)
+      .sort((a, b) => b - a)
+      .slice(0, slotsToFill)
+    return top.reduce((s, v) => s + v, 0)
+  }
+  const batterMass = demandLimitedPositiveMass(unsoldBatters, batterSlotsToFill)
+  const spMass = demandLimitedPositiveMass(unsoldSP, spSlotsToFill)
+  const rpMass = demandLimitedPositiveMass(unsoldRP, rpSlotsToFill)
+  const totalMass = batterMass + spMass + rpMass
+  const hitBudget = totalMass > 0
+    ? totalEffectiveAuctionBudget * (batterMass / totalMass)
     : totalEffectiveAuctionBudget / 3
-  const spBudget = totalPositiveVorpAll > 0
-    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldSP) / totalPositiveVorpAll)
+  const spBudget = totalMass > 0
+    ? totalEffectiveAuctionBudget * (spMass / totalMass)
     : totalEffectiveAuctionBudget / 3
-  const rpBudget = totalPositiveVorpAll > 0
-    ? totalEffectiveAuctionBudget * (sumPositiveVorp(unsoldRP) / totalPositiveVorpAll)
+  const rpBudget = totalMass > 0
+    ? totalEffectiveAuctionBudget * (rpMass / totalMass)
     : totalEffectiveAuctionBudget / 3
   const allocGroup = (group, budget, negativePriorityScores = new Map()) => {
     const totalPositiveVorp = group.reduce((s, p) => s + positiveVorp(p), 0)

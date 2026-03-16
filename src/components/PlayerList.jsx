@@ -158,6 +158,7 @@ export default function PlayerList() {
   const statCols  = STAT_COLS[rankingsTab]
   const fry       = teams['FRY'] || {}
   const showBoth  = projSystem === 'both'
+  const showValueDelta = Object.keys(sold).length > 0
 
   // Unsold pool for z-score computation — recomputes when sold changes
   const unsold = useMemo(
@@ -625,7 +626,7 @@ export default function PlayerList() {
                           borderRadius: isAdjNegative ? 4 : 0,
                         }}>
                           {fmtAdjMoney(p.adj_value)}
-                          <ValueDelta adj={p.adj_value} base={p.est_value} />
+                          <ValueDelta adj={p.adj_value} base={p.est_value} show={showValueDelta} />
                         </td>
                         <td style={{ ...tdNum, fontSize: 11 }}>${p.est_value}M</td>
                         <td style={{ ...tdNum, fontSize: 11, color: 'var(--purple)' }}>{p.oopsy_est_value != null ? `$${p.oopsy_est_value}M` : '—'}</td>
@@ -640,7 +641,7 @@ export default function PlayerList() {
                         borderRadius: isAdjNegative ? 4 : 0,
                       }}>
                         {fmtAdjMoney(p.adj_value)}
-                        <ValueDelta adj={p.adj_value} base={p.est_value} />
+                        <ValueDelta adj={p.adj_value} base={p.est_value} show={showValueDelta} />
                       </td>
                     )}
 
@@ -760,7 +761,8 @@ function ZScore({ z }) {
 // ── VALUE DELTA ───────────────────────────────────────────────────────────────
 // Shows how much adj_value has shifted from the static base est_value.
 // Zero at auction start (fixed). Appears in green/red once sales move the pool.
-function ValueDelta({ adj, base }) {
+function ValueDelta({ adj, base, show = true }) {
+  if (!show) return null
   const delta = Math.round((adj - base) * 10) / 10   // round to 1 decimal
   if (delta === 0) return null
   const display = Number.isInteger(delta) ? delta : delta.toFixed(1)

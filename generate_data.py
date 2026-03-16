@@ -80,8 +80,8 @@ POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT
 # Simplified position buckets used for replacement level simulation.
 # OF=5 covers all outfield slots (3 pure OF + CF + RF).
 REPL_BAT_SLOTS = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":5,"UT":1}
-REPL_SP_SLOTS_PER_TEAM = 7   # average SPs carried per team
-REPL_RP_SLOTS_PER_TEAM = 6   # RP starters per team
+REPL_SP_SLOTS_PER_TEAM = 8   # average SPs carried per team (less strict SP replacement baseline)
+REPL_RP_SLOTS_PER_TEAM = 5   # RP starters per team (stricter replacement baseline)
 REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
 REPL_TOP_N     = 5            # average top-N remaining players = replacement level
 
@@ -90,7 +90,7 @@ CAT_BAT = {"OPS":(True,2.8),"OBP":(True,2.5),"HR":(True,1.9),
            "aSB":(True,1.4),"R":(True,1.4),"aRBI":(True,1.4)}
 CAT_SP  = {"MGS":(True,2.5),"K":(True,2.2),"ERA":(False,1.9),
            "HRA":(False,1.3),"aWHIP":(False,1.6)}
-CAT_RP  = {"VIJAY":(True,3.0),"K":(True,1.6),"ERA":(False,1.0),
+CAT_RP  = {"VIJAY":(True,2.0),"K":(True,1.6),"ERA":(False,1.0),
            "HRA":(False,0.9),"aWHIP":(False,1.2)}
 
 # ── DEBUG FLAGS ────────────────────────────────────────────────────────────────
@@ -256,6 +256,23 @@ def ratio_weekly_delta(player_ratio, player_weekly_volume, team_ratio, team_week
         return 0.0
     blended = ((team_ratio * team_weekly_volume) + (player_ratio * player_weekly_volume)) / denom
     return blended - team_ratio
+
+
+def get_matching_sp_path_for_rp(rp_proj_path: Path):
+    """Map RP projection file to its paired SP projection file for workload context."""
+    name = rp_proj_path.name.lower()
+    if "oopsy" in name:
+        return OOPSY_SP
+    return ATC_SP
+
+
+def get_sp_reference_ip_per_week(sp_proj_path: Path):
+    """Average SP weekly innings among qualified SPs, used for RP context scaling."""
+    rows = get_csv_rows_cached(sp_proj_path)
+    sp_pool = [r for r in rows if fv(r, "GS") >= MIN_GS]
+    if not sp_pool:
+        return 0.0
+    return statistics.mean(calc_ip_per_week(r) for r in sp_pool)
 
 def names_match(proj_name, draft_name):
     """
@@ -447,14 +464,20 @@ def get_scored_pool_cached(pool_kind, proj_path):
             pool = [r for r in rows if fv(r, "IP") >= MIN_IP]
             team_era = statistics.mean(fv(r, "ERA") for r in pool) if pool else 0.0
             team_whip = statistics.mean(fv(r, "WHIP") for r in pool) if pool else 0.0
+            sp_ref_ip_week = get_sp_reference_ip_per_week(get_matching_sp_path_for_rp(proj_path))
             for r in pool:
                 ip_wk = calc_ip_per_week(r)
-                r["_raw_VIJAY"] = calc_vijay_season(r)
-                r["_raw_K"]     = fv(r, "SO")
+                # Context-aware RP contribution scale relative to SP workload.
+                # Typical RP volume should contribute proportionally less than SP volume.
+                ip_ctx = (ip_wk / sp_ref_ip_week) if sp_ref_ip_week > 0 else 0.0
+                ip_ctx = max(0.0, min(1.0, ip_ctx))
+                r["_raw_VIJAY"] = calc_vijay_season(r) * ip_ctx
+                r["_raw_K"]     = fv(r, "SO") * ip_ctx
                 r["_ip_per_week"] = ip_wk
                 r["_raw_ERA"] = ratio_weekly_delta(fv(r, "ERA"), ip_wk, team_era, TEAM_WEEKLY_IP)
-                r["_raw_HRA"]   = fv(r, "HR")
+                r["_raw_HRA"]   = fv(r, "HR") * ip_ctx
                 r["_raw_aWHIP"] = ratio_weekly_delta(fv(r, "WHIP"), ip_wk, team_whip, TEAM_WEEKLY_IP)
+                r["_rp_ip_context"] = ip_ctx
             pool = compute_ldb_scores(pool, CAT_RP)
         else:
             raise ValueError(f"Unknown pool_kind: {pool_kind}")
@@ -1076,6 +1099,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "mgs": round(calc_mgs_per_gs(p), 2), "fip": round(fv(p,"FIP"),3),
             "war": round(fv(p,"WAR"),2),
             "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
+            "rp_ip_context": round(p.get("_rp_ip_context", 0.0), 3),
             "era_weekly_impact": round(p.get("_raw_ERA", 0.0), 6),
             "whip_weekly_impact": round(p.get("_raw_aWHIP", 0.0), 6),
             "ldb_score": round(p["LDB_Score"],3),
@@ -1665,7 +1689,7 @@ def main():
                 "season_weeks": SEASON_WEEKS,
                 "team_weekly_ab": TEAM_WEEKLY_AB,
                 "team_weekly_ip": TEAM_WEEKLY_IP,
-                "notes": "OBP/OPS/ERA/WHIP scored by weekly ratio movement vs team baseline.",
+                "notes": "OBP/OPS/ERA/WHIP scored by weekly ratio movement vs team baseline; RP counting categories scaled by RP IP/week vs SP reference IP/week.",
             },
         },
         "replacement_levels": {
