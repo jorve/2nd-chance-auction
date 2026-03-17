@@ -1930,19 +1930,18 @@ def write_auction_preview_md(board, roster_by_team, team_vorp, aa_detail_by_team
 
         lines.append("**All Keepers:**")
         lines.append("")
-        for k in keeper_rows:
-            marginal_txt = (
-                f", ${float(k['marginal']):.1f}M marginal auction"
-                if k.get("marginal") is not None else ""
-            )
-            lines.append(
-                f"- {k['name']} — ${k['salary']:.1f}M salary, ${k['tv']:.1f}M value, "
-                f"**{_fmt_signed_money(k['surplus'])} surplus**, VORP {_fmt_signed_num(k['player_vorp'])}"
-                f"{marginal_txt} ({k['contract']})"
-            )
-        aa_rows = aa_detail_by_team.get(abbr, [])
-        if not keeper_rows:
+        if keeper_rows:
+            lines.append("| Player | Salary | Theo Value | Surplus | VORP | Marginal Auction | Contract |")
+            lines.append("|--------|--------|------------|---------|------|------------------|----------|")
+            for k in keeper_rows:
+                marginal_txt = f"${float(k['marginal']):.1f}M" if k.get("marginal") is not None else "—"
+                lines.append(
+                    f"| {k['name']} | ${k['salary']:.1f}M | ${k['tv']:.1f}M | {_fmt_signed_money(k['surplus'])} "
+                    f"| {_fmt_signed_num(k['player_vorp'])} | {marginal_txt} | {k['contract'] or '—'} |"
+                )
+        else:
             lines.append("- No keeper entries found.")
+        aa_rows = aa_detail_by_team.get(abbr, [])
         lines.append("")
 
         impact = [r for r in aa_rows if r["vorp"] > 0]
