@@ -1,4 +1,19 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowDown,
+  faArrowUp,
+  faBolt,
+  faBullseye,
+  faChevronDown,
+  faChevronUp,
+  faCircle,
+  faEye,
+  faLock,
+  faStar,
+  faTriangleExclamation,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 import { useAuctionStore, TEAM_COLORS, FRY_NEEDS } from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
 
@@ -333,7 +348,12 @@ export default function PlayerList() {
         minWidth: w ?? 60,
       }}
     >
-      {label}{sortCol === col ? (sortDir === -1 ? ' ↓' : ' ↑') : ''}
+      {label}
+      {sortCol === col && (
+        <span style={{ marginLeft: 5 }}>
+          <FontAwesomeIcon icon={sortDir === -1 ? faArrowDown : faArrowUp} />
+        </span>
+      )}
     </th>
   )
 
@@ -356,7 +376,8 @@ export default function PlayerList() {
             color: rankingsTab === tab ? 'var(--text)' : 'var(--text-dim)',
             cursor: 'pointer',
           }}>
-            {tab === 'batters' ? '⚡ BAT' : tab === 'sp' ? '🎯 SP' : '🔒 RP'}
+            <FontAwesomeIcon icon={tab === 'batters' ? faBolt : tab === 'sp' ? faBullseye : faLock} />
+            &nbsp;{tab === 'batters' ? 'BAT' : tab === 'sp' ? 'SP' : 'RP'}
           </button>
         ))}
 
@@ -396,7 +417,9 @@ export default function PlayerList() {
             background: 'none', border: 'none', cursor: 'pointer',
             fontFamily: "'DM Mono', monospace", fontSize: 9,
             color: 'var(--text-faint)', padding: '3px 4px',
-          }} title="Clear position filter">✕</button>
+          }} title="Clear position filter">
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
         )}
 
         <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
@@ -421,7 +444,9 @@ export default function PlayerList() {
                 borderRadius: 10, padding: '0 5px', fontSize: 9, fontWeight: 700,
               }}>{tagFilter.size}</span>
             )}
-            <span style={{ fontSize: 8, opacity: 0.6 }}>{showTagPicker ? '▲' : '▼'}</span>
+            <span style={{ fontSize: 8, opacity: 0.6 }}>
+              <FontAwesomeIcon icon={showTagPicker ? faChevronUp : faChevronDown} />
+            </span>
           </button>
 
           {showTagPicker && (
@@ -440,7 +465,9 @@ export default function PlayerList() {
                   <button onClick={() => setTagFilter(new Set())} style={{
                     background: 'none', border: 'none', cursor: 'pointer',
                     fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--text-faint)',
-                  }}>CLEAR ✕</button>
+                  }}>
+                    CLEAR <FontAwesomeIcon icon={faXmark} />
+                  </button>
                 )}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
@@ -474,14 +501,14 @@ export default function PlayerList() {
 
         {/* Target / Avoid filter */}
         <div style={{ display: 'flex', gap: 4 }}>
-          {[['target', '★'], ['avoid', '✕']].map(([key, label]) => (
+          {[['target', faStar], ['avoid', faXmark]].map(([key, icon]) => (
             <button key={key} onClick={() => setTargetAvoidFilter(prev => prev === key ? null : key)} title={key === 'target' ? 'Target only' : 'Avoid only'} style={{
               background: targetAvoidFilter === key ? (key === 'target' ? 'rgba(74,222,128,.2)' : 'rgba(248,113,113,.2)') : 'transparent',
               border: `1px solid ${targetAvoidFilter === key ? (key === 'target' ? 'var(--green)' : 'var(--red)') : 'var(--border)'}`,
               borderRadius: 4, padding: '3px 6px', fontSize: 11,
               color: targetAvoidFilter === key ? (key === 'target' ? 'var(--green)' : 'var(--red)') : 'var(--text-dim)',
               cursor: 'pointer',
-            }}>{label}</button>
+            }}><FontAwesomeIcon icon={icon} /></button>
           ))}
         </div>
 
@@ -593,7 +620,7 @@ export default function PlayerList() {
                             color: getTargetAvoid(p.name) === 'target' ? 'var(--green)' : 'var(--text-faint)',
                             fontSize: 12,
                           }}
-                        >★</button>
+                        ><FontAwesomeIcon icon={faStar} /></button>
                         <button
                           type="button"
                           onClick={e => { e.stopPropagation(); toggleTargetAvoid(p.name, getTargetAvoid(p.name) === 'avoid' ? null : 'avoid') }}
@@ -604,7 +631,7 @@ export default function PlayerList() {
                             color: getTargetAvoid(p.name) === 'avoid' ? 'var(--red)' : 'var(--text-faint)',
                             fontSize: 12,
                           }}
-                        >✕</button>
+                        ><FontAwesomeIcon icon={faXmark} /></button>
                       </span>
                       <button
                         type="button"
@@ -696,7 +723,7 @@ export default function PlayerList() {
                       <td style={{ ...tdBase, textAlign: 'left' }}>
                         {signal && (
                           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: signal.color, letterSpacing: 0.5 }}>
-                            {signal.icon} {signal.label}
+                            <FontAwesomeIcon icon={signal.icon} /> {signal.label}
                           </span>
                         )}
                       </td>
@@ -795,23 +822,23 @@ function getFrySignal(player, fry) {
   const pct     = budget > 0 ? val / budget : 0
   const posType = player.pa !== undefined ? 'BAT' : player.gs !== undefined ? 'SP' : 'RP'
 
-  if (budget <= 0)    return { label: 'PASS',      color: 'var(--muted)',      icon: '—'  }
-  if (pct > 0.5)      return { label: 'RISKY',     color: 'var(--red)',        icon: '⚠'  }
-  if (pct > 0.35)     return { label: 'STRETCH',   color: 'var(--orange)',     icon: '↑'  }
+  if (budget <= 0)    return { label: 'PASS',      color: 'var(--muted)',      icon: faCircle }
+  if (pct > 0.5)      return { label: 'RISKY',     color: 'var(--red)',        icon: faTriangleExclamation }
+  if (pct > 0.35)     return { label: 'STRETCH',   color: 'var(--orange)',     icon: faArrowUp }
 
   if (FRY_NEEDS.critical.includes(posType) && player.tier <= 2)
-    return { label: 'MUST BID',  color: 'var(--fry)',   icon: '🎯' }
+    return { label: 'MUST BID',  color: 'var(--fry)',   icon: faBullseye }
   if (FRY_NEEDS.critical.includes(posType))
-    return { label: 'FILL NEED', color: 'var(--green)', icon: '★'  }
+    return { label: 'FILL NEED', color: 'var(--green)', icon: faStar }
 
   const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
   if (neededFill.length > 0 && player.tier <= 2)
-    return { label: 'WANTED',    color: 'var(--blue)',   icon: '◎'  }
+    return { label: 'WANTED',    color: 'var(--blue)',   icon: faBullseye }
 
-  if (player.tier === 1) return { label: 'ELITE',   color: 'var(--t1)',         icon: '⚡' }
-  if (player.tier === 2) return { label: 'TARGET',  color: 'var(--t2)',         icon: '◎' }
-  if (pct < 0.03)        return { label: 'ENDGAME', color: 'var(--text-dim)',   icon: '$1' }
-  return                        { label: 'WATCH',   color: 'var(--text-faint)', icon: '·' }
+  if (player.tier === 1) return { label: 'ELITE',   color: 'var(--t1)',         icon: faBolt }
+  if (player.tier === 2) return { label: 'TARGET',  color: 'var(--t2)',         icon: faBullseye }
+  if (pct < 0.03)        return { label: 'ENDGAME', color: 'var(--text-dim)',   icon: faStar }
+  return                        { label: 'WATCH',   color: 'var(--text-faint)', icon: faEye }
 }
 
 // ── MINI TAG ──────────────────────────────────────────────────────────────────
@@ -829,7 +856,7 @@ const TAG_CONFIG = {
   INNINGS_EAT:  { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'INN' },
   CLOSER:       { bg: 'rgba(251,146,60,.15)',  color: 'var(--orange)',  text: 'CLOSER' },
   HOLDS_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'HOLDS' },
-  SAVES_SAFE:   { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'SV ✓' },
+  SAVES_SAFE:   { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'SV SAFE' },
   CLOSER_RISK:  { bg: 'rgba(248,113,113,.12)', color: 'var(--red)',     text: 'SV RISK' },
   ELITE_ERA:    { bg: 'rgba(74,222,128,.12)',  color: 'var(--green)',   text: 'ERA+' },
   VIJAY_ELITE:  { bg: 'rgba(200,241,53,.12)',  color: 'var(--t1)',      text: 'VIJAY+' },

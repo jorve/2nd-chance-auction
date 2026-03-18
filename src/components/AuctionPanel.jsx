@@ -1,4 +1,17 @@
 import { useState, useRef, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowUp,
+  faBolt,
+  faBullseye,
+  faChevronRight,
+  faCircle,
+  faHammer,
+  faStar,
+  faSquareCheck,
+  faTriangleExclamation,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { toast } from './Toast.jsx'
 import PlayerCard from './PlayerCard.jsx'
@@ -105,7 +118,7 @@ function BidStepper({ value, onChange, maxBudget }) {
           />
         ) : (
           <button onClick={() => { setRawInput(display); setInputMode(true) }}
-            title="Click to type · ↑↓ to step"
+            title="Click to type or use +/- buttons"
             style={{ flex: 1, textAlign: 'center', background: 'var(--surface2)', border: `1px solid ${isOver ? 'var(--red)' : 'var(--border2)'}`, borderLeft: 'none', borderRight: 'none', color: isOver ? 'var(--red)' : 'var(--text)', fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, letterSpacing: 2, cursor: 'text', padding: '8px 0' }}>
             ${display}M
           </button>
@@ -125,7 +138,11 @@ function BidStepper({ value, onChange, maxBudget }) {
           }}>${q}</button>
         ))}
       </div>
-      {isOver && <div style={{ fontSize: 10, color: 'var(--red)', fontFamily: "'DM Mono', monospace" }}>⚠ Over bid cap (${maxBudget?.toFixed(1)}M max with reserves)</div>}
+      {isOver && (
+        <div style={{ fontSize: 10, color: 'var(--red)', fontFamily: "'DM Mono', monospace" }}>
+          <FontAwesomeIcon icon={faTriangleExclamation} /> Over bid cap (${maxBudget?.toFixed(1)}M max with reserves)
+        </div>
+      )}
     </div>
   )
 }
@@ -252,7 +269,7 @@ export default function AuctionPanel() {
         <div style={{ display: 'flex', gap: 6 }}>
           {player && (
             <button onClick={() => { setNominatedPlayer(null); setIntel(null) }} style={ghostBtn}>
-              CLEAR ✕
+              CLEAR <FontAwesomeIcon icon={faXmark} />
             </button>
           )}
           <button onClick={() => setShowReset(true)} style={{ ...ghostBtn, color: 'var(--red)', borderColor: 'var(--border)' }}>
@@ -396,7 +413,7 @@ export default function AuctionPanel() {
           background: `${frySignal.color}14`, border: `1px solid ${frySignal.color}44`,
           borderRadius: 6, padding: '7px 12px',
         }}>
-          <span style={{ fontSize: 14 }}>{frySignal.icon}</span>
+          <span style={{ fontSize: 14 }}><FontAwesomeIcon icon={frySignal.icon} /></span>
           <div>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: frySignal.color, letterSpacing: 1, fontWeight: 600 }}>{frySignal.label}</div>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)' }}>{frySignal.note}</div>
@@ -502,7 +519,11 @@ export default function AuctionPanel() {
               transition: 'all .15s',
             }}
           >
-            {canConfirm ? `✓ CONFIRM — ${bidTeam} GETS ${player.name} @ ${fmtPrice(bidPrice)}` : 'SELECT TEAM + PRICE TO CONFIRM'}
+            {canConfirm ? (
+              <>
+                <FontAwesomeIcon icon={faSquareCheck} /> CONFIRM — {bidTeam} GETS {player.name} @ {fmtPrice(bidPrice)}
+              </>
+            ) : 'SELECT TEAM + PRICE TO CONFIRM'}
           </button>
         </div>
       )}
@@ -515,7 +536,7 @@ export default function AuctionPanel() {
             color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: 8,
             display: 'flex', alignItems: 'center', gap: 6,
           }}>
-            <span style={{ color: 'var(--blue)' }}>◈</span> AI INTEL
+            <span style={{ color: 'var(--blue)' }}><FontAwesomeIcon icon={faStar} /></span> AI INTEL
             {intel?.loading && <span style={{ color: 'var(--text-faint)', animation: 'pulse 1.2s infinite' }}>searching...</span>}
           </div>
 
@@ -531,7 +552,7 @@ export default function AuctionPanel() {
           {intel?.error && !intel.loading && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0' }}>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)', flex: 1 }}>
-                ⚠ {intel.error}
+                <FontAwesomeIcon icon={faTriangleExclamation} /> {intel.error}
               </span>
               <button
                 type="button"
@@ -578,7 +599,7 @@ export default function AuctionPanel() {
       {/* Empty state */}
       {!player && (
         <div style={{ padding: '32px 0', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, marginBottom: 8 }}>🔨</div>
+          <div style={{ fontSize: 28, marginBottom: 8 }}><FontAwesomeIcon icon={faHammer} /></div>
           <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 3, color: 'var(--text-dim)', marginBottom: 6 }}>
             READY FOR AUCTION
           </div>
@@ -630,7 +651,11 @@ function IntelDisplay({ text }) {
 
         return (
           <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-            {isBullet && <span style={{ color: 'var(--border2)', flexShrink: 0, marginTop: 1 }}>▸</span>}
+            {isBullet && (
+              <span style={{ color: 'var(--border2)', flexShrink: 0, marginTop: 1 }}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </span>
+            )}
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)', lineHeight: 1.5 }}>
               {tag && (
                 <span style={{ color: tagColor, fontWeight: 600, marginRight: 5 }}>[{tag}]</span>
@@ -651,23 +676,23 @@ function getFrySignal(player, fry, type) {
   const pct = budget > 0 ? val / budget : 0
   const posType = type || (player.pa !== undefined ? 'BAT' : player.gs !== undefined ? 'SP' : 'RP')
 
-  if (budget <= 0) return { label: 'PASS', color: 'var(--muted)', icon: '—', note: 'Budget exhausted' }
-  if (pct > 0.5) return { label: 'RISKY', color: 'var(--red)', icon: '⚠', note: `${Math.round(pct*100)}% of remaining budget` }
-  if (pct > 0.35) return { label: 'STRETCH', color: 'var(--orange)', icon: '↑', note: `${Math.round(pct*100)}% of remaining budget` }
+  if (budget <= 0) return { label: 'PASS', color: 'var(--muted)', icon: faCircle, note: 'Budget exhausted' }
+  if (pct > 0.5) return { label: 'RISKY', color: 'var(--red)', icon: faTriangleExclamation, note: `${Math.round(pct*100)}% of remaining budget` }
+  if (pct > 0.35) return { label: 'STRETCH', color: 'var(--orange)', icon: faArrowUp, note: `${Math.round(pct*100)}% of remaining budget` }
 
   if (FRY_NEEDS.critical.includes(posType) && player.tier <= 2)
-    return { label: 'MUST BID', color: 'var(--fry)', icon: '🎯', note: `Critical need · T${player.tier}` }
+    return { label: 'MUST BID', color: 'var(--fry)', icon: faBullseye, note: `Critical need · T${player.tier}` }
   if (FRY_NEEDS.critical.includes(posType))
-    return { label: 'FILL NEED', color: 'var(--green)', icon: '★', note: `FRY needs ${posType}` }
+    return { label: 'FILL NEED', color: 'var(--green)', icon: faStar, note: `FRY needs ${posType}` }
 
   const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
   if (neededFill.length > 0 && player.tier <= 2)
-    return { label: 'WANTED', color: 'var(--blue)', icon: '◎', note: `Fills ${neededFill.join('/')}` }
+    return { label: 'WANTED', color: 'var(--blue)', icon: faBullseye, note: `Fills ${neededFill.join('/')}` }
 
-  if (player.tier === 1) return { label: 'ELITE', color: 'var(--t1)', icon: '⚡', note: 'Top tier — bid aggressively' }
-  if (player.tier === 2) return { label: 'TARGET', color: 'var(--t2)', icon: '◎', note: 'Premium — budget accordingly' }
-  if (pct < 0.03) return { label: 'ENDGAME', color: 'var(--text-dim)', icon: '$1', note: '$1–3M range' }
-  return { label: 'WATCH', color: 'var(--text-faint)', icon: '·', note: 'Monitor — no urgent signal' }
+  if (player.tier === 1) return { label: 'ELITE', color: 'var(--t1)', icon: faBolt, note: 'Top tier — bid aggressively' }
+  if (player.tier === 2) return { label: 'TARGET', color: 'var(--t2)', icon: faBullseye, note: 'Premium — budget accordingly' }
+  if (pct < 0.03) return { label: 'ENDGAME', color: 'var(--text-dim)', icon: faStar, note: '$1–3M range' }
+  return { label: 'WATCH', color: 'var(--text-faint)', icon: faCircle, note: 'Monitor — no urgent signal' }
 }
 
 // ── TAG PILL ──────────────────────────────────────────────────────────────────

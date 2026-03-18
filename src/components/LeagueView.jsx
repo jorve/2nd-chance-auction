@@ -1,4 +1,6 @@
 import { useMemo } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
 import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
@@ -71,7 +73,15 @@ export default function LeagueView() {
             background: validation.ok ? 'rgba(74,222,128,.1)' : 'rgba(251,146,60,.1)',
             padding: '4px 10px', borderRadius: 4,
           }}>
-            {validation.ok ? '✓ Pre-auction OK' : `⚠ ${validation.issues[0]}`}
+            {validation.ok ? (
+              <>
+                <FontAwesomeIcon icon={faCircleCheck} /> Pre-auction OK
+              </>
+            ) : (
+              <>
+                <FontAwesomeIcon icon={faTriangleExclamation} /> {validation.issues[0]}
+              </>
+            )}
           </span>
         )}
         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }}>

@@ -1,4 +1,6 @@
 import { useAuctionStore, TEAM_COLORS, fmtPrice } from '../store/auctionStore.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function AuctionLogView({ onClose }) {
   const { auctionLog } = useAuctionStore()
@@ -21,7 +23,7 @@ export default function AuctionLogView({ onClose }) {
             color: 'var(--text-dim)', fontFamily: "'DM Mono', monospace",
             fontSize: 11, cursor: 'pointer',
           }}
-        >CLOSE ✕</button>
+        >CLOSE <FontAwesomeIcon icon={faXmark} /></button>
       </div>
 
       {/* Summary: bargains & overpays */}

@@ -1,4 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowUp,
+  faBolt,
+  faBullseye,
+  faCircle,
+  faDollarSign,
+  faStar,
+  faTriangleExclamation,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 import { FRY_NEEDS, TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -91,28 +102,28 @@ function getFrySignal(player, fry, type) {
   const val    = player.adj_value ?? 1
   const pct    = budget > 0 ? val / budget : 0
 
-  if (budget <= 0)    return { label: 'BUDGET EXHAUSTED', color: 'var(--muted)',      icon: '—' }
-  if (pct > 0.5)      return { label: 'RISKY — OVER 50% OF BUDGET',  color: 'var(--red)',    icon: '⚠' }
-  if (pct > 0.35)     return { label: 'STRETCH — OVER 35% OF BUDGET', color: 'var(--orange)', icon: '↑' }
+  if (budget <= 0)    return { label: 'BUDGET EXHAUSTED', color: 'var(--muted)',      icon: faCircle }
+  if (pct > 0.5)      return { label: 'RISKY — OVER 50% OF BUDGET',  color: 'var(--red)',    icon: faTriangleExclamation }
+  if (pct > 0.35)     return { label: 'STRETCH — OVER 35% OF BUDGET', color: 'var(--orange)', icon: faArrowUp }
 
   if (FRY_NEEDS.critical.includes(type) && player.tier <= 2)
-    return { label: 'MUST BID — CRITICAL NEED',  color: 'var(--fry)',   icon: '🎯' }
+    return { label: 'MUST BID — CRITICAL NEED',  color: 'var(--fry)',   icon: faBullseye }
   if (FRY_NEEDS.critical.includes(type))
-    return { label: 'FILLS CRITICAL NEED',        color: 'var(--green)', icon: '★'  }
+    return { label: 'FILLS CRITICAL NEED',        color: 'var(--green)', icon: faStar  }
 
   const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
   if (neededFill.length > 0 && player.tier <= 2)
-    return { label: `FILLS ${neededFill.join('/')} NEED`, color: 'var(--blue)', icon: '◎' }
+    return { label: `FILLS ${neededFill.join('/')} NEED`, color: 'var(--blue)', icon: faBullseye }
   if (neededFill.length > 0)
-    return { label: `POSITIONAL FILL — ${neededFill.join('/')}`, color: 'var(--blue)', icon: '◎' }
+    return { label: `POSITIONAL FILL — ${neededFill.join('/')}`, color: 'var(--blue)', icon: faBullseye }
 
   if (player.rfa_team === 'FRY')
-    return { label: 'FRY HOLDS ROFR', color: 'var(--fry)', icon: '⚡' }
+    return { label: 'FRY HOLDS ROFR', color: 'var(--fry)', icon: faBolt }
 
-  if (player.tier === 1) return { label: 'ELITE — BID AGGRESSIVELY', color: 'var(--t1)',   icon: '⚡' }
-  if (player.tier === 2) return { label: 'PREMIUM TARGET',            color: 'var(--t2)',   icon: '◎' }
-  if (pct < 0.03)        return { label: 'ENDGAME VALUE',             color: 'var(--muted)', icon: '$' }
-  return                        { label: 'MONITOR',                   color: 'var(--text-faint)', icon: '·' }
+  if (player.tier === 1) return { label: 'ELITE — BID AGGRESSIVELY', color: 'var(--t1)',   icon: faBolt }
+  if (player.tier === 2) return { label: 'PREMIUM TARGET',            color: 'var(--t2)',   icon: faBullseye }
+  if (pct < 0.03)        return { label: 'ENDGAME VALUE',             color: 'var(--muted)', icon: faDollarSign }
+  return                        { label: 'MONITOR',                   color: 'var(--text-faint)', icon: faCircle }
 }
 
 // ── STAT ROW ─────────────────────────────────────────────────────────────────
@@ -330,7 +341,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
               color: 'var(--text-dim)', fontSize: 14, display: 'flex',
               alignItems: 'center', justifyContent: 'center',
             }}
-          >✕</button>
+          ><FontAwesomeIcon icon={faXmark} /></button>
 
           {/* Name + team + hand */}
           <div style={{ marginRight: 36 }}>
@@ -541,7 +552,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 color: targetAvoid === 'target' ? 'var(--green)' : 'var(--text-dim)',
                 cursor: 'pointer',
               }}
-            >★ Target</button>
+            ><FontAwesomeIcon icon={faStar} /> Target</button>
             <button
               onClick={() => toggleTargetAvoid(player.name, targetAvoid === 'avoid' ? null : 'avoid')}
               style={{
@@ -552,7 +563,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
                 color: targetAvoid === 'avoid' ? 'var(--red)' : 'var(--text-dim)',
                 cursor: 'pointer',
               }}
-            >✕ Avoid</button>
+            ><FontAwesomeIcon icon={faXmark} /> Avoid</button>
           </div>
 
           {/* ── MANUAL NOTE EDITOR ── */}
@@ -658,7 +669,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             background: `${frySignal.color}0e`, border: `1px solid ${frySignal.color}33`,
             borderRadius: 7, padding: '10px 14px',
           }}>
-            <span style={{ fontSize: 16 }}>{frySignal.icon}</span>
+            <span style={{ fontSize: 16 }}><FontAwesomeIcon icon={frySignal.icon} /></span>
             <div style={{ flex: 1 }}>
               <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: frySignal.color, letterSpacing: 1, fontWeight: 600 }}>
                 {frySignal.label}
@@ -690,7 +701,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            ⚡ NOMINATE {player.name}
+            <FontAwesomeIcon icon={faBolt} /> NOMINATE {player.name}
           </button>
 
         </div>
