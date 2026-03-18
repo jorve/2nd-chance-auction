@@ -6,8 +6,8 @@ import {
   faClipboardList,
   faFloppyDisk,
   faKey,
+  faLandmark,
   faRotateLeft,
-  faStadium,
   faToggleOff,
   faToggleOn,
   faTriangleExclamation,
@@ -188,7 +188,7 @@ export default function Header({ onLeagueClick }) {
         onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
-        <FontAwesomeIcon icon={faStadium} />
+        <FontAwesomeIcon icon={faLandmark} />
         &nbsp;LEAGUE BOARD
       </button>
 

@@ -393,7 +393,6 @@ export const useAuctionStore = create((set, get) => ({
   bidTeam: '',
   bidPrice: '',
   nominatedBy: '',       // team that put player on block (for auction log)
-  currentNominator: '',  // next team to nominate (round-robin)
 
   // ── MANUAL NOTES ──────────────────────────────────────────────────────────
   fetchManualNotes: async () => {
