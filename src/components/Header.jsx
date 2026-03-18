@@ -1,4 +1,18 @@
 import { useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowDown,
+  faArrowUp,
+  faClipboardList,
+  faFloppyDisk,
+  faKey,
+  faRotateLeft,
+  faStadium,
+  faToggleOff,
+  faToggleOn,
+  faTriangleExclamation,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { useAuctionStore, exportAuctionJSON, importAuctionJSON } from '../store/auctionStore.jsx'
 import AuctionLogView from './AuctionLogView.jsx'
@@ -24,11 +38,11 @@ export default function Header({ onLeagueClick }) {
       .then(snapshot => {
         restoreFromSnapshot(snapshot)
         const n = Object.keys(snapshot.sold).length
-        setImportMsg({ ok: true, text: `✓ Restored ${n} sales` })
+        setImportMsg({ ok: true, text: `Restored ${n} sales` })
         setTimeout(() => setImportMsg(null), 3000)
       })
       .catch(err => {
-        setImportMsg({ ok: false, text: `⚠ ${err.message}` })
+        setImportMsg({ ok: false, text: `${err.message}` })
         setTimeout(() => setImportMsg(null), 4000)
       })
     e.target.value = ''
@@ -84,7 +98,12 @@ export default function Header({ onLeagueClick }) {
         color: soldCount > 0 ? 'var(--green)' : 'var(--text-faint)',
         display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0,
       }}>
-        {soldCount > 0 ? <>💾 <span>AUTO-SAVED</span></> : <span style={{ color: 'var(--text-faint)' }}>no sales yet</span>}
+        {soldCount > 0 ? (
+          <>
+            <FontAwesomeIcon icon={faFloppyDisk} />
+            <span>AUTO-SAVED</span>
+          </>
+        ) : <span style={{ color: 'var(--text-faint)' }}>no sales yet</span>}
       </div>
 
       <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
@@ -98,7 +117,8 @@ export default function Header({ onLeagueClick }) {
         onMouseEnter={e => { if (soldCount > 0) { e.currentTarget.style.borderColor = 'var(--green)'; e.currentTarget.style.color = 'var(--green)' }}}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
-        ↓ EXPORT
+        <FontAwesomeIcon icon={faArrowDown} />
+        EXPORT
       </button>
 
       {/* Import */}
@@ -109,7 +129,8 @@ export default function Header({ onLeagueClick }) {
         onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
-        ↑ IMPORT
+        <FontAwesomeIcon icon={faArrowUp} />
+        IMPORT
       </button>
       <input ref={importRef} type="file" accept=".json" style={{ display: 'none' }} onChange={handleImport} />
 
@@ -133,7 +154,8 @@ export default function Header({ onLeagueClick }) {
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--orange)'; e.currentTarget.style.color = 'var(--orange)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
         >
-          ↩ UNDO LAST
+          <FontAwesomeIcon icon={faRotateLeft} />
+          UNDO LAST
           <span style={{ background: 'var(--border2)', borderRadius: 8, padding: '1px 6px', fontSize: 9 }}>
             {auctionLog.length}
           </span>
@@ -152,7 +174,8 @@ export default function Header({ onLeagueClick }) {
         onMouseEnter={e => { if (auctionLog.length > 0) { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
-        📋 LOG
+        <FontAwesomeIcon icon={faClipboardList} />
+        LOG
       </button>
 
       {/* League board */}
@@ -165,7 +188,8 @@ export default function Header({ onLeagueClick }) {
         onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
-        🏟 LEAGUE BOARD
+        <FontAwesomeIcon icon={faStadium} />
+        &nbsp;LEAGUE BOARD
       </button>
 
       {/* FRY lens */}
@@ -177,7 +201,8 @@ export default function Header({ onLeagueClick }) {
         fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2,
         transition: 'all .2s', cursor: 'pointer',
       }}>
-        {fryLens ? '● FRY ON' : '○ FRY LENS'}
+        <FontAwesomeIcon icon={fryLens ? faToggleOn : faToggleOff} />
+        &nbsp;{fryLens ? 'FRY ON' : 'FRY LENS'}
       </button>
 
       <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
@@ -197,7 +222,9 @@ export default function Header({ onLeagueClick }) {
             flexShrink: 0, transition: 'all .15s',
           }}
         >
-          <span style={{ fontSize: 11 }}>{apiKey ? '🔑' : '⚠'}</span>
+          <span style={{ fontSize: 11 }}>
+            <FontAwesomeIcon icon={apiKey ? faKey : faTriangleExclamation} />
+          </span>
           <span>{apiKey ? 'API KEY SET' : 'SET API KEY'}</span>
         </button>
       ) : (
@@ -228,7 +255,9 @@ export default function Header({ onLeagueClick }) {
               color: '#000', fontWeight: 700,
             }}
           >SAVE</button>
-          <button onClick={() => setEditingKey(false)} style={{ ...iconBtn, padding: '5px 8px' }}>✕</button>
+          <button onClick={() => setEditingKey(false)} style={{ ...iconBtn, padding: '5px 8px' }}>
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
         </div>
       )}
 

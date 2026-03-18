@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFloppyDisk, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { ToastProvider } from './components/Toast.jsx'
 import Header from './components/Header.jsx'
 import PlayerList from './components/PlayerList.jsx'
@@ -49,7 +51,7 @@ export default function App() {
           background: 'rgba(200,241,53,.07)', borderBottom: '1px solid rgba(200,241,53,.25)',
           padding: '8px 20px', display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0,
         }}>
-          <span style={{ fontSize: 13 }}>💾</span>
+          <span style={{ fontSize: 13 }}><FontAwesomeIcon icon={faFloppyDisk} /></span>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--accent)' }}>
             Saved session found — <strong>{resumeBanner.soldCount} sales</strong> from {new Date(resumeBanner.savedAt).toLocaleString()}
           </span>
@@ -63,7 +65,7 @@ export default function App() {
               cursor: 'pointer', fontFamily: "'DM Mono', monospace",
               fontSize: 10, color: 'var(--text-faint)', padding: '2px 6px',
             }}
-          >dismiss ✕</button>
+          >dismiss <FontAwesomeIcon icon={faXmark} /></button>
         </div>
       )}
 
@@ -132,7 +134,7 @@ export default function App() {
                   color: 'var(--text-dim)', fontFamily: "'DM Mono', monospace",
                   fontSize: 11, cursor: 'pointer',
                 }}
-              >CLOSE ✕</button>
+              >CLOSE <FontAwesomeIcon icon={faXmark} /></button>
             </div>
             <div style={{ overflowY: 'auto', flex: 1 }}>
               <LeagueView />
