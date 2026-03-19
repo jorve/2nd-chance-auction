@@ -52,7 +52,7 @@ const OPPORTUNITY_COST_CONFIG = {
 }
 
 // ── VALUATION ENGINE ────────────────────────────────────────────────────────
-function recalcAllValues(batters, sp, rp, teams, soldMap) {
+function recalcAllValues(batters, sp, rp, teams, soldMap, riskAdj = false) {
   const effectiveAuctionBudgetByTeam = {}
   for (const [team, t] of Object.entries(teams)) {
     effectiveAuctionBudgetByTeam[team] = effectiveAuctionBudgetForValuation(t)
@@ -110,7 +110,13 @@ function recalcAllValues(batters, sp, rp, teams, soldMap) {
     return out
   }
   const rawVorp = p => (p.ldb_score - (p.repl_level ?? 0))
-  const positiveVorp = p => Math.max(0, rawVorp(p))
+  // When riskAdj is on, apply each player's vol_mult (1.0 = neutral, <1.0 = risky discount)
+  const positiveVorp = p => {
+    const v = Math.max(0, rawVorp(p))
+    if (!riskAdj) return v
+    const mult = safeNum(p.vol_mult)
+    return v * (mult > 0 ? mult : 1.0)
+  }
   const demandLimitedPositiveMass = (group, slotsToFill) => {
     if (!group.length || slotsToFill <= 0) return 0
     const top = group
@@ -353,9 +359,9 @@ export function savedSessionMeta() {
 }
 
 // Rebuild state from a saved snapshot + fresh player data
-function buildStateFromSnapshot(snapshot) {
+function buildStateFromSnapshot(snapshot, riskAdj = false) {
   const { sold, teams, auctionLog } = snapshot
-  const recalced = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, teams, sold)
+  const recalced = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, teams, sold, riskAdj)
   const batters = recalced.batters
   const sp      = recalced.sp
   const rp      = recalced.rp
@@ -385,6 +391,7 @@ export const useAuctionStore = create((set, get) => ({
   rankingsTab: 'batters',
   projSystem: 'batx',   // 'batx' | 'oopsy' | 'both'
   fryLens: false,
+  riskAdj: false,
   searchQuery: '',
   tierFilter: new Set([1, 2, 3, 4, 5]),
   
@@ -449,6 +456,11 @@ export const useAuctionStore = create((set, get) => ({
   setRankingsTab: tab => set({ rankingsTab: tab, searchQuery: '' }),
   setProjSystem: sys => set({ projSystem: sys }),
   toggleFryLens: () => set(s => ({ fryLens: !s.fryLens })),
+  toggleRiskAdj: () => {
+    const next = !get().riskAdj
+    const recalc = recalcAllValues(get().batters, get().sp, get().rp, get().teams, get().sold, next)
+    set({ riskAdj: next, batters: recalc.batters, sp: recalc.sp, rp: recalc.rp })
+  },
   setSearch: q => set({ searchQuery: q }),
   toggleTier: tier => set(s => {
     const next = new Set(s.tierFilter)
@@ -526,7 +538,7 @@ export const useAuctionStore = create((set, get) => ({
 
     const nextNominator = TEAMS_LIST[(TEAMS_LIST.indexOf(nominator) + 1) % TEAMS_LIST.length]
 
-    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold)
+    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold, get().riskAdj)
     const newBatters = recalc.batters
     const newSP      = recalc.sp
     const newRP      = recalc.rp
@@ -563,7 +575,7 @@ export const useAuctionStore = create((set, get) => ({
     }
     const newLog = auctionLog.slice(1)
     const prevNominator = last.nominatedBy || TEAMS_LIST[(TEAMS_LIST.indexOf(currentNominator || TEAMS_LIST[0]) - 1 + TEAMS_LIST.length) % TEAMS_LIST.length]
-    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold)
+    const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold, get().riskAdj)
     const newBatters = recalc.batters
     const newSP      = recalc.sp
     const newRP      = recalc.rp
@@ -573,7 +585,7 @@ export const useAuctionStore = create((set, get) => ({
 
   resetAuction: () => {
     const t = buildInitialTeams()
-    const recalc = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, t, {})
+    const recalc = recalcAllValues(LDB_DATA.batters, LDB_DATA.sp, LDB_DATA.rp, t, {}, false)
     clearStorage()
     set({
       teams: t,
@@ -594,7 +606,7 @@ export const useAuctionStore = create((set, get) => ({
     for (let i = 0; i < log.length; i++) {
       if (!log[i].nominatedBy && teamsList.length) log[i].nominatedBy = teamsList[i % teamsList.length]
     }
-    const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log })
+    const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log }, get().riskAdj)
     const nom = snapshot.currentNominator || ''
     const ta = snapshot.targetAvoid || {}
     saveToStorage(state.sold, state.teams, state.auctionLog, nom, ta)

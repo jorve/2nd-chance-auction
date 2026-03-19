@@ -19,7 +19,7 @@ import AuctionLogView from './AuctionLogView.jsx'
 
 export default function Header({ onLeagueClick }) {
   const [showAuctionLog, setShowAuctionLog] = useState(false)
-  const { teams, sold, fryLens, toggleFryLens, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
+  const { teams, sold, fryLens, toggleFryLens, riskAdj, toggleRiskAdj, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
   const fry = teams['FRY'] || {}
   const totalPot = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
   const soldCount = Object.keys(sold).length
@@ -203,6 +203,23 @@ export default function Header({ onLeagueClick }) {
       }}>
         <FontAwesomeIcon icon={fryLens ? faToggleOn : faToggleOff} />
         &nbsp;{fryLens ? 'FRY ON' : 'FRY LENS'}
+      </button>
+
+      {/* Risk-adjusted valuation toggle */}
+      <button
+        onClick={toggleRiskAdj}
+        title="Toggle risk-adjusted valuation — discounts high-vol players, premiums low-vol players"
+        style={{
+          background: riskAdj ? 'rgba(251,146,60,.15)' : 'var(--surface2)',
+          border: `1px solid ${riskAdj ? 'var(--orange)' : 'var(--border2)'}`,
+          color: riskAdj ? 'var(--orange)' : 'var(--text-dim)',
+          borderRadius: 5, padding: '6px 14px',
+          fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2,
+          transition: 'all .2s', cursor: 'pointer',
+        }}
+      >
+        <FontAwesomeIcon icon={riskAdj ? faToggleOn : faToggleOff} />
+        &nbsp;{riskAdj ? 'RISK ADJ ON' : 'RISK ADJ'}
       </button>
 
       <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />

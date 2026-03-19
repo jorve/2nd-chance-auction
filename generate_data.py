@@ -35,6 +35,7 @@ DRAFT_BOARD   = INPUT_DIR / "2026_LDB_Draft_Board__2026_Board.csv"
 RFA_FILE      = INPUT_DIR / "2026_LDB_Draft_Board__RFA_Rights.csv"
 BATX_BATTERS  = INPUT_DIR / "2026_BATX_Batters_Projections.csv"
 OOPSY_BATTERS = INPUT_DIR / "2026_OOPSY_Batters_Projections.csv"
+ATC_BATTERS   = INPUT_DIR / "2026_ATC_Batter_Rankings.csv"
 ATC_SP        = INPUT_DIR / "2026_ATC_SP_Projections.csv"
 OOPSY_SP      = INPUT_DIR / "2026_OOPSY_SP_Projections.csv"
 ATC_RP        = INPUT_DIR / "2026_ATC_RP_Projections.csv"
@@ -117,6 +118,8 @@ def load_tag_policy(path: Path):
         "ROLE_UNCLEAR", "STASH", "PROSPECT", "DEEP_LEAGUE", "ROFR_TARGET",
         "LDB_NEED", "SP_LOCKED", "RP_SP_ELIG", "PL_RP_SP_ELIG", "PLATOON", "HANDCUFF", "AGING", "STREAKY",
         "SPEED_VALUE", "MULTI_POS",
+        # ATC volatility-derived tags
+        "HIGH_FLOOR", "VOLATILE", "UPSIDE_PLAY", "BUST_RISK",
     }
     default_blocked = {"ADP_AVOID", "ADP_VALUE"}
     policy = {
@@ -1070,6 +1073,12 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
+            # ATC volatility fields (computed by compute_vol_fields after build)
+            "vol":      round(fv(p, "Vol"), 3),
+            "inter_sd": round(fv(p, "InterSD"), 3),
+            "intra_sd": round(fv(p, "IntraSD"), 3),
+            "skew":     round(fv(p, "Skew"), 3),
+            "dim":      round(fv(p, "Dim"), 3),
         })
     return results
 
@@ -1110,6 +1119,12 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
+            # ATC volatility fields (computed by compute_vol_fields after build)
+            "vol":      round(fv(p, "Vol"), 3),
+            "inter_sd": round(fv(p, "InterSD"), 3),
+            "intra_sd": round(fv(p, "IntraSD"), 3),
+            "skew":     round(fv(p, "Skew"), 3),
+            "dim":      round(fv(p, "Dim"), 3),
         })
     return results
 
@@ -1390,68 +1405,186 @@ def load_player_notes(path: Path) -> tuple[dict, dict]:
 def auto_tags_batter(p: dict) -> list:
     """Generate stat-based tags for a batter."""
     tags = []
-    asb = p.get("_raw_aSB", 0)
-    obp = fv(p, "OBP")
-    ops = fv(p, "OPS")
-    hr  = fv(p, "HR")
-    war = fv(p, "WAR")
-    pa  = fv(p, "PA")
-    if war >= 5.0:                          tags.append("ELITE")
-    if ops >= 0.900:                         tags.append("POWER_OBP")
-    if obp >= 0.370 and ops < 0.820:        tags.append("OBP_ONLY")
-    if hr >= 35:                             tags.append("HR_THREAT")
-    if asb >= 25:                            tags.append("SB_THREAT")
-    if war >= 3.5 and pa >= 550:            tags.append("WORKHORSE")
-    if war < 1.5 and pa >= 400:             tags.append("DEEP_LEAGUE")
+    asb   = p.get("_raw_aSB", 0)
+    obp   = fv(p, "OBP")
+    ops   = fv(p, "OPS")
+    hr    = fv(p, "HR")
+    war   = fv(p, "WAR")
+    pa    = fv(p, "PA")
+    vol_z = p.get("vol_z", 0.0) or 0.0
+    skew  = p.get("skew") or 0.0
+    if war >= 5.0:                              tags.append("ELITE")
+    if ops >= 0.900:                             tags.append("POWER_OBP")
+    if obp >= 0.370 and ops < 0.820:            tags.append("OBP_ONLY")
+    if hr >= 35:                                 tags.append("HR_THREAT")
+    if asb >= 25:                                tags.append("SB_THREAT")
+    if war >= 3.5 and pa >= 550:                tags.append("WORKHORSE")
+    if war < 1.5 and pa >= 400:                 tags.append("DEEP_LEAGUE")
+    # ATC volatility tags
+    if vol_z < -0.75:                            tags.append("HIGH_FLOOR")
+    if vol_z > 0.75:                             tags.append("VOLATILE")
+    if skew > 1.5:                               tags.append("UPSIDE_PLAY")
+    if skew < -1.5:                              tags.append("BUST_RISK")
     return tags
 
 
 def auto_tags_sp(p: dict) -> list:
     """Generate stat-based tags for a SP."""
     tags = []
-    k    = fv(p, "SO")
-    era  = fv(p, "ERA")
-    whip = fv(p, "WHIP")
-    hr   = fv(p, "HR")
-    ip   = fv(p, "IP")
-    gs   = fv(p, "GS")
-    war  = fv(p, "WAR")
-    mgs  = p.get("_raw_MGS", 0) / gs if gs > 0 else 0
-    if war >= 5.0:                           tags.append("ELITE")
-    if k >= 220:                             tags.append("K_MACHINE")
-    if era <= 3.00 and whip <= 1.10:        tags.append("RATIOS_ACE")
-    if hr <= 12 and ip >= 160:              tags.append("GB_PITCHER")
-    if mgs >= 11:                            tags.append("MGS_ELITE")
-    if ip >= 185:                            tags.append("WORKHORSE")
-    if gs >= 28 and war >= 3.0:             tags.append("INNINGS_EAT")
-    if war < 1.5 and ip >= 120:             tags.append("DEEP_LEAGUE")
+    k     = fv(p, "SO")
+    era   = fv(p, "ERA")
+    whip  = fv(p, "WHIP")
+    hr    = fv(p, "HR")
+    ip    = fv(p, "IP")
+    gs    = fv(p, "GS")
+    war   = fv(p, "WAR")
+    mgs   = p.get("_raw_MGS", 0) / gs if gs > 0 else 0
+    vol_z = p.get("vol_z", 0.0) or 0.0
+    skew  = p.get("skew") or 0.0
+    if war >= 5.0:                               tags.append("ELITE")
+    if k >= 220:                                 tags.append("K_MACHINE")
+    if era <= 3.00 and whip <= 1.10:            tags.append("RATIOS_ACE")
+    if hr <= 12 and ip >= 160:                  tags.append("GB_PITCHER")
+    if mgs >= 11:                                tags.append("MGS_ELITE")
+    if ip >= 185:                                tags.append("WORKHORSE")
+    if gs >= 28 and war >= 3.0:                 tags.append("INNINGS_EAT")
+    if war < 1.5 and ip >= 120:                 tags.append("DEEP_LEAGUE")
+    # ATC volatility tags
+    if vol_z < -0.75:                            tags.append("HIGH_FLOOR")
+    if vol_z > 0.75:                             tags.append("VOLATILE")
+    if skew > 1.5:                               tags.append("UPSIDE_PLAY")
+    if skew < -1.5:                              tags.append("BUST_RISK")
     return tags
 
 
 def auto_tags_rp(p: dict) -> list:
     """Generate stat-based tags for a RP."""
     tags = []
-    sv   = fv(p, "SV")
-    hld  = fv(p, "HLD")
-    bs   = fv(p, "BS")
-    k9   = fv(p, "K/9") if "K/9" in p else 0
-    era  = fv(p, "ERA")
+    sv    = fv(p, "SV")
+    hld   = fv(p, "HLD")
+    bs    = fv(p, "BS")
+    era   = fv(p, "ERA")
     vijay = p.get("_raw_VIJAY", 0)
-    g    = fv(p, "G")
-    if sv >= 28:                             tags.append("CLOSER")
-    if hld >= 20:                            tags.append("HOLDS_VALUE")
-    if sv >= 20 and bs <= 3:                tags.append("SAVES_SAFE")
-    if bs >= 6:                              tags.append("CLOSER_RISK")
-    if era <= 2.50:                          tags.append("ELITE_ERA")
-    if vijay / g >= 0.45 if g > 0 else False: tags.append("VIJAY_ELITE")
-    if vijay / g < 0.15 if g > 0 else False:  tags.append("DEEP_LEAGUE")
+    g     = fv(p, "G")
+    vol_z = p.get("vol_z", 0.0) or 0.0
+    skew  = p.get("skew") or 0.0
+    if sv >= 28:                                         tags.append("CLOSER")
+    if hld >= 20:                                        tags.append("HOLDS_VALUE")
+    if sv >= 20 and bs <= 3:                            tags.append("SAVES_SAFE")
+    if bs >= 6:                                          tags.append("CLOSER_RISK")
+    if era <= 2.50:                                      tags.append("ELITE_ERA")
+    if vijay / g >= 0.45 if g > 0 else False:           tags.append("VIJAY_ELITE")
+    if vijay / g < 0.15 if g > 0 else False:            tags.append("DEEP_LEAGUE")
     positions = [str(x).upper() for x in (p.get("positions") or [])]
     if "SP" in positions:
         tags.append("RP_SP_ELIG")
+    # ATC volatility tags
+    if vol_z < -0.75:                                    tags.append("HIGH_FLOOR")
+    if vol_z > 0.75:                                     tags.append("VOLATILE")
+    if skew > 1.5:                                       tags.append("UPSIDE_PLAY")
+    if skew < -1.5:                                      tags.append("BUST_RISK")
     return tags
 
 
 TAG_AUTO_FN = {"batters": auto_tags_batter, "sp": auto_tags_sp, "rp": auto_tags_rp}
+
+
+# ── ATC VOLATILITY INTEGRATION ────────────────────────────────────────────────
+
+def load_atc_batter_vol(path: Path) -> NameMatcher:
+    """Load ATC batter CSV → NameMatcher with Vol/InterSD/IntraSD/Skew/Dim fields.
+    Used to cross-join vol signals onto BATX batter records by name.
+    """
+    if not path.exists():
+        print(f"  [ATC-vol] {path.name} not found — vol cross-join skipped for batters")
+        return NameMatcher({}, fuzzy_threshold=0.88)
+    index = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            key = norm(row.get("Name", ""))
+            if not key:
+                continue
+            def _fv(col, r=row):
+                try:
+                    v = float(r.get(col, "") or 0)
+                    return v if v != 0 else None
+                except (ValueError, TypeError):
+                    return None
+            index[key] = {
+                "vol":      _fv("Vol"),
+                "inter_sd": _fv("InterSD"),
+                "intra_sd": _fv("IntraSD"),
+                "skew":     _fv("Skew"),
+                "dim":      _fv("Dim"),
+            }
+    print(f"  [ATC-vol] Loaded vol data for {len(index)} batters from {path.name}")
+    return NameMatcher(index, fuzzy_threshold=0.88)
+
+
+def apply_atc_vol_to_batters(players: list, atc_vol_matcher: NameMatcher) -> list:
+    """Cross-join ATC vol fields onto primary (BATX) batter records by name.
+    Injects: vol, inter_sd, intra_sd, skew, dim (None when not found).
+    """
+    matched = 0
+    for p in players:
+        entry = atc_vol_matcher.get(p["name"])
+        if entry:
+            p["vol"]      = entry.get("vol")
+            p["inter_sd"] = entry.get("inter_sd")
+            p["intra_sd"] = entry.get("intra_sd")
+            p["skew"]     = entry.get("skew")
+            p["dim"]      = entry.get("dim")
+            matched += 1
+        else:
+            p["vol"] = p["inter_sd"] = p["intra_sd"] = p["skew"] = p["dim"] = None
+    print(f"  [ATC-vol] Cross-joined vol onto {matched}/{len(players)} BATX batters")
+    return players
+
+
+def compute_vol_fields(players: list, budget: float) -> list:
+    """Compute pool-relative vol stats (vol_z, vol_mult) and risk-adjusted values.
+
+    vol_z    — z-score of player Vol vs pool median/stdev (0 = average uncertainty)
+    vol_mult — risk multiplier in [0.80, 1.15]; lower = more volatile = riskier
+    est_value_ra — budget share allocated using VORP × vol_mult (risk-adjusted est)
+
+    Expects players to already have: vol, ldb_score, repl_level fields.
+    Players with vol=None/0 get neutral vol_z=0.0, vol_mult=1.0.
+    """
+    vol_vals = [p["vol"] for p in players if p.get("vol") is not None and p["vol"] > 0]
+    if not vol_vals:
+        for p in players:
+            p.setdefault("vol_z", 0.0)
+            p.setdefault("vol_mult", 1.0)
+            p["est_value_ra"] = p.get("est_value", 0.5)
+        return players
+
+    pool_median = statistics.median(vol_vals)
+    pool_stdev  = statistics.stdev(vol_vals) if len(vol_vals) > 1 else 1.0
+
+    for p in players:
+        v = p.get("vol")
+        if v is not None and v > 0 and pool_stdev > 0:
+            vol_z    = (v - pool_median) / pool_stdev
+            vol_mult = max(0.80, min(1.15, 1.0 - 0.12 * vol_z))
+        else:
+            vol_z, vol_mult = 0.0, 1.0
+        p["vol_z"]    = round(vol_z, 3)
+        p["vol_mult"] = round(vol_mult, 4)
+
+    # Risk-adjusted value: VORP × vol_mult, re-normalized to same budget
+    for p in players:
+        vorp = max(0.0, p.get("ldb_score", 0.0) - p.get("repl_level", 0.0))
+        p["_vorp_ra"] = vorp * p["vol_mult"]
+    total_vorp_ra = sum(p["_vorp_ra"] for p in players)
+    for p in players:
+        if total_vorp_ra > 0 and p["_vorp_ra"] > 0:
+            raw = (p["_vorp_ra"] / total_vorp_ra) * budget
+            p["est_value_ra"] = max(0.5, round(raw * 2) / 2)
+        else:
+            p["est_value_ra"] = 0.5
+
+    return players
 
 
 # ── ATHLETIC SP RANKINGS ───────────────────────────────────────────────────────
@@ -2042,12 +2175,17 @@ def main():
                                   hit_budget, "oopsy", pos_by_last,
                                   replacement_levels=repl_bat_by_system["oopsy"],
                                   rfa_matcher=rfa_matcher)
+    # Cross-join ATC vol data onto BATX batters (primary system); OOPSY batters use est only
+    atc_bat_vol_matcher = load_atc_batter_vol(ATC_BATTERS)
+    batx_batters = apply_atc_vol_to_batters(batx_batters, atc_bat_vol_matcher)
+    batx_batters = compute_vol_fields(batx_batters, hit_budget)
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
     atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         sp_budget, "atc",   pos_by_last,
                         replacement_level=repl_pit_by_system["atc"]["SP"],
                         rfa_matcher=rfa_matcher)
+    atc_sp = compute_vol_fields(atc_sp, sp_budget)
     oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         sp_budget, "oopsy", pos_by_last,
                         replacement_level=repl_pit_by_system["oopsy"]["SP"],
@@ -2058,6 +2196,7 @@ def main():
                         rp_budget, "atc",   pos_by_last,
                         replacement_level=repl_pit_by_system["atc"]["RP"],
                         rfa_matcher=rfa_matcher)
+    atc_rp = compute_vol_fields(atc_rp, rp_budget * RP_VALUE_SCALE)
     oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         rp_budget, "oopsy", pos_by_last,
                         replacement_level=repl_pit_by_system["oopsy"]["RP"],
