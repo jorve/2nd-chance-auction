@@ -15,13 +15,11 @@ import {
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { toast } from './Toast.jsx'
 import PlayerCard from './PlayerCard.jsx'
-import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement, FRY_NEEDS } from '../store/auctionStore.jsx'
+import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement } from '../store/auctionStore.jsx'
+import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
 function getType(p) {
-  if (!p) return null
-  if (p.pa !== undefined) return 'BAT'
-  if (p.gs !== undefined) return 'SP'
-  return 'RP'
+  return getPlayerType(p)
 }
 
 function getKeyStats(p, type) {
@@ -669,32 +667,6 @@ function IntelDisplay({ text }) {
   )
 }
 
-// ── FRY SIGNAL ────────────────────────────────────────────────────────────────
-function getFrySignal(player, fry, type) {
-  const budget = fry.budget_current ?? 0
-  const val = player.adj_value ?? 1
-  const pct = budget > 0 ? val / budget : 0
-  const posType = type || (player.pa !== undefined ? 'BAT' : player.gs !== undefined ? 'SP' : 'RP')
-
-  if (budget <= 0) return { label: 'PASS', color: 'var(--muted)', icon: faCircle, note: 'Budget exhausted' }
-  if (pct > 0.5) return { label: 'RISKY', color: 'var(--red)', icon: faTriangleExclamation, note: `${Math.round(pct*100)}% of remaining budget` }
-  if (pct > 0.35) return { label: 'STRETCH', color: 'var(--orange)', icon: faArrowUp, note: `${Math.round(pct*100)}% of remaining budget` }
-
-  if (FRY_NEEDS.critical.includes(posType) && player.tier <= 2)
-    return { label: 'MUST BID', color: 'var(--fry)', icon: faBullseye, note: `Critical need · T${player.tier}` }
-  if (FRY_NEEDS.critical.includes(posType))
-    return { label: 'FILL NEED', color: 'var(--green)', icon: faStar, note: `FRY needs ${posType}` }
-
-  const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
-  if (neededFill.length > 0 && player.tier <= 2)
-    return { label: 'WANTED', color: 'var(--blue)', icon: faBullseye, note: `Fills ${neededFill.join('/')}` }
-
-  if (player.tier === 1) return { label: 'ELITE', color: 'var(--t1)', icon: faBolt, note: 'Top tier — bid aggressively' }
-  if (player.tier === 2) return { label: 'TARGET', color: 'var(--t2)', icon: faBullseye, note: 'Premium — budget accordingly' }
-  if (pct < 0.03) return { label: 'ENDGAME', color: 'var(--text-dim)', icon: faStar, note: '$1–3M range' }
-  return { label: 'WATCH', color: 'var(--text-faint)', icon: faCircle, note: 'Monitor — no urgent signal' }
-}
-
 // ── TAG PILL ──────────────────────────────────────────────────────────────────
 const TAG_CONFIG = {
   ELITE:        { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'ELITE' },
@@ -728,6 +700,18 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSPECT' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
+  AGING:        { bg: 'rgba(248,113,113,.08)', color: 'var(--red)',     text: 'AGING' },
+  HIGH_FLOOR:   { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'HIGH FLOOR' },
+  VOLATILE:     { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'VOLATILE' },
+  UPSIDE_PLAY:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'UPSIDE PLAY' },
+  BUST_RISK:    { bg: 'rgba(248,113,113,.14)', color: 'var(--red)',     text: 'BUST RISK' },
+  STREAKY:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'STREAKY' },
+  PLATOON:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'PLATOON' },
+  SPEED_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'SPEED VALUE' },
+  HANDCUFF:     { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'HANDCUFF' },
+  ROFR_TARGET:  { bg: 'rgba(200,241,53,.14)',  color: 'var(--fry)',     text: 'ROFR TARGET' },
+  MULTI_POS:    { bg: 'rgba(56,189,248,.10)',  color: 'var(--blue)',    text: 'MULTI POS' },
+  LDB_NEED:     { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'LDB NEED' },
   SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
   RP_SP_ELIG:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RP + SP ELIG' },
   PL_RP_SP_ELIG:{ bg: 'rgba(56,189,248,.16)',  color: 'var(--blue)',    text: 'PL RP + SP ELIG' },

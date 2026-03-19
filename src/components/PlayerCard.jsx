@@ -1,27 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faArrowUp,
   faBolt,
-  faBullseye,
-  faCircle,
-  faDollarSign,
   faStar,
-  faTriangleExclamation,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { FRY_NEEDS, TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
+import { TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
+import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 const TIER_NAMES  = { 1: 'T1 · ELITE', 2: 'T2 · PREMIUM', 3: 'T3 · MID', 4: 'T4 · VALUE', 5: 'T5 · DEEP' }
-
-function getType(p) {
-  if (!p) return null
-  if (p.pa  !== undefined) return 'BAT'
-  if (p.gs  !== undefined) return 'SP'
-  return 'RP'
-}
 
 function fmt(v, dec = 0) {
   if (v == null || v === '') return '—'
@@ -68,6 +57,18 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSPECT' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP LEAGUE' },
+  AGING:        { bg: 'rgba(248,113,113,.08)', color: 'var(--red)',     text: 'AGING' },
+  HIGH_FLOOR:   { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'HIGH FLOOR' },
+  VOLATILE:     { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'VOLATILE' },
+  UPSIDE_PLAY:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'UPSIDE PLAY' },
+  BUST_RISK:    { bg: 'rgba(248,113,113,.14)', color: 'var(--red)',     text: 'BUST RISK' },
+  STREAKY:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'STREAKY' },
+  PLATOON:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'PLATOON' },
+  SPEED_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'SPEED VALUE' },
+  HANDCUFF:     { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'HANDCUFF' },
+  ROFR_TARGET:  { bg: 'rgba(200,241,53,.14)',  color: 'var(--fry)',     text: 'ROFR TARGET' },
+  MULTI_POS:    { bg: 'rgba(56,189,248,.10)',  color: 'var(--blue)',    text: 'MULTI POS' },
+  LDB_NEED:     { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'LDB NEED' },
   SP_LOCKED:    { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'ROLE LOCKED' },
   RP_SP_ELIG:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RP + SP ELIG' },
   PL_RP_SP_ELIG:{ bg: 'rgba(56,189,248,.16)',  color: 'var(--blue)',    text: 'PL RP + SP ELIG' },
@@ -94,36 +95,6 @@ function TagPill({ tag }) {
       {cfg.text}
     </span>
   )
-}
-
-// ── FRY SIGNAL ────────────────────────────────────────────────────────────────
-function getFrySignal(player, fry, type) {
-  const budget = fry.budget_current ?? 0
-  const val    = player.adj_value ?? 1
-  const pct    = budget > 0 ? val / budget : 0
-
-  if (budget <= 0)    return { label: 'BUDGET EXHAUSTED', color: 'var(--muted)',      icon: faCircle }
-  if (pct > 0.5)      return { label: 'RISKY — OVER 50% OF BUDGET',  color: 'var(--red)',    icon: faTriangleExclamation }
-  if (pct > 0.35)     return { label: 'STRETCH — OVER 35% OF BUDGET', color: 'var(--orange)', icon: faArrowUp }
-
-  if (FRY_NEEDS.critical.includes(type) && player.tier <= 2)
-    return { label: 'MUST BID — CRITICAL NEED',  color: 'var(--fry)',   icon: faBullseye }
-  if (FRY_NEEDS.critical.includes(type))
-    return { label: 'FILLS CRITICAL NEED',        color: 'var(--green)', icon: faStar  }
-
-  const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
-  if (neededFill.length > 0 && player.tier <= 2)
-    return { label: `FILLS ${neededFill.join('/')} NEED`, color: 'var(--blue)', icon: faBullseye }
-  if (neededFill.length > 0)
-    return { label: `POSITIONAL FILL — ${neededFill.join('/')}`, color: 'var(--blue)', icon: faBullseye }
-
-  if (player.rfa_team === 'FRY')
-    return { label: 'FRY HOLDS ROFR', color: 'var(--fry)', icon: faBolt }
-
-  if (player.tier === 1) return { label: 'ELITE — BID AGGRESSIVELY', color: 'var(--t1)',   icon: faBolt }
-  if (player.tier === 2) return { label: 'PREMIUM TARGET',            color: 'var(--t2)',   icon: faBullseye }
-  if (pct < 0.03)        return { label: 'ENDGAME VALUE',             color: 'var(--muted)', icon: faDollarSign }
-  return                        { label: 'MONITOR',                   color: 'var(--text-faint)', icon: faCircle }
 }
 
 // ── STAT ROW ─────────────────────────────────────────────────────────────────
@@ -230,7 +201,7 @@ function SectionLabel({ children }) {
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 export default function PlayerCard({ player, onClose, teams, onNominate }) {
   if (!player) return null
-  const type   = getType(player)
+  const type   = getPlayerType(player)
   const tColor = TIER_COLORS[player.tier] || 'var(--muted)'
   const fry    = teams['FRY'] || {}
 
@@ -427,6 +398,18 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
               value={player.ldb_score?.toFixed(1) ?? '—'}
               color="var(--text-dim)"
               sub={scoreDelta != null ? `vs OOPSY: ${scoreDelta > 0 ? '+' : ''}${scoreDelta}` : null}
+            />
+            <ValueChip
+              label="VOL Z"
+              value={player.vol_z != null ? player.vol_z.toFixed(2) : '—'}
+              color={(player.vol_z ?? 0) > 0.75 ? 'var(--orange)' : (player.vol_z ?? 0) < -0.75 ? 'var(--green)' : 'var(--text-dim)'}
+              sub="higher = more variance"
+            />
+            <ValueChip
+              label="RISK MULT"
+              value={player.vol_mult != null ? player.vol_mult.toFixed(3) : '—'}
+              color={(player.vol_mult ?? 1) < 1 ? 'var(--orange)' : (player.vol_mult ?? 1) > 1 ? 'var(--green)' : 'var(--text-dim)'}
+              sub="applied only when Risk Adj is on"
             />
           </div>
 

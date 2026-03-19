@@ -208,7 +208,7 @@ export default function Header({ onLeagueClick }) {
       {/* Risk-adjusted valuation toggle */}
       <button
         onClick={toggleRiskAdj}
-        title="Toggle risk-adjusted valuation — discounts high-vol players, premiums low-vol players"
+        title="Runtime risk-adjusted valuation: applies VOL MULT to positive VORP only (high-vol discounts, low-vol premiums)."
         style={{
           background: riskAdj ? 'rgba(251,146,60,.15)' : 'var(--surface2)',
           border: `1px solid ${riskAdj ? 'var(--orange)' : 'var(--border2)'}`,

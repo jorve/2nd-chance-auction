@@ -1526,6 +1526,7 @@ def apply_atc_vol_to_batters(players: list, atc_vol_matcher: NameMatcher) -> lis
     Injects: vol, inter_sd, intra_sd, skew, dim (None when not found).
     """
     matched = 0
+    unmatched = []
     for p in players:
         entry = atc_vol_matcher.get(p["name"])
         if entry:
@@ -1537,18 +1538,28 @@ def apply_atc_vol_to_batters(players: list, atc_vol_matcher: NameMatcher) -> lis
             matched += 1
         else:
             p["vol"] = p["inter_sd"] = p["intra_sd"] = p["skew"] = p["dim"] = None
-    print(f"  [ATC-vol] Cross-joined vol onto {matched}/{len(players)} BATX batters")
+            unmatched.append(p["name"])
+    coverage = (matched / len(players) * 100.0) if players else 0.0
+    print(f"  [ATC-vol] Cross-joined vol onto {matched}/{len(players)} BATX batters ({coverage:.1f}% coverage)")
+    if unmatched:
+        preview = ", ".join(unmatched[:10])
+        if len(unmatched) > 10:
+            preview += ", ..."
+        print(f"  [ATC-vol] Unmatched BATX batters ({len(unmatched)}): {preview}")
     return players
 
 
-def compute_vol_fields(players: list, budget: float) -> list:
-    """Compute pool-relative vol stats (vol_z, vol_mult) and risk-adjusted values.
+def compute_vol_fields(players: list) -> list:
+    """Compute pool-relative vol stats (vol_z, vol_mult) only.
 
-    vol_z    — z-score of player Vol vs pool median/stdev (0 = average uncertainty)
-    vol_mult — risk multiplier in [0.80, 1.15]; lower = more volatile = riskier
-    est_value_ra — budget share allocated using VORP × vol_mult (risk-adjusted est)
+    Runtime valuation in auctionStore.jsx is the single source-of-truth for
+    risk-adjusted value application (vol_mult affects positive VORP there).
 
-    Expects players to already have: vol, ldb_score, repl_level fields.
+    vol_z    — robust z-score of player Vol vs pool median + MAD scale.
+    vol_mult — smooth risk multiplier in [0.80, 1.15];
+               lower = more volatile = stronger discount.
+
+    Expects players to already have volatility fields injected.
     Players with vol=None/0 get neutral vol_z=0.0, vol_mult=1.0.
     """
     vol_vals = [p["vol"] for p in players if p.get("vol") is not None and p["vol"] > 0]
@@ -1556,33 +1567,27 @@ def compute_vol_fields(players: list, budget: float) -> list:
         for p in players:
             p.setdefault("vol_z", 0.0)
             p.setdefault("vol_mult", 1.0)
-            p["est_value_ra"] = p.get("est_value", 0.5)
         return players
 
     pool_median = statistics.median(vol_vals)
-    pool_stdev  = statistics.stdev(vol_vals) if len(vol_vals) > 1 else 1.0
+    abs_dev = [abs(v - pool_median) for v in vol_vals]
+    mad = statistics.median(abs_dev) if abs_dev else 0.0
+    robust_sigma = mad * 1.4826 if mad > 0 else 0.0
+    # Fallback for degenerate MAD pools.
+    if robust_sigma <= 0:
+        robust_sigma = statistics.stdev(vol_vals) if len(vol_vals) > 1 else 1.0
 
     for p in players:
         v = p.get("vol")
-        if v is not None and v > 0 and pool_stdev > 0:
-            vol_z    = (v - pool_median) / pool_stdev
-            vol_mult = max(0.80, min(1.15, 1.0 - 0.12 * vol_z))
+        if v is not None and v > 0 and robust_sigma > 0:
+            vol_z = (v - pool_median) / robust_sigma
+            # Smooth bounded curve: avoids hard clipping plateaus in tails.
+            vol_mult = 1.0 - (0.17 * math.tanh(vol_z / 1.8))
+            vol_mult = max(0.80, min(1.15, vol_mult))
         else:
             vol_z, vol_mult = 0.0, 1.0
         p["vol_z"]    = round(vol_z, 3)
         p["vol_mult"] = round(vol_mult, 4)
-
-    # Risk-adjusted value: VORP × vol_mult, re-normalized to same budget
-    for p in players:
-        vorp = max(0.0, p.get("ldb_score", 0.0) - p.get("repl_level", 0.0))
-        p["_vorp_ra"] = vorp * p["vol_mult"]
-    total_vorp_ra = sum(p["_vorp_ra"] for p in players)
-    for p in players:
-        if total_vorp_ra > 0 and p["_vorp_ra"] > 0:
-            raw = (p["_vorp_ra"] / total_vorp_ra) * budget
-            p["est_value_ra"] = max(0.5, round(raw * 2) / 2)
-        else:
-            p["est_value_ra"] = 0.5
 
     return players
 
@@ -2178,14 +2183,14 @@ def main():
     # Cross-join ATC vol data onto BATX batters (primary system); OOPSY batters use est only
     atc_bat_vol_matcher = load_atc_batter_vol(ATC_BATTERS)
     batx_batters = apply_atc_vol_to_batters(batx_batters, atc_bat_vol_matcher)
-    batx_batters = compute_vol_fields(batx_batters, hit_budget)
+    batx_batters = compute_vol_fields(batx_batters)
     print(f"  Batters: {len(batx_batters)} BATX / {len(oopsy_batters)} OOPSY")
 
     atc_sp   = build_sp(ATC_SP,   unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         sp_budget, "atc",   pos_by_last,
                         replacement_level=repl_pit_by_system["atc"]["SP"],
                         rfa_matcher=rfa_matcher)
-    atc_sp = compute_vol_fields(atc_sp, sp_budget)
+    atc_sp = compute_vol_fields(atc_sp)
     oopsy_sp = build_sp(OOPSY_SP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         sp_budget, "oopsy", pos_by_last,
                         replacement_level=repl_pit_by_system["oopsy"]["SP"],
@@ -2196,7 +2201,7 @@ def main():
                         rp_budget, "atc",   pos_by_last,
                         replacement_level=repl_pit_by_system["atc"]["RP"],
                         rfa_matcher=rfa_matcher)
-    atc_rp = compute_vol_fields(atc_rp, rp_budget * RP_VALUE_SCALE)
+    atc_rp = compute_vol_fields(atc_rp)
     oopsy_rp = build_rp(OOPSY_RP, unavail_idx, rfa_norm, pos_map, pos_by_name_team,
                         rp_budget, "oopsy", pos_by_last,
                         replacement_level=repl_pit_by_system["oopsy"]["RP"],

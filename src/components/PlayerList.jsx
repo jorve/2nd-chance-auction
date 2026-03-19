@@ -7,15 +7,13 @@ import {
   faBullseye,
   faChevronDown,
   faChevronUp,
-  faCircle,
-  faEye,
   faLock,
   faStar,
-  faTriangleExclamation,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { useAuctionStore, TEAM_COLORS, FRY_NEEDS } from '../store/auctionStore.jsx'
+import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
+import { getFrySignal } from '../utils/frySignal.js'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 const TIER_LABELS = { 1: 'TIER 1 · ELITE', 2: 'TIER 2 · PREMIUM', 3: 'TIER 3 · MID', 4: 'TIER 4 · VALUE', 5: 'TIER 5 · DEEP' }
@@ -553,7 +551,7 @@ export default function PlayerList() {
 
       {/* ── Table ── */}
       <div ref={scrollRef} style={{ flex: 1, overflow: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 900 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 1020 }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             <tr>
               <TH label="#"      col="rank"             left  w={36} />
@@ -568,6 +566,8 @@ export default function PlayerList() {
               ) : (
                 <TH label="ADJ$" col="adj_value" w={72} />
               )}
+              <TH label="VOL Z" col="vol_z" w={62} />
+              <TH label="RISKx" col="vol_mult" w={62} />
               {statCols.map(c => <TH key={c.key} label={c.label} col={c.key} w={68} />)}
               <TH label="ROFR"   col="rfa_team"           w={44} />
               {fryLens && <TH label="FRY" col="adj_value" w={90} />}
@@ -682,6 +682,13 @@ export default function PlayerList() {
                         <ValueDelta adj={p.adj_value} base={p.est_value} show={showValueDelta} />
                       </td>
                     )}
+
+                    <td style={{ ...tdNum, color: (p.vol_z ?? 0) > 0.75 ? 'var(--orange)' : (p.vol_z ?? 0) < -0.75 ? 'var(--green)' : 'var(--text-dim)' }}>
+                      {p.vol_z != null ? p.vol_z.toFixed(2) : '—'}
+                    </td>
+                    <td style={{ ...tdNum, color: (p.vol_mult ?? 1) < 1 ? 'var(--orange)' : (p.vol_mult ?? 1) > 1 ? 'var(--green)' : 'var(--text-dim)' }}>
+                      {p.vol_mult != null ? p.vol_mult.toFixed(3) : '—'}
+                    </td>
 
                     {/* Stat cols — z-score above replacement on top, raw stat below */}
                     {statCols.map(c => {
@@ -815,32 +822,6 @@ function ValueDelta({ adj, base, show = true }) {
   )
 }
 
-// ── FRY SIGNAL ────────────────────────────────────────────────────────────────
-function getFrySignal(player, fry) {
-  const budget  = fry.budget_current ?? 0
-  const val     = player.adj_value ?? 1
-  const pct     = budget > 0 ? val / budget : 0
-  const posType = player.pa !== undefined ? 'BAT' : player.gs !== undefined ? 'SP' : 'RP'
-
-  if (budget <= 0)    return { label: 'PASS',      color: 'var(--muted)',      icon: faCircle }
-  if (pct > 0.5)      return { label: 'RISKY',     color: 'var(--red)',        icon: faTriangleExclamation }
-  if (pct > 0.35)     return { label: 'STRETCH',   color: 'var(--orange)',     icon: faArrowUp }
-
-  if (FRY_NEEDS.critical.includes(posType) && player.tier <= 2)
-    return { label: 'MUST BID',  color: 'var(--fry)',   icon: faBullseye }
-  if (FRY_NEEDS.critical.includes(posType))
-    return { label: 'FILL NEED', color: 'var(--green)', icon: faStar }
-
-  const neededFill = (player.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
-  if (neededFill.length > 0 && player.tier <= 2)
-    return { label: 'WANTED',    color: 'var(--blue)',   icon: faBullseye }
-
-  if (player.tier === 1) return { label: 'ELITE',   color: 'var(--t1)',         icon: faBolt }
-  if (player.tier === 2) return { label: 'TARGET',  color: 'var(--t2)',         icon: faBullseye }
-  if (pct < 0.03)        return { label: 'ENDGAME', color: 'var(--text-dim)',   icon: faStar }
-  return                        { label: 'WATCH',   color: 'var(--text-faint)', icon: faEye }
-}
-
 // ── MINI TAG ──────────────────────────────────────────────────────────────────
 const TAG_CONFIG = {
   ELITE:        { bg: 'rgba(200,241,53,.15)',  color: 'var(--t1)',      text: 'ELITE' },
@@ -874,6 +855,18 @@ const TAG_CONFIG = {
   STASH:        { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'STASH' },
   PROSPECT:     { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'PROSP' },
   DEEP_LEAGUE:  { bg: 'rgba(156,163,175,.10)', color: 'var(--muted)',   text: 'DEEP' },
+  AGING:        { bg: 'rgba(248,113,113,.08)', color: 'var(--red)',     text: 'AGING' },
+  HIGH_FLOOR:   { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'FLOOR' },
+  VOLATILE:     { bg: 'rgba(251,146,60,.12)',  color: 'var(--orange)',  text: 'VOL' },
+  UPSIDE_PLAY:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'UPSIDE' },
+  BUST_RISK:    { bg: 'rgba(248,113,113,.14)', color: 'var(--red)',     text: 'BUST?' },
+  STREAKY:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'STRKY' },
+  PLATOON:      { bg: 'rgba(251,146,60,.10)',  color: 'var(--orange)',  text: 'PLTN' },
+  SPEED_VALUE:  { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'SPEED' },
+  HANDCUFF:     { bg: 'rgba(167,139,250,.12)', color: 'var(--purple)',  text: 'HANDC' },
+  ROFR_TARGET:  { bg: 'rgba(200,241,53,.14)',  color: 'var(--fry)',     text: 'ROFR' },
+  MULTI_POS:    { bg: 'rgba(56,189,248,.10)',  color: 'var(--blue)',    text: 'MULTI' },
+  LDB_NEED:     { bg: 'rgba(74,222,128,.10)',  color: 'var(--green)',   text: 'NEED' },
   RP_SP_ELIG:   { bg: 'rgba(56,189,248,.12)',  color: 'var(--blue)',    text: 'RP+SP' },
   PL_RP_SP_ELIG:{ bg: 'rgba(56,189,248,.16)',  color: 'var(--blue)',    text: 'PL+RP+SP' },
 }

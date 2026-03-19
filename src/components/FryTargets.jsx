@@ -1,55 +1,9 @@
 import { useState } from 'react'
 import { useAuctionStore, FRY_NEEDS } from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
+import { getFryPriorityScore, getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
-
-function getType(p) {
-  if (p.pa !== undefined) return 'BAT'
-  if (p.gs !== undefined) return 'SP'
-  return 'RP'
-}
-
-function fryScore(player, fry, type) {
-  // Score each player from FRY's perspective
-  // Higher = better for FRY to target
-  let score = player.ldb_score ?? 0
-  const posType = type
-
-  // Boost critical needs heavily
-  if (FRY_NEEDS.critical.includes(posType)) score += 20
-  // Boost needed positions
-  const fills = (player.positions ?? []).filter(p => FRY_NEEDS.needed.includes(p))
-  if (fills.length > 0) score += 8
-
-  // Boost ROFR players (FRY has right of first refusal)
-  if (player.rfa_team === 'FRY') score += 5
-
-  // Discount if they'd stretch budget too hard
-  const budget = fry.budget_current ?? 0
-  const pct = budget > 0 ? (player.adj_value ?? 0) / budget : 0
-  if (pct > 0.5) score -= 15
-  else if (pct > 0.35) score -= 5
-
-  return score
-}
-
-function getSignalLabel(player, fry, type) {
-  const budget = fry.budget_current ?? 0
-  const val = player.adj_value ?? 1
-  const pct = budget > 0 ? val / budget : 0
-
-  if (pct > 0.5) return { label: 'RISKY', color: 'var(--red)' }
-  if (pct > 0.35) return { label: 'STRETCH', color: 'var(--orange)' }
-  if (FRY_NEEDS.critical.includes(type) && player.tier <= 2) return { label: 'MUST BID', color: 'var(--fry)' }
-  if (FRY_NEEDS.critical.includes(type)) return { label: 'NEED', color: 'var(--green)' }
-  const fills = (player.positions ?? []).filter(p => FRY_NEEDS.needed.includes(p))
-  if (fills.length > 0) return { label: 'WANTED', color: 'var(--blue)' }
-  if (player.rfa_team === 'FRY') return { label: 'ROFR', color: 'var(--fry)' }
-  if (player.tier === 1) return { label: 'ELITE', color: 'var(--t1)' }
-  if (player.tier === 2) return { label: 'TARGET', color: 'var(--t2)' }
-  return { label: 'WATCH', color: 'var(--text-faint)' }
-}
 
 export default function FryTargets() {
   const { batters, sp, rp, sold, teams, setNominatedPlayer } = useAuctionStore()
@@ -59,8 +13,8 @@ export default function FryTargets() {
   const allAvailable = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
 
   const scored = allAvailable.map(p => {
-    const type = getType(p)
-    return { ...p, _fryScore: fryScore(p, fry, type), _type: type }
+    const type = getPlayerType(p)
+    return { ...p, _fryScore: getFryPriorityScore(p, fry, type), _type: type }
   })
 
   // Cap RPs at 2 so the list isn't dominated by relievers
@@ -76,7 +30,7 @@ export default function FryTargets() {
       result.push(p)
       if (result.length >= 10) break
     }
-    return result.sort((a, b) => (b.adj_value ?? 0) - (a.adj_value ?? 0))
+    return result
   })()
 
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
@@ -111,7 +65,7 @@ export default function FryTargets() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         {top10.map((p, i) => {
           const tColor = TIER_COLORS[p.tier] || 'var(--muted)'
-          const signal = getSignalLabel(p, fry, p._type)
+          const signal = getFrySignal(p, fry, p._type)
           const fills = (p.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
 
           return (
