@@ -57,7 +57,7 @@ MIN_IP  = 20
 HIT_SPLIT = 0.50
 SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
-RP_VALUE_SCALE    = 0.80   # Scale RP values down (fewer innings than SPs)
+RP_VALUE_SCALE    = 0.50   # Scale RP values down (fewer innings than SPs)
 FULL_TEAM_BUDGET  = 200.0  # Fixed baseline per-team budget for theoretical values
 SEASON_WEEKS = 26
 TEAM_WEEKLY_AB = 200.0
@@ -75,6 +75,21 @@ RFA_TEAM_MAP = {
     "work":"WORK","izzy":"IZZY","ipa":"IPA","pwrs":"PWRS",
     "balk":"BALK","fry":"FRY","pollos hermanos":"POLL",
 }
+
+
+def split_pool_budget(total_budget: float) -> tuple[float, float, float]:
+    """Allocate dollars across hitter/SP/RP pools with RP scaling, then renormalize."""
+    hit_w = HIT_SPLIT
+    sp_w = SP_SPLIT
+    rp_w = RP_SPLIT * RP_VALUE_SCALE
+    w_sum = hit_w + sp_w + rp_w
+    if w_sum <= 0:
+        return total_budget / 3.0, total_budget / 3.0, total_budget / 3.0
+    return (
+        total_budget * (hit_w / w_sum),
+        total_budget * (sp_w / w_sum),
+        total_budget * (rp_w / w_sum),
+    )
 
 # Position eligibility slots per team (used for scarcity)
 POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT":1,"SP":6,"RP":3}
@@ -704,9 +719,7 @@ def build_full_pool_values(num_teams, pos_map, pos_by_name_team, pos_by_last):
       tv_by_last — {last_name: [(norm_name, value), ...]} index for abbrev lookups
     """
     full_total = FULL_TEAM_BUDGET * num_teams
-    full_hit   = full_total * HIT_SPLIT
-    full_sp    = full_total * SP_SPLIT
-    full_rp    = full_total * RP_SPLIT * RP_VALUE_SCALE
+    full_hit, full_sp, full_rp = split_pool_budget(full_total)
 
     # ── Greenfield replacement levels (empty owned/AA — full pool sim) ────────
     gf_repl_bat = compute_batter_replacement_levels(
@@ -1092,9 +1105,9 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
     eligible = [p for p in all_qualified if not is_unavailable(p["Name"], unavail)]
     if replacement_level is not None:
-        eligible = assign_est_values_vorp_pitcher(eligible, budget * RP_VALUE_SCALE, replacement_level)
+        eligible = assign_est_values_vorp_pitcher(eligible, budget, replacement_level)
     else:
-        eligible = assign_est_values(eligible, budget * RP_VALUE_SCALE)
+        eligible = assign_est_values(eligible, budget)
 
     results = []
     for i, p in enumerate(eligible):
@@ -1915,7 +1928,7 @@ def build_owned_marginal_auction_values(
 
         bat_mass = demand_limited_positive_mass(bat_vals, batter_slots_to_fill)
         sp_mass = demand_limited_positive_mass(sp_vals, sp_slots_to_fill)
-        rp_mass = demand_limited_positive_mass(rp_vals, rp_slots_to_fill)
+        rp_mass = demand_limited_positive_mass(rp_vals, rp_slots_to_fill) * RP_VALUE_SCALE
         total_mass = bat_mass + sp_mass + rp_mass
 
         if total_mass > 0:
@@ -2134,9 +2147,7 @@ def main():
     theoretical_values, tv_by_last = build_full_pool_values(
         len(teams), pos_map, pos_by_name_team, pos_by_last)
 
-    hit_budget = total_budget * HIT_SPLIT
-    sp_budget  = total_budget * SP_SPLIT
-    rp_budget  = total_budget * RP_SPLIT
+    hit_budget, sp_budget, rp_budget = split_pool_budget(total_budget)
     print(f"\n[4/6] Budget splits: Hit=${hit_budget:.0f}M  SP=${sp_budget:.0f}M  RP=${rp_budget:.0f}M")
 
     num_teams = len(teams)

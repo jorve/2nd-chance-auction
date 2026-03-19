@@ -4,6 +4,7 @@ import { norm } from '../utils/norm.js'
 
 const LEAGUE_MIN_BID = 0.5
 const IN_SEASON_CARRY_RESERVE = 5.0
+const RP_VALUE_SCALE = 0.5
 
 function effectiveAuctionBudgetForValuation(teamState) {
   const budget = parseFloat(teamState?.budget_current) || 0
@@ -128,7 +129,7 @@ function recalcAllValues(batters, sp, rp, teams, soldMap, riskAdj = false) {
   }
   const batterMass = demandLimitedPositiveMass(unsoldBatters, batterSlotsToFill)
   const spMass = demandLimitedPositiveMass(unsoldSP, spSlotsToFill)
-  const rpMass = demandLimitedPositiveMass(unsoldRP, rpSlotsToFill)
+  const rpMass = demandLimitedPositiveMass(unsoldRP, rpSlotsToFill) * RP_VALUE_SCALE
   const totalMass = batterMass + spMass + rpMass
   const hitBudget = totalMass > 0
     ? totalEffectiveAuctionBudget * (batterMass / totalMass)
