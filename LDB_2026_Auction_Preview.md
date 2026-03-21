@@ -9,8 +9,8 @@
 | Rank | Team | GM | Composite | Surplus | VORP | $/Slot | Budget | Slots | Keepers | AA Impact |
 |------|------|----|-----------|---------|------|--------|--------|-------|---------|-----------|
 | 1 | **CORN** | Ryan | **100** | $+143.8M | +161.9 | $8.0M | $128.7M | 16 | 15 | 1 |
-| 2 | **CHOICE** | Brophy | **99** | $+151.0M | +129.7 | $9.1M | $154.6M | 17 | 14 | 4 |
-| 3 | **WIND** | Sean | **75** | $+114.5M | +83.9 | $9.3M | $166.8M | 18 | 13 | 5 |
+| 2 | **CHOICE** | Brophy | **98** | $+151.0M | +126.5 | $9.1M | $154.6M | 17 | 14 | 4 |
+| 3 | **WIND** | Sean | **76** | $+114.5M | +83.9 | $9.3M | $166.8M | 18 | 13 | 5 |
 | 4 | **FRY** | Jorve | **61** | $+111.7M | +138.3 | $4.9M | $112.9M | 23 | 8 | 2 |
 | 5 | **IZZY** | Ray | **61** | $+109.4M | +109.8 | $6.3M | $144.6M | 23 | 8 | 1 |
 | 6 | **PWRS** | Starr | **61** | $+114.8M | +77.0 | $7.5M | $149.4M | 20 | 11 | 2 |
@@ -18,12 +18,12 @@
 | 8 | **AIDS** | Josh | **56** | $+73.0M | +68.3 | $8.9M | $160.2M | 18 | 13 | 2 |
 | 9 | **POLL** | Anton | **52** | $+93.5M | +108.1 | $5.6M | $106.9M | 19 | 12 | 2 |
 | 10 | **NATE** | Nathan | **47** | $+73.0M | +101.3 | $6.1M | $109.9M | 18 | 13 | 4 |
-| 11 | **ICHI** | Jay/Paul | **40** | $+47.0M | +52.3 | $8.4M | $177.0M | 21 | 10 | 3 |
-| 12 | **NEO** | Tim | **38** | $+67.5M | +94.3 | $5.4M | $102.1M | 19 | 12 | 1 |
-| 13 | **IPA** | Chris/Vijay | **32** | $+17.1M | +50.9 | $8.5M | $144.3M | 17 | 14 | 2 |
-| 14 | **WORK** | Dubner | **32** | $+58.2M | +44.6 | $7.2M | $172.8M | 24 | 7 | 1 |
-| 15 | **TONES** | Michael | **29** | $+48.3M | +67.3 | $6.1M | $134.5M | 22 | 9 | 2 |
-| 16 | **BALK** | Ian | **0** | $+28.6M | +38.5 | $4.1M | $97.8M | 24 | 7 | 2 |
+| 11 | **ICHI** | Jay/Paul | **37** | $+47.0M | +41.8 | $8.4M | $177.0M | 21 | 10 | 3 |
+| 12 | **NEO** | Tim | **37** | $+67.5M | +90.8 | $5.4M | $102.1M | 19 | 12 | 1 |
+| 13 | **WORK** | Dubner | **33** | $+58.2M | +44.6 | $7.2M | $172.8M | 24 | 7 | 1 |
+| 14 | **IPA** | Chris/Vijay | **32** | $+17.1M | +50.9 | $8.5M | $144.3M | 17 | 14 | 2 |
+| 15 | **TONES** | Michael | **28** | $+48.3M | +63.2 | $6.1M | $134.5M | 22 | 9 | 2 |
+| 16 | **BALK** | Ian | **0** | $+28.6M | +38.5 | $4.1M | $97.8M | 24 | 7 | 3 |
 
 ---
 
@@ -62,7 +62,7 @@
 
 ### 2. CHOICE — Brophy
 
-**Composite: 99/100** · Surplus: $+151.0M · Keeper VORP: +129.7 · Budget: $154.6M · 17 slots · 14 keepers (10 bat / 4 pitch)
+**Composite: 98/100** · Surplus: $+151.0M · Keeper VORP: +126.5 · Budget: $154.6M · 17 slots · 14 keepers (10 bat / 4 pitch)
 
 **All Keepers:**
 
@@ -79,7 +79,7 @@
 | L. O'Hoppe | $1.0M | $1.5M | $+0.5M | +0.7 | $2.5M | H2 |
 | K. Manzardo | $1.0M | $0.5M | $-0.5M | +0.0 | $0.5M | S1 |
 | A. Ashby | $1.0M | $0.5M | $-0.5M | +0.3 | $0.5M | S1 |
-| J. Wilson | $2.2M | $1.5M | $-0.8M | +3.2 | $3.5M | K2 |
+| J. Wilson | $2.2M | $1.5M | $-0.8M | +0.0 | $3.5M | K2 |
 | R. Lewis | $4.0M | $0.5M | $-3.5M | +1.7 | $0.5M | S3 |
 | L. Webb | $21.6M | $18.0M | $-3.6M | +15.7 | $23.5M | K2 |
 
@@ -96,7 +96,7 @@
 
 ### 3. WIND — Sean
 
-**Composite: 75/100** · Surplus: $+114.5M · Keeper VORP: +83.9 · Budget: $166.8M · 18 slots · 13 keepers (6 bat / 7 pitch)
+**Composite: 76/100** · Surplus: $+114.5M · Keeper VORP: +83.9 · Budget: $166.8M · 18 slots · 13 keepers (6 bat / 7 pitch)
 
 **All Keepers:**
 
@@ -196,10 +196,10 @@
 | I. Herrera | $2.7M | $3.5M | $+0.8M | +4.6 | $6.5M | K2 |
 | J. Wrobleski | $2.0M | $0.5M | $-1.5M | +0.0 | $0.5M | HTH |
 
-**AA Pipeline** (2 impact players from 16 total · combined VORP +20.0):
+**AA Pipeline** (2 impact players from 16 total · combined VORP +8.6):
 
-- C. Smith (BAT) — avg VORP +12.9
 - T. Yesavage (SP) — avg VORP +7.2
+- C. Smith (BAT) — avg VORP +1.4
 
 ---
 
@@ -329,7 +329,7 @@
 
 ### 11. ICHI — Jay/Paul
 
-**Composite: 40/100** · Surplus: $+47.0M · Keeper VORP: +52.3 · Budget: $177.0M · 21 slots · 10 keepers (7 bat / 3 pitch)
+**Composite: 37/100** · Surplus: $+47.0M · Keeper VORP: +41.8 · Budget: $177.0M · 21 slots · 10 keepers (7 bat / 3 pitch)
 
 **All Keepers:**
 
@@ -339,7 +339,7 @@
 | P. Maton | $2.0M | $5.5M | $+3.5M | +4.0 | $5.0M | HTH |
 | N. Cameron | $0.5M | $3.0M | $+2.5M | +0.0 | $0.5M | H2 |
 | T. Bradley | $1.0M | $3.0M | $+2.0M | +0.0 | $0.5M | H2 |
-| W. Contreras | $13.5M | $15.0M | $+1.5M | +14.7 | $25.5M | K3 |
+| W. Contreras | $13.5M | $15.0M | $+1.5M | +4.2 | $25.5M | K3 |
 | C. Rafaela | $4.0M | $5.0M | $+1.0M | +5.9 | $10.5M | K3 |
 | N. Lodolo | $7.5M | $8.0M | $+0.5M | +4.2 | $9.0M | S4 |
 | B. Lee | $1.0M | $0.5M | $-0.5M | +0.0 | $0.5M | H2 |
@@ -356,7 +356,7 @@
 
 ### 12. NEO — Tim
 
-**Composite: 38/100** · Surplus: $+67.5M · Keeper VORP: +94.3 · Budget: $102.1M · 19 slots · 12 keepers (8 bat / 4 pitch)
+**Composite: 37/100** · Surplus: $+67.5M · Keeper VORP: +90.8 · Budget: $102.1M · 19 slots · 12 keepers (8 bat / 4 pitch)
 
 **All Keepers:**
 
@@ -369,7 +369,7 @@
 | L. Keaschall | $1.0M | $5.5M | $+4.5M | +5.5 | $11.0M | S1 |
 | N. Eovaldi | $10.8M | $12.5M | $+1.7M | +8.4 | $15.5M | K3 |
 | B. Marsh | $4.0M | $5.0M | $+1.0M | +6.4 | $10.0M | S3 |
-| T. Rogers | $6.0M | $5.5M | $-0.5M | +3.8 | $3.0M | HTH |
+| T. Rogers | $6.0M | $5.5M | $-0.5M | +0.3 | $3.0M | HTH |
 | A. Volpe | $1.5M | $0.5M | $-1.0M | +0.0 | $0.5M | S2 |
 | J. deGrom | $18.1M | $16.5M | $-1.6M | +13.3 | $21.0M | K3 |
 | J. Aranda | $5.8M | $3.5M | $-2.3M | +1.9 | $6.5M | K2 |
@@ -383,7 +383,29 @@
 
 ---
 
-### 13. IPA — Chris/Vijay
+### 13. WORK — Dubner
+
+**Composite: 33/100** · Surplus: $+58.2M · Keeper VORP: +44.6 · Budget: $172.8M · 24 slots · 7 keepers (5 bat / 2 pitch)
+
+**All Keepers:**
+
+| Player | Salary | Theo Value | Surplus | VORP | Marginal Auction | Contract |
+|--------|--------|------------|---------|------|------------------|----------|
+| B. Doyle | $0.5M | $11.5M | $+11.0M | +7.9 | $23.0M | K3 |
+| R. Suarez | $3.1M | $10.0M | $+6.8M | +4.0 | $13.5M | K3 |
+| S. Perez | $4.5M | $9.5M | $+5.0M | +7.9 | $18.5M | K3 |
+| G. Williams | $4.0M | $7.5M | $+3.5M | +3.7 | $8.0M | S3 |
+| J. Marsee | $6.0M | $8.0M | $+2.0M | +8.1 | $16.0M | HTH |
+| C. Schlittler | $6.0M | $7.0M | $+1.0M | +2.9 | $6.0M | HTH |
+| T. Turner | $26.1M | $12.5M | $-13.6M | +10.2 | $23.5M | K2 |
+
+**AA Pipeline** (1 impact player from 11 total · combined VORP +1.3):
+
+- C. DeLauter (BAT) — avg VORP +1.3
+
+---
+
+### 14. IPA — Chris/Vijay
 
 **Composite: 32/100** · Surplus: $+17.1M · Keeper VORP: +50.9 · Budget: $144.3M · 17 slots · 14 keepers (10 bat / 4 pitch)
 
@@ -413,37 +435,15 @@
 
 ---
 
-### 14. WORK — Dubner
-
-**Composite: 32/100** · Surplus: $+58.2M · Keeper VORP: +44.6 · Budget: $172.8M · 24 slots · 7 keepers (5 bat / 2 pitch)
-
-**All Keepers:**
-
-| Player | Salary | Theo Value | Surplus | VORP | Marginal Auction | Contract |
-|--------|--------|------------|---------|------|------------------|----------|
-| B. Doyle | $0.5M | $11.5M | $+11.0M | +7.9 | $23.0M | K3 |
-| R. Suarez | $3.1M | $10.0M | $+6.8M | +4.0 | $13.5M | K3 |
-| S. Perez | $4.5M | $9.5M | $+5.0M | +7.9 | $18.5M | K3 |
-| G. Williams | $4.0M | $7.5M | $+3.5M | +3.7 | $8.0M | S3 |
-| J. Marsee | $6.0M | $8.0M | $+2.0M | +8.1 | $16.0M | HTH |
-| C. Schlittler | $6.0M | $7.0M | $+1.0M | +2.9 | $6.0M | HTH |
-| T. Turner | $26.1M | $12.5M | $-13.6M | +10.2 | $23.5M | K2 |
-
-**AA Pipeline** (1 impact player from 11 total · combined VORP +1.3):
-
-- C. DeLauter (BAT) — avg VORP +1.3
-
----
-
 ### 15. TONES — Michael
 
-**Composite: 29/100** · Surplus: $+48.3M · Keeper VORP: +67.3 · Budget: $134.5M · 22 slots · 9 keepers (5 bat / 4 pitch)
+**Composite: 28/100** · Surplus: $+48.3M · Keeper VORP: +63.2 · Budget: $134.5M · 22 slots · 9 keepers (5 bat / 4 pitch)
 
 **All Keepers:**
 
 | Player | Salary | Theo Value | Surplus | VORP | Marginal Auction | Contract |
 |--------|--------|------------|---------|------|------------------|----------|
-| J. Duran | $7.5M | $16.5M | $+9.0M | +16.1 | $11.5M | S4 |
+| J. Duran | $7.5M | $16.5M | $+9.0M | +12.0 | $11.5M | S4 |
 | W. Smith | $10.8M | $18.5M | $+7.7M | +15.0 | $28.5M | K2 |
 | E. Suarez | $3.1M | $10.5M | $+7.3M | +7.5 | $20.5M | K3 |
 | A. Chapman | $2.7M | $8.0M | $+5.3M | +8.4 | $8.0M | K2 |
@@ -478,8 +478,9 @@
 | A. Bohm | $4.0M | $3.0M | $-1.0M | +2.6 | $6.5M | S3 |
 | P. Alonso | $29.7M | $12.5M | $-17.2M | +13.7 | $23.5M | K1 |
 
-**AA Pipeline** (2 impact players from 10 total · combined VORP +1.5):
+**AA Pipeline** (3 impact players from 10 total · combined VORP +3.7):
 
+- J. Crawford (BAT) — avg VORP +2.2
 - C. Jensen (BAT) — avg VORP +1.0
 - C. Benge (BAT) — avg VORP +0.5
 

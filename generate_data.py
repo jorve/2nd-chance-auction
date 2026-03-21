@@ -1569,12 +1569,28 @@ def compute_vol_fields(players: list) -> list:
     risk-adjusted value application (vol_mult affects positive VORP there).
 
     vol_z    — robust z-score of player Vol vs pool median + MAD scale.
-    vol_mult — smooth risk multiplier in [0.80, 1.15];
-               lower = more volatile = stronger discount.
+    vol_mult — calibrated risk multiplier with:
+               - smooth volatility effect
+               - small skew tilt (upside/downside)
+               - value-tier gating (stronger effect on higher-value players)
 
     Expects players to already have volatility fields injected.
     Players with vol=None/0 get neutral vol_z=0.0, vol_mult=1.0.
     """
+    VOL_CURVE_SCALE = 0.10
+    VOL_CURVE_WIDTH = 2.2
+    SKEW_CURVE_SCALE = 0.04
+    SKEW_CURVE_WIDTH = 1.6
+    VOL_MULT_FLOOR = 0.88
+    VOL_MULT_CEIL = 1.10
+
+    def effect_strength(est_value: float) -> float:
+        if est_value >= 20.0:
+            return 1.00
+        if est_value >= 8.0:
+            return 0.70
+        return 0.40
+
     vol_vals = [p["vol"] for p in players if p.get("vol") is not None and p["vol"] > 0]
     if not vol_vals:
         for p in players:
@@ -1594,9 +1610,16 @@ def compute_vol_fields(players: list) -> list:
         v = p.get("vol")
         if v is not None and v > 0 and robust_sigma > 0:
             vol_z = (v - pool_median) / robust_sigma
-            # Smooth bounded curve: avoids hard clipping plateaus in tails.
-            vol_mult = 1.0 - (0.17 * math.tanh(vol_z / 1.8))
-            vol_mult = max(0.80, min(1.15, vol_mult))
+            skew = float(p.get("skew") or 0.0)
+            base_mult = (
+                1.0
+                - (VOL_CURVE_SCALE * math.tanh(vol_z / VOL_CURVE_WIDTH))
+                + (SKEW_CURVE_SCALE * math.tanh(skew / SKEW_CURVE_WIDTH))
+            )
+            ev = float(p.get("est_value") or 0.0)
+            strength = effect_strength(ev)
+            vol_mult = 1.0 + (base_mult - 1.0) * strength
+            vol_mult = max(VOL_MULT_FLOOR, min(VOL_MULT_CEIL, vol_mult))
         else:
             vol_z, vol_mult = 0.0, 1.0
         p["vol_z"]    = round(vol_z, 3)
