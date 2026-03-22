@@ -4,13 +4,14 @@ LDB 2026 Data Generation Script
 ================================
 Reads all projection CSVs + draft board + RFA file.
 Produces src/data/ldb_data.js with everything baked in for the React app.
+Also writes src/data/cbs_rosters_by_team.json — CBS roster → fantasy team (search by name or norm; draft_round null for manual keeper costs).
 
 Run from the repo root:
   python generate_data.py
 
 Required source files (set INPUT_DIR below):
-  2026_LDB_Draft_Board__2026_Board.csv
-  2026_LDB_Draft_Board__RFA_Rights.csv
+  2026_CBS_Batters.csv, 2026_CBS_SP.csv, 2026_CBS_RP.csv  (roster export = draft board: team column + keepers)
+  2026_LDB_Draft_Board__RFA_Rights.csv  (optional)
   2026_BATX_Batters_Projections.csv
   2026_OOPSY_Batters_Projections.csv
   2026_ATC_SP_Projections.csv
@@ -21,6 +22,7 @@ Required source files (set INPUT_DIR below):
 """
 
 import csv, json, statistics, re, os, math, unicodedata
+from collections import Counter
 from pathlib import Path
 from datetime import date
 from difflib import SequenceMatcher
@@ -29,9 +31,10 @@ from difflib import SequenceMatcher
 _HERE      = Path(__file__).parent
 INPUT_DIR  = _HERE / "data"
 OUTPUT_JS  = _HERE / "src" / "data" / "ldb_data.js"
+OUTPUT_ROSTER_JSON = _HERE / "src" / "data" / "cbs_rosters_by_team.json"
 OUTPUT_PREVIEW_MD = _HERE / "LDB_2026_Auction_Preview.md"
 
-DRAFT_BOARD   = INPUT_DIR / "2026_LDB_Draft_Board__2026_Board.csv"
+DRAFT_BOARD   = INPUT_DIR / "2026_LDB_Draft_Board__2026_Board.csv"  # legacy; CBS roster files drive the board
 RFA_FILE      = INPUT_DIR / "2026_LDB_Draft_Board__RFA_Rights.csv"
 BATX_BATTERS  = INPUT_DIR / "2026_BATX_Batters_Projections.csv"
 OOPSY_BATTERS = INPUT_DIR / "2026_OOPSY_Batters_Projections.csv"
@@ -40,9 +43,13 @@ ATC_SP        = INPUT_DIR / "2026_ATC_SP_Projections.csv"
 OOPSY_SP      = INPUT_DIR / "2026_OOPSY_SP_Projections.csv"
 ATC_RP        = INPUT_DIR / "2026_ATC_RP_Projections.csv"
 OOPSY_RP      = INPUT_DIR / "2026_OOPSY_RP_Projections.csv"
-CBS_BAT_ELIG  = INPUT_DIR / "CBS_batter_elig.csv"
-CBS_SP_ELIG   = INPUT_DIR / "CBS_SP_elig.csv"
-CBS_RP_ELIG   = INPUT_DIR / "CBS_RP_elig.csv"
+CBS_ROSTER_BATTERS = INPUT_DIR / "2026_CBS_Batters.csv"
+CBS_ROSTER_SP      = INPUT_DIR / "2026_CBS_SP.csv"
+CBS_ROSTER_RP      = INPUT_DIR / "2026_CBS_RP.csv"
+# Same exports used for positional eligibility (Player column = Name POS | MLB)
+CBS_BAT_ELIG = CBS_ROSTER_BATTERS
+CBS_SP_ELIG  = CBS_ROSTER_SP
+CBS_RP_ELIG  = CBS_ROSTER_RP
 PLAYER_NOTES  = INPUT_DIR / "player_notes.json"
 PL_BATTERS    = INPUT_DIR / "2026_PL_Batter_Rankings.csv"
 PL_SP         = INPUT_DIR / "2026_PL_SP_Rankings.csv"
@@ -58,10 +65,16 @@ HIT_SPLIT = 0.50
 SP_SPLIT  = 0.30
 RP_SPLIT  = 0.20
 RP_VALUE_SCALE    = 0.50   # Scale RP values down (fewer innings than SPs)
-FULL_TEAM_BUDGET  = 200.0  # Fixed baseline per-team budget for theoretical values
+# 11-team league — keep in sync with src/config/snakeDraftOrder.js
+LEAGUE_NUM_TEAMS = 11
+LEAGUE_BUDGET_PER_TEAM = 300.0
+# CBS: max 38 total roster; 22 active = 13 hitters + 9 pitchers (6 SP + 3 RP in app split)
+LEAGUE_ROSTER_SLOTS = 38
+LEAGUE_ACTIVE_HIT = 13
+LEAGUE_ACTIVE_PIT = 9
+LEAGUE_KEEPERS_PER_TEAM = 3
+FULL_TEAM_BUDGET = LEAGUE_BUDGET_PER_TEAM  # per-team $ for theoretical values + board totals
 SEASON_WEEKS = 26
-TEAM_WEEKLY_AB = 200.0
-TEAM_WEEKLY_IP = 50.0
 
 FRY_TEAM = "FRY"
 FRY_KEEPERS = ["Ronald Acuña Jr.", "Brent Rooker",
@@ -75,6 +88,70 @@ RFA_TEAM_MAP = {
     "work":"WORK","izzy":"IZZY","ipa":"IPA","pwrs":"PWRS",
     "balk":"BALK","fry":"FRY","pollos hermanos":"POLL",
 }
+
+# Franchise names as they appear (or close) in CBS “team” column → internal abbr (snakeDraftOrder.js)
+LEAGUE_FRANCHISES = [
+    ("SAVG2", "2025 Savages 2"),
+    ("JAYHK", "Jayhawks"),
+    ("INGBT", "Inglorious Batters"),
+    ("HIGH2", "Highlanders II"),
+    ("CL21B", "21 Club 2"),
+    ("RUBYR", "The Ruby Ring Gang A"),
+    ("MENDL", "Mendel Lapse"),
+    ("BEDST", "Bed Stuy Fish Fry"),
+    ("CASEY", "Casey HotDog"),
+    ("CUCKOO", "Flew Over the Cuckoo's Nest"),
+    ("BEHEM", "Behemoth"),
+]
+
+
+def norm_franchise_label(s: str) -> str:
+    """Normalize CBS franchise column for matching (spacing/case)."""
+    if not s or not isinstance(s, str):
+        return ""
+    s = unicodedata.normalize("NFKD", s.strip())
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = re.sub(r"\s+", " ", s.lower())
+    return s.strip()
+
+
+_FRANCHISE_NORM_TO_ABBR = {norm_franchise_label(disp): abbr for abbr, disp in LEAGUE_FRANCHISES}
+
+
+def is_cbs_waiver_cell(cell: str) -> bool:
+    """CBS uses 'W' / blank for players not on a league roster (available pool)."""
+    t = re.sub(r"\s", "", (cell or "").strip().upper())
+    return t in {"", "W"}
+
+
+def is_cbs_junk_team_row(cell: str) -> bool:
+    """Filter timestamp / footer rows that sometimes appear in CBS exports."""
+    return "report updated" in (cell or "").strip().lower()
+
+
+def franchise_cell_to_abbr(cell: str) -> str | None:
+    """Map CBS roster team cell to league abbr, or None if waivers / unknown."""
+    if is_cbs_waiver_cell(cell) or is_cbs_junk_team_row(cell):
+        return None
+    key = norm_franchise_label(cell)
+    if key in _FRANCHISE_NORM_TO_ABBR:
+        return _FRANCHISE_NORM_TO_ABBR[key]
+    best_abbr, best_r = None, 0.0
+    for abbr, disp in LEAGUE_FRANCHISES:
+        r = SequenceMatcher(None, key, norm_franchise_label(disp)).ratio()
+        if r > best_r:
+            best_r, best_abbr = r, abbr
+    if best_r >= 0.88:
+        return best_abbr
+    print(f"  [CBS-board] Unknown franchise label {cell!r} — row skipped (best internal match {best_r:.2f})")
+    return None
+
+
+def _abbr_to_franchise_name(abbr: str) -> str:
+    for a, name in LEAGUE_FRANCHISES:
+        if a == abbr:
+            return name
+    return abbr
 
 
 def split_pool_budget(total_budget: float) -> tuple[float, float, float]:
@@ -92,25 +169,42 @@ def split_pool_budget(total_budget: float) -> tuple[float, float, float]:
     )
 
 # Position eligibility slots per team (used for scarcity)
-POS_SLOTS_PER_TEAM = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":3,"CF":1,"RF":1,"UT":1,"SP":6,"RP":3}
+# League-wide caps (× num_teams). Hitters: C,1B,2B,3B,SS,MI,CI, OF×5, U — 13 active bats.
+POS_SLOTS_PER_TEAM = {
+    "C": 1, "1B": 1, "2B": 1, "3B": 1, "SS": 1, "MI": 1, "CI": 1, "OF": 5, "U": 1,
+    "SP": 6, "RP": 3,
+}
 
 # ── REPLACEMENT LEVEL CONFIG ───────────────────────────────────────────────────
 # Simplified position buckets used for replacement level simulation.
-# OF=5 covers all outfield slots (3 pure OF + CF + RF).
-REPL_BAT_SLOTS = {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"OF":5,"UT":1}
-REPL_SP_SLOTS_PER_TEAM = 8   # average SPs carried per team (less strict SP replacement baseline)
-REPL_RP_SLOTS_PER_TEAM = 5   # RP starters per team (stricter replacement baseline)
+# Mirrors active bat slots (MI/CI = middle/corner infield). OF=5.
+REPL_BAT_SLOTS = {"C": 1, "1B": 1, "2B": 1, "3B": 1, "SS": 1, "MI": 1, "CI": 1, "OF": 5, "UT": 1}
+REPL_SP_SLOTS_PER_TEAM = 6   # 6+3 = 9 pitchers (CBS active P)
+REPL_RP_SLOTS_PER_TEAM = 3
 REPL_BENCH_PCT = 0.20         # additional 20% bench depth beyond starter slots
 REPL_BAT_BENCH_PCT = 0.30     # deeper batter replacement pool -> lower batter threshold
 REPL_TOP_N     = 5            # average top-N remaining players = replacement level
 
-# Shared category weights used by scoring cache.
-CAT_BAT = {"OPS":(True,2.8),"OBP":(True,2.5),"HR":(True,1.9),
-           "aSB":(True,1.4),"R":(True,1.4),"aRBI":(True,1.4)}
-CAT_SP  = {"MGS":(True,2.5),"K":(True,2.2),"ERA":(False,1.9),
-           "HRA":(False,1.3),"aWHIP":(False,1.6)}
-CAT_RP  = {"VIJAY":(True,2.0),"K":(True,1.6),"ERA":(False,1.0),
-           "HRA":(False,0.9),"aWHIP":(False,1.2)}
+# 5×5 rotisserie (season totals). SP/RP use the same five pitching categories,
+# z-scored within each pool. Weekly lineup (not daily) is approximated via PA/IP
+# multipliers after z-scores — see roto_weekly_lineup_bat_factor / roto_pitching_ip_factor.
+CAT_BAT = {
+    "BA": (True, 2.0),
+    "HR": (True, 1.8),
+    "R": (True, 1.8),
+    "RBI": (True, 1.8),
+    "SB": (True, 1.2),
+}
+CAT_SP = CAT_RP = {
+    "ERA": (False, 2.0),
+    "K": (True, 2.0),
+    "SV": (True, 1.2),
+    "W": (True, 1.8),
+    "WHIP": (False, 1.8),
+}
+
+ROTO_WEEKLY_PA_EXP = 0.42
+ROTO_PITCH_IP_EXP = 0.35
 
 # ── DEBUG FLAGS ────────────────────────────────────────────────────────────────
 # Set LDB_DEBUG_AMBIG_POS=1 to print ambiguous abbreviated position lookups.
@@ -273,30 +367,29 @@ def calc_ip_per_week(row):
     return fv(row, "IP") / SEASON_WEEKS if SEASON_WEEKS > 0 else 0.0
 
 
-def ratio_weekly_delta(player_ratio, player_weekly_volume, team_ratio, team_weekly_volume):
-    """Weekly ratio movement if player contributes into a team-level denominator bucket."""
-    denom = team_weekly_volume + player_weekly_volume
-    if denom <= 0:
-        return 0.0
-    blended = ((team_ratio * team_weekly_volume) + (player_ratio * player_weekly_volume)) / denom
-    return blended - team_ratio
+def roto_weekly_lineup_bat_factor(pa: float, pa_list: list) -> float:
+    """Discount part-time / platoon bats vs full-timers (weekly lineup setting)."""
+    if not pa_list:
+        return 1.0
+    med = statistics.median(pa_list)
+    if med <= 0:
+        return 1.0
+    r = min(pa / med, 1.18)
+    fac = r ** ROTO_WEEKLY_PA_EXP
+    return max(0.62, min(1.0, fac))
 
 
-def get_matching_sp_path_for_rp(rp_proj_path: Path):
-    """Map RP projection file to its paired SP projection file for workload context."""
-    name = rp_proj_path.name.lower()
-    if "oopsy" in name:
-        return OOPSY_SP
-    return ATC_SP
+def roto_pitching_ip_factor(ip: float, ip_list: list) -> float:
+    """Mild preference for full-season workload within SP or RP pool."""
+    if not ip_list:
+        return 1.0
+    med = statistics.median(ip_list)
+    if med <= 0:
+        return 1.0
+    r = min(ip / med, 1.12)
+    fac = r ** ROTO_PITCH_IP_EXP
+    return max(0.58, min(1.0, fac))
 
-
-def get_sp_reference_ip_per_week(sp_proj_path: Path):
-    """Average SP weekly innings among qualified SPs, used for RP context scaling."""
-    rows = get_csv_rows_cached(sp_proj_path)
-    sp_pool = [r for r in rows if fv(r, "GS") >= MIN_GS]
-    if not sp_pool:
-        return 0.0
-    return statistics.mean(calc_ip_per_week(r) for r in sp_pool)
 
 def names_match(proj_name, draft_name):
     """
@@ -406,7 +499,7 @@ def compute_ldb_scores(players, cat_weights):
     Expects _raw_* keys to already be set on each player dict."""
     for key, (higher, weight) in cat_weights.items():
         raw_key = f"_raw_{key}"
-        if raw_key not in players[0]:
+        if players and raw_key not in players[0]:
             for p in players:
                 p[raw_key] = fv(p, key)
     for key, (higher, weight) in cat_weights.items():
@@ -458,51 +551,56 @@ def get_scored_pool_cached(pool_kind, proj_path):
         rows = get_csv_rows_cached(proj_path)
         if pool_kind == "bat":
             pool = [r for r in rows if fv(r, "PA") >= MIN_PA]
-            team_obp = statistics.mean(fv(r, "OBP") for r in pool) if pool else 0.0
-            team_ops = statistics.mean(fv(r, "OPS") for r in pool) if pool else 0.0
+            pa_list = [fv(r, "PA") for r in pool]
             for r in pool:
                 ab_wk = calc_ab_per_week(r)
-                r["_raw_aSB"]  = calc_aSB(r)
-                r["_raw_HR"]   = fv(r, "HR")
-                r["_raw_R"]    = fv(r, "R")
-                # Ratio categories are scored by weekly team-impact, not raw ratio level.
                 r["_ab_per_week"] = ab_wk
-                r["_raw_OBP"] = ratio_weekly_delta(fv(r, "OBP"), ab_wk, team_obp, TEAM_WEEKLY_AB)
-                r["_raw_OPS"] = ratio_weekly_delta(fv(r, "OPS"), ab_wk, team_ops, TEAM_WEEKLY_AB)
-                r["_raw_aRBI"] = fv(r, "RBI")
+                r["_raw_BA"] = fv(r, "AVG")
+                r["_raw_HR"] = fv(r, "HR")
+                r["_raw_R"] = fv(r, "R")
+                r["_raw_RBI"] = fv(r, "RBI")
+                r["_raw_SB"] = fv(r, "SB")
             pool = compute_ldb_scores(pool, CAT_BAT)
+            for r in pool:
+                fac = roto_weekly_lineup_bat_factor(fv(r, "PA"), pa_list)
+                r["_roto_lineup_factor"] = fac
+                r["LDB_Score"] *= fac
+            pool.sort(key=lambda x: x["LDB_Score"], reverse=True)
         elif pool_kind == "sp":
             pool = [r for r in rows if fv(r, "GS") >= MIN_GS]
-            team_era = statistics.mean(fv(r, "ERA") for r in pool) if pool else 0.0
-            team_whip = statistics.mean(fv(r, "WHIP") for r in pool) if pool else 0.0
+            ip_list = [fv(r, "IP") for r in pool]
             for r in pool:
                 ip_wk = calc_ip_per_week(r)
-                r["_raw_MGS"]   = calc_mgs_season(r)
-                r["_raw_K"]     = fv(r, "SO")
                 r["_ip_per_week"] = ip_wk
-                r["_raw_ERA"] = ratio_weekly_delta(fv(r, "ERA"), ip_wk, team_era, TEAM_WEEKLY_IP)
-                r["_raw_HRA"]   = fv(r, "HR")
-                r["_raw_aWHIP"] = ratio_weekly_delta(fv(r, "WHIP"), ip_wk, team_whip, TEAM_WEEKLY_IP)
+                r["_raw_ERA"] = fv(r, "ERA")
+                r["_raw_K"] = fv(r, "SO")
+                r["_raw_SV"] = fv(r, "SV")
+                r["_raw_W"] = fv(r, "W")
+                r["_raw_WHIP"] = fv(r, "WHIP")
             pool = compute_ldb_scores(pool, CAT_SP)
+            for r in pool:
+                fac = roto_pitching_ip_factor(fv(r, "IP"), ip_list)
+                r["_roto_ip_factor"] = fac
+                r["LDB_Score"] *= fac
+            pool.sort(key=lambda x: x["LDB_Score"], reverse=True)
         elif pool_kind == "rp":
             pool = [r for r in rows if fv(r, "IP") >= MIN_IP]
-            team_era = statistics.mean(fv(r, "ERA") for r in pool) if pool else 0.0
-            team_whip = statistics.mean(fv(r, "WHIP") for r in pool) if pool else 0.0
-            sp_ref_ip_week = get_sp_reference_ip_per_week(get_matching_sp_path_for_rp(proj_path))
+            ip_list = [fv(r, "IP") for r in pool]
             for r in pool:
                 ip_wk = calc_ip_per_week(r)
-                # Context-aware RP contribution scale relative to SP workload.
-                # Typical RP volume should contribute proportionally less than SP volume.
-                ip_ctx = (ip_wk / sp_ref_ip_week) if sp_ref_ip_week > 0 else 0.0
-                ip_ctx = max(0.0, min(1.0, ip_ctx))
-                r["_raw_VIJAY"] = calc_vijay_season(r) * ip_ctx
-                r["_raw_K"]     = fv(r, "SO") * ip_ctx
                 r["_ip_per_week"] = ip_wk
-                r["_raw_ERA"] = ratio_weekly_delta(fv(r, "ERA"), ip_wk, team_era, TEAM_WEEKLY_IP)
-                r["_raw_HRA"]   = fv(r, "HR") * ip_ctx
-                r["_raw_aWHIP"] = ratio_weekly_delta(fv(r, "WHIP"), ip_wk, team_whip, TEAM_WEEKLY_IP)
-                r["_rp_ip_context"] = ip_ctx
+                r["_rp_ip_context"] = 1.0
+                r["_raw_ERA"] = fv(r, "ERA")
+                r["_raw_K"] = fv(r, "SO")
+                r["_raw_SV"] = fv(r, "SV")
+                r["_raw_W"] = fv(r, "W")
+                r["_raw_WHIP"] = fv(r, "WHIP")
             pool = compute_ldb_scores(pool, CAT_RP)
+            for r in pool:
+                fac = roto_pitching_ip_factor(fv(r, "IP"), ip_list)
+                r["_roto_ip_factor"] = fac
+                r["LDB_Score"] *= fac
+            pool.sort(key=lambda x: x["LDB_Score"], reverse=True)
         else:
             raise ValueError(f"Unknown pool_kind: {pool_kind}")
         _SCORED_POOL_CACHE[key] = pool
@@ -516,15 +614,28 @@ def normalize_pos_for_repl(positions):
     """Map CBS position tokens to simplified REPL_BAT_SLOTS bucket keys."""
     result = set()
     for p in positions:
-        if p == "C":               result.add("C")
-        elif p == "1B":            result.add("1B")
-        elif p == "DH":            result.add("1B")   # DH counts as 1B utility
-        elif p == "2B":            result.add("2B")
-        elif p == "3B":            result.add("3B")
-        elif p == "SS":            result.add("SS")
-        elif p in {"OF","CF","RF","LF"}: result.add("OF")
-        elif p == "INF":           result.update({"2B","3B","SS"})
-        elif p == "U":             result.add("UT")
+        if p == "C":
+            result.add("C")
+        elif p == "1B":
+            result.update({"1B", "CI"})
+        elif p == "DH":
+            result.add("UT")  # DH does not map to 1B — flexible bat / utility for repl
+        elif p == "2B":
+            result.update({"2B", "MI"})
+        elif p == "3B":
+            result.update({"3B", "CI"})
+        elif p == "SS":
+            result.update({"SS", "MI"})
+        elif p == "MI":
+            result.add("MI")
+        elif p == "CI":
+            result.add("CI")
+        elif p in {"OF", "CF", "RF", "LF"}:
+            result.add("OF")
+        elif p == "INF":
+            result.update({"2B", "3B", "SS", "MI", "CI"})
+        elif p == "U":
+            result.add("UT")
     return result
 
 
@@ -559,7 +670,7 @@ def compute_batter_replacement_levels(
 
     total_slots = {pos: s * num_teams for pos, s in REPL_BAT_SLOTS.items()}
     replacement_levels = {}
-    for pos in ["C", "1B", "2B", "3B", "SS", "OF", "UT"]:
+    for pos in ["C", "1B", "2B", "3B", "SS", "MI", "CI", "OF", "UT"]:
         slots = total_slots.get(pos, 0)
         cutoff = slots + int(slots * bench_pct)
         # Utility is an "any bat" slot, not only explicit U-eligible players.
@@ -835,10 +946,122 @@ def parse_draft_board(path):
         "all_unavailable": set(owned.keys()) | aa_names,
     }
 
+
+def _primary_owned_pos_batter(positions: list) -> str:
+    """Fantasy slot label for a kept batter from CBS position tokens."""
+    if not positions:
+        return "UT"
+    p0 = positions[0]
+    if p0 == "DH":
+        return "UT"
+    if p0 == "U":
+        return "UT"
+    if p0 == "INF":
+        return "3B"
+    if p0 in {"C", "1B", "2B", "3B", "SS", "OF", "CF", "RF", "LF"}:
+        return p0
+    return "UT"
+
+
+def _iter_cbs_roster_rows(path: Path):
+    if not path.exists():
+        raise FileNotFoundError(f"CBS roster export not found: {path}")
+    with open(path, encoding="utf-8-sig") as f:
+        lines = f.readlines()
+    for row in csv.reader(lines[2:]):
+        if len(row) < 2:
+            continue
+        yield row
+
+
+def parse_cbs_draft_board(bat_path: Path, sp_path: Path, rp_path: Path) -> dict:
+    """
+    Build the same structure as parse_draft_board from CBS league roster exports.
+    First column = franchise (or 'W' = available); each team should have KEEPERS_PER_TEAM
+    rostered players across the three files combined (bat / SP / RP).
+    First-seen row wins for a player name (batters file processed first).
+    """
+    owned = {}
+    seen_norm = set()
+    for path, role in (
+        (bat_path, "bat"),
+        (sp_path, "sp"),
+        (rp_path, "rp"),
+    ):
+        for row in _iter_cbs_roster_rows(path):
+            team_cell, player_cell = row[0], row[1]
+            if not player_cell or "|" not in player_cell:
+                continue
+            abbr = franchise_cell_to_abbr(team_cell)
+            if abbr is None:
+                continue
+            name, positions, mlb_team = _parse_cbs_player_col(player_cell)
+            if not name:
+                continue
+            nk = norm(name)
+            if nk in seen_norm:
+                continue
+            if role == "bat":
+                pos = _primary_owned_pos_batter(positions)
+            elif role == "sp":
+                pos = "SP"
+            else:
+                pos = "RP"
+            seen_norm.add(nk)
+            owned[name] = {
+                "team": abbr,
+                "salary": 0.0,
+                "contract": "",
+                "pos": pos,
+                "mlb_team": (mlb_team or "").strip(),
+            }
+
+    slots_rem = max(0, LEAGUE_ROSTER_SLOTS - LEAGUE_KEEPERS_PER_TEAM)
+    teams_out = {}
+    for abbr, _ in LEAGUE_FRANCHISES:
+        teams_out[abbr] = {
+            "abbr": abbr,
+            "gm": _abbr_to_franchise_name(abbr),
+            "budget_rem": LEAGUE_BUDGET_PER_TEAM,
+            "slots_rem": slots_rem,
+            "budget_initial": LEAGUE_BUDGET_PER_TEAM,
+            "slots_initial": slots_rem,
+        }
+
+    aa_by_team = {abbr: [] for abbr, _ in LEAGUE_FRANCHISES}
+    aa_names: list = []
+
+    by_team = Counter(p["team"] for p in owned.values())
+    for abbr, _ in LEAGUE_FRANCHISES:
+        n = by_team.get(abbr, 0)
+        if n != LEAGUE_KEEPERS_PER_TEAM:
+            print(
+                f"  [CBS-board] WARN: {abbr} has {n} rostered players in export "
+                f"(expected {LEAGUE_KEEPERS_PER_TEAM})"
+            )
+    expect_total = LEAGUE_NUM_TEAMS * LEAGUE_KEEPERS_PER_TEAM
+    if len(owned) != expect_total:
+        print(f"  [CBS-board] WARN: total rostered = {len(owned)} (expected {expect_total})")
+
+    total_budget = LEAGUE_NUM_TEAMS * LEAGUE_BUDGET_PER_TEAM
+
+    return {
+        "teams": teams_out,
+        "total_budget": total_budget,
+        "owned": owned,
+        "aa_names": aa_names,
+        "aa_by_team": aa_by_team,
+        "all_unavailable": set(owned.keys()) | set(aa_names),
+        "board_source": "cbs_roster",
+    }
+
 # ── RFA ────────────────────────────────────────────────────────────────────────
 def parse_rfa(path):
     rfa = {}
     rfa_by_team = {}
+    if not path.exists():
+        print(f"  [RFA] {path.name} not found — skipping")
+        return rfa, rfa_by_team
     with open(path, encoding="utf-8-sig") as f:
         reader = csv.reader(f)
         next(reader)
@@ -854,7 +1077,7 @@ def parse_rfa(path):
 # ── POSITIONS (CBS eligibility files) ─────────────────────────────────────────
 # CBS Player column format: "Name POS1,POS2 | TEAM"  (pipe separates name+pos from team)
 # Known position tokens — anything else in that slot is part of the name
-KNOWN_POS = {"C","1B","2B","3B","SS","OF","CF","RF","LF","DH","INF","U","SP","RP","P"}
+KNOWN_POS = {"C","1B","2B","3B","SS","MI","CI","OF","CF","RF","LF","DH","INF","U","SP","RP","P"}
 
 def _parse_cbs_player_col(raw):
     """Parse a CBS 'Player' cell like 'Aaron Judge RF,OF | NYY'.
@@ -1038,13 +1261,13 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "name": p["Name"], "team": p.get("Team",""),
             "g": round(fv(p,"G"),1), "pa": round(fv(p,"PA"),1),
             "hr": round(fv(p,"HR"),1), "r": round(fv(p,"R"),1),
+            "avg": round(fv(p,"AVG"),3),
             "obp": round(fv(p,"OBP"),3), "ops": round(fv(p,"OPS"),3),
             "rbi": round(fv(p,"RBI"),1), "sb": round(fv(p,"SB"),1),
-            "asb": round(p["_raw_aSB"],1), "wrc_plus": round(fv(p,"wRC+"),1),
+            "asb": round(calc_aSB(p),1), "wrc_plus": round(fv(p,"wRC+"),1),
             "war": round(fv(p,"WAR"),2),
             "ab_per_week": round(p.get("_ab_per_week", 0.0), 2),
-            "obp_weekly_impact": round(p.get("_raw_OBP", 0.0), 6),
-            "ops_weekly_impact": round(p.get("_raw_OPS", 0.0), 6),
+            "roto_lineup_factor": round(p.get("_roto_lineup_factor", 1.0), 3),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1076,6 +1299,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "est_value": p["Est_Value"],
             "repl_level": round(p.get("_repl_level", 0.0), 3),
             "name": p["Name"], "team": p.get("Team",""),
+            "w": round(fv(p,"W"),1), "sv": round(fv(p,"SV"),1),
             "gs": round(fv(p,"GS"),1), "ip": round(fv(p,"IP"),1),
             "k": round(fv(p,"SO"),1), "era": round(fv(p,"ERA"),3),
             "whip": round(fv(p,"WHIP"),3), "hra": round(fv(p,"HR"),1),
@@ -1083,8 +1307,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "war": round(fv(p,"WAR"),2),
             "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
             "rp_ip_context": round(p.get("_rp_ip_context", 0.0), 3),
-            "era_weekly_impact": round(p.get("_raw_ERA", 0.0), 6),
-            "whip_weekly_impact": round(p.get("_raw_aWHIP", 0.0), 6),
+            "roto_ip_factor": round(p.get("_roto_ip_factor", 1.0), 3),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1122,6 +1345,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "est_value": p["Est_Value"],
             "repl_level": round(p.get("_repl_level", 0.0), 3),
             "name": p["Name"], "team": p.get("Team",""),
+            "w": round(fv(p,"W"),1),
             "g": round(fv(p,"G"),1), "ip": round(fv(p,"IP"),1),
             "sv": round(fv(p,"SV"),1), "hld": round(fv(p,"HLD"),1),
             "bs": round(fv(p,"BS"),1), "k": round(fv(p,"SO"),1),
@@ -1129,8 +1353,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "hra": round(fv(p,"HR"),1), "vijay": round(calc_vijay_per_g(p), 3),
             "war": round(fv(p,"WAR"),2),
             "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
-            "era_weekly_impact": round(p.get("_raw_ERA", 0.0), 6),
-            "whip_weekly_impact": round(p.get("_raw_aWHIP", 0.0), 6),
+            "roto_ip_factor": round(p.get("_roto_ip_factor", 1.0), 3),
             "ldb_score": round(p["LDB_Score"],3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
@@ -1162,9 +1385,9 @@ def merge_rankings(primary_list, secondary_list):
             entry["oopsy_est_value"] = sec["est_value"]
             entry["oopsy_ldb_score"] = sec["ldb_score"]
             # Position-specific secondary stats
-            for key in ["hr","r","obp","ops","rbi","sb","asb","wrc_plus","war",
-                        "gs","ip","k","era","whip","hra","mgs","fip",
-                        "g","sv","hld","bs","vijay"]:
+            for key in ["hr","r","avg","obp","ops","rbi","sb","asb","wrc_plus","war",
+                        "gs","ip","k","era","whip","hra","mgs","fip","w","sv",
+                        "g","hld","bs","vijay", "roto_lineup_factor", "roto_ip_factor"]:
                 if key in sec:
                     entry[f"oopsy_{key}"] = sec[key]
         else:
@@ -1425,19 +1648,19 @@ def load_player_notes(path: Path) -> tuple[dict, dict]:
 def auto_tags_batter(p: dict) -> list:
     """Generate stat-based tags for a batter."""
     tags = []
-    asb   = p.get("_raw_aSB", 0)
-    obp   = fv(p, "OBP")
-    ops   = fv(p, "OPS")
-    hr    = fv(p, "HR")
-    war   = fv(p, "WAR")
-    pa    = fv(p, "PA")
+    sb    = float(p.get("sb") or 0)
+    obp   = float(p.get("obp") or 0)
+    ops   = float(p.get("ops") or 0)
+    hr    = float(p.get("hr") or 0)
+    war   = float(p.get("war") or 0)
+    pa    = float(p.get("pa") or 0)
     vol_z = p.get("vol_z", 0.0) or 0.0
     skew  = p.get("skew") or 0.0
     if war >= 5.0:                              tags.append("ELITE")
     if ops >= 0.900:                             tags.append("POWER_OBP")
     if obp >= 0.370 and ops < 0.820:            tags.append("OBP_ONLY")
     if hr >= 35:                                 tags.append("HR_THREAT")
-    if asb >= 25:                                tags.append("SB_THREAT")
+    if sb >= 25:                                 tags.append("SB_THREAT")
     if war >= 3.5 and pa >= 550:                tags.append("WORKHORSE")
     if war < 1.5 and pa >= 400:                 tags.append("DEEP_LEAGUE")
     # ATC volatility tags
@@ -1451,14 +1674,14 @@ def auto_tags_batter(p: dict) -> list:
 def auto_tags_sp(p: dict) -> list:
     """Generate stat-based tags for a SP."""
     tags = []
-    k     = fv(p, "SO")
-    era   = fv(p, "ERA")
-    whip  = fv(p, "WHIP")
-    hr    = fv(p, "HR")
-    ip    = fv(p, "IP")
-    gs    = fv(p, "GS")
-    war   = fv(p, "WAR")
-    mgs   = p.get("_raw_MGS", 0) / gs if gs > 0 else 0
+    k     = float(p.get("k") or 0)
+    era   = float(p.get("era") or 0)
+    whip  = float(p.get("whip") or 0)
+    hr    = float(p.get("hra") or 0)
+    ip    = float(p.get("ip") or 0)
+    gs    = float(p.get("gs") or 0)
+    war   = float(p.get("war") or 0)
+    mgs   = float(p.get("mgs") or 0)
     vol_z = p.get("vol_z", 0.0) or 0.0
     skew  = p.get("skew") or 0.0
     if war >= 5.0:                               tags.append("ELITE")
@@ -1480,12 +1703,11 @@ def auto_tags_sp(p: dict) -> list:
 def auto_tags_rp(p: dict) -> list:
     """Generate stat-based tags for a RP."""
     tags = []
-    sv    = fv(p, "SV")
-    hld   = fv(p, "HLD")
-    bs    = fv(p, "BS")
-    era   = fv(p, "ERA")
-    vijay = p.get("_raw_VIJAY", 0)
-    g     = fv(p, "G")
+    sv    = float(p.get("sv") or 0)
+    hld   = float(p.get("hld") or 0)
+    bs    = float(p.get("bs") or 0)
+    era   = float(p.get("era") or 0)
+    g     = float(p.get("g") or 0)
     vol_z = p.get("vol_z", 0.0) or 0.0
     skew  = p.get("skew") or 0.0
     if sv >= 28:                                         tags.append("CLOSER")
@@ -1493,8 +1715,8 @@ def auto_tags_rp(p: dict) -> list:
     if sv >= 20 and bs <= 3:                            tags.append("SAVES_SAFE")
     if bs >= 6:                                          tags.append("CLOSER_RISK")
     if era <= 2.50:                                      tags.append("ELITE_ERA")
-    if vijay / g >= 0.45 if g > 0 else False:           tags.append("VIJAY_ELITE")
-    if vijay / g < 0.15 if g > 0 else False:            tags.append("DEEP_LEAGUE")
+    if g > 0 and (sv / g) >= 0.45:                       tags.append("VIJAY_ELITE")
+    if g > 0 and (sv / g) < 0.15 and sv < 8:            tags.append("DEEP_LEAGUE")
     positions = [str(x).upper() for x in (p.get("positions") or [])]
     if "SP" in positions:
         tags.append("RP_SP_ELIG")
@@ -1845,7 +2067,7 @@ def build_owned_marginal_auction_values(
     OC_PREMIUM_START_MULTIPLE = 3.0
     OC_ALPHA = 0.3
     OC_MIN_PENALTY = 0.75
-    BATTER_SLOTS_PER_TEAM = 11
+    BATTER_SLOTS_PER_TEAM = 13
     SP_SLOTS_PER_TEAM = 6
     RP_SLOTS_PER_TEAM = 3
 
@@ -2148,20 +2370,72 @@ def write_auction_preview_md(board, roster_by_team, team_vorp, aa_detail_by_team
         f.write("\n".join(lines).rstrip() + "\n")
     print(f"  [OK] Written auction preview to {OUTPUT_PREVIEW_MD}")
 
+
+def write_cbs_roster_lookup_json(board: dict, path: Path) -> None:
+    """
+    Searchable roster map from CBS exports: by fantasy team and by normalized name.
+    Each player row includes draft_round: null — set integers (1-based) for keepers, then
+    copy those rows into keeper_draft_rounds.json by_team.
+    """
+    owned = board.get("owned") or {}
+    by_team = {abbr: [] for abbr, _ in LEAGUE_FRANCHISES}
+    by_norm_name = {}
+    for name, info in owned.items():
+        abbr = info.get("team")
+        if not abbr or abbr not in by_team:
+            continue
+        nk = norm(name)
+        rec = {
+            "name": name,
+            "norm": nk,
+            "pos": info.get("pos") or "",
+            "mlb_team": info.get("mlb_team") or "",
+            "draft_round": None,
+        }
+        by_team[abbr].append(rec)
+        by_norm_name[nk] = {
+            "team": abbr,
+            "name": name,
+            "pos": rec["pos"],
+            "mlb_team": rec["mlb_team"],
+        }
+    for abbr in by_team:
+        by_team[abbr].sort(key=lambda r: (r["norm"], r["name"]))
+    out = {
+        "generated_at": str(date.today()),
+        "board_source": board.get("board_source", ""),
+        "cbs_files": [
+            CBS_ROSTER_BATTERS.name,
+            CBS_ROSTER_SP.name,
+            CBS_ROSTER_RP.name,
+        ],
+        "franchises": [{"abbr": a, "display_name": n} for a, n in LEAGUE_FRANCHISES],
+        "notes": "Players come from CBS roster CSVs (same parse as ldb_data). Set draft_round for each keeper you are retaining; use those entries to build src/data/keeper_draft_rounds.json by_team (array of {player, round} or round numbers).",
+        "by_team": by_team,
+        "by_norm_name": by_norm_name,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    print(f"  [OK] Written roster lookup to {path}")
+
+
 def main():
     print("=" * 60)
     print("LDB 2026 Data Generation")
     print("=" * 60)
     print(f"[tag-policy] allowed={len(ALLOWED_TAGS)} blocked={len(BLOCKED_TAGS)} from {TAG_POLICY_FILE.name}")
 
-    print("\n[1/6] Parsing draft board...")
-    board = parse_draft_board(DRAFT_BOARD)
+    print("\n[1/6] Parsing CBS roster (draft board + available pool)...")
+    board = parse_cbs_draft_board(CBS_ROSTER_BATTERS, CBS_ROSTER_SP, CBS_ROSTER_RP)
     unavail     = board["all_unavailable"]
     unavail_idx = build_unavail_index(unavail)   # fast O(1)/O(k) lookup index
     teams        = board["teams"]
     total_budget = board["total_budget"]
-    print(f"  Teams: {len(teams)}  |  Total pool: ${total_budget:.2f}M")
+    print(f"  Teams: {len(teams)}  |  Total pool: ${total_budget:.2f}M  |  {board.get('board_source', '')}")
     print(f"  Owned: {len(board['owned'])}  |  AA: {len(board['aa_names'])}")
+    write_cbs_roster_lookup_json(board, OUTPUT_ROSTER_JSON)
 
     print("\n[2/6] Parsing RFA rights...")
     rfa_norm, rfa_by_team = parse_rfa(RFA_FILE)
@@ -2304,13 +2578,26 @@ def main():
             "hit_budget":   round(hit_budget, 2),
             "sp_budget":    round(sp_budget, 2),
             "rp_budget":    round(rp_budget, 2),
+            "league_teams": LEAGUE_NUM_TEAMS,
+            "budget_per_team": LEAGUE_BUDGET_PER_TEAM,
+            "roster_slots": LEAGUE_ROSTER_SLOTS,
+            "active_hitters": LEAGUE_ACTIVE_HIT,
+            "active_pitchers": LEAGUE_ACTIVE_PIT,
+            "active_roster_total": LEAGUE_ACTIVE_HIT + LEAGUE_ACTIVE_PIT,
+            "keepers_per_team": LEAGUE_KEEPERS_PER_TEAM,
+            "draft_board_source": board.get("board_source", ""),
             "min_pa": MIN_PA, "min_gs": MIN_GS, "min_ip": MIN_IP,
             "pos_slots_total": pos_slots,
             "ratio_model": {
+                "format": "5x5_roto",
+                "hitting": ["BA", "HR", "R", "RBI", "SB"],
+                "pitching": ["ERA", "K", "SV", "W", "WHIP"],
                 "season_weeks": SEASON_WEEKS,
-                "team_weekly_ab": TEAM_WEEKLY_AB,
-                "team_weekly_ip": TEAM_WEEKLY_IP,
-                "notes": "OBP/OPS/ERA/WHIP scored by weekly ratio movement vs team baseline; RP counting categories scaled by RP IP/week vs SP reference IP/week.",
+                "weekly_lineup": {
+                    "batter_pa_exp": ROTO_WEEKLY_PA_EXP,
+                    "pitch_ip_exp": ROTO_PITCH_IP_EXP,
+                    "notes": "Season roto stats are z-scored within pool; batters get a PA-vs-median factor; pitchers an IP-vs-median factor (weekly lineup, not daily).",
+                },
             },
         },
         "replacement_levels": {

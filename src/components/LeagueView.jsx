@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
-import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
+import { useAuctionStore, TEAM_COLORS, MY_TEAM_ABBR } from '../store/auctionStore.jsx'
+import { USE_CUSTOM_LEAGUE, getSnakeOwner } from '../config/snakeDraftOrder.js'
 import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
 
@@ -47,10 +48,12 @@ export default function LeagueView() {
   const validation = useMemo(() => {
     const meta = LDB_DATA.meta || {}
     const totalBudget = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
-    const expectedBudget = meta.total_budget || 0
+    const expectedBudget = USE_CUSTOM_LEAGUE
+      ? Object.values(teams).reduce((s, t) => s + (t.budget_initial ?? t.budget_rem ?? 0), 0)
+      : meta.total_budget || 0
     const totalSlots = Object.values(teams).reduce((s, t) => s + (t.slots_current ?? 0), 0)
     const issues = []
-    if (Math.abs(totalBudget - expectedBudget) > 0.01) {
+    if (!USE_CUSTOM_LEAGUE && Math.abs(totalBudget - expectedBudget) > 0.01) {
       issues.push(`Budget mismatch: $${Math.round(totalBudget)}M remaining vs expected $${Math.round(expectedBudget)}M total`)
     }
     return { ok: issues.length === 0, issues, totalBudget, totalSlots }
@@ -138,7 +141,7 @@ export default function LeagueView() {
             team={team}
             maxBudget={maxBudget}
             wins={getTeamWins(team.abbr)}
-            isFry={team.abbr === 'FRY'}
+            isFry={team.abbr === MY_TEAM_ABBR}
             roster={LDB_DATA.roster_by_team[team.abbr] || []}
           />
         ))}
@@ -187,9 +190,9 @@ function TeamCard({ team, maxBudget, wins, isFry, roster }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{
             fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, letterSpacing: 2, color,
-          }}>{team.abbr}</div>
+          }}>{team.name || team.abbr}</div>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }}>
-            {team.gm}
+            {getSnakeOwner(team.abbr) || team.owner || team.gm || team.abbr}
           </div>
         </div>
         <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>

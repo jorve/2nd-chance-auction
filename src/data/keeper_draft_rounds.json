@@ -1,0 +1,4 @@
+{
+  "notes": "Each keeper consumes this franchise's pick in the same 1-based round as last year's draft. You can list only rounds: [2, 11, 24], or include the player from your CBS export (column with 22*, 7*, etc.): [{ \"player\": \"Trevor Story\", \"round\": 22 }, ...]. Player is for your records/UI; snake order uses round only. Roster lookup (who is on which franchise) is regenerated as cbs_rosters_by_team.json when you run generate_data.py — use draft_round there as scratch, then copy into by_team.",
+  "by_team": {}
+}

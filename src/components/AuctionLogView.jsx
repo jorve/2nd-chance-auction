@@ -13,7 +13,7 @@ export default function AuctionLogView({ onClose }) {
     <div style={{ padding: 24 }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
         <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3, color: 'var(--text)' }}>
-          AUCTION LOG — {auctionLog.length} sales
+          DRAFT LOG — {auctionLog.length} picks
         </h2>
         <button
           onClick={onClose}
@@ -55,7 +55,7 @@ export default function AuctionLogView({ onClose }) {
               <th style={th}>Price</th>
               <th style={th}>Est</th>
               <th style={th}>Δ</th>
-              <th style={th}>Nominated</th>
+              <th style={th}>Clock</th>
             </tr>
           </thead>
           <tbody>

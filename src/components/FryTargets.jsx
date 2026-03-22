@@ -1,37 +1,57 @@
-import { useState } from 'react'
-import { useAuctionStore, FRY_NEEDS } from '../store/auctionStore.jsx'
+import { useState, useMemo } from 'react'
+import {
+  useAuctionStore,
+  FRY_NEEDS,
+  MY_TEAM_ABBR,
+  canDraftPlayerForTeam,
+  countTeamPicksByType,
+  STARTER_SLOT_TARGETS,
+} from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
-import { getFryPriorityScore, getFrySignal, getPlayerType } from '../utils/frySignal.js'
+import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 
+function adjValueNum(p) {
+  const v = parseFloat(p.adj_value)
+  return Number.isFinite(v) ? v : 0
+}
+
 export default function FryTargets() {
-  const { batters, sp, rp, sold, teams, setNominatedPlayer } = useAuctionStore()
-  const fry = teams['FRY'] || {}
+  const { batters, sp, rp, sold, teams, setNominatedPlayer, auctionLog } = useAuctionStore()
+  const fry = teams[MY_TEAM_ABBR] || {}
   const [selectedPlayer, setSelectedPlayer] = useState(null)
 
-  const allAvailable = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
+  const slotsLeft = fry.slots_current ?? 0
+  const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
 
-  const scored = allAvailable.map(p => {
-    const type = getPlayerType(p)
-    return { ...p, _fryScore: getFryPriorityScore(p, fry, type), _type: type }
-  })
+  const { top10, needLine } = useMemo(() => {
+    const allAvailable = [...batters, ...sp, ...rp].filter((p) => !sold[p.name])
+    const targets = STARTER_SLOT_TARGETS
+    const { bat, sp: spC, rp: rpC } = countTeamPicksByType(sold, MY_TEAM_ABBR)
+    const needBat = Math.max(0, targets.bat - bat)
+    const needSp = Math.max(0, targets.sp - spC)
+    const needRp = Math.max(0, targets.rp - rpC)
+    const startersDone = needBat === 0 && needSp === 0 && needRp === 0
+    const needLine = startersDone
+      ? 'Starters filled · bench / any'
+      : `Need starters: ${needBat} bat · ${needSp} SP · ${needRp} RP`
 
-  // Cap RPs at 2 so the list isn't dominated by relievers
-  const MAX_RP = 2
-  const top10 = (() => {
-    const result = []
-    let rpCount = 0
-    for (const p of scored.sort((a, b) => b._fryScore - a._fryScore)) {
-      if (p._type === 'RP') {
-        if (rpCount >= MAX_RP) continue
-        rpCount++
-      }
-      result.push(p)
-      if (result.length >= 10) break
+    if (slotsLeft <= 0) {
+      return { top10: [], needLine }
     }
-    return result
-  })()
+
+    const draftCtx = { auctionLog, battersByName }
+    const eligible = allAvailable.filter((p) =>
+      canDraftPlayerForTeam(sold, MY_TEAM_ABBR, p, STARTER_SLOT_TARGETS, draftCtx).ok,
+    )
+    const sorted = [...eligible].sort((a, b) => {
+      const d = adjValueNum(b) - adjValueNum(a)
+      if (d !== 0) return d
+      return (a.rank ?? 999) - (b.rank ?? 999)
+    })
+    return { top10: sorted.slice(0, 10), needLine }
+  }, [batters, sp, rp, sold, slotsLeft, auctionLog, battersByName])
 
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
 
@@ -47,7 +67,7 @@ export default function FryTargets() {
             fontFamily: "'Bebas Neue', sans-serif", fontSize: 14,
             letterSpacing: 3, color: 'var(--accent)',
           }}>
-            FRY TARGETS
+            MY TARGETS
           </span>
           <span style={{
             fontFamily: "'DM Mono', monospace", fontSize: 10,
@@ -57,7 +77,7 @@ export default function FryTargets() {
           </span>
         </div>
         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', marginTop: 2 }}>
-          TOP 10 · SCORED FOR SP/RP/SS/2B NEEDS
+          TOP 10 BY ADJ $ · {needLine}
         </div>
       </div>
 
@@ -65,7 +85,8 @@ export default function FryTargets() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         {top10.map((p, i) => {
           const tColor = TIER_COLORS[p.tier] || 'var(--muted)'
-          const signal = getFrySignal(p, fry, p._type)
+          const pType = getPlayerType(p)
+          const signal = getFrySignal(p, fry, pType)
           const fills = (p.positions ?? []).filter(pos => FRY_NEEDS.needed.includes(pos))
 
           return (
@@ -89,7 +110,7 @@ export default function FryTargets() {
                   setSelectedPlayer(null)
                 }
               }}
-              aria-label={`${p.name}, ${p._type}, $${p.adj_value}M. Double-click to nominate.`}
+              aria-label={`${p.name}, ${pType}, $${p.adj_value}M. Double-click to nominate.`}
             >
               {/* Rank number */}
               <div style={{
@@ -106,9 +127,9 @@ export default function FryTargets() {
                   {p.name}{p.positions?.length ? ` | ${p.positions.join(' · ')}` : ''}
                 </div>
                 <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-dim)', marginTop: 1 }}>
-                  {p.team || 'FA'} · {p._type}
+                  {p.team || 'FA'} · {pType}
                   {fills.length > 0 && <span style={{ color: 'var(--blue)', marginLeft: 4 }}>· {fills.join('/')}</span>}
-                  {p.rfa_team === 'FRY' && <span style={{ color: 'var(--fry)', marginLeft: 4 }}>· ROFR</span>}
+                  {p.rfa_team === MY_TEAM_ABBR && <span style={{ color: 'var(--fry)', marginLeft: 4 }}>· ROFR</span>}
                 </div>
               </div>
 
@@ -134,7 +155,9 @@ export default function FryTargets() {
 
         {top10.length === 0 && (
           <div style={{ padding: 24, textAlign: 'center', fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-faint)' }}>
-            All players sold or budget exhausted
+            {slotsLeft <= 0
+              ? 'No open roster slots'
+              : 'No eligible players (all sold or nothing fits current starter needs)'}
           </div>
         )}
       </div>

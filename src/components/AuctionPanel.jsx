@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUp,
@@ -15,8 +15,20 @@ import {
 import { useApiKeyStore } from '../store/apiKeyStore.js'
 import { toast } from './Toast.jsx'
 import PlayerCard from './PlayerCard.jsx'
-import { useAuctionStore, TEAMS_LIST, TEAM_COLORS, stepUp, stepDown, isValidBidPrice, fmtPrice, snapToValidIncrement } from '../store/auctionStore.jsx'
+import { getSnakeTeamName, getSnakeOwner, getSnakeClockLabel } from '../config/snakeDraftOrder.js'
+import {
+  useAuctionStore,
+  TEAM_COLORS,
+  fmtPrice,
+  getSnakeDraftMeta,
+  countTeamPicksByType,
+  canDraftPlayerForTeam,
+  STARTER_SLOT_TARGETS,
+  SNAKE_PICK_ORDER,
+  MY_TEAM_ABBR,
+} from '../store/auctionStore.jsx'
 import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
+import { getRoundBoard, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
 
 function getType(p) {
   return getPlayerType(p)
@@ -85,79 +97,15 @@ Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
   return textContent || 'No intel available.'
 }
 
-// ── BID STEPPER ───────────────────────────────────────────────────────────────
-function BidStepper({ value, onChange, maxBudget }) {
-  const [inputMode, setInputMode] = useState(false)
-  const [rawInput, setRawInput] = useState('')
-  const inputRef = useRef()
-
-  useEffect(() => { if (inputMode && inputRef.current) inputRef.current.select() }, [inputMode])
-
-  const n = parseFloat(value) || 0
-  const isOver = maxBudget > 0 && n > maxBudget
-  const display = n % 1 === 0 ? `${n}` : `${n.toFixed(1)}`
-
-  function commitRaw() {
-    onChange(snapToValidIncrement(parseFloat(rawInput) || 0.5))
-    setInputMode(false)
-  }
-
-  return (
-    <div>
-      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 5, textTransform: 'uppercase' }}>
-        Final Price ($M)
-      </div>
-      <div style={{ display: 'flex', alignItems: 'stretch', marginBottom: 6 }}>
-        <button onClick={() => onChange(stepDown(value))} disabled={n <= 0.5} style={{ ...stepBtn, borderRadius: '5px 0 0 5px', opacity: n <= 0.5 ? 0.3 : 1 }}>−</button>
-        {inputMode ? (
-          <input ref={inputRef} value={rawInput} onChange={e => setRawInput(e.target.value)}
-            onBlur={commitRaw} onKeyDown={e => { if (e.key === 'Enter') commitRaw(); if (e.key === 'Escape') setInputMode(false) }}
-            style={{ flex: 1, textAlign: 'center', background: 'var(--surface2)', border: '1px solid var(--accent)', borderLeft: 'none', borderRight: 'none', color: 'var(--accent)', fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, letterSpacing: 2, outline: 'none' }}
-          />
-        ) : (
-          <button onClick={() => { setRawInput(display); setInputMode(true) }}
-            title="Click to type or use +/- buttons"
-            style={{ flex: 1, textAlign: 'center', background: 'var(--surface2)', border: `1px solid ${isOver ? 'var(--red)' : 'var(--border2)'}`, borderLeft: 'none', borderRight: 'none', color: isOver ? 'var(--red)' : 'var(--text)', fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, letterSpacing: 2, cursor: 'text', padding: '8px 0' }}>
-            ${display}M
-          </button>
-        )}
-        <button onClick={() => onChange(stepUp(value))} style={{ ...stepBtn, borderRadius: '0 5px 5px 0' }}>+</button>
-      </div>
-
-      {/* Quick picks */}
-      <div style={{ display: 'flex', gap: 3, flexWrap: 'wrap', marginBottom: 4 }}>
-        {[0.5, 1, 2, 5, 10, 15, 20, 25, 30, 40, 50].map(q => (
-          <button key={q} onClick={() => onChange(q)} style={{
-            background: n === q ? 'var(--accent)' : 'var(--surface)',
-            border: `1px solid ${n === q ? 'var(--accent)' : 'var(--border2)'}`,
-            borderRadius: 3, padding: '2px 7px',
-            fontFamily: "'DM Mono', monospace", fontSize: 9,
-            color: n === q ? '#000' : 'var(--text-dim)', cursor: 'pointer',
-          }}>${q}</button>
-        ))}
-      </div>
-      {isOver && (
-        <div style={{ fontSize: 10, color: 'var(--red)', fontFamily: "'DM Mono', monospace" }}>
-          <FontAwesomeIcon icon={faTriangleExclamation} /> Over bid cap (${maxBudget?.toFixed(1)}M max with reserves)
-        </div>
-      )}
-    </div>
-  )
-}
-
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 export default function AuctionPanel() {
   const {
     batters, sp, rp, sold,
     nominatedPlayer, setNominatedPlayer,
-    bidTeam, setBidTeam,
-    bidPrice, setBidPrice,
-    nominatedBy, setNominatedBy,
-    currentNominator,
+    auctionLog,
     confirmSale,
     teams, resetAuction,
     getNoteForPlayer,
-    getMaxBidForTeam,
   } = useAuctionStore()
 
   const { apiKey } = useApiKeyStore()
@@ -172,11 +120,25 @@ export default function AuctionPanel() {
 
   const player = nominatedPlayer
   const type = getType(player)
-  const fry = teams['FRY'] || {}
-  const bidTeamData = bidTeam ? teams[bidTeam] : null
-  const price = parseFloat(bidPrice) || 0
-  const bidCap = bidTeam ? getMaxBidForTeam(bidTeam) : 0
-  const canConfirm = player && bidTeam && isValidBidPrice(bidPrice) && price <= bidCap
+  const fry = teams[MY_TEAM_ABBR] || {}
+  const pickIndex = auctionLog.length
+  const draftMeta = getSnakeDraftMeta(pickIndex, SNAKE_PICK_ORDER)
+  const onClock = draftMeta.onClock
+  const { roundPicks, roundSkips } = useMemo(() => {
+    const board = getRoundBoard(draftMeta.round, SNAKE_PICK_ORDER, getKeeperRoundsByAbbr())
+    return {
+      roundPicks: board.filter((r) => r.hasPick),
+      roundSkips: board.filter((r) => !r.hasPick),
+    }
+  }, [draftMeta.round])
+  const starterCounts = onClock ? countTeamPicksByType(sold, onClock) : { bat: 0, sp: 0, rp: 0 }
+  const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
+  const draftCheck =
+    player && onClock
+      ? canDraftPlayerForTeam(sold, onClock, player, STARTER_SLOT_TARGETS, { auctionLog, battersByName })
+      : { ok: false }
+  const instructivePrice = player ? (parseFloat(player.adj_value ?? player.est_value ?? 0.5) || 0.5) : 0
+  const canConfirm = Boolean(player && draftCheck.ok)
 
   const allPlayers = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
   const searchResults = search.trim().length >= 1
@@ -216,13 +178,13 @@ export default function AuctionPanel() {
     function onKey(e) {
       if (e.key === 'Enter' && canConfirm && !e.target.matches('input, textarea')) {
         e.preventDefault()
-        if (player) toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
+        if (player) toast(`${player.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(instructivePrice)} (pool)`)
         confirmSale()
       }
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [canConfirm, confirmSale, player, bidTeam, bidPrice])
+  }, [canConfirm, confirmSale, player, onClock, instructivePrice])
 
   // Reset modal focus trap
   useEffect(() => {
@@ -252,17 +214,13 @@ export default function AuctionPanel() {
   // FRY signal for current player
   const frySignal = player ? getFrySignal(player, fry, type) : null
 
-  // Price context
-  const over = player ? parseFloat((price - player.adj_value).toFixed(1)) : 0
-  const pctBudget = bidTeamData?.budget_current > 0 ? ((price / bidTeamData.budget_current) * 100).toFixed(0) : 0
-
   return (
     <div style={{ padding: 16 }}>
 
       {/* ── Header row ── */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, color: 'var(--text-dim)' }}>
-          LIVE AUCTION
+          SNAKE DRAFT
         </span>
         <div style={{ display: 'flex', gap: 6 }}>
           {player && (
@@ -282,7 +240,7 @@ export default function AuctionPanel() {
           value={search}
           onChange={e => { setSearch(e.target.value); setFocused(true) }}
           onFocus={() => setFocused(true)}
-          placeholder={player ? `${player.name} nominated — search to change` : 'Nominate a player...'}
+          placeholder={player ? `${player.name} selected — search to change` : 'Search player to draft...'}
           style={{
             width: '100%', background: 'var(--surface)',
             border: `1px solid ${focused ? 'var(--accent)' : 'var(--border2)'}`,
@@ -331,6 +289,68 @@ export default function AuctionPanel() {
             })}
           </div>
         )}
+      </div>
+
+      {/* ── Current round: pick vs keeper (snake slot order) ── */}
+      <div style={{
+        marginBottom: 12, padding: '10px 12px',
+        background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 8,
+      }}>
+        <div style={{
+          fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 8,
+          textTransform: 'uppercase',
+        }}>
+          Round {draftMeta.round} · who has a pick (snake order 1–{SNAKE_PICK_ORDER.length})
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--green)', marginBottom: 6, letterSpacing: 1 }}>
+              PICK ({roundPicks.length})
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+              {roundPicks.length === 0 ? (
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>—</span>
+              ) : (
+                roundPicks.map((row) => (
+                  <div
+                    key={`p-${row.slot}-${row.team}`}
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: "'DM Mono', monospace", fontSize: 10 }}
+                  >
+                    <span style={{ color: 'var(--text-faint)', width: 18 }}>{row.slot + 1}</span>
+                    <span style={{ color: TEAM_COLORS[row.team] || 'var(--text)', fontWeight: 600 }}>{row.team}</span>
+                    <span style={{ color: 'var(--text-dim)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {getSnakeTeamName(row.team)}
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--orange)', marginBottom: 6, letterSpacing: 1 }}>
+              NO PICK · KEEPER ({roundSkips.length})
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+              {roundSkips.length === 0 ? (
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>—</span>
+              ) : (
+                roundSkips.map((row) => (
+                  <div
+                    key={`k-${row.slot}-${row.team}`}
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: "'DM Mono', monospace", fontSize: 10, flexWrap: 'wrap' }}
+                  >
+                    <span style={{ color: 'var(--text-faint)', width: 18 }}>{row.slot + 1}</span>
+                    <span style={{ color: TEAM_COLORS[row.team] || 'var(--text)', fontWeight: 600 }}>{row.team}</span>
+                    <span style={{ color: 'var(--text-dim)' }}>{getSnakeTeamName(row.team)}</span>
+                    {row.keeperPlayer && (
+                      <span style={{ color: 'var(--text-faint)', fontSize: 9, marginLeft: 'auto' }}>· {row.keeperPlayer}</span>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* ── Player card (info only — no click-to-open; avoids stray click from dropdown selection) ── */}
@@ -425,90 +445,81 @@ export default function AuctionPanel() {
         </div>
       )}
 
-      {/* ── Bid controls ── */}
+      {/* ── Snake + confirm ── */}
       {player && (
         <div style={{ marginBottom: 12 }}>
-          {/* Nominated by */}
-          <div style={{ marginBottom: 10 }}>
+          <div style={{
+            marginBottom: 12, padding: '10px 12px',
+            background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 8,
+          }}>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>
-              Nominated by <span style={{ color: 'var(--text-faint)', fontWeight: 400 }}>(next: {currentNominator || TEAMS_LIST[0]})</span>
+              Round {draftMeta.round} · Pick {draftMeta.pickInRound} of {draftMeta.livePicksThisRound ?? SNAKE_PICK_ORDER.length}
             </div>
-            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
-              {TEAMS_LIST.map(t => {
-                const active = nominatedBy === t
-                const tc = TEAM_COLORS[t] || 'var(--text-dim)'
-                return (
-                  <button key={t} onClick={() => setNominatedBy(active ? '' : t)} style={{
-                    background: active ? `${tc}22` : 'var(--surface)',
-                    border: `1px solid ${active ? tc : 'var(--border)'}`,
-                    borderRadius: 4, padding: '3px 6px',
-                    fontFamily: "'DM Mono', monospace", fontSize: 9,
-                    color: active ? tc : 'var(--text-dim)', cursor: 'pointer',
-                  }}>{t}</button>
-                )
-              })}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)' }}>ON THE CLOCK</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
+                <span style={{
+                  fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, letterSpacing: 1,
+                  color: TEAM_COLORS[onClock] || 'var(--text)', lineHeight: 1.15,
+                }}>{getSnakeTeamName(onClock)}</span>
+                {getSnakeOwner(onClock) ? (
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)' }}>{getSnakeOwner(onClock)}</span>
+                ) : (
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>{onClock}</span>
+                )}
+              </div>
+            </div>
+            <div style={{ marginTop: 8, fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)' }}>
+              Starters · {getSnakeTeamName(onClock)}:{' '}
+              <span style={{ color: starterCounts.bat >= STARTER_SLOT_TARGETS.bat ? 'var(--green)' : 'var(--text)' }}>
+                Hit {starterCounts.bat}/{STARTER_SLOT_TARGETS.bat}
+              </span>
+              {' · '}
+              <span style={{ color: starterCounts.sp >= STARTER_SLOT_TARGETS.sp ? 'var(--green)' : 'var(--text)' }}>
+                SP {starterCounts.sp}/{STARTER_SLOT_TARGETS.sp}
+              </span>
+              {' · '}
+              <span style={{ color: starterCounts.rp >= STARTER_SLOT_TARGETS.rp ? 'var(--green)' : 'var(--text)' }}>
+                RP {starterCounts.rp}/{STARTER_SLOT_TARGETS.rp}
+              </span>
             </div>
           </div>
 
-          {/* Team selector */}
           <div style={{ marginBottom: 10 }}>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>Winning Team</div>
-            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
-              {TEAMS_LIST.map(t => {
-                const td = teams[t] || {}
-                const active = bidTeam === t
-                const tc = TEAM_COLORS[t] || 'var(--text-dim)'
-                return (
-                  <button key={t} onClick={() => setBidTeam(t)} style={{
-                    background: active ? `${tc}22` : 'var(--surface)',
-                    border: `1px solid ${active ? tc : 'var(--border)'}`,
-                    borderRadius: 4, padding: '4px 8px',
-                    fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 1,
-                    color: active ? tc : 'var(--text-dim)', cursor: 'pointer',
-                    position: 'relative',
-                  }} title={`$${Math.round(td.budget_current ?? 0)}M left`}>
-                    {t}
-                    {t === 'FRY' && <span style={{ position: 'absolute', top: -3, right: -3, width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)' }} />}
-                  </button>
-                )
-              })}
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 5, textTransform: 'uppercase' }}>
+              Instructive pool value ($M)
+            </div>
+            <div style={{
+              fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, letterSpacing: 2, color: 'var(--accent)',
+            }}>
+              {fmtPrice(instructivePrice)}
+            </div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', marginTop: 4 }}>
+              Same model as the board — not a bid; tracks spend vs pool for context.
             </div>
           </div>
 
-          {/* Bid stepper */}
-          <BidStepper value={bidPrice} onChange={setBidPrice} maxBudget={bidCap} />
-
-          {/* Price context */}
-          {bidTeam && price > 0 && (
+          {!draftCheck.ok && draftCheck.message && (
             <div style={{
-              marginTop: 8, fontFamily: "'DM Mono', monospace", fontSize: 10,
-              display: 'flex', gap: 16, flexWrap: 'wrap', color: 'var(--text-dim)',
+              marginBottom: 10, padding: '8px 10px', borderRadius: 6,
+              background: 'rgba(248,113,113,.08)', border: '1px solid rgba(248,113,113,.35)',
+              fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--red)',
             }}>
-              <span>
-                vs adj:{' '}
-                <span style={{ color: over > 0 ? 'var(--red)' : over < 0 ? 'var(--green)' : 'var(--text)', fontWeight: 600 }}>
-                  {over > 0 ? `+${over}M over` : over < 0 ? `${Math.abs(over)}M under` : 'at value'}
-                </span>
-              </span>
-              <span>
-                {bidTeam} cap:{' '}
-                <span style={{ color: price > bidCap ? 'var(--red)' : 'var(--text)' }}>${bidCap.toFixed(1)}M</span>
-              </span>
+              <FontAwesomeIcon icon={faTriangleExclamation} /> {draftCheck.message}
             </div>
           )}
 
-          {/* Confirm button */}
           <button
             onClick={() => {
               if (canConfirm) {
                 confirmSale()
-                toast(`${player.name} → ${bidTeam} @ ${fmtPrice(bidPrice)}`)
+                toast(`${player.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(instructivePrice)} (pool)`)
               }
             }}
             disabled={!canConfirm}
             title={canConfirm ? 'Or press Enter' : undefined}
             style={{
-              width: '100%', marginTop: 12, padding: '11px',
+              width: '100%', marginTop: 4, padding: '11px',
               background: canConfirm ? 'var(--accent)' : 'var(--surface2)',
               border: `1px solid ${canConfirm ? 'var(--accent)' : 'var(--border)'}`,
               borderRadius: 6, cursor: canConfirm ? 'pointer' : 'not-allowed',
@@ -519,9 +530,11 @@ export default function AuctionPanel() {
           >
             {canConfirm ? (
               <>
-                <FontAwesomeIcon icon={faSquareCheck} /> CONFIRM — {bidTeam} GETS {player.name} @ {fmtPrice(bidPrice)}
+                <FontAwesomeIcon icon={faSquareCheck} /> CONFIRM — {getSnakeClockLabel(onClock)} · {player.name} @ {fmtPrice(instructivePrice)}
               </>
-            ) : 'SELECT TEAM + PRICE TO CONFIRM'}
+            ) : (
+              'CANNOT BENCH YET — FILL STARTER SLOTS FIRST'
+            )}
           </button>
         </div>
       )}
@@ -578,7 +591,7 @@ export default function AuctionPanel() {
 
           {!intel && (
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)', padding: '8px 0' }}>
-              Nominate a player to load intel.
+              Select a player to load intel.
             </div>
           )}
         </div>
@@ -599,10 +612,10 @@ export default function AuctionPanel() {
         <div style={{ padding: '32px 0', textAlign: 'center' }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}><FontAwesomeIcon icon={faHammer} /></div>
           <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 3, color: 'var(--text-dim)', marginBottom: 6 }}>
-            READY FOR AUCTION
+            READY TO DRAFT
           </div>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>
-            Search above or hit NOM in the player list
+            Search above or hit PICK in the player list
           </div>
         </div>
       )}
@@ -611,7 +624,7 @@ export default function AuctionPanel() {
       {showReset && (
         <div role="dialog" aria-modal="true" aria-labelledby="reset-modal-title" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
           <div ref={resetModalRef} style={{ background: 'var(--surface)', border: '1px solid var(--border2)', borderRadius: 12, padding: 28, maxWidth: 320, textAlign: 'center' }}>
-            <div id="reset-modal-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET AUCTION?</div>
+            <div id="reset-modal-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: 'var(--red)', letterSpacing: 3, marginBottom: 10 }}>RESET DRAFT?</div>
             <div style={{ color: 'var(--text-dim)', fontSize: 12, marginBottom: 20 }}>Clears all sales and restores all budgets.</div>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
               <button onClick={() => setShowReset(false)} style={ghostBtn}>CANCEL</button>
@@ -788,10 +801,4 @@ const ghostBtn = {
   background: 'none', border: '1px solid var(--border2)', borderRadius: 4,
   padding: '4px 10px', fontFamily: "'DM Mono', monospace", fontSize: 10,
   color: 'var(--text-dim)', cursor: 'pointer',
-}
-const stepBtn = {
-  background: 'var(--surface2)', border: '1px solid var(--border2)',
-  padding: '8px 16px', cursor: 'pointer',
-  color: 'var(--text)', fontFamily: "'DM Mono', monospace",
-  fontSize: 20, lineHeight: 1, transition: 'background .1s',
 }

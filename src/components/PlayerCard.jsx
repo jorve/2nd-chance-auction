@@ -5,7 +5,7 @@ import {
   faStar,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { TEAM_COLORS, useAuctionStore } from '../store/auctionStore.jsx'
+import { TEAM_COLORS, useAuctionStore, MY_TEAM_ABBR } from '../store/auctionStore.jsx'
 import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -203,7 +203,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
   if (!player) return null
   const type   = getPlayerType(player)
   const tColor = TIER_COLORS[player.tier] || 'var(--muted)'
-  const fry    = teams['FRY'] || {}
+  const fry    = teams[MY_TEAM_ABBR] || {}
 
   const manualNote   = useAuctionStore(s => s.getNoteForPlayer(player.name))
   const hasManual     = useAuctionStore(s => s.hasManualNote(player.name))
@@ -671,7 +671,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             )}
           </div>
 
-          {/* ── NOMINATE ── */}
+          {/* ── Select for snake pick ── */}
           <button
             onClick={() => { onNominate(player); onClose() }}
             style={{
@@ -684,7 +684,7 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            <FontAwesomeIcon icon={faBolt} /> NOMINATE {player.name}
+            <FontAwesomeIcon icon={faBolt} /> SELECT {player.name}
           </button>
 
         </div>

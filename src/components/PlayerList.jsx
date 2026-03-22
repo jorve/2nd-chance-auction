@@ -11,9 +11,10 @@ import {
   faStar,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { useAuctionStore, TEAM_COLORS } from '../store/auctionStore.jsx'
+import { useAuctionStore, TEAM_COLORS, MY_TEAM_ABBR, countTeamPicksByType, STARTER_SLOT_TARGETS } from '../store/auctionStore.jsx'
 import PlayerCard from './PlayerCard.jsx'
 import { getFrySignal } from '../utils/frySignal.js'
+import { isBattersPosFilterUseful } from '../utils/hitterSlotting.js'
 
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 const TIER_LABELS = { 1: 'TIER 1 · ELITE', 2: 'TIER 2 · PREMIUM', 3: 'TIER 3 · MID', 4: 'TIER 4 · VALUE', 5: 'TIER 5 · DEEP' }
@@ -118,6 +119,7 @@ export default function PlayerList() {
     searchQuery, setSearch,
     tierFilter, toggleTier,
     sold, setNominatedPlayer,
+    auctionLog,
     teams,
     toggleTargetAvoid,
     getTargetAvoid,
@@ -154,9 +156,9 @@ export default function PlayerList() {
   useEffect(() => { setPosFilter(new Set()) }, [rankingsTab])
 
   const POS_OPTS = {
-    batters: ['C','1B','2B','3B','SS','CF','RF'],
-    sp:      ['SP','RP'],
-    rp:      ['SP','RP'],
+    batters: ['C', '1B', '2B', '3B', 'SS', 'MI', 'CI', 'CF', 'RF'],
+    sp:      ['SP', 'RP'],
+    rp:      ['SP', 'RP'],
   }
 
   function togglePos(pos) {
@@ -170,7 +172,7 @@ export default function PlayerList() {
 
   const allForTab = rankingsTab === 'batters' ? batters : rankingsTab === 'sp' ? sp : rp
   const statCols  = STAT_COLS[rankingsTab]
-  const fry       = teams['FRY'] || {}
+  const fry       = teams[MY_TEAM_ABBR] || {}
   const showBoth  = projSystem === 'both'
   const showValueDelta = Object.keys(sold).length > 0
 
@@ -179,6 +181,31 @@ export default function PlayerList() {
     () => allForTab.filter(p => !sold[p.name]),
     [allForTab, sold]
   )
+
+  /** Hide position chips for MY team when no unsold player could still fill that starter path */
+  const posOptsForTab = useMemo(() => {
+    if (rankingsTab !== 'batters') return POS_OPTS[rankingsTab]
+    const { bat } = countTeamPicksByType(sold, MY_TEAM_ABBR)
+    if (bat >= STARTER_SLOT_TARGETS.bat) return POS_OPTS.batters
+    const battersByName = new Map(batters.map((b) => [b.name, b]))
+    return POS_OPTS.batters.filter((pos) =>
+      isBattersPosFilterUseful(MY_TEAM_ABBR, pos, auctionLog, battersByName, unsold),
+    )
+  }, [rankingsTab, sold, auctionLog, batters, unsold])
+
+  useEffect(() => {
+    if (rankingsTab !== 'batters') return
+    const allow = new Set(posOptsForTab)
+    setPosFilter((prev) => {
+      let changed = false
+      const next = new Set()
+      for (const p of prev) {
+        if (allow.has(p)) next.add(p)
+        else changed = true
+      }
+      return changed ? next : prev
+    })
+  }, [rankingsTab, posOptsForTab.join(',')])
 
   // Z-scores keyed by player name then stat key
   const zScores = useMemo(
@@ -396,7 +423,7 @@ export default function PlayerList() {
         <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
 
         {/* Position filters — empty = show all */}
-        {POS_OPTS[rankingsTab].map(pos => {
+        {posOptsForTab.map(pos => {
           const active = posFilter.has(pos)
           return (
             <button key={pos} onClick={() => togglePos(pos)} style={{
@@ -570,7 +597,7 @@ export default function PlayerList() {
               <TH label="RISKx" col="vol_mult" w={62} />
               {statCols.map(c => <TH key={c.key} label={c.label} col={c.key} w={68} />)}
               <TH label="ROFR"   col="rfa_team"           w={44} />
-              {fryLens && <TH label="FRY" col="adj_value" w={90} />}
+              {fryLens && <TH label="ME" col="adj_value" w={90} />}
               <th style={{ ...thBase, minWidth: 50, background: 'var(--surface)' }} />
             </tr>
           </thead>
@@ -736,12 +763,12 @@ export default function PlayerList() {
                       </td>
                     )}
 
-                    {/* Nominate */}
+                    {/* Draft pick */}
                     <td style={{ padding: '5px 8px', textAlign: 'center' }}>
                       <button
                         type="button"
                         onClick={() => setNominatedPlayer(p)}
-                        aria-label={`Nominate ${p.name} for auction`}
+                        aria-label={`Select ${p.name} for current snake pick`}
                         style={{
                           background: 'var(--surface2)', border: '1px solid var(--border2)',
                           borderRadius: 3, padding: '3px 8px',
@@ -750,7 +777,7 @@ export default function PlayerList() {
                         }}
                         onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
-                      >NOM</button>
+                      >PICK</button>
                     </td>
                   </tr>
                 </React.Fragment>

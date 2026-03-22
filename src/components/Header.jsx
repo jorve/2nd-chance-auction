@@ -7,6 +7,7 @@ import {
   faFloppyDisk,
   faKey,
   faLandmark,
+  faListOl,
   faRotateLeft,
   faToggleOff,
   faToggleOn,
@@ -14,13 +15,21 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { useApiKeyStore } from '../store/apiKeyStore.js'
-import { useAuctionStore, exportAuctionJSON, importAuctionJSON } from '../store/auctionStore.jsx'
+import { useAuctionStore, exportAuctionJSON, importAuctionJSON, MY_TEAM_ABBR } from '../store/auctionStore.jsx'
 import AuctionLogView from './AuctionLogView.jsx'
+import {
+  BATTING_CATEGORIES,
+  PITCHING_CATEGORIES,
+  LEAGUE_SCORING_SHORT,
+  LEAGUE_FORMAT_LINE,
+  LEAGUE_LINEUP_LINE,
+} from '../config/leagueScoring.js'
 
 export default function Header({ onLeagueClick }) {
   const [showAuctionLog, setShowAuctionLog] = useState(false)
+  const [showScoring, setShowScoring] = useState(false)
   const { teams, sold, fryLens, toggleFryLens, riskAdj, toggleRiskAdj, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
-  const fry = teams['FRY'] || {}
+  const fry = teams[MY_TEAM_ABBR] || {}
   const totalPot = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
   const soldCount = Object.keys(sold).length
   const budgetColor = fry.budget_current < 20 ? 'var(--red)' : fry.budget_current < 40 ? 'var(--orange)' : 'var(--accent)'
@@ -38,7 +47,7 @@ export default function Header({ onLeagueClick }) {
       .then(snapshot => {
         restoreFromSnapshot(snapshot)
         const n = Object.keys(snapshot.sold).length
-        setImportMsg({ ok: true, text: `Restored ${n} sales` })
+        setImportMsg({ ok: true, text: `Restored ${n} picks` })
         setTimeout(() => setImportMsg(null), 3000)
       })
       .catch(err => {
@@ -64,14 +73,21 @@ export default function Header({ onLeagueClick }) {
       {/* Logo */}
       <div style={{ flexShrink: 0 }}>
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, letterSpacing: 4, color: 'var(--accent)', lineHeight: 1 }}>LDB 2026</div>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 2, color: 'var(--text-dim)', marginTop: 1 }}>AUCTION COMMAND CENTER</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 2, color: 'var(--text-dim)', marginTop: 1 }}>SNAKE DRAFT + BOARD</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: 1, color: 'var(--text-dim)', marginTop: 4 }}>{LEAGUE_FORMAT_LINE}</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: 0.5, color: 'var(--text-faint)', marginTop: 2, maxWidth: 320 }} title="Lineups lock for the scoring week — not daily FAAB streaming">
+          {LEAGUE_LINEUP_LINE}
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: 0.5, color: 'var(--text-faint)', marginTop: 3, maxWidth: 300 }} title="Category list — open SCORING for full names">
+          {LEAGUE_SCORING_SHORT}
+        </div>
       </div>
 
       <div style={{ width: 1, height: 28, background: 'var(--border)', flexShrink: 0 }} />
 
-      {/* FRY budget */}
+      {/* My squad budget (see MY_TEAM_ABBR in config) */}
       <div style={{ flexShrink: 0 }}>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 2 }}>FRY BUDGET</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 2 }}>MY BUDGET</div>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
           <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: budgetColor, lineHeight: 1 }}>
             ${Math.round(fry.budget_current ?? 0)}M
@@ -103,7 +119,7 @@ export default function Header({ onLeagueClick }) {
             <FontAwesomeIcon icon={faFloppyDisk} />
             <span>AUTO-SAVED</span>
           </>
-        ) : <span style={{ color: 'var(--text-faint)' }}>no sales yet</span>}
+        ) : <span style={{ color: 'var(--text-faint)' }}>no picks yet</span>}
       </div>
 
       <div style={{ width: 1, height: 20, background: 'var(--border)', flexShrink: 0 }} />
@@ -113,7 +129,7 @@ export default function Header({ onLeagueClick }) {
         onClick={exportAuctionJSON}
         disabled={soldCount === 0}
         style={{ ...iconBtn, opacity: soldCount === 0 ? 0.4 : 1 }}
-        title="Download auction snapshot as JSON"
+        title="Download draft snapshot as JSON"
         onMouseEnter={e => { if (soldCount > 0) { e.currentTarget.style.borderColor = 'var(--green)'; e.currentTarget.style.color = 'var(--green)' }}}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
@@ -125,7 +141,7 @@ export default function Header({ onLeagueClick }) {
       <button
         onClick={() => importRef.current?.click()}
         style={iconBtn}
-        title="Load a previously exported auction JSON"
+        title="Load a previously exported draft JSON"
         onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
@@ -149,7 +165,7 @@ export default function Header({ onLeagueClick }) {
       {auctionLog.length > 0 && (
         <button
           onClick={undoLastSale}
-          title="Undo last sale"
+          title="Undo last pick"
           style={iconBtn}
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--orange)'; e.currentTarget.style.color = 'var(--orange)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
@@ -170,12 +186,31 @@ export default function Header({ onLeagueClick }) {
           ...iconBtn,
           opacity: auctionLog.length === 0 ? 0.4 : 1,
         }}
-        title="View full auction log with bargains/overpays"
+        title="View full draft log with bargains/overpays"
         onMouseEnter={e => { if (auctionLog.length > 0) { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue)' }}}
         onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
       >
         <FontAwesomeIcon icon={faClipboardList} />
         LOG
+      </button>
+
+      {/* Scoring reference */}
+      <button
+        type="button"
+        onClick={() => setShowScoring(true)}
+        title="Season-long roto categories (not H2H)"
+        style={{
+          background: 'var(--surface2)', border: '1px solid var(--border2)',
+          borderRadius: 5, padding: '6px 12px',
+          fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2,
+          color: 'var(--text-dim)', cursor: 'pointer', transition: 'all .15s',
+          display: 'flex', alignItems: 'center', gap: 5,
+        }}
+        onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+        onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text-dim)' }}
+      >
+        <FontAwesomeIcon icon={faListOl} />
+        &nbsp;SCORING
       </button>
 
       {/* League board */}
@@ -192,7 +227,7 @@ export default function Header({ onLeagueClick }) {
         &nbsp;LEAGUE BOARD
       </button>
 
-      {/* FRY lens */}
+      {/* Squad need lens */}
       <button onClick={toggleFryLens} style={{
         background: fryLens ? 'var(--accent)' : 'var(--surface2)',
         border: `1px solid ${fryLens ? 'var(--accent)' : 'var(--border2)'}`,
@@ -202,7 +237,7 @@ export default function Header({ onLeagueClick }) {
         transition: 'all .2s', cursor: 'pointer',
       }}>
         <FontAwesomeIcon icon={fryLens ? faToggleOn : faToggleOff} />
-        &nbsp;{fryLens ? 'FRY ON' : 'FRY LENS'}
+        &nbsp;{fryLens ? 'LENS ON' : 'NEEDS LENS'}
       </button>
 
       {/* Risk-adjusted valuation toggle */}
@@ -275,6 +310,82 @@ export default function Header({ onLeagueClick }) {
           <button onClick={() => setEditingKey(false)} style={{ ...iconBtn, padding: '5px 8px' }}>
             <FontAwesomeIcon icon={faXmark} />
           </button>
+        </div>
+      )}
+
+      {/* Scoring modal */}
+      {showScoring && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="scoring-modal-title"
+          onClick={e => e.target === e.currentTarget && setShowScoring(false)}
+          style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,.82)',
+            zIndex: 300, display: 'flex', alignItems: 'flex-start',
+            justifyContent: 'center', paddingTop: 64,
+          }}
+        >
+          <div
+            style={{
+              background: 'var(--bg)', width: 'min(520px, 94vw)',
+              border: '1px solid var(--border2)', borderRadius: 12,
+              boxShadow: '0 32px 80px rgba(0,0,0,.7)', overflow: 'hidden',
+            }}
+            onClick={e => e.stopPropagation()}
+          >
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '14px 18px', borderBottom: '1px solid var(--border)', background: 'var(--surface)',
+            }}>
+              <span id="scoring-modal-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, letterSpacing: 3, color: 'var(--text)' }}>
+                SEASON ROTO · 5×5
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowScoring(false)}
+                style={{ background: 'none', border: '1px solid var(--border2)', borderRadius: 4, padding: '4px 10px', color: 'var(--text-dim)', cursor: 'pointer', fontFamily: "'DM Mono', monospace", fontSize: 10 }}
+              >CLOSE <FontAwesomeIcon icon={faXmark} /></button>
+            </div>
+            <div style={{ padding: '12px 20px 0', fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)', lineHeight: 1.45 }}>
+              Full-season rotisserie: team ranks in each category accumulate from opening day through the end of the year — not weekly H2H scoresheets.
+            </div>
+            <div style={{ padding: '10px 20px 0', fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)', lineHeight: 1.45 }}>
+              Lineups are <strong style={{ color: 'var(--text)' }}>weekly</strong>, not daily — you cannot swap platoons or stream matchups every day, so part-time and platoon bats carry less value than in daily-lineup leagues.
+            </div>
+            <div style={{ padding: '16px 20px 22px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+              <div>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 2, color: 'var(--accent)', marginBottom: 10 }}>BATTING</div>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+                  <tbody>
+                    {BATTING_CATEGORIES.map(row => (
+                      <tr key={row.code} style={{ borderBottom: '1px solid var(--border)' }}>
+                        <td style={{ fontFamily: "'DM Mono', monospace", color: 'var(--text-dim)', padding: '6px 8px 6px 0', width: 36 }}>{row.code}</td>
+                        <td style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--text)', padding: '6px 0' }}>{row.name}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 2, color: 'var(--blue)', marginBottom: 10 }}>PITCHING</div>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+                  <tbody>
+                    {PITCHING_CATEGORIES.map(row => (
+                      <tr key={row.code} style={{ borderBottom: '1px solid var(--border)' }}>
+                        <td style={{ fontFamily: "'DM Mono', monospace", color: 'var(--text-dim)', padding: '6px 8px 6px 0', width: 44 }}>{row.code}</td>
+                        <td style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--text)', padding: '6px 0' }}>{row.name}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div style={{ padding: '0 20px 18px', fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', lineHeight: 1.55 }}>
+              <span style={{ color: 'var(--text-dim)' }}>Standings track each category for the full season (rotisserie), not weekly head-to-head matchups.</span>
+              {' '}Board dollar values still use the legacy projection blend until you regenerate data with weights aligned to these categories.
+            </div>
+          </div>
         </div>
       )}
 

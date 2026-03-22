@@ -1,0 +1,544 @@
+{
+  "generated_at": "2026-03-21",
+  "board_source": "cbs_roster",
+  "cbs_files": [
+    "2026_CBS_Batters.csv",
+    "2026_CBS_SP.csv",
+    "2026_CBS_RP.csv"
+  ],
+  "franchises": [
+    {
+      "abbr": "SAVG2",
+      "display_name": "2025 Savages 2"
+    },
+    {
+      "abbr": "JAYHK",
+      "display_name": "Jayhawks"
+    },
+    {
+      "abbr": "INGBT",
+      "display_name": "Inglorious Batters"
+    },
+    {
+      "abbr": "HIGH2",
+      "display_name": "Highlanders II"
+    },
+    {
+      "abbr": "CL21B",
+      "display_name": "21 Club 2"
+    },
+    {
+      "abbr": "RUBYR",
+      "display_name": "The Ruby Ring Gang A"
+    },
+    {
+      "abbr": "MENDL",
+      "display_name": "Mendel Lapse"
+    },
+    {
+      "abbr": "BEDST",
+      "display_name": "Bed Stuy Fish Fry"
+    },
+    {
+      "abbr": "CASEY",
+      "display_name": "Casey HotDog"
+    },
+    {
+      "abbr": "CUCKOO",
+      "display_name": "Flew Over the Cuckoo's Nest"
+    },
+    {
+      "abbr": "BEHEM",
+      "display_name": "Behemoth"
+    }
+  ],
+  "notes": "Players come from CBS roster CSVs (same parse as ldb_data). Set draft_round for each keeper you are retaining; use those entries to build src/data/keeper_draft_rounds.json by_team (array of {player, round} or round numbers).",
+  "by_team": {
+    "SAVG2": [
+      {
+        "name": "Ben Rice",
+        "norm": "ben rice",
+        "pos": "C",
+        "mlb_team": "NYY",
+        "draft_round": 18
+      },
+      {
+        "name": "Byron Buxton",
+        "norm": "byron buxton",
+        "pos": "OF",
+        "mlb_team": "MIN",
+        "draft_round": 13
+      },
+      {
+        "name": "Nolan McLean",
+        "norm": "nolan mclean",
+        "pos": "SP",
+        "mlb_team": "NYM",
+        "draft_round": 5
+      }
+    ],
+    "JAYHK": [
+      {
+        "name": "Edwin Diaz",
+        "norm": "edwin diaz",
+        "pos": "RP",
+        "mlb_team": "LAD",
+        "draft_round": 8
+      },
+      {
+        "name": "Nick Kurtz",
+        "norm": "nick kurtz",
+        "pos": "1B",
+        "mlb_team": "ATH",
+        "draft_round": 5
+      },
+      {
+        "name": "Will Smith",
+        "norm": "will smith",
+        "pos": "C",
+        "mlb_team": "LAD",
+        "draft_round": 16
+      }
+    ],
+    "INGBT": [
+      {
+        "name": "Christian Yelich",
+        "norm": "christian yelich",
+        "pos": "1B",
+        "mlb_team": "MIL",
+        "draft_round": 8
+      },
+      {
+        "name": "Eugenio Suarez",
+        "norm": "eugenio suarez",
+        "pos": "3B",
+        "mlb_team": "CIN",
+        "draft_round": 16
+      },
+      {
+        "name": "Juan Soto",
+        "norm": "juan soto",
+        "pos": "OF",
+        "mlb_team": "NYM",
+        "draft_round": 1
+      }
+    ],
+    "HIGH2": [
+      {
+        "name": "Bryan Woo",
+        "norm": "bryan woo",
+        "pos": "SP",
+        "mlb_team": "SEA",
+        "draft_round": 10
+      },
+      {
+        "name": "Cristopher Sanchez",
+        "norm": "cristopher sanchez",
+        "pos": "SP",
+        "mlb_team": "PHI",
+        "draft_round": 7
+      },
+      {
+        "name": "Trevor Story",
+        "norm": "trevor story",
+        "pos": "SS",
+        "mlb_team": "BOS",
+        "draft_round": 22
+      }
+    ],
+    "CL21B": [
+      {
+        "name": "Julio Rodriguez",
+        "norm": "julio rodriguez",
+        "pos": "OF",
+        "mlb_team": "SEA",
+        "draft_round": 2
+      },
+      {
+        "name": "Kyle Schwarber",
+        "norm": "kyle schwarber",
+        "pos": "1B",
+        "mlb_team": "PHI",
+        "draft_round": 7
+      },
+      {
+        "name": "Yoshinobu Yamamoto",
+        "norm": "yoshinobu yamamoto",
+        "pos": "SP",
+        "mlb_team": "LAD",
+        "draft_round": 4
+      }
+    ],
+    "RUBYR": [
+      {
+        "name": "Brice Turang",
+        "norm": "brice turang",
+        "pos": "2B",
+        "mlb_team": "MIL",
+        "draft_round": 15
+      },
+      {
+        "name": "Pete Alonso",
+        "norm": "pete alonso",
+        "pos": "1B",
+        "mlb_team": "BAL",
+        "draft_round": 3
+      },
+      {
+        "name": "Shea Langeliers",
+        "norm": "shea langeliers",
+        "pos": "C",
+        "mlb_team": "ATH",
+        "draft_round": 22
+      }
+    ],
+    "MENDL": [
+      {
+        "name": "Logan Webb",
+        "norm": "logan webb",
+        "pos": "SP",
+        "mlb_team": "SF",
+        "draft_round": 5
+      },
+      {
+        "name": "Randy Arozarena",
+        "norm": "randy arozarena",
+        "pos": "OF",
+        "mlb_team": "SEA",
+        "draft_round": 16
+      },
+      {
+        "name": "Vinnie Pasquantino",
+        "norm": "vinnie pasquantino",
+        "pos": "1B",
+        "mlb_team": "KC",
+        "draft_round": 13
+      }
+    ],
+    "BEDST": [
+      {
+        "name": "Eury Perez",
+        "norm": "eury perez",
+        "pos": "SP",
+        "mlb_team": "MIA",
+        "draft_round": 22
+      },
+      {
+        "name": "George Springer",
+        "norm": "george springer",
+        "pos": "OF",
+        "mlb_team": "TOR",
+        "draft_round": 21
+      },
+      {
+        "name": "Ronald Acuna Jr.",
+        "norm": "ronald acuna",
+        "pos": "OF",
+        "mlb_team": "ATL",
+        "draft_round": 3
+      }
+    ],
+    "CASEY": [
+      {
+        "name": "Jared Jones",
+        "norm": "jared jones",
+        "pos": "SP",
+        "mlb_team": "PIT",
+        "draft_round": 19
+      },
+      {
+        "name": "Jeremy Pena",
+        "norm": "jeremy pena",
+        "pos": "SS",
+        "mlb_team": "HOU",
+        "draft_round": 16
+      },
+      {
+        "name": "Michael Busch",
+        "norm": "michael busch",
+        "pos": "1B",
+        "mlb_team": "CHC",
+        "draft_round": 22
+      }
+    ],
+    "CUCKOO": [
+      {
+        "name": "Drew Rasmussen",
+        "norm": "drew rasmussen",
+        "pos": "SP",
+        "mlb_team": "TB",
+        "draft_round": 22
+      },
+      {
+        "name": "Riley Greene",
+        "norm": "riley greene",
+        "pos": "OF",
+        "mlb_team": "DET",
+        "draft_round": 8
+      },
+      {
+        "name": "Zachary Neto",
+        "norm": "zachary neto",
+        "pos": "SS",
+        "mlb_team": "LAA",
+        "draft_round": 20
+      }
+    ],
+    "BEHEM": [
+      {
+        "name": "Junior Caminero",
+        "norm": "junior caminero",
+        "pos": "3B",
+        "mlb_team": "TB",
+        "draft_round": 6
+      },
+      {
+        "name": "Pete Crow-Armstrong",
+        "norm": "pete crow armstrong",
+        "pos": "OF",
+        "mlb_team": "CHC",
+        "draft_round": 11
+      },
+      {
+        "name": "Roman Anthony",
+        "norm": "roman anthony",
+        "pos": "OF",
+        "mlb_team": "BOS",
+        "draft_round": 21
+      }
+    ]
+  },
+  "by_norm_name": {
+    "juan soto": {
+      "team": "INGBT",
+      "name": "Juan Soto",
+      "pos": "OF",
+      "mlb_team": "NYM",
+      "draft_round": 1
+    },
+    "ronald acuna": {
+      "team": "BEDST",
+      "name": "Ronald Acuna Jr.",
+      "pos": "OF",
+      "mlb_team": "ATL",
+      "draft_round": 3
+    },
+    "julio rodriguez": {
+      "team": "CL21B",
+      "name": "Julio Rodriguez",
+      "pos": "OF",
+      "mlb_team": "SEA",
+      "draft_round": 2
+    },
+    "junior caminero": {
+      "team": "BEHEM",
+      "name": "Junior Caminero",
+      "pos": "3B",
+      "mlb_team": "TB",
+      "draft_round": 6
+    },
+    "nick kurtz": {
+      "team": "JAYHK",
+      "name": "Nick Kurtz",
+      "pos": "1B",
+      "mlb_team": "ATH",
+      "draft_round": 5
+    },
+    "kyle schwarber": {
+      "team": "CL21B",
+      "name": "Kyle Schwarber",
+      "pos": "1B",
+      "mlb_team": "PHI",
+      "draft_round": 7
+    },
+    "pete crow armstrong": {
+      "team": "BEHEM",
+      "name": "Pete Crow-Armstrong",
+      "pos": "OF",
+      "mlb_team": "CHC",
+      "draft_round": 11
+    },
+    "pete alonso": {
+      "team": "RUBYR",
+      "name": "Pete Alonso",
+      "pos": "1B",
+      "mlb_team": "BAL",
+      "draft_round": 3
+    },
+    "zachary neto": {
+      "team": "CUCKOO",
+      "name": "Zachary Neto",
+      "pos": "SS",
+      "mlb_team": "LAA",
+      "draft_round": 20
+    },
+    "brice turang": {
+      "team": "RUBYR",
+      "name": "Brice Turang",
+      "pos": "2B",
+      "mlb_team": "MIL",
+      "draft_round": 15
+    },
+    "roman anthony": {
+      "team": "BEHEM",
+      "name": "Roman Anthony",
+      "pos": "OF",
+      "mlb_team": "BOS",
+      "draft_round": 21
+    },
+    "ben rice": {
+      "team": "SAVG2",
+      "name": "Ben Rice",
+      "pos": "C",
+      "mlb_team": "NYY",
+      "draft_round": 18
+    },
+    "shea langeliers": {
+      "team": "RUBYR",
+      "name": "Shea Langeliers",
+      "pos": "C",
+      "mlb_team": "ATH",
+      "draft_round": 22
+    },
+    "byron buxton": {
+      "team": "SAVG2",
+      "name": "Byron Buxton",
+      "pos": "OF",
+      "mlb_team": "MIN",
+      "draft_round": 13
+    },
+    "george springer": {
+      "team": "BEDST",
+      "name": "George Springer",
+      "pos": "OF",
+      "mlb_team": "TOR",
+      "draft_round": 21
+    },
+    "christian yelich": {
+      "team": "INGBT",
+      "name": "Christian Yelich",
+      "pos": "1B",
+      "mlb_team": "MIL",
+      "draft_round": 8
+    },
+    "riley greene": {
+      "team": "CUCKOO",
+      "name": "Riley Greene",
+      "pos": "OF",
+      "mlb_team": "DET",
+      "draft_round": 8
+    },
+    "eugenio suarez": {
+      "team": "INGBT",
+      "name": "Eugenio Suarez",
+      "pos": "3B",
+      "mlb_team": "CIN",
+      "draft_round": 16
+    },
+    "vinnie pasquantino": {
+      "team": "MENDL",
+      "name": "Vinnie Pasquantino",
+      "pos": "1B",
+      "mlb_team": "KC",
+      "draft_round": 13
+    },
+    "trevor story": {
+      "team": "HIGH2",
+      "name": "Trevor Story",
+      "pos": "SS",
+      "mlb_team": "BOS",
+      "draft_round": 22
+    },
+    "randy arozarena": {
+      "team": "MENDL",
+      "name": "Randy Arozarena",
+      "pos": "OF",
+      "mlb_team": "SEA",
+      "draft_round": 16
+    },
+    "jeremy pena": {
+      "team": "CASEY",
+      "name": "Jeremy Pena",
+      "pos": "SS",
+      "mlb_team": "HOU",
+      "draft_round": 16
+    },
+    "michael busch": {
+      "team": "CASEY",
+      "name": "Michael Busch",
+      "pos": "1B",
+      "mlb_team": "CHC",
+      "draft_round": 22
+    },
+    "will smith": {
+      "team": "JAYHK",
+      "name": "Will Smith",
+      "pos": "C",
+      "mlb_team": "LAD",
+      "draft_round": 16
+    },
+    "yoshinobu yamamoto": {
+      "team": "CL21B",
+      "name": "Yoshinobu Yamamoto",
+      "pos": "SP",
+      "mlb_team": "LAD",
+      "draft_round": 4
+    },
+    "cristopher sanchez": {
+      "team": "HIGH2",
+      "name": "Cristopher Sanchez",
+      "pos": "SP",
+      "mlb_team": "PHI",
+      "draft_round": 7
+    },
+    "bryan woo": {
+      "team": "HIGH2",
+      "name": "Bryan Woo",
+      "pos": "SP",
+      "mlb_team": "SEA",
+      "draft_round": 10
+    },
+    "logan webb": {
+      "team": "MENDL",
+      "name": "Logan Webb",
+      "pos": "SP",
+      "mlb_team": "SF",
+      "draft_round": 5
+    },
+    "eury perez": {
+      "team": "BEDST",
+      "name": "Eury Perez",
+      "pos": "SP",
+      "mlb_team": "MIA",
+      "draft_round": 22
+    },
+    "nolan mclean": {
+      "team": "SAVG2",
+      "name": "Nolan McLean",
+      "pos": "SP",
+      "mlb_team": "NYM",
+      "draft_round": 5
+    },
+    "drew rasmussen": {
+      "team": "CUCKOO",
+      "name": "Drew Rasmussen",
+      "pos": "SP",
+      "mlb_team": "TB",
+      "draft_round": 22
+    },
+    "jared jones": {
+      "team": "CASEY",
+      "name": "Jared Jones",
+      "pos": "SP",
+      "mlb_team": "PIT",
+      "draft_round": 19
+    },
+    "edwin diaz": {
+      "team": "JAYHK",
+      "name": "Edwin Diaz",
+      "pos": "RP",
+      "mlb_team": "LAD",
+      "draft_round": 8
+    }
+  }
+}

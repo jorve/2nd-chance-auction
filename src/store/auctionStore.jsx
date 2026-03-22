@@ -1,6 +1,30 @@
 import { create } from 'zustand'
 import { LDB_DATA } from '../data/ldb_data.js'
+import {
+  USE_CUSTOM_LEAGUE,
+  SNAKE_TEAM_ORDER,
+  SNAKE_DRAFT_ORDER,
+  MY_TEAM_ABBR,
+  TEAM_COLORS_BY_ABBR,
+} from '../config/snakeDraftOrder.js'
 import { norm } from '../utils/norm.js'
+import { getNthLivePick, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
+import { canStarterHitterFitTeam } from '../utils/hitterSlotting.js'
+
+const LDB_TEAMS_SORTED = Object.keys(LDB_DATA.teams).sort()
+
+/** All teams shown in UI (sorted). Custom league = configured snake teams only. */
+const ALL_TEAMS_SORTED = USE_CUSTOM_LEAGUE
+  ? [...SNAKE_TEAM_ORDER].sort()
+  : LDB_TEAMS_SORTED
+
+/** Snake pick order (see `src/config/snakeDraftOrder.js`). */
+const SNAKE_ORDER_ACTIVE =
+  USE_CUSTOM_LEAGUE && SNAKE_TEAM_ORDER.length > 0
+    ? [...SNAKE_TEAM_ORDER]
+    : SNAKE_TEAM_ORDER.length > 0 && SNAKE_TEAM_ORDER.every((a) => LDB_DATA.teams[a])
+      ? [...SNAKE_TEAM_ORDER]
+      : LDB_TEAMS_SORTED
 
 const LEAGUE_MIN_BID = 0.5
 const IN_SEASON_CARRY_RESERVE = 5.0
@@ -79,9 +103,9 @@ function recalcAllValues(batters, sp, rp, teams, soldMap, riskAdj = false) {
     else if (s.pos_type === 'rp') soldRP += 1
   }
   const numTeams = Object.keys(teams).length
-  const BATTER_SLOTS_PER_TEAM = 11
+  const BATTER_SLOTS_PER_TEAM = 13 // CBS active: 13 hitters (incl. MI, CI, 5×OF, U, …)
   const SP_SLOTS_PER_TEAM = 6
-  const RP_SLOTS_PER_TEAM = 3
+  const RP_SLOTS_PER_TEAM = 3 // 6+3 = 9 pitchers
   const batterSlotsToFill = Math.max(0, BATTER_SLOTS_PER_TEAM * numTeams - soldBatters)
   const spSlotsToFill = Math.max(0, SP_SLOTS_PER_TEAM * numTeams - soldSP)
   const rpSlotsToFill = Math.max(0, RP_SLOTS_PER_TEAM * numTeams - soldRP)
@@ -213,6 +237,29 @@ function recalcAllValues(batters, sp, rp, teams, soldMap, riskAdj = false) {
 
 // ── INITIAL STATE ──────────────────────────────────────────────────────────
 function buildInitialTeams() {
+  if (USE_CUSTOM_LEAGUE && SNAKE_DRAFT_ORDER.length > 0) {
+    const teams = {}
+    for (const row of SNAKE_DRAFT_ORDER) {
+      const b = parseFloat(row.budget) || 300
+      const s = parseInt(row.slots, 10) || 38
+      const owner = (row.owner && String(row.owner).trim()) ? String(row.owner).trim() : ''
+      teams[row.abbr] = {
+        abbr: row.abbr,
+        name: row.name,
+        owner,
+        gm: owner,
+        budget_rem: b,
+        slots_rem: s,
+        budget_initial: b,
+        slots_initial: s,
+        budget_current: b,
+        slots_current: s,
+        slots_hit: row.slots_hit,
+        slots_pit: row.slots_pit,
+      }
+    }
+    return teams
+  }
   const teams = {}
   Object.entries(LDB_DATA.teams).forEach(([abbr, t]) => {
     teams[abbr] = {
@@ -263,11 +310,116 @@ export function fmtPrice(val) {
   return n % 1 === 0 ? `$${n}M` : `$${n.toFixed(1)}M`
 }
 
+// ── SNAKE DRAFT + STARTER ROSTER RULES ─────────────────────────────────────
+function computeStarterSlotTargets() {
+  const cfg = LDB_DATA.meta?.replacement_levels?.config
+  if (!cfg?.bat_slots_per_team) return { bat: 13, sp: 6, rp: 3 }
+  const bat = Object.values(cfg.bat_slots_per_team).reduce((a, b) => a + b, 0)
+  return {
+    bat,
+    sp: cfg.sp_slots_per_team ?? 8,
+    rp: cfg.rp_slots_per_team ?? 5,
+  }
+}
+
+/** League starter caps per team (hitters + SP + RP) — bench picks only after all three are filled. */
+export const STARTER_SLOT_TARGETS = computeStarterSlotTargets()
+
+export function getSnakePickerTeam(pickIndex, teamOrder) {
+  return getNthLivePick(pickIndex, teamOrder, getKeeperRoundsByAbbr()).team
+}
+
+export function getSnakeDraftMeta(pickIndex, teamOrder) {
+  const n = teamOrder.length
+  if (!n) return { round: 1, pickInRound: 1, onClock: '', pickIndex: 0, livePicksThisRound: n }
+  const e = getNthLivePick(pickIndex, teamOrder, getKeeperRoundsByAbbr())
+  return {
+    round: e.round,
+    pickInRound: e.pickInRoundLive,
+    onClock: e.team,
+    pickIndex,
+    livePicksThisRound: e.livePicksThisRound,
+  }
+}
+
+export function countTeamPicksByType(sold, team) {
+  let bat = 0
+  let sp = 0
+  let rp = 0
+  for (const v of Object.values(sold)) {
+    if (v.team !== team) continue
+    if (v.pos_type === 'batter') bat += 1
+    else if (v.pos_type === 'sp') sp += 1
+    else if (v.pos_type === 'rp') rp += 1
+  }
+  return { bat, sp, rp }
+}
+
+/**
+ * Until the starter lineup is full (13 hitters + SP + RP caps from league config), every pick must go
+ * toward an unfilled starter bucket — no bench bats or bench arms. Order is free (mix hitters & pitchers),
+ * but you cannot add hitter #14 until all 9 pitcher starters are filled, and you cannot add bench pitchers
+ * until 13 hitters are filled.
+ *
+ * For hitters, optional `ctx` enforces active lineup slots: primary positions → MI/CI → U (DH never uses 1B).
+ */
+export function canDraftPlayerForTeam(sold, team, player, targets = STARTER_SLOT_TARGETS, ctx = null) {
+  const posType = player.gs !== undefined ? 'sp' : player.pa !== undefined ? 'batter' : 'rp'
+  const { bat, sp, rp } = countTeamPicksByType(sold, team)
+  const startersDone = bat >= targets.bat && sp >= targets.sp && rp >= targets.rp
+  if (startersDone) return { ok: true }
+
+  const needBat = Math.max(0, targets.bat - bat)
+  const needSp = Math.max(0, targets.sp - sp)
+  const needRp = Math.max(0, targets.rp - rp)
+
+  // 13 hitters already → only pitchers until SP/RP starters are full (no bench bats)
+  if (posType === 'batter' && bat >= targets.bat) {
+    return {
+      ok: false,
+      message: `Starter lineup: add ${needSp} SP and ${needRp} RP before bench hitters.`,
+    }
+  }
+
+  // SP/RP starters full but still short on hitters → must take bats before bench pitchers
+  if (posType === 'sp' && sp >= targets.sp && bat < targets.bat) {
+    return {
+      ok: false,
+      message: `Starter lineup: add ${needBat} more hitter(s) before bench SP.`,
+    }
+  }
+  if (posType === 'rp' && rp >= targets.rp && bat < targets.bat) {
+    return {
+      ok: false,
+      message: `Starter lineup: add ${needBat} more hitter(s) before bench RP.`,
+    }
+  }
+
+  if (posType === 'batter' && bat < targets.bat) {
+    if (ctx?.auctionLog && ctx?.battersByName) {
+      if (!canStarterHitterFitTeam(team, player, ctx.auctionLog, ctx.battersByName)) {
+        return {
+          ok: false,
+          message:
+            'No open active hitter slot for this player’s eligibility (primaries → MI/CI → U; DH does not use 1B).',
+        }
+      }
+    }
+    return { ok: true }
+  }
+  if (posType === 'sp' && sp < targets.sp) return { ok: true }
+  if (posType === 'rp' && rp < targets.rp) return { ok: true }
+  return {
+    ok: false,
+    message: `Fill all ${targets.bat} hitter starters and ${targets.sp + targets.rp} pitcher starters before bench picks (${needBat} bat · ${needSp} SP · ${needRp} RP left).`,
+  }
+}
+
 
 // ── PERSISTENCE ────────────────────────────────────────────────────────────
 const LS_KEY = 'ldb_auction_2026'
 
-function saveToStorage(sold, teams, auctionLog, currentNominator, targetAvoid) {
+function saveToStorage(sold, teams, auctionLog, targetAvoid) {
   try {
     localStorage.setItem(LS_KEY, JSON.stringify({
       v: 1,
@@ -275,7 +427,6 @@ function saveToStorage(sold, teams, auctionLog, currentNominator, targetAvoid) {
       sold,
       teams,
       auctionLog,
-      currentNominator: currentNominator || undefined,
       targetAvoid: targetAvoid && Object.keys(targetAvoid).length > 0 ? targetAvoid : undefined,
     }))
   } catch (e) {
@@ -290,16 +441,15 @@ function loadFromStorage() {
     const parsed = JSON.parse(raw)
     if (parsed?.v !== 1 || !parsed.sold || !parsed.teams) return null
     const log = parsed.auctionLog || []
-    const teamsList = Object.keys(parsed.teams || {}).sort()
+    const teamsList = SNAKE_ORDER_ACTIVE
     for (let i = 0; i < log.length; i++) {
       if (!log[i].nominatedBy && teamsList.length) {
-        log[i].nominatedBy = teamsList[i % teamsList.length]
+        log[i].nominatedBy = getSnakePickerTeam(i, teamsList)
       }
     }
     return {
       ...parsed,
       auctionLog: log,
-      currentNominator: parsed.currentNominator || '',
       targetAvoid: parsed.targetAvoid || {},
     }
   } catch {
@@ -379,9 +529,8 @@ export const useAuctionStore = create((set, get) => ({
   // Live auction state
   teams:      _init?.teams      ?? initialTeams,
   sold:       _init?.sold       ?? {},    // { playerName: { price, team, pos_type } }
-  auctionLog: _init?.auctionLog ?? [],   // [{ playerName, price, team, nominatedBy, ts, rank, est_value }]
-  currentNominator: _saved?.currentNominator ?? '',
-  
+  auctionLog: _init?.auctionLog ?? [],   // snake draft log (newest first); price = instructive pool value
+
   // Manual player notes (persisted to player_notes.json via API)
   manualNotes: {},
 
@@ -396,11 +545,9 @@ export const useAuctionStore = create((set, get) => ({
   searchQuery: '',
   tierFilter: new Set([1, 2, 3, 4, 5]),
   
-  // Auction form
+  // Draft selection (snake: on-clock team derived from pick index)
   nominatedPlayer: null,
-  bidTeam: '',
-  bidPrice: '',
-  nominatedBy: '',       // team that put player on block (for auction log)
+  bidTeam: getSnakePickerTeam((_init?.auctionLog ?? []).length, SNAKE_ORDER_ACTIVE),
 
   // ── MANUAL NOTES ──────────────────────────────────────────────────────────
   fetchManualNotes: async () => {
@@ -470,20 +617,16 @@ export const useAuctionStore = create((set, get) => ({
   }),
   setNominatedPlayer: player => {
     const nominationFloor = 0.5
+    const pickIndex = get().auctionLog?.length ?? 0
+    const onClock = getSnakePickerTeam(pickIndex, SNAKE_ORDER_ACTIVE)
     const nominated = player
       ? { ...player, adj_value: Math.max(nominationFloor, player.adj_value ?? player.est_value ?? nominationFloor) }
       : null
     return set({
       nominatedPlayer: nominated,
-      // Nominations cannot open below league minimum.
-      bidPrice: nominated ? snapToValidIncrement(nominated.adj_value ?? nominated.est_value ?? nominationFloor) : nominationFloor,
-      bidTeam: '',
+      bidTeam: onClock,
     })
   },
-  setBidTeam: t => set({ bidTeam: t }),
-  setBidPrice: p => set({ bidPrice: p }),
-  setNominatedBy: team => set({ nominatedBy: team }),
-  setCurrentNominator: team => set({ currentNominator: team }),
 
   toggleTargetAvoid: (playerName, flag) => {
     const { targetAvoid } = get()
@@ -491,34 +634,40 @@ export const useAuctionStore = create((set, get) => ({
     if (flag === null) delete next[playerName]
     else next[playerName] = flag
     set({ targetAvoid: next })
-    saveToStorage(get().sold, get().teams, get().auctionLog, get().currentNominator, next)
+    saveToStorage(get().sold, get().teams, get().auctionLog, next)
   },
   getTargetAvoid: (playerName) => get().targetAvoid[playerName] ?? null,
   getMaxBidForTeam: (team) => reserveAwareMaxBid(get().teams[team]),
 
+  /** Snake draft: records instructive pool price (adj value), on-clock team from pick order. */
   confirmSale: () => {
-    const { nominatedPlayer, bidTeam, bidPrice, sold, auctionLog, teams, nominatedBy, currentNominator, targetAvoid } = get()
-    if (!nominatedPlayer || !bidTeam || !bidPrice) return
-    const price = parseFloat(bidPrice)
-    if (isNaN(price) || price < 0.5) return
-    const maxBid = reserveAwareMaxBid(teams[bidTeam])
-    if (price > maxBid) return
+    const { nominatedPlayer, sold, auctionLog, teams, targetAvoid } = get()
+    if (!nominatedPlayer) return
+    const pickIndex = auctionLog.length
+    const onClock = getSnakePickerTeam(pickIndex, SNAKE_ORDER_ACTIVE)
+    const battersByName = new Map(get().batters.map((b) => [b.name, b]))
+    const draftCheck = canDraftPlayerForTeam(sold, onClock, nominatedPlayer, STARTER_SLOT_TARGETS, {
+      auctionLog,
+      battersByName,
+    })
+    if (!draftCheck.ok) return
+
+    const roundHalf = v => Math.round(v * 2) / 2
+    const price = Math.max(0.5, roundHalf(parseFloat(nominatedPlayer.adj_value ?? nominatedPlayer.est_value ?? 0.5)))
 
     const posType = nominatedPlayer.gs !== undefined ? 'sp'
       : nominatedPlayer.pa !== undefined ? 'batter' : 'rp'
 
-    const nominator = nominatedBy || currentNominator || TEAMS_LIST[auctionLog.length % TEAMS_LIST.length]
-
     const newSold = {
       ...sold,
-      [nominatedPlayer.name]: { price, team: bidTeam, pos_type: posType, ts: Date.now() }
+      [nominatedPlayer.name]: { price, team: onClock, pos_type: posType, ts: Date.now() },
     }
     const newTeams = { ...teams }
-    if (newTeams[bidTeam]) {
-      newTeams[bidTeam] = {
-        ...newTeams[bidTeam],
-        budget_current: Math.max(0, newTeams[bidTeam].budget_current - price),
-        slots_current: Math.max(0, newTeams[bidTeam].slots_current - 1),
+    if (newTeams[onClock]) {
+      newTeams[onClock] = {
+        ...newTeams[onClock],
+        budget_current: Math.max(0, newTeams[onClock].budget_current - price),
+        slots_current: Math.max(0, newTeams[onClock].slots_current - 1),
       }
     }
     const newLog = [
@@ -526,8 +675,9 @@ export const useAuctionStore = create((set, get) => ({
         playerName: nominatedPlayer.name,
         team_mlb: nominatedPlayer.team,
         price,
-        team: bidTeam,
-        nominatedBy: nominator,
+        team: onClock,
+        nominatedBy: onClock,
+        pickIndex,
         pos_type: posType,
         est_value: nominatedPlayer.est_value,
         oopsy_est_value: nominatedPlayer.oopsy_est_value,
@@ -537,14 +687,12 @@ export const useAuctionStore = create((set, get) => ({
       ...auctionLog,
     ]
 
-    const nextNominator = TEAMS_LIST[(TEAMS_LIST.indexOf(nominator) + 1) % TEAMS_LIST.length]
-
     const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold, get().riskAdj)
     const newBatters = recalc.batters
     const newSP      = recalc.sp
     const newRP      = recalc.rp
 
-    saveToStorage(newSold, newTeams, newLog, nextNominator, targetAvoid)
+    saveToStorage(newSold, newTeams, newLog, targetAvoid)
     set({
       sold: newSold,
       teams: newTeams,
@@ -553,15 +701,12 @@ export const useAuctionStore = create((set, get) => ({
       sp: newSP,
       rp: newRP,
       nominatedPlayer: null,
-      bidTeam: '',
-      bidPrice: '',
-      nominatedBy: '',
-      currentNominator: nextNominator,
+      bidTeam: getSnakePickerTeam(pickIndex + 1, SNAKE_ORDER_ACTIVE),
     })
   },
 
   undoLastSale: () => {
-    const { auctionLog, sold, teams, currentNominator, targetAvoid } = get()
+    const { auctionLog, sold, teams, targetAvoid } = get()
     if (!auctionLog.length) return
     const last = auctionLog[0]
     const newSold = { ...sold }
@@ -575,13 +720,20 @@ export const useAuctionStore = create((set, get) => ({
       }
     }
     const newLog = auctionLog.slice(1)
-    const prevNominator = last.nominatedBy || TEAMS_LIST[(TEAMS_LIST.indexOf(currentNominator || TEAMS_LIST[0]) - 1 + TEAMS_LIST.length) % TEAMS_LIST.length]
     const recalc = recalcAllValues(get().batters, get().sp, get().rp, newTeams, newSold, get().riskAdj)
     const newBatters = recalc.batters
     const newSP      = recalc.sp
     const newRP      = recalc.rp
-    saveToStorage(newSold, newTeams, newLog, prevNominator, targetAvoid)
-    set({ sold: newSold, teams: newTeams, auctionLog: newLog, batters: newBatters, sp: newSP, rp: newRP, currentNominator: prevNominator })
+    saveToStorage(newSold, newTeams, newLog, targetAvoid)
+    set({
+      sold: newSold,
+      teams: newTeams,
+      auctionLog: newLog,
+      batters: newBatters,
+      sp: newSP,
+      rp: newRP,
+      bidTeam: getSnakePickerTeam(newLog.length, SNAKE_ORDER_ACTIVE),
+    })
   },
 
   resetAuction: () => {
@@ -596,32 +748,36 @@ export const useAuctionStore = create((set, get) => ({
       sp:      recalc.sp,
       rp:      recalc.rp,
       nominatedPlayer: null,
-      bidTeam: '', bidPrice: '',
+      bidTeam: getSnakePickerTeam(0, SNAKE_ORDER_ACTIVE),
     })
   },
 
   // Load a snapshot from an imported file and rebuild state
   restoreFromSnapshot: (snapshot) => {
     const log = snapshot.auctionLog || []
-    const teamsList = TEAMS_LIST
+    const teamsList = SNAKE_ORDER_ACTIVE
     for (let i = 0; i < log.length; i++) {
-      if (!log[i].nominatedBy && teamsList.length) log[i].nominatedBy = teamsList[i % teamsList.length]
+      if (!log[i].nominatedBy && teamsList.length) log[i].nominatedBy = getSnakePickerTeam(i, teamsList)
     }
     const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log }, get().riskAdj)
-    const nom = snapshot.currentNominator || ''
     const ta = snapshot.targetAvoid || {}
-    saveToStorage(state.sold, state.teams, state.auctionLog, nom, ta)
-    set({ ...state, nominatedPlayer: null, bidTeam: '', bidPrice: '', targetAvoid: ta, currentNominator: nom })
+    saveToStorage(state.sold, state.teams, state.auctionLog, ta)
+    set({
+      ...state,
+      nominatedPlayer: null,
+      bidTeam: getSnakePickerTeam(state.auctionLog.length, SNAKE_ORDER_ACTIVE),
+      targetAvoid: ta,
+    })
   },
 
   // Derived helpers
   getFryData: () => {
     const { teams, sold } = get()
-    const fry = teams['FRY'] || {}
-    const fryWins = Object.entries(sold).filter(([, v]) => v.team === 'FRY')
+    const lens = teams[MY_TEAM_ABBR] || teams.FRY || {}
+    const fryWins = Object.entries(sold).filter(([, v]) => v.team === MY_TEAM_ABBR)
     return {
-      budget_current: fry.budget_current ?? 0,
-      slots_current: fry.slots_current ?? 0,
+      budget_current: lens.budget_current ?? 0,
+      slots_current: lens.slots_current ?? 0,
       wins: fryWins,
       spend: fryWins.reduce((s, [, v]) => s + v.price, 0),
     }
@@ -629,13 +785,20 @@ export const useAuctionStore = create((set, get) => ({
 }))
 
 export const META = LDB_DATA.meta
-export const TEAMS_LIST = Object.keys(LDB_DATA.teams).sort()
+/** All league team codes (sorted) — boards, filters, colors. Snake uses `SNAKE_PICK_ORDER`. */
+export const TEAMS_LIST = ALL_TEAMS_SORTED
+
+/** Teams that participate in the snake (order = round-1 sequence). */
+export const SNAKE_PICK_ORDER = SNAKE_ORDER_ACTIVE
 export const TEAM_COLORS = {
+  ...TEAM_COLORS_BY_ABBR,
   FRY: '#c8f135', ICHI: '#38bdf8', POLL: '#fb923c', TONES: '#a78bfa',
   WORK: '#4ade80', WIND: '#67e8f9', ROOF: '#fbbf24', AIDS: '#f472b6',
   IPA: '#818cf8', PWRS: '#34d399', IZZY: '#f87171', NATE: '#94a3b8',
   CHOICE: '#e879f9', BALK: '#2dd4bf', NEO: '#fcd34d', CORN: '#86efac',
 }
+
+export { MY_TEAM_ABBR }
 
 // FRY positional needs from league rules — drives lens priority signals
 export const FRY_NEEDS = {

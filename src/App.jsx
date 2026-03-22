@@ -53,7 +53,7 @@ export default function App() {
         }}>
           <span style={{ fontSize: 13 }}><FontAwesomeIcon icon={faFloppyDisk} /></span>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--accent)' }}>
-            Saved session found — <strong>{resumeBanner.soldCount} sales</strong> from {new Date(resumeBanner.savedAt).toLocaleString()}
+            Saved session found — <strong>{resumeBanner.soldCount} picks</strong> from {new Date(resumeBanner.savedAt).toLocaleString()}
           </span>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)' }}>
             (automatically restored)
