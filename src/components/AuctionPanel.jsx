@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
+import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUp,
@@ -36,10 +37,16 @@ function getType(p) {
 
 /** Resolve player name for global pick index `g` (newest-first log; optional `pickIndex` on entries). */
 function playerNameForGlobalPickIndex(auctionLog, g) {
-  const hit = auctionLog.find((e) => e.pickIndex === g)
-  if (hit?.playerName) return hit.playerName
+  if (g == null || !Number.isFinite(Number(g))) return null
+  const gi = Number(g)
+  const hit = auctionLog.find(
+    (e) => e && e.pickIndex != null && Number(e.pickIndex) === gi,
+  )
+  const name = hit?.playerName ?? hit?.player
+  if (name) return String(name)
   const chrono = [...auctionLog].reverse()
-  return chrono[g]?.playerName ?? null
+  const row = chrono[gi]
+  return row?.playerName ?? row?.player ?? null
 }
 
 function getKeyStats(p, type) {
@@ -114,7 +121,19 @@ export default function AuctionPanel() {
     confirmSale,
     teams, resetAuction,
     getNoteForPlayer,
-  } = useAuctionStore()
+  } = useAuctionStore(useShallow((s) => ({
+    batters: s.batters,
+    sp: s.sp,
+    rp: s.rp,
+    sold: s.sold,
+    nominatedPlayer: s.nominatedPlayer,
+    setNominatedPlayer: s.setNominatedPlayer,
+    auctionLog: s.auctionLog,
+    confirmSale: s.confirmSale,
+    teams: s.teams,
+    resetAuction: s.resetAuction,
+    getNoteForPlayer: s.getNoteForPlayer,
+  })))
 
   const { apiKey } = useApiKeyStore()
 

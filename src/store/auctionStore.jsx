@@ -434,6 +434,23 @@ function backfillNominatedBy(log, teamsList) {
   }
 }
 
+/** Newest-first log → chronological pickIndex 0…n-1 (fixes missing/string indices for UI + lookups). */
+function normalizePickIndices(log) {
+  if (!Array.isArray(log) || log.length === 0) return
+  const n = log.length
+  for (let i = 0; i < n; i++) {
+    const entry = log[i]
+    if (entry == null || typeof entry !== 'object') continue
+    const inferred = n - 1 - i
+    const raw = entry.pickIndex
+    if (raw == null || !Number.isFinite(Number(raw))) {
+      entry.pickIndex = inferred
+    } else {
+      entry.pickIndex = Number(raw)
+    }
+  }
+}
+
 function saveToStorage(sold, teams, auctionLog, targetAvoid) {
   try {
     localStorage.setItem(LS_KEY, JSON.stringify({
@@ -461,6 +478,7 @@ function loadFromStorage() {
       return null
     }
     backfillNominatedBy(log, SNAKE_ORDER_ACTIVE)
+    normalizePickIndices(log)
     return {
       ...parsed,
       auctionLog: log,
@@ -774,6 +792,7 @@ export const useAuctionStore = create((set, get) => ({
       return
     }
     backfillNominatedBy(log, SNAKE_ORDER_ACTIVE)
+    normalizePickIndices(log)
     const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log }, get().riskAdj)
     const ta = snapshot.targetAvoid || {}
     saveToStorage(state.sold, state.teams, state.auctionLog, ta)

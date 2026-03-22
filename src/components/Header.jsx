@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowDown,
@@ -28,7 +29,17 @@ import {
 export default function Header({ onLeagueClick }) {
   const [showAuctionLog, setShowAuctionLog] = useState(false)
   const [showScoring, setShowScoring] = useState(false)
-  const { teams, sold, fryLens, toggleFryLens, riskAdj, toggleRiskAdj, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore()
+  const { teams, sold, fryLens, toggleFryLens, riskAdj, toggleRiskAdj, auctionLog, undoLastSale, restoreFromSnapshot } = useAuctionStore(useShallow((s) => ({
+    teams: s.teams,
+    sold: s.sold,
+    fryLens: s.fryLens,
+    toggleFryLens: s.toggleFryLens,
+    riskAdj: s.riskAdj,
+    toggleRiskAdj: s.toggleRiskAdj,
+    auctionLog: s.auctionLog,
+    undoLastSale: s.undoLastSale,
+    restoreFromSnapshot: s.restoreFromSnapshot,
+  })))
   const fry = teams[MY_TEAM_ABBR] || {}
   const totalPot = Object.values(teams).reduce((s, t) => s + t.budget_current, 0)
   const soldCount = Object.keys(sold).length

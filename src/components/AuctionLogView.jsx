@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function AuctionLogView({ onClose }) {
-  const { auctionLog } = useAuctionStore()
+  const auctionLog = useAuctionStore((s) => s.auctionLog)
   const chronological = [...auctionLog].reverse()
 
   const bargains = auctionLog.filter(e => (e.est_value ?? 0) > 0 && e.price < e.est_value)

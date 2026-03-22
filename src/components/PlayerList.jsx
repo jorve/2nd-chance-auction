@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
+import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowDown,
@@ -125,7 +126,26 @@ export default function PlayerList() {
     teams,
     toggleTargetAvoid,
     getTargetAvoid,
-  } = useAuctionStore()
+  } = useAuctionStore(useShallow((s) => ({
+    batters: s.batters,
+    sp: s.sp,
+    rp: s.rp,
+    rankingsTab: s.rankingsTab,
+    setRankingsTab: s.setRankingsTab,
+    projSystem: s.projSystem,
+    setProjSystem: s.setProjSystem,
+    fryLens: s.fryLens,
+    searchQuery: s.searchQuery,
+    setSearch: s.setSearch,
+    tierFilter: s.tierFilter,
+    toggleTier: s.toggleTier,
+    sold: s.sold,
+    setNominatedPlayer: s.setNominatedPlayer,
+    auctionLog: s.auctionLog,
+    teams: s.teams,
+    toggleTargetAvoid: s.toggleTargetAvoid,
+    getTargetAvoid: s.getTargetAvoid,
+  })))
 
   const [sortCol, setSortCol]               = useState('adj_value')
   const [sortDir, setSortDir]               = useState(1)
