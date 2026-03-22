@@ -28,10 +28,18 @@ import {
   MY_TEAM_ABBR,
 } from '../store/auctionStore.jsx'
 import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
-import { getRoundBoard, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
+import { getRoundBoard, getFirstLivePickIndexForRound, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
 
 function getType(p) {
   return getPlayerType(p)
+}
+
+/** Resolve player name for global pick index `g` (newest-first log; optional `pickIndex` on entries). */
+function playerNameForGlobalPickIndex(auctionLog, g) {
+  const hit = auctionLog.find((e) => e.pickIndex === g)
+  if (hit?.playerName) return hit.playerName
+  const chrono = [...auctionLog].reverse()
+  return chrono[g]?.playerName ?? null
 }
 
 function getKeyStats(p, type) {
@@ -124,9 +132,14 @@ export default function AuctionPanel() {
   const pickIndex = auctionLog.length
   const draftMeta = getSnakeDraftMeta(pickIndex, SNAKE_PICK_ORDER)
   const onClock = draftMeta.onClock
+  const keeperRoundsByAbbr = useMemo(() => getKeeperRoundsByAbbr(), [])
   const roundBoard = useMemo(() => {
-    return getRoundBoard(draftMeta.round, SNAKE_PICK_ORDER, getKeeperRoundsByAbbr())
-  }, [draftMeta.round])
+    return getRoundBoard(draftMeta.round, SNAKE_PICK_ORDER, keeperRoundsByAbbr)
+  }, [draftMeta.round, keeperRoundsByAbbr])
+  const roundStartPickIndex = useMemo(
+    () => getFirstLivePickIndexForRound(draftMeta.round, SNAKE_PICK_ORDER, keeperRoundsByAbbr),
+    [draftMeta.round, keeperRoundsByAbbr],
+  )
   const starterCounts = onClock ? countTeamPicksByType(sold, onClock) : { bat: 0, sp: 0, rp: 0 }
   const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
   const draftCheck =
@@ -299,8 +312,47 @@ export default function AuctionPanel() {
           Round {draftMeta.round} · snake order (slots 1–{SNAKE_PICK_ORDER.length})
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-          {roundBoard.map((row) => {
+          {roundBoard.map((row, rowIdx) => {
             const onClockRow = row.team === onClock
+            const liveSlotsBefore = roundBoard.slice(0, rowIdx).filter((r) => r.hasPick).length
+            let rightContent
+            if (!row.hasPick) {
+              rightContent = (
+                <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 600 }}>
+                  {row.keeperPlayer || 'Keeper'}
+                </span>
+              )
+            } else if (roundStartPickIndex < 0) {
+              rightContent = <span style={{ color: 'var(--text-dim)', fontSize: 12 }}>—</span>
+            } else {
+              const g = roundStartPickIndex + liveSlotsBefore
+              if (g < pickIndex) {
+                const name = playerNameForGlobalPickIndex(auctionLog, g)
+                rightContent = (
+                  <span
+                    title={name || undefined}
+                    style={{
+                      color: 'var(--text)',
+                      fontSize: 12,
+                      fontWeight: 600,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap',
+                      display: 'inline-block',
+                      maxWidth: 'min(220px, 42vw)',
+                    }}
+                  >
+                    {name || '—'}
+                  </span>
+                )
+              } else if (g === pickIndex) {
+                rightContent = (
+                  <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 600 }}>Live Pick</span>
+                )
+              } else {
+                rightContent = <span style={{ color: 'var(--text-dim)', fontSize: 12 }}>—</span>
+              }
+            }
             return (
               <div
                 key={`slot-${row.slot}-${row.team}`}
@@ -335,13 +387,7 @@ export default function AuctionPanel() {
                   {getSnakeTeamName(row.team)}
                 </span>
                 <span style={{ marginLeft: 'auto', textAlign: 'right', minWidth: 0, flex: '1 1 140px' }}>
-                  {row.hasPick ? (
-                    <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 600 }}>Live pick</span>
-                  ) : (
-                    <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 600 }}>
-                      {row.keeperPlayer || 'Keeper'}
-                    </span>
-                  )}
+                  {rightContent}
                 </span>
               </div>
             )

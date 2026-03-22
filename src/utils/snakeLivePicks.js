@@ -84,6 +84,23 @@ export function findKeeperPlayerForRound(team, roundR, keeperRoundsByTeam) {
  * One row per snake slot in this round (odd: 0→n-1, even: reverse).
  * hasPick false = that team's pick is consumed by a keeper from last year's round `roundR`.
  */
+/**
+ * Global live-pick index (0-based, same as `getNthLivePick` / `auctionLog.length` clock) of the
+ * first pick in snake round `roundR`. Returns -1 if that round has no live picks or draft is exhausted.
+ */
+export function getFirstLivePickIndexForRound(roundR, teamOrder, keeperRoundsByTeam = {}) {
+  if (roundR < 1) return -1
+  let idx = 0
+  while (idx < 500000) {
+    const e = getNthLivePick(idx, teamOrder, keeperRoundsByTeam)
+    if (!e.team) return -1
+    if (e.round === roundR) return idx
+    if (e.round > roundR) return -1
+    idx++
+  }
+  return -1
+}
+
 export function getRoundBoard(roundR, teamOrder, keeperRoundsByTeam) {
   const n = teamOrder.length
   const rows = []
