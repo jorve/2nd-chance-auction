@@ -581,6 +581,9 @@ export const useAuctionStore = create((set, get) => ({
   nominatedPlayer: null,
   bidTeam: getSnakePickerTeam((_init?.auctionLog ?? []).length, SNAKE_ORDER_ACTIVE),
 
+  /** Bumps on confirm / undo / reset / import — subscribe for reliable React re-renders after picks. */
+  draftRevision: 0,
+
   // ── MANUAL NOTES ──────────────────────────────────────────────────────────
   fetchManualNotes: async () => {
     try {
@@ -734,6 +737,7 @@ export const useAuctionStore = create((set, get) => ({
       rp: newRP,
       nominatedPlayer: null,
       bidTeam: getSnakePickerTeam(pickIndex + 1, SNAKE_ORDER_ACTIVE),
+      draftRevision: get().draftRevision + 1,
     })
   },
 
@@ -765,6 +769,7 @@ export const useAuctionStore = create((set, get) => ({
       sp: newSP,
       rp: newRP,
       bidTeam: getSnakePickerTeam(newLog.length, SNAKE_ORDER_ACTIVE),
+      draftRevision: get().draftRevision + 1,
     })
   },
 
@@ -781,6 +786,7 @@ export const useAuctionStore = create((set, get) => ({
       rp:      recalc.rp,
       nominatedPlayer: null,
       bidTeam: getSnakePickerTeam(0, SNAKE_ORDER_ACTIVE),
+      draftRevision: get().draftRevision + 1,
     })
   },
 
@@ -801,6 +807,7 @@ export const useAuctionStore = create((set, get) => ({
       nominatedPlayer: null,
       bidTeam: getSnakePickerTeam(state.auctionLog.length, SNAKE_ORDER_ACTIVE),
       targetAvoid: ta,
+      draftRevision: get().draftRevision + 1,
     })
   },
 

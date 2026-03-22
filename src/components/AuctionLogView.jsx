@@ -1,9 +1,10 @@
 import { useAuctionStore, TEAM_COLORS, fmtPrice } from '../store/auctionStore.jsx'
+import { selectAuctionLog } from '../store/auctionSelectors.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function AuctionLogView({ onClose }) {
-  const auctionLog = useAuctionStore((s) => s.auctionLog)
+  const auctionLog = useAuctionStore(selectAuctionLog)
   const chronological = [...auctionLog].reverse()
 
   const bargains = auctionLog.filter(e => (e.est_value ?? 0) > 0 && e.price < e.est_value)

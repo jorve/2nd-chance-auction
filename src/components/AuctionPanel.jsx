@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
-import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUp,
@@ -30,6 +29,19 @@ import {
 } from '../store/auctionStore.jsx'
 import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 import { getRoundBoard, getFirstLivePickIndexForRound, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
+import {
+  selectAuctionLog,
+  selectBatters,
+  selectConfirmSale,
+  selectGetNoteForPlayer,
+  selectNominatedPlayer,
+  selectResetAuction,
+  selectRp,
+  selectSetNominatedPlayer,
+  selectSold,
+  selectSp,
+  selectTeams,
+} from '../store/auctionSelectors.js'
 
 function getType(p) {
   return getPlayerType(p)
@@ -114,26 +126,17 @@ Each bullet ≤ 25 words. Be direct and specific. Flag any uncertainty clearly.`
 
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 export default function AuctionPanel() {
-  const {
-    batters, sp, rp, sold,
-    nominatedPlayer, setNominatedPlayer,
-    auctionLog,
-    confirmSale,
-    teams, resetAuction,
-    getNoteForPlayer,
-  } = useAuctionStore(useShallow((s) => ({
-    batters: s.batters,
-    sp: s.sp,
-    rp: s.rp,
-    sold: s.sold,
-    nominatedPlayer: s.nominatedPlayer,
-    setNominatedPlayer: s.setNominatedPlayer,
-    auctionLog: s.auctionLog,
-    confirmSale: s.confirmSale,
-    teams: s.teams,
-    resetAuction: s.resetAuction,
-    getNoteForPlayer: s.getNoteForPlayer,
-  })))
+  const batters = useAuctionStore(selectBatters)
+  const sp = useAuctionStore(selectSp)
+  const rp = useAuctionStore(selectRp)
+  const sold = useAuctionStore(selectSold)
+  const nominatedPlayer = useAuctionStore(selectNominatedPlayer)
+  const setNominatedPlayer = useAuctionStore(selectSetNominatedPlayer)
+  const auctionLog = useAuctionStore(selectAuctionLog)
+  const confirmSale = useAuctionStore(selectConfirmSale)
+  const teams = useAuctionStore(selectTeams)
+  const resetAuction = useAuctionStore(selectResetAuction)
+  const getNoteForPlayer = useAuctionStore(selectGetNoteForPlayer)
 
   const { apiKey } = useApiKeyStore()
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
-import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowDown,
@@ -13,6 +12,27 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { useAuctionStore, TEAM_COLORS, MY_TEAM_ABBR, countTeamPicksByType, STARTER_SLOT_TARGETS } from '../store/auctionStore.jsx'
+import {
+  selectAuctionLog,
+  selectBatters,
+  selectDraftRevision,
+  selectFryLens,
+  selectGetTargetAvoid,
+  selectProjSystem,
+  selectRankingsTab,
+  selectRp,
+  selectSearchQuery,
+  selectSetNominatedPlayer,
+  selectSetProjSystem,
+  selectSetRankingsTab,
+  selectSetSearch,
+  selectSold,
+  selectSp,
+  selectTeams,
+  selectTierFilter,
+  selectToggleTargetAvoid,
+  selectToggleTier,
+} from '../store/auctionSelectors.js'
 import PlayerCard from './PlayerCard.jsx'
 import { getFrySignal } from '../utils/frySignal.js'
 import { isBattersPosFilterUseful } from '../utils/hitterSlotting.js'
@@ -114,38 +134,25 @@ function computeZScores(unsoldPlayers, statCols) {
 }
 
 export default function PlayerList() {
-  const {
-    batters, sp, rp,
-    rankingsTab, setRankingsTab,
-    projSystem, setProjSystem,
-    fryLens,
-    searchQuery, setSearch,
-    tierFilter, toggleTier,
-    sold, setNominatedPlayer,
-    auctionLog,
-    teams,
-    toggleTargetAvoid,
-    getTargetAvoid,
-  } = useAuctionStore(useShallow((s) => ({
-    batters: s.batters,
-    sp: s.sp,
-    rp: s.rp,
-    rankingsTab: s.rankingsTab,
-    setRankingsTab: s.setRankingsTab,
-    projSystem: s.projSystem,
-    setProjSystem: s.setProjSystem,
-    fryLens: s.fryLens,
-    searchQuery: s.searchQuery,
-    setSearch: s.setSearch,
-    tierFilter: s.tierFilter,
-    toggleTier: s.toggleTier,
-    sold: s.sold,
-    setNominatedPlayer: s.setNominatedPlayer,
-    auctionLog: s.auctionLog,
-    teams: s.teams,
-    toggleTargetAvoid: s.toggleTargetAvoid,
-    getTargetAvoid: s.getTargetAvoid,
-  })))
+  const draftRevision = useAuctionStore(selectDraftRevision)
+  const batters = useAuctionStore(selectBatters)
+  const sp = useAuctionStore(selectSp)
+  const rp = useAuctionStore(selectRp)
+  const rankingsTab = useAuctionStore(selectRankingsTab)
+  const setRankingsTab = useAuctionStore(selectSetRankingsTab)
+  const projSystem = useAuctionStore(selectProjSystem)
+  const setProjSystem = useAuctionStore(selectSetProjSystem)
+  const fryLens = useAuctionStore(selectFryLens)
+  const searchQuery = useAuctionStore(selectSearchQuery)
+  const setSearch = useAuctionStore(selectSetSearch)
+  const tierFilter = useAuctionStore(selectTierFilter)
+  const toggleTier = useAuctionStore(selectToggleTier)
+  const sold = useAuctionStore(selectSold)
+  const setNominatedPlayer = useAuctionStore(selectSetNominatedPlayer)
+  const auctionLog = useAuctionStore(selectAuctionLog)
+  const teams = useAuctionStore(selectTeams)
+  const toggleTargetAvoid = useAuctionStore(selectToggleTargetAvoid)
+  const getTargetAvoid = useAuctionStore(selectGetTargetAvoid)
 
   const [sortCol, setSortCol]               = useState('adj_value')
   const [sortDir, setSortDir]               = useState(1)
@@ -201,7 +208,7 @@ export default function PlayerList() {
   // Unsold pool for z-score computation — recomputes when sold changes
   const unsold = useMemo(
     () => allForTab.filter(p => !sold[p.name]),
-    [allForTab, sold]
+    [allForTab, sold, draftRevision]
   )
 
   /** Hide position chips for MY team when no unsold player could still fill that starter path */

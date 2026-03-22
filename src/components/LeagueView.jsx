@@ -1,21 +1,26 @@
 import { useMemo } from 'react'
-import { useShallow } from 'zustand/react/shallow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 import { useAuctionStore, TEAM_COLORS, MY_TEAM_ABBR } from '../store/auctionStore.jsx'
+import {
+  selectAuctionLog,
+  selectBatters,
+  selectRp,
+  selectSold,
+  selectSp,
+  selectTeams,
+} from '../store/auctionSelectors.js'
 import { USE_CUSTOM_LEAGUE, getSnakeOwner } from '../config/snakeDraftOrder.js'
 import { LDB_DATA } from '../data/ldb_data.js'
 import { norm } from '../utils/norm.js'
 
 export default function LeagueView() {
-  const { teams, sold, auctionLog, batters, sp, rp } = useAuctionStore(useShallow((s) => ({
-    teams: s.teams,
-    sold: s.sold,
-    auctionLog: s.auctionLog,
-    batters: s.batters,
-    sp: s.sp,
-    rp: s.rp,
-  })))
+  const teams = useAuctionStore(selectTeams)
+  const sold = useAuctionStore(selectSold)
+  const auctionLog = useAuctionStore(selectAuctionLog)
+  const batters = useAuctionStore(selectBatters)
+  const sp = useAuctionStore(selectSp)
+  const rp = useAuctionStore(selectRp)
 
   // Sort teams by remaining budget descending
   const teamList = Object.values(teams).sort((a, b) => b.budget_current - a.budget_current)

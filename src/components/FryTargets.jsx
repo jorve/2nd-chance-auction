@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react'
-import { useShallow } from 'zustand/react/shallow'
 import {
   useAuctionStore,
   FRY_NEEDS,
@@ -8,6 +7,15 @@ import {
   countTeamPicksByType,
   STARTER_SLOT_TARGETS,
 } from '../store/auctionStore.jsx'
+import {
+  selectAuctionLog,
+  selectBatters,
+  selectRp,
+  selectSetNominatedPlayer,
+  selectSold,
+  selectSp,
+  selectTeams,
+} from '../store/auctionSelectors.js'
 import PlayerCard from './PlayerCard.jsx'
 import { getFrySignal, getPlayerType } from '../utils/frySignal.js'
 
@@ -19,15 +27,13 @@ function adjValueNum(p) {
 }
 
 export default function FryTargets() {
-  const { batters, sp, rp, sold, teams, setNominatedPlayer, auctionLog } = useAuctionStore(useShallow((s) => ({
-    batters: s.batters,
-    sp: s.sp,
-    rp: s.rp,
-    sold: s.sold,
-    teams: s.teams,
-    setNominatedPlayer: s.setNominatedPlayer,
-    auctionLog: s.auctionLog,
-  })))
+  const batters = useAuctionStore(selectBatters)
+  const sp = useAuctionStore(selectSp)
+  const rp = useAuctionStore(selectRp)
+  const sold = useAuctionStore(selectSold)
+  const teams = useAuctionStore(selectTeams)
+  const setNominatedPlayer = useAuctionStore(selectSetNominatedPlayer)
+  const auctionLog = useAuctionStore(selectAuctionLog)
   const fry = teams[MY_TEAM_ABBR] || {}
   const [selectedPlayer, setSelectedPlayer] = useState(null)
 
