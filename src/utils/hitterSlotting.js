@@ -100,11 +100,12 @@ function slotAvailable(state, slot) {
 
 /**
  * Assign one hitter to the first open slot in try-order. Returns new state + slot, or null.
+ *
+ * Always iterate the full 13-slot order. DH-only hitters skip 1B via `canFillHitterSlot` (do not
+ * `.filter` 1B out of the array — that removed one pass and could block a legal 13th hitter).
  */
 export function assignHitterToSlot(rawPositions, state) {
-  const tryOrder = isDHOnly(rawPositions)
-    ? HITTER_SLOT_TRY_ORDER.filter((x) => x !== '1B')
-    : HITTER_SLOT_TRY_ORDER
+  const tryOrder = HITTER_SLOT_TRY_ORDER
 
   const next = { ...state }
   for (const slot of tryOrder) {
