@@ -365,7 +365,7 @@ export function countTeamPicksByType(sold, team) {
  * but you cannot add hitter #14 until all 9 pitcher starters are filled, and you cannot add bench pitchers
  * until 13 hitters are filled.
  *
- * For hitters, optional `ctx` enforces active lineup slots: primary positions → MI/CI → U (DH never uses 1B).
+ * For hitters, optional `ctx` enforces active lineup slots: primary positions → MI/CI → DH (any hitter; DH-only never uses 1B).
  */
 export function canDraftPlayerForTeam(sold, team, player, targets = STARTER_SLOT_TARGETS, ctx = null) {
   const posType = player.gs !== undefined ? 'sp' : player.pa !== undefined ? 'batter' : 'rp'
@@ -405,7 +405,7 @@ export function canDraftPlayerForTeam(sold, team, player, targets = STARTER_SLOT
         return {
           ok: false,
           message:
-            'No open active hitter slot for this player’s eligibility (primaries → MI/CI → U; DH does not use 1B).',
+            'No open active hitter slot for this player’s eligibility (primaries → MI/CI → DH flex; DH-only does not use 1B).',
         }
       }
     }
