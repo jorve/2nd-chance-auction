@@ -675,7 +675,8 @@ export const useAuctionStore = create((set, get) => ({
   getMaxBidForTeam: (team) => reserveAwareMaxBid(get().teams[team]),
 
   /** Snake draft: records instructive pool price (adj value), on-clock team from pick order. */
-  confirmSale: () => {
+  confirmSale: (opts) => {
+    const force = opts?.force === true
     const { nominatedPlayer, sold, auctionLog, teams, targetAvoid } = get()
     if (!nominatedPlayer) return
     const pickIndex = auctionLog.length
@@ -685,7 +686,7 @@ export const useAuctionStore = create((set, get) => ({
       auctionLog,
       battersByName,
     })
-    if (!draftCheck.ok) return
+    if (!force && !draftCheck.ok) return
 
     const roundHalf = v => Math.round(v * 2) / 2
     const price = Math.max(0.5, roundHalf(parseFloat(nominatedPlayer.adj_value ?? nominatedPlayer.est_value ?? 0.5)))
@@ -718,6 +719,7 @@ export const useAuctionStore = create((set, get) => ({
         oopsy_est_value: nominatedPlayer.oopsy_est_value,
         rank: nominatedPlayer.rank,
         ts: Date.now(),
+        ...(force && !draftCheck.ok ? { forced_override: true } : {}),
       },
       ...auctionLog,
     ]

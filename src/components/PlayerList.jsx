@@ -183,20 +183,21 @@ export default function PlayerList() {
   const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
 
   /** PICK = nominate + confirm in one step so the snake board and pool update immediately. */
-  function pickPlayerForDraft(p) {
+  function pickPlayerForDraft(p, opts = {}) {
+    const forceBypass = opts.force === true
     const pickIndex = auctionLog.length
     const onClock = getSnakePickerTeam(pickIndex, SNAKE_PICK_ORDER)
     const draftCheck = canDraftPlayerForTeam(sold, onClock, p, STARTER_SLOT_TARGETS, {
       auctionLog,
       battersByName,
     })
-    if (!draftCheck.ok) {
+    if (!draftCheck.ok && !forceBypass) {
       toast(draftCheck.message || 'Cannot make this pick with current starter rules.', 'error')
       return
     }
     const beforeLen = auctionLog.length
     setNominatedPlayer(p)
-    confirmSale()
+    confirmSale({ force: forceBypass && !draftCheck.ok })
     const afterLen = useAuctionStore.getState().auctionLog.length
     if (afterLen <= beforeLen) {
       toast('Pick did not record — try again from the draft panel.', 'error')
@@ -204,7 +205,8 @@ export default function PlayerList() {
     }
     const roundHalf = (v) => Math.round(v * 2) / 2
     const price = Math.max(0.5, roundHalf(parseFloat(p.adj_value ?? p.est_value ?? 0.5)))
-    toast(`${p.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(price)} (pool)`)
+    const forced = forceBypass && !draftCheck.ok
+    toast(`${p.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(price)} (pool)${forced ? ' — rules overridden' : ''}`)
   }
 
   // Reset sort + filters when tab changes
@@ -841,9 +843,10 @@ export default function PlayerList() {
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation()
-                          pickPlayerForDraft(p)
+                          pickPlayerForDraft(p, { force: e.shiftKey })
                         }}
-                        aria-label={`Draft ${p.name} for the current snake pick`}
+                        title="Shift+click PICK to override starter / slot rules"
+                        aria-label={`Draft ${p.name} for the current snake pick. Shift+click to force if rules block the pick.`}
                         style={{
                           background: 'var(--surface2)', border: '1px solid var(--border2)',
                           borderRadius: 3, padding: '3px 8px',

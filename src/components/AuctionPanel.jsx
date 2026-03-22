@@ -170,6 +170,7 @@ export default function AuctionPanel() {
       : { ok: false }
   const instructivePrice = player ? (parseFloat(player.adj_value ?? player.est_value ?? 0.5) || 0.5) : 0
   const canConfirm = Boolean(player && draftCheck.ok)
+  const canForcePick = Boolean(player && onClock && !draftCheck.ok)
 
   const allPlayers = [...batters, ...sp, ...rp].filter(p => !sold[p.name])
   const searchResults = search.trim().length >= 1
@@ -596,10 +597,39 @@ export default function AuctionPanel() {
               <>
                 <FontAwesomeIcon icon={faSquareCheck} /> CONFIRM — {getSnakeClockLabel(onClock)} · {player.name} @ {fmtPrice(instructivePrice)}
               </>
+            ) : draftCheck.message ? (
+              'PICK BLOCKED — SEE MESSAGE ABOVE'
             ) : (
               'CANNOT BENCH YET — FILL STARTER SLOTS FIRST'
             )}
           </button>
+
+          {canForcePick && (
+            <button
+              type="button"
+              onClick={() => {
+                confirmSale({ force: true })
+                toast(`${player.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(instructivePrice)} (pool) — rules overridden`)
+              }}
+              title="Adds the player anyway; use when eligibility checks are wrong or you are fixing the board manually."
+              style={{
+                width: '100%',
+                marginTop: 8,
+                padding: '9px 10px',
+                background: 'rgba(251,191,36,.12)',
+                border: '1px solid rgba(251,191,36,.45)',
+                borderRadius: 6,
+                cursor: 'pointer',
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 10,
+                color: 'var(--orange)',
+                textAlign: 'left',
+                lineHeight: 1.35,
+              }}
+            >
+              <FontAwesomeIcon icon={faHammer} /> Force pick anyway — override starter / slot rules
+            </button>
+          )}
         </div>
       )}
 
