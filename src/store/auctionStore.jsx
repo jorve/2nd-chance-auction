@@ -8,7 +8,11 @@ import {
   TEAM_COLORS_BY_ABBR,
 } from '../config/snakeDraftOrder.js'
 import { norm } from '../utils/norm.js'
-import { getNthLivePick, getKeeperRoundsByAbbr } from '../utils/snakeLivePicks.js'
+import {
+  getNthLivePick,
+  getKeeperRoundsByAbbr,
+  buildLivePickTeamSequence,
+} from '../utils/snakeLivePicks.js'
 import { canStarterHitterFitTeam } from '../utils/hitterSlotting.js'
 
 const LDB_TEAMS_SORTED = Object.keys(LDB_DATA.teams).sort()
@@ -418,6 +422,17 @@ export function canDraftPlayerForTeam(sold, team, player, targets = STARTER_SLOT
 
 // ── PERSISTENCE ────────────────────────────────────────────────────────────
 const LS_KEY = 'ldb_auction_2026'
+/** Above this, backfill was O(n²) and could freeze the tab — treat as corrupt. */
+const MAX_AUCTION_LOG_ENTRIES = 50000
+
+function backfillNominatedBy(log, teamsList) {
+  if (!Array.isArray(log) || !teamsList?.length) return
+  const kr = getKeeperRoundsByAbbr()
+  const seq = buildLivePickTeamSequence(log.length, teamsList, kr)
+  for (let i = 0; i < log.length; i++) {
+    if (!log[i].nominatedBy) log[i].nominatedBy = seq[i] ?? ''
+  }
+}
 
 function saveToStorage(sold, teams, auctionLog, targetAvoid) {
   try {
@@ -441,12 +456,11 @@ function loadFromStorage() {
     const parsed = JSON.parse(raw)
     if (parsed?.v !== 1 || !parsed.sold || !parsed.teams) return null
     const log = parsed.auctionLog || []
-    const teamsList = SNAKE_ORDER_ACTIVE
-    for (let i = 0; i < log.length; i++) {
-      if (!log[i].nominatedBy && teamsList.length) {
-        log[i].nominatedBy = getSnakePickerTeam(i, teamsList)
-      }
+    if (log.length > MAX_AUCTION_LOG_ENTRIES) {
+      console.warn('LDB: auction log too long; clearing saved session')
+      return null
     }
+    backfillNominatedBy(log, SNAKE_ORDER_ACTIVE)
     return {
       ...parsed,
       auctionLog: log,
@@ -755,10 +769,11 @@ export const useAuctionStore = create((set, get) => ({
   // Load a snapshot from an imported file and rebuild state
   restoreFromSnapshot: (snapshot) => {
     const log = snapshot.auctionLog || []
-    const teamsList = SNAKE_ORDER_ACTIVE
-    for (let i = 0; i < log.length; i++) {
-      if (!log[i].nominatedBy && teamsList.length) log[i].nominatedBy = getSnakePickerTeam(i, teamsList)
+    if (log.length > MAX_AUCTION_LOG_ENTRIES) {
+      console.warn('LDB: import auction log too long; refusing restore')
+      return
     }
+    backfillNominatedBy(log, SNAKE_ORDER_ACTIVE)
     const state = buildStateFromSnapshot({ ...snapshot, auctionLog: log }, get().riskAdj)
     const ta = snapshot.targetAvoid || {}
     saveToStorage(state.sold, state.teams, state.auctionLog, ta)

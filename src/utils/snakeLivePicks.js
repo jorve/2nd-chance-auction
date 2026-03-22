@@ -49,6 +49,26 @@ function keeperRoundSetForTeam(team, keeperRoundsByTeam) {
   return new Set(getKeeperRoundListForTeam(team, keeperRoundsByTeam))
 }
 
+/**
+ * On-clock franchise for each live snake pick index 0 … pickCount-1 (same order as getNthLivePick).
+ * One pass — safe to call with large pickCount (e.g. backfilling auctionLog).
+ */
+export function buildLivePickTeamSequence(pickCount, teamOrder, keeperRoundsByTeam = {}) {
+  const n = teamOrder.length
+  if (!n || pickCount <= 0) return []
+  const seq = []
+  for (let R = 1; R < 2500 && seq.length < pickCount; R++) {
+    for (let slot = 0; slot < n; slot++) {
+      const team = R % 2 === 1 ? teamOrder[slot] : teamOrder[n - 1 - slot]
+      const kset = keeperRoundSetForTeam(team, keeperRoundsByTeam)
+      if (kset.has(R)) continue
+      seq.push(team)
+      if (seq.length >= pickCount) break
+    }
+  }
+  return seq
+}
+
 /** Keeper player name for this team+round, if recorded in JSON. */
 export function findKeeperPlayerForRound(team, roundR, keeperRoundsByTeam) {
   const raw = keeperRoundsByTeam[team]
