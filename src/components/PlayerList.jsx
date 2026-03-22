@@ -34,6 +34,15 @@ const SP_COLS = [
   { key: 'sv', label: 'SV', fmt: 0 },
   { key: 'w', label: 'W', fmt: 0 },
   { key: 'whip', label: 'WHIP', fmt: 3, inv: true },
+  // The Athletic (2026_Athletic_SP_Rankings) — display-only, no z-score
+  { key: 'athl_rank', label: 'ATH#', fmt: 0, noZ: true },
+  { key: 'stuff_plus', label: 'STF+', fmt: 0, noZ: true },
+  { key: 'location_plus', label: 'LOC+', fmt: 0, noZ: true },
+  { key: 'pitching_plus', label: 'PTH+', fmt: 0, noZ: true },
+  { key: 'athl_health', label: 'H%', fmt: 0, noZ: true },
+  { key: 'athl_ip', label: 'ATH IP', fmt: 0, noZ: true },
+  { key: 'pp_era', label: 'ppERA', fmt: 2, noZ: true },
+  { key: 'pp_k_pct', label: 'ppK%', fmt: 1, noZ: true },
 ]
 const RP_COLS = [
   { key: 'ip', label: 'IP', fmt: 0, noZ: true },
@@ -49,6 +58,9 @@ const VIRT_MIN_CHUNK = 180
 const VIRT_MAX_CHUNK = 450
 const EST_ROW_HEIGHT = 38
 const VIRT_PREFETCH_VIEWPORTS = 1.25
+
+// Table sort: numeric columns where a smaller raw value is better (rank, ratios)
+const LOWER_IS_BETTER_SORT = new Set(['rank', 'athl_rank', 'era', 'whip', 'pp_era'])
 
 function fmt(v, dec = 0) {
   if (v == null || v === '') return '—'
@@ -253,7 +265,9 @@ export default function PlayerList() {
     if (typeof bv === 'string' || typeof av === 'string') {
       return sortDir * String(av).localeCompare(String(bv))
     }
-    return sortDir * ((bv ?? 0) - (av ?? 0))
+    const delta = (bv ?? 0) - (av ?? 0)
+    const invert = LOWER_IS_BETTER_SORT.has(sortCol) ? -1 : 1
+    return sortDir * invert * delta
   }), [filtered, sortCol, sortDir])
 
   function getVirtualConfig() {
@@ -568,7 +582,7 @@ export default function PlayerList() {
 
       {/* ── Table ── */}
       <div ref={scrollRef} style={{ flex: 1, overflow: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 1020 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'auto', minWidth: 1580 }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             <tr>
               <TH label="#"      col="rank"             left  w={36} />
@@ -949,11 +963,29 @@ function AthlStat({ val, colKey, fmt: fmtDec }) {
   let color = 'var(--text-dim)'
   const n = parseFloat(val)
 
-  if (colKey === 'stuff_plus' || colKey === 'pitching_plus' || colKey === 'location_plus') {
+  if (colKey === 'athl_rank') {
+    if (n <= 15)       color = '#4ade80'
+    else if (n <= 30)  color = '#86efac'
+    else if (n <= 60)  color = 'var(--text-dim)'
+    else if (n <= 90)  color = '#fca5a5'
+    else                color = '#f87171'
+  } else if (colKey === 'stuff_plus' || colKey === 'pitching_plus' || colKey === 'location_plus') {
     if (n >= 115)      color = '#4ade80'
     else if (n >= 105) color = '#86efac'
     else if (n >= 95)  color = 'var(--text-dim)'
     else if (n >= 85)  color = '#fca5a5'
+    else               color = '#f87171'
+  } else if (colKey === 'athl_ip') {
+    if (n >= 180)      color = '#4ade80'
+    else if (n >= 170) color = '#86efac'
+    else if (n >= 150) color = 'var(--text-dim)'
+    else if (n >= 130) color = '#fca5a5'
+    else               color = '#f87171'
+  } else if (colKey === 'pp_k_pct') {
+    if (n >= 28)       color = '#4ade80'
+    else if (n >= 25)  color = '#86efac'
+    else if (n >= 22)  color = 'var(--text-dim)'
+    else if (n >= 19)  color = '#fca5a5'
     else               color = '#f87171'
   } else if (colKey === 'pp_era') {
     if (n <= 3.00)      color = '#4ade80'
@@ -969,13 +1001,13 @@ function AthlStat({ val, colKey, fmt: fmtDec }) {
   }
 
   const display = fmtDec ? n.toFixed(fmtDec) : Math.round(n)
-  const suffix  = colKey === 'athl_health' ? '%' : ''
+  const suffix  = colKey === 'athl_health' || colKey === 'pp_k_pct' ? '%' : ''
 
   return (
     <span style={{
       fontFamily: "'DM Mono', monospace",
       fontSize: 11, color,
-      fontWeight: n >= 110 || (colKey === 'athl_health' && n < 75) ? 600 : 400,
+      fontWeight: n >= 110 || (colKey === 'athl_health' && n < 75) || (colKey === 'athl_rank' && n <= 20) ? 600 : 400,
     }}>
       {display}{suffix}
     </span>

@@ -10,6 +10,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function () {
+        if (location.protocol === 'file:') {
+          var el = document.getElementById('root')
+          if (el) {
+            el.innerHTML =
+              '<div style="padding:28px;max-width:42rem;font:15px/1.5 system-ui,-apple-system,sans-serif;color:#e2e8f4;background:#07090e;min-height:100vh">' +
+              '<p style="margin:0 0 12px;color:#f87171;font-weight:600">Cannot load from a file:// URL</p>' +
+              '<p style="margin:0 0 10px;color:#9ba8c4">ES modules must be served over HTTP. From the project folder run:</p>' +
+              '<p style="margin:0 0 16px;font-family:ui-monospace,monospace;color:#c8f135">npm run dev</p>' +
+              '<p style="margin:0;color:#9ba8c4">Then open the <strong>localhost</strong> URL shown in the terminal (not this HTML file).</p></div>'
+          }
+        }
+      })()
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

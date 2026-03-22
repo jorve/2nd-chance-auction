@@ -124,12 +124,8 @@ export default function AuctionPanel() {
   const pickIndex = auctionLog.length
   const draftMeta = getSnakeDraftMeta(pickIndex, SNAKE_PICK_ORDER)
   const onClock = draftMeta.onClock
-  const { roundPicks, roundSkips } = useMemo(() => {
-    const board = getRoundBoard(draftMeta.round, SNAKE_PICK_ORDER, getKeeperRoundsByAbbr())
-    return {
-      roundPicks: board.filter((r) => r.hasPick),
-      roundSkips: board.filter((r) => !r.hasPick),
-    }
+  const roundBoard = useMemo(() => {
+    return getRoundBoard(draftMeta.round, SNAKE_PICK_ORDER, getKeeperRoundsByAbbr())
   }, [draftMeta.round])
   const starterCounts = onClock ? countTeamPicksByType(sold, onClock) : { bat: 0, sp: 0, rp: 0 }
   const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
@@ -291,65 +287,65 @@ export default function AuctionPanel() {
         )}
       </div>
 
-      {/* ── Current round: pick vs keeper (snake slot order) ── */}
+      {/* ── Current round: full snake order — keeper = kept player in that slot ── */}
       <div style={{
-        marginBottom: 12, padding: '10px 12px',
+        marginBottom: 12, padding: '12px 14px',
         background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 8,
       }}>
         <div style={{
-          fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 8,
+          fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: 1.2, color: 'var(--text-dim)', marginBottom: 10,
           textTransform: 'uppercase',
         }}>
-          Round {draftMeta.round} · who has a pick (snake order 1–{SNAKE_PICK_ORDER.length})
+          Round {draftMeta.round} · snake order (slots 1–{SNAKE_PICK_ORDER.length})
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-          <div>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--green)', marginBottom: 6, letterSpacing: 1 }}>
-              PICK ({roundPicks.length})
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-              {roundPicks.length === 0 ? (
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>—</span>
-              ) : (
-                roundPicks.map((row) => (
-                  <div
-                    key={`p-${row.slot}-${row.team}`}
-                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: "'DM Mono', monospace", fontSize: 10 }}
-                  >
-                    <span style={{ color: 'var(--text-faint)', width: 18 }}>{row.slot + 1}</span>
-                    <span style={{ color: TEAM_COLORS[row.team] || 'var(--text)', fontWeight: 600 }}>{row.team}</span>
-                    <span style={{ color: 'var(--text-dim)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {getSnakeTeamName(row.team)}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          {roundBoard.map((row) => {
+            const onClockRow = row.team === onClock
+            return (
+              <div
+                key={`slot-${row.slot}-${row.team}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  flexWrap: 'wrap',
+                  padding: '8px 10px',
+                  borderRadius: 6,
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: 12,
+                  lineHeight: 1.35,
+                  background: onClockRow ? 'rgba(200,241,53,.08)' : 'transparent',
+                  border: onClockRow ? '1px solid rgba(200,241,53,.22)' : '1px solid transparent',
+                }}
+              >
+                <span style={{ color: 'var(--text-faint)', minWidth: 22, fontSize: 12, fontWeight: 600 }}>{row.slot + 1}</span>
+                <span style={{ color: TEAM_COLORS[row.team] || 'var(--text)', fontWeight: 700, fontSize: 12, minWidth: 44 }}>
+                  {row.team}
+                </span>
+                <span
+                  style={{
+                    color: 'var(--text-dim)',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    maxWidth: 'min(200px, 38vw)',
+                    fontSize: 12,
+                  }}
+                >
+                  {getSnakeTeamName(row.team)}
+                </span>
+                <span style={{ marginLeft: 'auto', textAlign: 'right', minWidth: 0, flex: '1 1 140px' }}>
+                  {row.hasPick ? (
+                    <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 600 }}>Live pick</span>
+                  ) : (
+                    <span style={{ color: 'var(--text)', fontSize: 13, fontWeight: 600 }}>
+                      {row.keeperPlayer || 'Keeper'}
                     </span>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-          <div>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'var(--orange)', marginBottom: 6, letterSpacing: 1 }}>
-              NO PICK · KEEPER ({roundSkips.length})
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-              {roundSkips.length === 0 ? (
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>—</span>
-              ) : (
-                roundSkips.map((row) => (
-                  <div
-                    key={`k-${row.slot}-${row.team}`}
-                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: "'DM Mono', monospace", fontSize: 10, flexWrap: 'wrap' }}
-                  >
-                    <span style={{ color: 'var(--text-faint)', width: 18 }}>{row.slot + 1}</span>
-                    <span style={{ color: TEAM_COLORS[row.team] || 'var(--text)', fontWeight: 600 }}>{row.team}</span>
-                    <span style={{ color: 'var(--text-dim)' }}>{getSnakeTeamName(row.team)}</span>
-                    {row.keeperPlayer && (
-                      <span style={{ color: 'var(--text-faint)', fontSize: 9, marginLeft: 'auto' }}>· {row.keeperPlayer}</span>
-                    )}
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
+                  )}
+                </span>
+              </div>
+            )
+          })}
         </div>
       </div>
 
@@ -452,24 +448,24 @@ export default function AuctionPanel() {
             marginBottom: 12, padding: '10px 12px',
             background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 8,
           }}>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.5, color: 'var(--text-dim)', marginBottom: 6, textTransform: 'uppercase' }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: 1.2, color: 'var(--text-dim)', marginBottom: 8, textTransform: 'uppercase' }}>
               Round {draftMeta.round} · Pick {draftMeta.pickInRound} of {draftMeta.livePicksThisRound ?? SNAKE_PICK_ORDER.length}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)' }}>ON THE CLOCK</span>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>ON THE CLOCK</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
                 <span style={{
-                  fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, letterSpacing: 1,
+                  fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 1,
                   color: TEAM_COLORS[onClock] || 'var(--text)', lineHeight: 1.15,
                 }}>{getSnakeTeamName(onClock)}</span>
                 {getSnakeOwner(onClock) ? (
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: 'var(--text-dim)' }}>{getSnakeOwner(onClock)}</span>
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: 'var(--text-dim)' }}>{getSnakeOwner(onClock)}</span>
                 ) : (
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-faint)' }}>{onClock}</span>
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-faint)' }}>{onClock}</span>
                 )}
               </div>
             </div>
-            <div style={{ marginTop: 8, fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-dim)' }}>
+            <div style={{ marginTop: 8, fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-dim)' }}>
               Starters · {getSnakeTeamName(onClock)}:{' '}
               <span style={{ color: starterCounts.bat >= STARTER_SLOT_TARGETS.bat ? 'var(--green)' : 'var(--text)' }}>
                 Hit {starterCounts.bat}/{STARTER_SLOT_TARGETS.bat}

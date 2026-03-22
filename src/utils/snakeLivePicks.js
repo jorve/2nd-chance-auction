@@ -75,7 +75,7 @@ export function findKeeperPlayerForRound(team, roundR, keeperRoundsByTeam) {
   if (!Array.isArray(raw)) return null
   for (const item of raw) {
     const e = normalizeKeeperEntry(item)
-    if (e && e.round === round) return e.player
+    if (e && e.round === roundR) return e.player
   }
   return null
 }
