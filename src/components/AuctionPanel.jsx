@@ -144,6 +144,8 @@ export default function AuctionPanel() {
   const [focused, setFocused] = useState(false)
   const [showReset, setShowReset] = useState(false)
   const [showPlayerCard, setShowPlayerCard] = useState(false)
+  const [manualOffPoolName, setManualOffPoolName] = useState('')
+  const [manualOffPoolRole, setManualOffPoolRole] = useState('batter')
   const [intel, setIntel] = useState(null)            // { text, loading, error, player }
   const searchRef = useRef()
   const resetModalRef = useRef(null)
@@ -179,6 +181,33 @@ export default function AuctionPanel() {
         .slice(0, 8)
     : []
   const ambiguous = flagAmbiguous(searchResults)
+
+  function commitOffPoolManualPick() {
+    const name = manualOffPoolName.trim()
+    if (!name) {
+      toast('Enter a player name', 'error')
+      return
+    }
+    if (sold[name]) {
+      toast('That player is already on a roster', 'error')
+      return
+    }
+    const isBat = manualOffPoolRole === 'batter'
+    setNominatedPlayer({
+      name,
+      team: '—',
+      tier: 5,
+      rank: 999,
+      est_value: 0.5,
+      draft_pos_type: manualOffPoolRole,
+      manualPoolEntry: true,
+      ...(isBat ? { positions: ['DH'] } : {}),
+    })
+    setManualOffPoolName('')
+    setSearch('')
+    setFocused(false)
+    toast('Off-pool player set — confirm or force below')
+  }
 
   // Fetch AI intel when player or API key changes (cancel stale requests)
   useEffect(() => {
@@ -321,6 +350,79 @@ export default function AuctionPanel() {
             })}
           </div>
         )}
+      </div>
+
+      {/* Off-pool: typed name not in projections */}
+      <div style={{ marginBottom: 14 }}>
+        <div style={{
+          fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: 1.2, color: 'var(--text-dim)',
+          marginBottom: 6, textTransform: 'uppercase',
+        }}>
+          Not in pool
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center' }}>
+          <input
+            value={manualOffPoolName}
+            onChange={(e) => setManualOffPoolName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault()
+                commitOffPoolManualPick()
+              }
+            }}
+            placeholder="Type name if missing from search…"
+            style={{
+              flex: '1 1 160px',
+              minWidth: 140,
+              background: 'var(--surface)',
+              border: '1px solid var(--border2)',
+              borderRadius: 6,
+              padding: '8px 10px',
+              color: 'var(--text)',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: 12,
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          />
+          <select
+            value={manualOffPoolRole}
+            onChange={(e) => setManualOffPoolRole(e.target.value)}
+            style={{
+              background: 'var(--surface2)',
+              border: '1px solid var(--border2)',
+              borderRadius: 6,
+              padding: '8px 10px',
+              color: 'var(--text)',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: 11,
+              cursor: 'pointer',
+            }}
+          >
+            <option value="batter">Hitter</option>
+            <option value="sp">SP</option>
+            <option value="rp">RP</option>
+          </select>
+          <button
+            type="button"
+            onClick={() => commitOffPoolManualPick()}
+            style={{
+              background: 'var(--surface2)',
+              border: '1px solid var(--accent)',
+              borderRadius: 6,
+              padding: '8px 12px',
+              color: 'var(--accent)',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: 11,
+              cursor: 'pointer',
+            }}
+          >
+            Set pick
+          </button>
+        </div>
+        <div style={{ marginTop: 6, fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)' }}>
+          Uses $0.5M instructive value. Hitters get DH eligibility for slot checks; use Force if you need to override.
+        </div>
       </div>
 
       {/* ── Current round: full snake order — keeper = kept player in that slot ── */}

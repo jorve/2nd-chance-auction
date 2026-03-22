@@ -359,6 +359,16 @@ export function countTeamPicksByType(sold, team) {
   return { bat, sp, rp }
 }
 
+/** Draft bucket (batter | sp | rp). Off-pool manual entries set `draft_pos_type`; pool players use gs / pa. */
+export function resolveDraftPosType(player) {
+  if (!player) return 'rp'
+  const t = player.draft_pos_type
+  if (t === 'batter' || t === 'sp' || t === 'rp') return t
+  if (player.gs !== undefined) return 'sp'
+  if (player.pa !== undefined) return 'batter'
+  return 'rp'
+}
+
 /**
  * Until the starter lineup is full (13 hitters + SP + RP caps from league config), every pick must go
  * toward an unfilled starter bucket — no bench bats or bench arms. Order is free (mix hitters & pitchers),
@@ -368,7 +378,7 @@ export function countTeamPicksByType(sold, team) {
  * For hitters, optional `ctx` enforces active lineup slots: primary positions → MI/CI → DH (any hitter; DH-only never uses 1B).
  */
 export function canDraftPlayerForTeam(sold, team, player, targets = STARTER_SLOT_TARGETS, ctx = null) {
-  const posType = player.gs !== undefined ? 'sp' : player.pa !== undefined ? 'batter' : 'rp'
+  const posType = resolveDraftPosType(player)
   const { bat, sp, rp } = countTeamPicksByType(sold, team)
   const startersDone = bat >= targets.bat && sp >= targets.sp && rp >= targets.rp
   if (startersDone) return { ok: true }
@@ -691,8 +701,7 @@ export const useAuctionStore = create((set, get) => ({
     const roundHalf = v => Math.round(v * 2) / 2
     const price = Math.max(0.5, roundHalf(parseFloat(nominatedPlayer.adj_value ?? nominatedPlayer.est_value ?? 0.5)))
 
-    const posType = nominatedPlayer.gs !== undefined ? 'sp'
-      : nominatedPlayer.pa !== undefined ? 'batter' : 'rp'
+    const posType = resolveDraftPosType(nominatedPlayer)
 
     const newSold = {
       ...sold,
@@ -720,6 +729,7 @@ export const useAuctionStore = create((set, get) => ({
         rank: nominatedPlayer.rank,
         ts: Date.now(),
         ...(force && !draftCheck.ok ? { forced_override: true } : {}),
+        ...(nominatedPlayer.manualPoolEntry ? { manual_pool_entry: true } : {}),
       },
       ...auctionLog,
     ]

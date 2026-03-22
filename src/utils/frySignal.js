@@ -11,6 +11,9 @@ import { FRY_NEEDS } from '../store/auctionStore.jsx'
 
 export function getPlayerType(player) {
   if (!player) return null
+  if (player.draft_pos_type === 'batter') return 'BAT'
+  if (player.draft_pos_type === 'sp') return 'SP'
+  if (player.draft_pos_type === 'rp') return 'RP'
   if (player.pa !== undefined) return 'BAT'
   if (player.gs !== undefined) return 'SP'
   return 'RP'
