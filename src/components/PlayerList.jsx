@@ -11,10 +11,21 @@ import {
   faStar,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { useAuctionStore, TEAM_COLORS, MY_TEAM_ABBR, countTeamPicksByType, STARTER_SLOT_TARGETS } from '../store/auctionStore.jsx'
+import {
+  useAuctionStore,
+  TEAM_COLORS,
+  MY_TEAM_ABBR,
+  countTeamPicksByType,
+  STARTER_SLOT_TARGETS,
+  canDraftPlayerForTeam,
+  getSnakePickerTeam,
+  fmtPrice,
+  SNAKE_PICK_ORDER,
+} from '../store/auctionStore.jsx'
 import {
   selectAuctionLog,
   selectBatters,
+  selectConfirmSale,
   selectDraftRevision,
   selectFryLens,
   selectGetTargetAvoid,
@@ -33,6 +44,8 @@ import {
   selectToggleTargetAvoid,
   selectToggleTier,
 } from '../store/auctionSelectors.js'
+import { getSnakeClockLabel } from '../config/snakeDraftOrder.js'
+import { toast } from './Toast.jsx'
 import PlayerCard from './PlayerCard.jsx'
 import { getFrySignal } from '../utils/frySignal.js'
 import { isBattersPosFilterUseful } from '../utils/hitterSlotting.js'
@@ -149,6 +162,7 @@ export default function PlayerList() {
   const toggleTier = useAuctionStore(selectToggleTier)
   const sold = useAuctionStore(selectSold)
   const setNominatedPlayer = useAuctionStore(selectSetNominatedPlayer)
+  const confirmSale = useAuctionStore(selectConfirmSale)
   const auctionLog = useAuctionStore(selectAuctionLog)
   const teams = useAuctionStore(selectTeams)
   const toggleTargetAvoid = useAuctionStore(selectToggleTargetAvoid)
@@ -165,6 +179,33 @@ export default function PlayerList() {
   const loadMoreRef = useRef(null)
   const pendingTargetRef = useRef(0)
   const drainingRef = useRef(false)
+
+  const battersByName = useMemo(() => new Map(batters.map((b) => [b.name, b])), [batters])
+
+  /** PICK = nominate + confirm in one step so the snake board and pool update immediately. */
+  function pickPlayerForDraft(p) {
+    const pickIndex = auctionLog.length
+    const onClock = getSnakePickerTeam(pickIndex, SNAKE_PICK_ORDER)
+    const draftCheck = canDraftPlayerForTeam(sold, onClock, p, STARTER_SLOT_TARGETS, {
+      auctionLog,
+      battersByName,
+    })
+    if (!draftCheck.ok) {
+      toast(draftCheck.message || 'Cannot make this pick with current starter rules.', 'error')
+      return
+    }
+    const beforeLen = auctionLog.length
+    setNominatedPlayer(p)
+    confirmSale()
+    const afterLen = useAuctionStore.getState().auctionLog.length
+    if (afterLen <= beforeLen) {
+      toast('Pick did not record — try again from the draft panel.', 'error')
+      return
+    }
+    const roundHalf = (v) => Math.round(v * 2) / 2
+    const price = Math.max(0.5, roundHalf(parseFloat(p.adj_value ?? p.est_value ?? 0.5)))
+    toast(`${p.name} → ${getSnakeClockLabel(onClock)} @ ${fmtPrice(price)} (pool)`)
+  }
 
   // Reset sort + filters when tab changes
   useEffect(() => { setSortCol('adj_value'); setSortDir(1) }, [rankingsTab])
@@ -798,8 +839,11 @@ export default function PlayerList() {
                     <td style={{ padding: '5px 8px', textAlign: 'center' }}>
                       <button
                         type="button"
-                        onClick={() => setNominatedPlayer(p)}
-                        aria-label={`Select ${p.name} for current snake pick`}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          pickPlayerForDraft(p)
+                        }}
+                        aria-label={`Draft ${p.name} for the current snake pick`}
                         style={{
                           background: 'var(--surface2)', border: '1px solid var(--border2)',
                           borderRadius: 3, padding: '3px 8px',
