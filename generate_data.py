@@ -20,7 +20,7 @@ Required source files (set INPUT_DIR below):
   player_positions.csv  (optional — placeholder format: Name,Positions)
 """
 
-import csv, json, statistics, re, os, math
+import csv, json, statistics, re, os, math, unicodedata
 from pathlib import Path
 from datetime import date
 from difflib import SequenceMatcher
@@ -173,6 +173,9 @@ def norm(name):
     if not name or not isinstance(name, str):
         return ""
     s = name.lower().strip()
+    # Unicode fold so all Latin accents map (CSV sources vary: precomposed vs combining marks).
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
     s = s.replace("á","a").replace("é","e").replace("í","i").replace("ó","o")
     s = s.replace("ú","u").replace("ü","u").replace("ñ","n").replace("ö","o")
     # Insert space after period glued to a letter BEFORE stripping periods
@@ -1314,7 +1317,11 @@ def load_pl_sp(path: Path) -> dict:
                 "pl_note":      "",           # no notes column in SP file
                 "handedness":   row.get("R/L", ""),
             }
-            key = norm(row.get("Player", ""))
+            # PL SP CSVs may use "Player" or "Name" for the pitcher column.
+            name_raw = (row.get("Player") or row.get("Name") or "").strip()
+            key = norm(name_raw)
+            if not key:
+                continue
             index[key] = entry
     print(f"  [PL-SP] Loaded {len(index)} Pitcher List SP rankings")
     return index

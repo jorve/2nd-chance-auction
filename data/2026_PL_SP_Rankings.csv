@@ -1,430 +1,151 @@
-﻿Rank,Player,Tier,Tier Name,R/L,Team
-1,Garrett Crochet,1,STUD,LHP,BOS
-2,Paul Skenes,1,STUD,RHP,PIT
-3,Tarik Skubal,1,STUD,LHP,DET
-4,Bryan Woo,2,AGA 1,RHP,SEA
-5,Yoshinobu Yamamoto,2,AGA 1,RHP,LAD
-6,Max Fried,2,AGA 1,LHP,NYY
-7,Cristopher Sánchez,2,AGA 1,LHP,PHI
-8,Logan Gilbert,2,AGA 1,RHP,SEA
-9,Hunter Greene,2,AGA 1,RHP,CIN
-10,Hunter Brown,2,AGA 1,RHP,HOU
-11,Shohei Ohtani,2,AGA 1,RHP,LAD
-12,Logan Webb,3,AGA 2,RHP,SFG
-13,Joe Ryan,3,AGA 2,RHP,MIN
-14,Freddy Peralta,3,AGA 2,RHP,NYM
-15,Jacob deGrom,4,AGA Injury Risk,RHP,TEX
-16,Cole Ragans,4,AGA Injury Risk,LHP,KCR
-17,George Kirby,4,AGA Injury Risk,RHP,SEA
-18,Tyler Glasnow,4,AGA Injury Risk,RHP,LAD
-19,Chris Sale,4,AGA Injury Risk,LHP,ATL
-20,Kyle Bradish,5,AGA Holly,RHP,BAL
-21,Eury Perez,5,AGA Holly,RHP,MIA
-22,Nick Pivetta,5,AGA Holly,RHP,SDP
-23,Ryan Pepiot,5,AGA Holly,RHP,TBR
-24,Drew Rasmussen,5,AGA Holly,RHP,TBR
-25,Cam Schlittler,5,AGA Holly,RHP,NYY
-26,Sandy Alcantara,5,AGA Holly,RHP,MIA
-27,Framber Valdez,5,AGA Holly,LHP,DET
-28,Michael King,6,Cherry Bomb,RHP,SDP
-29,Dylan Cease,6,Cherry Bomb,RHP,TOR
-30,Jesús Luzardo,6,Cherry Bomb,LHP,PHI
-31,Kevin Gausman,7,Holly,RHP,TOR
-32,Trevor Rogers,7,Holly,LHP,BAL
-33,Tatsuya Imai,7,Holly,RHP,HOU
-34,Nolan McLean,7,Holly,RHP,NYM
-35,Bubba Chandler,7,Holly,RHP,PIT
-36,Trey Yesavage,7,Holly,RHP,TOR
-37,Cade Horton,7,Holly,RHP,CHC
-38,Robbie Ray,8,Cherry Bomb But Moreso,LHP,SFG
-39,Nathan Eovaldi,8,Cherry Bomb But Moreso,RHP,TEX
-40,Jacob Misiorowski,8,Cherry Bomb But Moreso,RHP,MIL
-41,Chase Burns,8,Cherry Bomb But Moreso,RHP,CIN
-42,Shane McClanahan,9,Cherry Bomb But Moreso,LHP,TBR
-43,Kris Bubic,9,Cherry Bomb But Moreso,RHP,KCR
-44,Blake Snell,9,Cherry Bomb But Moreso,LHP,LAD
-45,Bryce Miller,10,Holly I Feel A Little Worse About,RHP,SEA
-46,Edward Cabrera,10,Holly I Feel A Little Worse About,RHP,CHC
-47,Andrew Abbott,10,Holly I Feel A Little Worse About,LHP,CIN
-48,Shota Imanaga,10,Holly I Feel A Little Worse About,LHP,CHC
-49,Aaron Nola,10,Holly I Feel A Little Worse About,RHP,PHI
-50,MacKenzie Gore,11,Frizzle,LHP,TEX
-51,Emmet Sheehan,11,Frizzle,RHP,LAD
-52,Ryan Weathers,11,Frizzle,LHP,NYY
-53,Nick Lodolo,12,Toby Upside 1,LHP,CIN
-54,Sonny Gray,12,Toby Upside 1,RHP,BOS
-55,Ranger Suárez,12,Toby Upside 1,LHP,BOS
-56,Noah Cameron,12,Toby Upside 1,LHP,KCR
-57,Gavin Williams,12,Toby Upside 1,RHP,CLE
-58,Shane Baz,12,Toby Upside 1,RHP,BAL
-59,Ryne Nelson,12,Toby Upside 1,RHP,ARI
-60,Joe Musgrove,12,Toby Upside 1,RHP,SDP
-61,Zac Gallen,12,Toby Upside 1,RHP,ARI
-62,Brandon Woodruff,13,Injury Stash 1,RHP,MIL
-63,Gerrit Cole,13,Injury Stash 1,RHP,NYY
-64,Zack Wheeler,13,Injury Stash 1,RHP,PHI
-65,Carlos Rodon,13,Injury Stash 1,LHP,NYY
-66,Jared Jones,13,Injury Stash 1,RHP,PIT
-67,Spencer Schwellenbach,13,Injury Stash 1,RHP,ATL
-68,Shane Bieber,13,Injury Stash 1,RHP,TOR
-69,Matthew Boyd,14,Toby Upside 2,LHP,CHC
-70,Luis Castillo,14,Toby Upside 2,RHP,SEA
-71,Merrill Kelly,14,Toby Upside 2,RHP,ARI
-72,Zach Eflin,14,Toby Upside 2,RHP,BAL
-73,Andrew Painter,15,HIPSTER 1,RHP,PHI
-74,Spencer Strider,15,HIPSTER 1,RHP,ATL
-75,Logan Henderson,15,HIPSTER 1,RHP,MIL
-76,Robby Snelling,15,HIPSTER 1,LHP,MIA
-77,Braxton Ashcraft,15,HIPSTER 1,RHP,PIT
-78,Tanner Bibee,15,HIPSTER 1,RHP,CLE
-79,Jack Flaherty,15,HIPSTER 1,RHP,DET
-80,Kodai Senga,16,Toby Upside 3,RHP,NYM
-81,Joey Cantillo,16,Toby Upside 3,LHP,CLE
-82,Bailey Ober,16,Toby Upside 3,RHP,MIN
-83,Cody Ponce,16,Toby Upside 3,RHP,TOR
-84,Brayan Bello,16,Toby Upside 3,RHP,BOS
-85,Seth Lugo,16,Toby Upside 3,RHP,KCR
-86,Landen Roupp,16,Toby Upside 3,RHP,SFG
-87,Tyler Mahle,16,Toby Upside 3,RHP,SFG
-88,Max Scherzer,16,Toby Upside 3,RHP,FA
-89,Quinn Priester,16,Toby Upside 3,RHP,MIL
-90,Ryan Weiss,16,Toby Upside 3,RHP,HOU
-91,Shane Smith,16,Toby Upside 3,RHP,CHW
-92,Jack Leiter,17,Late Upside,RHP,TEX
-93,Cristian Javier,17,Late Upside,RHP,HOU
-94,Zebby Matthews,17,Late Upside,RHP,MIN
-95,Mike Burrows,17,Late Upside,RHP,HOU
-96,Grant Holmes,17,Late Upside,RHP,ATL
-97,Grayson Rodriguez,17,Late Upside,RHP,LAA
-98,Spencer Arrighetti,17,Late Upside,RHP,HOU
-99,Jacob Lopez,17,Late Upside,LHP,ATH
-100,Will Warren,17,Late Upside,RHP,NYY
-101,Reid Detmers,17,Late Upside,LHP,LAA
-102,Reynaldo López,17,Late Upside,RHP,ATL
-103,Roki Sasaki,18,Possible Job Upside,RHP,LAD
-104,Jacob Latz,18,Possible Job Upside,LHP,TEX
-105,Justin Wrobleski,18,Possible Job Upside,LHP,LAD
-106,Kyle Harrison,18,Possible Job Upside,LHP,MIL
-107,Mick Abel,18,Possible Job Upside,RHP,MIN
-108,Parker Messick,18,Possible Job Upside,LHP,CLE
-109,Ben Casparius,18,Possible Job Upside,RHP,LAD
-110,Lucas Giolito,18,Possible Job Upside,RHP,FA
-111,Troy Melton,19,Dope But No Job,RHP,DET
-112,Connelly Early,19,Dope But No Job,LHP,BOS
-113,Payton Tolle,19,Dope But No Job,LHP,BOS
-114,Carson Whisenhunt,19,Dope But No Job,LHP,SFG
-115,Brandon Sproat,19,Dope But No Job,RHP,MIL
-116,Luis Gil,20,Late Upside 2,RHP,NYY
-117,Simeon Woods Richardson,20,Late Upside 2,RHP,MIN
-118,Sean Manaea,20,Late Upside 2,LHP,NYM
-119,Cade Cavalli,20,Late Upside 2,RHP,WAS
-120,Johan Oviedo,20,Late Upside 2,RHP,BOS
-121,José Soriano,20,Late Upside 2,RHP,LAA
-122,Joey Wentz,20,Late Upside 2,LHP,ATL
-123,Connor Prielipp,21,Potenital 2026 Stud Prospect,LHP,MIN
-124,Thomas White,21,Potenital 2026 Stud Prospect,LHP,MIA
-125,Gage Jump,21,Potenital 2026 Stud Prospect,LHP,ATH
-126,Jaxon Wiggins,21,Potenital 2026 Stud Prospect,RHP,CHC
-127,Hagen Smith,21,Potenital 2026 Stud Prospect,LHP,CHW
-128,Noah Schultz,21,Potenital 2026 Stud Prospect,LHP,CHW
-129,Brody Hopkins,21,Potenital 2026 Stud Prospect,RHP,TBR
-130,Luis Perales,21,Potenital 2026 Stud Prospect,RHP,WAS
-131,Daniel Espino,21,Potenital 2026 Stud Prospect,RHP,CLE
-132,Alex Clemmey,21,Potenital 2026 Stud Prospect,LHP,WAS
-133,Carlos Lagrange,21,Potenital 2026 Stud Prospect,RHP,NYY
-134,Yusei Kikuchi,22,Toby 15-Team,LHP,LAA
-135,Casey Mize,22,Toby 15-Team,RHP,DET
-136,Dustin May,22,Toby 15-Team,RHP,STL
-137,Justin Verlander,22,Toby 15-Team,RHP,DET
-138,Clay Holmes,22,Toby 15-Team,RHP,NYM
-139,David Peterson,22,Toby 15-Team,LHP,NYM
-140,Matthew Liberatore,22,Toby 15-Team,LHP,STL
-141,Slade Cecconi,22,Toby 15-Team,RHP,CLE
-142,Brady Singer,22,Toby 15-Team,RHP,CIN
-143,Brandon Pfaadt,22,Toby 15-Team,RHP,ARI
-144,Mitch Keller,22,Toby 15-Team,RHP,PIT
-145,Jameson Taillon,22,Toby 15-Team,RHP,CHC
-146,Eduardo Rodriguez,22,Toby 15-Team,LHP,ARI
-147,Michael Wacha,22,Toby 15-Team,RHP,KCR
-148,Nick Martinez,22,Toby 15-Team,RHP,TBR
-149,Luis Severino,22,Toby 15-Team,RHP,ATH
-150,Corbin Burnes,23,Injury Stash 2,RHP,ARI
-151,Justin Steele,23,Injury Stash 2,LHP,CHC
-152,Clarke Schmidt,23,Injury Stash 2,RHP,NYY
-153,Jackson Jobe,23,Injury Stash 2,RHP,DET
-154,Hurston Waldrep,23,Injury Stash 2,RHP,ATL
-155,Kyle Leahy,24,Potential Pickups If Things Go Right,RHP,STL
-156,Triston McKenzie,24,Potential Pickups If Things Go Right,RHP,SDP
-157,Ian Seymour,24,Potential Pickups If Things Go Right,LHP,TBR
-158,Rhett Lowder,24,Potential Pickups If Things Go Right,RHP,CIN
-159,Joe Rock,24,Potential Pickups If Things Go Right,LHP,TBR
-160,Tyler Wells,24,Potential Pickups If Things Go Right,RHP,BAL
-161,Jonah Tong,24,Potential Pickups If Things Go Right,RHP,NYM
-162,Cade Povich,24,Potential Pickups If Things Go Right,LHP,BAL
-163,Alan Rangel,24,Potential Pickups If Things Go Right,RHP,PHI
-164,Alek Manoah,24,Potential Pickups If Things Go Right,RHP,LAA
-165,Braxton Garrett,24,Potential Pickups If Things Go Right,LHP,MIA
-166,Max Meyer,24,Potential Pickups If Things Go Right,RHP,MIA
-167,Richard Fitts,24,Potential Pickups If Things Go Right,RHP,STL
-168,Hunter Dobbins,24,Potential Pickups If Things Go Right,RHP,STL
-169,AJ Blubaugh,24,Potential Pickups If Things Go Right,LHP,HOU
-170,Quinn Mathews,25,Spec Add 2026 Prospect,LHP,STL
-171,Elmer Rodri­guez-Cruz,25,Spec Add 2026 Prospect,RHP,NYY
-172,Tanner McDougal,25,Spec Add 2026 Prospect,RHP,CHW
-173,Khal Stephen,25,Spec Add 2026 Prospect,RHP,CLE
-174,Jake Bennett,25,Spec Add 2026 Prospect,LHP,BOS
-175,Didier Fuentes,25,Spec Add 2026 Prospect,RHP,ATL
-176,Bryce Mayer,25,Spec Add 2026 Prospect,RHP,HOU
-177,Ty Johnson,25,Spec Add 2026 Prospect,RHP,TBR
-178,Jurrangelo Cijntje,25,Spec Add 2026 Prospect,RHP,STL
-179,David Davalillo,25,Spec Add 2026 Prospect,RHP,TEX
-180,Miguel Mendez,25,Spec Add 2026 Prospect,RHP,SDP
-181,Jack Wenninger,25,Spec Add 2026 Prospect,RHP,NYM
-182,Marco Raya,25,Spec Add 2026 Prospect,RHP,MIN
-183,Tink Hence,25,Spec Add 2026 Prospect,RHP,STL
-184,Santiago Suarez,25,Spec Add 2026 Prospect,RHP,TBR
-185,Anderson Brito,25,Spec Add 2026 Prospect,RHP,TBR
-186,Miguel Ullola,25,Spec Add 2026 Prospect,RHP,FA
-187,George Klassen,25,Spec Add 2026 Prospect,RHP,LAA
-188,Nick Frasso,25,Spec Add 2026 Prospect,RHP,LAD
-189,Davis Martin,26,Toby 15-Team Again,RHP,CHW
-190,Chris Bassitt,26,Toby 15-Team Again,RHP,FA
-191,Jeffrey Springs,26,Toby 15-Team Again,LHP,ATH
-192,Adrian Houser,26,Toby 15-Team Again,RHP,SFG
-193,Chris Paddack,26,Toby 15-Team Again,RHP,MIA
-194,Foster Griffin,26,Toby 15-Team Again,LHP,WAS
-195,Michael McGreevy,26,Toby 15-Team Again,RHP,STL
-196,José Berrios,26,Toby 15-Team Again,RHP,TOR
-197,JP Sears,27,Toby 15-Team If Job,LHP,SDP
-198,Jason Alexander,27,Toby 15-Team If Job,RHP,HOU
-199,Chad Patrick,27,Toby 15-Team If Job,RHP,MIL
-200,Janson Junk,27,Toby 15-Team If Job,RHP,MIA
-201,Dean Kremer,27,Toby 15-Team If Job,RHP,BAL
-202,Michael Soroka,27,Toby 15-Team If Job,RHP,ARI
-203,Logan Allen,27,Toby 15-Team If Job,LHP,CLE
-204,Luis Morales,27,Toby 15-Team If Job,RHP,ATH
-205,Taj Bradley,27,Toby 15-Team If Job,RHP,MIN
-206,José Urquidy,27,Toby 15-Team If Job,RHP,PIT
-207,Anthony Kay,27,Toby 15-Team If Job,LHP,CHW
-208,Steven Matz,27,Toby 15-Team If Job,LHP,TBR
-209,Blade Tidwell,28,Kinda Cool But No Job,RHP,SFG
-210,Zack Littell,28,Kinda Cool But No Job,RHP,FA
-211,Brandon Williamson,28,Kinda Cool But No Job,LHP,CIN
-212,Ryan Bergert,28,Kinda Cool But No Job,RHP,KCR
-213,Kutter Crawford,28,Kinda Cool But No Job,RHP,BOS
-214,Kumar Rocker,28,Kinda Cool But No Job,RHP,TEX
-215,Yoendrys Gómez,28,Kinda Cool But No Job,RHP,TBR
-216,David Festa,28,Kinda Cool But No Job,RHP,MIN
-217,Trevor McDonald,28,Kinda Cool But No Job,RHP,SFG
-218,Hayden Birdsong,28,Kinda Cool But No Job,RHP,SFG
-219,Ben Brown,28,Kinda Cool But No Job,RHP,CHC
-220,Tobias Myers,28,Kinda Cool But No Job,RHP,NYM
-221,Robert Gasser,28,Kinda Cool But No Job,LHP,MIL
-222,Drey Jameson,28,Kinda Cool But No Job,RHP,ARI
-223,Carmen Mlodzinski,28,Kinda Cool But No Job,RHP,PIT
-224,Colton Gordon,28,Kinda Cool But No Job,LHP,HOU
-225,Joe Boyle,28,Kinda Cool But No Job,RHP,TBR
-226,Jedixson Paez,28,Kinda Cool But No Job,RHP,CHW
-227,Jordan Wicks,28,Kinda Cool But No Job,LHP,CHC
-228,Luis Medina,28,Kinda Cool But No Job,RHP,ATH
-229,Jack Perkins,28,Kinda Cool But No Job,RHP,ATH
-230,Drew Anderson,28,Kinda Cool But No Job,RHP,DET
-231,J.T. Ginn,28,Kinda Cool But No Job,RHP,ATH
-232,Stephen Kolek,28,Kinda Cool But No Job,RHP,KCR
-233,Jake Miller,29,Stud Likely 2027 Prospect,LHP,DET
-234,Winston Santos,29,Stud Likely 2027 Prospect,RHP,TEX
-235,Christian Oppor,29,Stud Likely 2027 Prospect,LHP,CHW
-236,Mason Morris,29,Stud Likely 2027 Prospect,RHP,CIN
-237,Kelvis Salcedo,29,Stud Likely 2027 Prospect,RHP,DET
-238,Jackson Ferris,29,Stud Likely 2027 Prospect,LHP,LAD
-239,Chase Hampton,29,Stud Likely 2027 Prospect,RHP,NYY
-240,Gage Wood,29,Stud Likely 2027 Prospect,RHP,PHI
-241,Ryan Sloan,29,Stud Likely 2027 Prospect,RHP,SEA
-242,Caden Scarborough,29,Stud Likely 2027 Prospect,RHP,TEX
-243,Ricky Tiedemann,29,Stud Likely 2027 Prospect,LHP,TOR
-244,Gage Stanifer,29,Stud Likely 2027 Prospect,RHP,TOR
-245,Jarlin Susana,29,Stud Likely 2027 Prospect,RHP,WAS
-246,Andre Pallante,30,Has Job But Do You Care?,RHP,STL
-247,Brad Lord,30,Has Job But Do You Care?,RHP,WAS
-248,Aaron Civale,30,Has Job But Do You Care?,RHP,FA
-249,Lance McCullers Jr.,30,Has Job But Do You Care?,RHP,HOU
-250,Taijuan Walker,30,Has Job But Do You Care?,RHP,PHI
-251,Sean Burke,30,Has Job But Do You Care?,RHP,CHW
-252,Bryce Elder,30,Has Job But Do You Care?,RHP,ATL
-253,Josiah Gray,30,Has Job But Do You Care?,RHP,WAS
-254,Miles Mikolas,30,Has Job But Do You Care?,RHP,WAS
-255,Erick Fedde,30,Has Job But Do You Care?,RHP,CHW
-256,Germán Márquez,30,Has Job But Do You Care?,RHP,SDP
-257,Randy Vasquez,30,Has Job But Do You Care?,RHP,SDP
-258,Chase Dollander,31,Has Job But It’s The Rockies,RHP,COL
-259,Kyle Freeland,31,Has Job But It’s The Rockies,LHP,COL
-260,Jose Quintana,31,Has Job But It’s The Rockies,RHP,COL
-261,Michael Lorenzen,31,Has Job But It’s The Rockies,RHP,COL
-262,Tomoyuki Sugano,31,Has Job But It’s The Rockies,RHP,WAS
-263,Daniel Eagen,32,Monitor 2026 Prospect,RHP,ARI
-264,Mitch Bratt,32,Monitor 2026 Prospect,LHP,ARI
-265,Drue Hackenberg,32,Monitor 2026 Prospect,RHP,ATL
-266,JR Ritchie,32,Monitor 2026 Prospect,RHP,ATL
-267,Nestor German,32,Monitor 2026 Prospect,RHP,BAL
-268,Trey Gibson,32,Monitor 2026 Prospect,RHP,BAL
-269,Will Dion,32,Monitor 2026 Prospect,LHP,CLE
-270,Braden Nett,32,Monitor 2026 Prospect,RHP,ATH
-271,Steven Echavarria,32,Monitor 2026 Prospect,RHP,ATH
-272,Felix Arronde,32,Monitor 2026 Prospect,RHP,KCR
-273,Chris Cortez,32,Monitor 2026 Prospect,RHP,LAA
-274,Patrick Copen,32,Monitor 2026 Prospect,RHP,LAD
-275,Peter Heubeck,32,Monitor 2026 Prospect,RHP,LAD
-276,Dax Fulton,32,Monitor 2026 Prospect,LHP,MIA
-277,Karson Milbrandt,32,Monitor 2026 Prospect,RHP,MIA
-278,Noble Meyer,32,Monitor 2026 Prospect,RHP,MIA
-279,Bishop Letson,32,Monitor 2026 Prospect,RHP,MIL
-280,Andrew Morris,32,Monitor 2026 Prospect,RHP,MIN
-281,Jonathan Pintaro,32,Monitor 2026 Prospect,RHP,NYM
-282,Jonathan Santucci,32,Monitor 2026 Prospect,LHP,NYM
-283,Will Watson,32,Monitor 2026 Prospect,RHP,NYM
-284,Henry Lalane,32,Monitor 2026 Prospect,LHP,NYY
-285,Yoniel Curet,32,Monitor 2026 Prospect,RHP,PHI
-286,Hunter Barco,32,Monitor 2026 Prospect,LHP,PIT
-287,Wilber Dotel,32,Monitor 2026 Prospect,RHP,PIT
-288,Hunter Dryden,32,Monitor 2026 Prospect,RHP,SFG
-289,Chen-Wei Lin,32,Monitor 2026 Prospect,RHP,STL
-290,Jackson Baumeister,32,Monitor 2026 Prospect,RHP,TBR
-291,T.J. Nichols,32,Monitor 2026 Prospect,RHP,TBR
-292,Gary Gill Hill,32,Monitor 2026 Prospect,RHP,TBR
-293,Eriq Swan,32,Monitor 2026 Prospect,RHP,WAS
-294,Martín Pérez,33,No Job And It’s Meh,LHP,ATL
-295,Carson Seymour,33,No Job And It’s Meh,RHP,SFG
-296,Bobby Miller,33,No Job And It’s Meh,RHP,LAD
-297,Emerson Hancock,33,No Job And It’s Meh,RHP,SEA
-298,Adam Mazur,33,No Job And It’s Meh,RHP,MIA
-299,Jack Kochanowicz,33,No Job And It’s Meh,RHP,LAA
-300,Caden Dana,33,No Job And It’s Meh,RHP,LAA
-301,Colin Rea,33,No Job And It’s Meh,RHP,CHC
-302,Javier Assad,33,No Job And It’s Meh,RHP,CHC
-303,Jonathan Cannon,33,No Job And It’s Meh,RHP,CHW
-304,Walker Buehler,33,No Job And It’s Meh,RHP,SDP
-305,Bradley Blalock,33,No Job And It’s Meh,RHP,MIA
-306,Eric Lauer,33,No Job And It’s Meh,LHP,TOR
-307,Caleb Kilian,33,No Job And It’s Meh,RHP,SFG
-308,Patrick Sandoval,33,No Job And It’s Meh,LHP,BOS
-309,Shinnosuke Ogasawara,33,No Job And It’s Meh,LHP,WAS
-310,Mitchell Parker,33,No Job And It’s Meh,LHP,WAS
-311,Jake Irvin,33,No Job And It’s Meh,RHP,WAS
-312,Keider Montero,33,No Job And It’s Meh,RHP,DET
-313,Roddery Muñoz,33,No Job And It’s Meh,RHP,HOU
-314,Bailey Falter,33,No Job And It’s Meh,LHP,KCR
-315,Daniel Lynch IV,33,No Job And It’s Meh,LHP,KCR
-316,Cal Quantrill,33,No Job And It’s Meh,LHP,TEX
-317,Dietrich Enns,33,No Job And It’s Meh,LHP,BAL
-318,Kyle Hart,33,No Job And It’s Meh,LHP,SDP
-319,Kyson Witherspoon,34,Stud Likely 2028 Prospect,RHP,BOS
-320,Braylon Doughty,34,Stud Likely 2028 Prospect,RHP,CLE
-321,Argenis Cayama,34,Stud Likely 2028 Prospect,RHP,SFG
-322,Zachary Root,34,Stud Likely 2028 Prospect,LHP,LAD
-323,Adam Serwinowski,34,Stud Likely 2028 Prospect,LHP,LAD
-324,Christian Zazueta,34,Stud Likely 2028 Prospect,RHP,LAD
-325,J.D. Thompson,34,Stud Likely 2028 Prospect,LHP,MIL
-326,Dasan Hill,34,Stud Likely 2028 Prospect,LHP,MIN
-327,Charlee Soto,34,Stud Likely 2028 Prospect,RHP,MIN
-328,Bryce Cunningham,34,Stud Likely 2028 Prospect,RHP,NYY
-329,Moises Chace,34,Stud Likely 2028 Prospect,RHP,PHI
-330,Antwone Kelly,34,Stud Likely 2028 Prospect,RHP,PIT
-331,Seth Hernandez,34,Stud Likely 2028 Prospect,RHP,PIT
-332,Bryan Balzer,34,Stud Likely 2028 Prospect,RHP,SDP
-333,Kash Mayfield,34,Stud Likely 2028 Prospect,LHP,SDP
-334,Kruz Schoolcraft,34,Stud Likely 2028 Prospect,LHP,SDP
-335,Kade Anderson,34,Stud Likely 2028 Prospect,LHP,SEA
-336,Tekoah Roby,34,Stud Likely 2028 Prospect,RHP,STL
-337,Liam Doyle,34,Stud Likely 2028 Prospect,LHP,STL
-338,Alejandro Rosario,34,Stud Likely 2028 Prospect,RHP,WAS
-339,Travis Sykora,34,Stud Likely 2028 Prospect,RHP,WAS
-340,Cam Caminiti,34,Stud Likely 2028 Prospect,LHP,ATL
-341,Jamie Arnold,34,Stud Likely 2028 Prospect,LHP,ATH
-342,McCade Brown,35,If Job Would Be For Rockies,RHP,COL
-343,Tanner Gordon,35,If Job Would Be For Rockies,RHP,COL
-344,Antonio Senzatela,35,If Job Would Be For Rockies,RHP,COL
-345,Ryan Feltner,35,If Job Would Be For Rockies,RHP,COL
-346,Gunnar Hoglund,36,Hurt But You Forgot,RHP,ATH
-347,Cody Bradford,36,Hurt But You Forgot,LHP,TEX
-348,Jordan Montgomery,36,Hurt But You Forgot,LHP,TEX
-349,Christian Scott,36,Hurt But You Forgot,RHP,NYM
-350,DJ Herz,36,Hurt But You Forgot,LHP,WAS
-351,Jake Bloss,36,Hurt But You Forgot,RHP,TOR
-352,AJ Smith-Shawver,36,Hurt But You Forgot,RHP,ATL
-353,Nestor Cortes,36,Hurt But You Forgot,LHP,SDP
-354,Tylor Megill,36,Hurt But You Forgot,RHP,NYM
-355,Hayden Wesneski,36,Hurt But You Forgot,RHP,HOU
-356,Ronel Blanco,36,Hurt But You Forgot,RHP,HOU
-357,Griffin Canning,36,Hurt But You Forgot,RHP,SDP
-358,Trevor Williams,36,Hurt But You Forgot,RHP,WAS
-359,Jon Gray,37,Hammock Or Mound?,RHP,FA
-360,Wade Miley,37,Hammock Or Mound?,LHP,FA
-361,Tyler Anderson,37,Hammock Or Mound?,LHP,FA
-362,Patrick Corbin,37,Hammock Or Mound?,LHP,FA
-363,Charlie Morton,37,Hammock Or Mound?,RHP,FA
-364,Alex Cobb,37,Hammock Or Mound?,RHP,FA
-365,Michael Kopech,37,Hammock Or Mound?,RHP,FA
-366,Marcus Stroman,37,Hammock Or Mound?,RHP,FA
-367,Spencer Turnbull,37,Hammock Or Mound?,RHP,FA
-368,Pablo López,38,Out For 2026 Just So You Know,RHP,MIN
-369,Logan Evans,38,Out For 2026 Just So You Know,RHP,SEA
-370,Reese Olson,38,Out For 2026 Just So You Know,RHP,DET
-371,Bowden Francis,38,Out For 2026 Just So You Know,RHP,TOR
-372,Yu Darvish,38,Out For 2026 Just So You Know,RHP,SDP
-373,John Means,38,Out For 2026 Just So You Know,LHP,FA
-374,Tanner Houck,38,Out For 2026 Just So You Know,RHP,BOS
-375,Frankie Montas,38,Out For 2026 Just So You Know,RHP,FA
-376,Alec Marsh,38,Out For 2026 Just So You Know,RHP,KCR
-377,Nabil Crismatt,38,Out For 2026 Just So You Know,RHP,TEX
-378,Blake Walston,39,The Rest Who Could Find Random Starts,LHP,ARI
-379,Tommy Henry,39,The Rest Who Could Find Random Starts,LHP,ARI
-380,Yu-Min Lin,39,The Rest Who Could Find Random Starts,LHP,ARI
-381,Yilber Díaz,39,The Rest Who Could Find Random Starts,RHP,ARI
-382,Bryce Jarvis,39,The Rest Who Could Find Random Starts,RHP,ARI
-383,Cristian Mena,39,The Rest Who Could Find Random Starts,RHP,ARI
-384,Joe Ross,39,The Rest Who Could Find Random Starts,RHP,FA
-385,Joey Estes,39,The Rest Who Could Find Random Starts,RHP,ATH
-386,Mason Barnett,39,The Rest Who Could Find Random Starts,RHP,ATH
-387,Mitch Spence,39,The Rest Who Could Find Random Starts,RHP,KCR
-388,Carlos Carrasco,39,The Rest Who Could Find Random Starts,RHP,ATL
-389,Brandon Young,39,The Rest Who Could Find Random Starts,RHP,BAL
-390,Kyle Wright,39,The Rest Who Could Find Random Starts,RHP,FA
-391,Vince Velasquez,39,The Rest Who Could Find Random Starts,RHP,FA
-392,Ky Bush,39,The Rest Who Could Find Random Starts,LHP,CHW
-393,Grant Taylor,39,The Rest Who Could Find Random Starts,RHP,CHW
-394,Drew Thorpe,39,The Rest Who Could Find Random Starts,RHP,CHW
-395,Wikelman Gonzalez,39,The Rest Who Could Find Random Starts,RHP,CHW
-396,Carson Spiers,39,The Rest Who Could Find Random Starts,RHP,CIN
-397,Graham Ashcraft,39,The Rest Who Could Find Random Starts,RHP,CIN
-398,Julian Aguiar,39,The Rest Who Could Find Random Starts,RHP,CIN
-399,Doug Nikhazy,39,The Rest Who Could Find Random Starts,LHP,CLE
-400,Emanuel De Jesus,39,The Rest Who Could Find Random Starts,LHP,DET
-401,Ty Madden,39,The Rest Who Could Find Random Starts,RHP,DET
-402,J.P. France,39,The Rest Who Could Find Random Starts,RHP,HOU
-403,Sam Aldegheri,39,The Rest Who Could Find Random Starts,LHP,LAA
-404,Chase Silseth,39,The Rest Who Could Find Random Starts,RHP,LAA
-405,Victor Mederos,39,The Rest Who Could Find Random Starts,RHP,LAA
-406,Cole Irvin,39,The Rest Who Could Find Random Starts,LHP,LAD
-407,Ryan Gusto,39,The Rest Who Could Find Random Starts,RHP,MIA
-408,Aaron Ashby,39,The Rest Who Could Find Random Starts,LHP,MIL
-409,DL Hall,39,The Rest Who Could Find Random Starts,LHP,MIL
-410,Drew Rom,39,The Rest Who Could Find Random Starts,LHP,MIL
-411,Gerson Garabito,39,The Rest Who Could Find Random Starts,RHP,MIL
-412,Justin Hagenman,39,The Rest Who Could Find Random Starts,RHP,NYM
-413,Ryan Yarbrough,39,The Rest Who Could Find Random Starts,LHP,NYY
-414,Paul Blackburn,39,The Rest Who Could Find Random Starts,RHP,NYY
-415,Mason Montgomery,39,The Rest Who Could Find Random Starts,LHP,PIT
-416,Mike Clevinger,39,The Rest Who Could Find Random Starts,LHP,PIT
-417,Thomas Harrington,39,The Rest Who Could Find Random Starts,RHP,PIT
-418,Marco Gonzales,39,The Rest Who Could Find Random Starts,LHP,SDP
-419,Matt Waldron,39,The Rest Who Could Find Random Starts,RHP,SDP
-420,Cooper Criswell,39,The Rest Who Could Find Random Starts,RHP,SEA
-421,Dane Dunning,39,The Rest Who Could Find Random Starts,RHP,SEA
-422,Randy Dobnak,39,The Rest Who Could Find Random Starts,RHP,SEA
-423,JT Brubaker,39,The Rest Who Could Find Random Starts,RHP,SFG
-424,Kai-Wei Teng,39,The Rest Who Could Find Random Starts,RHP,HOU
-425,Jake Woodford,39,The Rest Who Could Find Random Starts,RHP,TBR
-426,Jesse Scholtens,39,The Rest Who Could Find Random Starts,RHP,TBR
-427,Austin Gomber,39,The Rest Who Could Find Random Starts,LHP,TEX
-428,Jake Eder,39,The Rest Who Could Find Random Starts,LHP,WAS
-429,José Ureña,40,"He’s In Japan, Jeez",RHP,FA
+Rank,Name,Team,Tier,Tier Name,R/L,Stuff+,Location+,Pitching+,Health%,Proj_IP,ppERA,ppK%,Blurb
+1,Tarik Skubal,DET,1,STUD,LHP,123,101,123,87%,180,2.55,30.90%,"What is there to say about this power lefty coming off two straight Cy Young seasons that everyone doesn't know by now? How about a quick discussion of his health risk, that wet blanket that hangs over all pitchers in the game today. It's true that Tarik Skubal has had some injuries in the past, and that he throws hard (only three pitchers with 100+ innings last year had faster four-seamers), and that these things often lead to more injuries. But it's also true that, at 97.6 mph on the fastball, he sits a whopping five miles per hour under his maximum (the average difference is just under three). Having a large gap like that has been shown by peer-reviewed research to be less stressful on the arm. Good news for once."
+2,Paul Skenes,PIT,1,STUD,RHP,110,111,120,91%,183,2.74,29.90%,"When it comes to injury risk, Paul Skenes provides a fascinating foil to Tarik Skubal. Because while his health bill has largely been clean so far, he sits only 2 mph off of his maximum fastball velocity. But he still gets an ""A"" in the health department, as well as all the other departments. If he did lose a little bit of gas, what would happen to his four-seamer with boring shape that's already approaching league-average Stuff+? The good news this spring is that he's added three inches of ride to his fastball, enough to overcome the inevitable half-tick drop in velocity on the pitch."
+3,Garrett Crochet,BOS,1,STUD,LHP,117,100,114,85%,181,2.9,30.50%,"With a top-10 fastball in the league and the best cutter thrown by a starter (both by Stuff+), Garrett Crochet has an excellent foundation. For his long-term success, though, some of his evolution last year might be just as important as the dominance of those two pitches. He diversified. Throwing more sinkers and sliders may not seem ideal for a lefty (given the platoon splits on pitches like those), but they did make him a four-pitch power dude with command. He also debuted a new changeup that gets more drop than his old one and hasn't allowed a hit yet this spring. Even his biggest fans have to admit there's a little whiff of injury risk here still, though."
+4,Cristopher Sanchez,PHI,2,AGA 1,LHP,117,99,116,94%,186,3.09,24.80%,"Last spring training, Cristopher Sanchez was a top-40 ranked young starting pitcher with some upside and some downside. He had a nasty sinker, kept the ball on the ground and didn't walk guys - but he also had a below-average strikeout rate and seemed to need a cutter. After teasing us in the spring with a cutter, he broke out the old-fashioned way. He threw harder. Now 95+ on the fastball and 85+ on the slider, his stuff and strikeout numbers surged, and he looks like an ace. If the strikeout rates regress a little, he may end up being more of a high-end No. 2 starter, but that's still an excellent combo of floor and ceiling. He ended up last year ranked fifth among starters."
+5,Yoshinobu Yamamoto,LAD,2,AGA 1,RHP,100,107,110,85%,169,3.22,27.60%,"A statistic like Stuff+ matters the most in the first five starts of a pitcher's career. After that, you start folding in result statistics like strikeout minus walk rate, ground-ball rate and so on. So the fact that Yoshinobu Yamamoto's Stuff+ is merely above-average for a starting pitcher is not incredibly important any more. He's demonstrated that he can put results on the field, and even managed more than 170 innings for a Dodgers team that was running a six-man rotation out there - bulk doesn't seem like a problem either. That stone-cold ace on the mound in the World Series Game 7 seems likely to put up another stunner of a season in 2026."
+6,Hunter Brown,HOU,2,AGA 1,RHP,105,97,103,93%,187,3.36,26.30%,"Ever since he added a sinker, Hunter Brown has been an ace. Over the last two seasons, he's top 15 in innings and strikeouts while putting up a 2.94 ERA that would be fourth among qualified starters. A tiny orange flag popped up in the second half last year, when his strikeout rate dropped to 24 percent and his velo was down a slight bit. But his arsenal still has some remaining upside he can mine: the cutter (6 percent) and curveball (18 percent) are both well-regarded by pitching models. He could throw those more and become a little more deceptive to hitters once again."
+7,Max Fried,NYY,2,AGA 1,LHP,109,103,113,87%,170,3.32,23.40%,"In terms of some advanced metrics, Max Fried looked like he was virtually the same in 2024 and 2025. That wasn't really the case. He had a completely new sinker that he threw more often last season, his slider and sweeper separated further into two better pitches, he had career-best ride on his four-seamer, his cutter gained five ticks of gas, his changeup dropped more and he threw almost everything just a little harder from a slightly lower arm angle. So yeah, he was as good as he's ever been - maybe even better, considering how diversified his arsenal is now in New York."
+8,Logan Gilbert,SEA,2,AGA 1,RHP,104,102,108,88%,153,3.05,27.70%,"Forearm tightness. Around that injury, Logan Gilbert looked as good as ever under the hood, with the best strikeout rate of his career, the customary low walk rate and his ability to stifle balls in play. Now a splitter guy, his awesome extension makes it hard on hitters to put their ""A"" swing on any of his pitches, let alone the dip-diving changeup. But there was that injury, and he did look a little gassed in the playoffs. How much are you going to let that bother you? In the worst fantasy year of his career, he was still a top-30 starting pitcher overall."
+9,Bryan Woo,SEA,2,AGA 1,RHP,109,105,112,87%,162,3.14,26.00%,"This health grade for Bryan Woo seems a little rosy. It probably doesn't include his college Tommy John surgery, and though some of Woo's nicks and cuts have been to his body rather than his arm, they seem relevant. Last year, he ran out of gas at the end of the season and a right pec injury kept him from starting in the playoffs. He set a career high in innings with 191, an increase of more than 50 over his previous high. While that kind of jump is not a definite precursor to injury, it certainly seems to be at least an orange flag when combined with his history. He's so, so good on the field, though, even if it's really fastball-heavy."
+10,Chris Sale,ATL,4,AGA Injury Risk,LHP,116,102,113,63%,144,3.02,29.80%,"Just when the 2024 season workload made us think that Chris Sale might've found some extra longevity after his trade to Atlanta, 2025 reminded us that while he's still an ace, he's also 36 years old. This time, the culprit was a freak injury: a fractured ribcage suffered on an acrobatic defensive play. But age alone, even without Sale's own history, means this kind of thing will happen more often. He's nasty, dynamic and on a team that will hand him wins, but the number of innings Sale will put up is definitely in question. If your league doesn't have injured list slots, Sale should probably be ranked a little lower."
+11,George Kirby,SEA,4,AGA Injury Risk,RHP,99,111,109,86%,162,3.21,24.20%,"It ended up just being shoulder inflammation. Among his peers in this little mini-tier of pitchers with Cy-worth upside and health risk, George Kirby's inflammation was a comparative blip. He's had some soreness there in other years, but he's mostly posted and seems like a better bet to put up 180 innings than the five or six guys ahead of him on the list. Should he just leapfrog them and land higher up then? Possibly. But his projections aren't quite as good. He's more command than stuff, and his career strikeout rate is about 1 percentage point higher than league average. So much of this part of the rankings is negotiating that trade-off between per-inning upside and volume downside."
+12,Logan Webb,SFG,3,AGA 2,RHP,106,105,110,97%,191,3.25,23.60%,"A wider arsenal took some of the pressure off of Logan Webb's best two pitches - the sinker and the changeup - and pushed the Giants' ace to the best season of his career in 2025. Should he repeat that 26 percent strikeout rate and get a little better luck on balls in play this season, there might be one more level for the pitcher with the highest floor in baseball. If he gets there, he probably nets some personal hardware and definitely benefits those fantasy managers who believed in him. Most likely, the mid-level strikeout rate makes him a solid fantasy No. 2 starter who fits nicely with an injury risk ace."
+13,Framber Valdez,DET,5,AGA Holly,LHP,106,100,110,90%,181,3.52,22.50%,"Statistically speaking, Framber Valdez has been a rock. Last year was probably his worst season, fantasy-wise, and he still was a top 40 starting pitcher because he kept the ball on the ground and paired that with his customary above-average strikeout rate, which is not usual for a worm-burner. The command is not great, and it was his worst walk rate in four years, but command isn't as sticky year to year as stuff. If he returns to his 2023-24 value, he'll be a top 20 starting pitcher and well worth this rank. If the decline has started, he'll still return mid-rotation value. Great floor pick."
+14,Eury Perez,MIA,5,AGA Holly,RHP,115,97,108,65%,153,3.59,27.10%,"The promise is tantalizing. With a 98-mph fastball, an 86-mph power slider, a 90-mph changeup and a couple more nasty pitches to boot, Eury Perez has everything he needs to make a Cristopher Sanchez-type leap into the top 15. Like the young Phillie, Perez had top-10 overall Stuff+ among starters last year. Perez's personal obstacle is a little bit of homeritis, but he has a great home park and there's no glaring reason he can't leap this hurdle and be the next Marlins ace."
+15,Kyle Bradish,BAL,5,AGA Holly,RHP,102,104,106,57%,139,3.52,25.90%,"Kyle Bradish came back and pitched after his Tommy John surgery, and though the stuff numbers weren't quite as good as before, the strikeout rate certainly was. He retired nearly 40 percent of opposing batters by way of the K, so the breaking ball at least was really working. Whether or not there really is a grace period after Tommy John, he seems healthy now, and at the point in his career where it's unlikely the Orioles are going to baby him innings-wise. You take some innings off the projection to reflect the risk, but otherwise, he's good to go."
+16,Cole Ragans,KCR,4,AGA Injury Risk,LHP,112,101,111,78%,132,3.37,28.90%,"A couple of elbow surgeries sidelined Cole Ragans for a while in the Rangers organization. In the Royals organization after a trade, he broke free of perpetual rehab and became a capital S stud in 2024 and finished fourth in the American League Cy Young voting. Last year, though, it was a new affliction: a rotator cuff strain, on the heels of a groin strain. The bad news was that it limited him to just over 60 innings and kept him out of the top 100 starting pitchers on the year. The good news was that he came back and showed the same stuff that launched his career just a year before. With that wide arsenal of high-stuff pitches and good command, he's on a short list of pitchers who could win hardware this year. Which is why you take on the injury risk."
+17,Jacob deGrom,TEX,4,AGA Injury Risk,RHP,108,107,117,53%,139,3.41,27.10%,"That's a nice projection for Jacob deGrom. Coming off a season in which he threw more than 170 innings for the first time since 2019, and did so sitting once again in the high 90s with his fastball, it makes sense. He was almost vintage. But it was his worst fastball velocity since 2019, his worst strikeout rate since 2016, his worst homer rate of his career and his whiff rate wasn't quite there either. Even the walk rate was a five-year high. You make him your ace if you have injury list slots, and if you are in a shallower league where the alternative when he's out won't be so bad. In deep leagues with no IL, it's time to decide how many innings you think he'll pitch this year."
+18,Freddy Peralta,NYM,3,AGA 2,RHP,99,108,106,86%,170,3.74,26.10%,"Freddy Peralta was the seventh-best starting pitcher in fantasy baseball last year. The year before, though, he was the 41st-best. He's had some good and bad streaks along the way, so it could be tempting to call last year one of the good streaks and say he's really more of a mid-level pitcher than a top one. But he's gone to work over the years, improving his breaking balls and changeup to the point where he's a full-arsenal starter with decent command. And now he's in a nice home park. Maybe he actually needs to move up!"
+19,Joe Ryan,MIN,3,AGA 2,RHP,108,103,108,88%,156,3.62,26.60%,"Joe Ryan may not throw as hard as the other pitchers around him at this ranking, but his unique arm slot and fastball shape combination, plus his willingness to pitch up in the zone even if it means more homers, has made him a high-strikeout No. 2 starter for a while now. Only 14 pitchers have more strikeouts than Ryan since 2022. Over that time frame, he's figured out that his splitter is his best secondary, that two breaking balls make each of them play up, and that a sinker could be a real weapon for him. Expect 160+ innings of a good ERA with an iffy home run rate, and maybe you'll be pleasantly surprised."
+20,Shohei Ohtani,LAD,2,AGA 1,RHP,114,101,116,66%,133,3.08,29.80%,"It seems like pitching is so secondary to Shohei Ohtani's overall value, but in certain fantasy leagues, he's draftable separately as a pitcher. He has a career 3.00 ERA built on impeccable stuff and poor command, and hopefully his elbow is in good shape right now. He could easily repeat his 2022 season, when he threw 166 innings with a 2.33 ERA. But that was three years ago, and it's worth wondering if the double duty he puts in as a hitter and pitcher will always make him a little riskier on the mound, health-wise at least. Then one has to consider the way the Dodgers usually use six-man rotations and reduce regular season innings in anticipation of long October runs."
+21,Tyler Glasnow,LAD,4,AGA Injury Risk,RHP,101,89,97,61%,123,3.39,28.20%,"It's tempting just to re-write the Blake Snell blurb for Tyler Glasnow, who also shines bright in small samples in any given season. But there's a little more worry about the stuff for the righty. He lost gas last season. A tick here or there, but nearly two full ticks on the curveball. His stuff number is dropping every year, and his command numbers oscillate from bad to average. He's still mid-90s with great spin, but the likelihood of getting both excellent stuff and bulk from Glasnow goes down every year."
+22,Drew Rasmussen,TBR,5,AGA Holly,RHP,108,103,108,72%,136,3.54,22.70%,"There are leagues where Drew Rasmussen is less valuable, for sure. He ranks 110th out of 123 pitchers with 350+ innings over the last four years in quality starts because he doesn't go deep into games. His health risk probably isn't fully captured here because of the multiple arm surgeries he had in college that aren't included in the data set. But twice now he's thrown around 150 innings with an ERA that starts with a two. The stuff is undeniable, and despite a downturn in strikeout rate, seems to be back after his latest surgery. Just look at that projection, it's too tasty to pass up here."
+23,Dylan Cease,TOR,6,Cherry Bomb,RHP,108,100,107,90%,172,3.55,27.60%,"It's true that Dylan Cease sometimes underperforms his peripherals because he's a two-pitch pitcher with iffy command. It's also true that his peripherals are often top of the league, and that he can be super valuable even if he doesn't attain all of that promise. The ride can be wild - he was the 10th-best starter in 2024, and the 99th-best in 2025 - but there's also the fact that Cease has started to throw other pitches more often, and is joining a new team that may have new coaching for him. Over the last two seasons, Cease's K-BB ranks seventh, among the giants of the game. That's the short reason for this ranking."
+24,Jacob Misiorowski,MIL,8,Cherry Bomb But Moreso,RHP,116,103,119,74%,142,3.41,29.00%,"What's the risk with a guy who sits 99 on the fastball, has a mid-90s slider and a high-80s curveball? Well with Jacob Misiorowski, it's two-fold. The first is that he struggles with fastball command. He's found a bit of a way out with the slider, which he can throw for strikes when he needs one. Hitters may still be able to pigeonhole him in those counts, but they'll still have to hit a 94-mph slider. The other risk is just that he throws so dang hard, there has to be more stress than usual on his elbow ligament. Otherwise, the world is his oyster."
+25,Emmet Sheehan,LAD,11,Frizzle,RHP,101,106,109,65%,133,3.43,29.60%,"A strikeout rate over 30 percent, a walk rate that was better than league average, his customary two-plane mid-90s fastball, his killer changeup - it was all there for Emmet Sheehan coming back from Tommy John surgery in 2025. If there is any worry, it's that the Stuff+ model liked his changeup better than either of his breaking balls, and that he probably got to his good results on the slider mostly by command. He doesn't have a long history of command and had below-average grades on that tool as a prospect. Last year was the outlier in terms of walks and command metrics. Overall, the stuff is probably good enough to survive some command regression, and he's comfortably in the top six of that Dodgers rotation."
+26,Chase Burns,CIN,8,Cherry Bomb But Moreso,RHP,116,103,119,72%,131,2.96,31.60%,"Pure rocket fuel is what comes out of Chase Burns' right arm. He sat 99 mph last season with a 91-mph slider and struck out 36 percent of the guys he saw. Overall, the numbers may not have looked great because he gave up a couple homers, and had terrible luck on balls in play. Maybe some of that was earned, and he'll need to trust a third pitch that he doesn't quite trust now. But like Hunter Greene and Spencer Strider before him, it looks like Burns is going to try and out-stuff any problem he sees in front of him. It should work."
+27,Nolan McLean,NYM,7,Holly,RHP,108,98,109,79%,157,3.69,23.10%,"That was a heck of a 48-inning MLB debut for Nolan McLean. The Mets righty struck out nearly a third of the batters he saw, and his great results were backed up by model numbers as well as the eye test. Why isn't he ranked higher, then? He was more tentative against lefties, with a walk rate three times higher against southpaws, and at his core he's a sinker/sweeper type - both pitches that have large platoon splits. He's probably fine because the curveball, changeup and four-seamer are at least average pitches - if he can command them versus southpaws."
+28,Jesus Luzardo,PHI,6,Cherry Bomb,LHP,106,108,112,78%,153,3.48,27.10%,"Coming off a season in which he struck out 28.5 percent of the batters he saw and only walked 7.5 percent off the back of a velocity and stuff resurgence, in front of a great lineup that gave him 15 wins, it's very tempting to put Jesus Luzardo higher. After all, he was a little unlucky with balls in play, and there are projection systems that take almost a half run off of his 3.92 ERA from last year. But the lefty has bounced up and down when it comes to health and velocity, and he's been hit fairly hard when his gas dips even just a tick."
+29,Cam Schlittler,NYY,5,AGA Holly,RHP,107,99,104,77%,143,3.68,24.80%,"The Stuff+ model loves Cam Schlittler. Two above-average fastballs, three above-average breaking balls, with the cutter and sweeper scoring as elite by that metric. It's easy to see why, given the high-90s gas and above-average movement on the cutter and curve. An 88-mph sweeper is also bananas for a starter. Weirdly, though, his breaking balls didn't produce many whiffs. It could be that he didn't get enough count leverage, as he was wild at times. Overall, he still managed a nice strikeout rate and seems primed for takeoff in 2026."
+30,Nick Lodolo,CIN,12,Toby Upside 1,LHP,106,103,105,83%,162,3.79,24.30%,"Nick Lodolo broke out last year, starting the year ranked in the top 60 here, and ending the year in the top 30 among all fantasy starting pitchers. The formula was simple. He evened out his pitch mix, throwing each of his four pitches nearly a quarter of the time. This gave him one of the better third-time-through-the-order splits in the game, as research has suggested it should. The other was just staying on the field. His innings total last year was a career high. Stuff and arsenal wise, he should be able to repeat. And the health grade is (surprisingly?) high!"
+31,Ryan Pepiot,TBR,5,AGA Holly,RHP,106,97,103,87%,170,3.73,25.10%,"Ryan Pepiot was the 41st-best starting pitcher in fantasy baseball last year. He did that in a minor-league park that had the second-most wind-aided homers in baseball. His homer rate was more than 60 percent higher at home, and that should iron out with a return to the Trop. Beyond that, he'll be in a dome, which makes stuff play up because there are no crosswinds to mess with movement. Treat last year as the floor and this ranking still makes sense without any growth in his third full season."
+32,Nick Pivetta,SDP,5,AGA Holly,RHP,101,102,103,88%,174,3.76,26.10%,"An easy reading of Nick Pivetta's 2025 season is that he signed with a team in a more pitcher-friendly park, showed the best home run rate of his career and profited with the best season of his career. But that ignores the fact that, away from home, he still had a high home run rate (1.4 per nine) and yet managed to pitch to a mid-3s ERA. It also ignores that he changed his cutter profile and added a sinker, which widened his arsenal and allowed him to pitch deeper into games."
+33,Nathan Eovaldi,TEX,8,Cherry Bomb But Moreso,RHP,99,103,104,61%,126,3.65,23.00%,"By Wins Above Replacement, Nathan Eovaldi has been a top 15 starting pitcher since the start of 2021. There aren't a lot of leagues counting WAR as a category, but it does point to his consistency as an above-average starting pitcher in this league. Unfortunately, that consistency also includes injury, as he's only twice accrued more than 150 innings in a season over that timeframe. This offseason, it was a hernia operation. He should be fine, but at 35, with his history, it's best to expect 140 innings and be pleasantly surprised with more bulk."
+34,Edward Cabrera,CHC,10,Holly I Feel A Little Worse About,RHP,104,101,105,72%,128,3.61,26.00%,"Edward Cabrera sits 97 on the fastball, 94 on the changeup, 89 on the slider, all with decent-to-great movement. He dropped his arm angle and found command that he hasn't shown so far in his career. He made good on a top-100 ranking here last March with a top-60 showing on the season. Now, resplendent with stuff and command, he's been dropped onto a competitive team, seemingly ready to shine even further. He did sprain his elbow late last year, though, and a sprain is a tear. Just a question of how much of one."
+35,Tatsuya Imai,HOU,7,Holly,RHP,N/A,N/A,N/A,N/A,141,4.23,24.10%,"The four-seam fastball comps to somewhere between Luis Castillo (with more gas) to Joe Ryan, so reports of a dead zone fastball seem overblown. The splitter seems plus, and led to near-30 percent strikeout rates in Japan. The slider is weird but it doesn't need to do the heavy lifting if the other two pitches work. Tatsuya Imai loves to compete, and is charting his own course in Houston, so the intangibles seem like they're in a good spot. The only worry here is that the market took a look, and did not reward him with a huge contract. He might still be a sleeper at this cost."
+36,Bubba Chandler,PIT,7,Holly,RHP,105,102,110,73%,130,3.92,23.00%,"Bubba Chandler sits 99 on the fastball with great command. The slider is at 89 mph and appeals to the models. The changeup was a scouting favorite and gave up a .120 slugging last year. There's an argument he should be higher. But it isn't as if there are no questions at all. Righties who are changeup-first always invite scrutiny of their breaking balls, and even though Chandler's hard slider looks good on results and in models, it didn't get many whiffs. Could he tweak his breaking ball selection or location and come out looking studly? Yes, yes he could. (This spring he has a 42 percent whiff rate on the slider, just saying.)"
+37,Michael King,SDP,6,Cherry Bomb,RHP,101,100,102,76%,145,3.71,25.00%,"The best news was that Michael King didn't have arm surgery last year, it really only ended up being a pinched nerve, and he was pretty close to vintage when he was on the bump. The bad news is that these were another set of injury setbacks that follow a pattern in his career, all the way back to the minor leagues. He's a great pitcher, when he's in there. A little note of concern this spring: his Stuff+ is only 90 so far, and even for a guy who has made more of his hay with command than stuff, that's not great."
+38,MacKenzie Gore,TEX,11,Frizzle,LHP,99,98,99,87%,157,3.78,26.40%,"This spring, MacKenzie Gore is throwing harder, and he's changed his curveball to more of a tighter, harder pitch. The circumstances around Gore changed in a big way. He went from a park that augments homers to one in Texas that has been playing more pitcher-friendly every year since its opening. As a fly ball pitcher who has played in front of bad defenses so far in his career, just pitching in that park in front of those guys could make a huge difference. He's always had good peripherals - though he does fade over the course of the season in terms of fastball velocity."
+39,Trey Yesavage,TOR,7,Holly,RHP,107,90,98,78%,144,3.39,29.00%,"Trey Yesavage utilizes the most extreme over-the-top release among right-handed starters and it produces a big, booming fastball with a ton of ride that plays above its 95-mph sitting average. But Yesavage is as much about that as he is about his seam-shifted wake split-finger, which has more wiggle than you'd expect with that arm angle. Will the weird slider work? It has arm-side movement, one of a handful in the league like it. But if it just works, if it's just enough to keep them guessing, there's a working package here. The biggest question is probably the command."
+40,Zack Wheeler,PHI,13,Injury Stash 1,RHP,110,108,120,67%,128,3.19,29.10%,"It's the good Thoracic Outlet Syndrome surgery, supposedly. The nerve one, not the vascular one. The kind that just pops up and is fixed and isn't indicative of a long-term problem. Hopefully it was for Zack Wheeler, because the outcomes on that surgery in general are not good. The righty has the kind of wide arsenal and command to survive a decline in stuff. He'll be behind this spring, but if he manages 140 innings of anything at all like even the lesser versions of Wheeler, he'd be a good value pick here."
+41,Spencer Strider,ATL,15,HIPSTER 1,RHP,95,95,90,70%,157,3.8,27.40%,"Usually, the stuff comes back first after Tommy John surgery. So it's probably worrisome that Spencer Strider lost two ticks and two inches of ride off the fastball, a tick and an inch of drop on the slider, and that both were hit hard in 2025. A full offseason could buck the trend versus other arms that have followed his path, but he doesn't have the benefit of a wide arsenal to fall back on if his fastball and slider don't improve in 2026. This spring? The velocity and shapes are about the same as last year, which doesn't bode extremely well."
+42,Sonny Gray,BOS,12,Toby Upside 1,RHP,101,99,103,83%,170,3.68,25.30%,"At 36 years old, with a fastball that finally ducked under 92 mph, there's pretty much one reason Sonny Gray is ranked this high: his sweeper. One of the best pitches in the game, it has kept his strikeout rate high. He's always had a low walk rate, so most of the projection systems think he'll get that ERA back under 4.00 this year. A great breaking ball can extend a career. But the risk is that there will only be more home runs off the low-velo fastball when the hitter anticipates it correctly."
+43,Kevin Gausman,TOR,7,Holly,RHP,102,102,102,86%,179,3.94,23.20%,"That was a great season for a 35-year-old Kevin Gausman. He arrested a decline in both fastball velocity and strikeout rate, and put up nearly 200 innings of a 3.59 ERA. He's been everything Toronto needed him to be. A 24-percent strikeout rate is only barely above average, and even that 94.5-mph fastball is about average for a righty starter these days. The splitter is decidedly great, but without a wide arsenal, without a decent breaking ball, it will always feel like he's on the precipice and that next velocity decline will be the one that makes a huge difference."
+44,Gavin Williams,CLE,12,Toby Upside 1,RHP,101,97,98,83%,157,3.86,24.10%,"Last year, these ranks had Gavin Williams 45th, he ended up 29th among starters, he's 26 and throws in the upper 90s. He even found a cutter that seemed to pull together his arsenal. Shouldn't he be higher? There were some warning signs last year that this might not be sustainable. He had a below-average strikeout-minus-walk rate, which is a very powerful predictor. He got lucky on balls in play. He didn't show great command and he didn't get good command grades from prospect evaluators."
+45,Cade Horton,CHC,7,Holly,RHP,98,100,98,83%,151,3.96,22.40%,"Cade Horton had poor peripherals behind his strong debut, that's true. His strikeout rate was below average, his strikeout-minus-walk rate was, too, and it looked like he got lucky on balls in play and with stranding base runners. But there's something about his stuff that maybe public models aren't capturing. He has cut and ride on his four-seamer, and supinates well - he throws two breaking balls that performed well all year, and the curveball got better as the season progressed. This is an archetype that the Cubs have had a lot of success with."
+46,Braxton Ashcraft,PIT,15,HIPSTER 1,RHP,105,99,103,77%,128,3.73,22.20%,"Until last season, Braxton Ashcraft's injury history and poor four-seam shape seemed to suggest a future in the bullpen despite his legendary breaking ball. But then he added a sinker, gradually added bulk to his outings and maintained a 97-mph fastball even in longer outings. Now he looks like a legitimate starter, albeit with injury concerns, since he's had Tommy John surgery, knee problems, surgery to his non-throwing shoulder and a bout of forearm and elbow tightness that limited him in 2024. Hey, most pitchers have injury concerns. Smoke 'em while you got 'em."
+47,Tanner Bibee,CLE,15,HIPSTER 1,RHP,103,98,101,96%,179,3.86,22.40%,"On the surface, Tanner Bibee's 2025 was decidedly forgettable. A 4.24 ERA, with an okay WHIP, a below-average strikeout rate. The good news comes in snippets. He again showed his ability to command that excellent cutter, with excellent model rates on the pitch, and also a good overall walk rate. Stuff+ said he had five above-average pitches, so the breaking ball quality is there. By September, when he was throwing the cutter more than the fastball and was generally pitching backwards off of all his breaking stuff, Bibee found a groove."
+48,Sandy Alcantara,MIA,5,AGA Holly,RHP,104,104,105,70%,176,4.05,20.60%,"From the end of August until the end of the season, Sandy Alcantara had a 3.21 ERA supported by lots of ground balls and a good walk rate. Command comes back last after Tommy John, and it took some time for the power righty. But it looked like he got there at the end, and he's almost always good for the innings. Be a little careful in leagues with innings caps, because he won't help you in the strikeouts category."
+49,Luis Castillo,SEA,14,Toby Upside 2,RHP,98,106,102,88%,170,3.79,22.50%,"Yeah, Luis Castillo is in decline. For five straight seasons, he's lost fastball velocity, and without great shape on those pitches, it threatens to become a bigger deal as he approaches average in that category. His strikeout rate is down three straight seasons. His Stuff+ dropped to average for a starter for the first time. But around here in the ranks, you could choose instead to look at the bright side. He's durable. He pitches in Seattle. You can probably still use him in 120-140 of his innings and keep his ERA on the right side of 4.00."
+50,Robbie Ray,SFG,8,Cherry Bomb But Moreso,LHP,100,97,96,71%,164,4.12,24.10%,"Here's a weird thing about Robbie Ray: he had virtually the same ERA in San Francisco (the best pitcher's park in ball) as he had on the road last season. His fastball is easily his best pitch, his slider his second, and he threw fewer of both and it was probably a good idea. Some tweaks to his other secondaries have made him a little wider in the arsenal and have brought his floor up. He's probably not going to strike out 30 percent of the batters he sees and put up an ERA that starts with a two again, but he'll most likely be very useful at home."
+51,Aaron Nola,PHI,10,Holly I Feel A Little Worse About,RHP,101,108,108,81%,162,4.06,23.20%,"By the highly scientific approach of he's good every other year, Aaron Nola is due to put up another strong season in 2026. He lost nearly a tick on the fastball, and had the worst Stuff+ of his career in 2025. He gave up a ton of homers. But he still struck guys out at an above-average rate, still showed his customary excellent command and still had that excellent curveball. And single-season homer rate is one of the flukiest metrics on a pitcher's page. The good news this spring is that he's locating all of his pitches really well."
+52,Shane Bieber,TOR,13,Injury Stash 1,RHP,91,106,101,55%,123,3.95,21.80%,"In almost every way, Shane Bieber seemed to prove he was back, all the way back, late in 2025. He had his best velocity in four years, he located his slider as well as he ever had, and he even returned from Tommy John with a new kick-change that had a whopping six inches more drop than his last changeup. He got good results, even pitched well enough in the postseason ... and then we got the news that he had forearm fatigue late in the year, and that he might not be ready to start the season."
+53,Carlos Rodon,NYY,13,Injury Stash 1,LHP,107,97,102,77%,128,3.9,24.70%,"After a terrible debut, Carlos Rodon has been really good for the Yankees. That's a 3.50 ERA in 370+ innings, supported by an excellent strikeout minus walk rate and some small changes to his arsenal. All is well otherwise for Rodon, other than a small surgery to remove some loose bodies in his elbow that will keep him out for as much as the first month of the season. If you don't have injury list spots, that makes him tough to draft."
+54,Blake Snell,LAD,9,Cherry Bomb But Moreso,LHP,104,109,114,65%,105,3.33,29.50%,"On a per-inning basis, there are few better than Blake Snell. Over the last three seasons, only Paul Skenes and Tarik Skubal have a lower ERA in 300+ innings. But Snell only has about 20 more innings than Skenes, who wasn't even in the big leagues in 2023. Which is, of course, the rub with Snell. Coming off of 61 1/3 innings with a 2.35 ERA last season, the lefty didn't make much of an argument to change that book on him. He's behind this spring, and will open on the IL."
+55,Gerrit Cole,NYY,13,Injury Stash 1,RHP,N/A,N/A,N/A,N/A,113,3.59,25.70%,"You're flying a little blind if you're taking Gerrit Cole here, and you'll need an injury slot or a tough stomach to make it to June, when the Yankees say they expect him back. Could you then get 120 excellent innings? Sure, he's been a metronome, one of the highest-floor pitchers in the sport. But unlike a Kyle Bradish in 2025 or a Jacob deGrom in 2024, you won't have seen Cole on the mound, demonstrating the return of his stuff, before you take the leap."
+56,Brandon Woodruff,MIL,13,Injury Stash 1,RHP,97,106,101,57%,126,3.92,24.20%,"Anterior capsule surgery is a serious thing. It pretty much ended the careers of Rich Harden, Dallas Braden and Johan Santana. The good thing for Brandon Woodruff is that pitchers who have had the surgery more recently have had a better run. That's not to say that all his stuff came back despite the pristine strikeout rate and good results in 2025. He lost nearly three ticks on his fastball, didn't throw his slider or curveball much at all, and relied on command much more than nastiness this time around."
+57,Ranger Suarez,BOS,12,Toby Upside 1,LHP,97,110,106,91%,165,4.06,21.40%,"It probably doesn't matter that Ranger Suarez dropped to the worst fastball velocity of his career last year, right? Or that he's never thrown 160 innings in a season? Or that none of his pitches rate as above-average by Stuff+? It's hard to ignore all of that, but it's worth pointing out that Suarez has a wide arsenal with great command, has succeeded with below-average velocity for a while now and has been pretty steady around the 150-inning mark. His new park suppresses right-handed homers, and he's just 30."
+58,Shota Imanaga,CHC,10,Holly I Feel A Little Worse About,LHP,98,107,105,92%,127,4.34,21.50%,"The year-long surface-level numbers for Shota Imanaga don't seem to suggest there's a problem here. A 3.73 ERA with a 0.99 WHIP looks pretty good. But a little digging produces some issues. He dropped to a 90.8-mph fastball velocity and also lost nearly 5 percentage points off his strikeout rate year over year. In the second half, his ERA jumped to nearly 5.00 and his home run rate was over 2 per nine innings. Still, he landed in a good place, and this spring he's gotten some of the sorely needed zip back on his fastball."
+59,Kris Bubic,KCR,9,Cherry Bomb But Moreso,RHP,96,101,100,72%,128,4.08,21.80%,"No model thought Kris Bubic earned all of that spectacular 2.55 ERA last year. His strikeout and walk rates were barely above average, his velocity was below-average and the stuff models really only liked his fastball and changeup. Throwing an 83-mph sweeper left-on-right should theoretically be a bad idea since that pitch has big platoon splits, but righties only slugged .292 when they hit it. Maybe the arsenal worked because he has good command, or maybe the sweeper and changeup were tunneling off each other. Expect something closer to his career 4.14 ERA."
+60,Trevor Rogers,BAL,7,Holly,LHP,97,103,100,84%,153,4.3,20.30%,"There are a lot of commonalities between Trevor Rogers and Kris Bubic. Both have been up and down in their careers, both have seen their below-average velocity fluctuate, both outpaced the models significantly last year and both lefties throw sweepers and changeups low in the zone. But even just last year, Rogers had an ERA over five in the minor leagues on his way up, and there's precious little there to hang your hat on in the peripherals. Something closer to his career ERA (3.83) and WHIP (1.30) would make more sense for him in 2026."
+61,Ryan Weathers,NYY,11,Frizzle,LHP,104,105,108,65%,121,3.89,23.30%,"Ryan Weathers may not put up a ton of innings this year if his injury history is any guide, but he's healthy now, and the stuff looks great. Weathers has fully revamped his arsenal since his rookie year, with a new arm slot, new four-seam, new changeup and two new breaking balls. He's a totally different pitcher now. So don't worry about how long he'll go into the season and take a chance on a power lefty with a wide arsenal and no command concerns."
+62,Matthew Boyd,CHC,14,Toby Upside 2,LHP,99,106,101,72%,147,4.1,21.70%,"Another relatively low velocity lefty with good command. Matthew Boyd actually saw career-best velocity in 2025, and at least the stuff models thought his secondaries were above-average. The fit with Wrigley - which suppresses right-handed offense - was a good one for Boyd, who had an ERA that was almost a run and a half lower at home than on the road. Boyd's production sagged in the second half along with his fastball velocity."
+63,Shane Baz,BAL,12,Toby Upside 1,RHP,104,101,106,74%,153,4.02,23.80%,"Shane Baz was bad last year. At home at least. In that minor-league park that featured pitch-altering and fly-ball helping wind patterns, he had a 5.90 ERA and gave up 18 homers. But on the road, he gave up less than half that many in a similar amount of innings and had a 3.86 ERA. The righty features a strong 97-mph fastball and a killer knuckle curve. Another year out from surgery, in a new park, with a new lease on life and a great offense behind him - it's a good time to buy low on Baz."
+64,Will Warren,NYY,17,Late Upside,RHP,103,97,102,89%,161,3.88,23.10%,"We tend to love movement when it comes to breaking balls, but most stuff models agree that velocity is more important even for that class of pitches. So when Will Warren dials up the gas on his curveball and sweeper, it's a good thing even if they are moving less. He's shifted where he stands on the mound and is having a great spring by results. If he really has figured out how to retire lefties, that would be a huge leap forward."
+65,Joey Cantillo,CLE,16,Toby Upside 3,LHP,101,97,98,88%,136,3.88,24.20%,"The new Stuff+ update confirms what we probably already knew about Joey Cantillo: it's a plus changeup and a plus curveball for the Guardians' lefty. But the flaws are still there, too. He didn't locate any of his three primary pitches at an above-average rate, which fits with his minor-league walk rates and prospect command grades. If you don't pencil him in for a ton of innings, and stay aware of the command issues, you'll see a nice sleeper in that Cleveland rotation."
+66,Kodai Senga,NYM,16,Toby Upside 3,RHP,93,95,92,68%,105,4.05,23.00%,"So far this spring, Kodai Senga is up two ticks on his fastball velocity from last season. The Stuff+ model thinks his forkball is elite (of course), his slider is good, his fastball comfortably above-average with this velo, his sweeper is average and that he's locating the cutter well enough to make it a viable pitch. The injury risk is palpable but so is the upside of Senga regaining his form."
+67,Shane McClanahan,TBR,9,Cherry Bomb But Moreso,LHP,N/A,N/A,N/A,N/A,109,3.92,23.10%,"Could Shane McClanahan be back? He's not throwing as hard as he did pre-surgery, but he's 94+ from the left side, his changeup hasn't given up a hit all spring, and his breaking balls look like they're in decent shape. He's not the flame-thrower he once was, but he might be better than this ERA projection, especially back in the Trop."
+68,Grayson Rodriguez,LAA,17,Late Upside,RHP,N/A,N/A,N/A,N/A,107,3.41,26.90%,"The final nail in the 2025 coffin for Grayson Rodriguez doesn't sound all that bad - bone spur surgery. But Rodriguez still managed to miss the entire season with an amalgam of afflictions. A lat strain. Shoulder soreness. Triceps soreness. The stuff is tantalizing, and the health is still a question mark. A new wrinkle this spring has been that his fastball Stuff+ number is now comfortably below average, which makes for a new possible outcome: healthy, but not as good as he was when the stuff was great."
+69,Jared Jones,PIT,13,Injury Stash 1,RHP,N/A,N/A,N/A,N/A,105,3.81,24.20%,"Jared Jones debuted with all sorts of flames coming out of his elbow in 2024. Those flames consumed his elbow eventually, and he lost all of last season to recovery from surgery. Jones threw harder as he approached the big leagues, and hardest in Pittsburgh, probably in an effort to prove he belonged. Now that he's had some success, where will he sit with the fastball? What will his command look like in Year 1 back? How will they manage his innings? Considerable stuff, countless questions."
+70,Jack Flaherty,DET,15,HIPSTER 1,RHP,102,101,103,86%,160,3.79,25.40%,"Jack Flaherty wasn't great last year. His velocity slipped again, as did his strikeout rate, and he ended up with a high-4s ERA. He got a little unlucky on balls in play, but he's always had higher home-run rates, and his strand rate was fine. One who is obviously in decline, and whose career has been pretty erratic to begin with, his ERA was a run better at home."
+71,Jack Leiter,TEX,17,Late Upside,RHP,103,93,98,84%,157,4.08,23.70%,"It's easy to think the book on Jack Leiter is fully written: pretty good stuff, terrible command and inconsistent start to start. But he hasn't yet thrown 200 innings in his major-league career, and there's always room for a 25-year-old to grow. This spring, all of his pitches are above-average or much better by Stuff+, and he's locating his four-seam, slider and curveball better than ever with a great walk rate. It serves as a reminder that there could be another level for the righty."
+72,Reid Detmers,LAA,17,Late Upside,LHP,115,110,122,N/A,134,3.65,26.40%,"We've done this before with Reid Detmers. Why should it be any different this time? He has a great slider and nothing else, right? But a couple things have changed. He has a new splitter that the models love and that no hitter has gotten a hit off of this spring yet. The sinker is also new and holds some promise. And lastly, he figured out that his slider - a hard, low-movement slider - doesn't have big platoon splits. He spammed the pitch against lefties last year and had his best year against southpaws."
+73,Hunter Barco,PIT,32,Monitor 2026 Prospect,LHP,102,107,107,N/A,121,4.1,21.80%,"At his core, Hunter Barco is a four-seam/splitter/slider guy with just enough stuff and command to be intriguing situationally. But this offseason, he added three pitches and is now a wide arsenal guy with outpitches. The sweeper could be a legit out-pitch against righties, and even a below-average sinker takes the pressure off the four-seamer. He has the upside to improve this ranking by leaps and bounds by the time we do this again in April."
+74,Mike Burrows,HOU,17,Late Upside,RHP,94,100,97,81%,153,4.05,23.60%,"No pitch is very flashy for Mike Burrows, but his pitches fit together well. This spring, his four-seam and curveball are playing up and his changeup has long been a strength. That's three fairly platoon-neutral pitches before you add a usable sinker-slider combo. He throws all five of his pitches and commands them well. Success doesn't always come in a GIF-able format."
+75,Parker Messick,CLE,18,Possible Job Upside,LHP,99,108,107,81%,135,4.1,21.40%,"There's always room for a LODEM guy - a guy who doesn't have pleasing peripherals but still has something going for him. Parker Messick has average-ish stuff, a bad strikeout-minus walk rate this spring, a boring ground ball rate ... and yet he's intriguing. He has a plus changeup and curveball combo, and though his fastballs aren't great, he locates them really well. Want a new Kris Bubic? Here's your guy."
+76,Jose Soriano,LAA,20,Late Upside 2,RHP,103,102,106,83%,143,3.73,21.60%,
+77,Cody Ponce,TOR,16,Toby Upside 3,RHP,N/A,N/A,N/A,N/A,154,4.03,23.30%,
+78,Ryne Nelson,ARI,12,Toby Upside 1,RHP,106,100,105,85%,153,4.12,20.60%,
+79,Clay Holmes,NYM,22,Toby 15-Team,RHP,100,100,102,82%,164,3.79,20.10%,
+80,Max Meyer,MIA,24,Potential Pickups If Things Go Right,RHP,97,106,106,66%,126,4.13,22.00%,
+81,Kyle Harrison,MIL,18,Possible Job Upside,LHP,104,108,107,80%,120,3.95,24.50%,
+82,Matthew Liberatore,STL,22,Toby 15-Team,LHP,95,101,96,90%,164,4.36,19.60%,
+83,Dustin May,STL,22,Toby 15-Team,RHP,98,96,94,60%,132,4.39,20.10%,
+84,Casey Mize,DET,22,Toby 15-Team,RHP,94,107,102,77%,135,4.13,20.70%,
+85,Jacob Latz,TEX,18,Possible Job Upside,LHP,105,102,107,N/A,113,4.13,23.10%,
+86,Johan Oviedo,BOS,20,Late Upside 2,RHP,107,86,96,60%,111,4.26,23.10%,
+87,Chad Patrick,MIL,27,Toby 15-Team If Job,RHP,105,99,102,83%,153,4,23.00%,
+88,Cade Cavalli,WSN,20,Late Upside 2,RHP,103,98,103,56%,123,4.2,19.80%,
+89,Braxton Garrett,MIA,24,Potential Pickups If Things Go Right,LHP,N/A,N/A,N/A,N/A,101,3.94,21.20%,
+90,Landen Roupp,SFG,16,Toby Upside 3,RHP,97,105,102,81%,132,4.03,22.10%,
+91,Mitch Keller,PIT,22,Toby 15-Team,RHP,94,100,93,93%,172,4.18,20.70%,
+92,Joe Musgrove,SDP,12,Toby Upside 1,RHP,N/A,N/A,N/A,N/A,107,3.77,22.70%,
+93,Bryce Miller,SEA,10,Holly I Feel A Little Worse About,RHP,102,97,99,81%,109,3.82,21.90%,
+94,Sean Manaea,NYM,20,Late Upside 2,LHP,110,101,106,73%,123,3.82,24.20%,
+95,David Peterson,NYM,22,Toby 15-Team,LHP,91,102,96,88%,168,3.97,20.50%,
+96,Zac Gallen,ARI,12,Toby Upside 1,RHP,92,105,99,90%,181,4.21,21.80%,
+97,Taj Bradley,MIN,27,Toby 15-Team If Job,RHP,101,92,94,88%,133,4.11,22.90%,
+98,Steven Matz,TBR,27,Toby 15-Team If Job,LHP,104,110,109,N/A,115,4.08,20.30%,
+99,Mick Abel,MIN,18,Possible Job Upside,RHP,109,97,103,76%,139,4.26,22.70%,
+100,Andrew Abbott,CIN,10,Holly I Feel A Little Worse About,LHP,99,104,101,90%,166,4.53,21.80%,
+101,Slade Cecconi,CLE,22,Toby 15-Team,RHP,93,104,95,86%,164,4.29,19.80%,
+102,Brayan Bello,BOS,16,Toby Upside 3,RHP,94,102,96,88%,169,4.42,19.20%,
+103,Zach Eflin,BAL,14,Toby Upside 2,RHP,92,105,97,73%,123,4.53,18.10%,
+104,Yusei Kikuchi,LAA,22,Toby 15-Team,LHP,98,105,105,89%,141,4.09,23.30%,
+105,Reynaldo Lopez,ATL,17,Late Upside,RHP,97,95,91,59%,118,3.96,24.30%,
+106,Grant Holmes,ATL,17,Late Upside,RHP,92,100,93,78%,105,4.05,23.90%,
+107,Luis Gil,NYY,20,Late Upside 2,RHP,97,95,95,72%,111,4.39,22.60%,
+108,Hunter Greene,CIN,2,AGA 1,RHP,120,104,120,73%,75,3.24,30.50%,
+109,Spencer Schwellenbach,ATL,13,Injury Stash 1,RHP,107,109,116,79%,77,3.55,24.00%,
+110,Justin Steele,CHC,23,Injury Stash 2,LHP,103,100,98,68%,86,3.7,22.70%,
+111,Justin Wrobleski,LAD,18,Possible Job Upside,LHP,101,109,109,N/A,90,4.14,21.80%,
+112,River Ryan,LAD,18,Possible Job Upside,RHP,N/A,N/A,N/A,N/A,75,4.14,21.70%,
+113,Joe Boyle,TBR,28,Kinda Cool But No Job,RHP,106,87,95,74%,96,3.6,27.30%,
+114,Logan Henderson,MIL,15,HIPSTER 1,RHP,102,109,107,76%,101,3.89,24.80%,
+115,Richard Fitts,STL,24,Potential Pickups If Things Go Right,RHP,102,104,105,72%,113,4.49,18.20%,
+116,Zebby Matthews,MIN,17,Late Upside,RHP,101,106,106,77%,105,3.84,23.70%,
+117,Tyler Mahle,SFG,16,Toby Upside 3,RHP,92,111,102,57%,124,4.36,19.20%,
+118,Brady Singer,CIN,22,Toby 15-Team,RHP,95,100,95,94%,173,4.32,21.40%,
+119,Spencer Arrighetti,HOU,17,Late Upside,RHP,102,93,96,78%,105,4.38,22.50%,
+120,Emerson Hancock,SEA,33,No Job And Itâ€™s Meh,RHP,90,99,87,80%,110,4.33,18.70%,
+121,Ryan Weiss,HOU,16,Toby Upside 3,RHP,N/A,N/A,N/A,N/A,90,4.22,23.00%,
+122,Chris Bassitt,BAL,26,Toby 15-Team Again,RHP,99,100,97,84%,161,4.35,21.00%,
+123,Merrill Kelly,ARI,14,Toby Upside 2,RHP,92,103,98,79%,151,4.35,20.70%,
+124,Andrew Painter,PHI,15,HIPSTER 1,RHP,N/A,N/A,N/A,N/A,124,4.5,19.90%,
+125,Robby Snelling,MIA,15,HIPSTER 1,LHP,N/A,N/A,N/A,N/A,105,4.1,21.50%,
+126,Luis Severino,ATH,22,Toby 15-Team,RHP,104,100,103,74%,166,4.51,19.20%,
+127,Michael Soroka,ARI,27,Toby 15-Team If Job,RHP,95,96,89,62%,122,4.1,23.10%,
+128,Anthony Kay,CHW,27,Toby 15-Team If Job,LHP,N/A,N/A,N/A,N/A,123,4.4,18.80%,
+129,Noah Cameron,KCR,12,Toby Upside 1,LHP,96,100,100,88%,147,4.66,19.20%,
+130,Quinn Priester,MIL,16,Toby Upside 3,RHP,96,98,94,89%,101,3.89,20.70%,
+131,Shane Smith,CHW,16,Toby Upside 3,RHP,95,97,93,83%,161,4.09,22.60%,
+132,Ian Seymour,TBR,24,Potential Pickups If Things Go Right,LHP,95,99,95,83%,89,3.95,23.10%,
+133,Jonah Tong,NYM,24,Potential Pickups If Things Go Right,RHP,99,96,97,77%,71,3.4,28.20%,
+134,Connelly Early,BOS,19,Dope But No Job,LHP,101,109,111,78%,55,3.92,24.00%,
+135,Hurston Waldrep,ATL,23,Injury Stash 2,RHP,99,99,103,76%,80,4.3,20.80%,
+136,Robert Gasser,MIL,28,Kinda Cool But No Job,LHP,104,69,74,66%,75,3.89,22.60%,
+137,Brandon Sproat,MIL,19,Dope But No Job,RHP,106,86,90,75%,66,4.01,20.70%,
+138,Roki Sasaki,LAD,18,Possible Job Upside,RHP,91,91,84,68%,99,4.19,22.10%,
+139,Janson Junk,MIA,27,Toby 15-Team If Job,RHP,96,111,106,80%,105,4.39,17.40%,
+140,Justin Verlander,DET,22,Toby 15-Team,RHP,103,99,100,63%,122,4.54,19.90%,
+141,Max Scherzer,TOR,16,Toby Upside 3,RHP,92,110,103,58%,65,4.56,22.30%,
+142,Seth Lugo,KCR,16,Toby Upside 3,RHP,93,96,90,82%,152,4.83,18.60%,
+143,Cristian Javier,HOU,17,Late Upside,RHP,95,96,92,64%,153,4.9,20.30%,
+144,Jacob Lopez,ATH,17,Late Upside,LHP,98,101,99,83%,134,4.34,24.30%,
+145,Jameson Taillon,CHC,22,Toby 15-Team,RHP,96,107,100,74%,143,4.54,18.80%,
+146,Jeffrey Springs,ATH,26,Toby 15-Team Again,LHP,94,100,94,73%,157,4.96,18.90%,
+147,Brandon Pfaadt,ARI,22,Toby 15-Team,RHP,96,104,101,97%,176,4.2,20.70%,
+148,Bailey Ober,MIN,16,Toby Upside 3,RHP,96,100,98,93%,147,4.53,20.60%,
+149,Michael McGreevy,STL,26,Toby 15-Team Again,RHP,88,111,101,87%,174,4.44,16.40%,
+150,Chase Dollander,COL,31,Has Job But Itâ€™s The Rockies,RHP,97,97,94,76%,132,5.04,20.90%,

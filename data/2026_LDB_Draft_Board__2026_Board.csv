@@ -1,36 +1,36 @@
-,REM,CHOICE,17,K,ICHI,21,K,WIND,18,K,NEO,19,K,FRY,23,K,POLL,19,K,ROOF,21,K,IPA,17,K,IZZY,23,K,WORK,24,K,CORN,16,K,AIDS,18,K,TONES,22,K,NATE,18,K,PWRS,20,K,BALK,24,K,REM
-2026,320,Brophy,154.62,,Jay/Paul,176.96,,Sean,166.85,,Tim,102.13,,Jorve,112.87,,Anton,106.88,,Mark,155.73,,Chris/Vijay,144.35,,Ray,144.57,,Dubner,172.79,,Ryan,128.73,,Josh,160.17,,Michael,134.47,,Nathan,109.91,,Starr,149.44,,Ian,97.80,,320
-C,4,Ag. Ramirez,1.00,S1,W. Contreras,13.50,K3,A. Rutschman,4.00,S3,G. Moreno,1.50,H3,C. Raleigh,6.75,K3,,,,D. Dingler,3.00,HTH,,,,,,,S. Perez,4.50,K3,H. Goodman,4.95,K2,A. Kirk,1.35,K2,W. Smith,10.80,K2,S. Langeliers,0.90,K3,,,,K. Teel,0.50,K2,C
-1B,10,K. Manzardo,1.00,S1,,,,,,,N. Kurtz,1.00,S1,,,,,,,,,,S. Torkelson,1.00,S1,,,,,,,,,,,,,M. Busch,1.50,S2,B. Rice,6.75,K2,,,,P. Alonso,29.70,K1,1B
+,REM,CHOICE,18,K,ICHI,21,K,WIND,18,K,NEO,19,K,FRY,23,K,POLL,19,K,ROOF,20,K,IPA,17,K,IZZY,23,K,WORK,24,K,CORN,16,K,AIDS,18,K,TONES,22,K,NATE,18,K,PWRS,20,K,BALK,23,K,REM
+2026,319,Brophy,163.62,,Jay/Paul,176.96,,Sean,166.85,,Tim,102.13,,Jorve,112.87,,Anton,106.88,,Mark,151.73,,Chris/Vijay,144.35,,Ray,144.57,,Dubner,172.79,,Ryan,128.73,,Josh,160.17,,Michael,134.47,,Nathan,109.91,,Starr,149.44,,Ian,88.80,,319
+C,4,L. O'Hoppe,1.00,H2,W. Contreras,13.50,K3,A. Rutschman,4.00,S3,G. Moreno,1.50,H3,C. Raleigh,6.75,K3,,,,D. Dingler,3.00,HTH,,,,,,,S. Perez,4.50,K3,H. Goodman,4.95,K2,A. Kirk,1.35,K2,W. Smith,10.80,K2,S. Langeliers,0.90,K3,,,,K. Teel,0.50,K2,C
+1B,11,,,,,,,,,,N. Kurtz,1.00,S1,,,,,,,,,,S. Torkelson,1.00,S1,,,,,,,,,,,,,M. Busch,1.50,S2,B. Rice,6.75,K2,,,,P. Alonso,29.70,K1,1B
 2B,8,,,,C. Rafaela,4.05,K3,,,,L. Keaschall,1.00,S1,,,,B. Turang,7.20,K2,,,,N. Gorman,4.00,S3,B. Donovan,3.60,K3,,,,K. Marte,17.10,K3,B. Stott,5.40,K2,G. Torres,4.95,K2,,,,,,,,,,2B
-3B,7,J. Caminero,1.00,S1,M. Machado,18.00,K2,M. Chapman,6.75,K3,,,,,,,J. Ramirez,39.60,K3,,,,C. Durbin,0.50,K2,C. Montgomery,0.50,H1,,,,M. Garcia,3.60,K2,,,,E. Suarez,3.15,K3,,,,,,,A. Bohm,4.00,S3,3B
-SS,6,J. Wilson,2.25,K2,,,,T. Story,3.15,K2,Z. Neto,6.30,K3,,,,J. Pena,7.50,S4,C. Abrams,1.50,S2,B. Bichette,16.20,K2,B. Witt,4.00,H4,T. Turner,26.10,K2,G. Perdomo,0.50,K2,D. Swanson,9.00,K2,,,,,,,,,,,,,SS
+3B,8,,,,M. Machado,18.00,K2,M. Chapman,6.75,K3,,,,,,,J. Ramirez,39.60,K3,,,,C. Durbin,0.50,K2,C. Montgomery,0.50,H1,,,,M. Garcia,3.60,K2,,,,E. Suarez,3.15,K3,,,,,,,A. Bohm,4.00,S3,3B
+SS,7,J. Wilson,2.25,K2,,,,T. Story,3.15,K2,Z. Neto,6.30,K3,,,,J. Pena,7.50,S4,,,,B. Bichette,16.20,K2,B. Witt,4.00,H4,T. Turner,26.10,K2,G. Perdomo,0.50,K2,D. Swanson,9.00,K2,,,,,,,,,,,,,SS
 OF,7,B. Buxton,9.00,K3,,,,,,,J.H. Lee,1.00,H2,B. Rooker,17.10,K2,,,,,,,D. Varsho,4.00,H4,,,,J. Marsee,6.00,HTH,J. Soto,49.50,K3,J.Wood,1.00,S1,,,,D. Lile,6.00,HTH,,,,G. Stanton,0.50,K2,OF
-CF,5,W. Langford,1.00,S1,L. Butler,0.50,K3,,,,B. Marsh,4.00,S3,,,,T. Grisham,6.00,HTH,J. Rodriguez,1.50,S2,A. Pages,1.00,S1,P. Crow-Armstrong,1.00,H2,B. Doyle,0.50,K3,O. Cruz,1.50,H3,,,,,,,,,,M. Harris,7.50,S4,T.J. Friedl,3.15,K3,CF
+CF,7,,,,L. Butler,0.50,K3,,,,B. Marsh,4.00,S3,,,,T. Grisham,6.00,HTH,,,,A. Pages,1.00,S1,P. Crow-Armstrong,1.00,H2,B. Doyle,0.50,K3,O. Cruz,1.50,H3,,,,,,,,,,M. Harris,7.50,S4,T.J. Friedl,3.15,K3,CF
 RF,8,A. Barger,0.50,K2,,,,,,,,,,R. Acuna,41.80,K2,,,,K. Tucker,7.50,S4,S. Frelick,1.00,H2,A. Judge,47.70,K3,,,,T. Hernandez,22.50,K2,J. Lowe,4.00,S3,,,,,,,K. Stowers,0.90,K2,,,,RF
-UT,24,,,,,,,,,,J. Aranda,5.85,K2,R. Greene,1.50,H3,,,,,,,V. Scott II,1.00,H2,,,,,,,,,,G. Springer,4.50,K2,,,,,,,I. Herrera,2.70,K2,,,,UT
+UT,23,,,,,,,,,,J. Aranda,5.85,K2,R. Greene,1.50,H3,,,,,,,V. Scott II,1.00,H2,,,,,,,,,,G. Springer,4.50,K2,,,,,,,I. Herrera,2.70,K2,R. Lewis,4.00,S3,UT
 UT,,W. Abreu,3.15,K3,,,,,,,,,,C. Carroll,4.00,S3,,,,,,,,,,J. Caballero,0.90,K2,,,,,,,,,,,,,,,,,,,,,,UT
-SP,30,P. Skenes,1.50,S2,N. Lodolo,7.50,S4,R. Weathers,5.85,K3,J. deGrom,18.10,K3,D. Rasmussen,10.80,K3,M. Fried,26.10,K2,F. Valdez,25.20,K2,G. Cole,10.80,K2,R. Nelson,0.50,K2,C. Schlittler,6.00,HTH,T. Bibee,4.00,S3,R. Ray,6.75,K3,C. Rodon,12.60,K2,C. Sanchez,9.00,K3,N. Pivetta,9.90,K2,,,,SP
-SP,,L. Webb,21.60,K2,N. Cameron,0.50,H2,G. Kirby,4.00,S3,C. Ragans,36.90,K2,M. Liberatore,1.00,H2,J. Musgrove,1.35,K2,F. Peralta,17.10,K2,D. May,4.00,H4,B. Woodruff,5.40,K3,R. Suarez,3.15,K3,J. Jones,1.50,S2,A. Abbott,6.00,HTH,M. Burrows,6.00,HTH,B. Woo,28.80,K2,K. Bradish,1.80,K2,,,,SP
-SP,,E. Sheehan,6.00,HTH,,,,S. Bieber,6.30,K2,T. Rogers,6.00,HTH,,,,,,,K. Gausman,8.55,K2,B. Bello,3.60,K2,,,,G. Williams,4.00,S3,G. Stone,1.50,H3,S. Imanaga,1.50,H3,,,,K. Senga,4.00,H4,B. Ashcraft,0.90,K2,,,,SP
+SP,31,L. Webb,21.60,K2,N. Lodolo,7.50,S4,R. Weathers,5.85,K3,J. deGrom,18.10,K3,D. Rasmussen,10.80,K3,M. Fried,26.10,K2,F. Valdez,25.20,K2,G. Cole,10.80,K2,R. Nelson,0.50,K2,C. Schlittler,6.00,HTH,T. Bibee,4.00,S3,R. Ray,6.75,K3,C. Rodon,12.60,K2,C. Sanchez,9.00,K3,N. Pivetta,9.90,K2,,,,SP
+SP,,E. Sheehan,6.00,HTH,N. Cameron,0.50,K2,G. Kirby,4.00,S3,C. Ragans,36.90,K2,M. Liberatore,1.00,H2,J. Musgrove,1.35,K2,F. Peralta,17.10,K2,D. May,4.00,H4,B. Woodruff,5.40,K3,R. Suarez,3.15,K3,J. Jones,1.50,S2,A. Abbott,6.00,HTH,M. Burrows,6.00,HTH,B. Woo,28.80,K2,K. Bradish,1.80,K2,,,,SP
+SP,,,,,,,,S. Bieber,6.30,K2,T. Rogers,6.00,HTH,,,,,,,K. Gausman,8.55,K2,B. Bello,3.60,K2,,,,G. Williams,4.00,S3,G. Stone,1.50,H3,S. Imanaga,1.50,H3,,,,K. Senga,4.00,H4,B. Ashcraft,0.90,K2,,,,SP
 SP,,,,,,,,M. Gore,1.50,H3,N. Eovaldi,10.80,K3,,,,,,,H. Brown,4.00,H4,S. Gray,15.30,K2,,,,,,,G. Crochet,4.00,S3,S. Baz,7.50,S4,,,,C. Sale,31.50,K2,,,,,,,SP
 SP,,,,,,,,K. Bubic,0.50,K3,,,,,,,,,,R. Pepiot,17.10,K2,,,,,,,,,,,,,E. Cabrera,4.00,S3,,,,,,,,,,,,,SP
-RP,80,A. Ashby,1.00,S1,P. Maton,2.00,HTH,E. Pagan,2.00,HTH,,,,A. Munoz,5.85,K2,T. Megill,2.70,K2,S. Smith,0.50,K2,B. King,2.00,HTH,,,,,,,R. Sasaki,1.00,H2,B. Pfaadt,1.50,H3,J. Duran,7.50,S4,,,,J. Wrobleski,2.00,HTH,D. Palencia,2.00,HTH,RP
+RP,80,,,,P. Maton,2.00,HTH,E. Pagan,2.00,HTH,,,,A. Munoz,5.85,K2,T. Megill,2.70,K2,S. Smith,0.50,K2,B. King,2.00,HTH,,,,,,,R. Sasaki,1.00,H2,B. Pfaadt,1.50,H3,J. Duran,7.50,S4,,,,J. Wrobleski,2.00,HTH,D. Palencia,2.00,HTH,RP
 RP,,,,,,,,,,,,,,,,,,,,,,,R. Detmers,4.00,H4,,,,,,,M. Miller,1.50,H3,,,,A. Chapman,2.70,K2,,,,,,,,,,RP
-RP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,I. Seymour,2.00,HTH,,,,,,,,,,,,,,,,RP
+RP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,I. Seymour,2.00,HTH,,,,J. Hoffman,4.00,S3,,,,,,,,,,RP
 RP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,RP
 RP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,RP
 RP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,RP
-BN,61,L. O'Hoppe,1.00,H2,,,,,,,,,,,,,,,,,,,,,,,,,,,,G. Lux,1.00,H2,,,,,,,,,,,,,,,,BN
-BN,,R. Lewis,4.00,S3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BN
+BN,62,,,,,,,,,,,,,,,,,,,B. Garrett,4.00,S3,,,,,,,,,,G. Lux,1.00,H2,,,,,,,,,,,,,,,,BN
 BN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BN
 BN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BN
-SN1,70,,,,B. Lee,1.00,H2,A. Thomas,1.00,S1,A. Volpe,1.50,S2,,,,J. Merrill,1.50,S2,,,,,,,,,,,,,,,,J. Dominguez,1.00,H2,J. Hoffman,4.00,S3,J. Boyle,1.00,S1,T. Soderstrom,1.00,S1,E. Tovar,1.00,H2,SN1
-SN2,,,,,G. Mitchell,1.00,H2,M. Meyer,1.50,S2,,,,,,,D. Baldwin,1.00,S1,,,,,,,,,,,,,,,,,,,,,,J. Leiter,1.00,S1,C. Horton,1.00,S1,,,,SN2
-SN3,,,,,T. Bradley,1.00,H2,G. Henderson,1.50,S2,,,,,,,J. Adell,1.50,S2,,,,,,,,,,,,,,,,,,,,,,S. Woods-Richardson,1.50,S2,M. Vargas,1.00,H2,,,,SN3
-SN4,,,,,,,,Y. Yamamoto,1.50,S2,,,,,,,C. Cowser,1.50,S2,,,,,,,,,,,,,,,,,,,,,,M. Vientos,1.50,S2,H. Ramos,1.50,S2,,,,SN4
-SN5,,,,,,,,,,,,,,,,,G. Holmes,1.00,H2,,,,,,,,,,,,,,,,,,,,,,E. De La Cruz,1.50,S2,,,,,,,SN5
-SN6,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,B. Baty,1.00,S1,,,,,,,SN6
+BN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BN
+SN1,63,Ag. Ramirez,1.00,S1,B. Lee,1.00,H2,A. Thomas,1.00,S1,A. Volpe,1.50,S2,,,,J. Merrill,1.50,S2,J. Rodriguez,1.50,S2,,,,,,,,,,,,,J. Dominguez,1.00,H2,,,,J. Boyle,1.00,S1,T. Soderstrom,1.00,S1,E. Tovar,1.00,H2,SN1
+SN2,,K. Manzardo,1.00,S1,G. Mitchell,1.00,H2,M. Meyer,1.50,S2,,,,,,,D. Baldwin,1.00,S1,C. Abrams,1.50,S2,,,,,,,,,,,,,,,,,,,J. Leiter,1.00,S1,C. Horton,1.00,S1,,,,SN2
+SN3,,J. Caminero,1.00,S1,T. Bradley,1.00,H2,G. Henderson,1.50,S2,,,,,,,J. Adell,1.50,S2,,,,,,,,,,,,,,,,,,,,,,S. Woods-Richardson,1.50,S2,M. Vargas,1.00,H2,,,,SN3
+SN4,,W. Langford,1.00,S1,,,,Y. Yamamoto,1.50,S2,,,,,,,C. Cowser,1.50,S2,,,,,,,,,,,,,,,,,,,,,,M. Vientos,1.50,S2,H. Ramos,1.50,S2,,,,SN4
+SN5,,P. Skenes,1.50,S2,,,,,,,,,,,,,G. Holmes,1.00,H2,,,,,,,,,,,,,,,,,,,,,,E. De La Cruz,1.50,S2,,,,,,,SN5
+SN6,,A. Ashby,1.00,S1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,B. Baty,1.00,S1,,,,,,,SN6
 AA,,C. Burns,0.00,,L. Brinson,0.00,,T. Casas,0.00,,T. Bazzana,0.00,,J. Perdomo,0.00,,F. Kilome,0.00,,F. Barreto,0.00,,B. Shipley,0.00,,A. Martin,0.00,,A. Jackson,0.00,,L. Armenteros,0.00,,C. Martin,0.00,,E. Green,0.00,,K. Mcgonigle ,0.00,,F. Whitley,0.00,,C. Moore,0.00,,AA
 AA,,J. Caglianone,0.00,,J. Biddle,0.00,,C. Fulmer,0.00,,B. Rainer,0.00,,Q. Priester,0.00,,N. Pearson,0.00,,E. Florial,0.00,,B. Shipley,0.00,,D. Waters,0.00,,K. Watson,0.00,,J. Groome,0.00,,S. Howard,0.00,,T. Thomas,0.00,,F. Alvarez,0.00,,J. Guerra,0.00,,J. Crawford,0.00,,AA
 AA,,Z. Matthews,0.00,,N. Marte,0.00,,K. Robinson,0.00,,J. Lebron,0.00,,J. Jobe,0.00,,C. Cowser,0.00,,C. Pache,0.00,,A. Hansen,0.00,,E. Morales,0.00,,H. Davis,0.00,,F. Celesten,0.00,,B. Rocchio,0.00,,J. Triantos,0.00,,A. Baddoo,0.00,,B. Eldridge,0.00,,J. De Paula,0.00,,AA
@@ -48,7 +48,7 @@ AA,,D. Curley,0.00,,Jai. Chourio,0.00,,T. Troy,0.00,,,,,A. Nimmala,0.00,,R. Lewi
 AA,,N. Gonzales,0.00,,J. Parker,0.00,,N. Meyer,0.00,,,,,J. Briceno,0.00,,S. Sanchez,0.00,,R. Mauricio,0.00,,E. Hankins,0.00,,,,,,,,,,,,,,,,,,,,R. Velazquez,0.00,,,,,AA
 AA,,O. Martinez,0.00,,,,,T. Sykora,0.00,,,,,Y. Curet,0.00,,C. Winn,0.00,,E. Perez,0.00,,E. Holliday,0.00,,,,,,,,,,,,,,,,,,,,C. Lagrange,0.00,,,,,AA
 AA,,R. Vilade,0.00,,,,,G. Taylor,0.00,,,,,R. Sloan,0.00,,D. Lesko,0.00,,L. Allen,0.00,,M. Murakami,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,AA
-AA,,K. Allard,0.00,,,,,S. Stewart,0.00,,,,,K. Anderson,0.00,,,,,G. Valera,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
+AA,,K. Allard,0.00,,,,,S. Stewart,0.00,,,,,K. Anderson,0.00,,,,,G. Valera,0.00,,J. Chourio,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,D. Cameron,0.00,,,,,L. Pena (MIL),0.00,,,,,C. Fuller,0.00,,,,,J. Dunn,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,C. Kieboom,0.00,,,,,Rain. Rodriguez,0.00,,,,,H. Alvarez,0.00,,,,,C. Abrams,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 AA,,T. Yamada,0.00,,,,,M. Sirota,0.00,,,,,J. Wiggins,0.00,,,,,M. Luciano,0.00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
@@ -73,14 +73,14 @@ AA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AA
 MISC,,Pick Swap,1.00,,Pick Swap,-1.00,,Pick Swap,1.50,,Pick Swap,-10.50,,,,,Pick Swap,-1.00,,Pick Swap,-2.50,,Pick Swap,-2.00,,,,,Pick Swap,-2.50,,Soto/Crochet,-19.43,,Pick Swap,-2.50,,Chapman,3.25,,Peterson Aranda,-2.50,,Ragans,4.00,,Pick Swap,10.50,,MISC
 MISC,,Palencia,-0.50,,Torres,-2.25,,,,,Moreno,4.50,,,,,,,,Pick Swap,-1.50,,SG,3.50,,,,,Hoffman,-1.50,,Moreno,-4.50,,Sonny Gray,-3.50,,Jeff Hoffman,1.50,,Lile,1.00,,Herrera/Musgrove,3.50,,Soto/Crochet,19.43,,MISC
 MISC,,Suarez,-7.00,,,,,,,,Marsh,0.50,,,,,,,,Pick Swap,-1.50,,Pick Swap,-7.50,,,,,Pick Swap,-5.50,,,,,Chapman,-3.25,,Torres,2.25,,,,,Pick Swap,2.50,,Marsh,-0.50,,MISC
-MISC,,,,,,,,,,,Pick Swap,1.50,,,,,,,,Pick Swap,-18.50,,,,,,,,Lile,-1.00,,,,,,,,Suarez,7.00,,,,,Pick Swap,7.00,,Pick Swap,2.50,,MISC
+MISC,,Lewis,-5.00,,,,,,,,Pick Swap,1.50,,,,,,,,Pick Swap,-18.50,,,,,,,,Lile,-1.00,,,,,,,,Suarez,7.00,,,,,Pick Swap,7.00,,Pick Swap,2.50,,MISC
 MISC,,,,,,,,,,,Pick Swap,7.50,,,,,,,,Pick Swap,-7.00,,,,,,,,Shane Smith,-1.50,,,,,,,,,,,,,,Pick Swap,5.50,,Pick Swap,2.00,,MISC
 MISC,,,,,,,,,,,Pick Swap,3.50,,,,,,,,Pick Swap,-5.50,,,,,,,,,,,,,,,,,,,,,,,,,,Pick Swap,18.50,,MISC
 MISC,,,,,,,,,,,Peterson Aranda,2.50,,,,,,,,Pick Swap,-3.50,,,,,,,,,,,,,,,,,,,,,,,,,,Pick Swap,2.00,,MISC
 MISC,,,,,,,,,,,,,,,,,,,,Shane Smith,1.50,,,,,,,,,,,,,,,,,,,,,,,,,,Pick Swap,1.00,,MISC
 MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pick Swap,5.50,,MISC
 MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Palencia,0.50,,MISC
-MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MISC
+MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Lewis,5.00,,MISC
 MISC,`,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MISC
 MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MISC
 MISC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MISC
@@ -96,6 +96,6 @@ LUX,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,5.95
 MCQ,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,3.00,,,0.00,,,0.00,,,0.00,,,6.00,,,0.00,,,2.50,,,0.00,,MCQ
 INN,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,,0.00,,INN
 $$$,C.O.,,-2.12,,,-22.76,,,-7.90,,,-5.58,,,-1.67,,,-2.83,,,-3.18,,,-6.75,,,-11.17,,,-11.04,,,-26.90,,,-4.42,,,-7.67,,,-2.86,,,-4.64,,,-0.08,,$$$
-%,Hit,10%,18.90,,18%,36.05,,7%,13.90,,11%,20.65,,40%,71.15,,33%,60.30,,7%,13.50,,16%,28.70,,31%,57.70,,20%,37.10,,49%,99.65,,14%,25.25,,12%,22.20,,8%,13.65,,6%,11.10,,21%,37.85,,Hit
-%,Pit,17%,30.10,,5%,10.00,,11%,20.15,,39%,71.80,,10%,17.65,,17%,30.15,,40%,72.45,,21%,39.70,,3%,5.90,,7%,13.15,,8%,15.50,,15%,27.25,,9%,16.20,,41%,73.30,,8%,14.60,,1%,2.00,,Pit
-%,Ben,3%,5.00,,1%,3.00,,3%,5.50,,1%,1.50,,0%,0.00,,4%,6.50,,0%,0.00,,0%,0.00,,0%,0.00,,0%,0.00,,0%,1.00,,1%,1.00,,2%,4.00,,4%,7.50,,2%,4.50,,1%,1.00,,Ben
+%,Hit,9%,15.90,,18%,36.05,,7%,13.90,,11%,20.65,,40%,71.15,,33%,60.30,,6%,10.50,,16%,28.70,,31%,57.70,,20%,37.10,,49%,99.65,,14%,25.25,,12%,22.20,,8%,13.65,,6%,11.10,,24%,41.85,,Hit
+%,Pit,15%,27.60,,5%,10.00,,11%,20.15,,39%,71.80,,10%,17.65,,17%,30.15,,40%,72.45,,21%,39.70,,3%,5.90,,7%,13.15,,8%,15.50,,15%,27.25,,11%,20.20,,41%,73.30,,8%,14.60,,1%,2.00,,Pit
+%,Ben,4%,6.50,,1%,3.00,,3%,5.50,,1%,1.50,,0%,0.00,,4%,6.50,,4%,7.00,,0%,0.00,,0%,0.00,,0%,0.00,,0%,1.00,,1%,1.00,,0%,0.00,,4%,7.50,,2%,4.50,,1%,1.00,,Ben
