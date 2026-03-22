@@ -455,45 +455,35 @@ export default function PlayerCard({ player, onClose, teams, onNominate }) {
             </span>
           </div>
 
-          {/* Batter stats */}
+          {/* Batter stats — classic 5×5 */}
           {isBAT && (<>
-            <StatRow label="G"    primary={player.g}        oopsy={player.oopsy_g} />
-            <StatRow label="PA"   primary={player.pa}       oopsy={player.oopsy_pa} />
-            <StatRow label="HR"   primary={player.hr}       oopsy={player.oopsy_hr}  dec={1} />
-            <StatRow label="R"    primary={player.r}        oopsy={player.oopsy_r}   dec={1} />
-            <StatRow label="OBP"  primary={player.obp}      oopsy={player.oopsy_obp} dec={3} />
-            <StatRow label="OPS"  primary={player.ops}      oopsy={player.oopsy_ops} dec={3} />
-            <StatRow label="aSB"  primary={player.asb}      oopsy={player.oopsy_asb} dec={1} />
-            <StatRow label="aRBI" primary={player.rbi}      oopsy={player.oopsy_rbi} dec={1} />
-            <StatRow label="wRC+" primary={player.wrc_plus} oopsy={player.oopsy_wrc_plus} dec={1} />
-            <StatRow label="WAR"  primary={player.war}      oopsy={player.oopsy_war} dec={2} />
+            <StatRow label="G"   primary={player.g}   oopsy={player.oopsy_g} />
+            <StatRow label="PA"  primary={player.pa}  oopsy={player.oopsy_pa} />
+            <StatRow label="BA"  primary={player.avg} oopsy={player.oopsy_avg} dec={3} />
+            <StatRow label="HR"  primary={player.hr}  oopsy={player.oopsy_hr}  dec={1} />
+            <StatRow label="R"   primary={player.r}   oopsy={player.oopsy_r}   dec={1} />
+            <StatRow label="RBI" primary={player.rbi} oopsy={player.oopsy_rbi} dec={1} />
+            <StatRow label="SB"  primary={player.sb}  oopsy={player.oopsy_sb}  dec={1} />
           </>)}
 
-          {/* SP stats */}
+          {/* SP stats — classic 5×5 + IP */}
           {isSP && (<>
-            <StatRow label="GS"      primary={player.gs}   oopsy={player.oopsy_gs}   dec={1} />
-            <StatRow label="IP"      primary={player.ip}   oopsy={player.oopsy_ip}   dec={1} />
-            <StatRow label="K"       primary={player.k}    oopsy={player.oopsy_k}    dec={1} />
-            <StatRow label="ERA"     primary={player.era}  oopsy={player.oopsy_era}  dec={3} inv />
-            <StatRow label="WHIP"    primary={player.whip} oopsy={player.oopsy_whip} dec={3} inv />
-            <StatRow label="HRA"     primary={player.hra}  oopsy={player.oopsy_hra}  dec={1} inv />
-            <StatRow label="MGS/GS"  primary={player.mgs}  oopsy={player.oopsy_mgs}  dec={2} />
-            <StatRow label="FIP"     primary={player.fip}  oopsy={player.oopsy_fip}  dec={3} inv />
-            <StatRow label="WAR"     primary={player.war}  oopsy={player.oopsy_war}  dec={2} />
+            <StatRow label="IP"   primary={player.ip}   oopsy={player.oopsy_ip}   dec={1} />
+            <StatRow label="ERA"  primary={player.era}  oopsy={player.oopsy_era}  dec={3} inv />
+            <StatRow label="K"    primary={player.k}    oopsy={player.oopsy_k}    dec={1} />
+            <StatRow label="SV"   primary={player.sv}   oopsy={player.oopsy_sv}   dec={1} />
+            <StatRow label="W"    primary={player.w}    oopsy={player.oopsy_w}    dec={1} />
+            <StatRow label="WHIP" primary={player.whip} oopsy={player.oopsy_whip} dec={3} inv />
           </>)}
 
-          {/* RP stats */}
+          {/* RP stats — same 5×5 pitching categories */}
           {isRP && (<>
-            <StatRow label="G"        primary={player.g}     oopsy={player.oopsy_g}     dec={1} />
-            <StatRow label="IP"       primary={player.ip}    oopsy={player.oopsy_ip}    dec={1} />
-            <StatRow label="SV"       primary={player.sv}    oopsy={player.oopsy_sv}    dec={1} />
-            <StatRow label="HLD"      primary={player.hld}   oopsy={player.oopsy_hld}   dec={1} />
-            <StatRow label="BS"       primary={player.bs}    oopsy={player.oopsy_bs}    dec={1} inv />
-            <StatRow label="K"        primary={player.k}     oopsy={player.oopsy_k}     dec={1} />
-            <StatRow label="ERA"      primary={player.era}   oopsy={player.oopsy_era}   dec={3} inv />
-            <StatRow label="WHIP"     primary={player.whip}  oopsy={player.oopsy_whip}  dec={3} inv />
-            <StatRow label="VIJAY/G"  primary={player.vijay} oopsy={player.oopsy_vijay} dec={3} />
-            <StatRow label="WAR"      primary={player.war}   oopsy={player.oopsy_war}   dec={2} />
+            <StatRow label="IP"   primary={player.ip}    oopsy={player.oopsy_ip}    dec={1} />
+            <StatRow label="ERA"  primary={player.era}   oopsy={player.oopsy_era}   dec={3} inv />
+            <StatRow label="K"    primary={player.k}     oopsy={player.oopsy_k}     dec={1} />
+            <StatRow label="SV"   primary={player.sv}    oopsy={player.oopsy_sv}    dec={1} />
+            <StatRow label="W"    primary={player.w}     oopsy={player.oopsy_w}     dec={1} />
+            <StatRow label="WHIP" primary={player.whip}  oopsy={player.oopsy_whip}  dec={3} inv />
           </>)}
 
           {/* ── ATHLETIC (SP only) ── */}

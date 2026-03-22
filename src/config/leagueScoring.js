@@ -12,6 +12,7 @@ export const LEAGUE_FORMAT_LINE = 'Season-long roto · not H2H'
 
 /** Lineup frequency — affects platoon / bench bat value. */
 export const LEAGUE_LINEUP_LINE = 'Weekly lineups (not daily) · platoons less valuable'
+/** Classic 5×5 rotisserie (season totals). */
 export const BATTING_CATEGORIES = [
   { code: 'BA', name: 'Batting Average' },
   { code: 'HR', name: 'Home Runs' },
@@ -23,11 +24,11 @@ export const BATTING_CATEGORIES = [
 export const PITCHING_CATEGORIES = [
   { code: 'ERA', name: 'Earned Run Average' },
   { code: 'K', name: 'Strikeouts (Pitcher)' },
-  { code: 'S', name: 'Saves' },
-  { code: 'W', name: 'Wins' },
-  { code: 'WHIP', name: 'Walks + Hits / Inning' },
+  { code: 'SV', name: 'Saves' },
+  { code: 'W', name: 'Wins (Pitcher)' },
+  { code: 'WHIP', name: 'Walks + Hits per Inning' },
 ]
 
 /** One-line summary for tight UI. */
 export const LEAGUE_SCORING_SHORT =
-  'BA · HR · R · RBI · SB  —  ERA · K · S · W · WHIP'
+  'BA · HR · R · RBI · SB  —  ERA · K · SV · W · WHIP'

@@ -515,6 +515,13 @@ def compute_ldb_scores(players, cat_weights):
     players.sort(key=lambda x: x["LDB_Score"], reverse=True)
     return players
 
+
+def ldb_roto5(p: dict) -> float:
+    """Pure 5×5 roto composite: weighted z-score sum before PA/IP workload multipliers."""
+    v = p.get("LDB_Score_roto5", p.get("LDB_Score"))
+    return float(v) if v is not None else 0.0
+
+
 def assign_est_values(players, budget):
     """Assign Est_Value to each player proportionally from budget by LDB_Score.
     Players must already have LDB_Score set. Modifies in place, returns players."""
@@ -562,6 +569,7 @@ def get_scored_pool_cached(pool_kind, proj_path):
                 r["_raw_SB"] = fv(r, "SB")
             pool = compute_ldb_scores(pool, CAT_BAT)
             for r in pool:
+                r["LDB_Score_roto5"] = r["LDB_Score"]
                 fac = roto_weekly_lineup_bat_factor(fv(r, "PA"), pa_list)
                 r["_roto_lineup_factor"] = fac
                 r["LDB_Score"] *= fac
@@ -579,6 +587,7 @@ def get_scored_pool_cached(pool_kind, proj_path):
                 r["_raw_WHIP"] = fv(r, "WHIP")
             pool = compute_ldb_scores(pool, CAT_SP)
             for r in pool:
+                r["LDB_Score_roto5"] = r["LDB_Score"]
                 fac = roto_pitching_ip_factor(fv(r, "IP"), ip_list)
                 r["_roto_ip_factor"] = fac
                 r["LDB_Score"] *= fac
@@ -597,6 +606,7 @@ def get_scored_pool_cached(pool_kind, proj_path):
                 r["_raw_WHIP"] = fv(r, "WHIP")
             pool = compute_ldb_scores(pool, CAT_RP)
             for r in pool:
+                r["LDB_Score_roto5"] = r["LDB_Score"]
                 fac = roto_pitching_ip_factor(fv(r, "IP"), ip_list)
                 r["_roto_ip_factor"] = fac
                 r["LDB_Score"] *= fac
@@ -643,19 +653,19 @@ def compute_batter_replacement_levels(
         proj_path, owned, aa_names, pos_map, pos_by_name_team, pos_by_last,
         num_teams, bench_pct=REPL_BAT_BENCH_PCT, top_n=REPL_TOP_N):
     """
-    Compute replacement-level LDB_Score for each batting position from the
+    Compute replacement-level 5×5 roto score for each batting position from the
     *available* pool (excluding owned + AA), while anchoring the replacement
     window to league-wide slot baselines.
 
     For each position:
       - Determine league starter slots (slots/team * num_teams)
       - Add bench depth (bench_pct)
-      - In the available eligible list, replacement level = avg LDB_Score of
-        players in [cutoff : cutoff + top_n)
+      - In the available eligible list, replacement level = avg 5×5 roto score
+        (LDB_Score_roto5) of players in [cutoff : cutoff + top_n)
 
     Example for C in 16-team league (1 C/team, bench_pct=0.30, top_n=5):
       cutoff = 16 + floor(16 * 0.30) = 20
-      replacement ≈ available catcher ranks 21-25 by LDB_Score.
+      replacement ≈ available catcher ranks 21-25 by 5×5 score.
     """
     all_qual = get_scored_pool_cached("bat", proj_path)
 
@@ -678,11 +688,12 @@ def compute_batter_replacement_levels(
             eligible = list(available)
         else:
             eligible = [p for p in available if pos in pos_cache.get(norm(p["Name"]), set())]
+        eligible.sort(key=ldb_roto5, reverse=True)
         window = eligible[cutoff: cutoff + top_n]
         if window:
-            replacement_levels[pos] = statistics.mean(p["LDB_Score"] for p in window)
+            replacement_levels[pos] = statistics.mean(ldb_roto5(p) for p in window)
         elif eligible:
-            replacement_levels[pos] = eligible[-1]["LDB_Score"]
+            replacement_levels[pos] = ldb_roto5(eligible[-1])
         else:
             replacement_levels[pos] = 0.0
 
@@ -694,7 +705,7 @@ def compute_pitcher_replacement_levels(
         sp_slots=REPL_SP_SLOTS_PER_TEAM, rp_slots=REPL_RP_SLOTS_PER_TEAM,
         bench_pct=REPL_BENCH_PCT, top_n=REPL_TOP_N):
     """
-    Compute replacement-level LDB_Score for SP and RP independently.
+    Compute replacement-level 5×5 roto score for SP and RP independently.
     SP slots are filled first (higher priority); RP from a separate pool.
     Returns {"SP": float, "RP": float}
     """
@@ -721,10 +732,11 @@ def compute_pitcher_replacement_levels(
     bench_sp   = int(remain_sp * bench_pct)
 
     avail_sp   = [p for p in all_sp if norm(p["Name"]) not in all_unavail]
+    avail_sp.sort(key=ldb_roto5, reverse=True)
     fill_sp    = min(remain_sp + bench_sp, len(avail_sp))
     repl_sp_p  = avail_sp[fill_sp : fill_sp + top_n]
-    sp_repl    = (statistics.mean(p["LDB_Score"] for p in repl_sp_p)
-                  if repl_sp_p else (avail_sp[-1]["LDB_Score"] if avail_sp else 0.0))
+    sp_repl    = (statistics.mean(ldb_roto5(p) for p in repl_sp_p)
+                  if repl_sp_p else (ldb_roto5(avail_sp[-1]) if avail_sp else 0.0))
 
     # ── RP ──────────────────────────────────────────────────────────────────
     all_rp = get_scored_pool_cached("rp", rp_proj_path)
@@ -745,10 +757,11 @@ def compute_pitcher_replacement_levels(
     bench_rp   = int(remain_rp * bench_pct)
 
     avail_rp   = [p for p in all_rp if norm(p["Name"]) not in all_unavail]
+    avail_rp.sort(key=ldb_roto5, reverse=True)
     fill_rp    = min(remain_rp + bench_rp, len(avail_rp))
     repl_rp_p  = avail_rp[fill_rp : fill_rp + top_n]
-    rp_repl    = (statistics.mean(p["LDB_Score"] for p in repl_rp_p)
-                  if repl_rp_p else (avail_rp[-1]["LDB_Score"] if avail_rp else 0.0))
+    rp_repl    = (statistics.mean(ldb_roto5(p) for p in repl_rp_p)
+                  if repl_rp_p else (ldb_roto5(avail_rp[-1]) if avail_rp else 0.0))
 
     return {"SP": sp_repl, "RP": rp_repl}
 
@@ -768,7 +781,7 @@ def assign_est_values_vorp(players, budget, replacement_levels,
         valid_rl  = [replacement_levels[pos] for pos in norm_pos if pos in replacement_levels]
         best_repl = min(valid_rl) if valid_rl else 0.0   # position with worst baseline = most valuable
         p["_repl_level"] = best_repl
-        p["_vorp"]       = max(0.0, p["LDB_Score"] - best_repl)
+        p["_vorp"]       = max(0.0, ldb_roto5(p) - best_repl)
 
     total_vorp = sum(p["_vorp"] for p in players)
     for p in players:
@@ -784,7 +797,7 @@ def assign_est_values_vorp_pitcher(players, budget, replacement_level_score):
     """VORP-based value allocation for a single pitcher pool (SP or RP)."""
     for p in players:
         p["_repl_level"] = replacement_level_score
-        p["_vorp"]       = max(0.0, p["LDB_Score"] - replacement_level_score)
+        p["_vorp"]       = max(0.0, ldb_roto5(p) - replacement_level_score)
     total_vorp = sum(p["_vorp"] for p in players)
     for p in players:
         if total_vorp > 0 and p["_vorp"] > 0:
@@ -1237,8 +1250,9 @@ def get_positions(proj_name, pos_map, pos_by_name_team=None, mlb_team="", pos_by
 # ── BATTER RANKINGS ────────────────────────────────────────────────────────────
 def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
                   pos_by_last=None, replacement_levels=None, rfa_matcher=None):
-    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    # ── Global ranking: all players meeting stat minimum (5×5 order) ───────────
     all_qualified = get_scored_pool_cached("bat", proj_path)
+    all_qualified.sort(key=ldb_roto5, reverse=True)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -1268,7 +1282,7 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
             "war": round(fv(p,"WAR"),2),
             "ab_per_week": round(p.get("_ab_per_week", 0.0), 2),
             "roto_lineup_factor": round(p.get("_roto_lineup_factor", 1.0), 3),
-            "ldb_score": round(p["LDB_Score"],3),
+            "ldb_score": round(ldb_roto5(p), 3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
@@ -1278,8 +1292,9 @@ def build_batters(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budge
 # ── SP RANKINGS ────────────────────────────────────────────────────────────────
 def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
              pos_by_last=None, replacement_level=None, rfa_matcher=None):
-    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    # ── Global ranking: all players meeting stat minimum (5×5 order) ───────────
     all_qualified = get_scored_pool_cached("sp", proj_path)
+    all_qualified.sort(key=ldb_roto5, reverse=True)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -1308,7 +1323,7 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
             "rp_ip_context": round(p.get("_rp_ip_context", 0.0), 3),
             "roto_ip_factor": round(p.get("_roto_ip_factor", 1.0), 3),
-            "ldb_score": round(p["LDB_Score"],3),
+            "ldb_score": round(ldb_roto5(p), 3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
@@ -1324,8 +1339,9 @@ def build_sp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
 # ── RP RANKINGS ────────────────────────────────────────────────────────────────
 def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, system_name,
              pos_by_last=None, replacement_level=None, rfa_matcher=None):
-    # ── Global ranking: all players meeting stat minimum ──────────────────────
+    # ── Global ranking: all players meeting stat minimum (5×5 order) ───────────
     all_qualified = get_scored_pool_cached("rp", proj_path)
+    all_qualified.sort(key=ldb_roto5, reverse=True)
     global_rank = {norm(p["Name"]): i+1 for i, p in enumerate(all_qualified)}
 
     # ── Auction pool: filter to available, assign Est_Value ───────────────────
@@ -1354,7 +1370,7 @@ def build_rp(proj_path, unavail, rfa_norm, pos_map, pos_by_name_team, budget, sy
             "war": round(fv(p,"WAR"),2),
             "ip_per_week": round(p.get("_ip_per_week", 0.0), 2),
             "roto_ip_factor": round(p.get("_roto_ip_factor", 1.0), 3),
-            "ldb_score": round(p["LDB_Score"],3),
+            "ldb_score": round(ldb_roto5(p), 3),
             "rfa_team": get_rfa_team(p["Name"], rfa_norm, rfa_matcher),
             "positions": get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team",""), pos_by_last),
             "is_fry_keeper": p["Name"] in FRY_KEEPERS,
@@ -1991,23 +2007,23 @@ def build_team_vorp_context(board, repl_bat_by_system, repl_pit_by_system, pos_m
             get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
         )
         repls = [repl_bat_by_system["batx"][pos] for pos in positions if pos in repl_bat_by_system["batx"]]
-        batx_map[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+        batx_map[norm(p["Name"])] = max(0.0, ldb_roto5(p) - (min(repls) if repls else 0.0))
     for p in oopsy_bat_pool:
         positions = normalize_pos_for_repl(
             get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
         )
         repls = [repl_bat_by_system["oopsy"][pos] for pos in positions if pos in repl_bat_by_system["oopsy"]]
-        oopsy_bat_map[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+        oopsy_bat_map[norm(p["Name"])] = max(0.0, ldb_roto5(p) - (min(repls) if repls else 0.0))
 
     # Pitchers
     atc_sp_pool = get_scored_pool_cached("sp", ATC_SP)
     oopsy_sp_pool = get_scored_pool_cached("sp", OOPSY_SP)
     atc_rp_pool = get_scored_pool_cached("rp", ATC_RP)
     oopsy_rp_pool = get_scored_pool_cached("rp", OOPSY_RP)
-    atc_sp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["SP"]) for p in atc_sp_pool}
-    oopsy_sp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["oopsy"]["SP"]) for p in oopsy_sp_pool}
-    atc_rp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["RP"]) for p in atc_rp_pool}
-    oopsy_rp_map = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["oopsy"]["RP"]) for p in oopsy_rp_pool}
+    atc_sp_map = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["atc"]["SP"]) for p in atc_sp_pool}
+    oopsy_sp_map = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["oopsy"]["SP"]) for p in oopsy_sp_pool}
+    atc_rp_map = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["atc"]["RP"]) for p in atc_rp_pool}
+    oopsy_rp_map = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["oopsy"]["RP"]) for p in oopsy_rp_pool}
 
     # Unified VORP map by name (best role for pitcher-eligible players)
     vorp_by_name = {}
@@ -2108,12 +2124,12 @@ def build_owned_marginal_auction_values(
             get_positions(p["Name"], pos_map, pos_by_name_team, p.get("Team", ""), pos_by_last)
         )
         repls = [repl_bat_by_system["batx"][pos] for pos in positions if pos in repl_bat_by_system["batx"]]
-        bat_vorp[norm(p["Name"])] = max(0.0, p["LDB_Score"] - (min(repls) if repls else 0.0))
+        bat_vorp[norm(p["Name"])] = max(0.0, ldb_roto5(p) - (min(repls) if repls else 0.0))
 
     sp_pool = get_scored_pool_cached("sp", ATC_SP)
     rp_pool = get_scored_pool_cached("rp", ATC_RP)
-    sp_vorp = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["SP"]) for p in sp_pool}
-    rp_vorp = {norm(p["Name"]): max(0.0, p["LDB_Score"] - repl_pit_by_system["atc"]["RP"]) for p in rp_pool}
+    sp_vorp = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["atc"]["SP"]) for p in sp_pool}
+    rp_vorp = {norm(p["Name"]): max(0.0, ldb_roto5(p) - repl_pit_by_system["atc"]["RP"]) for p in rp_pool}
 
     bat_matcher = NameMatcher(bat_vorp, fuzzy_threshold=0.87)
     sp_matcher = NameMatcher(sp_vorp, fuzzy_threshold=0.87)
@@ -2471,10 +2487,10 @@ def main():
             OOPSY_SP, OOPSY_RP, board["owned"], set(board["aa_names"]), num_teams=num_teams),
     }
 
-    print("  BATX batter replacement levels (LDB_Score):")
+    print("  BATX batter replacement levels (5×5 roto):")
     for pos, rl in sorted(repl_bat_by_system["batx"].items()):
         print(f"    {pos:<4} {rl:+.3f}  (slots/team={REPL_BAT_SLOTS.get(pos,'?')})")
-    print("  OOPSY batter replacement levels (LDB_Score):")
+    print("  OOPSY batter replacement levels (5×5 roto):")
     for pos, rl in sorted(repl_bat_by_system["oopsy"].items()):
         print(f"    {pos:<4} {rl:+.3f}  (slots/team={REPL_BAT_SLOTS.get(pos,'?')})")
     print(f"  ATC SP {repl_pit_by_system['atc']['SP']:+.3f}  "

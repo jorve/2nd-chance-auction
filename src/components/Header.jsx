@@ -383,7 +383,7 @@ export default function Header({ onLeagueClick }) {
             </div>
             <div style={{ padding: '0 20px 18px', fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--text-faint)', lineHeight: 1.55 }}>
               <span style={{ color: 'var(--text-dim)' }}>Standings track each category for the full season (rotisserie), not weekly head-to-head matchups.</span>
-              {' '}Board dollar values still use the legacy projection blend until you regenerate data with weights aligned to these categories.
+              {' '}LDB_Score and auction dollars are derived in <code style={{ color: 'var(--text-dim)' }}>generate_data.py</code> from projection CSVs (same underlying stats as these categories).
             </div>
           </div>
         </div>

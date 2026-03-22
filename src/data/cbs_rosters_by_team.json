@@ -60,21 +60,21 @@
         "norm": "ben rice",
         "pos": "C",
         "mlb_team": "NYY",
-        "draft_round": 18
+        "draft_round": null
       },
       {
         "name": "Byron Buxton",
         "norm": "byron buxton",
         "pos": "OF",
         "mlb_team": "MIN",
-        "draft_round": 13
+        "draft_round": null
       },
       {
         "name": "Nolan McLean",
         "norm": "nolan mclean",
         "pos": "SP",
         "mlb_team": "NYM",
-        "draft_round": 5
+        "draft_round": null
       }
     ],
     "JAYHK": [
@@ -83,44 +83,44 @@
         "norm": "edwin diaz",
         "pos": "RP",
         "mlb_team": "LAD",
-        "draft_round": 8
+        "draft_round": null
       },
       {
         "name": "Nick Kurtz",
         "norm": "nick kurtz",
         "pos": "1B",
         "mlb_team": "ATH",
-        "draft_round": 5
+        "draft_round": null
       },
       {
         "name": "Will Smith",
         "norm": "will smith",
         "pos": "C",
         "mlb_team": "LAD",
-        "draft_round": 16
+        "draft_round": null
       }
     ],
     "INGBT": [
       {
         "name": "Christian Yelich",
         "norm": "christian yelich",
-        "pos": "1B",
+        "pos": "UT",
         "mlb_team": "MIL",
-        "draft_round": 8
+        "draft_round": null
       },
       {
         "name": "Eugenio Suarez",
         "norm": "eugenio suarez",
         "pos": "3B",
         "mlb_team": "CIN",
-        "draft_round": 16
+        "draft_round": null
       },
       {
         "name": "Juan Soto",
         "norm": "juan soto",
         "pos": "OF",
         "mlb_team": "NYM",
-        "draft_round": 1
+        "draft_round": null
       }
     ],
     "HIGH2": [
@@ -129,21 +129,21 @@
         "norm": "bryan woo",
         "pos": "SP",
         "mlb_team": "SEA",
-        "draft_round": 10
+        "draft_round": null
       },
       {
         "name": "Cristopher Sanchez",
         "norm": "cristopher sanchez",
         "pos": "SP",
         "mlb_team": "PHI",
-        "draft_round": 7
+        "draft_round": null
       },
       {
         "name": "Trevor Story",
         "norm": "trevor story",
         "pos": "SS",
         "mlb_team": "BOS",
-        "draft_round": 22
+        "draft_round": null
       }
     ],
     "CL21B": [
@@ -152,21 +152,21 @@
         "norm": "julio rodriguez",
         "pos": "OF",
         "mlb_team": "SEA",
-        "draft_round": 2
+        "draft_round": null
       },
       {
         "name": "Kyle Schwarber",
         "norm": "kyle schwarber",
-        "pos": "1B",
+        "pos": "UT",
         "mlb_team": "PHI",
-        "draft_round": 7
+        "draft_round": null
       },
       {
         "name": "Yoshinobu Yamamoto",
         "norm": "yoshinobu yamamoto",
         "pos": "SP",
         "mlb_team": "LAD",
-        "draft_round": 4
+        "draft_round": null
       }
     ],
     "RUBYR": [
@@ -175,21 +175,21 @@
         "norm": "brice turang",
         "pos": "2B",
         "mlb_team": "MIL",
-        "draft_round": 15
+        "draft_round": null
       },
       {
         "name": "Pete Alonso",
         "norm": "pete alonso",
         "pos": "1B",
         "mlb_team": "BAL",
-        "draft_round": 3
+        "draft_round": null
       },
       {
         "name": "Shea Langeliers",
         "norm": "shea langeliers",
         "pos": "C",
         "mlb_team": "ATH",
-        "draft_round": 22
+        "draft_round": null
       }
     ],
     "MENDL": [
@@ -198,21 +198,21 @@
         "norm": "logan webb",
         "pos": "SP",
         "mlb_team": "SF",
-        "draft_round": 5
+        "draft_round": null
       },
       {
         "name": "Randy Arozarena",
         "norm": "randy arozarena",
         "pos": "OF",
         "mlb_team": "SEA",
-        "draft_round": 16
+        "draft_round": null
       },
       {
         "name": "Vinnie Pasquantino",
         "norm": "vinnie pasquantino",
         "pos": "1B",
         "mlb_team": "KC",
-        "draft_round": 13
+        "draft_round": null
       }
     ],
     "BEDST": [
@@ -221,21 +221,21 @@
         "norm": "eury perez",
         "pos": "SP",
         "mlb_team": "MIA",
-        "draft_round": 22
+        "draft_round": null
       },
       {
         "name": "George Springer",
         "norm": "george springer",
         "pos": "OF",
         "mlb_team": "TOR",
-        "draft_round": 21
+        "draft_round": null
       },
       {
         "name": "Ronald Acuna Jr.",
         "norm": "ronald acuna",
         "pos": "OF",
         "mlb_team": "ATL",
-        "draft_round": 3
+        "draft_round": null
       }
     ],
     "CASEY": [
@@ -244,21 +244,21 @@
         "norm": "jared jones",
         "pos": "SP",
         "mlb_team": "PIT",
-        "draft_round": 19
+        "draft_round": null
       },
       {
         "name": "Jeremy Pena",
         "norm": "jeremy pena",
         "pos": "SS",
         "mlb_team": "HOU",
-        "draft_round": 16
+        "draft_round": null
       },
       {
         "name": "Michael Busch",
         "norm": "michael busch",
         "pos": "1B",
         "mlb_team": "CHC",
-        "draft_round": 22
+        "draft_round": null
       }
     ],
     "CUCKOO": [
@@ -267,21 +267,21 @@
         "norm": "drew rasmussen",
         "pos": "SP",
         "mlb_team": "TB",
-        "draft_round": 22
+        "draft_round": null
       },
       {
         "name": "Riley Greene",
         "norm": "riley greene",
         "pos": "OF",
         "mlb_team": "DET",
-        "draft_round": 8
+        "draft_round": null
       },
       {
         "name": "Zachary Neto",
         "norm": "zachary neto",
         "pos": "SS",
         "mlb_team": "LAA",
-        "draft_round": 20
+        "draft_round": null
       }
     ],
     "BEHEM": [
@@ -290,21 +290,21 @@
         "norm": "junior caminero",
         "pos": "3B",
         "mlb_team": "TB",
-        "draft_round": 6
+        "draft_round": null
       },
       {
         "name": "Pete Crow-Armstrong",
         "norm": "pete crow armstrong",
         "pos": "OF",
         "mlb_team": "CHC",
-        "draft_round": 11
+        "draft_round": null
       },
       {
         "name": "Roman Anthony",
         "norm": "roman anthony",
         "pos": "OF",
         "mlb_team": "BOS",
-        "draft_round": 21
+        "draft_round": null
       }
     ]
   },
@@ -313,232 +313,199 @@
       "team": "INGBT",
       "name": "Juan Soto",
       "pos": "OF",
-      "mlb_team": "NYM",
-      "draft_round": 1
+      "mlb_team": "NYM"
     },
     "ronald acuna": {
       "team": "BEDST",
       "name": "Ronald Acuna Jr.",
       "pos": "OF",
-      "mlb_team": "ATL",
-      "draft_round": 3
+      "mlb_team": "ATL"
     },
     "julio rodriguez": {
       "team": "CL21B",
       "name": "Julio Rodriguez",
       "pos": "OF",
-      "mlb_team": "SEA",
-      "draft_round": 2
+      "mlb_team": "SEA"
     },
     "junior caminero": {
       "team": "BEHEM",
       "name": "Junior Caminero",
       "pos": "3B",
-      "mlb_team": "TB",
-      "draft_round": 6
+      "mlb_team": "TB"
     },
     "nick kurtz": {
       "team": "JAYHK",
       "name": "Nick Kurtz",
       "pos": "1B",
-      "mlb_team": "ATH",
-      "draft_round": 5
+      "mlb_team": "ATH"
     },
     "kyle schwarber": {
       "team": "CL21B",
       "name": "Kyle Schwarber",
-      "pos": "1B",
-      "mlb_team": "PHI",
-      "draft_round": 7
+      "pos": "UT",
+      "mlb_team": "PHI"
     },
     "pete crow armstrong": {
       "team": "BEHEM",
       "name": "Pete Crow-Armstrong",
       "pos": "OF",
-      "mlb_team": "CHC",
-      "draft_round": 11
+      "mlb_team": "CHC"
     },
     "pete alonso": {
       "team": "RUBYR",
       "name": "Pete Alonso",
       "pos": "1B",
-      "mlb_team": "BAL",
-      "draft_round": 3
+      "mlb_team": "BAL"
     },
     "zachary neto": {
       "team": "CUCKOO",
       "name": "Zachary Neto",
       "pos": "SS",
-      "mlb_team": "LAA",
-      "draft_round": 20
+      "mlb_team": "LAA"
     },
     "brice turang": {
       "team": "RUBYR",
       "name": "Brice Turang",
       "pos": "2B",
-      "mlb_team": "MIL",
-      "draft_round": 15
+      "mlb_team": "MIL"
     },
     "roman anthony": {
       "team": "BEHEM",
       "name": "Roman Anthony",
       "pos": "OF",
-      "mlb_team": "BOS",
-      "draft_round": 21
+      "mlb_team": "BOS"
     },
     "ben rice": {
       "team": "SAVG2",
       "name": "Ben Rice",
       "pos": "C",
-      "mlb_team": "NYY",
-      "draft_round": 18
+      "mlb_team": "NYY"
     },
     "shea langeliers": {
       "team": "RUBYR",
       "name": "Shea Langeliers",
       "pos": "C",
-      "mlb_team": "ATH",
-      "draft_round": 22
+      "mlb_team": "ATH"
     },
     "byron buxton": {
       "team": "SAVG2",
       "name": "Byron Buxton",
       "pos": "OF",
-      "mlb_team": "MIN",
-      "draft_round": 13
+      "mlb_team": "MIN"
     },
     "george springer": {
       "team": "BEDST",
       "name": "George Springer",
       "pos": "OF",
-      "mlb_team": "TOR",
-      "draft_round": 21
+      "mlb_team": "TOR"
     },
     "christian yelich": {
       "team": "INGBT",
       "name": "Christian Yelich",
-      "pos": "1B",
-      "mlb_team": "MIL",
-      "draft_round": 8
+      "pos": "UT",
+      "mlb_team": "MIL"
     },
     "riley greene": {
       "team": "CUCKOO",
       "name": "Riley Greene",
       "pos": "OF",
-      "mlb_team": "DET",
-      "draft_round": 8
+      "mlb_team": "DET"
     },
     "eugenio suarez": {
       "team": "INGBT",
       "name": "Eugenio Suarez",
       "pos": "3B",
-      "mlb_team": "CIN",
-      "draft_round": 16
+      "mlb_team": "CIN"
     },
     "vinnie pasquantino": {
       "team": "MENDL",
       "name": "Vinnie Pasquantino",
       "pos": "1B",
-      "mlb_team": "KC",
-      "draft_round": 13
+      "mlb_team": "KC"
     },
     "trevor story": {
       "team": "HIGH2",
       "name": "Trevor Story",
       "pos": "SS",
-      "mlb_team": "BOS",
-      "draft_round": 22
+      "mlb_team": "BOS"
     },
     "randy arozarena": {
       "team": "MENDL",
       "name": "Randy Arozarena",
       "pos": "OF",
-      "mlb_team": "SEA",
-      "draft_round": 16
+      "mlb_team": "SEA"
     },
     "jeremy pena": {
       "team": "CASEY",
       "name": "Jeremy Pena",
       "pos": "SS",
-      "mlb_team": "HOU",
-      "draft_round": 16
+      "mlb_team": "HOU"
     },
     "michael busch": {
       "team": "CASEY",
       "name": "Michael Busch",
       "pos": "1B",
-      "mlb_team": "CHC",
-      "draft_round": 22
+      "mlb_team": "CHC"
     },
     "will smith": {
       "team": "JAYHK",
       "name": "Will Smith",
       "pos": "C",
-      "mlb_team": "LAD",
-      "draft_round": 16
+      "mlb_team": "LAD"
     },
     "yoshinobu yamamoto": {
       "team": "CL21B",
       "name": "Yoshinobu Yamamoto",
       "pos": "SP",
-      "mlb_team": "LAD",
-      "draft_round": 4
+      "mlb_team": "LAD"
     },
     "cristopher sanchez": {
       "team": "HIGH2",
       "name": "Cristopher Sanchez",
       "pos": "SP",
-      "mlb_team": "PHI",
-      "draft_round": 7
+      "mlb_team": "PHI"
     },
     "bryan woo": {
       "team": "HIGH2",
       "name": "Bryan Woo",
       "pos": "SP",
-      "mlb_team": "SEA",
-      "draft_round": 10
+      "mlb_team": "SEA"
     },
     "logan webb": {
       "team": "MENDL",
       "name": "Logan Webb",
       "pos": "SP",
-      "mlb_team": "SF",
-      "draft_round": 5
+      "mlb_team": "SF"
     },
     "eury perez": {
       "team": "BEDST",
       "name": "Eury Perez",
       "pos": "SP",
-      "mlb_team": "MIA",
-      "draft_round": 22
+      "mlb_team": "MIA"
     },
     "nolan mclean": {
       "team": "SAVG2",
       "name": "Nolan McLean",
       "pos": "SP",
-      "mlb_team": "NYM",
-      "draft_round": 5
+      "mlb_team": "NYM"
     },
     "drew rasmussen": {
       "team": "CUCKOO",
       "name": "Drew Rasmussen",
       "pos": "SP",
-      "mlb_team": "TB",
-      "draft_round": 22
+      "mlb_team": "TB"
     },
     "jared jones": {
       "team": "CASEY",
       "name": "Jared Jones",
       "pos": "SP",
-      "mlb_team": "PIT",
-      "draft_round": 19
+      "mlb_team": "PIT"
     },
     "edwin diaz": {
       "team": "JAYHK",
       "name": "Edwin Diaz",
       "pos": "RP",
-      "mlb_team": "LAD",
-      "draft_round": 8
+      "mlb_team": "LAD"
     }
   }
 }

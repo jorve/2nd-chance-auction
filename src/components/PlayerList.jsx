@@ -19,39 +19,29 @@ import { isBattersPosFilterUseful } from '../utils/hitterSlotting.js'
 const TIER_COLORS = { 1: 'var(--t1)', 2: 'var(--t2)', 3: 'var(--t3)', 4: 'var(--t4)', 5: 'var(--t5)' }
 const TIER_LABELS = { 1: 'TIER 1 · ELITE', 2: 'TIER 2 · PREMIUM', 3: 'TIER 3 · MID', 4: 'TIER 4 · VALUE', 5: 'TIER 5 · DEEP' }
 
-// inv: true = lower raw is better (ERA, WHIP, HRA) — z-score sign is flipped
+// Classic 5×5 roto cats (+ IP for pitcher volume). inv: lower is better — z-score sign is flipped
 const BATTER_COLS = [
-  { key: 'hr',       label: 'HR',   fmt: 0 },
-  { key: 'r',        label: 'R',    fmt: 0 },
-  { key: 'rbi',      label: 'aRBI', fmt: 0 },
-  { key: 'obp',      label: 'OBP',  fmt: 3 },
-  { key: 'ops',      label: 'OPS',  fmt: 3 },
-  { key: 'asb',      label: 'aSB',  fmt: 1 },
-  { key: 'wrc_plus', label: 'wRC+', fmt: 0 },
-  { key: 'war',      label: 'WAR',  fmt: 1 },
+  { key: 'avg', label: 'BA', fmt: 3 },
+  { key: 'hr', label: 'HR', fmt: 0 },
+  { key: 'r', label: 'R', fmt: 0 },
+  { key: 'rbi', label: 'RBI', fmt: 0 },
+  { key: 'sb', label: 'SB', fmt: 0 },
 ]
 const SP_COLS = [
-  { key: 'ip',           label: 'IP',     fmt: 0 },
-  { key: 'k',            label: 'K',      fmt: 0 },
-  { key: 'era',          label: 'ERA',    fmt: 2, inv: true },
-  { key: 'whip',         label: 'WHIP',   fmt: 3, inv: true },
-  { key: 'hra',          label: 'HRA',    fmt: 0, inv: true },
-  { key: 'mgs',          label: 'MGS/GS', fmt: 2 },
-  { key: 'war',          label: 'WAR',    fmt: 1 },
-  { key: 'stuff_plus',   label: 'STF+',   fmt: 0, noZ: true },
-  { key: 'pitching_plus',label: 'PTH+',   fmt: 0, noZ: true },
-  { key: 'pp_era',       label: 'ppERA',  fmt: 2, inv: true, noZ: true },
-  { key: 'athl_health',  label: 'H%',     fmt: 0, noZ: true },
+  { key: 'ip', label: 'IP', fmt: 0, noZ: true },
+  { key: 'era', label: 'ERA', fmt: 2, inv: true },
+  { key: 'k', label: 'K', fmt: 0 },
+  { key: 'sv', label: 'SV', fmt: 0 },
+  { key: 'w', label: 'W', fmt: 0 },
+  { key: 'whip', label: 'WHIP', fmt: 3, inv: true },
 ]
 const RP_COLS = [
-  { key: 'pl_rp_rank', label: 'PL RP Rank', fmt: 0, noZ: true },
-  { key: 'ip',    label: 'IP',   fmt: 0 },
-  { key: 'sv',    label: 'SV',   fmt: 0 },
-  { key: 'hld',   label: 'HLD',  fmt: 0 },
-  { key: 'k',     label: 'K',    fmt: 0 },
-  { key: 'era',   label: 'ERA',  fmt: 2, inv: true },
-  { key: 'vijay', label: 'VIJAY/G', fmt: 3 },
-  { key: 'war',   label: 'WAR',  fmt: 1 },
+  { key: 'ip', label: 'IP', fmt: 0, noZ: true },
+  { key: 'era', label: 'ERA', fmt: 2, inv: true },
+  { key: 'k', label: 'K', fmt: 0 },
+  { key: 'sv', label: 'SV', fmt: 0 },
+  { key: 'w', label: 'W', fmt: 0 },
+  { key: 'whip', label: 'WHIP', fmt: 3, inv: true },
 ]
 const STAT_COLS = { batters: BATTER_COLS, sp: SP_COLS, rp: RP_COLS }
 const VIRT_BASE_ROWS = 120
