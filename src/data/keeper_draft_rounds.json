@@ -1,4 +1,60 @@
 {
-  "notes": "Each keeper consumes this franchise's pick in the same 1-based round as last year's draft. You can list only rounds: [2, 11, 24], or include the player from your CBS export (column with 22*, 7*, etc.): [{ \"player\": \"Trevor Story\", \"round\": 22 }, ...]. Player is for your records/UI; snake order uses round only. Roster lookup (who is on which franchise) is regenerated as cbs_rosters_by_team.json when you run generate_data.py — use draft_round there as scratch, then copy into by_team.",
-  "by_team": {}
+  "notes": "Each keeper consumes this franchise's pick in the same 1-based round as last year's draft. Populated from user keeper export (rounds with *) matched to 2026_CBS_*.csv team column. Player names for records/UI; snake skip logic uses round numbers only.",
+  "by_team": {
+    "SAVG2": [
+      { "player": "Nolan McLean", "round": 5 },
+      { "player": "Byron Buxton", "round": 13 },
+      { "player": "Ben Rice", "round": 18 }
+    ],
+    "JAYHK": [
+      { "player": "Nick Kurtz", "round": 5 },
+      { "player": "Edwin Diaz", "round": 8 },
+      { "player": "Will Smith", "round": 16 }
+    ],
+    "INGBT": [
+      { "player": "Juan Soto", "round": 1 },
+      { "player": "Christian Yelich", "round": 8 },
+      { "player": "Eugenio Suarez", "round": 16 }
+    ],
+    "HIGH2": [
+      { "player": "Cristopher Sanchez", "round": 7 },
+      { "player": "Bryan Woo", "round": 10 },
+      { "player": "Trevor Story", "round": 22 }
+    ],
+    "CL21B": [
+      { "player": "Julio Rodriguez", "round": 2 },
+      { "player": "Yoshinobu Yamamoto", "round": 4 },
+      { "player": "Kyle Schwarber", "round": 7 }
+    ],
+    "RUBYR": [
+      { "player": "Pete Alonso", "round": 3 },
+      { "player": "Brice Turang", "round": 15 },
+      { "player": "Shea Langeliers", "round": 22 }
+    ],
+    "MENDL": [
+      { "player": "Logan Webb", "round": 5 },
+      { "player": "Vinnie Pasquantino", "round": 13 },
+      { "player": "Randy Arozarena", "round": 16 }
+    ],
+    "BEDST": [
+      { "player": "Ronald Acuna Jr.", "round": 3 },
+      { "player": "George Springer", "round": 21 },
+      { "player": "Eury Perez", "round": 22 }
+    ],
+    "CASEY": [
+      { "player": "Jeremy Pena", "round": 16 },
+      { "player": "Jared Jones", "round": 19 },
+      { "player": "Michael Busch", "round": 22 }
+    ],
+    "CUCKOO": [
+      { "player": "Riley Greene", "round": 8 },
+      { "player": "Zachary Neto", "round": 20 },
+      { "player": "Drew Rasmussen", "round": 22 }
+    ],
+    "BEHEM": [
+      { "player": "Junior Caminero", "round": 6 },
+      { "player": "Pete Crow-Armstrong", "round": 11 },
+      { "player": "Roman Anthony", "round": 21 }
+    ]
+  }
 }
